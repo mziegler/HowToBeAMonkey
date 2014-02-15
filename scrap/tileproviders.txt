@@ -1,0 +1,17 @@
+      // ESRI terrain
+      //L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}.png', {
+      
+      // google terrain map, has different boundaries for reserve
+      //L.tileLayer('http://mt1.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
+      
+      // doesn't work: finland topographic
+      //L.tileLayer('http://ed-map-fi.wide.basefarm.net/tiles/topographic/en_FI/{z}/{x}/{y}.png', {
+      
+      // nokia terrain map, ugly, has same borders as ESRI terrain
+      //L.tileLayer('http://maptile.maps.svc.ovi.com/maptiler/maptile/newest/terrain.day/{z}/{x}/{y}/256/png8', {
+
+      // doesn't work: germany topographic
+      //L.tileLayer('http://t0.outdooractive.com/portal/map/{z}/{x}/{y}.png', {
+      
+      // google hybrid map
+      L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
