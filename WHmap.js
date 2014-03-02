@@ -1,4 +1,5 @@
 var map = L.map('map').setView([10.512, -85.366], 16);
+
       
 // base map (satelite images)
 L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
@@ -6,11 +7,14 @@ L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
   maxZoom: 22
 }).addTo(map);
 
-// add GPS track      
+
+// add GPS track to map     
 var polyline = L.polyline(WHtrack, {color: 'blue'}).addTo(map);
 
-var alternator = false;
 
+// alternates between "leaflet-label-left" and "leaflet-label-right"
+// on each successive call
+var alternator = false;
 function alternateClass()
 {
   alternator = !alternator;
@@ -22,7 +26,7 @@ function alternateClass()
 
 
 function clusterIcon(cluster) {
-  var childrenToShow = 5;
+  var childrenToShow = 3;
 
   var children = cluster.getAllChildMarkers();
   
@@ -54,7 +58,7 @@ function clusterIcon(cluster) {
 // cluster layer for behavior markers
 var behaviors = new L.MarkerClusterGroup({
   spiderfyOnMaxZoom: false,
-  iconCreateFunction: clusterIcon,
+  //iconCreateFunction: clusterIcon,
   riseOnHover: true,
   });
 
@@ -74,11 +78,19 @@ for (var i = 0; i < behaviorPoints.length; i++)
         html: '<div><b>' + row[2] + '</b> ' + row[3] + '</div>',
         iconSize: ['auto', 'auto']
       }),
-      riseOnHover: true,
     })
   );
 }
 
+
+
+
+behaviors.on('clusterclick', function(e) {
+  e.target.setZIndexOffset(99999);
+});
+
+behaviors.on('clustermouseout', function(e) {
+  e.target.setZIndexOffset(0);
+});
+
 map.addLayer(behaviors);
-
-
