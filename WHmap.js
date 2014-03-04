@@ -31,7 +31,7 @@ for (var i = 0; i < behaviorPoints.length; i++)
     ], {
       icon: L.divIcon({
         className: 'leaflet-label leaflet-label-right',
-        html: '<b>' + row[2] + '</b> ' + row[3],
+        html: '<div><b>' + row[2] + '</b> ' + row[3] + '</div>',
         iconSize: ['auto', 'auto']
       }),
       riseOnHover: true,
