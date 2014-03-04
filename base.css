@@ -7,7 +7,7 @@
 	border-color: #684E07;
 	border-radius: 2px;
 	border-style: solid;
-	border-width: 4px;
+	border-width: 2px;
 	color: #111;
 	display: block;
 	font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -20,9 +20,10 @@
 	pointer-events: none;
 	white-space: nowrap;
 	z-index: 6;
+	margin: 0;
 }
 
-.leaflet-label.leaflet-clickable {
+.leaflet-label.leaflet-clickable div {
 	cursor: pointer;
 	pointer-events: auto;
 }
@@ -54,5 +55,16 @@
 }
 
 .leaflet-label-left div {
-  transform: translate(-100%);
+  -webkit-transform: translate(-100%, 0px); /* Chrome, Safari, Opera */
+     -moz-transform: translate(-100%, 0px);
+      -ms-transform: translate(-100%, 0px); /* IE 9 */
+       -o-transform: translate(-100%, 0px); 
+          transform: translate(-100%, 0px);
+}
+
+.leaflet-label div ul
+{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
 }
