@@ -141,3 +141,8 @@ var WHtrack = [
 [10.5152894743, -85.3634810261],
 [10.5143646989, -85.3639992792],
 ]
+
+var hilights = [
+  ['Hilight 1', [10.5093779694, -85.3682250995], 'left', "Here's a short blob of text describing what's going on.  One two three four five six seven eight!", null, null],
+  ['Hilight 2', [10.5108861253, -85.3713523876], 'right', "Lorum ipsum sdlfkn sdioh dosui sodf oiaerg oskdf oiasasd saodf oisr saodfih osidfj aeoihsg sadofij sdfj.", null, null], 
+  ]
