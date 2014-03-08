@@ -111,28 +111,32 @@ for (var i = 0; i < hilights.length; i++)
         iconSize: ['auto', 'auto']
       })
     }
- // ).on("mouseover", function() {
- //   alert('hi');
- // }
  ));   
 }
 
-/*
-hilightLayer.on('mouseover', function(e) {
-  alert('abc');
-});
-*/
-
 hilightLayer.addTo(map);
 
+// Event listners for markers.  This is ugly.  Should use jQuery's 'on'
+// or 'delegate' instead, but mouseover events don't propagate up past
+// div.leaflet-marker-pane for some reasons unknown to me.  This needs to
+// be called every time the map is re-drawn.
+function bindMouseListners()
+{
+  // raise marker on mouseover
+  $('div.leaflet-label').mouseenter(function() {
+    if (!$(this).attr('origZ'))
+      {$(this).attr('origZ', $(this).css('z-index'));}
+    $(this).css('z-index', 99999);
+  });
   
-
-$(document).ready(function() {
-  //$(document).delegate('div.hilight-label', 'mouseover', function() {
+  // lower marker on mouseout
+  $('div.leaflet-label').mouseleave(function() {
+    if ($(this).attr('origZ'))
+      {$(this).css('z-index', $(this).attr('origZ'));}
+  });
+  
+  // expand hilight markers on mouseover
   $('div.hilight-label').mouseenter(function() {
-  //$('#map').on('mouseenter', 'div.hilight-label', function() {
-  //$('div.leaflet-marker-pane').on('mouseover', 'div.hilight-label', function() {
-    //alert('yo');
     $('div.hContent').hide();
     $('img.thumbnail').show();
     $('div.hilight-label.expanded').removeClass('expanded');
@@ -141,18 +145,14 @@ $(document).ready(function() {
     $(this).find('img.thumbnail').hide();
   });
   
-  //$(document).delegate('div.hilight-label', 'mouseout', function() {
+  // shrink hilight markers on mouseout
   $('div.hilight-label').mouseleave(function() {
-  //$('#map').on('mouseleave', 'div.hilight-label', function() {
     $(this).find('div.hContent').hide();
     $(this).find('img.thumbnail').show();
     $(this).removeClass('expanded');
   }); 
+}
+
+$(document).ready(function() {
+  bindMouseListners();
 });
-
-// Event listners for markers.  This is ugly.  Should use jQuery's 'on'
-// or 'delegate' instead, but mouseover events don't propagate up past
-// div.leaflet-marker-pane for some reasons unknown to me.
-
-// TODO
-
