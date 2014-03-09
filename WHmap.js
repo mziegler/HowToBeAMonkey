@@ -108,7 +108,7 @@ for (var i = 0; i < hilights.length; i++)
       icon: L.divIcon({
         className: 'leaflet-label hilight-label leaflet-label-' + hilight[2],
         html: markerHTML,
-        iconSize: ['auto', 'auto']
+        //iconSize: ['auto', 'auto']
       })
     }
  ));   
