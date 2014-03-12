@@ -83,7 +83,7 @@ for (var i = 0; i < behaviorPoints.length; i++)
 }
 
 
-map.addLayer(behaviorLayer);
+//map.addLayer(behaviorLayer);
 
 var hilightLayer = L.layerGroup();
 
@@ -155,3 +155,21 @@ function bindMouseListners()
 
 bindMouseListners();
 map.on('moveend', bindMouseListners);
+
+
+// add or remove layers to the map based on the zoom level
+function zoomHandle() {
+  //alert(map.getZoom());
+  if (map.getZoom() > 17)
+  {
+    map.removeLayer(hilightLayer);
+    map.addLayer(behaviorLayer);
+  }
+  else
+  {
+    map.removeLayer(behaviorLayer);
+    map.addLayer(hilightLayer);
+  }
+}
+zoomHandle()
+map.on('zoomend', zoomHandle);
