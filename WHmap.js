@@ -47,7 +47,7 @@ function clusterIcon(cluster) {
   html = html + '</div>';
   
   return L.divIcon({
-    className: 'leaflet-label ' + alternateClass(),
+    className: 'cluster-label leaflet-label ' + alternateClass(),
     iconSize: ['auto', 'auto'],
     html: html,
   });
@@ -59,7 +59,7 @@ function clusterIcon(cluster) {
 var behaviorLayer = new L.MarkerClusterGroup({
   spiderfyOnMaxZoom: false,
   iconCreateFunction: clusterIcon,
-  
+  showCoverageOnHover: false,
   });
 
 
@@ -83,7 +83,7 @@ for (var i = 0; i < behaviorPoints.length; i++)
 }
 
 
-//map.addLayer(behaviorLayer);
+map.addLayer(behaviorLayer);
 
 var hilightLayer = L.layerGroup();
 
@@ -100,7 +100,7 @@ for (var i = 0; i < hilights.length; i++)
     thumbstring = '<img class="thumbnail" src="pictures/' + hilight[4] + '" alt="' + hilight[0] + '" />';
   }
   
-  var markerHTML = '<div class="innerlabel">' + thumbstring + '<h3>' + hilight[0] + '</h3><div class="hContent">' + mediastring + hilight[3] + '</span></div>';
+  var markerHTML = '<div class="innerlabel"><span>' + thumbstring + hilight[0] + '</span><div class="hContent">' + mediastring + hilight[3] + '</span></div>';
   
   hilightLayer.addLayer(new L.marker(
     hilight[1],
@@ -114,7 +114,7 @@ for (var i = 0; i < hilights.length; i++)
  ));   
 }
 
-hilightLayer.addTo(map);
+//hilightLayer.addTo(map);
 
 // Event listners for markers.  This is ugly.  Should use jQuery's 'on'
 // or 'delegate' instead, but mouseover events don't propagate up past
@@ -153,6 +153,5 @@ function bindMouseListners()
   }); 
 }
 
-$(document).ready(function() {
-  bindMouseListners();
-});
+bindMouseListners();
+map.on('moveend', bindMouseListners);

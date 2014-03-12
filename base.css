@@ -1,16 +1,16 @@
 #map { 
    height: 100%; 
    width: 100%;
-   margin: 0;s
+   margin: 0;
 }
 
 /* labels for behaviors */
 .leaflet-label div.innerlabel {
-	color: #684E07;
-	background: #FDEDC1;
+	color: #000;
+	background: #EEE;
 	/*background-clip: padding-box;*/
-	border-color: #684E07;
-	border-radius: 2px;
+	border-color: #777;
+	border-radius: 5px;
 	border-style: solid;
 	border-width: 2px;
 	color: #111;
@@ -24,6 +24,7 @@
 	        user-select: none;
 	pointer-events: none;
 	z-index: 6;
+	white-space: nowrap;
 	margin: 0;
 }
 
@@ -43,14 +44,14 @@
 
 .leaflet-label div.innerlabel:before {
 	border-right: 6px solid black;
-	border-right-color: inherit;
-	left: -10px;
+	border-right-color: #EEE;
+	left: -8px;
 }
 
 .leaflet-label div.innerlabel:after {
 	border-left: 6px solid black;
-	border-left-color: inherit;
-	right: -10px;
+	border-left-color: #EEE;
+	right: -8px;
 }
 
 .leaflet-label-right div.innerlabel:before,
@@ -74,19 +75,20 @@
           transform: translate(-50%, -50%);
 }
 
-.leaflet-label div.innerlabel ul {
+.cluster-label div.innerlabel ul {
   padding: 0;
   margin: 0;
   list-style-type: none;
 }
 
-div.hilight-label div.innnerlabel {
+/*div.hilight-label div.innnerlabel {
   overflow: auto;
-}
+}*/
 
 .hilight-label div.hContent {
   display: none; 
   width: 400px;
+  white-space: normal;
 }
 
 .hilight-label img.illustration {
@@ -98,13 +100,14 @@ div.hilight-label div.innnerlabel {
 .hilight-label img.thumbnail {
   width: 40px;
   height: 40px;
-  float: left;
-  margin: 8px;
+  margin: 4px;
+  margin-right: 8px;
+  /*float: left;*/
 }
 
-.hilight-label h3 {
+.hilight-label span {
   font-weight: bold;
   font-size: 120%;
   margin: 5px;
-  white-space: nowrap;
-}
+  padding-bottom: 10px;
+} 
