@@ -1,4 +1,4 @@
-var map = L.map('map').setView([10.512, -85.366], 16);
+var map = L.map('map').setView([10.5115, -85.367], 16);
 
       
 // base map (satelite images)
@@ -60,6 +60,7 @@ var behaviorLayer = new L.MarkerClusterGroup({
   spiderfyOnMaxZoom: false,
   iconCreateFunction: clusterIcon,
   showCoverageOnHover: false,
+  maxClusterRadius: 150,
   });
 
 
@@ -116,6 +117,31 @@ for (var i = 0; i < hilights.length; i++)
 
 //hilightLayer.addTo(map);
 
+
+// add or remove layers to the map based on the zoom level
+function zoomHandle() {
+  //alert(map.getZoom());
+  if (map.getZoom() > 17)
+  {
+    map.removeLayer(hilightLayer);
+    map.addLayer(behaviorLayer);
+  }
+ /* else if (map.getZoom() == 17)
+  {
+    map.addLayer(behaviorLayer);
+    map.addLayer(hilightLayer);
+  } */
+  else
+  {
+    map.removeLayer(behaviorLayer);
+    //if (!map.hasLayer(hilightLayer))
+    map.addLayer(hilightLayer);
+  }
+}
+zoomHandle()
+map.on('zoomend', zoomHandle);
+
+
 // Event listners for markers.  This is ugly.  Should use jQuery's 'on'
 // or 'delegate' instead, but mouseover events don't propagate up past
 // div.leaflet-marker-pane for some reasons unknown to me.  This needs to
@@ -156,20 +182,3 @@ function bindMouseListners()
 bindMouseListners();
 map.on('moveend', bindMouseListners);
 
-
-// add or remove layers to the map based on the zoom level
-function zoomHandle() {
-  //alert(map.getZoom());
-  if (map.getZoom() > 17)
-  {
-    map.removeLayer(hilightLayer);
-    map.addLayer(behaviorLayer);
-  }
-  else
-  {
-    map.removeLayer(behaviorLayer);
-    map.addLayer(hilightLayer);
-  }
-}
-zoomHandle()
-map.on('zoomend', zoomHandle);
