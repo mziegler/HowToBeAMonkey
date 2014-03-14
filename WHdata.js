@@ -143,6 +143,15 @@ var WHtrack = [
 ]
 
 var hilights = [
-  ['Hilight 1', [10.5093779694, -85.3682250995], 'left', "Here's a short blob of text describing what's going on.  One two three four five six seven eight!", '100_0546.JPG', null],
-  ['Hilight 2', [10.5108861253, -85.3713523876], 'left', "Lorum ipsum sdlfkn sdioh dosui sodf oiaerg oskdf oiasasd saodf oisr saodfih osidfj aeoihsg sadofij sdfj.", '100_0546.JPG', null], 
+  ['Hilight 5', [10.5093779694, -85.3682250995], 'left', "Here's a short blob of text describing what's going on.  One two three four five six seven eight!", '100_0546.JPG', null],
+  ['Hilight 3', [10.5122139025, -85.3715608455], 'left', "Here's a short blob of text describing what's going on.  One two three four five six seven eight!", '100_0546.JPG', null], 
+  ['Hilight 2', [10.5136214755, -85.3707446158], 'left', "Here's a short blob of text describing what's going on.  One two three four five six seven eight!", '100_0546.JPG', null], 
+  ['Hilight 10', [10.5148474965, -85.3639875446], 'right', "Here's a short blob of text describing what's going on.  One two three four five six seven eight!", '100_0546.JPG', null], 
+  ['Hilight 7', [10.5102991406, -85.3668457735], 'right', "Here's a short blob of text describing what's going on.  One two three four five six seven eight!", '100_0546.JPG', null], 
+  ['Hilight 4', [10.5103435647, -85.3708141856], 'left', "Here's a short blob of text describing what's going on.  One two three four five six seven eight!", '100_0546.JPG', null], 
+  ['Hilight 6', [10.5084394477, -85.3662080783], 'right', "Here's a short blob of text describing what's going on.  One two three four five six seven eight!", '100_0546.JPG', null], 
+  ['Hilight 1', [10.5153941642, -85.3702661768], 'left', "Here's a short blob of text describing what's going on.  One two three four five six seven eight!", '100_0546.JPG', null], 
+  ['Hilight 8', [10.5121299997, -85.3670037724], 'right', "Here's a short blob of text describing what's going on.  One two three four five six seven eight!", '100_0546.JPG', null], 
+  ['Hilight 9', [10.5135653168, -85.36488357], 'right', "Here's a short blob of text describing what's going on.  One two three four five six seven eight!", '100_0546.JPG', null], 
+  
   ]
