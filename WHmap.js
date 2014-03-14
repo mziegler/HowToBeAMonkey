@@ -60,7 +60,7 @@ var behaviorLayer = new L.MarkerClusterGroup({
   spiderfyOnMaxZoom: false,
   iconCreateFunction: clusterIcon,
   showCoverageOnHover: false,
-  maxClusterRadius: 150,
+  maxClusterRadius: 80,
   });
 
 
