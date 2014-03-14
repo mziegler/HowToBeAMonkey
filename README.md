@@ -14,7 +14,7 @@ The lines marked with stars *** are tasks with which I could use help from monke
 
 
 Content (things to do now)
-==========================
+--------------------------
 
 - *** create about 10 'hilights' of WH's day, with pictures, videos, and text, that you see first when you're zoomed all the way out of the map.
 
@@ -28,8 +28,9 @@ Content (things to do now)
 
 
 
-Content (things to do later, once the design is a little bit further along.  We need to make some design decisions about where these things will fit, and we might just decide not to do some of them.)
-================================
+Content (things to do later, once the design is a little bit further along) 
+-------------------------
+We need to make some design decisions about where these things will fit, and we might just decide not to do some of them.
 
 - maybe create about 10 more sub-hilights, that you see when you zoom in one level
 
@@ -42,7 +43,7 @@ Content (things to do later, once the design is a little bit further along.  We 
 
 
 Interface
-=========
+---------
 
 - play around with colors, spacing and typography to make the map pretty to look at, enforce the visual hierarchy
 
@@ -59,6 +60,7 @@ Interface
 
 
 Technical
+---------
 
 - figure out how to make Psion layer render quicker (pre-render when the map loads, and then show the already-rendered layer when the user zooms in?)
 
