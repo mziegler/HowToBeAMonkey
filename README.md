@@ -51,6 +51,10 @@ Interface
 
 - add some code to play videos and view images full-screen
 
+- add a title and some helpful instructions to the interface (eg. "zoom into see more detail!")  maybe a splash screen?
+ 
+- make the interface touch-screen friendly
+
 - figure out what to do when the user zooms in too far and we run out of satelite images (find a higher-resolution tile provider?  don't let the user zoom in that far?  replace the satelite images with a nice background color at high zoom?)
 
 - maybe come up with a better way to minimize overlap between the lables for the Psion data?
