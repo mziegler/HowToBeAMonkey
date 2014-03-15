@@ -4,12 +4,13 @@ var map = L.map('map').setView([10.5115, -85.367], 16);
 // base map (satelite images)
 L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
   attribution: 'Satelite images courtesy of Google',
-  maxZoom: 22
+  maxZoom: 22,
+  //opacity: 0.5,
 }).addTo(map);
 
 
 // add GPS track to map     
-var polyline = L.polyline(WHtrack, {color: 'blue'}).addTo(map);
+var polyline = L.polyline(WHtrack, {color: 'white'}).addTo(map);
 
 
 // alternates between "leaflet-label-left" and "leaflet-label-right"

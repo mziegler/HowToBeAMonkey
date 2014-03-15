@@ -9,10 +9,10 @@
 	color: #000;
 	background: #EEE;
 	/*background-clip: padding-box;*/
-	border-color: #777;
-	border-radius: 5px;
+	border-color: #999;
+	border-radius: 3px;
 	border-style: solid;
-	border-width: 2px;
+	border-width: 1px;
 	color: #111;
 	display: block;
 	font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -26,6 +26,25 @@
 	z-index: 6;
 	white-space: nowrap;
 	margin: 0;
+	
+	-webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+
+}
+
+.leaflet-label-left div.innerlabel {
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+
+
+
 }
 
 .leaflet-label.leaflet-clickable div.innerlabel {
@@ -92,9 +111,10 @@
 }
 
 .hilight-label img.illustration {
-  width: 90%;
+  width: 100%;
   margin: auto;
   display: block;
+  margin: 0;
 }
 
 .hilight-label img.thumbnail {
