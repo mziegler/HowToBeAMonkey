@@ -102,7 +102,7 @@ for (var i = 0; i < hilights.length; i++)
     thumbstring = '<img class="thumbnail" src="pictures/' + hilight[4] + '" alt="' + hilight[0] + '" />';
   }
   
-  var markerHTML = '<div class="innerlabel"><span>' + thumbstring + hilight[0] + '</span><div class="hContent">' + mediastring + hilight[3] + '</span></div>';
+  var markerHTML = '<div class="innerlabel"><span class="hLabel">' + thumbstring + hilight[0] + '</span><div class="hContent">' + mediastring + hilight[3] + '</span></div>';
   
   hilightLayer.addLayer(new L.marker(
     hilight[1],
