@@ -148,9 +148,17 @@ div#mediaoverlay {
 
 div#mediaoverlay img {
   max-width: 90%;
-  max-height: 90%;
+  max-height: 80%;
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 2%;
+}
+
+div#mediaoverlay div {
+  color: white;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5px;
 }
