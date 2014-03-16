@@ -141,16 +141,24 @@ div#mediaoverlay {
   height: 100%;
   z-index: 99999999999999999;
   background: black;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.7);
   overflow: auto;
   cursor: pointer;
 }
 
 div#mediaoverlay img {
   max-width: 90%;
-  max-height: 90%;
+  max-height: 80%;
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 2%;
+}
+
+div#mediaoverlay div {
+  color: white;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5px;
 }

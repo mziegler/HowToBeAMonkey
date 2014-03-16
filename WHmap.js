@@ -147,8 +147,9 @@ function mediaOverlay() {
   var i = parseInt($(this).attr('i'));
   
   var mediastring = '<img src="pictures/' + hilights[i][4] +'" />';
+  var caption = '<div>' + hilights[i][3] + ' <u>close</u></div>';
   
-  $('div#mediaoverlay').html(mediastring).fadeIn();  
+  $('div#mediaoverlay').html(mediastring + caption).fadeIn();  
 }
 $('div#mediaoverlay, div#mediaoverlay img').click(function(){
   $('div#mediaoverlay').fadeOut();
