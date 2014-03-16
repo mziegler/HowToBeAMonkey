@@ -98,7 +98,7 @@ for (var i = 0; i < hilights.length; i++)
   var thumbstring = ''
   if (hilight[4]) // if there's an image
   {
-    mediastring = '<img class="illustration" src="pictures/' + hilight[4] + '" alt="' + hilight[0] + '" />';
+    mediastring = '<img class="illustration" i="' + i + '" src="pictures/' + hilight[4] + '" alt="' + hilight[0] + '" />';
     thumbstring = '<img class="thumbnail" src="pictures/' + hilight[4] + '" alt="' + hilight[0] + '" />';
   }
   
@@ -143,6 +143,18 @@ zoomHandle()
 map.on('zoomend', zoomHandle);
 
 
+function mediaOverlay() {
+  var i = parseInt($(this).attr('i'));
+  
+  var mediastring = '<img src="pictures/' + hilights[i][4] +'" />';
+  
+  $('div#mediaoverlay').html(mediastring).fadeIn();  
+}
+$('div#mediaoverlay, div#mediaoverlay img').click(function(){
+  $('div#mediaoverlay').fadeOut();
+});
+
+
 // Event listners for markers.  This is ugly.  Should use jQuery's 'on'
 // or 'delegate' instead, but mouseover events don't propagate up past
 // div.leaflet-marker-pane for some reasons unknown to me.  This needs to
@@ -178,8 +190,13 @@ function bindMouseListners()
     $(this).find('img.thumbnail').show();
     $(this).removeClass('expanded');
   }); 
+
+  $('img.illustration').click(mediaOverlay);
 }
 
 bindMouseListners();
 map.on('moveend', bindMouseListners);
+
+
+
 
