@@ -1,10 +1,10 @@
-var map = L.map('map').setView([10.5115, -85.367], 16);
+var map = L.map('map', {maxZoom:26}).setView([10.5115, -85.367], 16);
 
 
 // base map (satelite images)
 L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
   attribution: 'Satelite images courtesy of Google',
-  maxZoom: 22,
+  maxZoom: 19,
   //opacity: 0.5,
 }).addTo(map);
 
@@ -37,7 +37,7 @@ function clusterIcon(cluster) {
   
   var html = '<div class="innerlabel"><ul>';
   
-  for (var i=0; i<childrenToShow; i++)
+  for (var i=0; i<childrenToShow && i<children.length; i++)
   {
     var markerHtml = children[i].options.icon.options.html;
     html = html + '<li>' + markerHtml.substring(24, markerHtml.length-6) + '</li>';
@@ -66,6 +66,7 @@ var behaviorLayer = new L.MarkerClusterGroup({
   iconCreateFunction: clusterIcon,
   showCoverageOnHover: false,
   maxClusterRadius: 80,
+  zoomToBoundsOnClick: false,
   });
 
 
@@ -132,7 +133,10 @@ for (var i = 0; i < hilights.length; i++)
 
 // add or remove layers to the map based on the zoom level
 function zoomHandle() {
-  //alert(map.getZoom());
+
+  lowerMarkers();
+  shrinkHilights();
+
   if (map.getZoom() > 17)
   {
     map.removeLayer(hilightLayer);
