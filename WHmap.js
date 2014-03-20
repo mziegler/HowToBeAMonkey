@@ -1,6 +1,6 @@
 var map = L.map('map').setView([10.5115, -85.367], 16);
 
-      
+
 // base map (satelite images)
 L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
   attribution: 'Satelite images courtesy of Google',
@@ -12,6 +12,9 @@ L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
 // add GPS track to map     
 var polyline = L.polyline(WHtrack, {color: 'white'}).addTo(map);
 
+
+///////////////////////////////////////////////////////////////////////////////
+// OBSERVATIONAL DATA LAYER
 
 // alternates between "leaflet-label-left" and "leaflet-label-right"
 // on each successive call
@@ -26,6 +29,7 @@ function alternateClass()
 }
 
 
+// factory for cluster markers
 function clusterIcon(cluster) {
   var childrenToShow = 3;
 
@@ -65,7 +69,7 @@ var behaviorLayer = new L.MarkerClusterGroup({
   });
 
 
-// add behavior markers to map
+// add behavior markers to cluster layer
 for (var i = 0; i < behaviorPoints.length; i++)
 {
   var row = behaviorPoints[i];
@@ -86,6 +90,10 @@ for (var i = 0; i < behaviorPoints.length; i++)
 
 
 //map.addLayer(behaviorLayer);
+
+
+///////////////////////////////////////////////////////////////////////////////
+// HILIGHTS LAYER
 
 var hilightLayer = L.layerGroup();
 
@@ -119,6 +127,9 @@ for (var i = 0; i < hilights.length; i++)
 //hilightLayer.addTo(map);
 
 
+///////////////////////////////////////////////////////////////////////////////
+// MOUSE EVENT HANDLERS
+
 // add or remove layers to the map based on the zoom level
 function zoomHandle() {
   //alert(map.getZoom());
@@ -139,10 +150,43 @@ function zoomHandle() {
     map.addLayer(hilightLayer);
   }
 }
-zoomHandle()
+zoomHandle();
 map.on('zoomend', zoomHandle);
 
+// raise a marker to the top when clicked or moused over
+function raiseMarker() {
+  lowerMarkers();
+  $(this).addClass('top');
+  if (!$(this).attr('origZ'))
+    {$(this).attr('origZ', $(this).css('z-index'));}
+  $(this).css('z-index', 99999);
+}
 
+// lower all markers on mouseout or when something else is clicked
+function lowerMarkers() {
+  $('div.leaflet-label.top').each(function() {
+    if ($(this).attr('origZ'))
+      {$(this).css('z-index', $(this).attr('origZ'));}
+	  $(this).removeClass('top');
+  });
+}
+
+// expand a hilight box when it's hovered or clicked/tapped
+function expandHilight() {
+  shrinkHilights();
+  $(this).addClass('expanded');
+  $(this).find('div.hContent').show();
+  $(this).find('img.thumbnail').hide();
+}
+
+// shrink hilights on mouseout or when something else on the map is clicked
+function shrinkHilights() {
+  $('div.hContent').hide();
+  $('img.thumbnail').show();
+  $('div.hilight-label.expanded').removeClass('expanded');
+}
+
+// fullscreen when the picture in a hilight gets clicked
 function mediaOverlay() {
   var i = parseInt($(this).attr('i'));
   
@@ -162,42 +206,13 @@ $('div#mediaoverlay, div#mediaoverlay img').click(function(){
 // be called every time the map is re-drawn.
 function bindMouseListners()
 {
-  // raise marker on mouseover
-  $('div.leaflet-label').mouseenter(function() {
-    if (!$(this).attr('origZ'))
-      {$(this).attr('origZ', $(this).css('z-index'));}
-    $(this).css('z-index', 99999);
-  });
-  
-  // lower marker on mouseout
-  $('div.leaflet-label').mouseleave(function() {
-    if ($(this).attr('origZ'))
-      {$(this).css('z-index', $(this).attr('origZ'));}
-  });
-  
-  // expand hilight markers on mouseover
-  $('div.hilight-label').mouseenter(function() {
-    $('div.hContent').hide();
-    $('img.thumbnail').show();
-    $('div.hilight-label.expanded').removeClass('expanded');
-    $(this).addClass('expanded');
-    $(this).find('div.hContent').show();
-    $(this).find('img.thumbnail').hide();
-  });
-  
-  // shrink hilight markers on mouseout
-  $('div.hilight-label').mouseleave(function() {
-    $(this).find('div.hContent').hide();
-    $(this).find('img.thumbnail').show();
-    $(this).removeClass('expanded');
-  }); 
-
+  $('div.leaflet-label').mouseenter(raiseMarker).click(raiseMarker);
+  $('div.leaflet-label').mouseleave(lowerMarkers);
+  $('.leaflet-overlay-pane').click(lowerMarkers).click(shrinkHilights);
+  $('div.hilight-label').mouseenter(expandHilight).click(expandHilight);
+  $('div.hilight-label').mouseleave(shrinkHilights);
   $('img.illustration').click(mediaOverlay);
 }
 
 bindMouseListners();
 map.on('moveend', bindMouseListners);
-
-
-
-
