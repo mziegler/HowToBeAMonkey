@@ -18,7 +18,7 @@ Content (things to do now)
 
 - **create about 10 'hilights' of WH's day, with pictures, videos, and text, that you see first when you're zoomed all the way out of the map.**
 
-- **get Irene's psion data and integrate it with Susan's psion data**
+- **~~get Irene's psion data~~ and integrate it with Susan's psion data**
 
 - 'translate' Irene's psion data into easily-understandable English
 
