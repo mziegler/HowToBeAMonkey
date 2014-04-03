@@ -129,7 +129,27 @@ for (var i = 0; i < hilights.length; i++)
 
 
 ///////////////////////////////////////////////////////////////////////////////
-// MOUSE EVENT HANDLERS
+// PICTURE AND VIDEO OVERLAY
+
+// fullscreen when the picture in a hilight gets clicked
+function mediaOverlay() {
+  var i = parseInt($(this).attr('i'));
+  
+  var mediastring = '<img src="pictures/' + hilights[i][4] +'" />';
+  var caption = hilights[i][3];
+  
+  $('div#mediacontainer').html(mediastring);
+  $('div#mediacaption').html(caption);
+  $('div#mediabg').fadeIn();  
+}
+$('div#mediabg, div#mediacontainer img').click(function(){
+  $('div#mediabg').fadeOut();
+});
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// MAP MOUSE EVENT HANDLERS
 
 // add or remove layers to the map based on the zoom level
 function zoomHandle() {
@@ -189,19 +209,6 @@ function shrinkHilights() {
   $('img.thumbnail').show();
   $('div.hilight-label.expanded').removeClass('expanded');
 }
-
-// fullscreen when the picture in a hilight gets clicked
-function mediaOverlay() {
-  var i = parseInt($(this).attr('i'));
-  
-  var mediastring = '<img src="pictures/' + hilights[i][4] +'" />';
-  var caption = '<div>' + hilights[i][3] + ' <u>close</u></div>';
-  
-  $('div#mediaoverlay').html(mediastring + caption).fadeIn();  
-}
-$('div#mediaoverlay, div#mediaoverlay img').click(function(){
-  $('div#mediaoverlay').fadeOut();
-});
 
 
 // Event listners for markers.  This is ugly.  Should use jQuery's 'on'
