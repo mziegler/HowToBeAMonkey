@@ -144,6 +144,11 @@ track = [
 [10.5152583774, -85.3635742329],
 [10.5152894743, -85.3634810261],
 [10.5143646989, -85.3639992792],
+[10.5143646989, -85.3639992792],
+[10.5143646989, -85.3639992792],
+[10.5143646989, -85.3639992792],
+[10.5143646989, -85.3639992792],
+[10.5143646989, -85.3639992792],
 ]
 
 # time of first track time
@@ -153,7 +158,7 @@ firsttime = datetime(2014,1,24,5,36,14)
 intervalseconds = 5 * 60
 
 # filename of input file with behavior data
-infile = 'raw data/behavior.nocoords.csv'
+infile = 'behavior.nocoords.csv'
 
 outfile = 'datapoints.js'
 
