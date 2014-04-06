@@ -140,8 +140,8 @@ function mediaOverlay() {
   if (hilight[5])
   {
     // if there's a video
-    mediastring = '<iframe width="420" height="315" src="' 
-      + hilight[5] + '" frameborder="0" allowfullscreen></iframe>';
+    mediastring = '<iframe width="420" height="375" src="' 
+      + hilight[5] + '&autoplay=1" frameborder="0" allowfullscreen></iframe>';
   }
   else { mediastring = '<img src="pictures/' + hilight[4] +'" />'; }
   
