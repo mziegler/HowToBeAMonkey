@@ -143,7 +143,7 @@ var WHtrack = [
 ]
 
 var hilights = [
-  ['Hilight 5', [10.5093779694, -85.3682250995], 'left', "Here's a short blob of text describing what's going on.  One two three four five six seven eight!", '100_0546.JPG', null],
+  ['Hilight 5', [10.5093779694, -85.3682250995], 'left', "Here's a short blob of text describing what's going on.  One two three four five six seven eight!", '100_0546.JPG', 'http://www.youtube.com/embed/dnPNr9yquuc?rel=0'],
   ['Hilight 3', [10.5122139025, -85.3715608455], 'left', "Here's a short blob of text describing what's going on.  One two three four five six seven eight!", '100_0546.JPG', null], 
   ['Hilight 2', [10.5136214755, -85.3707446158], 'left', "Here's a short blob of text describing what's going on.  One two three four five six seven eight!", '100_0546.JPG', null], 
   ['Hilight 10', [10.5148474965, -85.3639875446], 'right', "Here's a short blob of text describing what's going on.  One two three four five six seven eight!", '100_0546.JPG', null], 

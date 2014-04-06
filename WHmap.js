@@ -134,9 +134,19 @@ for (var i = 0; i < hilights.length; i++)
 // fullscreen when the picture in a hilight gets clicked
 function mediaOverlay() {
   var i = parseInt($(this).attr('i'));
+  var hilight = hilights[i];
+  var mediastring;
   
-  var mediastring = '<img src="pictures/' + hilights[i][4] +'" />';
-  var caption = hilights[i][3];
+  if (hilight[5])
+  {
+    // if there's a video
+    mediastring = '<iframe width="420" height="315" src="' 
+      + hilight[5] + '" frameborder="0" allowfullscreen></iframe>';
+  }
+  else { mediastring = '<img src="pictures/' + hilight[4] +'" />'; }
+  
+  
+  var caption = hilight[3];
   
   $('div#mediacontainer').html(mediastring);
   $('div#mediacaption').html(caption);
@@ -144,6 +154,7 @@ function mediaOverlay() {
 }
 $('div#mediabg, div#mediacontainer img').click(function(){
   $('div#mediabg').fadeOut();
+  $('div#mediacontainer').empty();
 });
 
 
