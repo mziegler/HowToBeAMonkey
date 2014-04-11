@@ -32,7 +32,7 @@ body {
           
 }
 
-div.hilight-label div.innerlabel, div.point-label innerlabel {
+div.hilight-label div.innerlabel {
   background: #EEE;
 	/*background-clip: padding-box;*/
 	border-color: #999;
@@ -42,7 +42,7 @@ div.hilight-label div.innerlabel, div.point-label innerlabel {
   white-space: nowrap;
 }
 
-div.cluster-label, div.point-label {
+div.cluster-label {
   width: 400px;
   display: block;
 }
@@ -212,7 +212,7 @@ a#closemedia {
   border-radius: 3px;
 }
   
-div#mediacaption, a#closemedia, div.hilight-label .innerlabel, div.clusterpoint, div.point-label .innerlabel {
+div#mediacaption, a#closemedia, div.hilight-label .innerlabel, div.clusterpoint {
   -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
   box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
@@ -228,7 +228,7 @@ div#mediacaption, a#closemedia, div.hilight-label .innerlabel, div.clusterpoint,
 }}
 
 
-div.cluster-label div, div.point-label div.innerlabel {
+div.cluster-label div {
   display: block;
   
 }

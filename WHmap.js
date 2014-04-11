@@ -44,8 +44,11 @@ function clusterIcon(cluster) {
   
   for (var i=0; i<childrenToShow && i<children.length; i++)
   {
-    var markerHtml = children[startIndex + i].options.icon.options.html;
-    html = html + markerHtml.substring(40, markerHtml.length-6);
+    //var markerHtml = children[startIndex + i].options.icon.options.html;
+    //html = html + markerHtml.substring(40, markerHtml.length-6);
+    
+    var ops = children[startIndex + i].options;
+    html = html + '<div class="clusterpoint r' + ops.rank + '">' + ops.text + '</div>';
   }
   
   //if (children.length > childrenToShow)
@@ -69,6 +72,7 @@ var behaviorLayer = new L.MarkerClusterGroup({
   showCoverageOnHover: false,
   maxClusterRadius: 150,
   zoomToBoundsOnClick: false,
+  singleMarkerMode: true,
   });
 
 
@@ -82,11 +86,9 @@ for (var i = 0; i < behaviorPoints.length; i++)
       row[0],
       row[1]
     ], {
-      icon: L.divIcon({
-        className: 'leaflet-label point-label ' + alternateClass(),
-        html: '<div class="innerlabel"><b>' + row[2] + '</b> <div class="clusterpoint r' + row[4] + '">' + row[3] + '</div></div>',
-        iconSize: ['auto', 'auto']
-      }),
+        time: row[2],
+        rank: row[4],
+        text: row[3],
     })
   );
 }
