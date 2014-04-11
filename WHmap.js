@@ -40,19 +40,17 @@ function clusterIcon(cluster) {
   var startIndex = (childrenToShow >= children.length) ? 0 
     : Math.floor((Math.random()*(children.length - childrenToShow)));
   
-  var html = '<div class="innerlabel">';
+  var html = '<div class="innerlabel"><div class="clusterpoint timestamp">' 
+    + children[startIndex].options.time + '</div>';
   
   for (var i=0; i<childrenToShow && i<children.length; i++)
-  {
-    //var markerHtml = children[startIndex + i].options.icon.options.html;
-    //html = html + markerHtml.substring(40, markerHtml.length-6);
-    
+  {    
     var ops = children[startIndex + i].options;
     html = html + '<div class="clusterpoint r' + ops.rank + '">' + ops.text + '</div>';
   }
   
-  //if (children.length > childrenToShow)
-  //  html = html + ' and ' + (children.length - childrenToShow) + ' more.';
+  if (children.length > childrenToShow)
+    html = html + '<div class="clusterpoint more"> + ' + (children.length - childrenToShow) + ' more</div>';
   
   html = html + '</div>';
   
@@ -71,7 +69,7 @@ var behaviorLayer = new L.MarkerClusterGroup({
   iconCreateFunction: clusterIcon,
   showCoverageOnHover: false,
   maxClusterRadius: 150,
-  zoomToBoundsOnClick: false,
+  zoomToBoundsOnClick: true,
   singleMarkerMode: true,
   });
 
