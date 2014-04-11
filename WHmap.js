@@ -37,15 +37,13 @@ function clusterIcon(cluster) {
 
   var children = cluster.getAllChildMarkers();
   
-  var html = '<div class="innerlabel"><ul>';
+  var html = '<div class="innerlabel">';
   
   for (var i=0; i<childrenToShow && i<children.length; i++)
   {
     var markerHtml = children[i].options.icon.options.html;
-    html = html + '<li>' + markerHtml.substring(40, markerHtml.length-6) + '</li>';
+    html = html + markerHtml.substring(40, markerHtml.length-6);
   }
-  
-  html = html + '</ul>';
   
   //if (children.length > childrenToShow)
   //  html = html + ' and ' + (children.length - childrenToShow) + ' more.';
