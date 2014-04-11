@@ -10,13 +10,7 @@ body {
 
 /* labels for behaviors */
 .leaflet-label div.innerlabel {
-	color: #000;
-	background: #EEE;
-	/*background-clip: padding-box;*/
-	border-color: #999;
-	border-radius: 3px;
-	border-style: solid;
-	border-width: 1px;
+	
 	color: #111;
 	display: block;
 	font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -28,7 +22,6 @@ body {
 	        user-select: none;
 	pointer-events: none;
 	z-index: 6;
-	/*white-space: nowrap*/
 	margin: 0;
   
   -webkit-transform: translate(0%, -50%); /* Chrome, Safari, Opera */
@@ -37,7 +30,24 @@ body {
        -o-transform: translate(0%, -50%); 
           transform: translate(0%, -50%);
           
-   width: 400px;
+}
+
+div.hilight-label div.innerlabel, div.point-label innerlabel {
+  background: #EEE;
+	/*background-clip: padding-box;*/
+	border-color: #999;
+	border-radius: 3px;
+	border-style: solid;
+	border-width: 1px;
+  white-space: nowrap;
+}
+
+div.cluster-label, div.point-label {
+  width: 400px;
+}
+
+div.cluster-label.leaflet-label-left {
+  text-align: right;
 }
 
 .leaflet-label.leaflet-clickable div.innerlabel {
@@ -192,11 +202,12 @@ a#closemedia {
   border-radius: 3px;
 }
   
-div#mediacaption, a#closemedia, div.innerlabel {
+div#mediacaption, a#closemedia, div.hilight-label .innerlabel, div.cluster-label span, div.point-label .innerlabel {
   -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
   box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
 
+  background: #EEE;
   background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */

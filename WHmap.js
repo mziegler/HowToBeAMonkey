@@ -33,7 +33,7 @@ function alternateClass()
 
 // factory for cluster markers
 function clusterIcon(cluster) {
-  var childrenToShow = 10;
+  var childrenToShow = 8;
 
   var children = cluster.getAllChildMarkers();
   
@@ -82,7 +82,7 @@ for (var i = 0; i < behaviorPoints.length; i++)
       row[1]
     ], {
       icon: L.divIcon({
-        className: 'leaflet-label ' + alternateClass(),
+        className: 'leaflet-label point-label ' + alternateClass(),
         html: '<div class="innerlabel"><b>' + row[2] + '</b> <span class="r' + row[4] + '">' + row[3] + '</span></div>',
         iconSize: ['auto', 'auto']
       }),
