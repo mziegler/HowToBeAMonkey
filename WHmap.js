@@ -83,7 +83,7 @@ for (var i = 0; i < behaviorPoints.length; i++)
     ], {
       icon: L.divIcon({
         className: 'leaflet-label point-label ' + alternateClass(),
-        html: '<div class="innerlabel"><b>' + row[2] + '</b> <span class="r' + row[4] + '">' + row[3] + '</span></div>',
+        html: '<div class="innerlabel"><b>' + row[2] + '</b> <div class="clusterpoint r' + row[4] + '">' + row[3] + '</div></div>',
         iconSize: ['auto', 'auto']
       }),
     })

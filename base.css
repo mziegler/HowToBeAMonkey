@@ -44,6 +44,13 @@ div.hilight-label div.innerlabel, div.point-label innerlabel {
 
 div.cluster-label, div.point-label {
   width: 400px;
+  display: block;
+  border-left: solid 5px black;
+}
+
+div.clusterpoint, div.point-label innerlabel {
+  margin: 2px;
+  padding: 2px 5px;
 }
 
 div.cluster-label.leaflet-label-left {
@@ -202,7 +209,7 @@ a#closemedia {
   border-radius: 3px;
 }
   
-div#mediacaption, a#closemedia, div.hilight-label .innerlabel, div.cluster-label span, div.point-label .innerlabel {
+div#mediacaption, a#closemedia, div.hilight-label .innerlabel, div.clusterpoint, div.point-label .innerlabel {
   -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
   box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
@@ -217,6 +224,11 @@ div#mediacaption, a#closemedia, div.hilight-label .innerlabel, div.cluster-label
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
 }}
 
+
+div.cluster-label div, div.point-label div.innerlabel {
+  display: block;
+  
+}
 
 .r1, .r2 {
   font-size: 75%;
