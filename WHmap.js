@@ -13,6 +13,8 @@ L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
 var polyline = L.polyline(WHtrack, {color: 'white'}).addTo(map);
 
 
+
+
 ///////////////////////////////////////////////////////////////////////////////
 // OBSERVATIONAL DATA LAYER
 
@@ -31,7 +33,7 @@ function alternateClass()
 
 // factory for cluster markers
 function clusterIcon(cluster) {
-  var childrenToShow = 3;
+  var childrenToShow = 10;
 
   var children = cluster.getAllChildMarkers();
   
@@ -40,14 +42,13 @@ function clusterIcon(cluster) {
   for (var i=0; i<childrenToShow && i<children.length; i++)
   {
     var markerHtml = children[i].options.icon.options.html;
-    html = html + '<li>' + markerHtml.substring(24, markerHtml.length-6) + '</li>';
-    
+    html = html + '<li>' + markerHtml.substring(40, markerHtml.length-6) + '</li>';
   }
   
   html = html + '</ul>';
   
-  if (children.length > childrenToShow)
-    html = html + ' and ' + (children.length - childrenToShow) + ' more.';
+  //if (children.length > childrenToShow)
+  //  html = html + ' and ' + (children.length - childrenToShow) + ' more.';
   
   html = html + '</div>';
   
@@ -65,7 +66,7 @@ var behaviorLayer = new L.MarkerClusterGroup({
   spiderfyOnMaxZoom: false,
   iconCreateFunction: clusterIcon,
   showCoverageOnHover: false,
-  maxClusterRadius: 80,
+  maxClusterRadius: 150,
   zoomToBoundsOnClick: false,
   });
 
@@ -82,7 +83,7 @@ for (var i = 0; i < behaviorPoints.length; i++)
     ], {
       icon: L.divIcon({
         className: 'leaflet-label ' + alternateClass(),
-        html: '<div class="innerlabel"><b>' + row[2] + '</b> ' + row[3] + '</div>',
+        html: '<div class="innerlabel"><b>' + row[2] + '</b> <span class="r' + row[4] + '">' + row[3] + '</span></div>',
         iconSize: ['auto', 'auto']
       }),
     })
@@ -91,6 +92,8 @@ for (var i = 0; i < behaviorPoints.length; i++)
 
 
 //map.addLayer(behaviorLayer);
+
+
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -128,6 +131,8 @@ for (var i = 0; i < hilights.length; i++)
 //hilightLayer.addTo(map);
 
 
+
+
 ///////////////////////////////////////////////////////////////////////////////
 // PICTURE AND VIDEO OVERLAY
 
@@ -156,6 +161,7 @@ $('div#mediabg, div#mediacontainer img').click(function(){
   $('div#mediabg').fadeOut();
   $('div#mediacontainer').empty();
 });
+
 
 
 

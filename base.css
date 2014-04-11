@@ -1,5 +1,5 @@
 body {
-	font: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #map { 
@@ -28,8 +28,16 @@ body {
 	        user-select: none;
 	pointer-events: none;
 	z-index: 6;
-	white-space: nowrap;
+	/*white-space: nowrap*/
 	margin: 0;
+  
+  -webkit-transform: translate(0%, -50%); /* Chrome, Safari, Opera */
+     -moz-transform: translate(0%, -50%);
+      -ms-transform: translate(0%, -50%); /* IE 9 */
+       -o-transform: translate(0%, -50%); 
+          transform: translate(0%, -50%);
+          
+   width: 400px;
 }
 
 .leaflet-label.leaflet-clickable div.innerlabel {
@@ -43,7 +51,8 @@ body {
 	border-bottom: 6px solid transparent;
 	content: none;
 	position: absolute;
-	top: 5px;
+	top: 50%;
+  margin-top: -6px;
 }
 
 .leaflet-label div.innerlabel:before {
@@ -69,11 +78,19 @@ body {
 }
 
 .leaflet-label-left div.innerlabel {
-  -webkit-transform: translate(-100%, 0px); /* Chrome, Safari, Opera */
-     -moz-transform: translate(-100%, 0px);
-      -ms-transform: translate(-100%, 0px); /* IE 9 */
-       -o-transform: translate(-100%, 0px); 
-          transform: translate(-100%, 0px);
+  -webkit-transform: translate(-100%, -50%); /* Chrome, Safari, Opera */
+     -moz-transform: translate(-100%, -50%);
+      -ms-transform: translate(-100%, -50%); /* IE 9 */
+       -o-transform: translate(-100%, -50%); 
+          transform: translate(-100%, -50%);
+}
+
+.leaflet-label-left div.innerlabel {
+  -webkit-transform: translate(-100%, -50%); /* Chrome, Safari, Opera */
+     -moz-transform: translate(-100%, -50%);
+      -ms-transform: translate(-100%, -50%); /* IE 9 */
+       -o-transform: translate(-100%, -50%); 
+          transform: translate(-100%, -50%);
 }
 
 .leaflet-label.hilight-label.expanded div.innerlabel {
@@ -188,3 +205,37 @@ div#mediacaption, a#closemedia, div.innerlabel {
   background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
 }}
+
+
+.r1, .r2 {
+  font-size: 75%;
+  font-weight: 600;
+  line-height: 110%;
+}
+
+.r3 {
+  font-size: 80%;
+  font-weight: 200;
+  line-height: 110%;
+}
+.r4, .r5 {
+  font-size: 90%;
+  font-weight: 300;
+  line-size: 110%;
+}
+.r6 {
+  font-size: 100%;
+  font-weight: 400;
+}
+.r7 {
+  font-size: 110%;
+  font-weight: 500;
+}
+.r8 {
+  font-size: 150%;
+  font-weight: 600;
+}
+.r9 {
+  font-size: 200%;
+  font-weight: 700;
+}
