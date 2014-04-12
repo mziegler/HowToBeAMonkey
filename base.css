@@ -270,12 +270,32 @@ BEHAVIOR POINT "TAG CLOUD"
   font-size: 200%;
   font-weight: 700;
 }
-.timestamp {
+.clusterpoint.timestamp {
   font-weight:bold;
+  border-bottom: 4px solid #2e3436;
 }
 .more {
   font-size: 90%;
 }
+
+
+.clusterpoint.cF, .clusterpoint.cI, .clusterpoint.cM, .clusterpoint.cS { /*friendly, infant, grooming, sex*/
+  border-bottom: solid 5px #729FCF; /* blue*/
+}
+.clusterpoint.cP { /*play*/
+  border-bottom: solid 5px #FCAF3E; /* yellow */
+}
+.clusterpoint.cG, .clusterpoint.cH, .clusterpoint.cE { /*aggression, coalitions, submission*/
+  border-bottom: solid 5px #EF2929; /* red */
+}
+.clusterpoint.cC { /* food */
+  border-bottom: solid 5px #8ae234; /* green */
+}
+.clusterpoint.cA { /* approaches/leaves */
+  border-bottom: solid 4px #ad7fa8; /* purple */
+}
+/*.clusterpoint.cW, .clusterpoint.cL, .clusterpoint.cO, clusterpoint.cV { /* self-care, looking, ovp ivp, vocalizations */
+
 
 
 div#mediacaption, a#closemedia, div.hilight-label .innerlabel, div.clusterpoint {

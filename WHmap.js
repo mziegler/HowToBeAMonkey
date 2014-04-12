@@ -46,7 +46,7 @@ function clusterIcon(cluster) {
   for (var i=0; i<childrenToShow && i<children.length; i++)
   {    
     var ops = children[startIndex + i].options;
-    html = html + '<div class="clusterpoint r' + ops.rank + '">' + ops.text + '</div>';
+    html = html + '<div class="clusterpoint r' + ops.rank + ' c' + ops.category + '">' + ops.text + '</div>';
   }
   
   if (children.length > childrenToShow)
@@ -86,11 +86,14 @@ for (var i = 0; i < behaviorPoints.length; i++)
     ], {
         time: row[2],
         rank: row[4],
+        category: row[5],
         text: row[3],
     })
   );
 }
 
+// free up some memory
+behaviorPoints = [];
 
 //map.addLayer(behaviorLayer);
 
