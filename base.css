@@ -8,9 +8,15 @@ body {
    margin: 0;
 }
 
-/* labels for behaviors */
-.leaflet-label div.innerlabel {
-	
+
+
+
+
+/******************************************************************************
+MAP LABELS
+******************************************************************************/
+
+.leaflet-label div.innerlabel {	
 	color: #111;
 	display: block;
 	font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -32,39 +38,16 @@ body {
           
 }
 
-div.hilight-label div.innerlabel {
-  background: #EEE;
-	/*background-clip: padding-box;*/
-	border-color: #999;
-	border-radius: 3px;
-	border-style: solid;
-	border-width: 1px;
-  white-space: nowrap;
-}
-
-div.cluster-label {
-  width: 400px;
-  display: block;
-}
-
-div.clusterpoint {
-  margin: 2px;
-  padding: 2px 5px;
-  max-width: 400px;
-  display: inline-block;
-  clear: both;
-  border: solid 1px #999;
-  /*border-left: solid 5px #999;*/
-}
-
-div.cluster-label.leaflet-label-left {
-  text-align: right;
-}
-
 .leaflet-label.leaflet-clickable div.innerlabel {
 	cursor: pointer;
 	pointer-events: auto;
 }
+
+
+
+/******************************************************************************
+LABEL ARROWS
+******************************************************************************/
 
 .leaflet-label div.innerlabel:before,
 .leaflet-label div.innerlabel:after {
@@ -98,13 +81,34 @@ div.cluster-label.leaflet-label-left {
 	content: none;
 }
 
-.leaflet-label-left div.innerlabel {
-  -webkit-transform: translate(-100%, -50%); /* Chrome, Safari, Opera */
-     -moz-transform: translate(-100%, -50%);
-      -ms-transform: translate(-100%, -50%); /* IE 9 */
-       -o-transform: translate(-100%, -50%); 
-          transform: translate(-100%, -50%);
+
+
+/******************************************************************************
+CLUSTER LABELS
+******************************************************************************/
+
+div.cluster-label {
+  width: 400px;
+  display: block;
+  text-align: center;
 }
+
+div.clusterpoint {
+  margin: 2px;
+  padding: 2px 5px;
+  max-width: 400px;
+  display: inline-block;
+  clear: both;
+  border: solid 1px #999;
+  /*border-left: solid 5px #999;*/
+  text-align: left;
+}
+
+
+
+/******************************************************************************
+LEFT-LABEL POSITIONING
+******************************************************************************/
 
 .leaflet-label-left div.innerlabel {
   -webkit-transform: translate(-100%, -50%); /* Chrome, Safari, Opera */
@@ -114,25 +118,20 @@ div.cluster-label.leaflet-label-left {
           transform: translate(-100%, -50%);
 }
 
-.leaflet-label.hilight-label.expanded div.innerlabel {
-  -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
-     -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%); /* IE 9 */
-       -o-transform: translate(-50%, -50%); 
-          transform: translate(-50%, -50%);
-          
-  padding-top: 5px;
-}
 
-.cluster-label div.innerlabel ul {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
 
-/*div.hilight-label div.innnerlabel {
-  overflow: auto;
-}*/
+/******************************************************************************
+HILIGHT LABELS
+******************************************************************************/
+
+div.hilight-label div.innerlabel {
+  background: #EEE;
+	border-color: #999;
+	border-radius: 3px;
+	border-style: solid;
+	border-width: 1px;
+  white-space: nowrap;
+}
 
 .hilight-label div.hContent {
   display: none; 
@@ -162,6 +161,22 @@ div.cluster-label.leaflet-label-left {
   font-weight: bold;
   font-size: 120%;
 } 
+
+.leaflet-label.hilight-label.expanded div.innerlabel {
+  -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%); /* IE 9 */
+       -o-transform: translate(-50%, -50%); 
+          transform: translate(-50%, -50%);
+          
+  padding-top: 5px;
+}
+
+
+
+/******************************************************************************
+FULLSCREEN PICTURES AND VIDEO
+******************************************************************************/
 
 div#mediabg {
   position: absolute;
@@ -212,27 +227,16 @@ a#closemedia {
   padding: 0 10px;
   border-radius: 3px;
 }
-  
-div#mediacaption, a#closemedia, div.hilight-label .innerlabel, div.clusterpoint {
-  -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
-  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
-
-  background: #EEE;
-  background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
-}}
 
 
-div.cluster-label div {
+
+/******************************************************************************
+BEHAVIOR POINT "TAG CLOUD"
+******************************************************************************/
+
+/*div.cluster-label div {
   display: block;
-  
-}
+}*/
 
 .r1, .r2 {
   font-size: 75%;
@@ -272,3 +276,19 @@ div.cluster-label div {
 .more {
   font-size: 90%;
 }
+
+
+div#mediacaption, a#closemedia, div.hilight-label .innerlabel, div.clusterpoint {
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+
+  background: #EEE;
+  background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+}}
