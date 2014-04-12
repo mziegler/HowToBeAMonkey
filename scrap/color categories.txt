@@ -1,0 +1,21 @@
+categories
+------------------------
+f friendly
+p play
+g aggression
+e fear + submission
+c foraging 
+c social food? -> foraging
+w self-directed
+m grooming
+s sex
+h coalitions/triadic
+i nursing/infant 
+
+v vocalizations / alarms?
+l looking
+o O+I+OVP+IVP
+
+a approaches + leaves
+x proximities
+y point sample behaviors + goup scans?

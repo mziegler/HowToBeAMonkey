@@ -188,7 +188,7 @@ def loadfile(filename):
   
     for row in reader:
       time = datetime.strptime(row[0], '%m/%d/%Y %H:%M:%S')
-      yield time, row[1], row[2].strip(), int(row[3])
+      yield time, row[1], row[2].strip(), int(row[3]), row[4].strip()
 
 
 if __name__ == '__main__':
@@ -196,7 +196,7 @@ if __name__ == '__main__':
   
   for row in loadfile(infile):
     lat, lon = getpoint(row[0])  
-    points.append((lat, lon, row[1], row[2], row[3]))
+    points.append((lat, lon, row[1], row[2], row[3], row[4]))
     
   with open(outfile, 'w') as outf:
     outf.write(json.dumps(points))
