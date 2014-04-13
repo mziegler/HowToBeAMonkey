@@ -1,5 +1,6 @@
 body {
 	font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
 }
 
 #map { 
@@ -21,7 +22,8 @@ MAP LABELS
 .leaflet-label div.innerlabel {	
 	color: #111;
 	display: block;
-	font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  line-spacing: 140%;
 	padding: 0px 6px;
 	position: absolute;
 	-webkit-user-select: none;
@@ -254,30 +256,36 @@ BEHAVIOR POINT "TAG CLOUD"
 .r4, .r5 {
   font-size: 85%;
   font-weight: 300;
-  line-size: 110%;
+  line-height: 110%;
 }
 .r6 {
   font-size: 100%;
   font-weight: 400;
 }
 .r7 {
-  font-size: 110%;
+  padding: 5px;
+  font-size: 130%;
   font-weight: 500;
 }
 .r8 {
-  font-size: 150%;
+  padding: 8px;
+  font-size: 160%;
   font-weight: 600;
 }
 .r9 {
-  font-size: 200%;
+  padding: 10px;
+  font-size: 220%;
   font-weight: 700;
 }
 .clusterpoint.timestamp {
   font-weight:bold;
   border-bottom: 4px solid #2e3436;
+  font-size: 150%;
+  padding: 5px;
 }
-.more {
-  font-size: 90%;
+.clusterpoint.more {
+  padding: 10px;
+  font-size: 115%;
 }
 
 
@@ -288,10 +296,10 @@ BEHAVIOR POINT "TAG CLOUD"
   border-bottom: solid 5px #FCAF3E; /* yellow */
 }
 .clusterpoint.cG, .clusterpoint.cH, .clusterpoint.cE { /*aggression, coalitions, submission*/
-  border-bottom: solid 5px #EF2929; /* red */
+  border-bottom: solid 5px #cc0000; /*#a40000; /*#EF2929; /* red */
 }
 .clusterpoint.cC { /* food */
-  border-bottom: solid 5px #8ae234; /* green */
+  border-bottom: solid 5px  #73d216;/*#8ae234; /* green */
 }
 .clusterpoint.cA { /* approaches/leaves */
   border-bottom: solid 4px #ad7fa8; /* purple */

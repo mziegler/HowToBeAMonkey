@@ -10,7 +10,7 @@ L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
 
 
 // add GPS track to map     
-var polyline = L.polyline(WHtrack, {color: 'white'}).addTo(map);
+var polyline = L.polyline(WHtrack, {color: 'white', opacity:0.8, weight:8}).addTo(map);
 
 
 
@@ -33,7 +33,7 @@ function alternateClass()
 
 // factory for cluster markers
 function clusterIcon(cluster) {
-  var pointsToShow = 15;
+  var pointsToShow = 12;
 
   var children = cluster.getAllChildMarkers();
   
