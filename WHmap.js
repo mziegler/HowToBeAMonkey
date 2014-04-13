@@ -5,12 +5,12 @@ var map = L.map('map', {maxZoom:26}).setView([10.5115, -85.367], 16);
 L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
   attribution: 'Satelite images courtesy of Google',
   maxZoom: 19,
-  opacity: 0.5,
+  opacity: 0.3,
 }).addTo(map);
 
 
 // add GPS track to map     
-var polyline = L.polyline(WHtrack, {color: 'white', opacity:0.8, weight:8}).addTo(map);
+var track = L.polyline(WHtrack, {color: '#593801', opacity:0.8, weight:5}).addTo(map);
 
 
 
@@ -35,24 +35,24 @@ function alternateClass()
 function clusterIcon(cluster) {
   var pointsToShow = 12;
 
-  var children = cluster.getAllChildMarkers();
+  var points = cluster.getAllChildMarkers();
   
-  var startIndex = (pointsToShow >= children.length) ? 0 
-    : Math.floor((Math.random()*(children.length - pointsToShow)));
+  var startIndex = (pointsToShow >= points.length) ? points.length - 1 
+    : points.length - 1 - Math.floor((Math.random()*(points.length - pointsToShow)));
   
   var html = '<div class="innerlabel"><div class="clusterpoint timestamp">' 
-    + children[startIndex].options.time + '</div>';
+    + points[startIndex].options.time + '</div>';
   
-  for (var i=0; i<pointsToShow && i<children.length; i++)
+  for (var i = 0; i < pointsToShow && i < points.length; i++)
   {    
-    var ops = children[startIndex + i].options;
-    html = html + '<div class="clusterpoint r' + ops.rank + ' c' + ops.category + '">' + ops.text + '</div>';
+    var ops = points[startIndex - i].options;
+    html += '<div class="clusterpoint r' + ops.rank + ' c' + ops.category + '">' + ops.text + '</div>';
   }
   
-  if (children.length > pointsToShow)
-    html = html + '<div class="clusterpoint more"> + ' + (children.length - pointsToShow) + ' more</div>';
+  if (points.length > pointsToShow)
+    html += '<div class="clusterpoint more"> + ' + (points.length - pointsToShow) + ' more</div>';
   
-  html = html + '</div>';
+  html += '</div>';
   
   return L.divIcon({
     className: 'cluster-label leaflet-label ' + alternateClass(),
@@ -93,7 +93,7 @@ for (var i = 0; i < behaviorPoints.length; i++)
 }
 
 // free up some memory
-behaviorPoints = [];
+behaviorPoints = null;
 
 //map.addLayer(behaviorLayer);
 
@@ -178,10 +178,12 @@ function zoomHandle() {
   lowerMarkers();
   shrinkHilights();
 
-  if (map.getZoom() > 17)
+  if (map.getZoom() > 16)
   {
     map.removeLayer(hilightLayer);
     map.addLayer(behaviorLayer);
+    map.removeLayer(track);
+    map.addLayer(track);
   }
  /* else if (map.getZoom() == 17)
   {
@@ -193,6 +195,8 @@ function zoomHandle() {
     map.removeLayer(behaviorLayer);
     //if (!map.hasLayer(hilightLayer))
     map.addLayer(hilightLayer);
+    map.removeLayer(track);
+    map.addLayer(track);
   }
 }
 zoomHandle();

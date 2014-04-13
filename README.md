@@ -18,13 +18,19 @@ Content (things to do now)
 
 - **create about 10 'hilights' of WH's day, with pictures, videos, and text, that you see first when you're zoomed all the way out of the map.**
 
-- **~~get Irene's psion data~~ and integrate it with Susan's psion data**
-
-- 'translate' Irene's psion data into easily-understandable English
+- **write a short biography of WH to put somewhere, and maybe biographies of the other monkeys?**
 
 - **go over psion data 'translations,' to make them as clear, understandable, and consise as possible**
 
-- **rank psion data by interestingness or importance, so we can show the most important data on the map when the user is zoomed out**
+- add in point sample data?  group scans?  comments?  fights?
+
+- ~~get Irene's psion data and integrate it with Susan's psion data~~
+
+- ~~'translate' Irene's psion data into easily-understandable English~~
+
+- ~~rank psion data by interestingness or importance, so we can show the most important data on the map when the user is zoomed out~~
+
+- ~~catagorize the Psion data, (eg foraging, social, self-care, approaches and leaves, point samples) for color coding so the user can switch on and off different kinds of data on the map~~
 
 
 
@@ -36,9 +42,6 @@ We need to make some design decisions about where these things will fit, and we 
 
 - write a couple paragraphs describing the Lomas Barbudal Capuchin Project that will convince people to check out the website and/or donate
 
-- write a short biography of WH to put somewhere, and maybe biographies of the other monkeys?
-
-- catagorize the Psion data, (eg foraging, social, self-care, approaches and leaves, point samples) so the user can switch on and off different kinds of data on the map
 
 
 
@@ -47,19 +50,21 @@ Interface
 
 - play around with colors, spacing and typography to make the map pretty to look at, enforce the visual hierarchy
 
-- show only the most important or interesting psion data when the user is zoomed out, and reveal more detail when the user zooms in
-
-- add some code to play videos ~~and view images full-screen~~ done
-
 - add a title and some helpful instructions to the interface (eg. "zoom into see more detail!")  maybe a splash screen?
- 
+
+- add overlays with some text describing the Lomas Capuchin project, with a donate button, buttons for sharing on twitter/facebook/etc, maybe a short bio of WH
+
+- let the user switch on/off data layers?
+
+- ~~show only the most important or interesting psion data when the user is zoomed out, and reveal more detail when the user zooms in~~
+
+- ~~add some code to play videos and view images full-screen~~ done
+
 - ~~make the interface touch-screen friendly~~
 
 - ~~figure out what to do when the user zooms in too far and we run out of satelite images (find a higher-resolution tile provider?  don't let the user zoom in that far?  replace the satelite images with a nice background color at high zoom?)~~ nice gray background for now
 
-- maybe come up with a better way to minimize overlap between the lables for the Psion data?
-
-- add overlays with some text describing the Lomas Capuchin project, with a donate button, buttons for sharing on twitter/facebook/etc, maybe a short bio of WH
+- ~~maybe come up with a better way to minimize overlap between the lables for the Psion data?~~
 
 
 
@@ -68,10 +73,10 @@ Technical
 
 - figure out how to make Psion layer render quicker (pre-render when the map loads, and then show the already-rendered layer when the user zooms in?)
 
-- ~~fix the bug where the psion data doesn't always get re-clustered when you zoom out, resulting in way too many labels on the map~~ fixed
-
-- ~~fix the annoying CSS problem with the hilight labels~~ fixed
-
 - concatenate and minify javascript files for quicker page load
 
 - come up with a time-efficient way let the user switch on and off different catagories of Psion data (maybe, if we go down this route)
+
+- ~~fix the bug where the psion data doesn't always get re-clustered when you zoom out, resulting in way too many labels on the map~~ fixed
+
+- ~~fix the annoying CSS problem with the hilight labels~~ fixed

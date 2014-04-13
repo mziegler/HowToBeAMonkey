@@ -98,7 +98,7 @@ div.cluster-label {
 }
 
 div.clusterpoint {
-  margin: 2px;
+  margin: 1px;
   padding: 3px 5px;
   max-width: 400px;
   display: inline-block;
@@ -290,28 +290,38 @@ BEHAVIOR POINT "TAG CLOUD"
 
 
 .clusterpoint.cF, .clusterpoint.cI, .clusterpoint.cM, .clusterpoint.cS { /*friendly, infant, grooming, sex*/
-  border-bottom: solid 5px #729FCF; /* blue*/
+  border-bottom: solid 5px #729FCF; /* blue */
+  border-top: solid 5px #729FCF; /* blue*/
+
+}
+.clusterpoint.cM { /*grooming*/
+  border-bottom: solid 5px #FAAAAA; /* pink */
+  border-top: solid 5px #FAAAAA; /* pink */
 }
 .clusterpoint.cP { /*play*/
   border-bottom: solid 5px #FCAF3E; /* yellow */
+  border-top: solid 5px #FCAF3E; /* yellow */
 }
 .clusterpoint.cG, .clusterpoint.cH, .clusterpoint.cE { /*aggression, coalitions, submission*/
   border-bottom: solid 5px #cc0000; /*#a40000; /*#EF2929; /* red */
+  border-top: solid 5px #cc0000; /*#a40000; /*#EF2929; /* red */
 }
 .clusterpoint.cC { /* food */
   border-bottom: solid 5px  #73d216;/*#8ae234; /* green */
+  border-top: solid 5px  #73d216;/*#8ae234; /* green */
 }
 .clusterpoint.cA { /* approaches/leaves */
-  border-bottom: solid 4px #ad7fa8; /* purple */
+  border-bottom: solid 4px /*#75505b*/ #ad7fa8; /* purple */
+  border-top: solid 4px /*#75505b*/ #ad7fa8; /* purple */
 }
 /*.clusterpoint.cW, .clusterpoint.cL, .clusterpoint.cO, clusterpoint.cV { /* self-care, looking, ovp ivp, vocalizations */
 
 
 
 div#mediacaption, a#closemedia, div.hilight-label .innerlabel, div.clusterpoint {
--webkit-box-shadow: 4px 4px 6px 6px rgba(0,0,0,0.75);
--moz-box-shadow: 4px 4px 6px 6px rgba(0,0,0,0.75);
-box-shadow: 4px 4px 6px 6px rgba(0,0,0,0.75);
+-webkit-box-shadow: 4px 4px 6px 6px rgba(211,215,207,0.75);
+-moz-box-shadow: 4px 4px 6px 6px rgba(211,215,207,0.75);
+box-shadow: 4px 4px 6px 6px rgba(211,215,207,0.75);
 
   background: #EEE;
   background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
