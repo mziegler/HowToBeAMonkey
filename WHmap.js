@@ -1,5 +1,5 @@
 var map = L.map('map', {maxZoom:26}).setView([10.5115, -85.367], 16);
-
+L.control.scale().addTo(map);
 
 // base map (satelite images)
 L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
