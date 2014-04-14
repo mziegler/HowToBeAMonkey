@@ -3,16 +3,17 @@ body {
   margin: 0;
 }
 
-#map { 
+div#map { 
    height: 100%; 
    width: 100%;
    margin: 0;
+   background: #EBE8E4;
 }
 
-.track {
-  z-index: 999999999999999999999999999;
+div.leaflet-overlay-pane {
+  z-index: 1000;
+  pointer-events: none;
 }
-
 
 
 /******************************************************************************
@@ -279,7 +280,7 @@ BEHAVIOR POINT "TAG CLOUD"
 }
 .clusterpoint.timestamp {
   font-weight:bold;
-  border-bottom: 4px solid #2e3436;
+  border-top: 4px solid #b3b3b3;
   font-size: 150%;
   padding: 5px;
 }
@@ -290,45 +291,38 @@ BEHAVIOR POINT "TAG CLOUD"
 
 
 .clusterpoint.cF, .clusterpoint.cI, .clusterpoint.cM, .clusterpoint.cS { /*friendly, infant, grooming, sex*/
-  border-top: solid 8px #729FCF; /* blue */
-  border-bottom: solid 2px #729FCF; /* blue*/
+  border-top: solid 8px #8da0cb; /* blue */
+  border-bottom: solid 2px #8da0cb; /* blue*/
 
 }
 .clusterpoint.cM { /*grooming*/
-  border-top: solid 8px #FAAAAA; /* pink */
-  border-bottom: solid 2px #FAAAAA; /* pink */
+  border-top: solid 8px #e78ac3; /* pink */
+  border-bottom: solid 2px #e78ac3; /* pink */
 }
 .clusterpoint.cP { /*play*/
-  border-top: solid 8px #FCAF3E; /* yellow */
-  border-bottom: solid 2px #FCAF3E; /* yellow */
+  border-top: solid 8px #ffd92f; /* yellow */
+  border-bottom: solid 2px #ffd92f; /* yellow */
 }
 .clusterpoint.cG, .clusterpoint.cH, .clusterpoint.cE { /*aggression, coalitions, submission*/
-  border-top: solid 8px #cc0000; /*#a40000; /*#EF2929; /* red */
-  border-bottom: solid 2px #cc0000; /*#a40000; /*#EF2929; /* red */
+  border-top: solid 8px #fc8d62; /* orange */
+  border-bottom: solid 2px #fc8d62; /* orange */
 }
 .clusterpoint.cC { /* food */
-  border-top: solid 8px  #73d216;/*#8ae234; /* green */
-  border-bottom: solid 2px  #73d216;/*#8ae234; /* green */
+  border-top: solid 8px  #73d216;/*#8ae234; /* a6d854 */
+  border-bottom: solid 2px  #73d216;/*#8ae234; /* a6d854 */
 }
 .clusterpoint.cA { /* approaches/leaves */
-  border-top: solid 5px /*#75505b*/ #ad7fa8; /* purple */
-  border-bottom: solid 2px /*#75505b*/ #ad7fa8; /* purple */
+  border-top: solid 5px /*#75505b*/ #e5c494; /* purple */
+  border-bottom: solid 2px /*#75505b*/ #e5c494; /* purple */
 }
 /*.clusterpoint.cW, .clusterpoint.cL, .clusterpoint.cO, clusterpoint.cV { /* self-care, looking, ovp ivp, vocalizations */
 
 
 
 div#mediacaption, a#closemedia, div.hilight-label .innerlabel, div.clusterpoint {
--webkit-box-shadow: 1px 1px 1px 5px rgba(221,221,221,1);
--moz-box-shadow: 1px 1px 1px 5px rgba(221,221,221,1);
-box-shadow: 1px 1px 2px 4px #fafafa /*rgba(221,221,221,1);
+-webkit-box-shadow: 1px 1px 1px 5px #fafafa;
+-moz-box-shadow: 1px 1px 1px 5px #fafafa;
+box-shadow: 1px 1px 2px 4px #EBE8E4; /*rgba(221,221,221,1);*/
 
-  background: #EEE;
-  background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+  background: #EAEAEA;
 }}
