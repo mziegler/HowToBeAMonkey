@@ -35,11 +35,11 @@ MAP LABELS
 	z-index: 6;
 	margin: 0;
   
-  -webkit-transform: translate(0%, -50%); /* Chrome, Safari, Opera */
-     -moz-transform: translate(0%, -50%);
-      -ms-transform: translate(0%, -50%); /* IE 9 */
-       -o-transform: translate(0%, -50%); 
-          transform: translate(0%, -50%);
+  -webkit-transform: translate(10%, -50%); /* Chrome, Safari, Opera */
+     -moz-transform: translate(10%, -50%);
+      -ms-transform: translate(10%, -50%); /* IE 9 */
+       -o-transform: translate(10%, -50%); 
+          transform: translate(10%, -50%);
           
 }
 
@@ -116,11 +116,11 @@ LEFT-LABEL POSITIONING
 ******************************************************************************/
 
 .leaflet-label-left div.innerlabel {
-  -webkit-transform: translate(-100%, -50%); /* Chrome, Safari, Opera */
-     -moz-transform: translate(-100%, -50%);
-      -ms-transform: translate(-100%, -50%); /* IE 9 */
-       -o-transform: translate(-100%, -50%); 
-          transform: translate(-100%, -50%);
+  -webkit-transform: translate(-110%, -50%); /* Chrome, Safari, Opera */
+     -moz-transform: translate(-110%, -50%);
+      -ms-transform: translate(-110%, -50%); /* IE 9 */
+       -o-transform: translate(-110%, -50%); 
+          transform: translate(-110%, -50%);
 }
 
 
@@ -243,40 +243,45 @@ BEHAVIOR POINT "TAG CLOUD"
   display: block;
 }*/
 
-.r1, .r2 {
+.clusterpoint.r1, .clusterpoint.r2 {
   font-size: 75%;
-  font-weight: 100;
+  font-weight: 400;
   line-height: 110%;
+  padding: 10px;  
+  padding-top: 3px;
+
 }
 
-.r3 {
+.clusterpoint.r3 {
   font-size: 75%;
-  font-weight: 200;
+  font-weight: 500;
   line-height: 110%;
+  padding: 10px;
+  padding-top: 3px;
 }
-.r4, .r5 {
-  padding: 8px;
+.clusterpoint.r4, .clusterpoint.r5 {
+  padding: 10px;
   font-size: 85%;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 110%;
 }
-.r6 {
+.clusterpoint.r6 {
   padding: 10px;
   font-size: 100%;
-  font-weight: 400;
-}
-.r7 {
-  padding: 12px;
-  font-size: 130%;
-  font-weight: 500;
-}
-.r8 {
-  padding: 12px;
-  font-size: 160%;
   font-weight: 600;
 }
-.r9 {
-  padding: 15px;
+.clusterpoint.r7 {
+  padding: 10px;
+  font-size: 130%;
+  font-weight: 700;
+}
+.clusterpoint.r8 {
+  padding: 10px;
+  font-size: 160%;
+  font-weight: 700;
+}
+.clusterpoint.r9 {
+  padding: 10px;
   font-size: 220%;
   font-weight: 700;
 }
@@ -290,7 +295,6 @@ BEHAVIOR POINT "TAG CLOUD"
   font-size: 115%;
 }
  
-
 .clusterpoint.cF { /*friendly, sex*/
   border-top: solid 8px #8da0cb; /* blue */
 }
@@ -301,17 +305,16 @@ BEHAVIOR POINT "TAG CLOUD"
   border-top: solid 8px #e78ac3; /* pink */
 }
 .clusterpoint.cP { /*play*/
-  border-top: solid 8px #ffd92f; /* yellow */
+  border-top: solid 8px #e6ab02; /* yellow */
 }
 .clusterpoint.cG, .clusterpoint.cH, .clusterpoint.cE { /*aggression, coalitions, submission*/
   border-top: solid 8px #fc8d62; /* orange */
 }
 .clusterpoint.cC { /* food */
-  border-top: solid 8px  #73d216; /* green */
-  padding: 8px;
+  border-top: solid 8px #73d216; /* green */
 }
 .clusterpoint.cS { /* sex */
-  border-top: solid 5px /*#75505b*/ #e5c494; /* tan */
+  border-top: solid 8px #e5c494; /* tan */
 }
 .clusterpoint.cA { /* approaches, leaves */
   display: none;
@@ -322,9 +325,9 @@ BEHAVIOR POINT "TAG CLOUD"
 
 
 div#mediacaption, a#closemedia, div.hilight-label .innerlabel, div.clusterpoint {
--webkit-box-shadow: 1px 1px 1px 5px #fafafa;
--moz-box-shadow: 1px 1px 1px 5px #fafafa;
-box-shadow: 1px 1px 2px 4px #EBE8E4; /*rgba(221,221,221,1);*/
+-webkit-box-shadow: 1px 1px 1px 5px #F2F2F2;
+-moz-box-shadow: 1px 1px 1px 5px #F2F2F2;
+box-shadow: 0px 0px 5px 4px #EBE8E4; /*rgba(221,221,221,1);*/
 
-  background: #F2F2F2;
+  background: #F2F2F2 url('libraries/images/ricepaper2.png');
 }}

@@ -10,7 +10,7 @@ L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
 
 
 // add GPS track to map     
-var track = L.polyline(WHtrack, {color: '#593801', opacity:0.5, weight:6}).addTo(map);
+var track = L.polyline(WHtrack, {color: '#593801', opacity:0.7, weight:6}).addTo(map);
 
 
 
