@@ -5,12 +5,12 @@ L.control.scale().addTo(map);
 L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
   attribution: 'Satelite images courtesy of Google',
   maxZoom: 19,
-  opacity: 0.3,
+  opacity: 0.25,
 }).addTo(map);
 
 
 // add GPS track to map     
-var track = L.polyline(WHtrack, {color: '#593801', opacity:0.5, weight:8}).addTo(map);
+var track = L.polyline(WHtrack, {color: '#593801', opacity:0.5, weight:6}).addTo(map);
 
 
 
@@ -95,7 +95,7 @@ for (var i = 0; i < behaviorPoints.length; i++)
 // free up some memory
 behaviorPoints = null;
 
-//map.addLayer(behaviorLayer);
+map.addLayer(behaviorLayer);
 
 
 
@@ -182,8 +182,6 @@ function zoomHandle() {
   {
     map.removeLayer(hilightLayer);
     map.addLayer(behaviorLayer);
-    map.removeLayer(track);
-    map.addLayer(track);
   }
  /* else if (map.getZoom() == 17)
   {
@@ -192,11 +190,9 @@ function zoomHandle() {
   } */
   else
   {
-    map.removeLayer(behaviorLayer);
+    //map.removeLayer(behaviorLayer);
     //if (!map.hasLayer(hilightLayer))
     map.addLayer(hilightLayer);
-    map.removeLayer(track);
-    map.addLayer(track);
   }
 }
 zoomHandle();

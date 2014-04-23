@@ -93,7 +93,7 @@ CLUSTER LABELS
 ******************************************************************************/
 
 div.cluster-label {
-  width: 500px;
+  width: 600px;
   display: block;
   text-align: center;
 }
@@ -104,7 +104,7 @@ div.clusterpoint {
   max-width: 400px;
   display: inline-block;
   clear: both;
-  border: solid 1px #999;
+  /*border: solid 1px #999;*/
   /*border-left: solid 5px #999;*/
   text-align: left;
 }
@@ -255,66 +255,68 @@ BEHAVIOR POINT "TAG CLOUD"
   line-height: 110%;
 }
 .r4, .r5 {
+  padding: 8px;
   font-size: 85%;
   font-weight: 300;
   line-height: 110%;
 }
 .r6 {
+  padding: 10px;
   font-size: 100%;
   font-weight: 400;
 }
 .r7 {
-  padding: 5px;
+  padding: 12px;
   font-size: 130%;
   font-weight: 500;
 }
 .r8 {
-  padding: 8px;
+  padding: 12px;
   font-size: 160%;
   font-weight: 600;
 }
 .r9 {
-  padding: 10px;
+  padding: 15px;
   font-size: 220%;
   font-weight: 700;
 }
 .clusterpoint.timestamp {
   font-weight:bold;
-  border-top: 4px solid #b3b3b3;
-  font-size: 150%;
-  padding: 5px;
+  font-size: 140%;
+  padding: 10px;
 }
 .clusterpoint.more {
   padding: 10px;
   font-size: 115%;
 }
+ 
 
-
-.clusterpoint.cF, .clusterpoint.cI, .clusterpoint.cM, .clusterpoint.cS { /*friendly, infant, grooming, sex*/
+.clusterpoint.cF { /*friendly, sex*/
   border-top: solid 8px #8da0cb; /* blue */
-  border-bottom: solid 2px #8da0cb; /* blue*/
-
+}
+.clusterpoint.cI { /*infant*/
+  border-top: solid 8px #66c2a5; /* blue-green */
 }
 .clusterpoint.cM { /*grooming*/
   border-top: solid 8px #e78ac3; /* pink */
-  border-bottom: solid 2px #e78ac3; /* pink */
 }
 .clusterpoint.cP { /*play*/
   border-top: solid 8px #ffd92f; /* yellow */
-  border-bottom: solid 2px #ffd92f; /* yellow */
 }
 .clusterpoint.cG, .clusterpoint.cH, .clusterpoint.cE { /*aggression, coalitions, submission*/
   border-top: solid 8px #fc8d62; /* orange */
-  border-bottom: solid 2px #fc8d62; /* orange */
 }
 .clusterpoint.cC { /* food */
-  border-top: solid 8px  #73d216;/*#8ae234; /* a6d854 */
-  border-bottom: solid 2px  #73d216;/*#8ae234; /* a6d854 */
+  border-top: solid 8px  #73d216; /* green */
+  padding: 8px;
 }
-.clusterpoint.cA { /* approaches/leaves */
-  border-top: solid 5px /*#75505b*/ #e5c494; /* purple */
-  border-bottom: solid 2px /*#75505b*/ #e5c494; /* purple */
+.clusterpoint.cS { /* sex */
+  border-top: solid 5px /*#75505b*/ #e5c494; /* tan */
 }
+.clusterpoint.cA { /* approaches, leaves */
+  display: none;
+}
+
 /*.clusterpoint.cW, .clusterpoint.cL, .clusterpoint.cO, clusterpoint.cV { /* self-care, looking, ovp ivp, vocalizations */
 
 
@@ -324,5 +326,5 @@ div#mediacaption, a#closemedia, div.hilight-label .innerlabel, div.clusterpoint 
 -moz-box-shadow: 1px 1px 1px 5px #fafafa;
 box-shadow: 1px 1px 2px 4px #EBE8E4; /*rgba(221,221,221,1);*/
 
-  background: #EAEAEA;
+  background: #F2F2F2;
 }}
