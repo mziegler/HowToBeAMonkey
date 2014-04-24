@@ -7,7 +7,7 @@ div#map {
    height: 100%; 
    width: 100%;
    margin: 0;
-   background: #EBE8E4;
+   background: #EBE8E4 url('libraries/images/ricepaper2.png');
 }
 
 div.leaflet-overlay-pane {
@@ -56,24 +56,30 @@ LABEL ARROWS
 
 .leaflet-label div.innerlabel:before,
 .leaflet-label div.innerlabel:after {
-	border-top: 6px solid transparent;
-	border-bottom: 6px solid transparent;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
 	content: none;
 	position: absolute;
 	top: 50%;
-  margin-top: -6px;
-}
-
-.leaflet-label div.innerlabel:before {
-	border-right: 6px solid black;
-	border-right-color: #EEE;
-	left: -8px;
+  margin-top: -8px;
 }
 
 .leaflet-label div.innerlabel:after {
-	border-left: 6px solid black;
-	border-left-color: #EEE;
-	right: -8px;
+	border-left: 15px solid rgba(89,56,35,0.7);
+	right: -55px;
+}
+
+.leaflet-label div.innerlabel:before {
+	border-right: 15px solid rgba(89,56,35,0.7);
+	left: -55px;
+}
+
+.leaflet-label.top div.innerlabel:after {
+	border-left: 25px solid rgba(89,56,35,1);
+}
+
+.leaflet-label.top div.innerlabel:before {
+	border-right: 25px solid rgba(89,56,35,1);
 }
 
 .leaflet-label-right div.innerlabel:before,
@@ -329,5 +335,5 @@ div#mediacaption, a#closemedia, div.hilight-label .innerlabel, div.clusterpoint 
 -moz-box-shadow: 1px 1px 1px 5px #F2F2F2;
 box-shadow: 0px 0px 5px 4px #EBE8E4; /*rgba(221,221,221,1);*/
 
-  background: #F2F2F2 url('libraries/images/ricepaper2.png');
+  background: #F2F2F2 url('libraries/images/ricepaper.png');
 }}
