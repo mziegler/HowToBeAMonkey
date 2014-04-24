@@ -64,22 +64,14 @@ LABEL ARROWS
   margin-top: -8px;
 }
 
-.leaflet-label div.innerlabel:after {
-	border-left: 15px solid rgba(89,56,35,0.7);
-	right: -55px;
-}
-
-.leaflet-label div.innerlabel:before {
-	border-right: 15px solid rgba(89,56,35,0.7);
-	left: -55px;
-}
-
 .leaflet-label.top div.innerlabel:after {
 	border-left: 25px solid rgba(89,56,35,1);
+  	right: -55px;
 }
 
 .leaflet-label.top div.innerlabel:before {
 	border-right: 25px solid rgba(89,56,35,1);
+  left: -55px;
 }
 
 .leaflet-label-right div.innerlabel:before,
