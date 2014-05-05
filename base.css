@@ -323,9 +323,49 @@ BEHAVIOR POINT "TAG CLOUD"
 
 
 div#mediacaption, a#closemedia, div.hilight-label .innerlabel, div.clusterpoint {
--webkit-box-shadow: 1px 1px 1px 5px #F2F2F2;
--moz-box-shadow: 1px 1px 1px 5px #F2F2F2;
+-webkit-box-shadow: 0px 0px 5px 4px #EBE8E4;
+-moz-box-shadow: 0px 0px 5px 4px #EBE8E4;
 box-shadow: 0px 0px 5px 4px #EBE8E4; /*rgba(221,221,221,1);*/
 
   background: #F2F2F2 url('libraries/images/ricepaper.png');
-}}
+}
+
+
+
+/******************************************************************************
+NAVIGATION
+******************************************************************************/
+
+#header {
+  position: fixed;
+  z-index: 10000;
+  right: 15px;
+  bottom: 15px;
+  background: rgba(40,40,40,0.85);
+  color: #DDD;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 100%;
+  -webkit-box-shadow: 0px 0px 2px 2px #;
+     -moz-box-shadow: 0px 0px 2px 4px #999;
+          box-shadow: 0px 0px 2px 2px rgba(40,40,40,0.8);
+}
+
+#header div {
+  display: inline-block;
+  text-align: center;
+  padding: 5px;
+  font-size: 120%;
+  vertical-align: middle;
+}
+
+#header a.navbutton {
+  padding: 5px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#header a.navbutton:hover {
+  background: rgba(150,150,150,0.3);
+}

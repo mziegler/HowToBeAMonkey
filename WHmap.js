@@ -5,7 +5,7 @@ L.control.scale().addTo(map);
 L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
   attribution: 'Satelite images courtesy of Google',
   maxZoom: 19,
-  opacity: 0.40,
+  opacity: 0.4,
 }).addTo(map);
 
 

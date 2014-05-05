@@ -1,0 +1,10 @@
+- data layer descriptions + toggle
+- description of all the data the Lomas capuchin project has
+- contact link for people interested in Lomas Capuchin data
+- freely available source code and data from WH day
+- about Lomas Capuchin project
+- monkey biographies
+- donate buttton + appeal
+- narrative about WH day
+- share on bookface twitter etc
+- acknowledgements - people, grants, project, software libraries
