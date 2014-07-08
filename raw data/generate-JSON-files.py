@@ -1,6 +1,11 @@
 from datetime import datetime, timedelta
-import csv
+import sqlite3
 import json
+import csv
+
+# how to group categories into separate files
+categories = 'G', 'M', 'W', 'C', 'E', 'F', 'H', 'I', 'P', 'S', 'V', 'A', 'L', 'O'
+
 
 track = [
 [10.5142232962, -85.3693762701],
@@ -154,17 +159,16 @@ track = [
 # time of first track time
 firsttime = datetime(2014,1,24,5,36,14)
 
-# minutes between each GPS point
+# seconds between each GPS point
 intervalseconds = 5 * 60
 
-# filename of input file with behavior data
-infile = 'behavior.nocoords.csv'
+databasefile = 'WHday.sqlite3'
 
-outfile = 'datapoints.js'
 
 def getinterval(time):
   index = int((time - firsttime).total_seconds() / intervalseconds)
   return track[index:index+2]
+
 
 
 def getpoint(time):
@@ -181,23 +185,39 @@ def getpoint(time):
   
   return (lat, lon)
   
+
+
+def querydb(c, category):
+  c.execute("""
+    select behavior.timestamp, translations.translation, translations.score, translations.category
+    from behavior
+    inner join translations
+    on behavior.data = translations.data
+    where translations.translation != ''
+    and translations.category = ?
+    """, category)
+
+  for row in c:
+    time = datetime.strptime(row[0], '%m/%d/%Y %H:%M:%S')
+    yield time, row[0].split()[1].strip(), row[1].strip(), int(row[2]), row[3].strip()
   
-def loadfile(filename):
-  with open(filename) as csvfile:
-    reader = csv.reader(csvfile)
-  
-    for row in reader:
-      time = datetime.strptime(row[0], '%m/%d/%Y %H:%M:%S')
-      yield time, row[1], row[2].strip(), int(row[3]), row[4].strip()
 
 
 if __name__ == '__main__':
-  points = []
+  points = {}
   
-  for row in loadfile(infile):
-    lat, lon = getpoint(row[0])  
-    points.append((lat, lon, row[1], row[2], row[3], row[4]))
-    
+  conn = sqlite3.connect(databasefile)
+  c = conn.cursor()
+  
+  for cat in categories:
+    points[cat] = []
+    for row in querydb(c, cat):
+      lat, lon = getpoint(row[0])  
+      points[cat].append((lat, lon, row[1], row[2], row[3], row[4]))
+  
+  conn.close()
+  
   with open(outfile, 'w') as outf:
+    outf.write('var behaviorPoints = ')
     outf.write(json.dumps(points))
     
