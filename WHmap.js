@@ -62,31 +62,35 @@ function clusterIcon_old(cluster) {
   
 }
 
-//function popupHTMLFactory(cluster)
-//{
-//  var html = 
-//}
 
-
-
+function popupHTML(cluster)
+{
+  var pointsToShow = 12;
+  
+  var points = cluster.getAllChildMarkers();
+  
+  var startIndex = (pointsToShow >= points.length) ? points.length - 1 
+    : points.length - 1 - Math.floor((Math.random()*(points.length - pointsToShow)));
+    
+  var html = '<b>Category</b>" <span class="behavior-timestamp">' 
+    + points[startIndex].options.time + '</span><ul>';
+  
+  for (var i = 0; i < pointsToShow && i < points.length; i++)
+  {    
+    var ops = points[startIndex - i].options;
+    html += '<li class="behaviorPoint-' + ops.rank + '">' + ops.text + '</li>';
+  }
+  
+  html += "</ul>";
+  return html;
+}  
+  
+  
 function clusterIconFactory(iconClass)
 {
-  var clusterIcon = function(category)
+  var clusterIcon = function(cluster)
   {
-    var childCount = cluster.getChildCount();
-    
-    // generate text for popup
-    var pointsToShow = 12;
-    var points = cluster.getAllChildMarkers();
-    var startIndex = (pointsToShow >= points.length) ? points.length - 1 
-      : points.length - 1 - Math.floor((Math.random()*(points.length - pointsToShow)));
-    
-    for (var i = 0; i < pointsToShow && i < points.length; i++)
-    {    
-      var ops = points[startIndex - i].options;
-      html += '<div class="clusterpoint r' + ops.rank + ' c' + ops.category + '">' + ops.text + '</div>';
-    }
-  
+    var childCount = cluster.getChildCount();  
     
     return new L.DivIcon({ 
       html: '<div><span>' + childCount + '</span></div>', 
@@ -129,9 +133,11 @@ for (var i = 0; i < behaviorPoints.length; i++)
 // free up some memory
 behaviorPoints = null;
 
+
+// open popup on click
 behaviorLayer.on('clusterclick', function (a) {
-    alert('cluster click! ' + a.layer.getAllChildMarkers().length);
-    a.layer.bindPopup("yo!").openPopup();
+    //alert('cluster click! ' + a.layer.getAllChildMarkers().length);
+    a.layer.bindPopup(popupHTML(a.layer)).openPopup();
 });
 
 map.addLayer(behaviorLayer);
