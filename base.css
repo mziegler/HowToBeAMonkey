@@ -240,29 +240,82 @@ MARKER CLUSTERS
 
 .marker-cluster {
   background-clip: padding-box;
-  border-radius: 20px;
+  /*border-radius: 20px;*/
 }
 .marker-cluster div {
-  width: 30px;
-  height: 30px;
+  /*width: 30px;
+  height: 30px;*/
   margin-left: 5px;
   margin-top: 5px;
 
   text-align: center;
-  border-radius: 15px;
+  /*border-radius: 15px;*/
   font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
-.marker-cluster span {
+/*.marker-cluster span {
   line-height: 30px;
-}
+}*/
 	
-.marker-cluster-medium {
-  background-color: rgba(241, 211, 87, 0.6);
+	
+.marker-cluster.marker-cluster-singleton { 
+  border-radius: 15px;
 }
-.marker-cluster-medium div {
-  background-color: rgba(240, 194, 12, 0.6);
+.marker-cluster.marker-cluster-singleton div { 
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+.marker-cluster.marker-cluster-singleton span { 
+  line-height: 20px;
 }
 
+.marker-cluster.marker-cluster-xsmall { 
+  border-radius: 20px;
+}
+.marker-cluster.marker-cluster-xsmall div { 
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+}
+.marker-cluster.marker-cluster-xsmall span { 
+  line-height: 30px;
+}
+
+.marker-cluster.marker-cluster-small { 
+  border-radius: 25px;
+}
+.marker-cluster.marker-cluster-small div { 
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+.marker-cluster.marker-cluster-small span { 
+  line-height: 40px;
+}
+
+.marker-cluster.marker-cluster-medium { 
+  border-radius: 30px;
+}
+.marker-cluster.marker-cluster-medium div { 
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+.marker-cluster.marker-cluster-medium span { 
+  line-height: 50px;
+}
+
+.marker-cluster.marker-cluster-large { 
+  border-radius: 35px;
+}
+.marker-cluster.marker-cluster-large div { 
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+}
+.marker-cluster.marker-cluster-large span { 
+  line-height: 60px;
+}
 
 /* aggression, fear, coalitions */
 .marker-cluster-cG, .marker-cluster-cE, .marker-cluster-cH { background-color: rgba(252,141,98,0.6); } 
@@ -292,22 +345,7 @@ MARKER CLUSTERS
 .marker-cluster-cV, .marker-cluster-cW, .marker-cluster-cA, .marker-cluster-cL, .marker-cluster-cO { background-color: rgba(240,240,240,0.6); }
 .marker-cluster-cV div, .marker-cluster-cW div, .marker-cluster-cA div, .marker-cluster-cL div, .marker-cluster-cO div { background-color: rgba(240,240,240,0.6); }
 
-var categories = {
-  'G': {'name': 'Aggression', 'color': [252, 141, 98], 'default': true},
-  'E': {'name': 'Submission and fear', 'color': [252, 141, 98], 'default': true},
-  'H': {'name': 'Coalitions', 'color': [252, 141, 98], 'default': true},
-  'M': {'name': 'Grooming', 'color': [231, 138, 195], 'default': true},
-  'C': {'name': 'Foraging and social food', 'color': [115, 210, 22], 'default': true},
-  'F': {'name': 'Friendly', 'color': [141, 160, 203], 'default': true},
-  'S': {'name': 'Sex', 'color': [141, 160, 203], 'default': true},
-  'I': {'name': 'Infant', 'color': [102, 194, 165], 'default': true},
-  'P': {'name': 'Play', 'color': [230, 171, 2], 'default': true},
-  'V': {'name': 'Vocalizations', 'color': [240, 240, 240], 'default': false},
-  'W': {'name': 'Self-directed', 'color': [240, 240, 240], 'default': false},
-  'A': {'name': 'Approaches and leaves', 'color': [240, 240, 240], 'default': false},  
-  'L': {'name': 'Looking', 'color': [240, 240, 240], 'default': false},  
-  'O': {'name': 'Researchers\' view', 'color': [240, 240, 240], 'default': false},  
-}
+
 
 
 /******************************************************************************

@@ -1,4 +1,4 @@
-var map = L.map('map', {maxZoom:26}).setView([10.5115, -85.367], 16);
+var map = L.map('map', {maxZoom:26, zoomControl: false}).setView([10.5115, -85.367], 16);
 L.control.scale().addTo(map);
 
 // base map (satelite images)
@@ -10,7 +10,7 @@ L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
 
 
 // add GPS track to map     
-var track = L.polyline(WHtrack, {color: 'yellow', opacity:1, weight:3, lineJoin:'round', dashArray:[10,10]}).addTo(map);
+var track = L.polyline(WHtrack, {color: 'yellow', opacity:1, weight:3, lineJoin:'round', lineCap:'round', dashArray:[10,10]}).addTo(map);
 
 
 
@@ -92,10 +92,37 @@ function clusterIconFactory(category)
   {
     var childCount = cluster.getChildCount();  
     
+    	var sizeclass = ' marker-cluster-';
+    	var iconSize = null;
+      if (childCount == 1)
+      {
+        sizeclass += 'singleton';
+        iconSize= new L.Point(30, 30);
+      }
+      else if (childCount < 5) 
+      {
+        sizeclass += 'xsmall';
+        iconSize= new L.Point(40, 40);
+      } 
+      else if (childCount < 20) 
+      {
+        sizeclass += 'small';
+        iconSize= new L.Point(50, 50);
+      } 
+      else if (childCount < 50)
+      {
+        sizeclass += 'medium';
+        iconSize= new L.Point(60, 60);
+      }
+      else {
+        sizeclass += 'large';
+        iconSize= new L.Point(70, 70);
+      }
+    
     return new L.DivIcon({ 
       html: '<div category="' + category + '"><span>' + childCount + '</span></div>', 
-      className: "marker-cluster marker-cluster-c" + category, 
-      iconSize: new L.Point(40, 40) });
+      className: "marker-cluster marker-cluster-c" + category + sizeclass, 
+      iconSize: iconSize });
   }
   return clusterIcon;
 }
@@ -142,52 +169,16 @@ for (var category in behaviorPoints)
   
   // open popup on click
   clusterLayer.on('clusterclick', function (a) {
-    //alert('cluster click! ' + a.layer.getAllChildMarkers().length);
-  a.layer.bindPopup(popupHTML(a.layer)).openPopup();
-});
-}
-
-/*
-// cluster layer for behavior markers
-var behaviorLayer = new L.MarkerClusterGroup({
-  spiderfyOnMaxZoom: false,
-  iconCreateFunction: clusterIconFactory("marker-cluster-medium"),
-  showCoverageOnHover: false,
-  maxClusterRadius: 150,
-  zoomToBoundsOnClick: false,
-  singleMarkerMode: true,
+    a.layer.bindPopup(popupHTML(a.layer)).openPopup();
   });
-
-
-// add behavior markers to cluster layer
-for (var i = 0; i < behaviorPoints.length; i++)
-{
-  var row = behaviorPoints[i];
-  
-  behaviorLayer.addLayer(new L.marker(
-    [
-      row[0],
-      row[1]
-    ], {
-        time: row[2],
-        rank: row[4],
-        category: row[5],
-        text: row[3],
-    })
-  );
+  clusterLayer.on('click', function (a) {
+    a.layer.bindPopup(popupHTML(a.layer)).openPopup();
+  });
 }
-*/
 
 
 // free up some memory
 behaviorPoints = null;
-
-
-
-//map.addLayer(behaviorLayer);
-
-// add layer control
-L.control.layers(null, behaviorLayers).addTo(map);
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -257,16 +248,31 @@ $('div#mediabg, div#mediacontainer img').click(function(){
 });
 
 
+///////////////////////////////////////////////////////////////////////////////
+// START AND END POINTS
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// MAP CONTROLS
+
+// add layer control
+L.control.layers(null, behaviorLayers, {position:'topleft'}).addTo(map);
+
+// zoom control (underneath layer control)
+new L.Control.Zoom({ position: 'topleft' }).addTo(map);
 
 
 ///////////////////////////////////////////////////////////////////////////////
 // MAP MOUSE EVENT HANDLERS
 
+
 // add or remove layers to the map based on the zoom level
 function zoomHandle() {
 
-  lowerMarkers();
-  shrinkHilights();
+  //lowerMarkers();
+  //shrinkHilights();
 
   if (map.getZoom() > 16)
   {
@@ -289,7 +295,7 @@ zoomHandle();
 map.on('zoomend', zoomHandle);
 
 
-/*
+
 // raise a marker to the top when clicked or moused over
 function raiseMarker() {
   lowerMarkers();
@@ -307,7 +313,7 @@ function lowerMarkers() {
 	  $(this).removeClass('top');
   });
 }
-
+/*
 // expand a hilight box when it's hovered or clicked/tapped
 function expandHilight() {
   shrinkHilights();
