@@ -255,13 +255,31 @@ MARKER CLUSTERS
   line-height: 30px;
 }
 	
-	
-	
 .marker-cluster-medium {
   background-color: rgba(241, 211, 87, 0.6);
 }
 .marker-cluster-medium div {
   background-color: rgba(240, 194, 12, 0.6);
+}
+
+
+
+
+var categories = {
+  'G': {'name': 'Aggression', 'color': [252, 141, 98], 'default': true},
+  'E': {'name': 'Submission and fear', 'color': [252, 141, 98], 'default': true},
+  'H': {'name': 'Coalitions', 'color': [252, 141, 98], 'default': true},
+  'M': {'name': 'Grooming', 'color': [231, 138, 195], 'default': true},
+  'C': {'name': 'Foraging and social food', 'color': [115, 210, 22], 'default': true},
+  'F': {'name': 'Friendly', 'color': [141, 160, 203], 'default': true},
+  'S': {'name': 'Sex', 'color': [141, 160, 203], 'default': true},
+  'I': {'name': 'Infant', 'color': [102, 194, 165], 'default': true},
+  'P': {'name': 'Play', 'color': [230, 171, 2], 'default': true},
+  'V': {'name': 'Vocalizations', 'color': [240, 240, 240], 'default': false},
+  'W': {'name': 'Self-directed', 'color': [240, 240, 240], 'default': false},
+  'A': {'name': 'Approaches and leaves', 'color': [240, 240, 240], 'default': false},  
+  'L': {'name': 'Looking', 'color': [240, 240, 240], 'default': false},  
+  'O': {'name': 'Researchers\' view', 'color': [240, 240, 240], 'default': false},  
 }
 
 
@@ -351,6 +369,10 @@ BEHAVIOR POINT "TAG CLOUD"
 }
 
 /*.clusterpoint.cW, .clusterpoint.cL, .clusterpoint.cO, clusterpoint.cV { /* self-care, looking, ovp ivp, vocalizations */
+
+
+
+
 
 
 

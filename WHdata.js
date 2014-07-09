@@ -142,6 +142,27 @@ var WHtrack = [
 [10.5143646989, -85.3639992792],
 ]
 
+
+var categoryOrder = ['G', 'M', 'W', 'C', 'E', 'F', 'H', 'I', 'P', 'S', 'V', 'A', 'L', 'O']
+
+var categories = {
+  'G': {'name': 'Aggression', 'color': [252, 141, 98], 'default': true},
+  'E': {'name': 'Submission and fear', 'color': [252, 141, 98], 'default': true},
+  'H': {'name': 'Coalitions', 'color': [252, 141, 98], 'default': true},
+  'M': {'name': 'Grooming', 'color': [231, 138, 195], 'default': true},
+  'C': {'name': 'Foraging and social food', 'color': [115, 210, 22], 'default': true},
+  'F': {'name': 'Friendly', 'color': [141, 160, 203], 'default': true},
+  'S': {'name': 'Sex', 'color': [141, 160, 203], 'default': true},
+  'I': {'name': 'Infant', 'color': [102, 194, 165], 'default': true},
+  'P': {'name': 'Play', 'color': [230, 171, 2], 'default': true},
+  'V': {'name': 'Vocalizations', 'color': [240, 240, 240], 'default': false},
+  'W': {'name': 'Self-directed', 'color': [240, 240, 240], 'default': false},
+  'A': {'name': 'Approaches and leaves', 'color': [240, 240, 240], 'default': false},  
+  'L': {'name': 'Looking', 'color': [240, 240, 240], 'default': false},  
+  'O': {'name': 'Researchers\' view', 'color': [240, 240, 240], 'default': false},  
+}
+
+
 var hilights = [
   ['Hilight 5', [10.5093779694, -85.3682250995], 'left', "Here's a short blob of text describing what's going on.  One two three four five six seven eight!", '100_0546.JPG', 'http://www.youtube.com/embed/dnPNr9yquuc?rel=0'],
   ['Hilight 3', [10.5122139025, -85.3715608455], 'left', "Here's a short blob of text describing what's going on.  One two three four five six seven eight!", '100_0546.JPG', null], 
