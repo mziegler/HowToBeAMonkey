@@ -5,7 +5,7 @@ L.control.scale().addTo(map);
 L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
   attribution: 'Satelite images courtesy of Google',
   maxZoom: 19,
-  opacity: 0.40,
+  opacity: 1,
 }).addTo(map);
 
 
@@ -32,7 +32,7 @@ function alternateClass()
 
 
 // factory for cluster markers
-function clusterIcon(cluster) {
+function clusterIcon_old(cluster) {
   var pointsToShow = 12;
 
   var points = cluster.getAllChildMarkers();
@@ -62,14 +62,48 @@ function clusterIcon(cluster) {
   
 }
 
+//function popupHTMLFactory(cluster)
+//{
+//  var html = 
+//}
+
+
+
+function clusterIconFactory(iconClass)
+{
+  var clusterIcon = function(category)
+  {
+    var childCount = cluster.getChildCount();
+    
+    // generate text for popup
+    var pointsToShow = 12;
+    var points = cluster.getAllChildMarkers();
+    var startIndex = (pointsToShow >= points.length) ? points.length - 1 
+      : points.length - 1 - Math.floor((Math.random()*(points.length - pointsToShow)));
+    
+    for (var i = 0; i < pointsToShow && i < points.length; i++)
+    {    
+      var ops = points[startIndex - i].options;
+      html += '<div class="clusterpoint r' + ops.rank + ' c' + ops.category + '">' + ops.text + '</div>';
+    }
+  
+    
+    return new L.DivIcon({ 
+      html: '<div><span>' + childCount + '</span></div>', 
+      className: "marker-cluster " + iconClass, 
+      iconSize: new L.Point(40, 40) });
+  }
+  return clusterIcon;
+}
+
 
 // cluster layer for behavior markers
 var behaviorLayer = new L.MarkerClusterGroup({
   spiderfyOnMaxZoom: false,
-  iconCreateFunction: clusterIcon,
+  iconCreateFunction: clusterIconFactory("marker-cluster-medium"),
   showCoverageOnHover: false,
   maxClusterRadius: 150,
-  zoomToBoundsOnClick: true,
+  zoomToBoundsOnClick: false,
   singleMarkerMode: true,
   });
 
@@ -94,6 +128,11 @@ for (var i = 0; i < behaviorPoints.length; i++)
 
 // free up some memory
 behaviorPoints = null;
+
+behaviorLayer.on('clusterclick', function (a) {
+    alert('cluster click! ' + a.layer.getAllChildMarkers().length);
+    a.layer.bindPopup("yo!").openPopup();
+});
 
 map.addLayer(behaviorLayer);
 
@@ -198,6 +237,8 @@ function zoomHandle() {
 zoomHandle();
 map.on('zoomend', zoomHandle);
 
+
+/*
 // raise a marker to the top when clicked or moused over
 function raiseMarker() {
   lowerMarkers();
@@ -230,6 +271,8 @@ function shrinkHilights() {
   $('img.thumbnail').show();
   $('div.hilight-label.expanded').removeClass('expanded');
 }
+*/
+
 
 
 // Event listners for markers.  This is ugly.  Should use jQuery's 'on'
