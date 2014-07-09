@@ -10,7 +10,7 @@ L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
 
 
 // add GPS track to map     
-var track = L.polyline(WHtrack, {color: '#593801', opacity:0.7, weight:6}).addTo(map);
+var track = L.polyline(WHtrack, {color: 'yellow', opacity:1, weight:3, lineJoin:'round', dashArray:[10,10]}).addTo(map);
 
 
 
@@ -86,21 +86,68 @@ function popupHTML(cluster)
 }  
   
   
-function clusterIconFactory(iconClass)
+function clusterIconFactory(category)
 {
   var clusterIcon = function(cluster)
   {
     var childCount = cluster.getChildCount();  
     
     return new L.DivIcon({ 
-      html: '<div><span>' + childCount + '</span></div>', 
-      className: "marker-cluster " + iconClass, 
+      html: '<div category="' + category + '"><span>' + childCount + '</span></div>', 
+      className: "marker-cluster marker-cluster-c" + category, 
       iconSize: new L.Point(40, 40) });
   }
   return clusterIcon;
 }
 
+// to pass to Leaflet layer control
+var behaviorLayers = {};
 
+for (var category in behaviorPoints)
+{
+  var points = behaviorPoints[category];
+  var categoryInfo = categories[category];
+  
+  var clusterLayer = new L.markerClusterGroup({
+    spiderfyOnMaxZoom: false,
+    iconCreateFunction: clusterIconFactory(category),
+    showCoverageOnHover: false,
+    maxClusterRadius: 150,
+    zoomToBoundsOnClick: false,
+    singleMarkerMode: true,
+  });
+
+    
+  for (var i = 0; i < points.length; i++)
+  {
+    var row = points[i];
+  
+    clusterLayer.addLayer(new L.marker(
+      [
+        row[0],
+        row[1]
+      ], {
+          time: row[2],
+          rank: row[4],
+          category: row[5],
+          text: row[3],
+      })
+    );
+  }
+  
+  behaviorLayers[categoryInfo.name] = clusterLayer;
+  
+  if (categoryInfo.default)  { clusterLayer.addTo(map); } 
+  
+  
+  // open popup on click
+  clusterLayer.on('clusterclick', function (a) {
+    //alert('cluster click! ' + a.layer.getAllChildMarkers().length);
+  a.layer.bindPopup(popupHTML(a.layer)).openPopup();
+});
+}
+
+/*
 // cluster layer for behavior markers
 var behaviorLayer = new L.MarkerClusterGroup({
   spiderfyOnMaxZoom: false,
@@ -129,20 +176,18 @@ for (var i = 0; i < behaviorPoints.length; i++)
     })
   );
 }
+*/
+
 
 // free up some memory
 behaviorPoints = null;
 
 
-// open popup on click
-behaviorLayer.on('clusterclick', function (a) {
-    //alert('cluster click! ' + a.layer.getAllChildMarkers().length);
-    a.layer.bindPopup(popupHTML(a.layer)).openPopup();
-});
 
-map.addLayer(behaviorLayer);
+//map.addLayer(behaviorLayer);
 
-
+// add layer control
+L.control.layers(null, behaviorLayers).addTo(map);
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -226,7 +271,7 @@ function zoomHandle() {
   if (map.getZoom() > 16)
   {
     map.removeLayer(hilightLayer);
-    map.addLayer(behaviorLayer);
+    //map.addLayer(behaviorLayer);
   }
  /* else if (map.getZoom() == 17)
   {
@@ -237,7 +282,7 @@ function zoomHandle() {
   {
     //map.removeLayer(behaviorLayer);
     //if (!map.hasLayer(hilightLayer))
-    map.addLayer(hilightLayer);
+    //map.addLayer(hilightLayer);
   }
 }
 zoomHandle();

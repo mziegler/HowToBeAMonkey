@@ -10,10 +10,11 @@ div#map {
    background: #EBE8E4 url('libraries/images/ricepaper2.png');
 }
 
-div.leaflet-overlay-pane {
+/* bring GPS track to front */
+/* div.leaflet-overlay-pane {
   z-index: 1000;
   pointer-events: none;
-}
+} */
 
 
 /******************************************************************************
@@ -263,7 +264,33 @@ MARKER CLUSTERS
 }
 
 
+/* aggression, fear, coalitions */
+.marker-cluster-cG, .marker-cluster-cE, .marker-cluster-cH { background-color: rgba(252,141,98,0.6); } 
+.marker-cluster-cG div, .marker-cluster-cE div, .marker-cluster-cH div { background-color: rgba(252,141,98,1); }
 
+/* grooming */
+.marker-cluster-cM { background-color: rgba(231,138,195,0.6); } 
+.marker-cluster-cM div { background-color: rgba(231,138,195,1); }
+
+/* food */
+.marker-cluster-cC { background-color: rgba(115,210,22,0.6); } 
+.marker-cluster-cC div { background-color: rgba(115,210,22,1); }
+
+/* friendly, sex */
+.marker-cluster-cF, .marker-cluster-cS { background-color: rgba(141,160,203,0.6); } 
+.marker-cluster-cF div, .marker-cluster-cS div { background-color: rgba(141,160,203,1); }
+
+/* infant */
+.marker-cluster-cI { background-color: rgba(102,194,165,0.6); } 
+.marker-cluster-cI div { background-color: rgba(102,194,165,1); }
+
+/* play */
+.marker-cluster-cP { background-color: rgba(230,171,2,0.6); } 
+.marker-cluster-cP div { background-color: rgba(230,171,2,1); }
+
+/* vocalizations, self-directed, approaches and leaves, looking, researcher's view */
+.marker-cluster-cV, .marker-cluster-cW, .marker-cluster-cA, .marker-cluster-cL, .marker-cluster-cO { background-color: rgba(240,240,240,0.6); }
+.marker-cluster-cV div, .marker-cluster-cW div, .marker-cluster-cA div, .marker-cluster-cL div, .marker-cluster-cO div { background-color: rgba(240,240,240,0.6); }
 
 var categories = {
   'G': {'name': 'Aggression', 'color': [252, 141, 98], 'default': true},
