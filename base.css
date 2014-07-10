@@ -349,14 +349,20 @@ MARKER CLUSTERS
 
 
 /******************************************************************************
+BEHAVIOR LIST
+******************************************************************************/
+
+
+
+/******************************************************************************
 BEHAVIOR POINT "TAG CLOUD"
 ******************************************************************************/
 
 /*div.cluster-label div {
   display: block;
 }*/
-
-.clusterpoint.r1, .clusterpoint.r2 {
+/*
+td.behavior-point-1, td.behavior-point-2 {
   font-size: 75%;
   font-weight: 400;
   line-height: 110%;
@@ -365,35 +371,35 @@ BEHAVIOR POINT "TAG CLOUD"
 
 }
 
-.clusterpoint.r3 {
+td.behavior-point-3 {
   font-size: 75%;
   font-weight: 500;
   line-height: 110%;
   padding: 10px;
   padding-top: 3px;
 }
-.clusterpoint.r4, .clusterpoint.r5 {
+td.behavior-point-4, td.behavior-point-5 {
   padding: 10px;
   font-size: 85%;
   font-weight: 500;
   line-height: 110%;
 }
-.clusterpoint.r6 {
+td.behavior-point-6 {
   padding: 10px;
   font-size: 100%;
   font-weight: 600;
 }
-.clusterpoint.r7 {
+td.behavior-point-7 {
   padding: 10px;
   font-size: 130%;
   font-weight: 700;
 }
-.clusterpoint.r8 {
+td.behavior-point-8 {
   padding: 10px;
   font-size: 160%;
   font-weight: 700;
 }
-.clusterpoint.r9 {
+td.behavior-point-9 {
   padding: 10px;
   font-size: 220%;
   font-weight: 700;
@@ -407,6 +413,7 @@ BEHAVIOR POINT "TAG CLOUD"
   padding: 10px;
   font-size: 115%;
 }
+ */
  
 .clusterpoint.cF { /*friendly, sex*/
   border-top: solid 8px #8da0cb; /* blue */

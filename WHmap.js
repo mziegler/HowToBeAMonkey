@@ -18,54 +18,10 @@ var track = L.polyline(WHtrack, {color: 'yellow', opacity:1, weight:3, lineJoin:
 ///////////////////////////////////////////////////////////////////////////////
 // OBSERVATIONAL DATA LAYER
 
-// alternates between "leaflet-label-left" and "leaflet-label-right"
-// on each successive call
-var alternator = false;
-function alternateClass()
-{
-  alternator = !alternator;
-  if (alternator)
-    return 'leaflet-label-left';
-  else
-    return 'leaflet-label-right';
-}
-
-
-// factory for cluster markers
-function clusterIcon_old(cluster) {
-  var pointsToShow = 12;
-
-  var points = cluster.getAllChildMarkers();
-  
-  var startIndex = (pointsToShow >= points.length) ? points.length - 1 
-    : points.length - 1 - Math.floor((Math.random()*(points.length - pointsToShow)));
-  
-  var html = '<div class="innerlabel"><div class="clusterpoint timestamp">' 
-    + points[startIndex].options.time + '</div>';
-  
-  for (var i = 0; i < pointsToShow && i < points.length; i++)
-  {    
-    var ops = points[startIndex - i].options;
-    html += '<div class="clusterpoint r' + ops.rank + ' c' + ops.category + '">' + ops.text + '</div>';
-  }
-  
-  if (points.length > pointsToShow)
-    html += '<div class="clusterpoint more"> + ' + (points.length - pointsToShow) + ' more</div>';
-  
-  html += '</div>';
-  
-  return L.divIcon({
-    className: 'cluster-label leaflet-label ' + alternateClass(),
-    iconSize: ['auto', 'auto'],
-    html: html,
-  });
-  
-}
-
 
 function popupHTML(cluster)
 {
-  var pointsToShow = 12;
+  var pointsToShow = 5;
   
   var points = cluster.getAllChildMarkers();
   
@@ -73,18 +29,23 @@ function popupHTML(cluster)
     : points.length - 1 - Math.floor((Math.random()*(points.length - pointsToShow)));
     
   var html = '<b>Category</b>" <span class="behavior-timestamp">' 
-    + points[startIndex].options.time + '</span><ul>';
+    + points[startIndex].options.time + '</span><table class="behaviorList">';
   
   for (var i = 0; i < pointsToShow && i < points.length; i++)
   {    
     var ops = points[startIndex - i].options;
-    html += '<li class="behaviorPoint-' + ops.rank + '">' + ops.text + '</li>';
+    html += '<tr><td class="behavior-timestamp">' + ops.time + '</td><td class="behavior-point-' + ops.rank + '">' + ops.text + '</td></tr>';
   }
   
-  html += "</ul>";
+  html += "</table>";
   return html;
 }  
-  
+
+
+function openPopup(target) {
+  target.layer.bindPopup(popupHTML(target.layer), {'minWidth':400, 'className':'fooclass'}).openPopup();
+}
+
   
 function clusterIconFactory(category)
 {
@@ -167,15 +128,14 @@ for (var category in behaviorPoints)
   if (categoryInfo.default)  { clusterLayer.addTo(map); } 
   
   
+///////////////////////////////////////////////////////////////////////////////
+// POP UP ON CLUSTER CLICK  
+  
   // open popup on click
-  clusterLayer.on('clusterclick', function (a) {
-    a.layer.bindPopup(popupHTML(a.layer)).openPopup();
-  });
-  clusterLayer.on('click', function (a) {
-    a.layer.bindPopup(popupHTML(a.layer)).openPopup();
-  });
-}
+  clusterLayer.on('clusterclick', openPopup);
+  clusterLayer.on('click', openPopup);
 
+}
 
 // free up some memory
 behaviorPoints = null;
@@ -269,7 +229,7 @@ new L.Control.Zoom({ position: 'topleft' }).addTo(map);
 
 
 // add or remove layers to the map based on the zoom level
-function zoomHandle() {
+/*function zoomHandle() {
 
   //lowerMarkers();
   //shrinkHilights();
@@ -279,11 +239,11 @@ function zoomHandle() {
     map.removeLayer(hilightLayer);
     //map.addLayer(behaviorLayer);
   }
- /* else if (map.getZoom() == 17)
+ else if (map.getZoom() == 17)
   {
     map.addLayer(behaviorLayer);
     map.addLayer(hilightLayer);
-  } */
+  }
   else
   {
     //map.removeLayer(behaviorLayer);
@@ -293,11 +253,11 @@ function zoomHandle() {
 }
 zoomHandle();
 map.on('zoomend', zoomHandle);
-
+*/
 
 
 // raise a marker to the top when clicked or moused over
-function raiseMarker() {
+/*function raiseMarker() {
   lowerMarkers();
   $(this).addClass('top');
   if (!$(this).attr('origZ'))
@@ -312,7 +272,7 @@ function lowerMarkers() {
       {$(this).css('z-index', $(this).attr('origZ'));}
 	  $(this).removeClass('top');
   });
-}
+}*/
 /*
 // expand a hilight box when it's hovered or clicked/tapped
 function expandHilight() {
@@ -336,15 +296,16 @@ function shrinkHilights() {
 // or 'delegate' instead, but mouseover events don't propagate up past
 // div.leaflet-marker-pane for some reasons unknown to me.  This needs to
 // be called every time the map is re-drawn.
+/*
 function bindMouseListners()
 {
   $('div.leaflet-label').mouseenter(raiseMarker).click(raiseMarker);
   $('div.leaflet-label').mouseleave(lowerMarkers);
-  $('.leaflet-overlay-pane').click(lowerMarkers).click(shrinkHilights);
-  $('div.hilight-label').mouseenter(expandHilight).click(expandHilight);
-  $('div.hilight-label').mouseleave(shrinkHilights);
+  //$('.leaflet-overlay-pane').click(lowerMarkers).click(shrinkHilights);
+  //$('div.hilight-label').mouseenter(expandHilight).click(expandHilight);
+  //$('div.hilight-label').mouseleave(shrinkHilights);
   $('img.illustration').click(mediaOverlay);
 }
-
-bindMouseListners();
-map.on('moveend', bindMouseListners);
+*/
+//bindMouseListners();
+//map.on('moveend', bindMouseListners);
