@@ -25,16 +25,17 @@ function popupHTML(cluster)
   
   var points = cluster.getAllChildMarkers();
   
+  var category = points[0].options.category;
+  
   var startIndex = (pointsToShow >= points.length) ? points.length - 1 
     : points.length - 1 - Math.floor((Math.random()*(points.length - pointsToShow)));
     
-  var html = '<b>Category</b>" <span class="behavior-timestamp">' 
-    + points[startIndex].options.time + '</span><table class="behaviorList">';
+  var html = '<div class="popup-title popup-title-c' + category + '">' + categories[category].name + '</div><table class="behaviorList">';
   
   for (var i = 0; i < pointsToShow && i < points.length; i++)
   {    
     var ops = points[startIndex - i].options;
-    html += '<tr><td class="behavior-timestamp">' + ops.time + '</td><td class="behavior-point-' + ops.rank + '">' + ops.text + '</td></tr>';
+    html += '<tr><td class="behavior-timestamp">' + ops.time + '</td><td class="behavior-point">' + ops.text + '</td></tr>';
   }
   
   html += "</table>";

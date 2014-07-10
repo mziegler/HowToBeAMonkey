@@ -10,118 +10,6 @@ div#map {
    background: #EBE8E4 url('libraries/images/ricepaper2.png');
 }
 
-/* bring GPS track to front */
-/* div.leaflet-overlay-pane {
-  z-index: 1000;
-  pointer-events: none;
-} */
-
-
-/******************************************************************************
-MAP LABELS
-******************************************************************************/
-
-.leaflet-label div.innerlabel {	
-	color: #111;
-	display: block;
-	font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
-  line-spacing: 140%;
-	padding: 0px 6px;
-	position: absolute;
-	-webkit-user-select: none;
-	   -moz-user-select: none;
-	    -ms-user-select: none;
-	        user-select: none;
-	pointer-events: none;
-	z-index: 6;
-	margin: 0;
-  
-  -webkit-transform: translate(10%, -50%); /* Chrome, Safari, Opera */
-     -moz-transform: translate(10%, -50%);
-      -ms-transform: translate(10%, -50%); /* IE 9 */
-       -o-transform: translate(10%, -50%); 
-          transform: translate(10%, -50%);
-          
-}
-
-.leaflet-label.leaflet-clickable div.innerlabel {
-	cursor: pointer;
-	pointer-events: auto;
-}
-
-
-
-/******************************************************************************
-LABEL ARROWS
-******************************************************************************/
-
-.leaflet-label div.innerlabel:before,
-.leaflet-label div.innerlabel:after {
-	border-top: 8px solid transparent;
-	border-bottom: 8px solid transparent;
-	content: none;
-	position: absolute;
-	top: 50%;
-  margin-top: -8px;
-}
-
-.leaflet-label.top div.innerlabel:after {
-	border-left: 25px solid rgba(89,56,35,1);
-  	right: -55px;
-}
-
-.leaflet-label.top div.innerlabel:before {
-	border-right: 25px solid rgba(89,56,35,1);
-  left: -55px;
-}
-
-.leaflet-label-right div.innerlabel:before,
-.leaflet-label-left div.innerlabel:after {
-	content: "";
-}
-
-.leaflet-label-right.expanded div.innerlabel:before,
-.leaflet-label-left.expanded div.innerlabel:after {
-	content: none;
-}
-
-
-
-/******************************************************************************
-CLUSTER LABELS
-******************************************************************************/
-
-div.cluster-label {
-  width: 600px;
-  display: block;
-  text-align: center;
-}
-
-div.clusterpoint {
-  margin: 1px;
-  padding: 3px 5px;
-  max-width: 400px;
-  display: inline-block;
-  clear: both;
-  /*border: solid 1px #999;*/
-  /*border-left: solid 5px #999;*/
-  text-align: left;
-}
-
-
-
-/******************************************************************************
-LEFT-LABEL POSITIONING
-******************************************************************************/
-
-.leaflet-label-left div.innerlabel {
-  -webkit-transform: translate(-110%, -50%); /* Chrome, Safari, Opera */
-     -moz-transform: translate(-110%, -50%);
-      -ms-transform: translate(-110%, -50%); /* IE 9 */
-       -o-transform: translate(-110%, -50%); 
-          transform: translate(-110%, -50%);
-}
-
 
 
 /******************************************************************************
@@ -306,52 +194,87 @@ MARKER CLUSTERS
 }
 
 .marker-cluster.marker-cluster-large { 
-  border-radius: 35px;
+  border-radius: 40px;
 }
 .marker-cluster.marker-cluster-large div { 
-  width: 60px;
-  height: 60px;
-  border-radius: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  margin: 10px;
 }
 .marker-cluster.marker-cluster-large span { 
-  line-height: 60px;
+  line-height: 50px;
 }
 
 /* aggression, fear, coalitions */
 .marker-cluster-cG, .marker-cluster-cE, .marker-cluster-cH { background-color: rgba(252,141,98,0.6); } 
 .marker-cluster-cG div, .marker-cluster-cE div, .marker-cluster-cH div { background-color: rgba(252,141,98,1); }
+.popup-title-cG, .popup-title-cE, .popup-title-cH {background-color: rgba(252,141,98,0.8); }
 
 /* grooming */
 .marker-cluster-cM { background-color: rgba(231,138,195,0.6); } 
 .marker-cluster-cM div { background-color: rgba(231,138,195,1); }
+.popup-title-cM {background-color: rgba(231,138,195,0.8); }
 
 /* food */
 .marker-cluster-cC { background-color: rgba(115,210,22,0.6); } 
 .marker-cluster-cC div { background-color: rgba(115,210,22,1); }
+.popup-title-cC {background-color: rgba(115,210,22,0.8); }
 
 /* friendly, sex */
 .marker-cluster-cF, .marker-cluster-cS { background-color: rgba(141,160,203,0.6); } 
 .marker-cluster-cF div, .marker-cluster-cS div { background-color: rgba(141,160,203,1); }
+.popup-title-cF, .popup-title-cS {background-color: rgba(141,160,203,0.8); }
 
 /* infant */
 .marker-cluster-cI { background-color: rgba(102,194,165,0.6); } 
 .marker-cluster-cI div { background-color: rgba(102,194,165,1); }
+.popup-title-cI {background-color: rgba(102,194,165,0.8); }
 
 /* play */
 .marker-cluster-cP { background-color: rgba(230,171,2,0.6); } 
 .marker-cluster-cP div { background-color: rgba(230,171,2,1); }
+.popup-title-cP {background-color: rgba(230,171,2,0.8); }
 
 /* vocalizations, self-directed, approaches and leaves, looking, researcher's view */
 .marker-cluster-cV, .marker-cluster-cW, .marker-cluster-cA, .marker-cluster-cL, .marker-cluster-cO { background-color: rgba(240,240,240,0.6); }
 .marker-cluster-cV div, .marker-cluster-cW div, .marker-cluster-cA div, .marker-cluster-cL div, .marker-cluster-cO div { background-color: rgba(240,240,240,0.6); }
+.popup-title-cV, .popup-title-cW, .popup-title-cA, .popup-title-cL, .popup-title-cO {background-color: rgba(240,240,240,0.8); }
 
 
 
 
 /******************************************************************************
-BEHAVIOR LIST
+BEHAVIOR POPUPS
 ******************************************************************************/
 
+div.leaflet-popup-content-wrapper {
+  padding: 0;
+  overflow: hidden;
+}
+
+div.leaflet-container a.leaflet-popup-close-button {
+  color: #333;
+}
+
+div.leaflet-popup-content {
+  margin: 5px;
+}
+
+div.popup-title {
+  margin: -5px;
+  margin-bottom: 4px;
+  padding: 5px;
+  padding-left: 10px;
+  width: 100%;
+  font-size: 140%;
+  font-weight: bold;
+}
+
+td.behavior-timestamp {
+  color: #666;
+  padding: 0 8px;
+}
 
 
 /******************************************************************************
