@@ -263,7 +263,7 @@ div.leaflet-popup-content {
 
 div.popup-title {
   margin: -5px;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
   padding: 5px;
   padding-left: 10px;
   width: 100%;
@@ -276,6 +276,15 @@ td.behavior-timestamp {
   padding: 0 8px;
 }
 
+td.behavior-point {
+  padding: 3px;
+}
+
+td.behavior-zoom-note {
+  color: #777;
+  font-size: 80%;
+  /*font-style: italic;*/
+}
 
 /******************************************************************************
 BEHAVIOR POINT "TAG CLOUD"

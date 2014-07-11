@@ -46,6 +46,11 @@ function popupHTML(cluster)
     html += '<tr><td class="behavior-timestamp">' + ops.time + '</td><td class="behavior-point">' + ops.text + '</td></tr>';
   }
   
+  if (pointsToShow < points.length)
+  {
+    html += '<tr><td></td><td class="behavior-zoom-note">Zoom in for more (+)</td></tr>';
+  }
+  
   html += "</table>";
   return html;
 }  
