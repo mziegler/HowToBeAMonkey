@@ -120,7 +120,13 @@ a#closemedia {
   border-radius: 3px;
 }
 
+div#mediacaption, a#closemedia {
+-webkit-box-shadow: 1px 1px 1px 5px #F2F2F2;
+-moz-box-shadow: 1px 1px 1px 5px #F2F2F2;
+box-shadow: 0px 0px 5px 4px #EBE8E4; /*rgba(221,221,221,1);*/
 
+  background: #F2F2F2 url('libraries/images/ricepaper.png');
+}}
 
 /******************************************************************************
 MARKER CLUSTERS
@@ -286,104 +292,4 @@ td.behavior-zoom-note {
   /*font-style: italic;*/
 }
 
-/******************************************************************************
-BEHAVIOR POINT "TAG CLOUD"
-******************************************************************************/
 
-/*div.cluster-label div {
-  display: block;
-}*/
-/*
-td.behavior-point-1, td.behavior-point-2 {
-  font-size: 75%;
-  font-weight: 400;
-  line-height: 110%;
-  padding: 10px;  
-  padding-top: 3px;
-
-}
-
-td.behavior-point-3 {
-  font-size: 75%;
-  font-weight: 500;
-  line-height: 110%;
-  padding: 10px;
-  padding-top: 3px;
-}
-td.behavior-point-4, td.behavior-point-5 {
-  padding: 10px;
-  font-size: 85%;
-  font-weight: 500;
-  line-height: 110%;
-}
-td.behavior-point-6 {
-  padding: 10px;
-  font-size: 100%;
-  font-weight: 600;
-}
-td.behavior-point-7 {
-  padding: 10px;
-  font-size: 130%;
-  font-weight: 700;
-}
-td.behavior-point-8 {
-  padding: 10px;
-  font-size: 160%;
-  font-weight: 700;
-}
-td.behavior-point-9 {
-  padding: 10px;
-  font-size: 220%;
-  font-weight: 700;
-}
-.clusterpoint.timestamp {
-  font-weight:bold;
-  font-size: 140%;
-  padding: 10px;
-}
-.clusterpoint.more {
-  padding: 10px;
-  font-size: 115%;
-}
- */
- 
-.clusterpoint.cF { /*friendly, sex*/
-  border-top: solid 8px #8da0cb; /* blue */
-}
-.clusterpoint.cI { /*infant*/
-  border-top: solid 8px #66c2a5; /* blue-green */
-}
-.clusterpoint.cM { /*grooming*/
-  border-top: solid 8px #e78ac3; /* pink */
-}
-.clusterpoint.cP { /*play*/
-  border-top: solid 8px #e6ab02; /* yellow */
-}
-.clusterpoint.cG, .clusterpoint.cH, .clusterpoint.cE { /*aggression, coalitions, submission*/
-  border-top: solid 8px #fc8d62; /* orange */
-}
-.clusterpoint.cC { /* food */
-  border-top: solid 8px #73d216; /* green */
-}
-.clusterpoint.cS { /* sex */
-  border-top: solid 8px #e5c494; /* tan */
-}
-.clusterpoint.cA { /* approaches, leaves */
-  display: none;
-}
-
-/*.clusterpoint.cW, .clusterpoint.cL, .clusterpoint.cO, clusterpoint.cV { /* self-care, looking, ovp ivp, vocalizations */
-
-
-
-
-
-
-
-div#mediacaption, a#closemedia, div.hilight-label .innerlabel, div.clusterpoint {
--webkit-box-shadow: 1px 1px 1px 5px #F2F2F2;
--moz-box-shadow: 1px 1px 1px 5px #F2F2F2;
-box-shadow: 0px 0px 5px 4px #EBE8E4; /*rgba(221,221,221,1);*/
-
-  background: #F2F2F2 url('libraries/images/ricepaper.png');
-}}
