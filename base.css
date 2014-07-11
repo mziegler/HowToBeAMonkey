@@ -248,7 +248,7 @@ MARKER CLUSTERS
 BEHAVIOR POPUPS
 ******************************************************************************/
 
-div.leaflet-popup-content-wrapper {
+.behavior-popup div.leaflet-popup-content-wrapper {
   padding: 0;
   overflow: hidden;
 }
@@ -257,7 +257,7 @@ div.leaflet-container a.leaflet-popup-close-button {
   color: #333;
 }
 
-div.leaflet-popup-content {
+.behavior-popup div.leaflet-popup-content {
   margin: 5px;
 }
 

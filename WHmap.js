@@ -1,4 +1,4 @@
-var map = L.map('map', {maxZoom:26, zoomControl: false}).setView([10.5115, -85.367], 16);
+var map = L.map('map', {maxZoom:26, zoomControl: false}).setView([10.5144, -85.3695], 19);
 L.control.scale().addTo(map);
 
 // base map (satelite images)
@@ -57,7 +57,7 @@ function popupHTML(cluster)
 
 
 function openPopup(target) {
-  target.layer.bindPopup(popupHTML(target.layer), {'minWidth':400, 'className':'fooclass'}).openPopup();
+  target.layer.bindPopup(popupHTML(target.layer), {'minWidth':400, 'className':'behavior-popup'}).openPopup();
 }
 
   
@@ -141,10 +141,6 @@ for (var category in behaviorPoints)
   
   if (categoryInfo.default)  { clusterLayer.addTo(map); } 
   
-  
-///////////////////////////////////////////////////////////////////////////////
-// POP UP ON CLUSTER CLICK  
-  
   // open popup on click
   clusterLayer.on('clusterclick', openPopup);
   clusterLayer.on('click', openPopup);
@@ -222,9 +218,13 @@ $('div#mediabg, div#mediacontainer img').click(function(){
 });
 
 
+
 ///////////////////////////////////////////////////////////////////////////////
 // START AND END POINTS
-
+var popup = L.popup()
+    .setLatLng(WHtrack[0])
+    .setContent(startpopup)
+    .openOn(map);
 
 
 

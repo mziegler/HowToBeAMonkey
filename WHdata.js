@@ -142,8 +142,9 @@ var WHtrack = [
 [10.5143646989, -85.3639992792],
 ]
 
+var startpopup = "<h3>A day in the life of Winslow Homer, a baby capuchin monkey</h3><p>Researchers at the Lomas Barbudal Monkey Project have been following groups of wild capuchin monkeys in Costa Rica and collecting data about their behavior since 1990.  This map shows a day in the life of <b>Winslow Homer</b>, a 1-year-old male on January 24, 2014.</p><p>Winslow Homer's group woke up right here at <b>5:44 AM</b>.  Follow along to see where he went and what he did!</p>";
 
-var categoryOrder = ['G', 'M', 'W', 'C', 'E', 'F', 'H', 'I', 'P', 'S', 'V', 'A', 'L', 'O']
+var categoryOrder = ['G', 'M', 'W', 'C', 'E', 'F', 'H', 'I', 'P', 'S', 'V', 'A', 'L', 'O'];
 
 var categories = {
   'G': {'name': 'Aggression', 'color': [252, 141, 98], 'default': true},
