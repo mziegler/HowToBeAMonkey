@@ -16,8 +16,7 @@ var track = L.polyline(WHtrack, {color: 'yellow', opacity:1, weight:3, lineJoin:
 
 
 ///////////////////////////////////////////////////////////////////////////////
-// OBSERVATIONAL DATA LAYER
-
+// BEHAVIOR POPUPS
 
 function popupHTML(cluster)
 {
@@ -60,6 +59,10 @@ function openPopup(target) {
   target.layer.bindPopup(popupHTML(target.layer), {'minWidth':400, 'className':'behavior-popup'}).openPopup();
 }
 
+
+
+///////////////////////////////////////////////////////////////////////////////
+// BEHAVIOR CLUSTER MARKERS
   
 function clusterIconFactory(category)
 {
@@ -137,7 +140,8 @@ for (var category in behaviorPoints)
     );
   }
   
-  behaviorLayers[categoryInfo.name] = clusterLayer;
+  // for legend
+  behaviorLayers['<span class="legend-label legend-label-c' + category + '">' + categoryInfo.name + '</span>'] = clusterLayer;
   
   if (categoryInfo.default)  { clusterLayer.addTo(map); } 
   
