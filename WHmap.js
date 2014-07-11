@@ -23,7 +23,15 @@ function popupHTML(cluster)
 {
   var pointsToShow = 5;
   
-  var points = cluster.getAllChildMarkers();
+  var points;
+  if (cluster.getAllChildMarkers)
+  {
+    points = cluster.getAllChildMarkers();
+  } else {
+    points = [cluster]; // singleton is just a marker
+  }
+  
+  
   
   var category = points[0].options.category;
   
