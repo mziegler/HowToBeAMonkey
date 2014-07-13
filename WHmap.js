@@ -1,4 +1,4 @@
-var map = L.map('map', {maxZoom:26, zoomControl: false}).setView([10.5144, -85.3695], 19);
+var map = L.map('map', {maxZoom:26, zoomControl: false}).setView([10.5147, -85.3695], 19);
 L.control.scale().addTo(map);
 
 // base map (satelite images)
@@ -250,11 +250,10 @@ $('div#mediabg, div#mediacontainer img').click(function(){
 
 ///////////////////////////////////////////////////////////////////////////////
 // START AND END POINTS
-var popup = L.popup()
-    .setLatLng(WHtrack[0])
-    .setContent(startpopup)
-    .openOn(map);
 
+
+var startMarker = L.marker(WHtrack[0]).addTo(map).bindPopup(startPopup).openPopup();
+var endMarker = L.marker(WHtrack[WHtrack.length - 1]).addTo(map).bindPopup(endPopup);
 
 
 ///////////////////////////////////////////////////////////////////////////////

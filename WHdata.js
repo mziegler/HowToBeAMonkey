@@ -142,7 +142,8 @@ var WHtrack = [
 [10.5143646989, -85.3639992792],
 ]
 
-var startpopup = "<h3>A day in the life of Winslow Homer, a baby capuchin monkey</h3><p>Researchers at the Lomas Barbudal Monkey Project have been following groups of wild capuchin monkeys in Costa Rica and collecting data about their behavior since 1990.  This map shows a day in the life of <b>Winslow Homer</b>, a 1-year-old male on January 24, 2014.</p><p>Winslow Homer's group woke up right here at <b>5:44 AM</b>.  Follow along to see where he went and what he did!</p>";
+var startPopup = '<h3>A day in the life of Winslow Homer, a baby capuchin monkey</h3><b>Start</b><p>Researchers at the Lomas Barbudal Monkey Project have been following groups of wild capuchin monkeys in Costa Rica and collecting data about their behavior since 1990.  This map shows a day in the life of <b>Winslow Homer</b>, a 1-year-old male on January 24, 2014.</p><p>Winslow Homer\'s group woke up right here at <b>5:44 AM</b>.  Follow along to see where he went and what he did!</p>';
+var endPopup = '<b>End</b>  On January 24 2014, Abby\'s group went to sleep here around <b>18:10</b>.  Capuchin monkeys tend to sleep in a different tree every night, though they often have favorite sleeping-trees that they return to frequently.</p><p>The monkeys like to sleep in some of the tallest trees, to avoid predators.  They sleep in contact with each other, cuddled up in "monkey balls."';
 
 var categoryOrder = ['G', 'M', 'W', 'C', 'E', 'F', 'H', 'I', 'P', 'S', 'V', 'A', 'L', 'O'];
 
