@@ -14,6 +14,31 @@ var track = L.polyline(WHtrack, {color: 'yellow', opacity:1, weight:3, lineJoin:
 
 
 
+///////////////////////////////////////////////////////////////////////////////
+// HEADER LINKS
+
+function openSidePanel(contentSelector)
+{
+  $('.side-panel-content').hide();
+  $(contentSelector).fadeIn('fast');
+  $('#side-panel').fadeIn('fast');
+}
+
+function closeSidePanel()
+{
+  $('#side-panel').hide();
+}
+
+$('#tab-about').click( function() { openSidePanel('#panel-about'); return false; });
+$('#tab-help').click( function() { openSidePanel('#panel-help'); return false; });
+$('#tab-donate').click( function() { openSidePanel('#panel-donate'); return false; });
+$('#tab-biographies').click( function() { openSidePanel('#panel-biographies'); return false; });
+
+$('#close-side-panel').click(closeSidePanel);
+map.on('click', closeSidePanel);
+
+
+
 
 ///////////////////////////////////////////////////////////////////////////////
 // BEHAVIOR POPUPS

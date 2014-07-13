@@ -10,10 +10,11 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  padding-top: 73px;
+  padding-top: 75px;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
+  z-index: 5;
 }
 
 div#map { 
@@ -41,24 +42,31 @@ div#map {
 HEADER
 ******************************************************************************/
 #header {
-  background: #FFDF5E /*#F7D265*/;
-  border-bottom: solid 3px rgba(230,171,2,1);
+  background: #E6C955; /*#D9BE50; /*#D9AD2B; /*#CCA329;/*#DBD953; /*#DEDC8C; /*#FFFEC9 /*#FFFD99 /*#FFFC5C; /*#FCFB8B /*#FFDF5E /*#F7D265*/;
+  /*border-bottom: solid 3px rgba(230,171,2,1);*/
   padding-left: 5px;
-  height: 70px;
+  height: 75px;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 99990001;
 }
 
-#header h1 {
+span#title {
   margin: -2px;
-  margin-left: 10px;
+  padding-left: 10px;
   font-size: 36px;
+  font-weight: bold;
+  color: #382E07;
 }
 
 a.header-tab {
+  color: #382E07;
   display: inline-block;
   padding: 2px 10px;
   margin: -2px 0;
@@ -66,7 +74,48 @@ a.header-tab {
 }
 
 a.header-tab:hover {
-  color: rgb(230,131,2);
+  color: #FFF;
+}
+
+
+
+/******************************************************************************
+SIDE PANEL
+******************************************************************************/
+#side-panel {
+  background: #FFDF5E;
+  /*border-right: solid 3px rgba(230,171,2,1);*/
+  padding: 30px;
+  padding-top: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 600px;
+  min-width: 300px;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 9999000;
+  overflow: auto;
+  color: #382E07;
+}
+
+a#close-side-panel {
+  color: black;
+  padding: 5px 5px 0 0;
+  position: absolute;
+  right: 0px;
+  top: 75px;
+}
+
+a#close-side-panel:hover {
+  color: #FFF;
+}
+
+span.side-title {
+  font-size: 120%;
+  font-weight: bold;
 }
 
 /******************************************************************************
