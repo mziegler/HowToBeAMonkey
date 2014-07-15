@@ -247,7 +247,7 @@ $('div#mediabg, div#mediacontainer img').click(function(){
 // START AND END POINTS
 
 
-var startMarker = L.marker(WHtrack[0]).addTo(map).bindPopup(startPopup).openPopup();
+var startMarker = L.marker(WHtrack[0]).addTo(map).bindPopup(startPopup, {'minWidth':400, 'className':'behavior-popup'}).openPopup();
 var endMarker = L.marker(WHtrack[WHtrack.length - 1]).addTo(map).bindPopup(endPopup);
 
 

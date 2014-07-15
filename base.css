@@ -446,4 +446,6 @@ td.behavior-zoom-note {
   /*font-style: italic;*/
 }
 
-
+.behavior-popup div.caption {
+  padding: 10px;
+}
