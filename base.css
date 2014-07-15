@@ -42,7 +42,7 @@ div#map {
 HEADER
 ******************************************************************************/
 #header {
-  background: #E6C955; /*#D9BE50; /*#D9AD2B; /*#CCA329;/*#DBD953; /*#DEDC8C; /*#FFFEC9 /*#FFFD99 /*#FFFC5C; /*#FCFB8B /*#FFDF5E /*#F7D265*/;
+  background: #FFD700; /* avocado #568203; /*lime #BFFF00; /* pistachio	#93C572;/* apple #8DB600 /*#382E07; /*#E6C955; /*#D9BE50; /*#D9AD2B; /*#CCA329;/*#DBD953; /*#DEDC8C; /*#FFFEC9 /*#FFFD99 /*#FFFC5C; /*#FCFB8B /*#FFDF5E /*#F7D265*/;
   /*border-bottom: solid 3px rgba(230,171,2,1);*/
   padding-left: 5px;
   height: 75px;
@@ -62,11 +62,11 @@ span#title {
   padding-left: 10px;
   font-size: 36px;
   font-weight: bold;
-  color: #382E07;
+  color: #222;
 }
 
 a.header-tab {
-  color: #382E07;
+  color: #222;
   display: inline-block;
   padding: 2px 10px;
   margin: -2px 0;
@@ -84,21 +84,26 @@ a.header-tab:hover {
 SIDE PANEL
 ******************************************************************************/
 #side-panel {
-  background: #FFDF5E;
+  background: #FFFFCC;/*#FFE991;*/
   /*border-right: solid 3px rgba(230,171,2,1);*/
   padding: 30px;
   padding-top: 100px;
   position: absolute;
   top: 0;
   left: 0;
-  max-width: 600px;
+  max-width: 550px;
   min-width: 300px;
   height: 100%;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
   z-index: 9999000;
-  color: #382E07;
+  /*color: #382E07;*/
+}
+
+#side-panel a {
+ color: #DA2C43;
+ text-decoration: none;
 }
 
 a#close-side-panel {
@@ -128,11 +133,11 @@ span.side-title {
 }
 
 .side-linkout {
-  color: black;
+  color: #DA2C43;
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
-  background: #FFE991;
+  background: #FBCEB1; /* atomic tangerine #FF9966; /*#FFDA47;*/
   display: inline-block;
 }
 
