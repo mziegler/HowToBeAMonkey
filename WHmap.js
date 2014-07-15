@@ -1,9 +1,12 @@
-var map = L.map('map', {maxZoom:26, zoomControl: false}).setView([10.5147, -85.3695], 19);
-L.control.scale().addTo(map);
+var map = L.map('map', {
+  maxZoom:26, 
+  zoomControl: false, 
+  attributionControl: false,
+  }).setView([10.5147, -85.3695], 19);
+
 
 // base map (satelite images)
 L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
-  attribution: 'Satelite images courtesy of Google',
   maxZoom: 19,
   opacity: 1,
 }).addTo(map);
@@ -264,5 +267,7 @@ L.control.layers(null, behaviorLayers, {position:'topleft'}).addTo(map);
 
 // zoom control (underneath layer control)
 new L.Control.Zoom({ position: 'topleft' }).addTo(map);
+
+L.control.scale().addTo(map);
 
 
