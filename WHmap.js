@@ -1,5 +1,5 @@
 var map = L.map('map', {
-  maxZoom:26, 
+  maxZoom:22, 
   zoomControl: false, 
   attributionControl: false,
   }).setView([10.5147, -85.3695], 19);
@@ -150,12 +150,12 @@ for (var category in behaviorPoints)
     singleMarkerMode: true,
   });
 
-    
+  var markers = [];    
   for (var i = 0; i < points.length; i++)
   {
     var row = points[i];
   
-    clusterLayer.addLayer(new L.marker(
+    markers.push(new L.marker(
       [
         row[0],
         row[1]
@@ -167,6 +167,7 @@ for (var category in behaviorPoints)
       })
     );
   }
+  clusterLayer.addLayers(markers);
   
   // for legend
   behaviorLayers['<span class="legend-label legend-label-c' + category + '">' + categoryInfo.name + '</span>'] = clusterLayer;
