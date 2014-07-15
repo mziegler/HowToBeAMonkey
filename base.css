@@ -127,7 +127,7 @@ span.side-title {
   font-weight: bold;
 }
 
-a.side-linkout {
+.side-linkout {
   color: black;
   text-decoration: none;
   padding: 10px;
