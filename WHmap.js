@@ -51,7 +51,10 @@ function popupHTML(cluster)
   var points;
   if (cluster.getAllChildMarkers)
   {
-    points = cluster.getAllChildMarkers();
+    points = cluster.getAllChildMarkers()
+    .sort(function(a,b) {
+      return a.options.time.localeCompare(b.options.time);
+    });
   } else {
     points = [cluster]; // singleton is just a marker
   }
