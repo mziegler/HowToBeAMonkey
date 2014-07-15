@@ -426,6 +426,11 @@ div.popup-title {
   font-weight: bold;
 }
 
+.behavior-list {
+  max-height: 200px;
+  overflow: auto;
+}
+
 td.behavior-timestamp {
   color: #666;
   padding: 0 8px;

@@ -47,9 +47,7 @@ map.on('click', closeSidePanel);
 // BEHAVIOR POPUPS
 
 function popupHTML(cluster)
-{
-  var pointsToShow = 5;
-  
+{ 
   var points;
   if (cluster.getAllChildMarkers)
   {
@@ -58,27 +56,17 @@ function popupHTML(cluster)
     points = [cluster]; // singleton is just a marker
   }
   
-  
-  
   var category = points[0].options.category;
-  
-  var startIndex = (pointsToShow >= points.length) ? points.length - 1 
-    : points.length - 1 - Math.floor((Math.random()*(points.length - pointsToShow)));
     
-  var html = '<div class="popup-title popup-title-c' + category + '">' + categories[category].name + '</div><table class="behaviorList">';
+  var html = '<div class="popup-title popup-title-c' + category + '">' + categories[category].name + '</div><div class="behavior-list"><table>';
   
-  for (var i = 0; i < pointsToShow && i < points.length; i++)
+  for (var i = 0; i < points.length; i++)
   {    
-    var ops = points[startIndex - i].options;
+    var ops = points[i].options;
     html += '<tr><td class="behavior-timestamp">' + ops.time + '</td><td class="behavior-point">' + ops.text + '</td></tr>';
   }
   
-  if (pointsToShow < points.length)
-  {
-    html += '<tr><td></td><td class="behavior-zoom-note">Zoom in for more (+)</td></tr>';
-  }
-  
-  html += "</table>";
+  html += "</table></div>";
   return html;
 }  
 
