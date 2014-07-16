@@ -158,11 +158,16 @@ var categories = {
   'I': {'name': 'Infant', 'color': [102, 194, 165], 'default': true},
   'P': {'name': 'Play', 'color': [230, 171, 2], 'default': true},
   'V': {'name': 'Vocalizations', 'color': [240, 240, 240], 'default': false},
-  'W': {'name': 'Self-directed', 'color': [240, 240, 240], 'default': false},
+  'W': {'name': 'Miscellaneous (self-directed)', 'color': [240, 240, 240], 'default': false},
   'A': {'name': 'Approaches and leaves', 'color': [240, 240, 240], 'default': false},  
-  'L': {'name': 'Looking', 'color': [240, 240, 240], 'default': false},  
-  'O': {'name': 'Researchers\' view', 'color': [240, 240, 240], 'default': false},  
+  'L': {'name': 'Where Winslow Homer is looking', 'color': [240, 240, 240], 'default': false},  
+  'O': {'name': 'Researchers\' view of Winslow Homer', 'color': [240, 240, 240], 'default': false},  
 }
+
+
+var textBoxes = [
+  [[10.5151, -85.3698], "It's still dark when the monkeys first start moving, and the researchers can't usually collect any data for the first hour or so until the light gets better and it gets easier to tell the monkeys apart."],
+]
 
 
 var hilights = [
