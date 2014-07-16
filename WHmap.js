@@ -42,6 +42,18 @@ map.on('click', closeSidePanel);
 
 
 
+///////////////////////////////////////////////////////////////////////////////
+// MAP CONTROLS
+
+// add layer control
+var layerControl = L.control.groupedLayers(null, null, {position:'topleft'}).addTo(map);
+
+// zoom control (underneath layer control)
+L.control.zoom({ position: 'topleft' }).addTo(map);
+
+L.control.scale().addTo(map); // scale control
+
+
 
 ///////////////////////////////////////////////////////////////////////////////
 // BEHAVIOR POPUPS
@@ -126,7 +138,7 @@ function clusterIconFactory(category)
 }
 
 // to pass to Leaflet layer control
-var behaviorLayers = {};
+//var behaviorLayers = {};
 
 for (var category in behaviorPoints)
 {
@@ -162,7 +174,8 @@ for (var category in behaviorPoints)
   clusterLayer.addLayers(markers);
   
   // for legend
-  behaviorLayers['<span class="legend-label legend-label-c' + category + '">' + categoryInfo.name + '</span>'] = clusterLayer;
+  //behaviorLayers['<span class="legend-label legend-label-c' + category + '">' + categoryInfo.name + '</span>'] = clusterLayer;
+  layerControl.addOverlay(clusterLayer, '<span class="legend-label legend-label-c' + category + '">' + categoryInfo.name + '</span>', categoryInfo.group);
   
   if (categoryInfo.default)  { clusterLayer.addTo(map); } 
   
@@ -272,15 +285,6 @@ var startMarker = L.marker(WHtrack[0]).addTo(map).bindPopup(startPopup, {'minWid
 var endMarker = L.marker(WHtrack[WHtrack.length - 1]).addTo(map).bindPopup(endPopup);
 
 
-///////////////////////////////////////////////////////////////////////////////
-// MAP CONTROLS
 
-// add layer control
-L.control.layers(null, behaviorLayers, {position:'topleft'}).addTo(map);
-
-// zoom control (underneath layer control)
-new L.Control.Zoom({ position: 'topleft' }).addTo(map);
-
-L.control.scale().addTo(map);
 
 
