@@ -119,7 +119,8 @@ function clusterIconFactory(category)
     return new L.DivIcon({ 
       html: '<div category="' + category + '"><span>' + childCount + '</span></div>', 
       className: "marker-cluster marker-cluster-c" + category + sizeclass, 
-      iconSize: iconSize });
+      iconSize: iconSize,
+      iconAnchor: [70-(Math.random()*140)+30, 70-(Math.random()*140)+30] });
   }
   return clusterIcon;
 }
