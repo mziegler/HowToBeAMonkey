@@ -13,7 +13,7 @@ L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
 
 
 // add GPS track to map     
-var track = L.polyline(WHtrack, {color: 'yellow', opacity:1, weight:3, lineJoin:'round', lineCap:'round', dashArray:[10,10]}).addTo(map);
+var track = L.polyline(WHtrack, {color: 'white', opacity:1, weight:3, lineJoin:'round', lineCap:'round', dashArray:[10,10]}).addTo(map);
 
 
 
@@ -117,7 +117,19 @@ function clusterIconFactory(category)
 
   return function(cluster)
   {
-    var iconSize = [48, 48]
+    
+    var childCount = cluster.getChildCount();
+   
+    var iconSize = [48, 48]; 
+    if (childCount < 10)
+    {
+      iconSize = [32, 32];
+    }
+    else if (childCount < 20)
+    {
+      iconSize = [40, 40];
+    }
+    
   
     // icons
     var anchorPoint = scatterAnchor([iconSize[0] / 2, iconSize[1] / 2], 170)
