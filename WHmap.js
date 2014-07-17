@@ -115,28 +115,26 @@ function scatterAnchor(anchorCenter, range)
 function clusterIconFactory(category)
 {
 
-  if ($.inArray(category, ["F", "G", "H", "I", "M", "P", "S"]) )
+  return function(cluster)
   {
-    return function(cluster)
-    {
-      var iconSize = [35, 35]
-    
-      // icons
-      var anchorPoint = scatterAnchor([iconSize[0] / 2, iconSize[1] / 2], 170)
-      
-      var icon = L.icon({
-        iconUrl: 'icons/' + category + '.jpg',
-        iconSize: iconSize,
-        iconAnchor: anchorPoint,
-      });
-      
-      icon.popupOffset = [-anchorPoint[0] + iconSize[0]/2, -anchorPoint[1] + iconSize[1]/2];
-      
-      return icon;
-    }
+    var iconSize = [48, 48]
   
+    // icons
+    var anchorPoint = scatterAnchor([iconSize[0] / 2, iconSize[1] / 2], 170)
+      
+    var icon = L.icon({
+      iconUrl: 'icons/48/' + category + '.png',
+      iconSize: iconSize,
+      iconAnchor: anchorPoint,
+    });
+      
+    icon.popupOffset = [-anchorPoint[0] + iconSize[0]/2, -anchorPoint[1] + iconSize[1]/2];
+      
+    return icon;
+    
   }
-  else
+  
+  /*
   {
 
     var clusterIcon = function(cluster)
@@ -180,7 +178,7 @@ function clusterIconFactory(category)
         });
     }
     return clusterIcon;
-  }
+  }*/
 }
 
 // to pass to Leaflet layer control
