@@ -81,7 +81,7 @@ var WHtrack = [
 [10.5084783398, -85.3664243314],
 [10.5085401144, -85.3663970903],
 [10.5085039884, -85.3664929792],
-[10.5086023081, -85.3666001838],
+[10.5086023081, -85.3666001838], // grooming textbox
 [10.5088181421, -85.3668864258],
 [10.5088665895, -85.3671175148],
 [10.5089958385, -85.3672770225],
@@ -91,7 +91,7 @@ var WHtrack = [
 [10.509392973, -85.3669639584],
 [10.5094271712, -85.3669109847],
 [10.5096783768, -85.3669418301],
-[10.5098098889, -85.3669462726],
+[10.5098098889, -85.3669462726], 
 [10.5098046921, -85.3667984996],
 [10.5102035031, -85.3667916264],
 [10.5102991406, -85.3668457735],
@@ -167,6 +167,7 @@ var categories = {
 
 var textBoxes = [
   [[10.51515, -85.3698], "It's still dark when the monkeys first start moving, and the researchers can't usually collect any data for the first hour or so until the light gets better and it gets easier to tell the monkeys apart."],
+  [[10.5083, -85.3666], "Capuchin monkeys spend a lot of time grooming each other.  Grooming helps to re-enforce the monkey's friendly social bonds, as well as keeping parasites out of their fur.  Grooming tends to go \"up the social hierarchy,\" &ndash; lower-ranking monkeys usually spend much more time grooming higher-ranking monkeys than vice versa, to gain social favor.  Winslow Homer is Dali's (the alpha female) son, so most everybody is always eager to groom him!"],
 ]
 
 
