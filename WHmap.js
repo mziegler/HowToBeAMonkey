@@ -87,7 +87,14 @@ function popupHTML(cluster)
 
 
 function openPopup(target) {
-  target.layer.bindPopup(popupHTML(target.layer), {'minWidth':400, 'className':'behavior-popup'}).openPopup();
+  
+  var offset = target.layer.options.icon.popupOffset || target.layer._iconObj.popupOffset;
+
+  target.layer.bindPopup(popupHTML(target.layer), {
+    'minWidth':400, 
+    'className':'behavior-popup',
+    'offset':offset,
+  }).openPopup();
 }
 
 
@@ -95,46 +102,85 @@ function openPopup(target) {
 ///////////////////////////////////////////////////////////////////////////////
 // BEHAVIOR CLUSTER MARKERS
   
+  
+function scatterAnchor(anchorCenter, range)
+{
+  return [ (range / 2) - (Math.random() * range) + anchorCenter[0], 
+           (range / 2) - (Math.random() * range) + anchorCenter[1]  ]; 
+  
+  return [200,200]
+}
+  
+  
 function clusterIconFactory(category)
 {
-  var clusterIcon = function(cluster)
+
+  if ($.inArray(category, ["F", "G", "H", "I", "M", "P", "S"]) )
   {
-    var childCount = cluster.getChildCount();  
+    return function(cluster)
+    {
+      var iconSize = [35, 35]
+    
+      // icons
+      var anchorPoint = scatterAnchor([iconSize[0] / 2, iconSize[1] / 2], 170)
+      
+      var icon = L.icon({
+        iconUrl: 'icons/' + category + '.jpg',
+        iconSize: iconSize,
+        iconAnchor: anchorPoint,
+      });
+      
+      icon.popupOffset = [-anchorPoint[0] + iconSize[0]/2, -anchorPoint[1] + iconSize[1]/2];
+      
+      return icon;
+    }
+  
+  }
+  else
+  {
+
+    var clusterIcon = function(cluster)
+    { 
+      var childCount = cluster.getChildCount();  
     
     	var sizeclass = ' marker-cluster-';
     	var iconSize = null;
       if (childCount == 1)
       {
         sizeclass += 'singleton';
-        iconSize= new L.Point(30, 30);
+        iconSize = 30;
       }
       else if (childCount < 5) 
       {
         sizeclass += 'xsmall';
-        iconSize= new L.Point(40, 40);
+        iconSize = 40;
       } 
       else if (childCount < 20) 
       {
         sizeclass += 'small';
-        iconSize= new L.Point(50, 50);
+        iconSize = 50;
       } 
       else if (childCount < 50)
       {
         sizeclass += 'medium';
-        iconSize= new L.Point(60, 60);
+        iconSize = 60;
       }
       else {
         sizeclass += 'large';
-        iconSize= new L.Point(70, 70);
+        iconSize = 70;
       }
-    
-    return new L.DivIcon({ 
-      html: '<div category="' + category + '"><span>' + childCount + '</span></div>', 
-      className: "marker-cluster marker-cluster-c" + category + sizeclass, 
-      iconSize: iconSize,
-      iconAnchor: [70-(Math.random()*140)+30, 70-(Math.random()*140)+30] });
+      
+      var anchorPoint = scatterAnchor([iconSize/2, iconSize/2], 170);
+      return new L.DivIcon({ 
+        html: '<div category="' + category + '"><span>' + childCount + '</span></div>', 
+        className: "marker-cluster marker-cluster-c" + category + sizeclass, 
+        iconSize: [iconSize, iconSize],
+        iconAnchor: anchorPoint,
+        //popupAnchor: [200,200],
+        });
+    }
+    return clusterIcon;
   }
-  return clusterIcon;
 }
 
 // to pass to Leaflet layer control
