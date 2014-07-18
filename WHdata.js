@@ -152,7 +152,7 @@ var categories = {
   'E': {'name': 'Submission and fear', 'default': true, 'group': 'Dominance'},
   'H': {'name': 'Coalitions', 'default': true, 'group': 'Dominance'},
   'M': {'name': 'Grooming', 'default': true, 'group': 'Friendly'},
-  'C': {'name': 'Foraging and social food', 'default': true, 'group': 'Food'},
+  'C': {'name': 'Food', 'default': true, 'group': 'Food'},
   'F': {'name': 'Friendly', 'default': true, 'group': 'Friendly'},
   'S': {'name': 'Sex', 'default': true, 'group': 'Friendly'},
   'I': {'name': 'Infant', 'default': true, 'group': 'Friendly'},

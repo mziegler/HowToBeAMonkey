@@ -125,10 +125,7 @@ function clusterIconFactory(category)
     {
       iconSize = [32, 32];
     }
-    else if (childCount < 20)
-    {
-      iconSize = [40, 40];
-    }
+
   
     var anchorPoint = scatterAnchor([iconSize[0] / 2, iconSize[1] / 2], 170)
       
@@ -180,7 +177,7 @@ for (var category in behaviorPoints)
   clusterLayer.addLayers(markers);
   
 
-  layerControl.addOverlay(clusterLayer, '<span class="legend-label"><img src="icons/48/' + category + '.png" class="legend-icon" />' + categoryInfo.name + '</span>', categoryInfo.group);
+  layerControl.addOverlay(clusterLayer, '<img src="icons/48/' + category + '.png" class="legend-icon" /><span class="legend-label">' + categoryInfo.name + '</span>', categoryInfo.group);
   
   if (categoryInfo.default)  { clusterLayer.addTo(map); } 
   

@@ -295,12 +295,6 @@ td.behavior-point {
   padding: 3px;
 }
 
-td.behavior-zoom-note {
-  color: #777;
-  font-size: 80%;
-  /*font-style: italic;*/
-}
-
 .behavior-popup div.caption {
   padding: 10px;
 }
@@ -326,7 +320,6 @@ td.behavior-zoom-note {
 
 .legend-label {
   padding: 5px;
-  border-radius: 3px;
 }
 
 .legend-icon {
@@ -347,12 +340,19 @@ td.behavior-zoom-note {
   pointer-events: all;
 }
 
-.leaflet-control-layers-expanded::before {
-  content: "Legend";
-  font-weight: bold;
-  font-size: 120%;
-  padding: 5px;
-  padding-left: 0;
-  padding- bottom: 10px;
+.leaflet-control-layers-group {
+  display: inline-block;
+  padding: 0 10px;
 }
 
+#leaflet-control-layers-group-0 {
+  float: right;
+}
+
+#leaflet-control-layers-group-2 {
+  float: left;
+}
+
+#leaflet-control-layers-group-3 {
+  display: block;
+}
