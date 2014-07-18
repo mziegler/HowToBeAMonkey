@@ -148,20 +148,20 @@ var endPopup = '<div style="width:100%;font-weight:bold;text-align:center;font-s
 var categoryOrder = ['G', 'M', 'W', 'C', 'E', 'F', 'H', 'I', 'P', 'S', 'V', 'A', 'L', 'O'];
 
 var categories = {
-  'G': {'name': 'Aggression', 'color': [252, 141, 98], 'default': true, 'group': 'Dominance'},
-  'E': {'name': 'Submission and fear', 'color': [252, 141, 98], 'default': true, 'group': 'Dominance'},
-  'H': {'name': 'Coalitions', 'color': [252, 141, 98], 'default': true, 'group': 'Dominance'},
-  'M': {'name': 'Grooming', 'color': [231, 138, 195], 'default': true, 'group': 'Friendly'},
-  'C': {'name': 'Foraging and social food', 'color': [115, 210, 22], 'default': true, 'group': 'Food'},
-  'F': {'name': 'Friendly', 'color': [141, 160, 203], 'default': true, 'group': 'Friendly'},
-  'S': {'name': 'Sex', 'color': [141, 160, 203], 'default': true, 'group': 'Friendly'},
-  'I': {'name': 'Infant', 'color': [102, 194, 165], 'default': true, 'group': 'Friendly'},
-  'P': {'name': 'Play', 'color': [230, 171, 2], 'default': true, 'group': 'Friendly'},
-  'V': {'name': 'Vocalizations', 'color': [240, 240, 240], 'default': false, 'group': 'Other'},
-  'W': {'name': 'Miscellaneous (self-directed)', 'color': [240, 240, 240], 'default': false, 'group': 'Other'},
-  'A': {'name': 'Approaches and leaves', 'color': [240, 240, 240], 'default': false, 'group': 'Other'},  
-  'L': {'name': 'Where Winslow Homer is looking', 'color': [240, 240, 240], 'default': false, 'group': 'Other'},  
-  'O': {'name': 'Researchers\' view of Winslow Homer', 'color': [240, 240, 240], 'default': false, 'group': 'Other'},  
+  'G': {'name': 'Aggression', 'default': true, 'group': 'Dominance'},
+  'E': {'name': 'Submission and fear', 'default': true, 'group': 'Dominance'},
+  'H': {'name': 'Coalitions', 'default': true, 'group': 'Dominance'},
+  'M': {'name': 'Grooming', 'default': true, 'group': 'Friendly'},
+  'C': {'name': 'Foraging and social food', 'default': true, 'group': 'Food'},
+  'F': {'name': 'Friendly', 'default': true, 'group': 'Friendly'},
+  'S': {'name': 'Sex', 'default': true, 'group': 'Friendly'},
+  'I': {'name': 'Infant', 'default': true, 'group': 'Friendly'},
+  'P': {'name': 'Play', 'default': true, 'group': 'Friendly'},
+  'V': {'name': 'Vocalizations', 'default': false, 'group': 'Other'},
+  'W': {'name': 'Miscellaneous (self-directed)', 'default': false, 'group': 'Other'},
+  'A': {'name': 'Approaches and leaves', 'default': false, 'group': 'Other'},  
+  'L': {'name': 'Where Winslow Homer is looking', 'default': false, 'group': 'Other'},  
+  'O': {'name': 'Researchers\' view of Winslow Homer', 'default': false, 'group': 'Other'},  
 }
 
 

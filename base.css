@@ -266,136 +266,29 @@ box-shadow: 0px 0px 5px 4px #EBE8E4; /*rgba(221,221,221,1);*/
 
 
 /******************************************************************************
-MARKER CLUSTERS
-******************************************************************************/
-
-.marker-cluster {
-  background-clip: padding-box;
-  /*border-radius: 20px;*/
-}
-.marker-cluster div {
-  /*width: 30px;
-  height: 30px;*/
-  margin-left: 5px;
-  margin-top: 5px;
-
-  text-align: center;
-  /*border-radius: 15px;*/
-  font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
-}
-/*.marker-cluster span {
-  line-height: 30px;
-}*/
-	
-	
-.marker-cluster.marker-cluster-singleton { 
-  border-radius: 15px;
-}
-.marker-cluster.marker-cluster-singleton div { 
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-}
-.marker-cluster.marker-cluster-singleton span { 
-  line-height: 20px;
-}
-
-.marker-cluster.marker-cluster-xsmall { 
-  border-radius: 20px;
-}
-.marker-cluster.marker-cluster-xsmall div { 
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
-}
-.marker-cluster.marker-cluster-xsmall span { 
-  line-height: 30px;
-}
-
-.marker-cluster.marker-cluster-small { 
-  border-radius: 25px;
-}
-.marker-cluster.marker-cluster-small div { 
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-}
-.marker-cluster.marker-cluster-small span { 
-  line-height: 40px;
-}
-
-.marker-cluster.marker-cluster-medium { 
-  border-radius: 30px;
-}
-.marker-cluster.marker-cluster-medium div { 
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-}
-.marker-cluster.marker-cluster-medium span { 
-  line-height: 50px;
-}
-
-.marker-cluster.marker-cluster-large { 
-  border-radius: 40px;
-}
-.marker-cluster.marker-cluster-large div { 
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  margin: 10px;
-  line-height: 50px;
-}
-.marker-cluster.marker-cluster-large span { 
-}
-
-
-
-/******************************************************************************
 CATEGORY COLORS
 ******************************************************************************/
 
 /* aggression, fear, coalitions */
-.marker-cluster-cG, .marker-cluster-cE, .marker-cluster-cH { background-color: rgba(252,141,98,0.6); } 
-.marker-cluster-cG div, .marker-cluster-cE div, .marker-cluster-cH div { background-color: rgba(252,141,98,1); }
 .popup-title-cG, .popup-title-cE, .popup-title-cH {background-color: rgba(252,141,98,0.8); }
-:checked + span .legend-label-cG, :checked + span .legend-label-cE, :checked + span .legend-label-cH { background-color: rgba(252,141,98,0.8); }
 
 /* grooming */
-.marker-cluster-cM { background-color: rgba(231,138,195,0.6); } 
-.marker-cluster-cM div { background-color: rgba(231,138,195,1); }
 .popup-title-cM {background-color: rgba(231,138,195,0.8); }
-:checked + span .legend-label-cM { background-color: rgba(231,138,195,0.8); }
 
 /* food */
-.marker-cluster-cC { background-color: rgba(115,210,22,0.6); } 
-.marker-cluster-cC div { background-color: rgba(115,210,22,1); }
 .popup-title-cC {background-color: rgba(115,210,22,0.8); }
-:checked + span .legend-label-cC { background-color: rgba(115,210,22,0.8); }
 
 /* friendly, sex */
-.marker-cluster-cF, .marker-cluster-cS { background-color: rgba(141,160,203,0.6); } 
-.marker-cluster-cF div, .marker-cluster-cS div { background-color: rgba(141,160,203,1); }
 .popup-title-cF, .popup-title-cS {background-color: rgba(141,160,203,0.8); }
-:checked + span .legend-label-cF, :checked + span .legend-label-cS { background-color: rgba(141,160,203,0.8); }
 
 /* infant */
-.marker-cluster-cI { background-color: rgba(102,194,165,0.6); } 
-.marker-cluster-cI div { background-color: rgba(102,194,165,1); }
 .popup-title-cI {background-color: rgba(102,194,165,0.8); }
-:checked + span .legend-label-cI { background-color: rgba(102,194,165,0.8); }
 
 /* play */
-.marker-cluster-cP { background-color: rgba(230,171,2,0.6); } 
-.marker-cluster-cP div { background-color: rgba(230,171,2,1); }
 .popup-title-cP {background-color: rgba(230,171,2,0.8); }
-:checked + span .legend-label-cP { background-color: rgba(230,171,2,0.8); }
 
 /* vocalizations, self-directed, approaches and leaves, looking, researcher's view */
-.marker-cluster-cV, .marker-cluster-cW, .marker-cluster-cA, .marker-cluster-cL, .marker-cluster-cO { background-color: rgba(240,240,240,0.6); }
-.marker-cluster-cV div, .marker-cluster-cW div, .marker-cluster-cA div, .marker-cluster-cL div, .marker-cluster-cO div { background-color: rgba(240,240,240,0.6); }
 .popup-title-cV, .popup-title-cW, .popup-title-cA, .popup-title-cL, .popup-title-cO {background-color: rgba(240,240,240,0.8); }
-:checked + span .legend-label-cV, :checked + span .legend-label-cW, :checked + span .legend-label-cA, :checked + span .legend-label-cL, :checked + span .legend-label-cO { background-color: rgba(240,240,240,1); }
 
 
 

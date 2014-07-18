@@ -129,9 +129,7 @@ function clusterIconFactory(category)
     {
       iconSize = [40, 40];
     }
-    
   
-    // icons
     var anchorPoint = scatterAnchor([iconSize[0] / 2, iconSize[1] / 2], 170)
       
     var icon = L.icon({
@@ -146,55 +144,7 @@ function clusterIconFactory(category)
     
   }
   
-  /*
-  {
-
-    var clusterIcon = function(cluster)
-    { 
-      var childCount = cluster.getChildCount();  
-    
-    	var sizeclass = ' marker-cluster-';
-    	var iconSize = null;
-      if (childCount == 1)
-      {
-        sizeclass += 'singleton';
-        iconSize = 30;
-      }
-      else if (childCount < 5) 
-      {
-        sizeclass += 'xsmall';
-        iconSize = 40;
-      } 
-      else if (childCount < 20) 
-      {
-        sizeclass += 'small';
-        iconSize = 50;
-      } 
-      else if (childCount < 50)
-      {
-        sizeclass += 'medium';
-        iconSize = 60;
-      }
-      else {
-        sizeclass += 'large';
-        iconSize = 70;
-      }
-      
-      var anchorPoint = scatterAnchor([iconSize/2, iconSize/2], 170);
-      return new L.DivIcon({ 
-        html: '<div category="' + category + '"><span>' + childCount + '</span></div>', 
-        className: "marker-cluster marker-cluster-c" + category + sizeclass, 
-        iconSize: [iconSize, iconSize],
-        iconAnchor: anchorPoint,
-        //popupAnchor: [200,200],
-        });
-    }
-    return clusterIcon;
-  }*/
 }
-
-// to pass to Leaflet layer control
-//var behaviorLayers = {};
 
 for (var category in behaviorPoints)
 {
@@ -229,8 +179,7 @@ for (var category in behaviorPoints)
   }
   clusterLayer.addLayers(markers);
   
-  // for legend
-  //behaviorLayers['<span class="legend-label legend-label-c' + category + '">' + categoryInfo.name + '</span>'] = clusterLayer;
+
   layerControl.addOverlay(clusterLayer, '<span class="legend-label legend-label-c' + category + '">' + categoryInfo.name + '</span>', categoryInfo.group);
   
   if (categoryInfo.default)  { clusterLayer.addTo(map); } 
