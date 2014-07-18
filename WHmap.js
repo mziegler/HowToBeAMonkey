@@ -138,7 +138,7 @@ function clusterIconFactory(category)
       iconAnchor: anchorPoint,
     });
       
-    icon.popupOffset = [-anchorPoint[0] + iconSize[0]/2, -anchorPoint[1] + iconSize[1]/2];
+    icon.popupOffset = [-anchorPoint[0] + iconSize[0]/2, -anchorPoint[1] + iconSize[1]/2 - 10];
       
     return icon;
     
@@ -180,7 +180,7 @@ for (var category in behaviorPoints)
   clusterLayer.addLayers(markers);
   
 
-  layerControl.addOverlay(clusterLayer, '<span class="legend-label legend-label-c' + category + '">' + categoryInfo.name + '</span>', categoryInfo.group);
+  layerControl.addOverlay(clusterLayer, '<span class="legend-label"><img src="icons/48/' + category + '.png" class="legend-icon" />' + categoryInfo.name + '</span>', categoryInfo.group);
   
   if (categoryInfo.default)  { clusterLayer.addTo(map); } 
   

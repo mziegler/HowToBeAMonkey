@@ -24,23 +24,11 @@ div#map {
    background: #EBE8E4 url('libraries/images/ricepaper2.png');
 }
 
-.legend-label {
-  padding: 5px;
-  border-radius: 3px;
-}
-
-.leaflet-control-layers-overlays label {
-  margin: 6px;
-  vertical-align: bottom;
-}
-
-
-
 
 
 /******************************************************************************
-HEADER
-******************************************************************************/
+ header */
+
 #header {
   background: #FFD700; /* avocado #568203; /*lime #BFFF00; /* pistachio	#93C572;/* apple #8DB600 /*#382E07; /*#E6C955; /*#D9BE50; /*#D9AD2B; /*#CCA329;/*#DBD953; /*#DEDC8C; /*#FFFEC9 /*#FFFD99 /*#FFFC5C; /*#FCFB8B /*#FFDF5E /*#F7D265*/;
   /*border-bottom: solid 3px rgba(230,171,2,1);*/
@@ -81,8 +69,8 @@ a.header-tab:hover {
 
 
 /******************************************************************************
-SIDE PANEL
-******************************************************************************/
+ side panel */
+
 #side-panel {
   background: #FFFFCC;/*#FFE991;*/
   /*border-right: solid 3px rgba(230,171,2,1);*/
@@ -148,8 +136,8 @@ a.side-linkout:hover {
 
 
 /******************************************************************************
-HILIGHT LABELS
-******************************************************************************/
+ hilight labels */
+
 
 div.hilight-label div.innerlabel {
   background: #EEE;
@@ -202,8 +190,8 @@ div.hilight-label div.innerlabel {
 
 
 /******************************************************************************
-FULLSCREEN PICTURES AND VIDEO
-******************************************************************************/
+ Fullscreen pictures and video */
+
 
 div#mediabg {
   position: absolute;
@@ -265,36 +253,10 @@ box-shadow: 0px 0px 5px 4px #EBE8E4; /*rgba(221,221,221,1);*/
 
 
 
-/******************************************************************************
-CATEGORY COLORS
-******************************************************************************/
-
-/* aggression, fear, coalitions */
-.popup-title-cG, .popup-title-cE, .popup-title-cH {background-color: rgba(252,141,98,0.8); }
-
-/* grooming */
-.popup-title-cM {background-color: rgba(231,138,195,0.8); }
-
-/* food */
-.popup-title-cC {background-color: rgba(115,210,22,0.8); }
-
-/* friendly, sex */
-.popup-title-cF, .popup-title-cS {background-color: rgba(141,160,203,0.8); }
-
-/* infant */
-.popup-title-cI {background-color: rgba(102,194,165,0.8); }
-
-/* play */
-.popup-title-cP {background-color: rgba(230,171,2,0.8); }
-
-/* vocalizations, self-directed, approaches and leaves, looking, researcher's view */
-.popup-title-cV, .popup-title-cW, .popup-title-cA, .popup-title-cL, .popup-title-cO {background-color: rgba(240,240,240,0.8); }
-
-
 
 /******************************************************************************
-BEHAVIOR POPUPS
-******************************************************************************/
+ behavior popups */
+
 
 .behavior-popup div.leaflet-popup-content-wrapper {
   padding: 0;
@@ -345,7 +307,9 @@ td.behavior-zoom-note {
 
 
 
-/* layer control */
+/******************************************************************************
+ layer control */
+
 .leaflet-control-layers-group-name {
   font-weight: bold;
   margin-bottom: .2em;
@@ -358,5 +322,37 @@ td.behavior-zoom-note {
 
 .leaflet-control-layers-group label {
   padding-left: .5em;
+}
+
+.legend-label {
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.legend-icon {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.leaflet-control-layers-overlays label {
+  margin: 6px;
+  vertical-align: bottom;
+}
+
+.leaflet-control-layers-expanded {
+  overflow: auto;
+  max-height: 400px;
+  pointer-events: all;
+}
+
+.leaflet-control-layers-expanded::before {
+  content: "Legend";
+  font-weight: bold;
+  font-size: 120%;
+  padding: 5px;
+  padding-left: 0;
+  padding- bottom: 10px;
 }
 
