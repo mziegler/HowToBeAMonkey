@@ -311,6 +311,11 @@ td.behavior-point {
   padding: 10px;
 }
 
+a.open-lightbox {
+  color: black;
+  text-decoration: none;
+}
+
 div.leaflet-popup-content img {
   width: 100%;
 }
