@@ -2,7 +2,7 @@ var WHtrack = [
 [10.5142232962, -85.3693762701],
 [10.5144957919, -85.3694251366],
 [10.514819501, -85.3694521263],
-[10.5149628315, -85.3697231971],
+[10.5149628315, -85.3697231971], // dark
 [10.5152815953, -85.3701464832],
 [10.5153669231, -85.3702485748],
 [10.5154238362, -85.3703982756],
@@ -11,7 +11,7 @@ var WHtrack = [
 [10.5154134426, -85.370354522],
 [10.5153906439, -85.370216053],
 [10.5151027255, -85.3702753969],
-[10.5148754083, -85.3702782467],
+[10.5148754083, -85.3702782467],  // food interest
 [10.5147875659, -85.3700907435],
 [10.5143786967, -85.3702499997],
 [10.5141064525, -85.370455943],
@@ -168,6 +168,11 @@ var categories = {
 var textBoxes = [
   [[10.51515, -85.3698], "It's still dark when the monkeys first start moving, and the researchers can't usually collect any data for the first hour or so until the light gets better and it gets easier to tell the monkeys apart."],
   [[10.5083, -85.3666], "Capuchin monkeys spend a lot of time grooming each other.  Grooming helps to re-enforce the monkey's friendly social bonds, as well as keeping parasites out of their fur.  Grooming tends to go \"up the social hierarchy,\" &ndash; lower-ranking monkeys usually spend much more time grooming higher-ranking monkeys than vice versa, to gain social favor.  Winslow Homer is Dali's (the alpha female) son, so most everybody is always eager to groom him!"],
+]
+
+
+var pictures = [
+  [[10.5148, -85.3708], "food-interest.jpg", "Winslow Homer is interested in King Donkey's food.  Baby capuchin monkeys learn what foods they can eat and how to eat them by closely watching the adults.", [100,71]],
 ]
 
 

@@ -24,7 +24,10 @@ div#map {
    background: #DDD;
 }
 
-
+img.picture-icon {
+  border-radius: 5px;
+  border: solid #DDD 2px;
+}
 
 /******************************************************************************
  header */

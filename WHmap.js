@@ -211,6 +211,35 @@ for (var i = 0; i < textBoxes.length; i++)
 textBoxLayer.addTo(map);
 
 
+
+///////////////////////////////////////////////////////////////////////////////
+// PICTURE LAYER
+
+var pictureLayer = L.layerGroup();
+
+for (var i = 0; i < pictures.length; i++)
+{
+  var picture = pictures[i];
+  
+  pictureLayer.addLayer(
+    L.marker(picture[0], {
+      icon: L.icon({
+        iconUrl: 'pictures/thumbnails/' + picture[1],
+        className: 'picture-icon',
+        iconSize: picture[3],
+        iconAnchor: [picture[3][0]/2, picture[3][1]/2],
+      })
+    }).bindPopup('<img src="pictures/preview/' + picture[1] + '" /><div class="caption">' + picture[2] + '</div>', {
+      className: 'behavior-popup',
+    })
+  );
+}
+
+
+pictureLayer.addTo(map);
+
+
+
 ///////////////////////////////////////////////////////////////////////////////
 // HILIGHTS LAYER
 
