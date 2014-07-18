@@ -21,7 +21,7 @@ div#map {
    height: 100%; 
    width: 100%;
    margin: 0;
-   background: #EBE8E4 url('libraries/images/ricepaper2.png');
+   background: #DDD;
 }
 
 
@@ -72,7 +72,7 @@ a.header-tab:hover {
  side panel */
 
 #side-panel {
-  background: #FFFFCC;/*#FFE991;*/
+  background: #F8F8F8;/*#FFFFCC;/*#FFE991;*/
   /*border-right: solid 3px rgba(230,171,2,1);*/
   padding: 30px;
   padding-top: 100px;
@@ -90,7 +90,7 @@ a.header-tab:hover {
 }
 
 #side-panel a {
- color: #DA2C43;
+ color: blue;
  text-decoration: none;
 }
 
@@ -112,7 +112,8 @@ a#close-side-panel:hover {
   overflow: auto;
   width: 100%;
   height: 100%;
-  line-height: 130%;
+  line-height: 135%;
+  padding-right: 10px;
 }
 
 span.side-title {
@@ -121,18 +122,25 @@ span.side-title {
 }
 
 .side-linkout {
-  color: #DA2C43;
+  color: black;
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
-  background: #FBCEB1; /* atomic tangerine #FF9966; /*#FFDA47;*/
+  background: #DDD; /* atomic tangerine #FF9966; /*#FFDA47;*/
   display: inline-block;
+}
+
+#side-panel a.side-linkout {
+  color: black;
 }
 
 a.side-linkout:hover {
   text-decoration: underline;
 }
 
+.side-linkout:hover {
+  background: #E5E5E5;
+}
 
 
 /******************************************************************************
@@ -296,7 +304,6 @@ td.behavior-point {
 }
 
 
-
 .behavior-popup div.caption {
   padding: 10px;
 }
@@ -307,20 +314,20 @@ td.behavior-point {
 
 .popup-title-cA, .popup-title-cL, .popup-title-cO, 
 .popup-title-cV, .popup-title-cW {
-  background: #faa21b;
+  background:rgba(250,162,27,0.8);
 }
 
 .popup-title-cG, .popup-title-cE, .popup-title-cH {
-  background: #f04f4f;
+  background: rgba(240,79,79,0.8);
 }
 
 .popup-title-cF, .popup-title-cI, .popup-title-cM, 
 .popup-title-cP, .popup-title-cS {
-  background: #6ec496;
+  background: rgba(110,196,150,0.75);
 }
 
 .popup-title-cC {
-  background: #acd14f;
+  background: rgba(172,209,79,0.8);
 }
 
 
