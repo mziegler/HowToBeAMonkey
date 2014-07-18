@@ -308,7 +308,9 @@ td.behavior-point {
   padding: 10px;
 }
 
-
+div.leaflet-popup-content img {
+  width: 100%;
+}
 
 
 
