@@ -249,7 +249,7 @@ div#mediacaption, a#closemedia {
 box-shadow: 0px 0px 5px 4px #EBE8E4; /*rgba(221,221,221,1);*/
 
   background: #F2F2F2 url('libraries/images/ricepaper.png');
-}}
+}
 
 
 
@@ -295,8 +295,32 @@ td.behavior-point {
   padding: 3px;
 }
 
+
+
 .behavior-popup div.caption {
   padding: 10px;
+}
+
+
+
+
+
+.popup-title-cA, .popup-title-cL, .popup-title-cO, 
+.popup-title-cV, .popup-title-cW {
+  background: #faa21b;
+}
+
+.popup-title-cG, .popup-title-cE, .popup-title-cH {
+  background: #f04f4f;
+}
+
+.popup-title-cF, .popup-title-cI, .popup-title-cM, 
+.popup-title-cP, .popup-title-cS {
+  background: #6ec496;
+}
+
+.popup-title-cC {
+  background: #acd14f;
 }
 
 
