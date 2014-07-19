@@ -2,7 +2,7 @@ var map = L.map('map', {
   maxZoom:22, 
   zoomControl: false, 
   attributionControl: false,
-  }).setView([10.5147, -85.3695], 19);
+  }).setView([10.5147, -85.3698], 19);
 
 
 // base map (satelite images)

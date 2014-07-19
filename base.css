@@ -317,6 +317,7 @@ a.open-lightbox {
 }
 
 div.leaflet-popup-content img {
+  min-width: 300px;
   width: 100%;
 }
 
