@@ -1,8 +1,10 @@
+var initialView = [[10.5147, -85.3698], 19]
+
 var map = L.map('map', {
   maxZoom:22, 
   zoomControl: false, 
   attributionControl: false,
-  }).setView([10.5147, -85.3698], 19);
+  }).setView(initialView[0], initialView[1]);
 
 
 // base map (satelite images)
@@ -32,10 +34,17 @@ function closeSidePanel()
   $('#side-panel').hide();
 }
 
+function resetView() {
+  map.setView(initialView[0], initialView[1], {animate: true});
+  startMarker.openPopup();
+}
+
 $('#tab-about').click( function() { openSidePanel('#panel-about'); return false; });
 $('#tab-help').click( function() { openSidePanel('#panel-help'); return false; });
 $('#tab-donate').click( function() { openSidePanel('#panel-donate'); return false; });
 $('#tab-biographies').click( function() { openSidePanel('#panel-biographies'); return false; });
+
+$('#tab-reset').click(resetView);
 
 $('#close-side-panel').click(closeSidePanel);
 map.on('click', closeSidePanel);
@@ -107,8 +116,6 @@ function scatterAnchor(anchorCenter, range)
 {
   return [ (range / 2) - (Math.random() * range) + anchorCenter[0], 
            (range / 2) - (Math.random() * range) + anchorCenter[1]  ]; 
-  
-  return [200,200]
 }
   
   
