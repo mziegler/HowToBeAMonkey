@@ -165,10 +165,10 @@ var categories = {
 }
 
 
-// [location, title, text,
+// [location, title, text, offset in px
 var textBoxes = [
-  [[10.51515, -85.3698], "Early morning", "It's still dark when the monkeys first start moving, and the researchers can't usually collect any data for the first hour or so until the light gets better and it gets easier to tell the monkeys apart."],
-  [[10.5083, -85.3666], "Grooming", "Capuchin monkeys spend a lot of time grooming each other.  Grooming helps to re-enforce the monkey's friendly social bonds, as well as keeping parasites out of their fur.  Grooming tends to go \"up the social hierarchy,\" &ndash; lower-ranking monkeys usually spend much more time grooming higher-ranking monkeys than vice versa, to gain social favor.  Winslow Homer is Dali's (the alpha female) son, so most everybody is always eager to groom him!"],
+  [[10.51515, -85.3698], "Early morning", "It's still dark when the monkeys first start moving, and the researchers can't usually collect any data for the first hour or so until the light gets better and it gets easier to tell the monkeys apart.", [-150, 0]],
+  [[10.5083, -85.3666], "Grooming", "Capuchin monkeys spend a lot of time grooming each other.  Grooming helps to re-enforce the monkey's friendly social bonds, as well as keeping parasites out of their fur.  Grooming tends to go \"up the social hierarchy,\" &ndash; lower-ranking monkeys usually spend much more time grooming higher-ranking monkeys than vice versa, to gain social favor.  Winslow Homer is Dali's (the alpha female) son, so most everybody is always eager to groom him!", [-150, 0]],
 ]
 
 
