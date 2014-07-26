@@ -1,9 +1,10 @@
-var initialView = [[10.5147, -85.3698], 19]
+var initialView = [[10.5147, -85.3698], 19];
 
 var map = L.map('map', {
   maxZoom:22, 
   zoomControl: false, 
   attributionControl: false,
+  maxBounds: L.latLngBounds([10.5167, -85.3625], [10.5075, -85.3726]),
   }).setView(initialView[0], initialView[1]);
 
 
@@ -263,6 +264,10 @@ var startMarker = L.marker(WHtrack[0]).addTo(map).bindPopup(startPopup, {'minWid
 var endMarker = L.marker(WHtrack[WHtrack.length - 1]).addTo(map).bindPopup(endPopup);
 
 
+//////////////////////////////////////////////////////////////////////////////
+// ZOOM
+function zoomHandle() {
 
+}
 
 
