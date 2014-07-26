@@ -133,7 +133,7 @@ function clusterIconFactory(category)
   {
     // return invisible icons when zoomed out (hack - 
     // removing the layers woud mess up layer control)
-    if (map.getZoom() <= 14) 
+    if (map.getZoom() <= 15) 
     {
       return invisibleIcon;
     }
