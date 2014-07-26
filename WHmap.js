@@ -1,7 +1,7 @@
 var initialView = [[10.5147, -85.3698], 19];
 
 var map = L.map('map', {
-  maxZoom:22, 
+  maxZoom:21, 
   zoomControl: false, 
   attributionControl: false,
   maxBounds: L.latLngBounds([10.5167, -85.3625], [10.5075, -85.3726]),
@@ -38,6 +38,7 @@ function closeSidePanel()
 function resetView() {
   map.setView(initialView[0], initialView[1], {animate: true});
   startMarker.openPopup();
+  closeSidePanel();
 }
 
 $('#tab-about').click( function() { openSidePanel('#panel-about'); return false; });
@@ -123,8 +124,20 @@ function scatterAnchor(anchorCenter, range)
 function clusterIconFactory(category)
 {
 
+  var invisibleIcon = L.icon({
+    iconSize: [0,0],
+    iconUrl: 'libraries/images/quote.png',
+  });
+
   return function(cluster)
   {
+    // return invisible icons when zoomed out (hack - 
+    // removing the layers woud mess up layer control)
+    if (map.getZoom() <= 14) 
+    {
+      return invisibleIcon;
+    }
+    
     
     var childCount = cluster.getChildCount();
    
@@ -141,6 +154,7 @@ function clusterIconFactory(category)
       iconUrl: 'icons/48/' + category + '.png',
       iconSize: iconSize,
       iconAnchor: anchorPoint,
+      className: 'behavior-icon',
     });
       
     icon.popupOffset = [-anchorPoint[0] + iconSize[0]/2, -anchorPoint[1] + iconSize[1]/2 - 10];
@@ -266,8 +280,31 @@ var endMarker = L.marker(WHtrack[WHtrack.length - 1]).addTo(map).bindPopup(endPo
 
 //////////////////////////////////////////////////////////////////////////////
 // ZOOM
-function zoomHandle() {
-
+// add or remove layers to the map based on the zoom level
+function zoomHandle() 
+{
+  if (map.getZoom() <= 17)
+  {
+    map.removeLayer(textBoxLayer);
+    map.removeLayer(pictureLayer);
+    map.closePopup();
+  }
+  else
+  {
+    map.addLayer(textBoxLayer);
+    map.addLayer(pictureLayer);
+  }
+  
+  if (map.getZoom() <= 14)
+  {
+    map.removeLayer(endMarker);
+  }
+  else
+  {
+    map.addLayer(endMarker);
+  }
 }
+zoomHandle();
+map.on('zoomend', zoomHandle);
 
 
