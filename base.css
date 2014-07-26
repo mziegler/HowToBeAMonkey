@@ -190,7 +190,10 @@ td.behavior-point {
 
 
 .behavior-popup div.caption {
-  padding: 10px;
+  max-height: 160px;
+  overflow: auto;
+  margin: 4px;
+  padding-right: 6px;
 }
 
 a.open-lightbox {
