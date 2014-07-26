@@ -212,7 +212,13 @@ var quoteIcon = L.icon({
 for (var i = 0; i < textBoxes.length; i++)
 {
   textBoxLayer.addLayer(
-    L.marker(textBoxes[i][0], {icon:quoteIcon}).bindPopup(textBoxes[i][1])
+    L.marker(textBoxes[i][0], {icon:quoteIcon}).bindPopup(
+    '<div class="popup-title">' +
+    textBoxes[i][1] +
+    '</div><div class="caption">' +
+    textBoxes[i][2] + 
+    '</div>', 
+    {className:'behavior-popup'})
   );
 }
 textBoxLayer.addTo(map);
