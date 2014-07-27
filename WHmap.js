@@ -225,7 +225,7 @@ for (var i = 0; i < textBoxes.length; i++)
     shadowUrl: 'libraries/images/quoteShadow.png',
     iconSize:     [40,40], // size of the icon
     iconAnchor:   [15 + textBoxes[i][3][0], 35 + textBoxes[i][3][1]], // point of the icon which will correspond to marker's location
-    popupAnchor:  [10, -40], // point from which the popup should open relative to the iconAnchor
+    popupAnchor:  [10 - textBoxes[i][3][0], -35 + textBoxes[i][3][1]], // point from which the popup should open relative to the iconAnchor
     shadowAnchor: [15 + textBoxes[i][3][0], 35 + textBoxes[i][3][1]]
   });
 
@@ -259,6 +259,7 @@ for (var i = 0; i < pictures.length; i++)
         className: 'picture-icon',
         iconSize: picture[3],
         iconAnchor: picture[4],
+        popupAnchor: [picture[3][0]/2 - picture[4][0], -picture[4][1]],
       })
     }).bindPopup('<a class="open-lightbox" href="pictures/' + picture[1] + '" data-lightbox="pictureLayer-' + i + '" data-title="' + picture[2] + '"><img src="pictures/preview/' + picture[1] + '"/><div class="caption">' + picture[2] + '</div></a>', {
       className: 'behavior-popup',
