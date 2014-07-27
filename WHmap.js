@@ -225,7 +225,7 @@ for (var i = 0; i < textBoxes.length; i++)
     shadowUrl: 'libraries/images/quoteShadow.png',
     iconSize:     [40,40], // size of the icon
     iconAnchor:   [15 + textBoxes[i][3][0], 35 + textBoxes[i][3][1]], // point of the icon which will correspond to marker's location
-    popupAnchor:  [10 - textBoxes[i][3][0], -35 + textBoxes[i][3][1]], // point from which the popup should open relative to the iconAnchor
+    popupAnchor:  [10 - textBoxes[i][3][0], -35 - textBoxes[i][3][1]], // point from which the popup should open relative to the iconAnchor
     shadowAnchor: [15 + textBoxes[i][3][0], 35 + textBoxes[i][3][1]]
   });
 
