@@ -256,7 +256,7 @@ for (var i = 0; i < pictures.length; i++)
         iconUrl: 'pictures/thumbnails/' + picture[1],
         className: 'picture-icon',
         iconSize: picture[3],
-        iconAnchor: [picture[3][0]/2, picture[3][1]/2],
+        iconAnchor: picture[4],
       })
     }).bindPopup('<a class="open-lightbox" href="pictures/' + picture[1] + '" data-lightbox="pictureLayer-' + i + '" data-title="' + picture[2] + '"><img src="pictures/preview/' + picture[1] + '"/><div class="caption">' + picture[2] + '</div></a>', {
       className: 'behavior-popup',

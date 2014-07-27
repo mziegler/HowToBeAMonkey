@@ -14,15 +14,15 @@ var WHtrack = [
 [10.5148754083, -85.3702782467],  // food interest
 [10.5147875659, -85.3700907435],
 [10.5143786967, -85.3702499997],
-[10.5141064525, -85.370455943],
-[10.5139071308, -85.3706511576],  // dante groom
+[10.5141064525, -85.370455943],   // dante groom
+[10.5139071308, -85.3706511576],  
 [10.5136214755, -85.3707446158],
 [10.5132000335, -85.3709037881],
 [10.5129376799, -85.3711026907],
-[10.512936255, -85.3712094761], // WH + FN
+[10.512936255, -85.3712094761], 
 [10.5126614962, -85.3714744281],
 [10.512455469, -85.3714807983],
-[10.5122139025, -85.3715608455], 
+[10.5122139025, -85.3715608455], // WH + FN
 [10.5121593364, -85.3715491109],
 [10.5122001562, -85.3714734223],
 [10.5119718332, -85.371714402],
@@ -54,9 +54,9 @@ var WHtrack = [
 [10.5095122475, -85.368420817],
 [10.5094752833, -85.3685472161],
 [10.5094083119, -85.3683555219],
-[10.509401774, -85.3682812583],  // siesta
-[10.5093779694, -85.3682250995],
-[10.5092326272, -85.3682788275],
+[10.509401774, -85.3682812583],  
+[10.5093779694, -85.3682250995], 
+[10.5092326272, -85.3682788275], 
 [10.5091918074, -85.3680898994],
 [10.5090827588, -85.3677318245],
 [10.5089663342, -85.3673937824],
@@ -64,9 +64,9 @@ var WHtrack = [
 [10.5090790708, -85.3672128171],
 [10.5086905695, -85.3668264113], 
 [10.5084061716, -85.3661556076],
-[10.5084825307, -85.3662511613],
+[10.5084825307, -85.3662511613], // siesta
 [10.5084361788, -85.3662307095],
-[10.5084394477, -85.3662080783],
+[10.5084394477, -85.3662080783],  
 [10.5083796009, -85.366221657],
 [10.508481944, -85.3664566018],
 [10.5084490869, -85.366467163],
@@ -174,12 +174,12 @@ var textBoxes = [
 
 // location, URI, Caption, icon size, icon offset (px)
 var pictures = [
-  [[10.5150, -85.3707], "food-interest.jpg", "Winslow Homer is interested in King Donkey's food.  Baby capuchin monkeys learn what foods they can eat and how to eat them by closely watching the adults.", [100,71]],
-  [[10.5143, -85.3706], "DT-grooming.jpg", "Winslow Homer getting groomed by Dante.  Winslow Homer is Dali the alpha female's baby, and he's one of only two infants in the group this year this year, (which is fewer than usual,) so he's been getting lots of attention.", [100,87]],
-  [[10.5131, -85.3716], "WH-FN.jpg", "Winslow Homer plays with <b>Frankenstein</b>, the other baby in Abby's group.", [100,134]],
-  [[10.5086, -85.3679],  "AA-siesta.jpg", "Abby's group siesta.  The capuchins spend most of their time on the move, but take a siesta every now and then.  The adults take time to rest, groom, and sleep, while the babies and juveniles play.", [150,85]],
-  [[10.5096, -85.3662], 'bromeliad.jpg', "Winslow Homer munching on a bromeliad fruit.", [100,103]],
-  [[10.5128, -85.3658], 'tongue-out.jpg', 'Friendly tongue-out!', [100, 82]],
+  [[10.51487, -85.37027], "food-interest.jpg", "Winslow Homer is interested in King Donkey's food.  Baby capuchin monkeys learn what foods they can eat and how to eat them by closely watching the adults.", [100,71], [200,100]],
+  [[10.51410, -85.37045], "DT-grooming.jpg", "Winslow Homer getting groomed by Dante.  Winslow Homer is Dali the alpha female's baby, and he's one of only two infants in the group this year this year, (which is fewer than usual,) so he's been getting lots of attention.", [100,87], [-150,0]],
+  [[10.51221, -85.37156], "WH-FN.jpg", "Winslow Homer plays with <b>Frankenstein</b>, the other baby in Abby's group.", [100,134], [-180,0]],
+  [[10.50848, -85.36625],  "AA-siesta.jpg", "Abby's group siesta.  The capuchins spend most of their time on the move, but take a siesta every now and then.  The adults take time to rest, groom, and sleep, while the babies and juveniles play.", [150,85], [0,150]],
+  [[10.50967, -85.3669], 'bromeliad.jpg', "Winslow Homer munching on a bromeliad fruit.", [100,103], [200, 150]],
+  [[10.51311, -85.36589], 'tongue-out.jpg', 'Friendly tongue-out!', [100, 82], [0,-100]],
 ]
 
 
