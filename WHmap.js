@@ -4,7 +4,7 @@ var map = L.map('map', {
   maxZoom:21, 
   zoomControl: false, 
   attributionControl: false,
-  maxBounds: L.latLngBounds([10.5167, -85.3615], [10.5075, -85.3735]),
+  maxBounds: L.latLngBounds([10.5177, -85.3605], [10.5065, -85.3745]),
   }).setView(initialView[0], initialView[1]);
 
 
@@ -288,15 +288,24 @@ function zoomHandle()
 {
   if (map.getZoom() <= 17)
   {
-    map.removeLayer(textBoxLayer);
     map.removeLayer(pictureLayer);
     map.closePopup();
   }
   else
   {
-    map.addLayer(textBoxLayer);
     map.addLayer(pictureLayer);
   }
+  
+  
+  if (map.getZoom() <= 16)
+  {
+    map.removeLayer(textBoxLayer);
+  }
+  else
+  {
+    map.addLayer(textBoxLayer);
+  }
+  
   
   if (map.getZoom() <= 14)
   {
