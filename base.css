@@ -269,6 +269,7 @@ div.leaflet-popup-content img {
 .leaflet-control-layers-group {
   display: inline-block;
   padding: 0 10px;
+  overflow: hidden;
 }
 
 #leaflet-control-layers-group-0 {
@@ -281,4 +282,22 @@ div.leaflet-popup-content img {
 
 #leaflet-control-layers-group-3 {
   display: block;
+  /* really gross */
+  transform: translate(8px, 0px);
+}
+
+a.leaflet-control-layers-toggle:before {
+  content: 'Legend';
+  text-decoration:none;
+  color: black;
+}
+
+div.leaflet-control-layers a.leaflet-control-layers-toggle {
+  text-decoration: none;
+  width: 48px;
+  height: 46px;
+  background-position: 50% 20px;
+  font-size: 12px;
+  text-align: center;
+  padding: 2px;
 }
