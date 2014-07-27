@@ -76,15 +76,15 @@ var WHtrack = [
 [10.5084521882, -85.3664850164],
 [10.508472221, -85.366514856],
 [10.5084996298, -85.3664949909],
-[10.5084993783, -85.3664185479], // coalitions
+[10.5084993783, -85.3664185479], 
 [10.5085230991, -85.3664016165],
 [10.5084783398, -85.3664243314],
 [10.5085401144, -85.3663970903],
 [10.5085039884, -85.3664929792],
 [10.5086023081, -85.3666001838], // grooming textbox
 [10.5088181421, -85.3668864258],
-[10.5088665895, -85.3671175148],
-[10.5089958385, -85.3672770225],
+[10.5088665895, -85.3671175148], 
+[10.5089958385, -85.3672770225], // coalitions
 [10.5089755543, -85.3672792017],
 [10.5090436153, -85.3672379628],
 [10.5091748759, -85.3671315126],
@@ -169,15 +169,16 @@ var categories = {
 var textBoxes = [
   [[10.51515, -85.3698], "Early morning", "It's still dark when the monkeys first start moving, and the researchers can't usually collect any data for the first hour or so until the light gets better and it gets easier to tell the monkeys apart.", [-150, 0]],
   //FIXME
-  [[10.50860, -85.36660], "Grooming", "Capuchin monkeys spend a lot of time grooming each other.  Grooming helps to re-enforce the monkey's friendly social bonds, as well as keeping parasites out of their fur.  Grooming tends to go \"up the social hierarchy,\" &ndash; lower-ranking monkeys usually spend much more time grooming higher-ranking monkeys than vice versa, to gain social favor.  Winslow Homer is Dali's (the alpha female) son, so most everybody is always eager to groom him!", [0,0]],
+  [[10.50860, -85.36660], "Grooming", "Capuchin monkeys spend a lot of time grooming each other.  Grooming helps to re-enforce the monkey's friendly social bonds, as well as keeping parasites out of their fur.  Grooming tends to go \"up the social hierarchy,\" &ndash; lower-ranking monkeys usually spend much more time grooming higher-ranking monkeys than vice versa, to gain social favor.  Winslow Homer is Dali's (the alpha female) son, so most everybody is always eager to groom him!", [50,-150]],
   
-  [[10.50849, -85.36641], "Coalitions", "White-headed capuchin monkeys are known for forming lots of coalitions, where they signal to the other monkeys that they're on a team together.  They use several different postures to show their coalitions - sometimes one monkey will climb on another monkey's back, sometimes one will put its arm around the other monkey's shoulders, and sometimes they'll stand with their cheeks pressed together.  In addition to scaring off predators and other monkies, the coalitions help the monkeys reinforce their social bonds.", [0,0]],
+  
+  
   [[10.51293, -85.37120], 'Travel and foraging', 'Capuchin monkeys spend most of their time on the move, looking for their next snack, traveling an average of about 3.5 kilometers each day.  They spend nearly their entire day foraging.  Most of the calories in their diet come from fruit, which tends to occur sparsely in patches.  The monkeys need to keep a detailed mental map of all of their favorite fruit trees and food sources in the forest, and researchers hypothesize that this mental map-keeping helped to drive the evolution of primate intelligence.', [170,20]],
-  [[10.50837, -85.36622], 'Nursing', "Winslow Homer still gets most of the calories in his diet from his mother Dali's milk.  The adult females have to eat quite a lot, to supply them with the nutrients they need for pregnancy and nursing their babies.  Most females continuously remain either nursing or pregnant for the rest of their lives once they reach sexual maturity - they don't have a menopause like humans.  High ranking females in the group have access to the best food, so there is a lot of environmental pressure to develop good social skills.", [0,0]],
+  [[10.50837, -85.36622], 'Nursing', "Winslow Homer still gets most of the calories in his diet from his mother Dali's milk.  The adult females have to eat quite a lot, to supply them with the nutrients they need for pregnancy and nursing their babies.  Most females continuously remain either nursing or pregnant for the rest of their lives once they reach sexual maturity - they don't have a menopause like humans.  High ranking females in the group have access to the best food, so there is a lot of environmental pressure to develop good social skills.", [-100,-80]],
   [[10.51026, -85.36996], 'Learning to forage', "Winslow Homer subsists mainly off of his mother Dali's milk, but at this age he's busy learning how to forage for himself by imitating the other monkeys in his group.  Many of the monkeys foraging skills, like cracking open nuts, take years for the monkeys to master.  The monkeys' diet presents cognitive challenges, placing a selective pressure on the monkey's cognition &ndash; the monkeys need to find their sparsely-distributed food, and much of their diet is made up of items that have to be bludgeoned, torn apart, disarmed, or killed.", [0,-150]],
   [[10.51187, -85.36718], 'Eating insects', "The capuchins get most of the protein in their diet from eating insects - they're expert insect hunters.  They're fond of acacia ants, caterpillars, stinkbugs, and giant grasshoppers.  Most monkeys become highly skilled at raiding wasp nests at an early age - they have an extrordinary pain tolerance.", [170,0]],
   [[10.51422, -85.36937], 'Good morning', "The capuchin researchers at the Lomas Barbudal Monkey Project usually start their day around 4:00AM - they have to get to the monkeys' sleep tree before the monkeys wake up, so they don't lose them when they start moving in the morning.", [-100, -30]],
-  [[10.51061, -85.367014], 'Alloparenting', "Capuchin monkeys, especially the young females, love to play with babies.  Caring for other capuchin babies helps them practice, learning how to take better care of their own babies.  Winslow Homer is one of only 2 babies in the group this year, so he gets quite a lot of attention!", [0,-170]],
+  [[10.51061, -85.367014], 'Alloparenting', "Capuchin monkeys, especially the young females, love to play with babies.  Caring for other capuchin babies helps them practice, learning how to take better care of their own babies.  Winslow Homer is one of only 2 babies in the group this year, so he gets quite a lot of attention!", [-170,0]],
   [[10.51479, -85.364642], 'Predators', "The monkeys work together to defend themselves against predators - having many pairs of eyes to watch out is one of the main advantages of living in a group.  The monkeys have different alarm call vocalizations for different predators - a call for snakes (monkeys run up,) a call for birds of prey (monkeys run down,) and a call for big mammals like ocelots.  After spotting a predator that relies on surprise, like a snake, the monkeys essentially render the predator harmless.  The males often make a big show of threatening the predators to impress the ladies.  (To see some alarm call data, turn on <b>the \"Vocalization\" layer in the legend of the map.)</b>", [150,0]],
   [[10.5111, -85.37148], 'Olfactory communication', "Monkeys communicate via smell - we have only scratched the surface of understanding their world of olfactory communication.  They will often sniff each other's urine - they smell for pheromones, hormones, and other chemicals which tell them who's ovulating, who's pregnant, who's stressed out, and all kinds of other things that we don't know about.  Capuchins regularly wash their fur with their urine to cover themselves with the scents.", [170,0]],
   //[[], ' S ', ' C ', [0,0]],
@@ -193,6 +194,7 @@ var pictures = [
   [[10.50848, -85.36625],  "AA-siesta.jpg", "Abby's group siesta.  The capuchins spend most of their time on the move, but take a siesta every now and then.  The adults take time to rest, groom, and sleep, while the babies and juveniles play.", [150,85], [0,150]],
   [[10.50967, -85.3669], 'bromeliad.jpg', "Winslow Homer munching on a bromeliad fruit.", [100,103], [200, 150]],
   [[10.51311, -85.36589], 'tongue-out.jpg', 'Friendly tongue-out!', [100, 82], [0,-100]],
+  [[10.50899, -85.36727], 'TJ-coalition.jpg', "White-headed capuchin monkeys are known for forming lots of coalitions, where they signal to the other monkeys that they're on a team together.  They use several different postures to show their coalitions - sometimes one monkey will climb on another monkey's back, sometimes one will put its arm around the other monkey's shoulders, and sometimes they'll stand with their cheeks pressed together.  In addition to scaring off predators and other monkies, the coalitions help the monkeys reinforce their social bonds.", [110,76], [200,-100]],
 ]
 
 
