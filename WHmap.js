@@ -215,7 +215,7 @@ behaviorPoints = null;
 
 ///////////////////////////////////////////////////////////////////////////////
 // TEXT BOX LAYER
-textBoxLayer = L.layerGroup();
+var textBoxLayer = L.layerGroup();
 
 
 for (var i = 0; i < textBoxes.length; i++)
@@ -246,6 +246,7 @@ textBoxLayer.addTo(map);
 ///////////////////////////////////////////////////////////////////////////////
 // PICTURE LAYER
 
+
 var pictureLayer = L.layerGroup();
 
 for (var i = 0; i < pictures.length; i++)
@@ -261,9 +262,22 @@ for (var i = 0; i < pictures.length; i++)
         iconAnchor: picture[4],
         popupAnchor: [picture[3][0]/2 - picture[4][0], -picture[4][1]],
       })
-    }).bindPopup('<a class="open-lightbox" href="pictures/' + picture[1] + '" data-lightbox="pictureLayer-' + i + '" data-title="' + picture[2] + '"><img src="pictures/preview/' + picture[1] + '"/><div class="caption">' + picture[2] + '</div></a>', {
-      className: 'behavior-popup',
     })
+    .on('click', (
+    
+      // wonky hack to open lightbox
+      function(picture) {
+        return (function() {
+          $('a#lightbox-trigger')
+            .attr('href', 'pictures/' + picture[1])
+            //.attr('href', 'javascript:alert("s")')
+            .attr('data-lightbox', 'pictureLayer-' + i)
+            .attr('data-title', picture[2])
+            .click();
+        })
+      })(picture) // call with current picture
+      
+    )
   );
 }
 
