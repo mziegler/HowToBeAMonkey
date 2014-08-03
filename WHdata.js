@@ -15,15 +15,15 @@ var WHtrack = [
 [10.5147875659, -85.3700907435],
 [10.5143786967, -85.3702499997],
 [10.5141064525, -85.370455943],   // dante groom
-[10.5139071308, -85.3706511576],  
-[10.5136214755, -85.3707446158],
-[10.5132000335, -85.3709037881],
+[10.5139071308, -85.3706511576],  // SEP+KST+IGO
+[10.5136214755, -85.3707446158], 
+[10.5132000335, -85.3709037881],  
 [10.5129376799, -85.3711026907],
 [10.512936255, -85.3712094761], // forage traveling
 [10.5126614962, -85.3714744281],
 [10.512455469, -85.3714807983],
 [10.5122139025, -85.3715608455], // WH + FN
-[10.5121593364, -85.3715491109],
+[10.5121593364, -85.3715491109], // WH + DT + FN
 [10.5122001562, -85.3714734223],
 [10.5119718332, -85.371714402],
 [10.5115894508, -85.3719154],
@@ -33,7 +33,7 @@ var WHtrack = [
 [10.5110747181, -85.3714516293],
 [10.5108861253, -85.3713523876],
 [10.5107165594, -85.3712270781],
-[10.5105690379, -85.3710592724],
+[10.5105690379, -85.3710592724], //WH+UB
 [10.5104124639, -85.3709099907],
 [10.5103435647, -85.3708141856],
 [10.5104096979, -85.3707110882],
@@ -43,7 +43,7 @@ var WHtrack = [
 [10.5101869907, -85.3695013281], 
 [10.5099827237, -85.3693898488],
 [10.5099088792, -85.3693779465],
-[10.5097324401, -85.3693363722],
+[10.5097324401, -85.3693363722], // WH + DT
 [10.5097392295, -85.3693447541],
 [10.5096972361, -85.3692901041],
 [10.5096553266, -85.3693072032],
@@ -100,16 +100,16 @@ var WHtrack = [
 [10.5108235124, -85.367047023],
 [10.5107096862, -85.3671737574],
 [10.51158702, -85.367113743],
-[10.5117197055, -85.3670808859],
-[10.5118747707, -85.367180882], // insects
+[10.5117197055, -85.3670808859], // WH + KY
+[10.5118747707, -85.367180882], // insects (textbox)
 [10.5121809617, -85.367062781],
-[10.5121299997, -85.3670037724],
+[10.5121299997, -85.3670037724], 
 [10.5121291615, -85.3669507988],
 [10.5122698098, -85.3670712467],
 [10.5124614201, -85.3668787982],
 [10.512432754, -85.3668642137],
 [10.5128630809, -85.3666305263],
-[10.513006663, -85.3664821666],
+[10.513006663, -85.3664821666], // scary coalition
 [10.5128647573, -85.3663488105],
 [10.5133807473, -85.3657063376],
 [10.5131341517, -85.3658920806],
@@ -118,10 +118,10 @@ var WHtrack = [
 [10.5131756421, -85.3657488339],
 [10.5132575333, -85.3656239435],
 [10.513537908, -85.3649892658],
-[10.5133240856, -85.3648470249],
+[10.5133240856, -85.3648470249], // scratch
 [10.5135653168, -85.36488357],
 [10.513939485, -85.3647746891],
-[10.5141986534, -85.3645321168],
+[10.5141986534, -85.3645321168], 
 [10.514127491, -85.3643488884],
 [10.5141630303, -85.3644516505],
 [10.5143968016, -85.3645135928],
@@ -134,7 +134,7 @@ var WHtrack = [
 [10.5150862969, -85.3634442296],
 [10.5154274404, -85.3634911682], 
 [10.5153691862, -85.3634251188],
-[10.5153800827, -85.3635928407],
+[10.5153800827, -85.3635928407], // WH-WE
 [10.5152922403, -85.363434758],
 [10.5153639894, -85.3633749112],
 [10.5152583774, -85.3635742329],
@@ -142,8 +142,8 @@ var WHtrack = [
 [10.5143646989, -85.3639992792],
 ]
 
-var startPopup = '<div class="popup-title" style="background:#FFD700">Winslow Homer wakes up</div><a href="pictures/hello.jpg" data-lightbox="hello" data-title="Winslow Homer"><img src="pictures/preview/hello.jpg" style="height:220px;width:400px" id="hello"/></a><div class="caption"><p>This is <b>Winslow Homer</b>!  Winslow Homer is a wild baby capuchin monkey, born on April 8 2013, who lives in a tropical dry rainforest in Costa Rica with his big family.  Researchers have been studying Abby\'s group since 1990.</p><p>Winslow Homer migrated to another group of capuchins shortly after this data was collected.  He\'s the youngest known capuchin male ever to have migrated - males usually migrate to another group around age 7.  Researchers speculate that the confidence he developed from being the alpha female\'s baby helped him win over his new group.</p><p>This map shows a typical day in the life of Winslow Homer, with real data collected on January 24 2014.  Winslow Homer and Abby\'s group woke up right here at <b>5:44 AM</b>.  Follow along to see where he went and what he did!</p></div>';
-var endPopup = '<div style="width:100%;font-weight:bold;text-align:center;font-size:140%;margin:10px;">End &ndash; Abby\'s group goes to sleep</div>  On January 24 2014, Abby\'s group went to sleep here around <b>18:10</b>.  Capuchin monkeys tend to sleep in a different tree every night, though they often have favorite sleeping-trees that they return to frequently.</p><p>The monkeys like to sleep in some of the tallest trees, to avoid predators.  They sleep in contact with each other, cuddled up in "monkey balls."';
+var startPopup = '<div class="popup-title" style="background:#FFD700">Winslow Homer wakes up</div><a href="pictures/hello.jpg" data-lightbox="hello" data-title="Winslow Homer"><img src="pictures/preview/hello.jpg" style="height:220px;width:400px" id="hello"/></a><div class="caption"><p>This is <b>Winslow Homer</b>!  Winslow Homer is a wild baby capuchin monkey, born on April 8 2013, who lives in a tropical dry rainforest in Costa Rica with his big family.  Researchers have been studying Winslow Homer\'s group since 1990.</p><p>Winslow Homer migrated to another group of capuchins shortly after this data was collected.  He\'s the youngest known capuchin male ever to have migrated - males usually migrate to another group around age 7.  Researchers speculate that the confidence he developed from being the alpha female\'s baby helped him win over his new group.</p><p>This map shows a typical day in the life of Winslow Homer, with real data collected on January 24 2014.  Winslow Homer and his group woke up right here at <b>5:44 AM</b>.  Follow along to see where he went and what he did!</p></div>';
+var endPopup = '<div style="width:100%;font-weight:bold;text-align:center;font-size:140%;margin:10px;">End &ndash; Winslow Homer\'s group goes to sleep</div>  On January 24 2014, Winslow Homer\'s group went to sleep here around <b>18:10</b>.  Capuchin monkeys tend to sleep in a different tree every night, though they often have favorite sleeping-trees that they return to frequently.</p><p>The monkeys like to sleep in some of the tallest trees, to avoid predators.  They sleep in contact with each other, cuddled up in "monkey balls."';
 
 var categoryOrder = ['V', 'G', 'M', 'C', 'A', 'E', 'F', 'H', 'I', 'P', 'S', 'O', 'L', 'W'];
 
@@ -175,8 +175,8 @@ var textBoxes = [
   
   [[10.51293, -85.37120], 'Travel and foraging', 'Capuchin monkeys spend most of their time on the move, looking for their next snack, traveling an average of about 3.5 kilometers each day.  They spend nearly their entire day foraging.  Most of the calories in their diet come from fruit, which tends to occur sparsely in patches.  The monkeys need to keep a detailed mental map of all of their favorite fruit trees and food sources in the forest, and researchers hypothesize that this mental map-keeping helped to drive the evolution of primate intelligence.', [170,20]],
   [[10.50837, -85.36622], 'Nursing', "Winslow Homer still gets most of the calories in his diet from his mother Dali's milk.  The adult females have to eat quite a lot, to supply them with the nutrients they need for pregnancy and nursing their babies.  Most females continuously remain either nursing or pregnant for the rest of their lives once they reach sexual maturity - they don't have a menopause like humans.  High ranking females in the group have access to the best food, so there is a lot of environmental pressure to develop good social skills.", [-100,-80]],
-  [[10.51026, -85.36996], 'Learning to forage', "Winslow Homer subsists mainly off of his mother Dali's milk, but at this age he's busy learning how to forage for himself by imitating the other monkeys in his group.  Many of the monkeys foraging skills, like cracking open nuts, take years for the monkeys to master.  The monkeys' diet presents cognitive challenges, placing a selective pressure on the monkey's cognition &ndash; the monkeys need to find their sparsely-distributed food, and much of their diet is made up of items that have to be bludgeoned, torn apart, disarmed, or killed.", [0,-150]],
-  [[10.51187, -85.36718], 'Eating insects', "The capuchins get most of the protein in their diet from eating insects - they're expert insect hunters.  They're fond of acacia ants, caterpillars, stinkbugs, and giant grasshoppers.  Most monkeys become highly skilled at raiding wasp nests at an early age - they have an extrordinary pain tolerance.", [170,0]],
+  [[10.51026, -85.36996], 'Learning to forage', "Winslow Homer subsists mainly off of his mother Dali's milk, but at this age he's busy learning how to forage for himself by imitating the other monkeys in his group.  Many of the monkeys foraging skills, like cracking open nuts, take years for the monkeys to master.  The monkeys' diet presents cognitive challenges, placing a selective pressure on the monkey's cognition &ndash; the monkeys need to find their sparsely-distributed food, and much of their diet is made up of items that have to be bludgeoned, torn apart, disarmed, or killed.", [0,100]],
+  [[10.51187, -85.36718], 'Eating insects', "The capuchins get most of the protein in their diet from eating insects - they're expert insect hunters.  They're fond of acacia ants, caterpillars, stinkbugs, and giant grasshoppers.  Most monkeys become highly skilled at raiding wasp nests at an early age - they have an extrordinary pain tolerance.", [-170,0]],
   [[10.51422, -85.36937], 'Good morning', "The capuchin researchers at the Lomas Barbudal Monkey Project usually start their day around 4:00AM - they have to get to the monkeys' sleep tree before the monkeys wake up, so they don't lose them when they start moving in the morning.", [-100, -30]],
   [[10.51061, -85.367014], 'Alloparenting', "Capuchin monkeys, especially the young females, love to play with babies.  Caring for other capuchin babies helps them practice, learning how to take better care of their own babies.  Winslow Homer is one of only 2 babies in the group this year, so he gets quite a lot of attention!", [-170,0]],
   [[10.51479, -85.364642], 'Predators', "The monkeys work together to defend themselves against predators - having many pairs of eyes to watch out is one of the main advantages of living in a group.  The monkeys have different alarm call vocalizations for different predators - a call for snakes (monkeys run up,) a call for birds of prey (monkeys run down,) and a call for big mammals like ocelots.  After spotting a predator that relies on surprise, like a snake, the monkeys essentially render the predator harmless.  The males often make a big show of threatening the predators to impress the ladies.  (To see some alarm call data, turn on <b>the \"Vocalization\" layer in the legend of the map.)</b>", [150,0]],
@@ -195,6 +195,15 @@ var pictures = [
   [[10.50967, -85.3669], 'bromeliad.jpg', "Winslow Homer munching on a bromeliad fruit.", [100,103], [200, 150]],
   [[10.51311, -85.36589], 'tongue-out.jpg', 'Friendly tongue-out!', [100, 82], [0,-100]],
   [[10.50899, -85.36727], 'TJ-coalition.jpg', "White-headed capuchin monkeys are known for forming lots of coalitions, where they signal to the other monkeys that they're on a team together.  They use several different postures to show their coalitions - sometimes one monkey will climb on another monkey's back, sometimes one will put its arm around the other monkey's shoulders, and sometimes they'll stand with their cheeks pressed together.  In addition to scaring off predators and other monkies, the coalitions help the monkeys reinforce their social bonds.", [110,76], [200,-100]],
+  
+  [[10.51215, -85.37154], 'WH_DT_FN.jpg', 'Winslow Homer, Frankenstein, and Dante', [100,67], [250, 0]],
+  [[10.51390, -85.37065], 'SEP_KST_IGO.jpg', 'Susan, Kat, and Irene, a few of the researchers on the Lomas Barbudal Monkey Project, following Winslow Homer from the ground.', [100,103], [200,0]],
+  [[10.51172, -85.36708], 'WH_KY.jpg', 'Winslow Homer munching on a katydid.', [100,67], [200,0]],
+  [[10.51056, -85.37105], 'WH_UB.jpg', 'Winslow Homer and Dubious.', [100,67], [100,-150]],
+  [[10.50973, -85.36934], 'WH_DT.jpg', 'Winslow Homer and Dante', [100,67], [0, -150]],
+  [[10.51332, -85.36485], 'WH_AS.jpg', 'Scratching.  (In the legend, turn on -miscellaneous (self-directed)- behaviors to see scratching data points.)', [100,67], [-100,0]],
+  [[10.51538, -85.36359], 'WH_WE.jpg', 'Winslow Homer resting.  Capuchin monkeys don\'t tend to sleep much during the day.', [100,95], [50,200]],
+  [[10.51301, -85.36648], 'DU_DT.jpg', 'Dante and Duende are not happy to see you.  Duende is the alpha male, and Winslow Homer\'s dad.', [100,117], [250,100]],
 ]
 
 
