@@ -61,7 +61,7 @@ map.on('click', closeSidePanel);
 ///////////////////////////////////////////////////////////////////////////////
 // MAP CONTROLS
 
-// add layer control
+// add layer control (to be populated with cluster layers)
 var layerControl = L.control.groupedLayers(null, null, {position:'topleft'}).addTo(map);
 
 // zoom control (underneath layer control)
@@ -170,6 +170,8 @@ function clusterIconFactory(category)
   
 }
 
+var markerClusterLayers = {}; // for legend
+
 for (var category in behaviorPoints)
 {
   var points = behaviorPoints[category];
@@ -203,8 +205,8 @@ for (var category in behaviorPoints)
   }
   clusterLayer.addLayers(markers);
   
-
-  layerControl.addOverlay(clusterLayer, '<img src="icons/48/' + category + '.png" class="legend-icon" /><span class="legend-label">' + categoryInfo.name + '</span>', categoryInfo.group);
+  markerClusterLayers[category] = clusterLayer;
+  //layerControl.addOverlay(clusterLayer, '<img src="icons/48/' + category + '.png" class="legend-icon" /><span class="legend-label">' + categoryInfo.name + '</span>', categoryInfo.group);
   
   if (categoryInfo.default)  { clusterLayer.addTo(map); } 
   
@@ -216,6 +218,17 @@ for (var category in behaviorPoints)
 
 // free up some memory
 behaviorPoints = null;
+
+
+// populate legend
+for (var i = 0; i < categoryOrder.length; i++)
+{
+  var category = categoryOrder[i],
+    categoryInfo = categories[category],
+    layer = markerClusterLayers[category];
+    
+  layerControl.addOverlay(layer, '<img src="icons/48/' + category + '.png" class="legend-icon" /><span class="legend-label">' + categoryInfo.name + '</span>', categoryInfo.group);
+}
 
 
 ///////////////////////////////////////////////////////////////////////////////
