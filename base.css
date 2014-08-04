@@ -107,8 +107,13 @@ a.header-tab:hover {
 }
 
 #side-panel a {
- color: blue;
+ color: #D44646;
  text-decoration: none;
+ font-weight: bold;
+}
+
+#side-panel a:hover {
+  color: #ff5454;
 }
 
 a#close-side-panel {
