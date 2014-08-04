@@ -182,8 +182,8 @@ div.leaflet-container a.leaflet-popup-close-button {
 div.popup-title {
   margin: -5px;
   margin-bottom: 5px;
-  padding: 5px;
-  padding-left: 10px;
+  padding: 10px;
+  padding-left: 14px;
   width: 100%;
   font-size: 140%;
   font-weight: bold;
@@ -192,6 +192,7 @@ div.popup-title {
 .behavior-list {
   max-height: 200px;
   overflow: auto;
+  margin
 }
 
 td.behavior-timestamp {
@@ -207,8 +208,11 @@ td.behavior-point {
 .behavior-popup div.caption {
   max-height: 160px;
   overflow: auto;
-  margin: 4px;
-  padding-right: 6px;
+  margin: 5px;
+  margin-right: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-top: 0;
 }
 
 a.open-lightbox {
@@ -219,6 +223,7 @@ a.open-lightbox {
 div.leaflet-popup-content img {
   min-width: 300px;
   width: 100%;
+  margin: 5px;
 }
 
 

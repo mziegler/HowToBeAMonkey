@@ -254,7 +254,7 @@ for (var i = 0; i < textBoxes.length; i++)
     '</div><div class="caption">' +
     textBoxes[i][2] + 
     '</div>', 
-    {className:'behavior-popup'})
+    {className:'behavior-popup', maxWidth:400})
   );
 }
 textBoxLayer.addTo(map);
@@ -309,7 +309,7 @@ pictureLayer.addTo(map);
 // START AND END POINTS
 
 
-var startMarker = L.marker(WHtrack[0]).addTo(map).bindPopup(startPopup, {'minWidth':400, 'className':'behavior-popup'}).openPopup();
+var startMarker = L.marker(WHtrack[0]).addTo(map).bindPopup(startPopup, {'minWidth':410, 'className':'behavior-popup'}).openPopup();
 var endMarker = L.marker(WHtrack[WHtrack.length - 1]).addTo(map).bindPopup(endPopup);
 
 
