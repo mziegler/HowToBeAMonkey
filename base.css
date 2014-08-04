@@ -43,7 +43,7 @@ img.picture-icon {
  header */
 
 #header {
-  background: #FFD700; /* avocado #568203; /*lime #BFFF00; /* pistachio	#93C572;/* apple #8DB600 /*#382E07; /*#E6C955; /*#D9BE50; /*#D9AD2B; /*#CCA329;/*#DBD953; /*#DEDC8C; /*#FFFEC9 /*#FFFD99 /*#FFFC5C; /*#FCFB8B /*#FFDF5E /*#F7D265*/;
+  background: #f3b227; /*#F2C565; /*#E4C49B;/*#e4b372; /*#e4b85c /*#FFD700; /* avocado #568203; /*lime #BFFF00; /* pistachio	#93C572;/* apple #8DB600 /*#382E07; /*#E6C955; /*#D9BE50; /*#D9AD2B; /*#CCA329;/*#DBD953; /*#DEDC8C; /*#FFFEC9 /*#FFFD99 /*#FFFC5C; /*#FCFB8B /*#FFDF5E /*#F7D265*/;
   /*border-bottom: solid 3px rgba(230,171,2,1);*/
   height: 75px;
   position: absolute;
