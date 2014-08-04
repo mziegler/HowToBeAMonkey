@@ -192,7 +192,6 @@ div.popup-title {
 .behavior-list {
   max-height: 200px;
   overflow: auto;
-  margin
 }
 
 td.behavior-timestamp {
@@ -281,10 +280,11 @@ div.leaflet-popup-content img {
   vertical-align: bottom;
 }
 
-.leaflet-control-layers-expanded {
+body div.leaflet-control-layers.leaflet-control-layers-expanded {
   overflow: auto;
   max-height: 400px;
   pointer-events: all;
+  background: #FFF;
 }
 
 .leaflet-control-layers-group {
@@ -325,14 +325,17 @@ div.leaflet-control-layers a.leaflet-control-layers-toggle {
 
 body div.leaflet-control-layers, body div.leaflet-control-zoom {
   border-radius: 3px;
+  background: #EEE;
 }
 
 body a.leaflet-control-zoom-in:first-child {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+  background: #EEE;
 }
 
 body a.leaflet-control-zoom-out:last-child {
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
+  background: #EEE;
 }
