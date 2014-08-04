@@ -192,6 +192,7 @@ div.popup-title {
 .behavior-list {
   max-height: 200px;
   overflow: auto;
+  padding-right: 10px;
 }
 
 td.behavior-timestamp {
