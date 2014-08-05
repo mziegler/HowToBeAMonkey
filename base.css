@@ -7,6 +7,10 @@ body {
   background: #666;
 }
 
+body a img {
+  border: 0; /*for IE*/
+}
+
 #map-container {
   height: 100%;
   width: 100%;
@@ -67,7 +71,7 @@ span#title {
 }
 
 div#header-tabs {
-  margin-top: -10;
+  margin-top: -5;
 }
 
 a.header-tab {
@@ -331,17 +335,17 @@ div.leaflet-control-layers a.leaflet-control-layers-toggle {
 
 body div.leaflet-control-layers, body div.leaflet-control-zoom {
   border-radius: 3px;
-  background: #EEE;
+  background: #f7f7f7;
 }
 
 body a.leaflet-control-zoom-in:first-child {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
-  background: #EEE;
+  background: #f3f3f3;
 }
 
 body a.leaflet-control-zoom-out:last-child {
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
-  background: #EEE;
+  background: #f3f3f3;
 }
