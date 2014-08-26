@@ -37,7 +37,7 @@ function closeSidePanel()
 
 function resetView() {
   map.setView(initialView[0], initialView[1], {animate: true});
-  startMarker.openPopup();
+  setTimeout(function() { map.closePopup(); startMarker.openPopup() }, 250);
   closeSidePanel();
 }
 
@@ -316,6 +316,7 @@ var endMarker = L.marker(WHtrack[WHtrack.length - 1]).addTo(map).bindPopup(endPo
 //////////////////////////////////////////////////////////////////////////////
 // ZOOM
 // add or remove layers to the map based on the zoom level
+// cluster layer zoom behavior handled in clusterIconFactory function
 function zoomHandle() 
 {
   if (map.getZoom() <= 17)
