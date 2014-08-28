@@ -182,9 +182,9 @@ a.side-linkout:hover {
 
 #side-panel a.mono-name:target {
   display: inline-block;
-  padding: 3px 8px;
-  background: #FFC752;
-  border-radius: 3px;
+  padding: 0px 5px;
+  background: #FFE796;
+  border-radius: 2px;
 }
 
 #side-panel a.mono-jump {
