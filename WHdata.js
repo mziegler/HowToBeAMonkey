@@ -198,7 +198,7 @@ var pictures = [
   [[10.50973, -85.36934], 'WH_DT.jpg', 'Winslow Homer and Dante', [100,67], [0, -150]],
   [[10.51332, -85.36485], 'WH_AS.jpg', 'Scratching.  (To see data about scratching, open up the legend and turn on the "Miscellaneous" layer.)', [100,67], [-100,0]],
   [[10.51538, -85.36359], 'WH_WE.jpg', 'Winslow Homer resting.  Capuchin monkeys don\'t tend to sleep much during the day, but they will occasionally take a nap.', [100,95], [50,200]],
-  [[10.51301, -85.36648], 'DU_DT.jpg', 'Dante and Duende are not happy to see you.  Duende is the alpha male, and Winslow Homer\'s dad.  In capuchin monkeys, the alpha male typically fathers most of the babies in the group during his tenure.', [100,117], [250,100]],
+  [[10.51301, -85.36648], 'DU_DT.jpg', 'Dante and Duende are not happy to see you.', [100,117], [250,100]],
 ]
 
 
