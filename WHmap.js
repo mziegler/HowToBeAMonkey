@@ -23,16 +23,23 @@ var track = L.polyline(WHtrack, {color: 'white', opacity:1, weight:3, lineJoin:'
 ///////////////////////////////////////////////////////////////////////////////
 // HEADER LINKS
 
-function openSidePanel(contentSelector)
+function toggleSidePanel(contentSelector)
 {
-  $('.side-panel-content').hide();
-  $(contentSelector).fadeIn('fast');
-  $('#side-panel').fadeIn('fast');
+  if ($(contentSelector).is(':visible'))
+  {
+    closeSidePanel();
+  }
+  else
+  {
+    $('.side-panel-content').hide();
+    $(contentSelector).fadeIn('fast');
+    $('#side-panel').fadeIn('fast');
+  }
 }
 
 function closeSidePanel()
 {
-  $('#side-panel').hide();
+  $('#side-panel').fadeOut(150);
 }
 
 function resetView() {
@@ -41,20 +48,20 @@ function resetView() {
   closeSidePanel();
 }
 
-$('#tab-about').click( function() { openSidePanel('#panel-about'); return false; });
-$('#tab-help').click( function() { openSidePanel('#panel-help'); return false; });
-$('#tab-biographies').click( function() { openSidePanel('#panel-biographies'); return false; });
+$('#tab-about').click( function() { toggleSidePanel('#panel-about'); return false; });
+$('#tab-help').click( function() { toggleSidePanel('#panel-help'); return false; });
+$('#tab-biographies').click( function() { toggleSidePanel('#panel-biographies'); return false; });
 
 // add paypal link when donate panel is opened
 $('#tab-donate').click( function() {
   $('#paypall-wrapper:empty').html('Donate to the Capuchin Foundation via PayPal:<form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="margin:5px 0 0 0;"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="MWBPPSVMGF3BY"><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></form>');
-  openSidePanel('#panel-donate'); return false; 
+  toggleSidePanel('#panel-donate'); return false; 
 });
 
 $('#tab-reset').click(resetView);
 
 $('#close-side-panel').click(closeSidePanel);
-map.on('click', closeSidePanel);
+$('#map *, #map').click(closeSidePanel);
 
 
 
@@ -211,8 +218,8 @@ for (var category in behaviorPoints)
   if (categoryInfo.default)  { clusterLayer.addTo(map); } 
   
   // open popup on click
-  clusterLayer.on('clusterclick', openPopup);
-  clusterLayer.on('click', openPopup);
+  clusterLayer.on('clusterclick click', openPopup);
+  clusterLayer.on('clusterclick click', closeSidePanel);
 
 }
 
@@ -254,7 +261,7 @@ for (var i = 0; i < textBoxes.length; i++)
     '</div><div class="caption">' +
     textBoxes[i][2] + 
     '</div>', 
-    {className:'behavior-popup', maxWidth:400})
+    {className:'behavior-popup', maxWidth:400}).on('click', closeSidePanel)
   );
 }
 textBoxLayer.addTo(map);
@@ -292,6 +299,8 @@ for (var i = 0; i < pictures.length; i++)
             .attr('data-lightbox', 'pictureLayer-' + i)
             .attr('data-title', picture[2])
             .click();
+          
+          closeSidePanel();
         })
       })(picture) // call with current picture
       
