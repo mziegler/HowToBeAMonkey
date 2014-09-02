@@ -43,7 +43,7 @@ var WHtrack = [
 [10.5101869907, -85.3695013281], 
 [10.5099827237, -85.3693898488],
 [10.5099088792, -85.3693779465],
-[10.5097324401, -85.3693363722], // WH + DT
+[10.5097324401, -85.3693363722], // DA
 [10.5097392295, -85.3693447541],
 [10.5096972361, -85.3692901041],
 [10.5096553266, -85.3693072032],
@@ -117,11 +117,11 @@ var WHtrack = [
 [10.5131877959, -85.3658003826],
 [10.5131756421, -85.3657488339],
 [10.5132575333, -85.3656239435],
-[10.513537908, -85.3649892658],
+[10.513537908, -85.3649892658], 
 [10.5133240856, -85.3648470249], // scratch
-[10.5135653168, -85.36488357],
+[10.5135653168, -85.36488357], //chaser wasps
 [10.513939485, -85.3647746891],
-[10.5141986534, -85.3645321168], 
+[10.5141986534, -85.3645321168], // DT+WH
 [10.514127491, -85.3643488884],
 [10.5141630303, -85.3644516505],
 [10.5143968016, -85.3645135928],
@@ -176,7 +176,8 @@ var textBoxes = [
   [[10.51422, -85.36937], 'Good morning', "The capuchin researchers at the Lomas Barbudal Monkey Project usually start their day around 4:00AM - they have to get to the monkeys' sleep tree before the monkeys wake up, so they don't lose them when they start moving in the morning.", [-100, -30]],
   [[10.51061, -85.367014], 'Alloparenting', "Capuchin monkeys, especially the young females, love to play with babies.  Caring for other capuchin babies helps them practice, learning how to take better care of their own babies.  Winslow Homer is one of only 2 babies in the group this year, so he gets quite a lot of attention!", [-170,0]],
   [[10.51479, -85.364642], 'Predators', "The monkeys work together to defend themselves against predators - having many pairs of eyes to watch out is one of the main advantages of living in a group.  The monkeys have different alarm call vocalizations for different predators - a call for snakes (monkeys run up,) a call for birds of prey (monkeys run down,) and a call for big mammals like ocelots.  After spotting a predator that relies on surprise, like a snake, the monkeys essentially render the predator harmless.  The males often make a big show of threatening the predators to impress the ladies.  (To see some alarm call data, open up the legend and turn on the <b>Vocalizations</b> layer.)", [150,0]],
-  [[10.5111, -85.37148], 'Olfactory communication', "Monkeys communicate via smell - we have only scratched the surface of understanding their world of olfactory communication.  They will often sniff each other's urine - they smell for pheromones, hormones, and other chemicals which tell them who's ovulating, who's pregnant, who's stressed out, and all kinds of other things that we don't know about.  Capuchins regularly wash their fur with their urine to cover themselves with the scents.", [170,0]],
+  [[10.5111, -85.37148], 'Olfactory communication', "Monkeys communicate via smell - we have only scratched the surface of understanding their world of olfactory communication.  They will often sniff each other's urine - they smell for pheromones, hormones, and other chemicals which tell them who's ovulating, who's pregnant, who's stressed out, and all kinds of other things that we don't know about.  Capuchins regularly wash their fur with their urine to cover themselves with the scents.", [170,0]],  
+  [[10.51356, -85.36488], 'Wasp attack', 'Researchers had to pause collecting data about Winslow Homer for half an hour, starting at 3:42 PM, because the monkeys have disturbed a chaser wasp nest - so named because they\'ll follow you and keep stinging you as you run away.  Wasps are a constant threat to the researchers - the Lomas Barbudal Biologial Reserve was originally created as a reserve for tropical wasps, with an estimated 25% of all wasp species in the world.', [-120,30]],
   //[[], ' S ', ' C ', [0,0]],
   
 ]
@@ -191,14 +192,14 @@ var pictures = [
   [[10.50967, -85.3669], 'bromeliad.jpg', "Winslow Homer munching on a bromeliad fruit.  Most of the calories in the monkeys' diet comes from fruit.", [100,103], [200, 150]],
   [[10.51311, -85.36589], 'tongue-out.jpg', 'Friendly tongue-out!', [100, 82], [0,-100]],
   [[10.50899, -85.36727], 'TJ-coalition.jpg', "White-headed capuchin monkeys are known for forming lots of coalitions, when they signal to the other monkeys that they're on a team together.  They use several different postures to show their coalitions - sometimes one monkey will climb on another monkey's back, sometimes one will put its arm around the other monkey's shoulders, and sometimes they'll stand with their cheeks pressed together.  In addition to scaring off predators and other monkies, the coalitions help the monkeys reinforce their social bonds.", [110,76], [200,-100]],
-  [[10.51215, -85.37154], 'WH_DT_FN.jpg', 'Winslow Homer, Frankenstein, and Dante', [100,67], [250, 0]],
+  [[10.51215, -85.37154], 'WH_DT_FN.jpg', 'Frankenstein, Dante, and Winslow Homer (left to right.)', [100,67], [250, 0]],
   [[10.51390, -85.37065], 'SEP_KST_IGO.jpg', 'Susan, Kat, and Irene, a few of the researchers on the Lomas Barbudal Monkey Project, following Winslow Homer from the ground.  They use a complex language of codes collect data about the monkey\'s social behavior to use for statistical analysis, carefully record other observations of the monkey\'s behavior that can\'t be coded, and collect stool samples for genetic data and hormone measurements.', [100,103], [200,0]],
   [[10.51172, -85.36708], 'WH_KY.jpg', 'Winslow Homer munching on a katydid.  Capuchin monkeys get most of their protein from insects - they\'re expert insect hunters.', [100,67], [200,0]],
   [[10.51056, -85.37105], 'WH_UB.jpg', 'Winslow Homer and Dubious.', [100,67], [100,-150]],
-  [[10.50973, -85.36934], 'WH_DT.jpg', 'Winslow Homer and Dante', [100,67], [0, -150]],
+  [[10.5142, -85.36453], 'WH_DT.jpg', 'Winslow Homer and Dante', [100,67], [250, 0]],
   [[10.51332, -85.36485], 'WH_AS.jpg', 'Scratching.  (To see data about scratching, open up the legend and turn on the "Miscellaneous" layer.)', [100,67], [-100,0]],
-  [[10.51538, -85.36359], 'WH_WE.jpg', 'Winslow Homer resting.  Capuchin monkeys don\'t tend to sleep much during the day, but they will occasionally take a nap.', [100,95], [50,200]],
+  [[10.51538, -85.36359], 'WH_WE.jpg', 'Winslow Homer resting.  Capuchin monkeys don\'t tend to sleep much during the day, but they will occasionally take a nap.', [100,95], [250,100]],
   [[10.51301, -85.36648], 'DU_DT.jpg', 'Dante and Duende are not happy to see you.', [100,117], [250,100]],
+  [[10.50973, -85.36934], 'DA_AS.jpg', 'Dali, Winslow Homer\'s mom and the alpha female of the group.', [100,73], [0, -150]],
 ]
-
 
