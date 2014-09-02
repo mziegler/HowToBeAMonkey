@@ -43,8 +43,9 @@ function closeSidePanel()
 }
 
 function resetView() {
+  map.closePopup(); 
   map.setView(initialView[0], initialView[1], {animate: true});
-  setTimeout(function() { map.closePopup(); startMarker.openPopup() }, 250);
+  setTimeout(function() { startMarker.openPopup() }, 300);
   closeSidePanel();
 }
 
@@ -318,8 +319,8 @@ pictureLayer.addTo(map);
 // START AND END POINTS
 
 
-var startMarker = L.marker(WHtrack[0]).addTo(map).bindPopup(startPopup, {'minWidth':410, 'className':'behavior-popup'}).openPopup();
-var endMarker = L.marker(WHtrack[WHtrack.length - 1]).addTo(map).bindPopup(endPopup);
+var startMarker = L.marker(WHtrack[0]).addTo(map).bindPopup(startPopup, {'minWidth':410, 'className':'behavior-popup'}).on('click', closeSidePanel).openPopup();
+var endMarker = L.marker(WHtrack[WHtrack.length - 1]).addTo(map).bindPopup(endPopup).on('click', closeSidePanel);
 
 
 //////////////////////////////////////////////////////////////////////////////
