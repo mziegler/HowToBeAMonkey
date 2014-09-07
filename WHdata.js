@@ -139,7 +139,7 @@ var WHtrack = [
 [10.5153639894, -85.3633749112],
 [10.5152583774, -85.3635742329],
 [10.5152894743, -85.3634810261],
-[10.5143646989, -85.3639992792],
+[10.5143646989, -85.3639992792]
 ]
 
 var startPopup = '<div class="popup-title">Winslow Homer wakes up</div><a href="pictures/hello.jpg" data-lightbox="hello" data-title="Winslow Homer"><img src="pictures/preview/hello.jpg" style="height:246px;width:400px" id="hello"/></a><div class="caption"><p>This is <b>Winslow Homer</b>!  Winslow Homer is a wild baby capuchin monkey, born on April 8 2013, who lives in a tropical dry forest in Costa Rica with his big family.  Researchers have been studying Winslow Homer\'s group since 1990.</p><p>Winslow Homer migrated to another group of capuchins shortly after this data was collected.  He\'s the youngest known capuchin male ever to have migrated - males usually migrate to another group around age 7, but Winslow Homer left home at 14 months of age.  Researchers speculate that the confidence he developed from being the alpha female\'s baby helped him win over his new group.</p><p>This map shows a typical day in the life of Winslow Homer, with real data collected on January 24 2014.  Winslow Homer and his group woke up right here at <b>5:44 AM</b>.  Follow along to see where he went and what he did!</p></div>';
@@ -161,7 +161,7 @@ var categories = {
   'W': {'name': 'Miscellaneous (self-directed)', 'default': false, 'group': 'Other'},
   'A': {'name': 'Approaches and leaves', 'default': false, 'group': 'Other'},  
   'L': {'name': 'Where Winslow Homer is looking', 'default': false, 'group': 'Other'},  
-  'O': {'name': 'Researchers\' view of Winslow Homer', 'default': false, 'group': 'Other'},  
+  'O': {'name': 'Researchers\' view of Winslow Homer', 'default': false, 'group': 'Other'}
 }
 
 
@@ -177,7 +177,7 @@ var textBoxes = [
   [[10.51061, -85.367014], 'Alloparenting', "Capuchin monkeys, especially the young females, love to play with babies.  Caring for other capuchin babies helps them practice, learning how to take better care of their own babies.  Winslow Homer is one of only 2 babies in the group this year, so he gets quite a lot of attention!", [-170,0]],
   [[10.51479, -85.364642], 'Predators', "The monkeys work together to defend themselves against predators - having many pairs of eyes to watch out is one of the main advantages of living in a group.  The monkeys have different alarm call vocalizations for different predators - a call for snakes (monkeys run up,) a call for birds of prey (monkeys run down,) and a call for big mammals like ocelots.  After spotting a predator that relies on surprise, like a snake, the monkeys essentially render the predator harmless.  The males often make a big show of threatening the predators to impress the ladies.  (To see some alarm call data, open up the legend and turn on the <b>Vocalizations</b> layer.)", [150,0]],
   [[10.5111, -85.37148], 'Olfactory communication', "Monkeys communicate via smell - we have only scratched the surface of understanding their world of olfactory communication.  They will often sniff each other's urine - they smell for pheromones, hormones, and other chemicals which tell them who's ovulating, who's pregnant, who's stressed out, and all kinds of other things that we don't know about.  Capuchins regularly wash their fur with their urine to cover themselves with the scents.", [170,0]],  
-  [[10.51356, -85.36488], 'Wasp attack', 'Researchers had to pause collecting data about Winslow Homer for half an hour, starting at 3:42 PM, because the monkeys have disturbed a chaser wasp nest - so named because they\'ll follow you and keep stinging you as you run away.  Wasps are a constant threat to the researchers - the Lomas Barbudal Biologial Reserve was originally created as a reserve for tropical wasps, with an estimated 25% of all wasp species in the world.', [-120,30]],
+  [[10.51356, -85.36488], 'Wasp attack', 'Researchers had to pause collecting data about Winslow Homer for half an hour, starting at 3:42 PM, because the monkeys have disturbed a chaser wasp nest - so named because they\'ll follow you and keep stinging you as you run away.  Wasps are a constant threat to the researchers - the Lomas Barbudal Biologial Reserve was originally created as a reserve for tropical wasps, with an estimated 25% of all wasp species in the world.', [-120,30]]
   //[[], ' S ', ' C ', [0,0]],
   
 ]
@@ -200,6 +200,6 @@ var pictures = [
   [[10.51332, -85.36485], 'WH_AS.jpg', 'Scratching.  (To see data about scratching, open up the legend and turn on the "Miscellaneous" layer.)', [100,67], [-100,0]],
   [[10.51538, -85.36359], 'WH_WE.jpg', 'Winslow Homer resting.  Capuchin monkeys don\'t tend to sleep much during the day, but they will occasionally take a nap.', [100,95], [250,100]],
   [[10.51301, -85.36648], 'DU_DT.jpg', 'Dante and Duende are not happy to see you.', [100,117], [250,100]],
-  [[10.50973, -85.36934], 'DA_AS.jpg', 'Dali, Winslow Homer\'s mom and the alpha female of the group.', [100,73], [0, -150]],
+  [[10.50973, -85.36934], 'DA_AS.jpg', 'Dali, Winslow Homer\'s mom and the alpha female of the group.', [100,73], [0, -150]]
 ]
 
