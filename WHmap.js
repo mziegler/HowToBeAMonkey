@@ -1,3 +1,5 @@
+( function() {
+
 var initialView = [[10.5147, -85.3698], 19];
 
 var map = L.map('map', {
@@ -5,7 +7,7 @@ var map = L.map('map', {
   zoomControl: false, 
   attributionControl: false,
   maxBounds: L.latLngBounds([10.5177, -85.3605], [10.5065, -85.3745]),
-  }).setView(initialView[0], initialView[1]);
+}).setView(initialView[0], initialView[1]);
 
 
 // base map (satelite images)
@@ -16,29 +18,32 @@ L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
 
 
 // add GPS track to map     
-var track = L.polyline(WHtrack, {color: 'white', opacity:1, weight:3, lineJoin:'round', lineCap:'round', dashArray:[10,10]}).addTo(map);
+var track = L.polyline(WHtrack, { 
+    color: 'white', 
+    opacity:1,
+    weight:3, 
+    lineJoin:'round', 
+    lineCap:'round', 
+    dashArray:[10,10]
+  }).addTo(map);
 
 
 
 ///////////////////////////////////////////////////////////////////////////////
 // HEADER LINKS
 
-function toggleSidePanel(contentSelector)
-{
-  if ($(contentSelector).is(':visible'))
-  {
+function toggleSidePanel(contentSelector) {
+  if ($(contentSelector).is(':visible')) {
     closeSidePanel();
   }
-  else
-  {
+  else {
     $('.side-panel-content').hide();
     $(contentSelector).fadeIn('fast');
     $('#side-panel').fadeIn('fast');
   }
 }
 
-function closeSidePanel()
-{
+function closeSidePanel() {
   $('#side-panel').fadeOut(150);
 }
 
@@ -82,11 +87,9 @@ L.control.scale().addTo(map); // scale control
 ///////////////////////////////////////////////////////////////////////////////
 // BEHAVIOR POPUPS
 
-function popupHTML(cluster)
-{ 
+function popupHTML(cluster) { 
   var points;
-  if (cluster.getAllChildMarkers)
-  {
+  if (cluster.getAllChildMarkers) {
     points = cluster.getAllChildMarkers()
     .sort(function(a,b) {
       return a.options.time.localeCompare(b.options.time);
@@ -99,8 +102,7 @@ function popupHTML(cluster)
     
   var html = '<div class="popup-title popup-title-c' + category + '">' + categories[category].name + '</div><div class="behavior-list"><table>';
   
-  for (var i = 0; i < points.length; i++)
-  {    
+  for (var i = 0; i < points.length; i++) {    
     var ops = points[i].options;
     html += '<tr><td class="behavior-timestamp">' + ops.time + '</td><td class="behavior-point">' + ops.text + '</td></tr>';
   }
@@ -127,27 +129,23 @@ function openPopup(target) {
 // BEHAVIOR CLUSTER MARKERS
   
   
-function scatterAnchor(anchorCenter, range)
-{
+function scatterAnchor(anchorCenter, range) {
   return [ (range / 2) - (Math.random() * range) + anchorCenter[0], 
            (range / 2) - (Math.random() * range) + anchorCenter[1]  ]; 
 }
   
   
-function clusterIconFactory(category)
-{
+function clusterIconFactory(category) {
 
   var invisibleIcon = L.icon({
     iconSize: [0,0],
     iconUrl: 'libraries/images/quote.png',
   });
 
-  return function(cluster)
-  {
+  return function(cluster) {
     // return invisible icons when zoomed out (hack - 
     // removing the layers woud mess up layer control)
-    if (map.getZoom() <= 15) 
-    {
+    if (map.getZoom() <= 15) {
       return invisibleIcon;
     }
     
@@ -155,8 +153,7 @@ function clusterIconFactory(category)
     var childCount = cluster.getChildCount();
    
     var iconSize = [48, 48]; 
-    if (childCount < 10)
-    {
+    if (childCount < 10) {
       iconSize = [32, 32];
     }
 
@@ -180,8 +177,7 @@ function clusterIconFactory(category)
 
 var markerClusterLayers = {}; // for legend
 
-for (var category in behaviorPoints)
-{
+for (var category in behaviorPoints) {
   var points = behaviorPoints[category];
   var categoryInfo = categories[category];
   
@@ -195,8 +191,7 @@ for (var category in behaviorPoints)
   });
 
   var markers = [];    
-  for (var i = 0; i < points.length; i++)
-  {
+  for (var i = 0; i < points.length; i++) {
     var row = points[i];
   
     markers.push(new L.marker(
@@ -204,10 +199,10 @@ for (var category in behaviorPoints)
         row[0],
         row[1]
       ], {
-          time: row[2],
-          rank: row[4],
-          category: row[5],
-          text: row[3],
+        time: row[2],
+        rank: row[4],
+        category: row[5],
+        text: row[3],
       })
     );
   }
@@ -229,8 +224,7 @@ behaviorPoints = null;
 
 
 // populate legend
-for (var i = 0; i < categoryOrder.length; i++)
-{
+for (var i = 0; i < categoryOrder.length; i++) {
   var category = categoryOrder[i],
     categoryInfo = categories[category],
     layer = markerClusterLayers[category];
@@ -244,8 +238,7 @@ for (var i = 0; i < categoryOrder.length; i++)
 var textBoxLayer = L.layerGroup();
 
 
-for (var i = 0; i < textBoxes.length; i++)
-{
+for (var i = 0; i < textBoxes.length; i++) {
   var quoteIcon = L.icon({
     iconUrl: 'libraries/images/quote.png',
     shadowUrl: 'libraries/images/quoteShadow.png',
@@ -275,8 +268,7 @@ textBoxLayer.addTo(map);
 
 var pictureLayer = L.layerGroup();
 
-for (var i = 0; i < pictures.length; i++)
-{
+for (var i = 0; i < pictures.length; i++) {
   var picture = pictures[i];
   
   pictureLayer.addLayer(
@@ -327,35 +319,28 @@ var endMarker = L.marker(WHtrack[WHtrack.length - 1]).addTo(map).bindPopup(endPo
 // ZOOM
 // add or remove layers to the map based on the zoom level
 // cluster layer zoom behavior handled in clusterIconFactory function
-function zoomHandle() 
-{
-  if (map.getZoom() <= 17)
-  {
+function zoomHandle() {
+  if (map.getZoom() <= 17) {
     map.removeLayer(pictureLayer);
     map.closePopup();
   }
-  else
-  {
+  else {
     map.addLayer(pictureLayer);
   }
   
   
-  if (map.getZoom() <= 16)
-  {
+  if (map.getZoom() <= 16) {
     map.removeLayer(textBoxLayer);
   }
-  else
-  {
+  else {
     map.addLayer(textBoxLayer);
   }
   
   
-  if (map.getZoom() <= 14)
-  {
+  if (map.getZoom() <= 14) {
     map.removeLayer(endMarker);
   }
-  else
-  {
+  else {
     map.addLayer(endMarker);
   }
 }
@@ -363,3 +348,4 @@ zoomHandle();
 map.on('zoomend', zoomHandle);
 
 
+})();
