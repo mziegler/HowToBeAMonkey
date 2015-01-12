@@ -432,3 +432,16 @@ body a.leaflet-control-zoom-out:last-child {
   border-bottom-right-radius: 3px;
   background: #f3f3f3;
 }
+
+
+/******************************************************************************
+ hack for slower zoom animation for landing screen */
+ 
+body .leaflet-zoom-anim-slow .leaflet-zoom-animated {
+  -webkit-transition: -webkit-transform 1.5s ease-in-out !important;
+     -moz-transition:    -moz-transform 1.5s ease-in-out !important;
+       -o-transition:      -o-transform 1.5s ease-in-out !important;
+          transition:         transform 1.5s ease-in-out !important;
+}
+	
+

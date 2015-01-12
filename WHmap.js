@@ -21,7 +21,7 @@ L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
 var track = L.polyline(WHtrack, { 
     color: 'white', 
     opacity:1,
-    weight:3, 
+    weight:4, 
     lineJoin:'round', 
     lineCap:'round', 
     dashArray:[10,10]
@@ -311,8 +311,80 @@ pictureLayer.addTo(map);
 // START AND END POINTS
 
 
-var startMarker = L.marker(WHtrack[0]).addTo(map).bindPopup(startPopup, {'minWidth':410, 'className':'behavior-popup'}).on('click', closeSidePanel).openPopup();
+var startMarker = L.marker(WHtrack[0]).addTo(map).bindPopup(startPopup, {'minWidth':410, 'className':'behavior-popup'}).on('click', closeSidePanel);//.openPopup();
 var endMarker = L.marker(WHtrack[WHtrack.length - 1]).addTo(map).bindPopup(endPopup).on('click', closeSidePanel);
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// INTRO SCREENS
+
+
+// hide the overlay screen
+function closeOverlay() {
+  $('#overlay').fadeOut();
+}
+
+// hide overlay on background click
+$('#overlay').click(closeOverlay);
+$('.overlay-content').click(function() { return false }); // don't propagate click on content area
+
+
+// when the 'next' button on the first intro screen gets clicked
+$('#next-intro1').click(function() {
+
+  closeOverlay();
+
+  // pretty gnarly code chaining animation sequence
+  
+  L.DomUtil.addClass(map._mapPane, 'leaflet-zoom-anim-slow'); // hack to slow down zoom animation
+  $('.leaflet-marker-pane, .leaflet-shadow-pane').fadeOut(1000);
+  map.setView([10.51185, -85.369238], 16,
+      {pan:{animate:true, duration:1500}, zoom:{animate:true}}  );
+  window.setTimeout(function(){ L.DomUtil.removeClass(map._mapPane, 'leaflet-zoom-anim-slow'); }, 1000);
+
+  window.setTimeout(function() {
+    L.DomUtil.addClass(map._mapPane, 'leaflet-zoom-anim-slow');
+    map.setView([10.51185, -85.369238], 18,
+      {pan:{animate:true, duration:1500}, zoom:{animate:true}}  );
+    window.setTimeout(function(){ L.DomUtil.removeClass(map._mapPane, 'leaflet-zoom-anim-slow'); }, 1000);
+    window.setTimeout(function() {
+        $('.leaflet-marker-pane, .leaflet-shadow-pane').fadeIn('slow');
+        window.setTimeout(function() {
+          $('.overlay-content').hide();
+          $('#overlay-intro2').show();
+          $('#overlay').fadeIn('slow');
+        }, 500);
+    }, 1600)
+  }, 3000);
+});
+
+
+// when the 'next' button is clicked on the second intro screen
+$('#next-intro2').click(function() {
+  closeOverlay();
+  map.panTo([10.5143646989, -85.3639992792], {animate:true, duration:1.5, easeLinearity:0.5});
+  
+  window.setTimeout(function() {
+    map.panTo([10.5089958385, -85.3672770225], {animate:true, duration:1.5, easeLinearity:0.5})
+  }, 2000);
+  
+  window.setTimeout(function() {
+    map.panTo([10.511199357, -85.3714851569], {animate:true, duration:1.5, easeLinearity:0.5})
+  }, 4000);
+  
+  window.setTimeout(function() {
+    map.panTo([10.5142232962, -85.3693762701], {animate:true, duration:1.5, easeLinearity:0.5})
+  }, 6000);
+  
+  window.setTimeout(function() {
+    startMarker.openPopup();
+  }, 7700);
+  
+});
+
+
 
 
 //////////////////////////////////////////////////////////////////////////////
