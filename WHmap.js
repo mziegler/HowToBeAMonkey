@@ -375,7 +375,7 @@ $('#next-intro2').click(function() {
   
   window.setTimeout(function() {
     startMarker.openPopup();
-  }, 5700);
+  }, 6000);
   
 });
 
