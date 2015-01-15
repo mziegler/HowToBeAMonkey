@@ -288,7 +288,6 @@ for (var i = 0; i < pictures.length; i++) {
         return (function() {
           $('a#lightbox-trigger')
             .attr('href', 'pictures/' + picture[1])
-            //.attr('href', 'javascript:alert("s")')
             .attr('data-lightbox', 'pictureLayer-' + i)
             .attr('data-title', picture[2])
             .click();
