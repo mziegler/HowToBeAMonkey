@@ -367,20 +367,16 @@ $('#next-intro2').click(function() {
   map.panTo([10.5143646989, -85.3639992792], {animate:true, duration:1.5, easeLinearity:0.5});
   
   window.setTimeout(function() {
-    map.panTo([10.5089958385, -85.3672770225], {animate:true, duration:1.5, easeLinearity:0.5})
+    map.panTo([10.5085, -85.3669639584], {animate:true, duration:1.5, easeLinearity:0.5})
   }, 2000);
   
   window.setTimeout(function() {
-    map.panTo([10.511199357, -85.3714851569], {animate:true, duration:1.5, easeLinearity:0.5})
+    map.panTo([10.5142232962, -85.3693762701], {animate:true, duration:1.5, easeLinearity:0.5})
   }, 4000);
   
   window.setTimeout(function() {
-    map.panTo([10.5142232962, -85.3693762701], {animate:true, duration:1.5, easeLinearity:0.5})
-  }, 6000);
-  
-  window.setTimeout(function() {
     startMarker.openPopup();
-  }, 7700);
+  }, 5700);
   
 });
 
