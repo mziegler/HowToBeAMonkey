@@ -378,14 +378,14 @@ $('#next-intro2').click(function() {
   
   L.Path.CLIP_PADDING = animationLineClipPadding; // don't clip the path for this animation
   
-  map.panTo([10.5143646989, -85.3639992792], {animate:true, duration:1.5, easeLinearity:0.5});
+  map.panTo([10.5143646989, -85.3639992792], {animate:true, duration:1.5, easeLinearity:1});
   
   window.setTimeout(function() {
-    map.panTo([10.5085, -85.3669639584], {animate:true, duration:1.5, easeLinearity:0.5})
+    map.panTo([10.5085, -85.3669639584], {animate:true, duration:1.5, easeLinearity:1})
   }, 2000);
   
   window.setTimeout(function() {
-    map.panTo([10.5142232962, -85.3693762701], {animate:true, duration:1.5, easeLinearity:0.5})
+    map.panTo([10.5142232962, -85.3693762701], {animate:true, duration:1.5, easeLinearity:1})
   }, 4000);
   
   window.setTimeout(function() {
