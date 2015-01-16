@@ -142,7 +142,7 @@ var WHtrack = [
 [10.5143646989, -85.3639992792]
 ]
 
-var startPopup = '<div class="popup-title">Winslow Homer wakes up</div><div class="caption"><p>On January 24 2014, Winslow and his family woke up right here at <b>5:44 AM</b>.  The scientists have to make sure to get to the monkeys before they wake up &mdash; they start moving right away, and they\'re hard to find once they\'re lost!</p><p><i>Follow along the map to see where Winslow went and what he did!</i></p></div>';
+var startPopup = '<div class="popup-title">Winslow Homer wakes up</div><div class="caption" style="height:auto;max-height:none;margin-top:-15px;"><p>On January 24 2014, Winslow and his family woke up right here at about <b>5:44 AM</b>.  The scientists have to make sure to get to the monkeys before they wake up &mdash; they start moving right away, and they\'re hard to find once they\'re lost!</p><p><i>Follow along the map to see where Winslow went and what he did!</i></p></div>';
 var endPopup = '<div style="width:100%;font-weight:bold;text-align:center;font-size:140%;margin:10px;">End &ndash; Winslow Homer\'s group goes to sleep</div>  On January 24 2014, Winslow Homer\'s group went to sleep here around <b>18:10</b>.  Capuchin monkeys tend to sleep in a different tree every night, though they often have favorite sleeping-trees that they return to frequently.</p><p>The monkeys like to sleep in some of the tallest trees, to avoid predators.  They sleep in contact with each other, cuddled up in "monkey balls."';
 
 var categoryOrder = ['V', 'G', 'M', 'C', 'A', 'E', 'F', 'H', 'I', 'P', 'S', 'O', 'L', 'W'];
