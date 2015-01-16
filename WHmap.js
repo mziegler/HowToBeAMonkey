@@ -17,6 +17,12 @@ L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
 }).addTo(map);
 
 
+
+
+var initialLineClipPadding = L.Path.CLIP_PADDING; // save old clip padding
+var animationLineClipPadding = 3000; // clip padding for zoom/pan intro animations (avoid choppy line rendering)
+L.Path.CLIP_PADDING = animationLineClipPadding; // don't clip the path for intro animation
+
 // add GPS track to map     
 var track = L.polyline(WHtrack, { 
     color: 'white', 
@@ -26,8 +32,8 @@ var track = L.polyline(WHtrack, {
     lineCap:'round', 
     dashArray:[10,10]
   }).addTo(map);
-
-
+ 
+L.Path.CLIP_PADDING = initialLineClipPadding; // restore old clip padding
 
 ///////////////////////////////////////////////////////////////////////////////
 // HEADER LINKS
@@ -333,6 +339,9 @@ $('.overlay-content').click(function() { return false }); // don't propagate cli
 // when the 'next' button on the first intro screen gets clicked
 $('#next-intro1').click(function() {
 
+
+  L.Path.CLIP_PADDING = animationLineClipPadding; // don't clip the path for this animation
+
   closeOverlay();
 
   // pretty gnarly code chaining animation sequence
@@ -354,6 +363,9 @@ $('#next-intro1').click(function() {
           $('.overlay-content').hide();
           $('#overlay-intro2').show();
           $('#overlay').fadeIn('slow');
+          
+          
+          L.Path.CLIP_PADDING = initialLineClipPadding;  // restore old clip padding
         }, 500);
     }, 1600)
   }, 3000);
@@ -363,6 +375,9 @@ $('#next-intro1').click(function() {
 // when the 'next' button is clicked on the second intro screen
 $('#next-intro2').click(function() {
   closeOverlay();
+  
+  L.Path.CLIP_PADDING = animationLineClipPadding; // don't clip the path for this animation
+  
   map.panTo([10.5143646989, -85.3639992792], {animate:true, duration:1.5, easeLinearity:0.5});
   
   window.setTimeout(function() {
@@ -375,7 +390,9 @@ $('#next-intro2').click(function() {
   
   window.setTimeout(function() {
     startMarker.openPopup();
+    L.Path.CLIP_PADDING = initialLineClipPadding;  // restore old clip padding
   }, 6000);
+  
   
 });
 
