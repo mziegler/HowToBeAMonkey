@@ -141,7 +141,7 @@ function scatterAnchor(anchorCenter, range) {
 }
   
   
-function clusterIconFactory(category) {
+function clusterIconFactory(category, isSingleton) {
 
   var invisibleIcon = L.icon({
     iconSize: [0,0],
@@ -156,7 +156,7 @@ function clusterIconFactory(category) {
     }
     
     
-    var childCount = cluster.getChildCount();
+    var childCount = isSingleton ? 1 : cluster.population;
    
     var iconSize = [48, 48]; 
     if (childCount < 10) {
@@ -164,7 +164,7 @@ function clusterIconFactory(category) {
     }
 
   
-    var anchorPoint = scatterAnchor([iconSize[0] / 2, iconSize[1] / 2], 170)
+    var anchorPoint = scatterAnchor([iconSize[0] / 2, iconSize[1] / 2], 200);
       
     var icon = L.icon({
       iconUrl: 'icons/48/' + category + '.png',
@@ -187,6 +187,15 @@ for (var category in behaviorPoints) {
   var points = behaviorPoints[category];
   var categoryInfo = categories[category];
   
+  
+  var clusterLayer = new PruneClusterForLeaflet(200);
+  clusterLayer.Cluster.ENABLE_MARKERS_LIST = true;
+  clusterLayer.BuildLeafletClusterIcon = clusterIconFactory(category, false);
+  
+  // function for singleton icons for this category
+  singletonIconFunction = clusterIconFactory(category, true);
+  
+  /*
   var clusterLayer = new L.markerClusterGroup({
     spiderfyOnMaxZoom: false,
     iconCreateFunction: clusterIconFactory(category),
@@ -194,13 +203,13 @@ for (var category in behaviorPoints) {
     maxClusterRadius: 150,
     zoomToBoundsOnClick: false,
     singleMarkerMode: true,
-  });
+  });*/
 
-  var markers = [];    
+  //var markers = [];    
   for (var i = 0; i < points.length; i++) {
     var row = points[i];
   
-    markers.push(new L.marker(
+    /*markers.push(new L.marker(
       [
         row[0],
         row[1]
@@ -210,18 +219,26 @@ for (var category in behaviorPoints) {
         category: row[5],
         text: row[3],
       })
-    );
+    );*/
+    
+    var marker = new PruneCluster.Marker(row[0], row[1]);
+    marker.data.time = row[2];
+    marker.data.rank = row[4];
+    marker.data.category = row[5];
+    marker.data.text = row[3];
+    marker.data.icon = singletonIconFunction;
+    clusterLayer.RegisterMarker(marker);
   }
-  clusterLayer.addLayers(markers);
+  //clusterLayer.addLayers(markers);
   
   markerClusterLayers[category] = clusterLayer;
   //layerControl.addOverlay(clusterLayer, '<img src="icons/48/' + category + '.png" class="legend-icon" /><span class="legend-label">' + categoryInfo.name + '</span>', categoryInfo.group);
   
-  if (categoryInfo.default)  { clusterLayer.addTo(map); } 
+  if (categoryInfo.default)  { map.addLayer(clusterLayer); } 
   
   // open popup on click
-  clusterLayer.on('clusterclick click', openPopup);
-  clusterLayer.on('clusterclick click', closeSidePanel);
+  //clusterLayer.on('clusterclick click', openPopup);
+  //clusterLayer.on('clusterclick click', closeSidePanel);
 
 }
 
