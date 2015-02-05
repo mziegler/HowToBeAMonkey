@@ -192,6 +192,9 @@ for (var category in behaviorPoints) {
   clusterLayer.Cluster.ENABLE_MARKERS_LIST = true;
   clusterLayer.BuildLeafletClusterIcon = clusterIconFactory(category, false);
   
+  // disable spiderfy
+  clusterLayer.spiderfier.Spiderfy = function(){return false;};
+  
   // function for singleton icons for this category
   singletonIconFunction = clusterIconFactory(category, true);
   
