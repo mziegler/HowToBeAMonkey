@@ -117,16 +117,16 @@ function popupHTML(points) {
 
 function openBehaviorPopup(target, points) {
   
-  var offset = target.options.icon.popupOffset;
-  
-  target.bindPopup(popupHTML(points), {
-    'minWidth':400, 
-    'className':'behavior-popup',
-    'offset':offset,
-    'keepInView':false
-  });
-  
-  target.openPopup();
+  if (!target.getPopup()) {
+    var offset = target.options.icon.popupOffset;
+    
+    target.bindPopup(popupHTML(points), {
+      'minWidth':400, 
+      'className':'behavior-popup',
+      'offset':offset,
+      'keepInView':false
+    }).openPopup();
+  }
 }
 
 
