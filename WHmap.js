@@ -134,52 +134,57 @@ function openBehaviorPopup(target, points) {
 ///////////////////////////////////////////////////////////////////////////////
 // BEHAVIOR CLUSTER MARKERS
   
-  
+// randomly scatter icon anchor about the default anchor
 function scatterAnchor(anchorCenter, range) {
   return [ (range / 2) - (Math.random() * range) + anchorCenter[0], 
            (range / 2) - (Math.random() * range) + anchorCenter[1]  ]; 
 }
   
   
-function clusterIconFactory(category, isSingleton) {
 
-  var invisibleIcon = L.icon({
-    iconSize: [0,0],
-    iconUrl: 'libraries/images/leaflet/quote.png',
-  });
+// used to hide icons without removing layers (to not mess up layer control)
+var invisibleIcon = L.icon({
+  iconSize: [0,0],
+  iconUrl: 'libraries/images/leaflet/quote.png',
+});
 
-  return function(cluster) {
-    // return invisible icons when zoomed out (hack - 
-    // removing the layers woud mess up layer control)
-    if (map.getZoom() <= 15) {
-      return invisibleIcon;
-    }
-    
-    
-    var childCount = isSingleton ? 1 : cluster.population;
-   
-    var iconSize = [48, 48]; 
-    if (childCount < 10) {
-      iconSize = [32, 32];
-    }
 
-  
-    var anchorPoint = scatterAnchor([iconSize[0] / 2, iconSize[1] / 2], 200);
-      
-    var icon = L.icon({
-      iconUrl: 'icons/48/' + category + '.png',
-      iconSize: iconSize,
-      iconAnchor: anchorPoint,
-      className: 'behavior-icon',
-    });
-      
-    icon.popupOffset = [-anchorPoint[0] + iconSize[0]/2, -anchorPoint[1] + iconSize[1]/2 - 10];
-      
-    return icon;
-    
+function clusterBehaviorIcon(cluster) {
+  return behaviorIcon(cluster._clusterMarkers[0].data.category, cluster.population);
+}
+
+function singletonBehaviorIcon(data) {
+  return behaviorIcon(data.category, 1);
+}
+
+function behaviorIcon(category, population) {
+  // return invisible icons when zoomed out (hack - 
+  // removing the layers woud mess up layer control)
+  if (map.getZoom() <= 15) {
+    return invisibleIcon;
   }
   
+ 
+  var iconSize = [48, 48]; 
+  if (population < 10) {
+    iconSize = [32, 32];
+  }
+
+
+  var anchorPoint = scatterAnchor([iconSize[0] / 2, iconSize[1] / 2], 200);
+    
+  var icon = L.icon({
+    iconUrl: 'icons/48/' + category + '.png',
+    iconSize: iconSize,
+    iconAnchor: anchorPoint,
+    className: 'behavior-icon',
+  });
+    
+  icon.popupOffset = [-anchorPoint[0] + iconSize[0]/2, -anchorPoint[1] + iconSize[1]/2 - 10];
+    
+  return icon;
 }
+  
 
 var markerClusterLayers = {}; // for legend
 
@@ -190,19 +195,19 @@ for (var category in behaviorPoints) {
   var categoryInfo = categories[category];
   
   
-  var clusterLayer = new PruneClusterForLeaflet(200);
-  clusterLayer.BuildLeafletClusterIcon = clusterIconFactory(category, false);
+  var clusterLayer = new PruneClusterForLeaflet(180);
+  clusterLayer.BuildLeafletClusterIcon = clusterBehaviorIcon;
   
   // disable spiderfy
   clusterLayer.spiderfier.Spiderfy = function(){return false;};
   
   // function for singleton icons for this category
-  singletonIconFunction = clusterIconFactory(category, true);
+  singletonIconFunction = singletonBehaviorIcon;
   
   
   clusterLayer.BuildLeafletCluster = function(cluster, position) {
       var m = new L.Marker(position, {
-        icon: clusterIconFactory(category, false)(cluster) //clusterLayer.BuildLeafletClusterIcon(cluster)
+        icon: clusterBehaviorIcon(cluster) //clusterLayer.BuildLeafletClusterIcon(cluster)
       });
       
       m.on('click', function(target) { 
