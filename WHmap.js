@@ -93,23 +93,20 @@ L.control.scale().addTo(map); // scale control
 ///////////////////////////////////////////////////////////////////////////////
 // BEHAVIOR POPUPS
 
-function popupHTML(cluster) { 
-  var points;
-  if (cluster.getAllChildMarkers) {
-    points = cluster.getAllChildMarkers()
-    .sort(function(a,b) {
-      return a.options.time.localeCompare(b.options.time);
-    });
-  } else {
-    points = [cluster]; // singleton is just a marker
-  }
+function popupHTML(points) { 
   
-  var category = points[0].options.category;
+  // sort points by time
+  points.sort(function(a,b) {
+    return a.data.time.localeCompare(b.data.time);
+  });
+
+  
+  var category = points[0].data.category;
     
   var html = '<div class="popup-title popup-title-c' + category + '">' + categories[category].name + '</div><div class="behavior-list"><table>';
   
   for (var i = 0; i < points.length; i++) {    
-    var ops = points[i].options;
+    var ops = points[i].data;
     html += '<tr><td class="behavior-timestamp">' + ops.time + '</td><td class="behavior-point">' + ops.text + '</td></tr>';
   }
   
@@ -118,15 +115,18 @@ function popupHTML(cluster) {
 }  
 
 
-function openPopup(target) {
+function openBehaviorPopup(target, points) {
   
-  var offset = target.layer.options.icon.popupOffset || target.layer._iconObj.popupOffset;
-
-  target.layer.bindPopup(popupHTML(target.layer), {
+  var offset = target.options.icon.popupOffset;
+  
+  target.bindPopup(popupHTML(points), {
     'minWidth':400, 
     'className':'behavior-popup',
     'offset':offset,
-  }).openPopup();
+    'keepInView':false
+  });
+  
+  target.openPopup();
 }
 
 
@@ -183,13 +183,14 @@ function clusterIconFactory(category, isSingleton) {
 
 var markerClusterLayers = {}; // for legend
 
+PruneCluster.Cluster.ENABLE_MARKERS_LIST = true; // for pop-ups
+
 for (var category in behaviorPoints) {
   var points = behaviorPoints[category];
   var categoryInfo = categories[category];
   
   
   var clusterLayer = new PruneClusterForLeaflet(200);
-  clusterLayer.Cluster.ENABLE_MARKERS_LIST = true;
   clusterLayer.BuildLeafletClusterIcon = clusterIconFactory(category, false);
   
   // disable spiderfy
@@ -197,6 +198,25 @@ for (var category in behaviorPoints) {
   
   // function for singleton icons for this category
   singletonIconFunction = clusterIconFactory(category, true);
+  
+  
+  clusterLayer.BuildLeafletCluster = function(cluster, position) {
+      var m = new L.Marker(position, {
+        icon: clusterIconFactory(category, false)(cluster) //clusterLayer.BuildLeafletClusterIcon(cluster)
+      });
+      
+      m.on('click', function(target) { 
+        openBehaviorPopup(target.target, cluster._clusterMarkers); 
+      });
+      
+      return m;
+  };
+  
+  /*clusterLayer.PrepareLeafletMarker = function(leafletMarker, data) {
+    // do nothing so far;
+    return 0;
+  };*/
+  
   
   /*
   var clusterLayer = new L.markerClusterGroup({
@@ -208,21 +228,10 @@ for (var category in behaviorPoints) {
     singleMarkerMode: true,
   });*/
 
-  //var markers = [];    
+
+  // add markers to cluster layer
   for (var i = 0; i < points.length; i++) {
     var row = points[i];
-  
-    /*markers.push(new L.marker(
-      [
-        row[0],
-        row[1]
-      ], {
-        time: row[2],
-        rank: row[4],
-        category: row[5],
-        text: row[3],
-      })
-    );*/
     
     var marker = new PruneCluster.Marker(row[0], row[1]);
     marker.data.time = row[2];
@@ -232,10 +241,8 @@ for (var category in behaviorPoints) {
     marker.data.icon = singletonIconFunction;
     clusterLayer.RegisterMarker(marker);
   }
-  //clusterLayer.addLayers(markers);
   
   markerClusterLayers[category] = clusterLayer;
-  //layerControl.addOverlay(clusterLayer, '<img src="icons/48/' + category + '.png" class="legend-icon" /><span class="legend-label">' + categoryInfo.name + '</span>', categoryInfo.group);
   
   if (categoryInfo.default)  { map.addLayer(clusterLayer); } 
   
