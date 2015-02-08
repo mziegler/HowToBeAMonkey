@@ -148,15 +148,17 @@ var invisibleIcon = L.icon({
   iconUrl: 'libraries/images/leaflet/quote.png',
 });
 
-
+// generates icons for behavior clusters
 function clusterBehaviorIcon(cluster) {
   return behaviorIcon(cluster._clusterMarkers[0].data.category, cluster.population);
 }
 
+// generates icons for behavior singletons
 function singletonBehaviorIcon(data) {
   return behaviorIcon(data.category, 1);
 }
 
+// generate and return an icon for behavior clusters/singletons
 function behaviorIcon(category, population) {
   // return invisible icons when zoomed out (hack - 
   // removing the layers woud mess up layer control)
@@ -165,12 +167,13 @@ function behaviorIcon(category, population) {
   }
   
  
+  // set icon size based on population (# child markers)
   var iconSize = [48, 48]; 
-  if (population < 10) {
+  if (population < 7) {
     iconSize = [32, 32];
   }
 
-
+  // scatter anchor
   var anchorPoint = scatterAnchor([iconSize[0] / 2, iconSize[1] / 2], 200);
     
   var icon = L.icon({
@@ -179,24 +182,40 @@ function behaviorIcon(category, population) {
     iconAnchor: anchorPoint,
     className: 'behavior-icon',
   });
-    
+  
+  // save offset to center popup over marker
   icon.popupOffset = [-anchorPoint[0] + iconSize[0]/2, -anchorPoint[1] + iconSize[1]/2 - 10];
     
   return icon;
 }
   
 
-var markerClusterLayers = {}; // for legend
+// called to generate a marker for each behavior cluster
+function buildClusterMarker(cluster, position) {
+    var m = new L.Marker(position, {
+      icon: clusterBehaviorIcon(cluster)
+    });
+    
+    m.on('click', function(target) { 
+      openBehaviorPopup(target.target, cluster._clusterMarkers); 
+    });
+    
+    return m;
+};
 
-PruneCluster.Cluster.ENABLE_MARKERS_LIST = true; // for pop-ups
 
+var markerClusterLayers = {}; // keep cluster layers for legend
+
+PruneCluster.Cluster.ENABLE_MARKERS_LIST = true; // for pop-up generation
+
+
+// loop over categories to add cluster layers and behavior markers
 for (var category in behaviorPoints) {
   var points = behaviorPoints[category];
   var categoryInfo = categories[category];
   
   
   var clusterLayer = new PruneClusterForLeaflet(180);
-  clusterLayer.BuildLeafletClusterIcon = clusterBehaviorIcon;
   
   // disable spiderfy
   clusterLayer.spiderfier.Spiderfy = function(){return false;};
@@ -205,33 +224,7 @@ for (var category in behaviorPoints) {
   singletonIconFunction = singletonBehaviorIcon;
   
   
-  clusterLayer.BuildLeafletCluster = function(cluster, position) {
-      var m = new L.Marker(position, {
-        icon: clusterBehaviorIcon(cluster) //clusterLayer.BuildLeafletClusterIcon(cluster)
-      });
-      
-      m.on('click', function(target) { 
-        openBehaviorPopup(target.target, cluster._clusterMarkers); 
-      });
-      
-      return m;
-  };
-  
-  /*clusterLayer.PrepareLeafletMarker = function(leafletMarker, data) {
-    // do nothing so far;
-    return 0;
-  };*/
-  
-  
-  /*
-  var clusterLayer = new L.markerClusterGroup({
-    spiderfyOnMaxZoom: false,
-    iconCreateFunction: clusterIconFactory(category),
-    showCoverageOnHover: false,
-    maxClusterRadius: 150,
-    zoomToBoundsOnClick: false,
-    singleMarkerMode: true,
-  });*/
+  clusterLayer.BuildLeafletCluster = buildClusterMarker;
 
 
   // add markers to cluster layer
@@ -249,12 +242,9 @@ for (var category in behaviorPoints) {
   
   markerClusterLayers[category] = clusterLayer;
   
+  // add default category layers to map
   if (categoryInfo.default)  { map.addLayer(clusterLayer); } 
   
-  // open popup on click
-  //clusterLayer.on('clusterclick click', openPopup);
-  //clusterLayer.on('clusterclick click', closeSidePanel);
-
 }
 
 // free up some memory
