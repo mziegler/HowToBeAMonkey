@@ -117,16 +117,21 @@ function popupHTML(points) {
 
 function openBehaviorPopup(target, points) {
   
-  if (!target.getPopup()) {
-    var offset = target.options.icon.popupOffset;
-    
-    target.bindPopup(popupHTML(points), {
-      'minWidth':400, 
-      'className':'behavior-popup',
-      'offset':offset,
-      'keepInView':false
-    }).openPopup();
-  }
+  var offset = target.options.icon.popupOffset;
+  
+  // Not binding popup to icon because PruneCluster calls setLatLng on marker
+  // all the time, won't let user pan away from popup.  Save a pointer to the
+  // popup so we can remove it when the marker is removed.
+  target.behaviorPopup = L.popup({
+    'minWidth':400, 
+    'className':'behavior-popup',
+    'offset':offset,
+    'keepInView':false
+  })
+  .setContent(popupHTML(points))
+  .setLatLng(target.getLatLng())
+  .openOn(map);
+  
 }
 
 
@@ -197,7 +202,19 @@ function buildClusterMarker(cluster, position) {
     });
     
     m.on('click', function(target) { 
-      openBehaviorPopup(target.target, cluster._clusterMarkers); 
+      if (target.target.behaviorPopup && map.hasLayer(target.target.behaviorPopup)) {
+        map.closePopup(target.target.behaviorPopup);
+      }
+      else {
+        openBehaviorPopup(target.target, cluster._clusterMarkers); 
+      }
+    });
+    
+    // remove popup when icon is removed
+    m.on('remove', function(target) {
+      if (target.target.behaviorPopup) {
+        map.closePopup(target.target.behaviorPopup);
+      }
     });
     
     return m;
@@ -215,7 +232,7 @@ for (var category in behaviorPoints) {
   var categoryInfo = categories[category];
   
   
-  var clusterLayer = new PruneClusterForLeaflet(180);
+  var clusterLayer = new PruneClusterForLeaflet(200);
   
   // disable spiderfy
   clusterLayer.spiderfier.Spiderfy = function(){return false;};
