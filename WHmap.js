@@ -222,7 +222,7 @@ for (var category in behaviorPoints) {
   
   // function for singleton icons for this category
   singletonIconFunction = singletonBehaviorIcon;
-  
+  clusterLayer.BuildLeafletClusterIcon = clusterBehaviorIcon;
   
   clusterLayer.BuildLeafletCluster = buildClusterMarker;
 
