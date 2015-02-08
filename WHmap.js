@@ -316,6 +316,7 @@ var textBoxLayer = L.layerGroup();
 
 
 for (var i = 0; i < textBoxes.length; i++) {
+  /*
   var quoteIcon = L.icon({
     iconUrl: 'libraries/leaflet/images/quote.png',
     shadowUrl: 'libraries/leaflet/images/quoteShadow.png',
@@ -324,9 +325,17 @@ for (var i = 0; i < textBoxes.length; i++) {
     popupAnchor:  [10 - textBoxes[i][3][0], -35 - textBoxes[i][3][1]], // point from which the popup should open relative to the iconAnchor
     shadowAnchor: [15 + textBoxes[i][3][0], 35 + textBoxes[i][3][1]]
   });
+  */
+  
+  var textBoxIcon = L.divIcon({
+    className: 'textbox-icon',
+    html: '<span class="textbox-icon-inner">' + textBoxes[i][1] + '</span>',
+    iconAnchor: [textBoxes[i][3][0], textBoxes[i][3][1]],
+    popupAnchor:  [-textBoxes[i][3][0], -textBoxes[i][3][1]]
+  })
 
   textBoxLayer.addLayer(
-    L.marker(textBoxes[i][0], {icon:quoteIcon}).bindPopup(
+    L.marker(textBoxes[i][0], {icon:textBoxIcon}).bindPopup(
     '<div class="popup-title">' +
     textBoxes[i][1] +
     '</div><div class="caption">' +
