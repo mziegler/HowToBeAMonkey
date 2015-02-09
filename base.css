@@ -351,13 +351,14 @@ div.leaflet-popup-content img {
   display: inline-block;
   background: #EEE;
   border: solid 3px #777;
-  border-radius: 5px;
+  border-radius: 8px;
   padding: 5px;
   transform: translate(-50%, 0);
   text-align: center;
   font-weight: bold;
   position: relative;
   color: #222;
+  min-width: 100px;
 }
 
 
