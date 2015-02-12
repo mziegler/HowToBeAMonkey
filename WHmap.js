@@ -315,18 +315,7 @@ for (var i = 0; i < categoryOrder.length; i++) {
 var textBoxLayer = L.layerGroup();
 
 
-for (var i = 0; i < textBoxes.length; i++) {
-  /*
-  var quoteIcon = L.icon({
-    iconUrl: 'libraries/leaflet/images/quote.png',
-    shadowUrl: 'libraries/leaflet/images/quoteShadow.png',
-    iconSize:     [40,40], // size of the icon
-    iconAnchor:   [15 + textBoxes[i][3][0], 35 + textBoxes[i][3][1]], // point of the icon which will correspond to marker's location
-    popupAnchor:  [10 - textBoxes[i][3][0], -35 - textBoxes[i][3][1]], // point from which the popup should open relative to the iconAnchor
-    shadowAnchor: [15 + textBoxes[i][3][0], 35 + textBoxes[i][3][1]]
-  });
-  */
-  
+for (var i = 0; i < textBoxes.length; i++) {  
   var textBoxIcon = L.divIcon({
     className: 'textbox-icon',
     html: '<span class="textbox-icon-inner">' + textBoxes[i][1] + '</span>',
@@ -396,8 +385,31 @@ pictureLayer.addTo(map);
 // START AND END POINTS
 
 
-var startMarker = L.marker(WHtrack[0]).addTo(map).bindPopup(startPopup, {'minWidth':410, 'className':'behavior-popup'}).on('click', closeSidePanel);//.openPopup();
-var endMarker = L.marker(WHtrack[WHtrack.length - 1]).addTo(map).bindPopup(endPopup).on('click', closeSidePanel);
+var startMarker = L.marker(WHtrack[0], {icon: L.icon({
+        iconUrl: 'icons/awake.png',
+        iconSize: [80,80],
+        iconAnchor: [40,80],
+        popupAnchor: [0,-70],
+        /*shadowUrl: 'icons/awake-bedtime-shadow.png',
+        shadowSize: [121,80],
+        shadowAnchor: [40,80]*/
+    })})
+    .addTo(map)
+    .bindPopup(startPopup, {'minWidth':410, 'className':'behavior-popup'})
+    .on('click', closeSidePanel);
+    
+var endMarker = L.marker(WHtrack[WHtrack.length - 1], {icon: L.icon({
+        iconUrl: 'icons/bedtime.png',
+        iconSize: [80,80],
+        iconAnchor: [40,80],
+        popupAnchor: [0,-70],
+        /*shadowUrl: 'icons/awake-bedtime-shadow.png',
+        shadowSize: [121,80],
+        shadowAnchor: [40,80]*/
+    })})
+    .addTo(map)
+    .bindPopup(endPopup)
+    .on('click', closeSidePanel);
 
 
 
