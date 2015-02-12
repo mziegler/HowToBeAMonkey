@@ -6,7 +6,7 @@ var map = L.map('map', {
   maxZoom:21, 
   zoomControl: false, 
   attributionControl: false,
-  maxBounds: L.latLngBounds([10.5177, -85.3605], [10.5065, -85.3745]),
+  maxBounds: L.latLngBounds([10.525, -85.3605], [10.5065, -85.3745]),
 }).setView(initialView[0], initialView[1]);
 
 
