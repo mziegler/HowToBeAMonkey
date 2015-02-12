@@ -204,6 +204,9 @@ function behaviorIcon(category, population) {
     iconSize: iconSize,
     iconAnchor: anchorPoint,
     className: 'behavior-icon',
+    shadowUrl: 'icons/48/shadow.png',
+    shadowSize: [Math.floor(iconSize[0]*1.52), iconSize[1]],
+    shadowAnchor: anchorPoint
   });
   
   // save offset to center popup over marker
@@ -390,9 +393,9 @@ var startMarker = L.marker(WHtrack[0], {icon: L.icon({
         iconSize: [80,80],
         iconAnchor: [40,80],
         popupAnchor: [0,-70],
-        /*shadowUrl: 'icons/awake-bedtime-shadow.png',
+        shadowUrl: 'icons/awake-bedtime-shadow.png',
         shadowSize: [121,80],
-        shadowAnchor: [40,80]*/
+        shadowAnchor: [40,80]
     })})
     .addTo(map)
     .bindPopup(startPopup, {'minWidth':410, 'className':'behavior-popup'})
@@ -403,9 +406,9 @@ var endMarker = L.marker(WHtrack[WHtrack.length - 1], {icon: L.icon({
         iconSize: [80,80],
         iconAnchor: [40,80],
         popupAnchor: [0,-70],
-        /*shadowUrl: 'icons/awake-bedtime-shadow.png',
+        shadowUrl: 'icons/awake-bedtime-shadow.png',
         shadowSize: [121,80],
-        shadowAnchor: [40,80]*/
+        shadowAnchor: [40,80]
     })})
     .addTo(map)
     .bindPopup(endPopup)
