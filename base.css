@@ -39,10 +39,6 @@ div#map {
    background: #BBB;
 }
 
-img.picture-icon {
-  border-radius: 5px;
-  border: solid #DDD 2px;
-}
 
 /******************************************************************************
  header */
@@ -343,10 +339,6 @@ div.leaflet-popup-content img {
 /******************************************************************************
  text box icons */
 
-.textbox-icon {
-
-}
-
 .textbox-icon-inner {
   display: inline-block;
   background: #EEE;
@@ -359,6 +351,12 @@ div.leaflet-popup-content img {
   position: relative;
   color: #222;
   min-width: 100px;
+  transition: 0.2s ease;
+}
+
+.textbox-icon-inner:hover {
+  background: #FFF;
+  transition: 0.2s ease;
 }
 
 
@@ -480,6 +478,44 @@ body a.leaflet-control-zoom-out:last-child {
   background: #f3f3f3;
 }
 
+
+/******************************************************************************
+ icon animations */
+ 
+img.behavior-icon.leaflet-marker-icon:hover{
+border: solid 3px white;
+transition: 0.1s ease;
+background: white;
+}
+
+img.behavior-icon.leaflet-marker-icon{
+border-radius: 25px;
+border: solid 0px white;
+transition: 0.1s ease;
+}
+
+img.picture-icon {
+  border-radius: 5px;
+  border: solid #DDD 2px;
+  transition: 0.1s ease;
+}
+
+img.picture-icon:hover {
+  border: solid #FFF 5px;
+  transition: 0.1s ease;
+}
+
+img.awake-bedtime-icon.leaflet-marker-icon:hover {
+  transition: 0.1s ease;
+  /*background: #fff;*/
+  border-top: solid 5px white;
+}
+
+img.awake-bedtime-icon.leaflet-marker-icon {
+  transition: 0.1s ease;
+  border-radius: 50px;
+  border-top: solid 0px white;
+}
 
 /******************************************************************************
  hack for slower zoom animation for landing screen */

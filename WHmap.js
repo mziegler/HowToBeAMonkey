@@ -395,7 +395,8 @@ var startMarker = L.marker(WHtrack[0], {icon: L.icon({
         popupAnchor: [0,-70],
         shadowUrl: 'icons/awake-bedtime-shadow.png',
         shadowSize: [121,80],
-        shadowAnchor: [40,80]
+        shadowAnchor: [40,80],
+        className: 'awake-bedtime-icon'
     })})
     .addTo(map)
     .bindPopup(startPopup, {'minWidth':410, 'className':'behavior-popup'})
@@ -408,7 +409,8 @@ var endMarker = L.marker(WHtrack[WHtrack.length - 1], {icon: L.icon({
         popupAnchor: [0,-70],
         shadowUrl: 'icons/awake-bedtime-shadow.png',
         shadowSize: [121,80],
-        shadowAnchor: [40,80]
+        shadowAnchor: [40,80],
+        className: 'awake-bedtime-icon'
     })})
     .addTo(map)
     .bindPopup(endPopup)
