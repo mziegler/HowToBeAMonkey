@@ -56,7 +56,7 @@ function closeSidePanel() {
 function resetView() {
   map.closePopup(); 
   map.setView(initialView[0], initialView[1], {animate: true});
-  setTimeout(function() { startMarker.openPopup() }, 300);
+  setTimeout(function() { startMarker.openPopup(); }, 300);
   closeSidePanel();
 }
 
@@ -234,7 +234,7 @@ function buildClusterMarker(cluster, position) {
   });
   
   return m;
-};
+}
 
 
 // bind events to singleton markers
