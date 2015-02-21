@@ -337,6 +337,18 @@ div.leaflet-popup-content img {
 }
 
 
+a.show-all-points, a.show-fewer-points {
+  color: #777;
+  font-size: 80%;
+  display: block;
+  text-align: center;
+}
+
+a.show-all-points:hover, a.show-fewer-points:hover {
+  text-style: underline;
+}
+
+
 
 /******************************************************************************
  text box icons */

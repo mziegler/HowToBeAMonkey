@@ -94,16 +94,10 @@ L.control.scale().addTo(map); // scale control
 // BEHAVIOR POPUPS
 
 function popupHTML(points) { 
-  
-  // sort points by time
-  points.sort(function(a,b) {
-    return a.data.time.localeCompare(b.data.time);
-  });
-
-  
+    
   var category = points[0].data.category;
     
-  var html = '<div class="popup-title popup-title-c' + category + '">' + categories[category].name + '</div><div class="behavior-list"><table>';
+  var html = '<div class="popup-title popup-title-c' + category + '">' + categories[category].name + '</div><div class="behavior-list"><table><tbody class="behavior-points-initial">';
   
   // highest-ranking points
   var topPoints = points.sort(function(a,b) {
@@ -112,17 +106,51 @@ function popupHTML(points) {
   .sort(function(a,b) {  // sort by time
     return a.data.time.localeCompare(b.data.time);
   })
-  .slice(0,5); 
+  .slice(0,4); 
   
   for (var i = 0; i < topPoints.length; i++) {    
     var ops = points[i].data;
     html += '<tr><td class="behavior-timestamp">' + ops.time + '</td><td class="behavior-point">' + ops.text + '</td></tr>';
   }
   
-  html += "</table></div>";
+  
+  // if we're not showing all the points, list all of the points for the cluster
+  // in a hidden tbody and show 'see all points' link
+  if (points.length > topPoints.length) {
+    html += '</tbody><tbody class="behavior-points-hidden" style="display:none;">'
+    
+    // sort all points by time
+    points.sort(function(a,b) {
+      return a.data.time.localeCompare(b.data.time);
+    });
+    
+    for (var i = 0; i < points.length; i++) {    
+      var ops = points[i].data;
+      html += '<tr><td class="behavior-timestamp">' + ops.time + '</td><td class="behavior-point">' + ops.text + '</td></tr>';
+    }
+    
+    html += '</tbody></table></div><a class="show-all-points">(+) See all ' + points.length+ ' observations</a><a class="show-fewer-points" style="display:none">(-) See fewer observations</a>';
+  }
+  else {
+    html += '</tbody></table></div>';
+  }
+  
   return html;
 }  
 
+// toggle short and long behavior point views for open popup
+$('#map').delegate('a.show-all-points', 'click', function() {
+  $('a.show-all-points').hide();
+  $('a.show-fewer-points').fadeIn();
+  $('table:visible tbody.behavior-points-hidden').fadeIn();
+  $('tbody.behavior-points-initial:visible').hide();
+});
+$('#map').delegate('a.show-fewer-points', 'click', function() {
+  $('a.show-fewer-points').hide();
+  $('a.show-all-points').fadeIn();
+  $('table:visible tbody.behavior-points-initial').fadeIn();
+  $('tbody.behavior-points-hidden:visible').hide();
+});
 
 // toggle behavior popup when an icon is clicked
 function toggleBehaviorPopup(target, points) {
