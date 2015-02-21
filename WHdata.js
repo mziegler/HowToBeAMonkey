@@ -148,20 +148,20 @@ var endPopup = '<div style="width:100%;font-weight:bold;text-align:center;font-s
 var categoryOrder = ['V', 'G', 'M', 'C', 'A', 'E', 'F', 'H', 'I', 'P', 'S', 'O', 'L', 'W'];
 
 var categories = {
-  'G': {'name': 'Aggression', 'default': true, 'group': 'Dominance'},
-  'E': {'name': 'Submission and fear', 'default': true, 'group': 'Dominance'},
-  'H': {'name': 'Coalitions', 'default': true, 'group': 'Dominance'},
-  'M': {'name': 'Grooming', 'default': true, 'group': 'Friendly'},
-  'C': {'name': 'Food', 'default': true, 'group': 'Food'},
-  'F': {'name': 'Friendly', 'default': true, 'group': 'Friendly'},
-  'S': {'name': 'Sex', 'default': true, 'group': 'Friendly'},
-  'I': {'name': 'Infant', 'default': true, 'group': 'Friendly'},
-  'P': {'name': 'Play', 'default': true, 'group': 'Friendly'},
-  'V': {'name': 'Vocalizations', 'default': false, 'group': 'Other'},
-  'W': {'name': 'Miscellaneous (self-directed)', 'default': false, 'group': 'Other'},
-  'A': {'name': 'Approaches and leaves', 'default': false, 'group': 'Other'},  
-  'L': {'name': 'Where Winslow Homer is looking', 'default': false, 'group': 'Other'},  
-  'O': {'name': 'Researchers\' view of Winslow Homer', 'default': false, 'group': 'Other'}
+  'G': {'name': 'Aggression', 'default': true, 'group': 'Dominance', 'clustersize': 300},
+  'E': {'name': 'Submission and fear', 'default': true, 'group': 'Dominance', 'clustersize': 400},
+  'H': {'name': 'Coalitions', 'default': true, 'group': 'Dominance', 'clustersize': 500},
+  'M': {'name': 'Grooming', 'default': true, 'group': 'Friendly', 'clustersize': 300},
+  'C': {'name': 'Food', 'default': true, 'group': 'Food', 'clustersize': 200},
+  'F': {'name': 'Friendly', 'default': true, 'group': 'Friendly', 'clustersize': 300},
+  'S': {'name': 'Sex', 'default': true, 'group': 'Friendly', 'clustersize': 400},
+  'I': {'name': 'Infant', 'default': true, 'group': 'Friendly', 'clustersize': 350},
+  'P': {'name': 'Play', 'default': true, 'group': 'Friendly', 'clustersize': 350},
+  'V': {'name': 'Vocalizations', 'default': true, 'group': 'Other', 'clustersize': 300},
+  'W': {'name': 'Miscellaneous (self-directed)', 'default': true, 'group': 'Other', 'clustersize': 800},
+  'A': {'name': 'Approaches and leaves', 'default': false, 'group': 'Other', 'clustersize': 800},  
+  'L': {'name': 'Where Winslow Homer is looking', 'default': false, 'group': 'Other', 'clustersize': 800},  
+  'O': {'name': 'Researchers\' view of Winslow Homer', 'default': false, 'group': 'Other', 'clustersize': 800}
 }
 
 

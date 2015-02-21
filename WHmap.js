@@ -192,12 +192,12 @@ function behaviorIcon(category, population) {
  
   // set icon size based on population (# child markers)
   var iconSize = [48, 48]; 
-  if (population < 7) {
+  if (population < 7 || category=='W' || category=='A' || category=='O') {
     iconSize = [32, 32];
   }
 
   // scatter anchor
-  var anchorPoint = scatterAnchor([iconSize[0] / 2, iconSize[1] / 2], 200);
+  var anchorPoint = scatterAnchor([iconSize[0] / 2, iconSize[1] / 2], 250);
     
   var icon = L.icon({
     iconUrl: 'icons/48/' + category + '.png',
@@ -266,7 +266,7 @@ for (var category in behaviorPoints) {
   var categoryInfo = categories[category];
   
   
-  var clusterLayer = new PruneClusterForLeaflet(200);
+  var clusterLayer = new PruneClusterForLeaflet(categoryInfo.clustersize);
   
   // disable spiderfy
   clusterLayer.spiderfier.Spiderfy = function(){return false;};
