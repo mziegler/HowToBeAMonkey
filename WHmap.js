@@ -105,7 +105,16 @@ function popupHTML(points) {
     
   var html = '<div class="popup-title popup-title-c' + category + '">' + categories[category].name + '</div><div class="behavior-list"><table>';
   
-  for (var i = 0; i < points.length; i++) {    
+  // highest-ranking points
+  var topPoints = points.sort(function(a,b) {
+    return a.rank-b.rank;
+  })
+  .sort(function(a,b) {  // sort by time
+    return a.data.time.localeCompare(b.data.time);
+  })
+  .slice(0,5); 
+  
+  for (var i = 0; i < topPoints.length; i++) {    
     var ops = points[i].data;
     html += '<tr><td class="behavior-timestamp">' + ops.time + '</td><td class="behavior-point">' + ops.text + '</td></tr>';
   }
