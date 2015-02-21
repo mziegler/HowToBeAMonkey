@@ -100,16 +100,25 @@ function popupHTML(points) {
   var html = '<div class="popup-title popup-title-c' + category + '">' + categories[category].name + '</div><div class="behavior-list"><table><tbody class="behavior-points-initial">';
   
   // highest-ranking points
-  var topPoints = points.sort(function(a,b) {
-    return a.rank-b.rank;
-  })
-  .sort(function(a,b) {  // sort by time
+  points.sort(function(a,b) {
+    return b.data.rank-a.data.rank;
+  });
+
+  var topPoints = [];
+  var topPointsSet = {};
+  for (var i = 0; i < points.length && topPoints.length < 4; i++) {
+    if (!topPointsSet.hasOwnProperty(points[i].data.text)) {
+      topPointsSet[points[i].data.text] = true;
+      topPoints.push(points[i]);
+    }
+  }
+
+  topPoints.sort(function(a,b) {  // sort by time
     return a.data.time.localeCompare(b.data.time);
-  })
-  .slice(0,4); 
+  }); 
   
   for (var i = 0; i < topPoints.length; i++) {    
-    var ops = points[i].data;
+    var ops = topPoints[i].data;
     html += '<tr><td class="behavior-timestamp">' + ops.time + '</td><td class="behavior-point">' + ops.text + '</td></tr>';
   }
   
@@ -141,14 +150,14 @@ function popupHTML(points) {
 // toggle short and long behavior point views for open popup
 $('#map').delegate('a.show-all-points', 'click', function() {
   $('a.show-all-points').hide();
-  $('a.show-fewer-points').fadeIn();
-  $('table:visible tbody.behavior-points-hidden').fadeIn();
+  $('a.show-fewer-points').show();
+  $('table:visible tbody.behavior-points-hidden').show();
   $('tbody.behavior-points-initial:visible').hide();
 });
 $('#map').delegate('a.show-fewer-points', 'click', function() {
   $('a.show-fewer-points').hide();
-  $('a.show-all-points').fadeIn();
-  $('table:visible tbody.behavior-points-initial').fadeIn();
+  $('a.show-all-points').show();
+  $('table:visible tbody.behavior-points-initial').show();
   $('tbody.behavior-points-hidden:visible').hide();
 });
 
