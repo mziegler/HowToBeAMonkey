@@ -345,7 +345,7 @@ a.show-all-points, a.show-fewer-points {
 }
 
 a.show-all-points:hover, a.show-fewer-points:hover {
-  text-style: underline;
+  text-decoration: underline;
 }
 
 
