@@ -90,6 +90,76 @@ L.control.scale().addTo(map); // scale control
 
 
 
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// ICON QUEUE FOR FORWARD-BACK
+
+var iconqueue = function() {
+
+  var queue = {};
+
+  // lists of {time:xxx, marker:xxx} objects
+  var constantmarkers = []; 
+  var variablemarkers = []; 
+  
+  var sortedmarkers = [];
+  var sorted = true; // internally keep track of whether list is sorted
+
+  // {time:xxx, marker:xxx}
+  var currentmarker = {};
+
+
+  function sortkey(a,b) {  // sort by time
+    return a.time.localeCompare(b.time);
+  }); 
+  
+  queue.addconstantmarker = function(time, marker) {
+    constantmarkers.push({time:time, marker:marker});
+    sorted = false;
+  }
+  
+  queue.addvariablemarker = function(time, marker) {
+    variablemarkers.push({time:time, marker:marker});
+    sorted = false;
+  }
+  
+  queue.clearvariablemarkers = function() {
+    variablemarkers = [];
+    sorted = false;
+  }
+  
+  queue.setcurrentmarker = function(time, marker) {
+    currentmarker = {time:time, marker:marker};
+  }
+
+  function getsortedmarkers() {
+    if (!sorted) {
+      sortedmarkers = constantmarkers.concat(variablemarkers);
+      sortedmarkers.sort(sortkey);
+    }
+    return sortedmarkers;
+  }
+  
+  
+  queue.getmarkerafter(/* {time:xxx, marker:xxx} */markertuple) {
+    var markers = getsortedmarkers();
+  
+    // binary search to get marker following given time
+    var minIndex = 0;
+    var maxIndex = markers.length - 1;
+  }
+
+  return queue();
+
+})();
+
+
+
+
+
+
 ///////////////////////////////////////////////////////////////////////////////
 // BEHAVIOR POPUPS
 
