@@ -379,7 +379,7 @@ for (var i = 0; i < textBoxes.length; i++) {
     '</div><div class="caption">' +
     textBoxes[i][2] + 
     '</div>', 
-    {className:'behavior-popup', maxWidth:400}).on('click', closeSidePanel)
+    {className:'behavior-popup texbox-popup', maxWidth:500}).on('click', closeSidePanel)
   );
 }
 textBoxLayer.addTo(map);
@@ -445,7 +445,7 @@ var startMarker = L.marker(WHtrack[0], {icon: L.icon({
         className: 'awake-bedtime-icon'
     })})
     .addTo(map)
-    .bindPopup(startPopup, {'minWidth':410, 'className':'behavior-popup'})
+    .bindPopup(startPopup, {'minWidth':500, 'className':'behavior-popup'})
     .on('click', closeSidePanel);
     
 var endMarker = L.marker(WHtrack[WHtrack.length - 1], {icon: L.icon({
@@ -459,7 +459,7 @@ var endMarker = L.marker(WHtrack[WHtrack.length - 1], {icon: L.icon({
         className: 'awake-bedtime-icon'
     })})
     .addTo(map)
-    .bindPopup(endPopup)
+    .bindPopup(endPopup, {'minWidth':500, 'className':'behavior-popup'})
     .on('click', closeSidePanel);
 
 

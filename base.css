@@ -270,10 +270,11 @@ div.leaflet-container a.leaflet-popup-close-button {
 }
 
 div.popup-title {
-  margin: -5px;
+  margin: -10px;
   margin-bottom: 5px;
-  padding: 10px;
-  padding-left: 14px;
+  padding: 15px;
+  padding-left: 19px;
+  padding-bottom: 10px;
   width: 100%;
   font-size: 140%;
   font-weight: bold;
@@ -301,9 +302,19 @@ td.behavior-point {
   margin: 5px;
   margin-right: 5px;
   padding: 5px;
+  padding-right: 10px;
   margin-bottom: 10px;
   margin-top: 0;
 }
+
+div.leaflet-popup-content {
+  padding: 5px;
+}
+
+.behavior-popup div.caption p:first-child {
+  margin-top: 0;
+}
+
 
 a.open-lightbox {
   color: black;
@@ -342,6 +353,7 @@ a.show-all-points, a.show-fewer-points {
   font-size: 80%;
   display: block;
   text-align: center;
+  margin-top: 5px;
 }
 
 a.show-all-points:hover, a.show-fewer-points:hover {
@@ -398,6 +410,7 @@ a.show-all-points:hover, a.show-fewer-points:hover {
   border-width: 9px; 
   margin-left: -9px;
 }
+
 
 
 /******************************************************************************
