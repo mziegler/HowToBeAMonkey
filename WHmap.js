@@ -53,13 +53,6 @@ function closeSidePanel() {
   $('#side-panel').fadeOut(150);
 }
 
-function resetView() {
-  map.closePopup(); 
-  map.setView(initialView[0], initialView[1], {animate: true});
-  setTimeout(function() { startMarker.openPopup(); }, 300);
-  closeSidePanel();
-}
-
 $('#tab-about').click( function() { toggleSidePanel('#panel-about'); return false; });
 $('#tab-help').click( function() { toggleSidePanel('#panel-help'); return false; });
 $('#tab-biographies').click( function() { toggleSidePanel('#panel-biographies'); return false; });
@@ -70,10 +63,28 @@ $('#tab-donate').click( function() {
   toggleSidePanel('#panel-donate'); return false; 
 });
 
-$('#tab-reset').click(resetView);
+
+function resetIntro() {
+  closeSidePanel();
+  map.closePopup(); 
+  $('div.overlay-content').hide();
+  $('div#overlay-intro1').fadeIn('fast');
+  $('div#overlay').fadeIn('slow');
+  setTimeout(function() { 
+    map.setView(initialView[0], initialView[1], {animate: true});
+  }, 500);
+}
+$('#tab-reset').click(resetIntro);
+
+$('div.skip-intro').click(function() {
+  $('div#overlay').fadeOut('slow');
+  map.setView(initialView[0], initialView[1], {animate: true});
+  setTimeout(function() { startMarker.openPopup(); }, 300);
+});
+
 
 $('#close-side-panel').click(closeSidePanel);
-$('#map *, #map').click(closeSidePanel);
+$('#map *, #map, #overlay *, #overlay').click(closeSidePanel);
 
 
 
