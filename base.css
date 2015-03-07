@@ -118,12 +118,12 @@ div#overlay div.overlay-content {
 #side-panel {
   background: #F8F8F8;/*#FFFFCC;/*#FFE991;*/
   /*border-right: solid 3px rgba(230,171,2,1);*/
-  padding: 30px;
+  padding: 40px;
   padding-top: 100px;
   position: absolute;
   top: 0;
   left: 0;
-  max-width: 550px;
+  max-width: 600px;
   min-width: 300px;
   height: 100%;
   -webkit-box-sizing: border-box;
@@ -131,20 +131,21 @@ div#overlay div.overlay-content {
           box-sizing: border-box;
   z-index: 9999000;
   /*color: #382E07;*/
+  border-right: 4px #BBB solid;
 }
 
 #side-panel a {
- color: #D44646;
+ color: #333;
  text-decoration: none;
  font-weight: bold;
 }
 
 #side-panel a:hover {
-  color: #ff5454;
+  color: #000;
 }
 
 a#close-side-panel {
-  color: black;
+  color: #444;
   padding: 5px 5px 0 0;
   position: absolute;
   right: 0px;
@@ -154,7 +155,7 @@ a#close-side-panel {
 }
 
 a#close-side-panel:hover {
-  color: #666;
+  color: #000;
 }
 
 .side-panel-content {
@@ -262,7 +263,11 @@ a.next-button:hover {
 }
 
 div.leaflet-container a.leaflet-popup-close-button {
-  color: #333;
+  color: #444;
+}
+
+div.leaflet-container a.leaflet-popup-close-button:hover {
+  color: #000;
 }
 
 .behavior-popup div.leaflet-popup-content {
