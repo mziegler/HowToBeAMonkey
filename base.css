@@ -4,7 +4,7 @@ body {
   margin: 0;
   width:100%;
   height: 100%;
-  background: #DDD;
+  background: #333;
 }
 
 body a img {
@@ -16,7 +16,7 @@ body a img {
   width: 100%;
   margin: 0;
   padding: 0;
-  padding-top: 75px;
+  padding-top: 60px;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -36,7 +36,7 @@ div#map {
    height: 100%; 
    width: 100%;
    margin: 0;
-   background: #BBB;
+   background: #333;
 }
 
 
@@ -46,7 +46,7 @@ div#map {
 #header {
   background:#333;
   /*border-bottom: solid 3px rgba(230,171,2,1);*/
-  height: 75px;
+  height: 60px;
   position: absolute;
   top: 0;
   left: 0;
@@ -61,10 +61,10 @@ div#map {
 
 span#title {
   margin: -2px;
-  padding-left: 14px;
-  font-size: 36px;
+  padding-left: 16px;
+  font-size: 28px;
   /*font-weight: bold;*/
-  color: #DDD;
+  color: #EEE;
 }
 
 div#header-tabs {
@@ -74,7 +74,7 @@ div#header-tabs {
 a.header-tab {
   color: #DDD;
   display: inline-block;
-  padding: 2px 14px;
+  padding: 2px 8px;
   margin: -2px 0;
   font-size: 16px;
   cursor: pointer;
@@ -234,7 +234,7 @@ a.side-linkout:hover {
 
 a.next-button {
   font-weight: bold;
-  background: #FED32A;
+  background: #FEDD5B;
   border-radius: 5px;
   display: inline-block;
   padding: 10px 25px;
@@ -246,7 +246,7 @@ a.next-button {
 }
 
 a.next-button:hover {
-  background: #FEDD5B;
+  background: #FED32A;
   transition: 0.2s ease;
 }
 
