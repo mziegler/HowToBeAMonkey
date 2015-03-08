@@ -68,7 +68,7 @@ span#title {
 }
 
 div#header-tabs {
-  margin-top: -5;
+  margin-top: -4px;
 }
 
 a.header-tab {
@@ -81,7 +81,8 @@ a.header-tab {
 }
 
 a.header-tab:hover {
-  text-decoration: underline;
+  /*text-decoration: underline;*/
+  color: #FFF;
 }
 
 
@@ -131,8 +132,10 @@ div.skip-intro:hover {
 #side-panel {
   background: #F8F8F8;/*#FFFFCC;/*#FFE991;*/
   /*border-right: solid 3px rgba(230,171,2,1);*/
-  padding: 40px;
-  padding-top: 100px;
+  padding: 50px;
+  padding-top: 90px;
+  padding-bottom: 20px;
+  padding-right: 30px;
   position: absolute;
   top: 0;
   left: 0;
@@ -148,13 +151,13 @@ div.skip-intro:hover {
 }
 
 #side-panel a {
- color: #333;
+ color: #5F8500;
  text-decoration: none;
  font-weight: bold;
 }
 
 #side-panel a:hover {
-  color: #000;
+  color: #80B300;
 }
 
 a#close-side-panel {
@@ -173,10 +176,9 @@ a#close-side-panel:hover {
 
 .side-panel-content {
   overflow: auto;
-  width: 100%;
   height: 100%;
   line-height: 135%;
-  padding-right: 10px;
+  padding-right: 30px;
 }
 
 span.side-title {
