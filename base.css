@@ -51,6 +51,7 @@ div#map {
   top: 0;
   left: 0;
   width: 100%;
+  padding-left: 15px;
   /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
   font-family: 'Fira Sans', sans-serif;
   -webkit-box-sizing: border-box;
@@ -74,15 +75,19 @@ div#header-tabs {
 a.header-tab {
   color: #DDD;
   display: inline-block;
-  padding: 2px 8px;
+  padding: 1px 8px 0px 8px;
   margin: -2px 0;
   font-size: 16px;
   cursor: pointer;
+  border-radius:5px;
+  transition: 0.5s;
 }
 
 a.header-tab:hover {
   /*text-decoration: underline;*/
   color: #FFF;
+  background: #555;
+  transition: 0.1s;
 }
 
 
