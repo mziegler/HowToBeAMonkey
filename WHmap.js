@@ -528,24 +528,18 @@ $('#next-intro1').click(function() {
 
 // when the 'next' button is clicked on the second intro screen
 $('#next-intro2').click(function() {
+  map.setZoom(initialView[1], {animate:true});
   closeOverlay();
   
-  L.Path.CLIP_PADDING = animationLineClipPadding; // don't clip the path for this animation
-  
-  map.panTo([10.5143646989, -85.3639992792], {animate:true, duration:1.5, easeLinearity:1});
-  
   window.setTimeout(function() {
-    map.panTo([10.5085, -85.3669639584], {animate:true, duration:1.5, easeLinearity:1})
-  }, 2000);
-  
-  window.setTimeout(function() {
-    map.panTo([10.5142232962, -85.3693762701], {animate:true, duration:1.5, easeLinearity:1})
-  }, 4000);
+    map.panTo(initialView[0], {animate:true, duration:1.5, easeLinearity:1});
+  }, 300);
   
   window.setTimeout(function() {
     startMarker.openPopup();
     L.Path.CLIP_PADDING = initialLineClipPadding;  // restore old clip padding
-  }, 6000);
+    //L.DomUtil.removeClass(map._mapPane, 'leaflet-zoom-anim-slow');
+  }, 2000);
   
   
 });
