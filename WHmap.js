@@ -528,7 +528,7 @@ $('#next-intro1').click(function() {
 
 // when the 'next' button is clicked on the second intro screen
 $('#next-intro2').click(function() {
-  map.setZoom(initialView[1], {animate:true});
+  map.setZoom(initialView[1], {animate:false});
   closeOverlay();
   
   window.setTimeout(function() {
