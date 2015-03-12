@@ -529,9 +529,9 @@ $('#next-intro1').click(function() {
 // when the 'next' button is clicked on the second intro screen
 $('#next-intro2').click(function() {
   map.setZoom(initialView[1], {animate:false});
-  closeOverlay();
   
   window.setTimeout(function() {
+    closeOverlay();
     map.panTo(initialView[0], {animate:true, duration:1.5, easeLinearity:1});
   }, 300);
   
@@ -540,7 +540,6 @@ $('#next-intro2').click(function() {
     L.Path.CLIP_PADDING = initialLineClipPadding;  // restore old clip padding
     //L.DomUtil.removeClass(map._mapPane, 'leaflet-zoom-anim-slow');
   }, 2000);
-  
   
 });
 
