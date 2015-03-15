@@ -153,6 +153,10 @@ div.skip-intro:hover {
   z-index: 9999000;
   /*color: #382E07;*/
   border-right: 4px #BBB solid;
+  
+  -webkit-box-shadow: 5px 0px 20px 0px rgba(50, 50, 50, 0.9);
+  -moz-box-shadow:    5px 0px 20px 0px rgba(50, 50, 50, 0.9);
+  box-shadow:         5px 0px 20px 0px rgba(50, 50, 50, 0.9);
 }
 
 #side-panel a {
