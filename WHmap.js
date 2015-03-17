@@ -23,15 +23,34 @@ var initialLineClipPadding = L.Path.CLIP_PADDING; // save old clip padding
 var animationLineClipPadding = 3000; // clip padding for zoom/pan intro animations (avoid choppy line rendering)
 L.Path.CLIP_PADDING = animationLineClipPadding; // don't clip the path for intro animation
 
+
+var rioCabuyo = L.polyline(cabuyoPoints, {
+  color: 'lightblue',
+  opacity: 0.5,
+  weight: 8,
+  lineJoin:'round', 
+  lineCap:'round',
+}).addTo(map);
+
+var rioPizote =  L.polyline(pizotePoints, {
+  color: 'lightblue',
+  opacity: 0.5,
+  weight: 5,
+  lineJoin:'round', 
+  lineCap:'round',
+}).addTo(map);
+
 // add GPS track to map     
 var track = L.polyline(WHtrack, { 
     color: 'white', 
     opacity:1,
-    weight:4, 
+    weight:5, 
     lineJoin:'round', 
     lineCap:'round', 
     dashArray:[10,10]
   }).addTo(map);
+  
+  
  
 L.Path.CLIP_PADDING = initialLineClipPadding; // restore old clip padding
 
@@ -242,7 +261,7 @@ function singletonBehaviorIcon(data) {
 function behaviorIcon(category, population) {
   // return invisible icons when zoomed out (hack - 
   // removing the layers woud mess up layer control)
-  if (map.getZoom() <= 15) {
+  if (map.getZoom() <= 16) {
     return invisibleIcon;
   }
   
@@ -553,26 +572,24 @@ $('#next-intro2').click(function() {
 function zoomHandle() {
   if (map.getZoom() <= 17) {
     map.removeLayer(pictureLayer);
+    map.removeLayer(textBoxLayer);
     map.closePopup();
   }
   else {
     map.addLayer(pictureLayer);
-  }
-  
-  
-  if (map.getZoom() <= 16) {
-    map.removeLayer(textBoxLayer);
-  }
-  else {
     map.addLayer(textBoxLayer);
   }
   
   
   if (map.getZoom() <= 14) {
     map.removeLayer(endMarker);
+    map.removeLayer(rioCabuyo);
+    map.removeLayer(rioPizote);
   }
   else {
     map.addLayer(endMarker);
+    map.addLayer(rioCabuyo);
+    map.addLayer(rioPizote);
   }
 }
 zoomHandle();
