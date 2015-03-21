@@ -26,7 +26,7 @@ L.Path.CLIP_PADDING = animationLineClipPadding; // don't clip the path for intro
 
 var rioCabuyo = L.polyline(cabuyoPoints, {
   color: 'lightblue',
-  opacity: 0.5,
+  opacity: 0.4,
   weight: 8,
   lineJoin:'round', 
   lineCap:'round',
@@ -34,7 +34,7 @@ var rioCabuyo = L.polyline(cabuyoPoints, {
 
 var rioPizote =  L.polyline(pizotePoints, {
   color: 'lightblue',
-  opacity: 0.5,
+  opacity: 0.4,
   weight: 5,
   lineJoin:'round', 
   lineCap:'round',
