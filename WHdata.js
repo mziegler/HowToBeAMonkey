@@ -186,7 +186,7 @@ var textBoxes = [
 // location, URI, Caption, icon size, icon offset (px)
 var pictures = [
   [[10.51487, -85.37027], "food-interest.jpg", "Winslow Homer is interested in King Donkey's food.  Baby capuchin monkeys learn what foods they can eat and how to eat them by closely watching the adults.", [100,71], [200,100]],
-  [[10.51410, -85.37045], "DT-grooming.jpg", "Winslow Homer getting groomed by Dante.  Winslow Homer is Dali the alpha female's baby, and he's one of only two infants in the group this year, (which is fewer than usual,) so he's been getting lots of attention.", [100,87], [-150,0]],
+  [[10.51410, -85.37045], "DT-grooming.jpg", "Winslow Homer getting groomed by Dante.  Winslow Homer the alpha female's baby, and he's one of only two infants in the group this year, (which is fewer than usual,) so he's been getting quite a lot of attention!.", [100,87], [-150,0]],
   [[10.51221, -85.37156], "WH-FN.jpg", "Winslow Homer plays with <b>Frankenstein</b>, the only other infant in the group this year.  Play helps the monkeys form social bonds and learn motor skills.", [100,134], [-180,0]],
   [[10.50848, -85.36625],  "AA-siesta.jpg", "Abby's group siesta.  The capuchins spend most of their time on the move, but take a siesta every now and then.  The adults take time to rest, groom, and sleep, while the babies and juveniles play.", [150,85], [0,150]],
   [[10.50967, -85.3669], 'bromeliad.jpg', "Winslow Homer munching on a bromeliad fruit.  Most of the calories in the monkeys' diet comes from fruit.", [100,103], [200, 150]],
