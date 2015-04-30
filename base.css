@@ -4,7 +4,7 @@ html, body {
   margin: 0;
   width:100%;
   height: 100%;
-  background: #DDD;
+  background: #333;
 }
 
 body a img {
@@ -16,7 +16,7 @@ body a img {
   width: 100%;
   margin: 0;
   padding: 0;
-  padding-top: 75px;
+  padding-top: 60px;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -36,7 +36,7 @@ div#map {
    height: 100%; 
    width: 100%;
    margin: 0;
-   background: #BBB;
+   background: #333;
 }
 
 
@@ -44,13 +44,14 @@ div#map {
  header */
 
 #header {
-  background: #f3b227; /*#F2C565;*/;
+  background:#333;
   /*border-bottom: solid 3px rgba(230,171,2,1);*/
-  height: 75px;
+  height: 60px;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  padding-left: 15px;
   /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
   font-family: 'Fira Sans', sans-serif;
   -webkit-box-sizing: border-box;
@@ -61,27 +62,32 @@ div#map {
 
 span#title {
   margin: -2px;
-  padding-left: 14px;
-  font-size: 36px;
-  font-weight: bold;
-  color: #222;
+  padding-left: 16px;
+  font-size: 28px;
+  /*font-weight: bold;*/
+  color: #EEE;
 }
 
 div#header-tabs {
-  margin-top: -5;
+  margin-top: -4px;
 }
 
 a.header-tab {
-  color: #222;
+  color: #DDD;
   display: inline-block;
-  padding: 2px 14px;
+  padding: 1px 8px 0px 8px;
   margin: -2px 0;
   font-size: 16px;
   cursor: pointer;
+  border-radius:5px;
+  transition: 0.5s;
 }
 
 a.header-tab:hover {
-  text-decoration: underline;
+  /*text-decoration: underline;*/
+  color: #FFF;
+  background: #555;
+  transition: 0.1s;
 }
 
 
@@ -108,9 +114,22 @@ div#overlay div.overlay-content {
   padding: 50px;
   border-radius: 3px;
   margin-top: 120px;
+  position: relative;
 }
 
+div.skip-intro {
+  color: #999;
+  font-size: 80%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+}
 
+div.skip-intro:hover {
+  color: #666;
+}
 
 /******************************************************************************
  side panel */
@@ -118,12 +137,14 @@ div#overlay div.overlay-content {
 #side-panel {
   background: #F8F8F8;/*#FFFFCC;/*#FFE991;*/
   /*border-right: solid 3px rgba(230,171,2,1);*/
-  padding: 30px;
-  padding-top: 100px;
+  padding: 50px;
+  padding-top: 90px;
+  padding-bottom: 20px;
+  padding-right: 30px;
   position: absolute;
   top: 0;
   left: 0;
-  max-width: 550px;
+  max-width: 600px;
   min-width: 300px;
   height: 100%;
   -webkit-box-sizing: border-box;
@@ -131,38 +152,42 @@ div#overlay div.overlay-content {
           box-sizing: border-box;
   z-index: 9999000;
   /*color: #382E07;*/
+  border-right: 4px #BBB solid;
+  
+  -webkit-box-shadow: 5px 0px 20px 0px rgba(50, 50, 50, 0.9);
+  -moz-box-shadow:    5px 0px 20px 0px rgba(50, 50, 50, 0.9);
+  box-shadow:         5px 0px 20px 0px rgba(50, 50, 50, 0.9);
 }
 
 #side-panel a {
- color: #D44646;
+ color: #5F8500;
  text-decoration: none;
  font-weight: bold;
 }
 
 #side-panel a:hover {
-  color: #ff5454;
+  color: #80B300;
 }
 
 a#close-side-panel {
-  color: black;
+  color: #444;
   padding: 5px 5px 0 0;
   position: absolute;
   right: 0px;
   top: 75px;
   cursor: pointer;
-  font-size: 18px;
+  font: bold 16px/14px Tahoma,Verdana,sans-serif;
 }
 
 a#close-side-panel:hover {
-  color: #666;
+  color: #000;
 }
 
 .side-panel-content {
   overflow: auto;
-  width: 100%;
   height: 100%;
   line-height: 135%;
-  padding-right: 10px;
+  padding-right: 30px;
 }
 
 span.side-title {
@@ -234,7 +259,7 @@ a.side-linkout:hover {
 
 a.next-button {
   font-weight: bold;
-  background: #FED32A;
+  background: #FEDD5B;
   border-radius: 5px;
   display: inline-block;
   padding: 10px 25px;
@@ -246,7 +271,7 @@ a.next-button {
 }
 
 a.next-button:hover {
-  background: #FEDD5B;
+  background: #FED32A;
   transition: 0.2s ease;
 }
 
@@ -265,15 +290,20 @@ div.leaflet-container a.leaflet-popup-close-button {
   color: #333;
 }
 
+div.leaflet-container a.leaflet-popup-close-button:hover {
+  color: #000;
+}
+
 .behavior-popup div.leaflet-popup-content {
   margin: 5px;
 }
 
 div.popup-title {
-  margin: -5px;
+  margin: -10px;
   margin-bottom: 5px;
-  padding: 10px;
-  padding-left: 14px;
+  padding: 15px;
+  padding-left: 19px;
+  padding-bottom: 10px;
   width: 100%;
   font-size: 140%;
   font-weight: bold;
@@ -301,9 +331,19 @@ td.behavior-point {
   margin: 5px;
   margin-right: 5px;
   padding: 5px;
+  padding-right: 10px;
   margin-bottom: 10px;
   margin-top: 0;
 }
+
+div.leaflet-popup-content {
+  padding: 5px;
+}
+
+.behavior-popup div.caption p:first-child {
+  margin-top: 0;
+}
+
 
 a.open-lightbox {
   color: black;
@@ -342,6 +382,7 @@ a.show-all-points, a.show-fewer-points {
   font-size: 80%;
   display: block;
   text-align: center;
+  margin-top: 5px;
 }
 
 a.show-all-points:hover, a.show-fewer-points:hover {
@@ -398,6 +439,7 @@ a.show-all-points:hover, a.show-fewer-points:hover {
   border-width: 9px; 
   margin-left: -9px;
 }
+
 
 
 /******************************************************************************

@@ -3,7 +3,7 @@
 var initialView = [[10.5147, -85.3698], 19];
 
 var map = L.map('map', {
-  maxZoom:21, 
+  maxZoom:19, 
   zoomControl: false, 
   attributionControl: false,
   maxBounds: L.latLngBounds([10.525, -85.3605], [10.5065, -85.3745]),
@@ -23,15 +23,34 @@ var initialLineClipPadding = L.Path.CLIP_PADDING; // save old clip padding
 var animationLineClipPadding = 3000; // clip padding for zoom/pan intro animations (avoid choppy line rendering)
 L.Path.CLIP_PADDING = animationLineClipPadding; // don't clip the path for intro animation
 
+
+var rioCabuyo = L.polyline(cabuyoPoints, {
+  color: 'lightblue',
+  opacity: 0.4,
+  weight: 8,
+  lineJoin:'round', 
+  lineCap:'round',
+}).addTo(map);
+
+var rioPizote =  L.polyline(pizotePoints, {
+  color: 'lightblue',
+  opacity: 0.4,
+  weight: 5,
+  lineJoin:'round', 
+  lineCap:'round',
+}).addTo(map);
+
 // add GPS track to map     
 var track = L.polyline(WHtrack, { 
     color: 'white', 
     opacity:1,
-    weight:4, 
+    weight:5, 
     lineJoin:'round', 
     lineCap:'round', 
     dashArray:[10,10]
   }).addTo(map);
+  
+  
  
 L.Path.CLIP_PADDING = initialLineClipPadding; // restore old clip padding
 
@@ -53,13 +72,6 @@ function closeSidePanel() {
   $('#side-panel').fadeOut(150);
 }
 
-function resetView() {
-  map.closePopup(); 
-  map.setView(initialView[0], initialView[1], {animate: true});
-  setTimeout(function() { startMarker.openPopup(); }, 300);
-  closeSidePanel();
-}
-
 $('#tab-about').click( function() { toggleSidePanel('#panel-about'); return false; });
 $('#tab-help').click( function() { toggleSidePanel('#panel-help'); return false; });
 $('#tab-biographies').click( function() { toggleSidePanel('#panel-biographies'); return false; });
@@ -70,10 +82,28 @@ $('#tab-donate').click( function() {
   toggleSidePanel('#panel-donate'); return false; 
 });
 
-$('#tab-reset').click(resetView);
+
+function resetIntro() {
+  closeSidePanel();
+  map.closePopup(); 
+  $('div.overlay-content').hide();
+  $('div#overlay-intro1').fadeIn('fast');
+  $('div#overlay').fadeIn('slow');
+  setTimeout(function() { 
+    map.setView(initialView[0], initialView[1], {animate: true});
+  }, 500);
+}
+$('#tab-reset').click(resetIntro);
+
+$('div.skip-intro').click(function() {
+  $('div#overlay').fadeOut('slow');
+  map.setView(initialView[0], initialView[1], {animate: true});
+  setTimeout(function() { startMarker.openPopup(); }, 300);
+});
+
 
 $('#close-side-panel').click(closeSidePanel);
-$('#map *, #map').click(closeSidePanel);
+$('#map *, #map, #overlay *, #overlay').click(closeSidePanel);
 
 
 
@@ -301,7 +331,7 @@ function singletonBehaviorIcon(data) {
 function behaviorIcon(category, population) {
   // return invisible icons when zoomed out (hack - 
   // removing the layers woud mess up layer control)
-  if (map.getZoom() <= 15) {
+  if (map.getZoom() <= 16) {
     return invisibleIcon;
   }
   
@@ -449,7 +479,7 @@ for (var i = 0; i < textBoxes.length; i++) {
     '</div><div class="caption">' +
     textBoxes[i][2] + 
     '</div>', 
-    {className:'behavior-popup', maxWidth:400}).on('click', closeSidePanel)
+    {className:'behavior-popup texbox-popup', maxWidth:500}).on('click', closeSidePanel)
   );
 }
 textBoxLayer.addTo(map);
@@ -515,7 +545,7 @@ var startMarker = L.marker(WHtrack[0], {icon: L.icon({
         className: 'awake-bedtime-icon'
     })})
     .addTo(map)
-    .bindPopup(startPopup, {'minWidth':410, 'className':'behavior-popup'})
+    .bindPopup(startPopup, {'minWidth':500, 'className':'behavior-popup'})
     .on('click', closeSidePanel);
     
 var endMarker = L.marker(WHtrack[WHtrack.length - 1], {icon: L.icon({
@@ -529,7 +559,7 @@ var endMarker = L.marker(WHtrack[WHtrack.length - 1], {icon: L.icon({
         className: 'awake-bedtime-icon'
     })})
     .addTo(map)
-    .bindPopup(endPopup)
+    .bindPopup(endPopup, {'minWidth':500, 'className':'behavior-popup'})
     .on('click', closeSidePanel);
 
 
@@ -587,25 +617,18 @@ $('#next-intro1').click(function() {
 
 // when the 'next' button is clicked on the second intro screen
 $('#next-intro2').click(function() {
-  closeOverlay();
-  
-  L.Path.CLIP_PADDING = animationLineClipPadding; // don't clip the path for this animation
-  
-  map.panTo([10.5143646989, -85.3639992792], {animate:true, duration:1.5, easeLinearity:1});
+  map.setZoom(initialView[1], {animate:false});
   
   window.setTimeout(function() {
-    map.panTo([10.5085, -85.3669639584], {animate:true, duration:1.5, easeLinearity:1})
-  }, 2000);
-  
-  window.setTimeout(function() {
-    map.panTo([10.5142232962, -85.3693762701], {animate:true, duration:1.5, easeLinearity:1})
-  }, 4000);
+    closeOverlay();
+    map.panTo(initialView[0], {animate:true, duration:1.5, easeLinearity:1});
+  }, 300);
   
   window.setTimeout(function() {
     startMarker.openPopup();
     L.Path.CLIP_PADDING = initialLineClipPadding;  // restore old clip padding
-  }, 6000);
-  
+    //L.DomUtil.removeClass(map._mapPane, 'leaflet-zoom-anim-slow');
+  }, 2000);
   
 });
 
@@ -619,26 +642,24 @@ $('#next-intro2').click(function() {
 function zoomHandle() {
   if (map.getZoom() <= 17) {
     map.removeLayer(pictureLayer);
+    map.removeLayer(textBoxLayer);
     map.closePopup();
   }
   else {
     map.addLayer(pictureLayer);
-  }
-  
-  
-  if (map.getZoom() <= 16) {
-    map.removeLayer(textBoxLayer);
-  }
-  else {
     map.addLayer(textBoxLayer);
   }
   
   
   if (map.getZoom() <= 14) {
     map.removeLayer(endMarker);
+    map.removeLayer(rioCabuyo);
+    map.removeLayer(rioPizote);
   }
   else {
     map.addLayer(endMarker);
+    map.addLayer(rioCabuyo);
+    map.addLayer(rioPizote);
   }
 }
 zoomHandle();
