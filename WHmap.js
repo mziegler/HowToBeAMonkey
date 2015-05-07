@@ -126,7 +126,7 @@ L.control.scale().addTo(map); // scale control
 ////////////////////////////////////////////////////////////////////////////////
 // ICON QUEUE FOR FORWARD-BACK
 
-var iconqueue = function() {
+var iconqueue = (function() {
 
   var queue = {};
 
@@ -143,7 +143,7 @@ var iconqueue = function() {
 
   function sortkey(a,b) {  // sort by time
     return a.time.localeCompare(b.time);
-  }); 
+  }; 
   
   queue.addconstantmarker = function(time, marker) {
     constantmarkers.push({time:time, marker:marker});
@@ -173,7 +173,7 @@ var iconqueue = function() {
   }
   
   
-  queue.getmarkerafter(/* {time:xxx, marker:xxx} */markertuple) {
+  queue.getmarkerafter = function(/* {time:xxx, marker:xxx} */markertuple) {
     var markers = getsortedmarkers();
   
     // binary search to get marker following given time
@@ -181,7 +181,7 @@ var iconqueue = function() {
     var maxIndex = markers.length - 1;
   }
 
-  return queue();
+  return queue;
 
 })();
 
