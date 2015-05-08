@@ -152,7 +152,7 @@ div.skip-intro:hover {
           box-sizing: border-box;
   z-index: 9999000;
   /*color: #382E07;*/
-  border-right: 4px #BBB solid;
+  border-right: 2px #BBB solid;
   
   -webkit-box-shadow: 5px 0px 20px 0px rgba(50, 50, 50, 0.9);
   -moz-box-shadow:    5px 0px 20px 0px rgba(50, 50, 50, 0.9);

@@ -10,6 +10,14 @@
 var initialView = [[10.5147, -85.3698], 19];
 
 
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+// INITIALIZE LEAFLET MAP and plot data
+
 function initMap() {
 
 
@@ -661,7 +669,6 @@ function initHeaderControls() {
   
   
   $('#tab-about').click( function() { toggleSidePanel('#panel-about'); return false; });
-  $('#tab-help').click( function() { toggleSidePanel('#panel-help'); return false; });
   $('#tab-biographies').click( function() { toggleSidePanel('#panel-biographies'); return false; });
   $('#tab-donate').click( function() { toggleSidePanel('#panel-donate'); return false; });
   $('#tab-reset').click(function(){ introScreens.resetIntro(); return false; });
