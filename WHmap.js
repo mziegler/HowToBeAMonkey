@@ -1,7 +1,17 @@
+
+
+
+
+
+
+
+
+// initial pan and zoom of the map
+var initialView = [[10.5147, -85.3698], 19];
+
+
 function initMap() {
 
-
-var initialView = [[10.5147, -85.3698], 19];
 
 var map = L.map('map', {
   maxZoom:19, 
@@ -21,8 +31,18 @@ L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
 
 
 var initialLineClipPadding = L.Path.CLIP_PADDING; // save old clip padding
-var animationLineClipPadding = 3000; // clip padding for zoom/pan intro animations (avoid choppy line rendering)
-L.Path.CLIP_PADDING = animationLineClipPadding; // don't clip the path for intro animation
+
+// don't clip paths for zoom animations (avoid choppy line rendering)
+function animationLineClipPadding() {
+  L.Path.CLIP_PADDING = 3000;
+}
+
+// reset line clip padding back to normal for better zoom/pan performance
+function resetLineClipPadding() {
+  L.Path.CLIP_PADDING = initialLineClipPadding;
+}
+
+animationLineClipPadding();
 
 
 var rioCabuyo = L.polyline(cabuyoPoints, {
@@ -53,7 +73,7 @@ var track = L.polyline(WHtrack, {
   
   
  
-L.Path.CLIP_PADDING = initialLineClipPadding; // restore old clip padding
+resetLineClipPadding(); // restore old clip padding
 
 ///////////////////////////////////////////////////////////////////////////////
 // HEADER LINKS
@@ -500,76 +520,8 @@ var endMarker = L.marker(WHtrack[WHtrack.length - 1], {icon: L.icon({
     .addTo(map)
     .bindPopup(endPopup, {'minWidth':500, 'className':'behavior-popup'})
     .on('click', closeSidePanel);
+    
 
-
-
-
-///////////////////////////////////////////////////////////////////////////////
-// INTRO SCREENS
-
-
-// hide the overlay screen
-function closeOverlay() {
-  $('#overlay').fadeOut();
-}
-
-// hide overlay on background click
-$('#overlay').click(closeOverlay);
-$('.overlay-content').click(function() { return false }); // don't propagate click on content area
-
-
-// when the 'next' button on the first intro screen gets clicked
-$('#next-intro1').click(function() {
-
-
-  L.Path.CLIP_PADDING = animationLineClipPadding; // don't clip the path for this animation
-
-  closeOverlay();
-
-  // pretty gnarly code chaining animation sequence
-  
-  L.DomUtil.addClass(map._mapPane, 'leaflet-zoom-anim-slow'); // hack to slow down zoom animation
-  $('.leaflet-marker-pane, .leaflet-shadow-pane').fadeOut(1000);
-  map.setView([10.51185, -85.369238], 16,
-      {pan:{animate:true, duration:1500}, zoom:{animate:true}}  );
-  window.setTimeout(function(){ L.DomUtil.removeClass(map._mapPane, 'leaflet-zoom-anim-slow'); }, 1000);
-
-  window.setTimeout(function() {
-    L.DomUtil.addClass(map._mapPane, 'leaflet-zoom-anim-slow');
-    map.setView([10.51185, -85.369238], 18,
-      {pan:{animate:true, duration:1500}, zoom:{animate:true}}  );
-    window.setTimeout(function(){ L.DomUtil.removeClass(map._mapPane, 'leaflet-zoom-anim-slow'); }, 1000);
-    window.setTimeout(function() {
-        $('.leaflet-marker-pane, .leaflet-shadow-pane').fadeIn('slow');
-        window.setTimeout(function() {
-          $('.overlay-content').hide();
-          $('#overlay-intro2').show();
-          $('#overlay').fadeIn('slow');
-          
-          
-          L.Path.CLIP_PADDING = initialLineClipPadding;  // restore old clip padding
-        }, 500);
-    }, 1600)
-  }, 3000);
-});
-
-
-// when the 'next' button is clicked on the second intro screen
-$('#next-intro2').click(function() {
-  map.setZoom(initialView[1], {animate:false});
-  
-  window.setTimeout(function() {
-    closeOverlay();
-    map.panTo(initialView[0], {animate:true, duration:1.5, easeLinearity:1});
-  }, 300);
-  
-  window.setTimeout(function() {
-    startMarker.openPopup();
-    L.Path.CLIP_PADDING = initialLineClipPadding;  // restore old clip padding
-    //L.DomUtil.removeClass(map._mapPane, 'leaflet-zoom-anim-slow');
-  }, 2000);
-  
-});
 
 
 
@@ -605,11 +557,100 @@ zoomHandle();
 map.on('zoomend', zoomHandle);
 
 
+
+
+
+
+
 return {
-  map: map
+  map: map,
+  animationLineClipPadding: animationLineClipPadding,
+  resetLineClipPadding: resetLineClipPadding,
+  startMarker: startMarker
   }
 }
 
 var map = initMap();
 
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// INTRO SCREENS
+
+function initIntroScreens() {
+
+  // hide the overlay screen
+  function closeOverlay() {
+    $('#overlay').fadeOut();
+  }
+
+
+  // hide overlay on background click
+  $('#overlay').click(closeOverlay);
+  $('.overlay-content').click(function() { return false }); // don't propagate click on content area
+
+
+
+  // when the 'next' button on the first intro screen gets clicked
+  $('#next-intro1').click(function() {
+
+    map.animationLineClipPadding(); // don't clip the path for this animation
+
+    closeOverlay();
+
+    // pretty gnarly code chaining animation sequence
+    
+    L.DomUtil.addClass(map.map._mapPane, 'leaflet-zoom-anim-slow'); // hack to slow down zoom animation
+    $('.leaflet-marker-pane, .leaflet-shadow-pane').fadeOut(1000);
+    map.map.setView([10.51185, -85.369238], 16,
+        {pan:{animate:true, duration:1500}, zoom:{animate:true}}  );
+    window.setTimeout(function(){ L.DomUtil.removeClass(map.map._mapPane, 'leaflet-zoom-anim-slow'); }, 1000);
+
+    window.setTimeout(function() {
+      L.DomUtil.addClass(map.map._mapPane, 'leaflet-zoom-anim-slow');
+      map.map.setView([10.51185, -85.369238], 18,
+        {pan:{animate:true, duration:1500}, zoom:{animate:true}}  );
+      window.setTimeout(function(){ L.DomUtil.removeClass(map.map._mapPane, 'leaflet-zoom-anim-slow'); }, 1000);
+      window.setTimeout(function() {
+          $('.leaflet-marker-pane, .leaflet-shadow-pane').fadeIn('slow');
+          window.setTimeout(function() {
+            $('.overlay-content').hide();
+            $('#overlay-intro2').show();
+            $('#overlay').fadeIn('slow');
+            
+            
+            map.resetLineClipPadding();  // restore old clip padding
+          }, 500);
+      }, 1600)
+    }, 3000);
+  });
+
+
+
+  // when the 'next' button is clicked on the second intro screen
+  $('#next-intro2').click(function() {
+    map.map.setZoom(initialView[1], {animate:false});
+    
+    window.setTimeout(function() {
+      closeOverlay();
+      map.map.panTo(initialView[0], {animate:true, duration:1.5, easeLinearity:1});
+    }, 300);
+    
+    window.setTimeout(function() {
+      map.startMarker.openPopup();
+      map.resetLineClipPadding();  // restore old clip padding
+      //L.DomUtil.removeClass(map._mapPane, 'leaflet-zoom-anim-slow');
+    }, 2000);
+    
+  });
+
+}
+var introScreens = initIntroScreens();
 
