@@ -45,6 +45,9 @@ function resetLineClipPadding() {
 animationLineClipPadding();
 
 
+
+
+
 var rioCabuyo = L.polyline(cabuyoPoints, {
   color: 'lightblue',
   opacity: 0.4,
@@ -75,51 +78,7 @@ var track = L.polyline(WHtrack, {
  
 resetLineClipPadding(); // restore old clip padding
 
-///////////////////////////////////////////////////////////////////////////////
-// HEADER LINKS
 
-function toggleSidePanel(contentSelector) {
-  if ($(contentSelector).is(':visible')) {
-    closeSidePanel();
-  }
-  else {
-    $('.side-panel-content').hide();
-    $(contentSelector).fadeIn('fast');
-    $('#side-panel').fadeIn('fast');
-  }
-}
-
-function closeSidePanel() {
-  $('#side-panel').fadeOut(150);
-}
-
-$('#tab-about').click( function() { toggleSidePanel('#panel-about'); return false; });
-$('#tab-help').click( function() { toggleSidePanel('#panel-help'); return false; });
-$('#tab-biographies').click( function() { toggleSidePanel('#panel-biographies'); return false; });
-$('#tab-donate').click( function() { toggleSidePanel('#panel-donate'); return false; });
-
-
-function resetIntro() {
-  closeSidePanel();
-  map.closePopup(); 
-  $('div.overlay-content').hide();
-  $('div#overlay-intro1').fadeIn('fast');
-  $('div#overlay').fadeIn('slow');
-  setTimeout(function() { 
-    map.setView(initialView[0], initialView[1], {animate: true});
-  }, 500);
-}
-$('#tab-reset').click(resetIntro);
-
-$('div.skip-intro').click(function() {
-  $('div#overlay').fadeOut('slow');
-  map.setView(initialView[0], initialView[1], {animate: true});
-  setTimeout(function() { startMarker.openPopup(); }, 300);
-});
-
-
-$('#close-side-panel').click(closeSidePanel);
-$('#map *, #map, #overlay *, #overlay').click(closeSidePanel);
 
 
 
@@ -428,12 +387,13 @@ for (var i = 0; i < textBoxes.length; i++) {
 
   textBoxLayer.addLayer(
     L.marker(textBoxes[i][0], {icon:textBoxIcon}).bindPopup(
-    '<div class="popup-title">' +
-    textBoxes[i][1] +
-    '</div><div class="caption">' +
-    textBoxes[i][2] + 
-    '</div>', 
-    {className:'behavior-popup texbox-popup', maxWidth:500}).on('click', closeSidePanel)
+      '<div class="popup-title">' +
+      textBoxes[i][1] +
+      '</div><div class="caption">' +
+      textBoxes[i][2] + 
+      '</div>', 
+      {className:'behavior-popup texbox-popup', maxWidth:500}
+    ).on('click', function(){ headerControls.closeSidePanel() })
   );
 }
 textBoxLayer.addTo(map);
@@ -470,7 +430,7 @@ for (var i = 0; i < pictures.length; i++) {
             .attr('data-title', picture[2])
             .click();
           
-          closeSidePanel();
+          headerControls.closeSidePanel();
         })
       })(picture) // call with current picture
       
@@ -500,7 +460,7 @@ var startMarker = L.marker(WHtrack[0], {icon: L.icon({
     })})
     .addTo(map)
     .bindPopup(startPopup, {'minWidth':500, 'className':'behavior-popup'})
-    .on('click', closeSidePanel);
+    .on('click', function(){ headerControls.closeSidePanel() });
     
 var endMarker = L.marker(WHtrack[WHtrack.length - 1], {icon: L.icon({
         iconUrl: 'icons/bedtime.png',
@@ -514,7 +474,7 @@ var endMarker = L.marker(WHtrack[WHtrack.length - 1], {icon: L.icon({
     })})
     .addTo(map)
     .bindPopup(endPopup, {'minWidth':500, 'className':'behavior-popup'})
-    .on('click', closeSidePanel);
+    .on('click', function(){ headerControls.closeSidePanel() });
     
 
 
@@ -587,8 +547,7 @@ function initIntroScreens() {
   }
 
 
-  // hide overlay on background click
-  $('#overlay').click(closeOverlay);
+
   $('.overlay-content').click(function() { return false }); // don't propagate click on content area
 
 
@@ -646,6 +605,31 @@ function initIntroScreens() {
     
   });
 
+
+
+
+  function skipIntro() {
+    $('div#overlay').fadeOut('slow');
+    map.map.setView(initialView[0], initialView[1], {animate: true});
+    setTimeout(function() { map.startMarker.openPopup(); }, 300);
+  }
+  $('div.skip-intro, #overlay').click(skipIntro);
+
+
+  function resetIntro() {
+    headerControls.closeSidePanel();
+    map.map.closePopup(); 
+    $('div.overlay-content').hide();
+    $('div#overlay-intro1').fadeIn('fast');
+    $('div#overlay').fadeIn('slow');
+    setTimeout(function() { 
+      map.map.setView(initialView[0], initialView[1], {animate: true});
+    }, 500);
+  }
+
+  return {
+    resetIntro: resetIntro
+  }
 }
 var introScreens = initIntroScreens();
 
@@ -655,4 +639,40 @@ var introScreens = initIntroScreens();
 
 
 
+///////////////////////////////////////////////////////////////////////////////
+// HEADER CONTROLS
+
+function initHeaderControls() {
+  function toggleSidePanel(contentSelector) {
+    if ($(contentSelector).is(':visible')) {
+      closeSidePanel();
+    }
+    else {
+      $('.side-panel-content').hide();
+      $(contentSelector).fadeIn('fast');
+      $('#side-panel').fadeIn('fast');
+    }
+  }
+  
+
+  function closeSidePanel() {
+    $('#side-panel').fadeOut(150);
+  }
+  
+  
+  $('#tab-about').click( function() { toggleSidePanel('#panel-about'); return false; });
+  $('#tab-help').click( function() { toggleSidePanel('#panel-help'); return false; });
+  $('#tab-biographies').click( function() { toggleSidePanel('#panel-biographies'); return false; });
+  $('#tab-donate').click( function() { toggleSidePanel('#panel-donate'); return false; });
+  $('#tab-reset').click(function(){ introScreens.resetIntro(); return false; });
+  
+  
+  $('#close-side-panel').click(closeSidePanel);
+  $('#map *, #map, #overlay *, #overlay').click(closeSidePanel);
+  
+  return {
+    closeSidePanel: closeSidePanel
+  }
+}
+headerControls = initHeaderControls();
 
