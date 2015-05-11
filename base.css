@@ -96,7 +96,7 @@ a.header-tab:hover {
 /******************************************************************************
  overlay */
 
-div#overlay {
+div.overlay {
   position:absolute;
   top:0;
   left:0;
@@ -106,15 +106,19 @@ div#overlay {
   z-index:999999;
 }
 
-div#overlay div.overlay-content {
+div.overlay div.overlay-intro-content {
   background: white;
   width: 800px;
   margin-left: auto;
   margin-right: auto;
   padding: 50px;
   border-radius: 3px;
-  margin-top: 120px;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0, 30px) translate(-50%, -50%);
+  -ms-transform: translate(0, 30px) translate(-50%, -50%);
+  -webkit-transform: translate(0, 30px) translate(-50%, -50%);
 }
 
 div.skip-intro {

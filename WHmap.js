@@ -550,13 +550,13 @@ var map = initMap();
 function initIntroScreens() {
 
   // hide the overlay screen
-  function closeOverlay() {
-    $('#overlay').fadeOut();
+  function closeIntro() {
+    $('#overlay-intro').fadeOut();
   }
 
 
 
-  $('.overlay-content').click(function() { return false }); // don't propagate click on content area
+  $('.overlay-intro-content').click(function() { return false }); // don't propagate click on content area
 
 
 
@@ -565,7 +565,7 @@ function initIntroScreens() {
 
     map.animationLineClipPadding(); // don't clip the path for this animation
 
-    closeOverlay();
+    closeIntro();
 
     // pretty gnarly code chaining animation sequence
     
@@ -583,9 +583,9 @@ function initIntroScreens() {
       window.setTimeout(function() {
           $('.leaflet-marker-pane, .leaflet-shadow-pane').fadeIn('slow');
           window.setTimeout(function() {
-            $('.overlay-content').hide();
+            $('.overlay-intro-content').hide();
             $('#overlay-intro2').show();
-            $('#overlay').fadeIn('slow');
+            $('#overlay-intro').fadeIn('slow');
             
             
             map.resetLineClipPadding();  // restore old clip padding
@@ -601,7 +601,7 @@ function initIntroScreens() {
     map.map.setZoom(initialView[1], {animate:false});
     
     window.setTimeout(function() {
-      closeOverlay();
+      closeIntro();
       map.map.panTo(initialView[0], {animate:true, duration:1.5, easeLinearity:1});
     }, 300);
     
@@ -617,19 +617,19 @@ function initIntroScreens() {
 
 
   function skipIntro() {
-    $('div#overlay').fadeOut('slow');
+    $('div#overlay-intro').fadeOut('slow');
     map.map.setView(initialView[0], initialView[1], {animate: true});
     setTimeout(function() { map.startMarker.openPopup(); }, 300);
   }
-  $('div.skip-intro, #overlay').click(skipIntro);
+  $('div.skip-intro, #overlay-intro').click(skipIntro);
 
 
   function resetIntro() {
     headerControls.closeSidePanel();
     map.map.closePopup(); 
-    $('div.overlay-content').hide();
-    $('div#overlay-intro1').fadeIn('fast');
-    $('div#overlay').fadeIn('slow');
+    $('div.overlay-intro-content').hide();
+    $('div#overlay-intro1').show();
+    $('div#overlay-intro').fadeIn('slow');
     setTimeout(function() { 
       map.map.setView(initialView[0], initialView[1], {animate: true});
     }, 500);
