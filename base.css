@@ -44,7 +44,7 @@ div#map {
  header */
 
 #header {
-  background:#333;
+  background:#DDD;
   /*border-bottom: solid 3px rgba(230,171,2,1);*/
   height: 60px;
   position: absolute;
@@ -65,7 +65,7 @@ span#title {
   padding-left: 16px;
   font-size: 28px;
   /*font-weight: bold;*/
-  color: #EEE;
+  color: #111;
 }
 
 div#header-tabs {
@@ -73,7 +73,7 @@ div#header-tabs {
 }
 
 a.header-tab {
-  color: #DDD;
+  color: #111;
   display: inline-block;
   padding: 1px 8px 0px 8px;
   margin: -2px 0;
@@ -85,8 +85,8 @@ a.header-tab {
 
 a.header-tab:hover {
   /*text-decoration: underline;*/
-  color: #FFF;
-  background: #555;
+  color: #000;
+  background: #CCC;
   transition: 0.1s;
 }
 
