@@ -58,7 +58,7 @@ animationLineClipPadding();
 
 var rioCabuyo = L.polyline(cabuyoPoints, {
   color: 'lightblue',
-  opacity: 0.4,
+  opacity: 0.7,
   weight: 8,
   lineJoin:'round', 
   lineCap:'round',
@@ -66,7 +66,7 @@ var rioCabuyo = L.polyline(cabuyoPoints, {
 
 var rioPizote =  L.polyline(pizotePoints, {
   color: 'lightblue',
-  opacity: 0.4,
+  opacity: 0.7,
   weight: 5,
   lineJoin:'round', 
   lineCap:'round',
