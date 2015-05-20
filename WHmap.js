@@ -618,6 +618,7 @@ function initIntroScreens() {
 
   function skipIntro() {
     $('div#overlay-intro').fadeOut('slow');
+    headerControls.closeSidePanel();
     map.map.setView(initialView[0], initialView[1], {animate: true});
     setTimeout(function() { map.startMarker.openPopup(); }, 300);
   }
