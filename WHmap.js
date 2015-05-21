@@ -235,7 +235,7 @@ function toggleBehaviorPopup(target, points) {
 
   // generates icons for behavior clusters
   function clusterBehaviorIcon(cluster) {
-    return behaviorIcon(cluster._clusterMarkers[0].data.category, cluster.population);
+    return behaviorIcon(cluster.GetClusterMarkers()[0].data.category, cluster.population);
   }
 
   // generates icons for behavior singletons
@@ -286,7 +286,7 @@ function toggleBehaviorPopup(target, points) {
     });
     
     m.on('click', function(target) { 
-      toggleBehaviorPopup(target.target, cluster._clusterMarkers); 
+      toggleBehaviorPopup(target.target, cluster.GetClusterMarkers()); 
     });
     
     // remove popup when icon is removed
