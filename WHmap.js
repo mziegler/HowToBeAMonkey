@@ -235,7 +235,7 @@ function toggleBehaviorPopup(target, points) {
 
   // generates icons for behavior clusters
   function clusterBehaviorIcon(cluster) {
-    return behaviorIcon(cluster.GetClusterMarkers()[0].data.category, cluster.population);
+    return behaviorIcon(cluster.lastMarker.data.category, cluster.population);
   }
 
   // generates icons for behavior singletons
@@ -279,24 +279,27 @@ function toggleBehaviorPopup(target, points) {
   }
     
 
-  // called to generate a marker for each behavior cluster
-  function buildClusterMarker(cluster, position) {
-    var m = new L.Marker(position, {
-      icon: clusterBehaviorIcon(cluster)
-    });
-    
-    m.on('click', function(target) { 
-      toggleBehaviorPopup(target.target, cluster.GetClusterMarkers()); 
-    });
-    
-    // remove popup when icon is removed
-    m.on('remove', function(target) {
-      if (target.target.behaviorPopup) {
-        map.closePopup(target.target.behaviorPopup);
-      }
-    });
-    
-    return m;
+  function buildClusterMarkerFactory(clusterLayer) {
+    // called to generate a marker for each behavior cluster
+    function buildClusterMarker(cluster, position) {
+      var m = new L.Marker(position, {
+        icon: clusterBehaviorIcon(cluster)
+      });
+      
+      m.on('click', function(target) { 
+        toggleBehaviorPopup(target.target, clusterLayer.Cluster.FindMarkersInArea(cluster.bounds)); 
+      });
+      
+      // remove popup when icon is removed
+      m.on('remove', function(target) {
+        if (target.target.behaviorPopup) {
+          map.closePopup(target.target.behaviorPopup);
+        }
+      });
+      
+      return m;
+    }
+    return buildClusterMarker;
   }
 
 
@@ -320,7 +323,7 @@ function toggleBehaviorPopup(target, points) {
 
   var markerClusterLayers = {}; // keep cluster layers for legend
 
-  PruneCluster.Cluster.ENABLE_MARKERS_LIST = true; // for pop-up generation
+  //PruneCluster.Cluster.ENABLE_MARKERS_LIST = true; // for pop-up generation
 
 
   // asynchronously fetch behavior data points because they're big
@@ -339,7 +342,7 @@ function toggleBehaviorPopup(target, points) {
       
       
       clusterLayer.BuildLeafletClusterIcon = clusterBehaviorIcon;
-      clusterLayer.BuildLeafletCluster = buildClusterMarker;
+      clusterLayer.BuildLeafletCluster = buildClusterMarkerFactory(clusterLayer);
       clusterLayer.PrepareLeafletMarker = prepareSingletonMarker;
 
 
