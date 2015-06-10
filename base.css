@@ -108,7 +108,8 @@ div.overlay {
 
 div.overlay div.overlay-intro-content {
   background: white;
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   padding: 50px;
