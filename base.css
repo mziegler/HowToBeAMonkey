@@ -60,6 +60,13 @@ div#map {
   z-index: 99990001;
 }
 
+
+img#welcome-icon {
+  float: left;
+  height: 60px; 
+  width: 60px;
+}
+
 span#title {
   margin: -2px;
   padding-left: 16px;
@@ -90,6 +97,24 @@ a.header-tab:hover {
   transition: 0.1s;
 }
 
+@media all and (max-width: 420px) {
+  #header {
+    height: 40px;
+  }
+  
+  img#welcome-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  span#title {
+    display: none;
+  } 
+  
+  a.header-tab {
+    display: none;
+  }
+}
 
 
 
@@ -134,6 +159,15 @@ div.skip-intro {
 
 div.skip-intro:hover {
   color: #666;
+}
+
+@media all and (max-width: 420px) {
+  div.overlay div.overlay-intro-content {
+    padding: 20px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
 }
 
 /******************************************************************************
