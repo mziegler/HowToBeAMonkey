@@ -93,9 +93,6 @@ resetLineClipPadding(); // restore old clip padding
 ///////////////////////////////////////////////////////////////////////////////
 // MAP CONTROLS
 
-// add layer control (to be populated with cluster layers)
-var layerControl = L.control.groupedLayers(null, null, {position:'topleft'}).addTo(map);
-
 // zoom control (underneath layer control)
 L.control.zoom({ position: 'topleft' }).addTo(map);
 
@@ -368,15 +365,6 @@ function toggleBehaviorPopup(target, points) {
       
     }
 
-
-    // populate legend
-    for (var i = 0; i < categoryOrder.length; i++) {
-      var category = categoryOrder[i],
-        categoryInfo = categories[category],
-        layer = markerClusterLayers[category];
-        
-      layerControl.addOverlay(layer, '<img src="icons/48/' + category + '.png" class="legend-icon" /><span class="legend-label">' + categoryInfo.name + '</span>', categoryInfo.group);
-    }
   });
 })();
 
