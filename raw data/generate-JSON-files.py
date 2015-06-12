@@ -3,8 +3,8 @@ import sqlite3
 import json
 import csv
 
-# how to group categories into separate files
-categories = 'G', 'M', 'W', 'C', 'E', 'F', 'H', 'I', 'P', 'S', 'V', 'A', 'L', 'O'
+# categories to look up
+categories = 'G', 'M', 'W', 'C', 'E', 'F', 'H', 'I', 'P', 'S', 'V', #'A', 'L', 'O'
 
 # 1-minute intervals
 track = [
@@ -822,6 +822,6 @@ if __name__ == '__main__':
   conn.close()
   
   with open(outfile, 'w') as outf:
-    outf.write('var behaviorPoints = ')
+    #outf.write('var behaviorPoints = ')
     outf.write(json.dumps(points))
     
