@@ -655,26 +655,34 @@ function initHeaderControls() {
   }
   
 
+
   function closeSidePanel() {
     $('#side-panel').fadeOut(150);
+    resetMenuButton();
+  }
+  
+  
+  
+  function resetMenuButton() {
+    $('#mobile-menu-button').html("Menu &equiv;");
   }
   
   // mobile menu button -- change text if menu is open
   $('#mobile-menu-button').click( function() {
     if ($('#side-panel').is(':visible')) {
       closeSidePanel();
-      $('#mobile-menu-button').html("Menu &equiv;");
+      resetMenuButton();
     }
     else {
-      toggleSidePanel('#panel-about');
-      $('#mobile-menu-button').html("Map &rarr;");
+      toggleSidePanel('#panel-mobile-menu');
+      $('#mobile-menu-button').html("Back to map &rarr;");
     }
   });
   
-  $('#tab-about').click( function() { toggleSidePanel('#panel-about'); return false; });
-  $('#tab-biographies').click( function() { toggleSidePanel('#panel-biographies'); return false; });
-  $('#tab-donate').click( function() { toggleSidePanel('#panel-donate'); return false; });
-  $('#tab-reset').click(function(){ introScreens.resetIntro(); return false; });
+  $('#tab-about, #menu-about').click( function() { toggleSidePanel('#panel-about'); return false; });
+  $('#tab-biographies, #menu-biographies').click( function() { toggleSidePanel('#panel-biographies'); return false; });
+  $('#tab-donate, #menu-donate').click( function() { toggleSidePanel('#panel-donate'); return false; });
+  $('#tab-reset, #menu-reset').click(function(){ introScreens.resetIntro(); return false; });
   
   
   $('#close-side-panel').click(closeSidePanel);
