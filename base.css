@@ -103,6 +103,10 @@ a.header-tab:hover {
   transition: 0.1s;
 }
 
+a#mobile-menu-button {
+  display: none;
+}
+
 @media all and (max-width: 420px) {
   #header {
     height: 40px;
@@ -119,6 +123,17 @@ a.header-tab:hover {
   
   a.header-tab {
     display: none;
+  }
+  
+  a#mobile-menu-button {
+    display: inline-block;
+    float: right;
+    color: #111;
+    border-radius:5px;
+    transition: 0.5s;
+    padding: 5px 10px;
+    background: #CCC;
+    margin: 3px;
   }
 }
 

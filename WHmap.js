@@ -659,6 +659,17 @@ function initHeaderControls() {
     $('#side-panel').fadeOut(150);
   }
   
+  // mobile menu button -- change text if menu is open
+  $('#mobile-menu-button').click( function() {
+    if ($('#side-panel').is(':visible')) {
+      closeSidePanel();
+      $('#mobile-menu-button').html("Menu &equiv;");
+    }
+    else {
+      toggleSidePanel('#panel-about');
+      $('#mobile-menu-button').html("Map &rarr;");
+    }
+  });
   
   $('#tab-about').click( function() { toggleSidePanel('#panel-about'); return false; });
   $('#tab-biographies').click( function() { toggleSidePanel('#panel-biographies'); return false; });
