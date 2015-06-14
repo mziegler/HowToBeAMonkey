@@ -39,6 +39,12 @@ div#map {
    background: #333;
 }
 
+@media all and (max-width: 420px) {
+  #map-container {
+    padding-top: 40px;
+  }
+}
+
 
 /******************************************************************************
  header */
@@ -119,7 +125,7 @@ a.header-tab:hover {
 
 
 /******************************************************************************
- overlay */
+ intro overlay */
 
 div.overlay {
   position:absolute;
@@ -135,6 +141,10 @@ div.overlay div.overlay-intro-content {
   background: white;
   width: 100%;
   max-width: 800px;
+  max-height: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
   padding: 50px;
@@ -145,6 +155,10 @@ div.overlay div.overlay-intro-content {
   transform: translate(0, 30px) translate(-50%, -50%);
   -ms-transform: translate(0, 30px) translate(-50%, -50%);
   -webkit-transform: translate(0, 30px) translate(-50%, -50%);
+}
+
+div.overlay div.overlay-intro-content#overlay-intro2 {
+  max-width: 500px;
 }
 
 div.skip-intro {
@@ -161,12 +175,54 @@ div.skip-intro:hover {
   color: #666;
 }
 
+span#intro-title {
+  font-weight:bold;
+  font-size:220%;
+}
+
+div#intro-hello {
+  background-image: url('pictures/preview/hello-2.jpg');
+  background-size: 100% auto;
+  background-position: center;
+  width: 268px;
+  height: 320px;
+  float:left;
+  margin-right: 30px;
+}
+
 @media all and (max-width: 420px) {
   div.overlay div.overlay-intro-content {
+    padding: 0;
+    padding-top: 40px;
+    transform: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+  
+  span.intro-mobile-scroll {
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+  }
+  
+  span.intro-mobile-padded {
+    display: block;
     padding: 20px;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
+  }
+  
+  span#intro-title {
+    font-size: 140%;
+  }
+  
+  div#intro-hello {
+    width: 100%;
+    height: 50%;
+    float: none;
+    margin: 0;
   }
 }
 
@@ -312,6 +368,24 @@ a.next-button {
 a.next-button:hover {
   background: #FED32A;
   transition: 0.2s ease;
+}
+
+@media all and (max-width: 420px) {
+  a.next-button {
+    background: #FEF370;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    z-index: 99990001;
+    text-align: center;
+    padding: 5px;
+    height: 50px;
+    border-radius: 0;
+  }
 }
 
 
