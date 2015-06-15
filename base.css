@@ -39,7 +39,7 @@ div#map {
    background: #333;
 }
 
-@media all and (max-width: 420px) {
+@media all and (max-width: 600px) {
   #map-container {
     padding-top: 40px;
   }
@@ -107,7 +107,7 @@ a#mobile-menu-button {
   display: none;
 }
 
-@media all and (max-width: 420px) {
+@media all and (max-width: 600px) {
   #header {
     height: 40px;
   }
@@ -205,7 +205,7 @@ div#intro-hello {
   margin-right: 30px;
 }
 
-@media all and (max-width: 420px) {
+@media all and (max-width: 600px) {
   div.overlay div.overlay-intro-content {
     padding: 0;
     padding-top: 40px;
@@ -255,7 +255,7 @@ div#intro-hello {
   top: 0;
   left: 0;
   max-width: 600px;
-  min-width: 300px;
+  width: 100%;
   height: 100%;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -362,7 +362,17 @@ a.side-linkout:hover {
 }
 
 
+@media all and (max-width: 600px) {
+  #side-panel {
+    padding: 20px;
+    padding-top: 60px;
+  }
+  
+  a#close-side-panel {
+    display: none;
+  }
 
+}
 
 /******************************************************************************
  next button */
@@ -385,7 +395,7 @@ a.next-button:hover {
   transition: 0.2s ease;
 }
 
-@media all and (max-width: 420px) {
+@media all and (max-width: 600px) {
   a.next-button {
     background: #FEF370;
     position: absolute;
