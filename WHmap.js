@@ -14,7 +14,6 @@ var initialView = [[10.5147, -85.3698], 19];
 
 
 
-
 /////////////////////////////////////////////////////////////////////////////
 // INITIALIZE LEAFLET MAP and plot data
 
@@ -85,7 +84,6 @@ var track = L.polyline(WHtrack, {
   
  
 resetLineClipPadding(); // restore old clip padding
-
 
 
 
@@ -651,6 +649,7 @@ function initHeaderControls() {
       $('.side-panel-content').hide();
       $(contentSelector).fadeIn('fast');
       $('#side-panel').fadeIn('fast');
+      menuButtonOpen();
     }
   }
   
@@ -658,12 +657,16 @@ function initHeaderControls() {
 
   function closeSidePanel() {
     $('#side-panel').fadeOut(150);
-    resetMenuButton();
+    menuButtonClosed();
   }
   
   
   
-  function resetMenuButton() {
+  function menuButtonOpen() {
+    $('#mobile-menu-button').html("Back to map &rarr;");
+  }
+  
+  function menuButtonClosed() {
     $('#mobile-menu-button').html("Menu &equiv;");
   }
   
@@ -671,13 +674,12 @@ function initHeaderControls() {
   $('#mobile-menu-button').click( function() {
     if ($('#side-panel').is(':visible')) {
       closeSidePanel();
-      resetMenuButton();
     }
     else {
       toggleSidePanel('#panel-mobile-menu');
-      $('#mobile-menu-button').html("Back to map &rarr;");
     }
   });
+  
   
   $('#tab-about, #menu-about').click( function() { toggleSidePanel('#panel-about'); return false; });
   $('#tab-biographies, #menu-biographies').click( function() { toggleSidePanel('#panel-biographies'); return false; });

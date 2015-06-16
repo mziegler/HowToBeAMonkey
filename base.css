@@ -362,6 +362,21 @@ a.side-linkout:hover {
 }
 
 
+#side-panel #mobile-menu-list {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+#side-panel #mobile-menu-list li {
+  padding: 17px 0;
+}
+
+#side-panel #mobile-menu-list li a {
+  color: #444;
+  font-size: 120%;
+}
+
+
 @media all and (max-width: 600px) {
   #side-panel {
     padding: 20px;
