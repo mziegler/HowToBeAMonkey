@@ -88,6 +88,53 @@ resetLineClipPadding(); // restore old clip padding
 
 
 
+
+
+///////////////////////////////////////////////////////////////////////////////
+// COMPUTE POPUP SIZE SO IT FITS IN THE MAP
+
+// Given ideal/full popup width, scale down popup so it fits in window if neccesary
+function popupWidth(fullWidth) {
+  var width = fullWidth,
+    mapSize = map.getSize();
+  
+  if (width > mapSize.x - 10) {
+    width = mapSize.x - 10;
+  }
+  
+  return width;
+}
+
+
+(function() {
+
+  // keep track of the currently-opened popup
+  var currentPopup = null;
+  map.on('popupopen', function(event) {
+    currentPopup = event.popup;
+  });
+  
+  
+  // recompute popup size on map resize
+  map.on('resize', function() {
+    if (map.hasLayer(currentPopup) 
+            && currentPopup.options.fullWidth)     {
+      
+      currentPopup.options.minWidth = currentPopup.options.maxWidth = 
+        popupWidth(currentPopup.options.fullWidth);
+      
+      currentPopup.update();
+    }
+  });
+})();
+
+
+
+
+
+
+
+
 ///////////////////////////////////////////////////////////////////////////////
 // MAP CONTROLS
 
@@ -181,6 +228,11 @@ function toggleBehaviorPopup(target, points) {
     
     // open the popup if it already exists but is closed
     else {
+      // recompute size, if map size has changed
+      var size = popupSize(behaviorPopup.options.fullWidth, behaviorPopup.options.fullHeight);
+      behaviorPopup.options.fullWidth = size[0];
+      behaviorPopup.options.fullHeight = size[1];
+      
       target.behaviorPopup.openOn(map);
     }
   }
@@ -190,8 +242,14 @@ function toggleBehaviorPopup(target, points) {
   else {
     var offset = target.options.icon.popupOffset;
 
+    var fullSize
+    var size = popupSize(behaviorPopup.options.fullWidth, behaviorPopup.options.fullHeight);
+    behaviorPopup.options.fullWidth = size[0];
+    behaviorPopup.options.fullHeight = size[1];
+    
+
     // Not binding popup to icon because PruneCluster calls setLatLng on marker
-    // all the time, won't let user pan away from popup.  Save a pointer to the
+    // a bunch, won't let user pan away from popup.  Save a pointer to the
     // popup so we can remove it when the marker is removed.
     target.behaviorPopup = L.popup({
       'minWidth':400, 
@@ -374,25 +432,50 @@ function toggleBehaviorPopup(target, points) {
 var textBoxLayer = L.layerGroup();
 
 
-for (var i = 0; i < textBoxes.length; i++) {  
+//for (var i = 0; i < textBoxes.length; i++) {
+$.each(textBoxes, function(i, boxInfo) {
+  //var boxInfo = textBoxes[i];
+  
   var textBoxIcon = L.divIcon({
     className: 'textbox-icon',
-    html: '<span class="textbox-icon-inner">' + textBoxes[i][1] + '</span>',
-    iconAnchor: [textBoxes[i][3][0], textBoxes[i][3][1]],
-    popupAnchor:  [-textBoxes[i][3][0], -textBoxes[i][3][1]]
+    html: '<span class="textbox-icon-inner">' + boxInfo[1] + '</span>',
+    iconAnchor: [boxInfo[0], boxInfo[3][1]],
+    popupAnchor:  [-boxInfo[3][0], -boxInfo[3][1]]
   })
 
   textBoxLayer.addLayer(
-    L.marker(textBoxes[i][0], {icon:textBoxIcon}).bindPopup(
-      '<div class="popup-title">' +
-      textBoxes[i][1] +
-      '</div><div class="caption">' +
-      textBoxes[i][2] + 
-      '</div>', 
-      {className:'behavior-popup texbox-popup', maxWidth:500}
-    ).on('click', function(){ headerControls.closeSidePanel() })
+    L.marker(boxInfo[0], {icon:textBoxIcon})
+    
+    .on('click', function(){ // toggle popup on click
+    
+      headerControls.closeSidePanel(); 
+    
+      // close popup if it's already open
+      if (map.hasLayer(this.getPopup())) {
+        this.closePopup();
+      }
+      else {
+
+        // re-build popup each time to recompute width, in case screen size changed
+        var width = popupWidth(500);
+        this.unbindPopup();
+        this.bindPopup(
+          '<div class="popup-title">' +
+          boxInfo[1] +
+          '</div><div class="caption">' +
+          boxInfo[2] + 
+          '</div>', 
+          {
+            className: 'behavior-popup texbox-popup', 
+            maxWidth: width,
+            minWidth: width,
+            closeOnClick: false
+          }
+        ).openPopup();
+      }
+    })
   );
-}
+});
 textBoxLayer.addTo(map);
 
 
