@@ -617,6 +617,11 @@ body a.leaflet-control-zoom-out:last-child {
 }
 
 
+@media all and (max-width: 600px) {
+  div.leaflet-control-zoom {
+    display: none;
+  }
+}
 
 
 
