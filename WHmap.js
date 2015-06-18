@@ -88,6 +88,61 @@ resetLineClipPadding(); // restore old clip padding
 
 
 
+
+
+///////////////////////////////////////////////////////////////////////////////
+// COMPUTE POPUP SIZE SO IT FITS IN THE MAP
+
+
+
+(function() {
+
+
+  // Given ideal/full popup width, scale down popup so it fits in window if neccesary
+  function popupWidth(fullWidth) {
+    var width = fullWidth,
+      mapSize = map.getSize();
+        if (width > mapSize.x - 25) {
+      width = mapSize.x - 25;
+    }
+      return width;
+  }
+
+
+  // keep track of the currently-opened popup
+  var currentPopup = null;
+  
+  
+  // keep track of open popup 
+  map.on('popupopen', function(event) {
+    currentPopup = event.popup;
+    
+    // if the popup is too wide for the screen, shrink it down
+    if (currentPopup.options.fullWidth) {
+      var width = popupWidth(currentPopup.options.fullWidth);
+      if (width < currentPopup.options.minWidth) {
+        currentPopup.options.minWidth = currentPopup.options.maxWidth = width;
+        currentPopup.update();
+      }
+    }
+  });
+  
+  // recompute popup size on map resize
+  map.on('resize', function() {
+    if (map.hasLayer(currentPopup) 
+      && currentPopup.options.fullWidth)     {
+      
+      currentPopup.options.minWidth = currentPopup.options.maxWidth = 
+                              popupWidth(currentPopup.options.fullWidth);
+      currentPopup.update();
+    }
+  });
+})();
+
+
+
+
+
 ///////////////////////////////////////////////////////////////////////////////
 // MAP CONTROLS
 
@@ -194,10 +249,12 @@ function toggleBehaviorPopup(target, points) {
     // all the time, won't let user pan away from popup.  Save a pointer to the
     // popup so we can remove it when the marker is removed.
     target.behaviorPopup = L.popup({
-      'minWidth':400, 
-      'className':'behavior-popup',
-      'offset':offset,
-      'keepInView':false
+      minWidth: 400, 
+      maxWidth: 400,
+      fullWidth: 400,
+      className: 'behavior-popup',
+      offset: offset,
+      keepInView: false
     })
     .setContent(popupHTML(points))
     .setLatLng(target.getLatLng())
@@ -389,7 +446,12 @@ for (var i = 0; i < textBoxes.length; i++) {
       '</div><div class="caption">' +
       textBoxes[i][2] + 
       '</div>', 
-      {className:'behavior-popup texbox-popup', maxWidth:500}
+      {
+        className:'behavior-popup texbox-popup', 
+        maxWidth:500,
+        minWidth:500,
+        fullWidth: 500
+      }
     ).on('click', function(){ headerControls.closeSidePanel() })
   );
 }
