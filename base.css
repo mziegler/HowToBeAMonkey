@@ -110,6 +110,7 @@ div#mobile-buttons {
 @media (max-width: 599px), (max-height: 599px) {
   #header {
     height: 40px;
+    background: linear-gradient(#EEE, #CCC);
   }
   
   img#welcome-icon {
@@ -147,7 +148,6 @@ div#mobile-buttons {
     border-radius:5px;
     padding: 5px 10px;
     background: #EEE;
-  }
   }
 }
 
