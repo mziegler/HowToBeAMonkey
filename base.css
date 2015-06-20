@@ -39,7 +39,7 @@ div#map {
    background: #333;
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 599px) {
   #map-container {
     padding-top: 40px;
   }
@@ -107,7 +107,7 @@ a#mobile-menu-button {
   display: none;
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 599px) {
   #header {
     height: 40px;
   }
@@ -205,7 +205,7 @@ div#intro-hello {
   margin-right: 30px;
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 599px) {
   div.overlay div.overlay-intro-content {
     padding: 0;
     padding-top: 40px;
@@ -377,13 +377,54 @@ a.side-linkout:hover {
 }
 
 
-@media all and (max-width: 600px) {
+#donate-image {
+  float: left; 
+  padding-right: 15px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px; 
+  margin-left: -10px; 
+  margin-top: -25px;
+  margin-bottom: -10px; 
+  vertical-align: middle;
+  width: 200px;
+  height: 133px;
+}
+
+#donate-paypal {
+  margin: 12px 0; 
+  height: 110px;
+  text-align: center; 
+  font-size: 140%; 
+  cursor: pointer;
+  padding-left: 205px;
+  background-image: url('/pictures/preview/TJ-WH-DA.jpg');
+  background-size: auto 100%;
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+
+@media all and (max-width: 550px) {
+  #donate-paypal {
+    padding-left: 10px;
+    padding-top: 65%;
+    background-size: 100% auto;
+    background-position: center top;
+  }
+}
+
+
+
+@media all and (max-width: 599px) {
   #side-panel {
     padding: 20px;
     padding-top: 60px;
   }
   
   a#close-side-panel {
+    display: none;
+  }
+
+  #donate-image {
     display: none;
   }
 
@@ -410,7 +451,7 @@ a.next-button:hover {
   transition: 0.2s ease;
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 599px) {
   a.next-button {
     background: #FEF370;
     position: absolute;
@@ -617,7 +658,7 @@ body a.leaflet-control-zoom-out:last-child {
 }
 
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 599px) {
   div.leaflet-control-zoom {
     display: none;
   }
