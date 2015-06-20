@@ -39,7 +39,7 @@ div#map {
    background: #333;
 }
 
-@media all and (max-width: 599px) {
+@media (max-width: 599px), (max-height: 599px) {
   #map-container {
     padding-top: 40px;
   }
@@ -107,7 +107,7 @@ div#mobile-buttons {
   display: none;
 }
 
-@media all and (max-width: 599px) {
+@media (max-width: 599px), (max-height: 599px) {
   #header {
     height: 40px;
   }
@@ -219,7 +219,7 @@ div#intro-hello {
   margin-right: 30px;
 }
 
-@media all and (max-width: 599px) {
+@media (max-width: 599px), (max-height: 599px) {
   div.overlay div.overlay-intro-content {
     padding: 0;
     padding-top: 40px;
@@ -418,7 +418,7 @@ a.side-linkout:hover {
   background-repeat: no-repeat;
 }
 
-@media all and (max-width: 550px) {
+@media (max-width: 550px) {
   #donate-paypal {
     padding-left: 10px;
     padding-top: 65%;
@@ -429,10 +429,11 @@ a.side-linkout:hover {
 
 
 
-@media all and (max-width: 599px) {
+@media (max-width: 599px), (max-height: 599px) {
   #side-panel {
     padding: 20px;
     padding-top: 60px;
+    max-width: none;
   }
   
   a#close-side-panel {
@@ -466,7 +467,7 @@ a.next-button:hover {
   transition: 0.2s ease;
 }
 
-@media all and (max-width: 599px) {
+@media (max-width: 599px), (max-height: 599px) {
   a.next-button {
     background: #FEF370;
     position: absolute;
@@ -673,7 +674,7 @@ body a.leaflet-control-zoom-out:last-child {
 }
 
 
-@media all and (max-width: 599px) {
+@media (max-width: 599px), (max-height: 599px) {
   div.leaflet-control-zoom {
     display: none;
   }
