@@ -103,7 +103,7 @@ a.header-tab:hover {
   transition: 0.1s;
 }
 
-a#mobile-menu-button {
+div#mobile-buttons {
   display: none;
 }
 
@@ -125,15 +125,29 @@ a#mobile-menu-button {
     display: none;
   }
   
-  a#mobile-menu-button {
-    display: inline-block;
+  div#mobile-buttons {
+    display: block;
     float: right;
+    padding: 8px;
+  }
+  
+  a#mobile-menu-button {
     color: #111;
     border-radius:5px;
-    transition: 0.5s;
     padding: 5px 10px;
     background: #CCC;
-    margin: 3px;
+  }
+  
+  a#mobile-menu-button.menu-button-open {
+    background: #AAA;
+  }
+  
+  a#back-to-map {
+    color: #111;
+    border-radius:5px;
+    padding: 5px 10px;
+    background: #EEE;
+  }
   }
 }
 
@@ -364,7 +378,8 @@ a.side-linkout:hover {
 
 #side-panel #mobile-menu-list {
   list-style-type: none;
-  padding-left: 20px;
+  padding-left: none;
+  text-align: center;
 }
 
 #side-panel #mobile-menu-list li {

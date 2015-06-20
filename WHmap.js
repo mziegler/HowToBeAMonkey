@@ -735,24 +735,20 @@ function initHeaderControls() {
   
   
   function menuButtonOpen() {
-    $('#mobile-menu-button').html("Back to map &rarr;");
+    $('#mobile-menu-button').addClass("menu-button-open");
+    $('#back-to-map').fadeIn('fast');
   }
   
   function menuButtonClosed() {
-    $('#mobile-menu-button').html("Menu &equiv;");
+    $('#mobile-menu-button').removeClass("menu-button-open");
+    $('#back-to-map').fadeOut('fast');
   }
   
-  // mobile menu button -- change text if menu is open
-  $('#mobile-menu-button').click( function() {
-    if ($('#side-panel').is(':visible')) {
-      closeSidePanel();
-    }
-    else {
-      toggleSidePanel('#panel-mobile-menu');
-    }
-  });
+
   
-  
+  $('#mobile-menu-button').click( function() { toggleSidePanel('#panel-mobile-menu'); return false; });
+  $('#back-to-map').click( closeSidePanel );
+
   $('#tab-about, #menu-about').click( function() { toggleSidePanel('#panel-about'); return false; });
   $('#tab-biographies, #menu-biographies').click( function() { toggleSidePanel('#panel-biographies'); return false; });
   $('#tab-donate, #menu-donate').click( function() { toggleSidePanel('#panel-donate'); return false; });
