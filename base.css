@@ -220,6 +220,7 @@ div#intro-hello {
 }
 
 @media (max-width: 599px), (max-height: 599px) {
+  
   div.overlay div.overlay-intro-content {
     padding: 0;
     padding-top: 40px;
@@ -228,6 +229,15 @@ div#intro-hello {
     left: 0;
     height: 100%;
   }
+  
+  span#intro-title {
+    font-size: 140%;
+  }
+}
+
+
+@media (max-width: 599px) and (orientation: portrait), 
+  (max-height: 599px) and (orientation: portrait) {
   
   span.intro-mobile-scroll {
     display: block;
@@ -238,13 +248,9 @@ div#intro-hello {
     padding-bottom: 50px;
   }
   
-  span.intro-mobile-padded {
+  span.intro-mobile-text {
     display: block;
     padding: 20px;
-  }
-  
-  span#intro-title {
-    font-size: 140%;
   }
   
   div#intro-hello {
@@ -254,6 +260,30 @@ div#intro-hello {
     margin: 0;
   }
 }
+
+
+@media (max-width: 599px) and (orientation: landscape), 
+  (max-height: 599px) and (orientation: landscape) {
+  div#intro-hello {
+    height: 100%;
+    width: 40%;
+    background-size: cover;
+    margin: 0;
+  }
+  
+  span.intro-mobile-text {
+    display: block;
+    height: 100%;
+    overflow: auto;
+    padding: 20px;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+  }
+}
+
+
+
+
 
 /******************************************************************************
  side panel */
@@ -472,7 +502,7 @@ a.next-button:hover {
     background: #FEF370;
     position: absolute;
     bottom: 0;
-    left: 0;
+    right: 0;
     width: 100%;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
@@ -484,6 +514,16 @@ a.next-button:hover {
     border-radius: 0;
   }
 }
+
+
+@media (max-width: 599px) and (orientation: landscape), 
+  (max-height: 599px) and (orientation: landscape) {
+  a.next-button#next-intro1 {
+    width: 60%;
+  }
+}
+
+
 
 
 /******************************************************************************
