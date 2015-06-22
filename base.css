@@ -225,6 +225,8 @@ div#intro-hello {
     padding: 0;
     padding-top: 40px;
     transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
     top: 0;
     left: 0;
     height: 100%;
