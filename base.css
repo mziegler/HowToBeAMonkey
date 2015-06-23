@@ -111,15 +111,11 @@ div#mobile-buttons {
   #header {
     height: 40px;
     background: linear-gradient(#EEE, #CCC);
-    text-align: center;
-    padding: 0;
-    vertical-align: middle;
   }
   
   img#welcome-icon {
     width: 40px;
     height: 40px;
-    margin-left: 15px;
   }
   
   span#title {
@@ -194,26 +190,18 @@ div.overlay div.overlay-intro-content#overlay-intro2 {
   max-width: 500px;
 }
 
-.skip-intro {
+div.skip-intro {
   color: #999;
   font-size: 80%;
-  cursor: pointer;
-  padding: 10px;
-}
-
-.skip-intro:hover {
-  color: #666;
-}
-
-#header span.skip-intro {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-div.skip-intro {
   position: absolute;
   top: 0;
   right: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+div.skip-intro:hover {
+  color: #666;
 }
 
 span#intro-title {

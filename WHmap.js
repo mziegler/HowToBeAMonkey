@@ -683,7 +683,7 @@ function initIntroScreens() {
     map.map.setView(initialView[0], initialView[1], {animate: true});
     setTimeout(function() { map.startMarker.openPopup(); }, 300);
   }
-  $('.skip-intro, #overlay-intro').click(skipIntro);
+  $('div.skip-intro, #overlay-intro').click(skipIntro);
 
 
   function resetIntro() {
