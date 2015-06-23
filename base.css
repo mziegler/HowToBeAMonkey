@@ -648,6 +648,17 @@ a.show-all-points:hover, a.show-fewer-points:hover {
 
 
 
+@media (max-width: 599px), (max-height: 599px) {
+  div.leaflet-container a.leaflet-popup-close-button {
+    font-size: 260%;
+    padding: 18px 24px 0 0;
+    font-weight: normal;
+    overflow: visible;
+  }
+}
+
+
+
 /******************************************************************************
  text box icons */
 
