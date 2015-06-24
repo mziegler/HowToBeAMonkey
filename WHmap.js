@@ -7,7 +7,7 @@
 
 
 // initial pan and zoom of the map
-var initialView = [[10.5147, -85.3698], 19];
+var initialView = [[10.5147, -85.3698], 18];
 
 
 
