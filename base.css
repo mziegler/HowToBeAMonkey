@@ -219,6 +219,13 @@ div#intro-hello {
   margin-right: 30px;
 }
 
+p#intro-icon-row img {
+  display: inline-block;
+  height: 36px;
+  width: 36px;
+  padding: 0 4px;
+}
+
 @media (max-width: 599px), (max-height: 599px) {
   
   div.overlay div.overlay-intro-content {
