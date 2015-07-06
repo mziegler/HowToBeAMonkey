@@ -155,7 +155,7 @@ var categories = {
   'C': {'name': 'Food', 'default': true, 'group': 'Food', 'clustersize': 200},
   'F': {'name': 'Friendly', 'default': true, 'group': 'Friendly', 'clustersize': 300},
   'S': {'name': 'Sex', 'default': true, 'group': 'Friendly', 'clustersize': 400},
-  'I': {'name': 'Infant', 'default': true, 'group': 'Friendly', 'clustersize': 350},
+  'I': {'name': 'Parenting', 'default': true, 'group': 'Friendly', 'clustersize': 350},
   'P': {'name': 'Play', 'default': true, 'group': 'Friendly', 'clustersize': 350},
   'V': {'name': 'Vocalizations', 'default': true, 'group': 'Other', 'clustersize': 300},
   'W': {'name': 'Miscellaneous (self-directed)', 'default': true, 'group': 'Other', 'clustersize': 800},
