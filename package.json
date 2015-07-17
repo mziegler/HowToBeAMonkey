@@ -1,0 +1,19 @@
+{
+  "_comment": "This package.json file has npm dependencies for building WH Day",
+  "name": "winslow-homer-day",
+  "description": "A day in the life of Winslow Homer",
+  "version": "0.1.0",
+  "author": "Matt Ziegler <mattpziegler at gmail dot com>",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.5.1",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-copy": "~0.8.0",
+    "grunt-mkdir": "~0.1.2",
+    "matchdep": "~0.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mziegler/WinslowHomerDay"
+  }
+}
