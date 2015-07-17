@@ -33,11 +33,17 @@ module.exports = function(grunt) {
         
         // copy files into the build directory, and dist directory
         copy: {
-            'prebuild': {
+            prebuild: {
                 files: [
                     {expand: true, src: ['**'], cwd: 'src/', dest: 'build/',},            
                 ]
             },
+            
+            postbuild: {
+                files: [
+                        {expand: true, src: ['**'], cwd: 'build/', dest: 'dist/gh-pages',},            
+                ]
+            }
         },
         
         
@@ -47,6 +53,20 @@ module.exports = function(grunt) {
         concat: {
             // 2. Configuration for concatinating files goes here.
         },
+        
+        
+        
+        
+        // push to github pages
+        'gh-pages': {
+            options: {
+                base: 'dist/gh-pages',
+            },
+            
+            src: ['**']
+        }
+        
+        
     });
    
     
@@ -64,7 +84,10 @@ module.exports = function(grunt) {
     
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     //grunt.registerTask('default', ['concat']);
-    grunt.registerTask('default', ['clean', 'mkdir', 'copy:prebuild']);
+    
+    grunt.registerTask('build', ['clean', 'mkdir', 'copy:prebuild', 'copy:postbuild']);
+    
+    grunt.registerTask('default', ['build']);
 };
 
 
