@@ -4,6 +4,7 @@ Convert human-editable CSV files into JSON files, used by the web application.
 
 import json
 import csv
+from io import StringIO
 from datetime import datetime
 
 
@@ -150,7 +151,7 @@ def loadObservationFile(translations=None):
     
 
 
-def filterObservationssTranslations():
+def filterObservationsTranslations():
     """ 
     Return (observations, translations) list containing the intersection 
     (inner join) of the observations and translations, and only in the 
@@ -177,8 +178,34 @@ def filterObservationssTranslations():
     
     
     
-    
 
+def generateBehaviorJSON():
+    """
+    Write behavior JSON file, with observations and translations joined.
+    """
+
+    observations, translations_dict = filterObservationsTranslations()
+    
+    # join together observations with translations
+    behavior_list = [
+        {
+            'time': o['time'],
+            'loc': o['loc'],
+            'text': translations_dict[o['code']]['english'],
+            'cat': translations_dict[o['code']]['category'],
+            'score': translations_dict[o['code']]['interestingness']
+        }
+        for o in observations
+    ]
+    
+    
+    with open(OutFileNames.behavior, 'w') as f:
+        json.dump({'behavior':behavior_list}, f)
+    
+    
+    
+    
+"""
 def generateBehaviorJSON(observations, translations_dict):
     
     observationsJSON = [
@@ -202,13 +229,12 @@ def generateBehaviorJSON(observations, translations_dict):
 
     with open(OutFileNames.behavior, 'w') as f:
         json.dump({'observations':observationsJSON, 'translations':translationsJSON}, f)
-        
+"""        
 
 
 
 def buildBehavior():
-    observations, translations_dict = filterObservationssTranslations()
-    generateBehaviorJSON(observations, translations_dict)
+    generateBehaviorJSON()
     
     
     
