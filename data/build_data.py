@@ -28,21 +28,39 @@ class InFileNames:
     observations = 'behavior observation codes.csv'
     translations = 'behavior code translations.csv'
     gpstrack = 'GPS track.csv'
+    pictures = 'pictures.csv'
+    textBuubble = 'text bubbles.csv'
 
 
 class OutFileNames:
-    behavior = 'behavior.json'
+    behavior = 'behavior.json' # observations + translations
     behaviorcsv = 'behavior observation data.csv'
+    media = 'media.json' # pictures, videos, text
+
+
+
+
+
+
+
+# monkey patch json encoder to format floats
+from json import encoder
+encoder.FLOAT_REPR = lambda o: format(o, '.5f')
+
 
     
 
 
 ################################################################################
-# load GPS track
+# GPS track
 
 with open(InFileNames.gpstrack) as f:
     reader = csv.reader(f, skipinitialspace=True)
     GPStrack = [(float(lat[:9]), float(lon[:10])) for (lat,lon) in list(reader)[1:]]
+
+
+
+
 
 
 ################################################################################
@@ -178,8 +196,10 @@ def filterObservationsTranslations():
     
     
     
+    
+    
 
-def generateBehaviorJSON():
+def writeBehaviorJSON():
     """
     Write behavior JSON file, with observations and translations joined.
     """
@@ -202,43 +222,90 @@ def generateBehaviorJSON():
     with open(OutFileNames.behavior, 'w') as f:
         json.dump({'behavior':behavior_list}, f)
     
-    
-    
-    
-"""
-def generateBehaviorJSON(observations, translations_dict):
-    
-    observationsJSON = [
-        {
-            'time': o['time'],
-            'code': o['code'],
-            'loc': o['loc']
-        }
-        for o in observations
-    ]
-    
-    translationsJSON = {
-        t['code'] : {
-            'cat': t['category'],
-            'score': t['interestingness'],
-            'text': t['english'],
-        }
-        for t in translations_dict.values()
-    }
-
-
-    with open(OutFileNames.behavior, 'w') as f:
-        json.dump({'observations':observationsJSON, 'translations':translationsJSON}, f)
-"""        
+         
 
 
 
 def buildBehavior():
-    generateBehaviorJSON()
+    writeBehaviorJSON()
+    
+    
+    
+    
+    
+    
+    
+    
+def loadPictureCSV():
+    """
+    Load pictures from CSV file, and calculate coordinates for each picture
+    from the timestamp.  Return a list of dicts, one dict for each picture.
+    """
+    
+    with open(InFileNames.pictures) as f:
+        reader = csv.DictReader(f, skipinitialspace=True)
+        
+
+        pictures = list(reader)
+        
+        # look up GPS coordinates from timestamp
+        for p in pictures:
+            p['loc'] = getGPSCoords(parsetime(p['timestamp']))
+
+    return pictures
+        
+
+
+
+def pictureJSON():
+    """
+    Format pictures into JSON
+    """
+    pictures = loadPictureCSV()
+    
+    return [
+        {
+            'uri': p['filename'],
+            'loc': p['loc'],
+            'cap': p['english'],
+        }
+    
+        for p in pictures
+    ]
+    
+    
+
+
+
+
+def loadTextBubbleCSV():
+    pass
+
+
+
+    
+
+    
+def buildMedia():
+    with open(OutFileNames.media, 'w') as f:
+        
+        json.dump({
+            'pictures': pictureJSON(),
+        }, f)
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
 
 if __name__ == '__main__':
     buildBehavior()
+    buildMedia()
 
