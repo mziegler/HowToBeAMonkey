@@ -49,9 +49,33 @@ module.exports = function(grunt) {
         
         
         
-        
+        /*
         concat: {
-            // 2. Configuration for concatinating files goes here.
+            options: {
+                separator: ';\n',
+            },
+            scripts: {
+                src: [
+                    '',
+                    ''
+                ],
+                dest: 'scripts.js.concat',
+            }
+        },
+        */
+        
+        
+        
+        uglify: {
+            options: {
+                sourceMap: true,
+            },
+            
+            scripts: {
+                files: {
+                    'build/scripts.js.ugly': ['src/WHmap.js'],
+                }
+            }
         },
         
         
@@ -113,7 +137,7 @@ module.exports = function(grunt) {
     
     grunt.registerTask('debug', ['setup', 'processhtml:dev']);
     
-    grunt.registerTask('build', ['setup', 'processhtml:dist', 'copy:postbuild']);
+    grunt.registerTask('build', ['setup', 'uglify', 'processhtml:dist', 'copy:postbuild']);
     
     grunt.registerTask('default', ['debug']);
 };
