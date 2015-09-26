@@ -3,16 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  
+    
+    <!-- build:js:dist inline -->
     <script type="text/javascript" src="libraries/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="WHdata.js"></script>
     <script type="text/javascript" src="libraries/leaflet/leaflet.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Fira+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="libraries/leaflet/leaflet.css" />  
-    <link rel="stylesheet" href="base.css" />
+    <script type="text/javascript" src="WHdata.js"></script>
     <script type="text/javascript" src="libraries/PruneCluster.min.js"></script>
     <script type="text/javascript" src="libraries/lightbox/lightbox.min.js"></script>
+    <!-- /build -->
+    
+    
+    <!-- build:css:dist inline -->
+    <link rel="stylesheet" href="libraries/leaflet/leaflet.css" />  
+    <link rel="stylesheet" href="base.css" />
     <link rel="stylesheet" href="libraries/lightbox/lightbox.css" /> 
+    <!-- /build -->
+    
+    
+    
+    <link href='http://fonts.googleapis.com/css?family=Fira+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
 
 
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1">
@@ -42,6 +51,10 @@
     <meta property="og:site_name" content="A day in the life of Winslow Homer" />
 
   </head>
+  
+  
+  
+  
   <body>
     <div id="mediabg" style="display:none">
       <div id="mediaoverlay">
@@ -82,194 +95,10 @@
       </div>
       
       
-      <div id="panel-about" class="side-panel-content" style="display:none">
-        <span class="side-title">About</span>
-        <p>
-        Nearly every day, researchers at the <b>Lomas Barbudal Monkey Project</b> follow groups of wild capuchin monkeys through a tropical dry forest in Costa Rica to observe their behavior.  Since Dr. Susan Perry started studying this population of monkeys in 1990, researchers have been collecting many different types of data about the monkeys, including their foraging and social behaviors, hormone levels (from fecal samples) and genetics.  This detailed long-term observation of these wild monkeys helps us understand the evolution of primate intelligence and social behavior.
-        </p>
-        <a class="side-linkout" href="http://capuchinfoundation.org/" target="_blank">Learn more about the<br /><b>Lomas Barbudal Monkey Project &rarr;</b></a>
-        <p>
-        <b>Winslow Homer</b> is a baby monkey in one of the project's study groups.  Some of the researchers followed Winslow Homer all day on January 24, 2014, and you can see some of the data that they collected on this map.  You can get a glimpse into the life of a baby capuchin monkey, and learn about some of the data that the Lomas Barbudal Monkey Project collects every day!  This map is a work in progress!
-        </p>
-        <br /><b>Contact</b>
-        <p>
-        For questions about the monkeys, the data, the research, donations, or the Capuchin Foundation, contact <a href="http://www.anthro.ucla.edu/faculty/susan-perry" target="_blank">Susan Perry</a>.
-        </p>
-        <p>
-        For questions about this website, contact Matt Ziegler at:<br /> 
-        <span style="color:#555"><span style="padding-left:10px;">matt</span><span>pziegler</span> at <span>gmail dot</span><span> com</span></span>
-        </p>
-        <br /><b>Thanks</b>
-        <p>
-        Thanks Irene Godoy, Dr. Susan Perry, Kathrine Stewart and Jim Fenton of the <a href="http://capuchinfoundation.org/" target="_blank">Lomas Barbudal Monkey Project</a> for doing an all-day follow of Winslow Homer and collecting the data for this map.    
-        </p>
-        <p>
-        <i>A Day in the life of Winslow Homer</i> is designed and programmed by <a href="https://github.com/mziegler" target="_blank">Matt Ziegler</a>.  Thanks a ton <a href="http://juliajanicki.com" target="_blank">Julia Janicki</a> for help with the design, and for making icons.
-        <ul>
-          <li>Photos by Melanie Jackson and Jim Fenton.</li>
-          <li>Monkey biographies by Susan Perry.</li>
-          <li>Design inspired by the <a href="http://intotheokavango.org/" target="_blank">Into the Okavango</a> project.</li>
-          <li>This map uses code from <a href="http://leafletjs.com/" target="_blank">Leaflet</a>, <a href="http://jquery.com/" target="_blank">jQuery</a>, <a href="http://lokeshdhakar.com/projects/lightbox2/" target="_blank">Lightbox</a>, and <a href="https://github.com/SINTEF-9012/PruneCluster" target="_blank">Prunecluster</a>.</li>
-          <li>Satelite images courtesy of Google.</li>
-          <li>Source code on <a href="https://github.com/mziegler/WinslowHomerDay" target="_blank">GitHub</a>.</li>
-          <li>Hosted for free by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</li>
-          <li>Monkey face icon by <a href="http://bostinius.com/" target="_blank">Zille Sophie Bostinius</a>.</li>
-        </p>
-      </div>
-      
-      
-      
-      
-      <div id="panel-donate" class="side-panel-content" style="display:none">
-        <span class="side-title">Donate</span>
-       
-        <a class="side-linkout" id="donate-paypal" style="display:block" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MWBPPSVMGF3BY" target="_blank">
-          <div id="paypall-wrapper" style="vertical-align:middle; padding-top:15px;">
-            Donate to the Capuchin Foundation via PayPal
-            <div style="padding-top:15px;padding-bottom:10px;"><img src="/icons/btn_donate_SM.gif" /></div>
-          </div>
-        </a>
-        
-        
-         <a class="side-linkout" style="margin-bottom: 17px; display:block" href="http://www.amazon.com/?&tag=suspercapfoui-20&camp=15345&creative=331685&linkCode=ur1&adid=1JMHAJQAFH0RZKSD1BY1&&ref-refURL=http%3A%2F%2Fcapuchinfoundation.org%2F" target="_blank">Shop <b>Amazon.com</b> through this link, and Amazon will donate 5% of the purchase price to the Capuchin Foundation. &rarr;</a>
-        
-         <a href="http://capuchinfoundation.org/donate/index.html" target="_blank">Learn more about how you can help the Capuchin Foundation &rarr;</a>
-        
-         <p>The capuchins of the <i>Lomas Barbudal Monkey Project</i> have become one of the most widely-studied wild monkey populations in the world.  Long-term field studies give us important insight into primate conservation, ecology, evolution, and human origins.  We have to act quick, because the monkeys' tropical forest habitats are vanishing at an alarming rate!
-        </p>  
-        
-        <p><b>The Capuchin Foundation</b> supports the scientific, conservation, and education work of the monkey project.  Funding for long-term primate research projects is hard to come by these days, and every little bit helps.  The Capuchin Foundation needs donations to cover the costs of equipment, feeding our mostly-volunteer research crew, and putting together a massive database of the project's historical data.  You can help! 
-        </p>
-        
-        <br /><br /><br />
+      <!-- build:include html/about.html --><!-- /build --> 
+      <!-- build:include html/donate.html --><!-- /build -->
+      <!-- build:include html/monkeybiographies.html --><!-- /build -->
 
-      </div>
-      
-      
-      
-      <div id="panel-biographies" class="side-panel-content">
-      
-        <span class="side-title">Monkey Biographies</span>
-        
-        <p>
-          <table id="mono-list">
-            <tr>
-              <td>Protagonist</td>
-              <td>
-                <a class="mono-jump" href="#mono-wh">Winslow Homer &#9794;</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Mom (alpha female)</td>
-              <td>
-                <a class="mono-jump" href="#mono-da">Dali &#9792;</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Dad (alpha male)</td>
-              <td>
-                <a class="mono-jump" href="#mono-du">Duende &#9794;</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Brothers and sisters</td>
-              <td>
-                <a class="mono-jump" href="#mono-lo">Kahlo &#9794;</a>
-                <a class="mono-jump" href="#mono-pc">Picasso &#9792;</a>
-                <a class="mono-jump" href="#mono-ve">Vermeer &#9792;</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Adult relatives</td>
-              <td>
-                <a class="mono-jump" href="#mono-ne">Champagne &#9792;</a>
-                <a class="mono-jump" href="#mono-dt">Dante &#9792;</a>
-                <a class="mono-jump" href="#mono-fy">Fishy &#9792;</a>
-                <a class="mono-jump" href="#mono-mr">Monster &#9792;</a>
-                <a class="mono-jump" href="#mono-op">Opie &#9792;</a>
-                <a class="mono-jump" href="#mono-vv">Vandal &#9792;</a>
-                <a class="mono-jump" href="#mono-vd">Vladimir &#9792;</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Juvenile relatives</td>
-              <td>
-                <a class="mono-jump" href="#mono-aj">Arjuna &#9792;</a>
-                <a class="mono-jump" href="#mono-bi">Bilbo &#9794;</a>
-                <a class="mono-jump" href="#mono-dg">Danger &#9794;</a>
-                <a class="mono-jump" href="#mono-ub">Dubious &#9794;</a>
-                <a class="mono-jump" href="#mono-dp">Duplo &#9794;</a>
-                <a class="mono-jump" href="#mono-fn">Frankenstein &#9794;</a>
-                <a class="mono-jump" href="#mono-kh">Krishna &#9794;</a>
-                <a class="mono-jump" href="#mono-nc">Nickel &#9792;</a>
-                <a class="mono-jump" href="#mono-pv">Peeves &#9794;</a>
-                <a class="mono-jump" href="#mono-qm">Quasimono &#9792;</a>
-                <!-- <a class="mono-jump" href="#mono-qh">Quidditch &#9792; no bio for Quidditch </a> -->
-                <a class="mono-jump" href="#mono-on">Seiton &#9792;</a>
-                <a class="mono-jump" href="#mono-vr">Viceroy &#9792;</a>
-              </td>
-            </tr>
-            <tr>
-              <td>Migrant males</td>
-              <td>
-                <a class="mono-jump" href="#mono-dq">King Donkey &#9794;</a>
-                <a class="mono-jump" href="#mono-kj">King James &#9794;</a>
-                <a class="mono-jump" href="#mono-pj">Pope John &#9794;</a>
-                <a class="mono-jump" href="#mono-tj">Tom Jerry &#9794;</a>
-              </td>
-            </tr>
-          </table>
-        </p>
-      
-        <br />
-        <span class="side-title">Cast of characters</span>
-        
-        <p>
-          <a class="mono-name" name="mono-wh">Winslow Homer</a> was born April 8, 2013, to Dali, the alpha female of Abby&rsquo;s group. He was the darling of the group, widely sought after by would-be  babysitters, and exceedingly precocious. He surprised researchers by becoming the youngest male ever to transfer to a new social group, at age 14 months.
-        </p>
-        <p>
-          <a class="mono-name" name="mono-da">Dali</a> was born on July 20, 2001, to Diablita, who was at that time the alpha female of Abby&rsquo;s group. Researchers generally described her as a &ldquo;spoiled princess,&rdquo; as she was always popular with the rest of the group. She always gives the impression of leading a charmed life, weathering all forms of social turmoil and environmental stress as if it were no challenge, while her groupmates are visibly stressed. Dali was the closest ally of her mother Diablita. Dali became alpha female near the end of Diablita&rsquo;s life.
-        </p>
-        <p>
-          <a class="mono-name" name="mono-vv">Vandal</a>, Winslow&rsquo;s great aunt, is the oldest female in the group (born in 1989). She was, at various times, the closest friend and the chief political rival of Winslow&rsquo;s grandmother Diablita. Vandal was presumed dead in November 2011 when she vanished for several days, leaving her infant Peeves motherless and wounded. She eventually reappeared, with grisly wounds that still leave her scarred. Researchers hypothesize that she received these wounds while defending her infant from a raptor. 
-        </p>
-        <p>
-          <a class="mono-name" name="mono-pv">Peeves</a>  was born in July 2011 to Winslow&rsquo;s great-aunt Vandal. His fourth month of life was especially traumatic, when he was wounded and his mother disappeared for several days. But aunt Monster&rsquo;s loving care enabled him to survive, and he is now a well-adjusted juvenile.
-        </p>
-        <p>
-          <a class="mono-name" name="mono-du">Duende</a>, the current alpha male of the group, was born in 1996 in the neighboring group (Rambo&rsquo;s group). He migrated to Abby&rsquo;s group in 2003, along with his brothers Tranquilo and Elmo, and Tranquilo became alpha male. When Tranquilo died in 2007, Duende became alpha male. Duende and Elmo had a fierce struggle for the alpha male position in 2011, in which they alternated between being leader of the group and being a wounded outcast. Duende emerged victorious and Elmo left the group. Duende is a particularly nervous and twitchy alpha male, constantly vigilant and good at running from his enemies to avoid trouble. Researchers are perplexed that he has been able to keep the alpha male position for so long, given his lack of social skills relative to other males.   
-        </p>
-        <p>
-          <a class="mono-name" name="mono-tj">Tom Jerry</a> migrated into Abby&rsquo;s group at the end of 2012. He is an excellent politician and constantly tries to ingratiate himself with Dali by offering his babysitting services to Winslow.  
-        </p>
-        <p>
-          <a class="mono-name" name="mono-pj">Pope John</a>, <a class="mono-name" name="mono-kj">King James</a>, and <a class="mono-name" name="mono-dq">King Donkey</a> are all recent (2013) immigrants to the group. Researchers don&rsquo;t know whether they are related to one another, since they came from outside the study area, but their strong physical resemblance to one another and the timing of their arrival suggests that they are likely to be brothers or cousins.
-        </p>
-        <p>
-          Winslow&rsquo;s cousins <a class="mono-name" name="mono-fn">Frankenstein</a> (Monster&rsquo;s infant, born 2 months before Winslow Homer) and <a class="mono-name" name="mono-ub">Dubious</a> (Fishy&rsquo;s infant born 9 months before Winslow) are Winslow&rsquo;s most frequent play partners, though he plays often with older juveniles as well.  Often Dali had trouble finding Winslow when she wanted to nurse him and would end up nursing baby Frankenstein instead. 
-        </p>
-        <p>
-          Winslow&rsquo;s uncle <a class="mono-name" name="mono-dg">Danger</a> and cousins <a class="mono-name" name="mono-bi">Bilbo</a>, <a class="mono-name" name="mono-vr">Viceroy</a> and <a class="mono-name" name="mono-kh">Krishna</a> are the &ldquo;cool big boys&rdquo; in the group. Born in 2997-2008, they are young enough to enjoy frequent and quite vigorous rough and tumble play bouts, but old enough to start participating in intergroup encounters and think about leaving home.
-        </p>
-        <br />
-        <p>
-        Winslow Homer has numerous sisters, cousins and aunts, all of whom are fond of indulging him with grooming, nursing, and cuddling: 
-        </p>        
-        <p>
-          <a class="mono-name" name="mono-dt">Dante</a> was born on December 25, 2004 to Diablita - a then subordinate female in Abby's group. Her father Tranquilo was the group alpha male at the time. Dante currently resides with her maternal half sisters Dali and Seiton plus her full brother Danger and maternal half brother Duplo. She is a very close ally of her sister, Dali, and an important alloparent to Winslow Homer.
-        </p>
-        <p>
-          Aunt <a class="mono-name" name="mono-op">Opie</a>, born in 1993, is a particularly good groomer, when she can spare time from coddling her little son <a class="mono-name" name="mono-jp">Jigglypuff</a> (born in 2010) and daughter <a class="mono-name" name="mono-nc">Nickel</a> (born in 2012).  Aunts <a class="mono-name" name="mono-fy">Fishy</a> (born in 1999) and <a class="mono-name" name="mono-vd">Vladimir</a> (born in 2004), as well as cousins <a class="mono-name" name="mono-pc">Picasso</a> and <a class="mono-name" name="mono-ne">Champagne</a> (both born in 2007), are always happy to help Winslow as well, and these female relatives are even willing to give milk to Winslow when his mom isn&rsquo;t handy.
-        </p>
-        <p>
-          Cousin <a class="mono-name" name="mono-mr">Monster</a> was born on June 6, 1995, to Cookie (Vandal&rsquo;s daughter). Cookie died in Nov 2006, when Monster was just 17 months old and not quite weaned, leaving Monster to be an orphan. She grew up being more of a loner than the other monkeys and was often bullied by her aunts and cousins. Monster lost her first infant shortly before Vandal disappeared from the group. She eagerly adopted baby Peeves while Vandal was away - her care of Peeves during that time probably saved his life.  See the story in more detail here:
-        </p>
-          <a class="side-linkout" href="http://capuchinfoundation.org/resources/moneromemories" target="blank"><b>Monero Memories &rarr;</b><br />see <i>Monster and Peeves</i></a>  
-          
-        <p>
-          Big sister <a class="mono-name" name="mono-ve">Vermeer</a> (just two years older than Winslow) loves to carry Winslow Homer around, even though she isn&rsquo;t all that much bigger than he is. Other frequent playmates and babysitters include brother <a class="mono-name" name="mono-lo">Kahlo</a> and aunt <a class="mono-name" name="mono-on">Seiton</a> (born in 2009), cousins <a class="mono-name" name="mono-qm">Quasimono</a> (born 2010) and <a class="mono-name" name="mono-aj">Arjuna</a> (born 2011) and uncle <a class="mono-name" name="mono-dp">Duplo</a> (born 2011).
-        </p>  
-      </div>
       
     </div>
     
@@ -313,8 +142,9 @@
       </div>
     </div>
     
-    <script type="text/javascript" src="WHmap.js"></script>
-    
+    <!-- build:js:dist inline ../build/scripts.js.ugly -->
+      <script type="text/javascript" src="WHmap.js"></script>
+    <!-- /build -->
     
     </div>
     
