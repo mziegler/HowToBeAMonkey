@@ -27,6 +27,7 @@ intervalseconds = 60
 class InFileNames:
     observations = 'behavior observation codes.csv'
     translations = 'behavior code translations.csv'
+    mediafeatures = 'media features.json'
     gpstrack = 'GPS track.csv'
     pictures = 'pictures.csv'
     textbubbles = 'text bubbles.csv'
@@ -35,7 +36,7 @@ class InFileNames:
 class OutFileNames:
     behavior = 'behavior.json' # observations + translations
     behaviorcsv = 'behavior observation data.csv'
-    media = 'media.json' # pictures, videos, text
+    media = 'media.json' # pictures, videos, text, media features
 
 
 
@@ -308,16 +309,33 @@ def textbubbleJSON():
 
     
 
+
+
+
+def mediaFeaturesJSON():
+    with open(InFileNames.mediafeatures) as f:
+        return json.load(f)
+
+
+
+
+
+
     
 def buildMedia():
     with open(OutFileNames.media, 'w') as f:
         
-        json.dump({
+        media = {
             'pictures': pictureJSON(),
             'textbubbles': textbubbleJSON(),
-        }, f)
-    
-    
+        }
+        
+        media.update(mediaFeaturesJSON())
+        
+        json.dump(media, f)
+
+        
+        
     
     
     
