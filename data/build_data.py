@@ -29,7 +29,7 @@ class InFileNames:
     translations = 'behavior code translations.csv'
     gpstrack = 'GPS track.csv'
     pictures = 'pictures.csv'
-    textBuubble = 'text bubbles.csv'
+    textbubbles = 'text bubbles.csv'
 
 
 class OutFileNames:
@@ -278,10 +278,33 @@ def pictureJSON():
 
 
 
-def loadTextBubbleCSV():
-    pass
+def loadTextbubbleCSV():
+    with open(InFileNames.textbubbles) as f:
+        reader = csv.DictReader(f, skipinitialspace=True)
+        
+        bubbles = list(reader)
+        
+        # look up GPS coordinates from timestamp
+        for b in bubbles:
+            b['loc'] = getGPSCoords(parsetime(b['timestamp']))
+                    
+                    
+        return bubbles
 
 
+
+def textbubbleJSON():
+    bubbles = loadTextbubbleCSV()
+
+    return [
+        {
+            'loc': b['loc'],
+            'title': b['english_title'],
+            'text': b['english_text'],
+        }
+        
+        for b in bubbles
+    ]
 
     
 
@@ -291,6 +314,7 @@ def buildMedia():
         
         json.dump({
             'pictures': pictureJSON(),
+            'textbubbles': textbubbleJSON(),
         }, f)
     
     
