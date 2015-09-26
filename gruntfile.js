@@ -57,6 +57,30 @@ module.exports = function(grunt) {
         
         
         
+        processhtml: {
+            options: {
+                // task-specific options
+                files: {
+                    'build/index.html': ['src/index.html']
+                }
+            },
+            
+            dist: {
+                files: {
+                    'build/index.html': ['src/index.html']
+                }
+            },
+            
+            dev: {
+                files: {
+                    'build/index.html': ['src/index.html']
+                }
+            }
+        },
+        
+        
+        
+        
         // push to github pages
         'gh-pages': {
             options: {
@@ -85,9 +109,13 @@ module.exports = function(grunt) {
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     //grunt.registerTask('default', ['concat']);
     
-    grunt.registerTask('build', ['clean', 'mkdir', 'copy:prebuild', 'copy:postbuild']);
+    grunt.registerTask('setup', ['clean', 'mkdir', 'copy:prebuild']);
     
-    grunt.registerTask('default', ['build']);
+    grunt.registerTask('debug', ['setup', 'processhtml:dev']);
+    
+    grunt.registerTask('build', ['setup', 'processhtml:dist', 'copy:postbuild']);
+    
+    grunt.registerTask('default', ['debug']);
 };
 
 
