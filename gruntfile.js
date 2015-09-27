@@ -117,7 +117,30 @@ module.exports = function(grunt) {
             },
             
             src: ['**']
+        },
+        
+        
+        
+        
+        
+        'http-server': {
+            dev: {
+                root: 'build',
+                port: 8080,
+                runInBackground: true,
+                // logFn: function(req, res, error) { },
+            }    
+        },
+        
+        
+        watch: {
+            all: {
+                files: ['src/**'],
+                tasks: ['build-debug'],
+            }
         }
+        
+        
         
         
     });
@@ -126,21 +149,24 @@ module.exports = function(grunt) {
    
    
     
-    // 3. Where we tell Grunt we plan to use this plug-in.
-    //grunt.loadNpmTasks('grunt-contrib-concat');
-    
+
     // load tasks from all dependencies
     require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
 
     
     
     
-    // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    //grunt.registerTask('default', ['concat']);
+
     
     grunt.registerTask('setup', ['clean', 'mkdir', 'copy:prebuild']);
     
-    grunt.registerTask('debug', ['setup', 'processhtml:dev']);
+    
+    
+    grunt.registerTask('build-debug', ['setup', 'processhtml:dev']);
+    
+    grunt.registerTask('debug', ['build-debug', 'http-server', 'watch']);
+    
+    
     
     grunt.registerTask('build', ['setup', 'uglify', 'processhtml:dist', 'copy:postbuild']);
     
