@@ -69,11 +69,16 @@ module.exports = function(grunt) {
         uglify: {
             options: {
                 sourceMap: true,
+                screwIE8: true,
             },
             
             scripts: {
                 files: {
-                    'build/scripts.js.ugly': ['src/WHmap.js'],
+                    'build/scripts.js.ugly': [
+                            'src/js/map.js',
+                            'src/js/introscreens.js',
+                            'src/js/headercontrols.js',
+                            ],
                 }
             }
         },
