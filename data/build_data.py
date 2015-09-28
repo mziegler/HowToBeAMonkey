@@ -36,7 +36,7 @@ class InFileNames:
 class OutFileNames:
     behavior = 'behavior.json' # observations + translations
     behaviorcsv = 'behavior observation data.csv'
-    media = 'media.json' # pictures, videos, text, media features
+    media = 'media.js' # pictures, videos, text, media features
 
 
 
@@ -332,7 +332,9 @@ def buildMedia():
         
         media.update(mediaFeaturesJSON())
         
-        json.dump(media, f)
+        f.write('var media=')
+        f.write(json.dumps(media))
+        f.write(';')
 
         
         

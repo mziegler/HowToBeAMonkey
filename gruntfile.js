@@ -35,7 +35,8 @@ module.exports = function(grunt) {
         copy: {
             prebuild: {
                 files: [
-                    {expand: true, src: ['**'], cwd: 'src/', dest: 'build/',},            
+                    {expand: true, src: ['**'], cwd: 'src/', dest: 'build/',},
+                    {expand:true, cwd:'data/', src: ['media.js', 'behavior.json'], dest: 'build/'},        
                 ]
             },
             
@@ -47,6 +48,20 @@ module.exports = function(grunt) {
         },
         
         
+        
+        
+        
+        shell: {
+            options: {},
+            builddata: {
+                command: 'python3 build_data.py',
+                options: {
+                    execOptions: {
+                        cwd: 'data',
+                    }
+                }
+            }
+        },
         
         
         /*
@@ -134,9 +149,16 @@ module.exports = function(grunt) {
         
         
         watch: {
-            all: {
+            options: {
+                // debounceDelay:3000   // not actually preventing multiple builds
+            },
+            src: {
                 files: ['src/**'],
                 tasks: ['build-debug'],
+            },
+            data: {
+                files: ['data/**'],
+                tasks: ['build-data'],
             }
         }
         
@@ -157,7 +179,8 @@ module.exports = function(grunt) {
     
     
 
-    
+    grunt.registerTask('build-data', ['shell:builddata']);
+        
     grunt.registerTask('setup', ['clean', 'mkdir', 'copy:prebuild']);
     
     
