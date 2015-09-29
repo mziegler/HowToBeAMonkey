@@ -58,11 +58,11 @@ function initIntroScreens() {
 
   // when the 'next' button is clicked on the second intro screen
   $('#next-intro2').click(function() {
-    map.map.setZoom(initialView[1], {animate:false});
+    map.map.setZoom(map.initialView[1], {animate:false});
     
     window.setTimeout(function() {
       closeIntro();
-      map.map.panTo(initialView[0], {animate:true, duration:1.5, easeLinearity:1});
+      map.map.panTo(map.initialView[0], {animate:true, duration:1.5, easeLinearity:1});
     }, 300);
     
     window.setTimeout(function() {
@@ -79,7 +79,7 @@ function initIntroScreens() {
   function skipIntro() {
     $('div#overlay-intro').fadeOut('slow');
     headerControls.closeSidePanel();
-    map.map.setView(initialView[0], initialView[1], {animate: true});
+    map.map.setView(map.initialView[0], map.initialView[1], {animate: true});
     setTimeout(function() { map.startMarker.openPopup(); }, 300);
   }
   $('div.skip-intro, #overlay-intro').click(skipIntro);
@@ -92,7 +92,7 @@ function initIntroScreens() {
     $('div#overlay-intro1').show();
     $('div#overlay-intro').fadeIn('slow');
     setTimeout(function() { 
-      map.map.setView(initialView[0], initialView[1], {animate: true});
+      map.map.setView(map.initialView[0], map.initialView[1], {animate: true});
     }, 500);
   }
 

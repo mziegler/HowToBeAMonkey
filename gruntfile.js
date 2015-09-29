@@ -91,6 +91,7 @@ module.exports = function(grunt) {
                 files: {
                     'build/scripts.js.ugly': [
                             'src/js/map.js',
+                            'src/js/mapmedia.js',
                             'src/js/introscreens.js',
                             'src/js/headercontrols.js',
                             ],
@@ -156,10 +157,10 @@ module.exports = function(grunt) {
                 files: ['src/**'],
                 tasks: ['build-debug'],
             },
-            data: {
-                files: ['data/**'],
-                tasks: ['build-data'],
-            }
+            //data: {
+            //    files: ['data/**'],
+            //    tasks: ['build-data'],
+            //}
         }
         
         

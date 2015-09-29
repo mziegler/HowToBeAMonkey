@@ -157,25 +157,25 @@ L.control.scale().addTo(map); // scale control
 // cluster layer zoom behavior handled in clusterIconFactory function
 function zoomHandle() {
   if (map.getZoom() <= 17) {
-    map.removeLayer(pictureLayer);
-    map.removeLayer(textBoxLayer);
+    //map.removeLayer(pictureLayer);
+    //map.removeLayer(textBoxLayer);
     map.closePopup();
   }
   else {
-    map.addLayer(pictureLayer);
-    map.addLayer(textBoxLayer);
+    //map.addLayer(pictureLayer);
+    //map.addLayer(textBoxLayer);
   }
   
   
   if (map.getZoom() <= 14) {
-    map.removeLayer(endMarker);
-    map.removeLayer(rioCabuyo);
-    map.removeLayer(rioPizote);
+    //map.removeLayer(endMarker);
+    //map.removeLayer(rioCabuyo);
+    //map.removeLayer(rioPizote);
   }
   else {
-    map.addLayer(endMarker);
-    map.addLayer(rioCabuyo);
-    map.addLayer(rioPizote);
+    //map.addLayer(endMarker);
+    //map.addLayer(rioCabuyo);
+    //map.addLayer(rioPizote);
   }
 }
 zoomHandle();
@@ -191,7 +191,7 @@ return {
   map: map,
   animationLineClipPadding: animationLineClipPadding,
   resetLineClipPadding: resetLineClipPadding,
-  startMarker: startMarker,
+  //startMarker: startMarker,
   initialView: initialView,
   }
 }
