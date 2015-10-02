@@ -66,7 +66,7 @@ function initIntroScreens() {
     }, 300);
     
     window.setTimeout(function() {
-      map.startMarker.openPopup();
+      //map.startMarker.openPopup();
       map.resetLineClipPadding();  // restore old clip padding
       //L.DomUtil.removeClass(map._mapPane, 'leaflet-zoom-anim-slow');
     }, 2000);
