@@ -44,10 +44,10 @@ function initMapMedia() {
     
     
     // generate unique cluster-icon class names
-    var uniqueClassNumber = 0;
-    function uniqueClassGenerator() {
-        uniqueClassNumber += 1;
-        return 'bubble' + uniqueClassNumber;
+    var uniqueIDCounter = 0;
+    function uniqueIDGenerator() {
+        uniqueIDCounter += 1;
+        return 'WH-auto-' + uniqueIDCounter;
     }
     
     
@@ -71,10 +71,13 @@ function initMapMedia() {
     
     
     
+    
+    // Called to create the Leaflet icon for the cluster, but doesn't actually
+    // draw the SVG bubbles yet.
     function buildLeafletClusterIcon(cluster) {
     
       
-        var uniqueClass = uniqueClassGenerator();
+        var uniqueClass = uniqueIDGenerator();
     
         var icon = L.divIcon({
             iconSize: [clusterDiameter, clusterDiameter],
@@ -95,14 +98,134 @@ function initMapMedia() {
     
     
     
-    function bubbleCount(clusterMarkers) {
-        // _clusterMarkers
     
-        var bubbles = {};
     
-        $.each(clusterMarkers
+    function sortBubbles(clusterMarkers) {
+    
+        var bubbleGroups = {
+            picture: [],
+            video: [], // TO DO
+            text: [],
+            behavior: {},
+        };
+    
+        $.each(clusterMarkers, function(i, marker) {
+            observation = marker.data
+            
+            switch(observation.type) {
+            
+                case 'picture':
+                    bubbleGroups.picture.push(observation);
+                    break;
+                    
+                case 'text':
+                    bubbleGroups.text.push(observation);
+                    break;
+                    
+                case 'behavior':
+                    if (!(observation.category in bubbleGroups.behavior)) {
+                        bubbleGroups.behavior[observation.category] = [];    
+                    }
+                    bubbleGroups.behavior[observation.category].push(observation);
+                    break;
+
+                    
+            }
+        });
+        
+        
+        
+        
+        // just randomly sort bubbles (for now)
+        var sortedBubbles = [];
+        function insertRandom(list) {
+            var randomIndex = Math.floor(Math.random() * list.length);
+            
+            $.each(list, function(i, item) {
+                sortedBubbles.splice(randomIndex, 0, item);
+            });
+        }
+        
+        
+        
+        // randomly all bubbles into the list
+        $.each(bubbleGroups.picture, function(i, item) {
+            item.value=250;
+            insertRandom([item]);
+        });
+        $.each(bubbleGroups.text, function(i, item) {
+            item.value=300;
+            insertRandom([item]);
+        });
+        $.each(bubbleGroups.behavior, function(cat, observations) {
+            insertRandom([{
+                value: 100,
+                type: 'behaviorGroup',
+                observations: observations,
+                cat: cat,
+            }]);
+        });
+        
+        
+        
+        
+        
+        
+        return sortedBubbles;
+    
     
     }
+    
+    
+    
+    
+    
+    // "this" is SVG "G" DOM element
+    function renderBubbleIcon(bubbleData, G, clipPath) {
+        
+        clipPath.append("circle")
+            .attr('cx', bubbleData.r)
+            .attr('cy', bubbleData.r)
+            .attr('r', bubbleData.r);
+            
+        G.attr('width', 2*bubbleData.r)
+            .attr('height', 2*bubbleData.r);
+            
+        switch(bubbleData.type) {
+            case 'text':
+                G.append('rect')
+                    .attr('x', 0)
+                    .attr('y', 0)
+                    .attr('width', 2*bubbleData.r)
+                    .attr('height', 2*bubbleData.r)
+                    .attr('fill', 'rgba(0,0,0,0.7)');
+                break;
+                
+                
+            case 'picture':
+                G.append('image')
+                    .attr('x', '0')
+                    .attr('y', '0')
+                    .attr('width', 2*bubbleData.r)
+                    .attr('height', 2*bubbleData.r)
+                    .attr('xlink:href', 'pictures/thumbnails/' + bubbleData.uri)
+                    .attr('preserveAspectRatio', 'xMidYMid slice');
+                break;
+                
+            
+            case 'behaviorGroup':
+                G.append('rect')
+                    .attr('x', 0)
+                    .attr('y', 0)
+                    .attr('width', 2*bubbleData.r)
+                    .attr('height', 2*bubbleData.r)
+                    .attr('fill', 'rgba(0,0,0,0.7)');
+                break;
+        }
+    
+        
+    }
+    
     
     
     
@@ -112,20 +235,8 @@ function initMapMedia() {
     function bubbleSVG(cluster, containerSelection) {
     
     
-    
-        var playdata = {children: [
-         {color: 'yellowgreen', value: 200},
-         {color: 'yellowgreen', value: 200},
-         {color: 'yellowgreen', value: 200},
-         {color: 'lightblue', value: 200},
-         {color: 'lightblue', value: 200},
-         {color: 'lightblue', value: 200},
-         {color: 'orange', value: 200},
-         {color: 'orange', value: 200},
-         {color: 'orange', value: 200},
-         {color: 'yellow', value: 200},
-         {color: 'yellow', value: 200},
-        ]};
+        var bubbleData = sortBubbles(cluster._clusterMarkers);
+  
         
         var bubble = d3.layout.pack()
             //.sort(null)
@@ -139,18 +250,32 @@ function initMapMedia() {
             
             
         var node = svg.selectAll(".node")
-            .data(bubble.nodes(playdata)
+            .data(bubble.nodes({children: bubbleData})
                 .filter(function(d) { return !d.children; }))
           .enter().append("g")
             .attr("class", "node")
             .attr("transform", function(d) { 
                 return "translate(" + d.x + "," + d.y + ")"; 
             });
-
-        
-        node.append("circle")
-            .attr("r", function(d) { return d.r; })
-            .attr("fill", function(d) { return d.color; });
+            
+       
+       
+        node.each(function(bubbleData, i) {
+            var thisNode = d3.select(this);
+            
+            var clipID = uniqueIDGenerator();
+            
+            var clipPath = thisNode.append('clipPath')
+                .attr('id', clipID);
+            
+            var G = thisNode.append("g")
+                .attr('width', 2*bubbleData)
+                .attr('height', 2*bubbleData)
+                .attr('transform', 'translate(-' + bubbleData.r + ',-' + bubbleData.r + ')')
+                .attr('clip-path', 'url(#' + clipID + ')');
+                            
+            renderBubbleIcon(bubbleData, G, clipPath)
+        });
         
         
         return svg;
