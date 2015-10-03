@@ -99,7 +99,8 @@ function initMapMedia() {
     
     
     
-    
+    // Figure out which SVG bubbles to draw (and how big, in which order),
+    // based on the markers in this cluster.
     function sortBubbles(clusterMarkers) {
     
         var bubbleGroups = {
@@ -149,14 +150,6 @@ function initMapMedia() {
         
         
         // randomly all bubbles into the list
-        $.each(bubbleGroups.picture, function(i, item) {
-            item.value=250;
-            insertRandom([item]);
-        });
-        $.each(bubbleGroups.text, function(i, item) {
-            item.value=300;
-            insertRandom([item]);
-        });
         $.each(bubbleGroups.behavior, function(cat, observations) {
             insertRandom([{
                 value: 100,
@@ -164,6 +157,14 @@ function initMapMedia() {
                 observations: observations,
                 cat: cat,
             }]);
+        });
+        $.each(bubbleGroups.picture, function(i, item) {
+            item.value=250;
+            insertRandom([item]);
+        });
+        $.each(bubbleGroups.text, function(i, item) {
+            item.value=300;
+            insertRandom([item]);
         });
         
         
@@ -199,6 +200,12 @@ function initMapMedia() {
                     .attr('width', 2*bubbleData.r)
                     .attr('height', 2*bubbleData.r)
                     .attr('fill', 'rgba(0,0,0,0.7)');
+                G.append('text')
+                    .attr('text-anchor', 'middle')
+                    .attr('x', bubbleData.r)
+                    .attr('y', bubbleData.r)
+                    .attr('fill', 'white')
+                    .text(bubbleData.title);
                 break;
                 
                 
@@ -214,12 +221,14 @@ function initMapMedia() {
                 
             
             case 'behaviorGroup':
-                G.append('rect')
+                
+                G.append('image')
                     .attr('x', 0)
                     .attr('y', 0)
                     .attr('width', 2*bubbleData.r)
                     .attr('height', 2*bubbleData.r)
-                    .attr('fill', 'rgba(0,0,0,0.7)');
+                    .attr('xlink:href', 'icons/48/' + bubbleData.cat + '.png' )
+                    .attr('preserveAspectRatio', 'xMidYMid slice');
                 break;
         }
     
