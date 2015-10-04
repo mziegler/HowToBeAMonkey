@@ -96,7 +96,9 @@ module.exports = function(grunt) {
                             'src/js/headercontrols.js',
                             ],
                 }
-            }
+            },
+            
+
         },
         
         

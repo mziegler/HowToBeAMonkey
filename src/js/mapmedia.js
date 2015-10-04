@@ -9,9 +9,179 @@ function initMapMedia() {
     var clusterDiameter = 300;
     var clusterMargin = 50;
     
+    var hexBinBounds = [new L.LatLng(10.516, -85.3745), new L.LatLng(10.5075, -85.3605)];
     
     
     
+    
+    var HexBinLayer = L.Class.extend({
+        
+        initialize: function() {
+            
+        
+            this._layout = d3.hexbin()
+                .radius((clusterDiameter+clusterMargin)/2)
+                .x(function(d) { 
+                    return map.map.latLngToLayerPoint(new L.LatLng(d.loc[0], d.loc[1])).x 
+                })
+                .y(function(d) { 
+                    return map.map.latLngToLayerPoint(new L.LatLng(d.loc[0], d.loc[1])).y 
+                });
+            
+            // Markers to be clustered
+            this._markers = [];
+            
+            
+            // Zoom level currently rendered on the map
+            this._renderedZoom = -1;
+            
+            
+            // SVG with icons, needs to be resized + re-positioned with each zoom.
+            this._SVG = null;
+            
+            
+            // Keys are zoom levels, values are G's rendered on the map
+            this._G = {};
+            
+        },
+        
+        
+        RegisterMarker: function(marker) {
+            this._markers.push(marker);
+        },
+        
+        
+        
+        onAdd: function(map) {
+            this._map = map;
+            
+            
+            if (this._SVG) {
+                d3.select(this._map.getPanes().overlayPane)
+            }
+            
+            // create a DOM element and put it into one of the map panes
+            this._SVG = d3.select(this._map.getPanes().overlayPane)
+                .append('SVG')
+                .attr('class', 'hexbin-layer leaflet-zoom-hide');
+            
+            
+            
+            // add a viewreset event listener for updating layer's position, do the latter
+            map.on('moveend', this._moveend, this);
+            this._moveend();
+        },
+        
+        
+        
+        
+        onRemove: function (map) {
+            // remove layer's DOM elements and listeners
+            map.getPanes().overlayPane.removeChild(this._SVG);
+            map.off('moveend', this._moveend, this);
+        },
+        
+        
+
+        
+        
+        
+        
+        _createHexBins: function(G, width, height) {
+            var hex_centers = G.selectAll('circle') //g.hex-enter')
+                .data((
+                    this._layout
+                    .size([width,height]))(this._markers))
+                .enter()/*
+                .append('g')
+                .attr('class', 'hex-center')
+                .attr('transform', function(d){ return 'translate(' + d.x + ',' + d.y + ')'; });
+            
+            hex_centers*/
+            .append('circle')
+                .attr('cx', function(d) { return d.x })//0)
+                .attr('cy', function(d) { return d.y })//0)
+                .attr('r', 25)
+                .attr('fill', 'orange');    
+                
+        },
+        
+        
+        
+        
+        _moveend: function() {
+            if (!this._map) { return; }
+
+            var zoom = this._map.getZoom();
+
+            // TODO hide for some zoom levels
+            //if (zoom > this.options.maxZoom || zoom < this.options.minZoom) {
+            //    return;
+            //}
+            
+            
+            
+            
+            // if the zoom has changed, show a new/different G layer of hex markers
+            if (zoom != this._renderedZoom) {
+                
+                // Hide all hex layers
+                $.each(this._G, function(z, G) {
+                    G.attr('visibility', 'hidden');
+                });
+                
+                
+                
+                // Update SVG bounds
+                var topLeft = this._map.latLngToLayerPoint(hexBinBounds[0]);
+                var bottomRight = this._map.latLngToLayerPoint(hexBinBounds[1]);
+                this._SVG 
+                    .attr("width", bottomRight.x - topLeft.x)
+                    .attr("height", bottomRight.y - topLeft.y)
+                    .style("left", topLeft.x + "px")
+                    .style("top", topLeft.y + "px");
+                
+                
+                
+                // Show the G currently rendered on the map, if it already exists
+                if (zoom in this._G) {
+                    this._G[zoom].attr('visibility', 'visible');
+                }
+                
+                // Create a new G for this zoom level, and render hex markers
+                else {
+                    var G = this._SVG.append('G')
+                        .attr('class', 'hexbin-zoom-layer');
+                    
+                    G.attr('transform', 'translate(' + -topLeft.x + ',' + -topLeft.y + ')');
+                    
+                    this._G[zoom] = G;
+                    
+                    // CREATE CLUSTER MARKERS
+                    this._createHexBins(G, bottomRight.x - topLeft.x, bottomRight.y - topLeft.y);
+                        
+                }
+                
+                
+                
+                this._renderedZoom = zoom;
+            }
+            
+            
+            // DRAW ICONS FOR VISIBLE CLUSTER MARKERS
+        },
+        
+        
+        
+    });   
+
+    
+    
+    
+    
+    
+    
+    /*
     function buildClusterMarker(cluster, position) {
       var m = new L.Marker(position, {
         icon: buildLeafletClusterIcon(cluster)
@@ -39,7 +209,7 @@ function initMapMedia() {
       
       return m;
     }
-    
+    */
     
     
     
@@ -244,7 +414,7 @@ function initMapMedia() {
     function bubbleSVG(cluster, containerSelection) {
     
     
-        var bubbleData = sortBubbles(cluster._clusterMarkers);
+        var bubbleData = sortBubbles(cluster);
   
         
         var bubble = d3.layout.pack()
@@ -314,22 +484,25 @@ function initMapMedia() {
         return clusterLayer;
     }
     
+    
+    
+    
 
     
     
     function loadBubbleMedia(media, behavior) {
-        var clusterLayer = ClusterLayer();
+        var clusterLayer = new HexBinLayer();
         
         
         // load behavior points
         $.each(behavior.behavior, function(i, observation) {
-            var marker = new PruneCluster.Marker(observation.loc[0], observation.loc[1]);
-            marker.data = {
+            var marker = {
+                loc: observation.loc,
                 type: 'behavior',
-                time: observation['time'],
-                rank: observation['rank'],
-                category: observation['cat'],
-                text: observation['text'],
+                time: observation.time,
+                rank: observation.rank,
+                category: observation.cat,
+                text: observation.text,
             }
             clusterLayer.RegisterMarker(marker);
         });
@@ -338,11 +511,11 @@ function initMapMedia() {
         
         // load pictures
         $.each(media.pictures, function(i, picture) {
-            var marker = new PruneCluster.Marker(picture.loc[0], picture.loc[1]);
-            marker.data = {
+            var marker = {
+                loc: picture.loc,
                 type: 'picture',
-                uri: picture['uri'],
-                caption: picture['cap'],
+                uri: picture.uri,
+                caption: picture.cap,
             }
             clusterLayer.RegisterMarker(marker);
         });
@@ -351,11 +524,11 @@ function initMapMedia() {
         
         // load text bubbles
         $.each(media.textbubbles, function(i, textbubble) {
-            var marker = new PruneCluster.Marker(textbubble.loc[0], textbubble.loc[1]);
-            marker.data = {
+            var marker = {
+                loc: textbubble.loc,
                 type: 'text',
-                title: textbubble['title'],
-                text: textbubble['text'],
+                title: textbubble.title,
+                text: textbubble.text,
             }
             clusterLayer.RegisterMarker(marker);
             
