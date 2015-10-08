@@ -36,13 +36,10 @@ function initMapMedia() {
             this._renderedZoom = -1;
             
             
-            // SVG with icons, needs to be resized + re-positioned with each zoom.
-            this._SVG = null;
+            // DIV element with hex layer, needs to be resized + re-positioned with each zoom.
+            this._el = null;
             
-            
-            // 
-            this._G = null;
-            
+
         },
         
         
@@ -61,14 +58,11 @@ function initMapMedia() {
             }
             
             // create a DOM element and put it into one of the map panes
-            this._SVG = d3.select(this._map.getPanes().overlayPane)
-                .append('SVG')
+            this._el = d3.select(this._map.getPanes().overlayPane)
+                .append('div')
                 .attr('class', 'hexbin-layer leaflet-zoom-hide');
             
             
-            this._G = this._SVG.append('G')
-                      .attr('class', 'hexbin-zoom-layer');
-                    
             
             
             // add a viewreset event listener for updating layer's position, do the latter
@@ -81,7 +75,7 @@ function initMapMedia() {
         
         onRemove: function (map) {
             // remove layer's DOM elements and listeners
-            map.getPanes().overlayPane.removeChild(this._SVG);
+            map.getPanes().overlayPane.removeChild(this._el);
             map.off('moveend', this._moveend, this);
         },
         
@@ -117,7 +111,7 @@ function initMapMedia() {
             if (!this._map) { return; }
 
 
-
+            /*
             // Update SVG bounds
             var topLeft = this._map.latLngToLayerPoint(hexBinBounds[0]);
             var bottomRight = this._map.latLngToLayerPoint(hexBinBounds[1]);
@@ -131,17 +125,20 @@ function initMapMedia() {
                 this._G.attr({
                     'transform': 'translate(' + -topLeft.x + ',' + -topLeft.y + ')'
                 });    
-                    
+            */        
                     
                     
             // DEBUG
-            var p = this._map.latLngToLayerPoint(new L.LatLng(media.WHtrack[0], media.WHtrack[1]));
-            this._G.append('circle')
-            .attr({
-                'fill': 'blue',
-                'cx': p.x,
-                'cy': p.y,
-                'r': 50,
+            var p = this._map.latLngToLayerPoint(new L.LatLng(media.WHtrack[0][0], media.WHtrack[0][1]));
+            this._el.append('div')
+            .style({
+                'position': 'absolute',
+                'left': p.x + 'px',
+                'top': p.y + 'px',
+                'background-color': 'blue',
+                
+                'width': '50px',
+                'height': '50px',
                 'id': 'test',
             });
                     
