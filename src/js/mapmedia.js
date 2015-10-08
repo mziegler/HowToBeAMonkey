@@ -40,8 +40,8 @@ function initMapMedia() {
             this._SVG = null;
             
             
-            // Keys are zoom levels, values are G's rendered on the map
-            this._G = {};
+            // 
+            this._G = null;
             
         },
         
@@ -65,6 +65,10 @@ function initMapMedia() {
                 .append('SVG')
                 .attr('class', 'hexbin-layer leaflet-zoom-hide');
             
+            
+            this._G = this._SVG.append('G')
+                      .attr('class', 'hexbin-zoom-layer');
+                    
             
             
             // add a viewreset event listener for updating layer's position, do the latter
@@ -112,62 +116,43 @@ function initMapMedia() {
         _moveend: function() {
             if (!this._map) { return; }
 
-            var zoom = this._map.getZoom();
 
-            // TODO hide for some zoom levels
-            //if (zoom > this.options.maxZoom || zoom < this.options.minZoom) {
-            //    return;
-            //}
-            
-            
-            
-            
-            // if the zoom has changed, show a new/different G layer of hex markers
-            if (zoom != this._renderedZoom) {
-                
-                // Hide all hex layers
-                $.each(this._G, function(z, G) {
-                    G.attr('visibility', 'hidden');
-                });
+
+            // Update SVG bounds
+            var topLeft = this._map.latLngToLayerPoint(hexBinBounds[0]);
+            var bottomRight = this._map.latLngToLayerPoint(hexBinBounds[1]);
+            this._SVG 
+                .attr("width", bottomRight.x - topLeft.x)
+                .attr("height", bottomRight.y - topLeft.y)
+                .style("left", topLeft.x + "px")
+                .style("top", topLeft.y + "px");
                 
                 
-                
-                // Update SVG bounds
-                var topLeft = this._map.latLngToLayerPoint(hexBinBounds[0]);
-                var bottomRight = this._map.latLngToLayerPoint(hexBinBounds[1]);
-                this._SVG 
-                    .attr("width", bottomRight.x - topLeft.x)
-                    .attr("height", bottomRight.y - topLeft.y)
-                    .style("left", topLeft.x + "px")
-                    .style("top", topLeft.y + "px");
-                
-                
-                
-                // Show the G currently rendered on the map, if it already exists
-                if (zoom in this._G) {
-                    this._G[zoom].attr('visibility', 'visible');
-                }
-                
-                // Create a new G for this zoom level, and render hex markers
-                else {
-                    var G = this._SVG.append('G')
-                        .attr('class', 'hexbin-zoom-layer');
+                this._G.attr({
+                    'transform': 'translate(' + -topLeft.x + ',' + -topLeft.y + ')'
+                });    
                     
-                    G.attr('transform', 'translate(' + -topLeft.x + ',' + -topLeft.y + ')');
                     
-                    this._G[zoom] = G;
                     
-                    // CREATE CLUSTER MARKERS
-                    this._createHexBins(G, bottomRight.x - topLeft.x, bottomRight.y - topLeft.y);
-                        
-                }
+            // DEBUG
+            var p = this._map.latLngToLayerPoint(new L.LatLng(media.WHtrack[0], media.WHtrack[1]));
+            this._G.append('circle')
+            .attr({
+                'fill': 'blue',
+                'cx': p.x,
+                'cy': p.y,
+                'r': 50,
+                'id': 'test',
+            });
+                    
+                    
+                    
+                    
+            // CREATE CLUSTER MARKERS
+            // this._createHexBins(G, bottomRight.x - topLeft.x, bottomRight.y - topLeft.y);
                 
-                
-                
-                this._renderedZoom = zoom;
-            }
-            
-            
+
+
             // DRAW ICONS FOR VISIBLE CLUSTER MARKERS
         },
         
