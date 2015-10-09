@@ -9,6 +9,11 @@ function initMapMedia() {
     var clusterDiameter = 300;
     var clusterMargin = 50;
     
+    
+    // Range over which to show icons
+    // var zoomRange = {min: ??, max: ??};
+    
+    
     // Bounding box in which to compute the hex layout
     var hexBinBounds = {
             top: 10.516,
@@ -22,15 +27,15 @@ function initMapMedia() {
     
     
     
+    // Hex layer used to arrange icon clusters on the map
     var HexBinLayer = L.Class.extend({
         
+        
         initialize: function() {
-            
         
             this._layout = d3.hexbin()
-                //.radius((clusterDiameter+clusterMargin)/2)
                 
-                // convert points to coordinate system with positive numbers and origin at 0,0
+                // convert points to a coordinate system with positive numbers and origin at 0,0
                 .x(function(d) { 
                     return d.loc[1] - hexBinBounds.left;
                 })
@@ -39,6 +44,7 @@ function initMapMedia() {
                     return d.loc[0] - hexBinBounds.top;
                 })
                 
+                // area over which to compute hex layout
                 .size([hexBinBounds.right - hexBinBounds.left,
                     hexBinBounds.top - hexBinBounds.bottom]);
                 
@@ -61,6 +67,7 @@ function initMapMedia() {
         
         
         
+        
         registerMarker: function(marker) {
             this._markers.push(marker);
         },
@@ -74,15 +81,11 @@ function initMapMedia() {
             this._map = map;
             
             
-            if (this._SVG) {
-                d3.select(this._map.getPanes().overlayPane)
-            }
             
             // create a DOM element and put it into one of the map panes
             this._el = d3.select(this._map.getPanes().overlayPane)
                 .append('div')
                 .attr('class', 'hexbin-layer leaflet-zoom-hide');
-            
             
             
             
@@ -104,6 +107,40 @@ function initMapMedia() {
         
         
 
+
+        
+        _reset: function() {
+            this._createHexClusters();
+        },
+        
+        
+        
+        
+        _moveend: function() {
+       
+            var map = this._map;
+       
+            // loop over clusters
+            this._el.selectAll('div.hexcluster').each(function(clusterdata, i) {
+                
+                if (
+                    // does this cluster not have bubble icons yet? 
+                    d3.select(this).select('svg').empty()
+                    
+                        &&
+                    
+                    // is this cluster within the visible bounds of the map?
+                    map.getBounds().contains([clusterdata.y + hexBinBounds.top, clusterdata.x + hexBinBounds.left])
+                ) {
+                    
+                    // render bubble icons for this cluster
+                    bubbleSVG(clusterdata, d3.select(this));
+                    
+                }
+                
+            });      
+           
+        },
         
         
         
@@ -139,16 +176,15 @@ function initMapMedia() {
                     
                     // convert from hexcluster space to layer point space
                     left: function(d) { 
-                        return map.latLngToLayerPoint([0, d.x + hexBinBounds.left]).x + 'px';
+                        return (map.latLngToLayerPoint([0, d.x + hexBinBounds.left]).x - clusterDiameter/2) + 'px';
                     },
                     
                     top: function(d) { 
-                        return map.latLngToLayerPoint([d.y + hexBinBounds.top, 0]).y + 'px';
+                        return (map.latLngToLayerPoint([d.y + hexBinBounds.top, 0]).y - clusterDiameter/2) + 'px';
                     },
                     
-                    width: '50px',
-                    height: '50px',
-                    'background-color': 'orange',
+                    width: clusterDiameter + 'px',
+                    height: clusterDiameter + 'px',
                 });
             
   
@@ -158,42 +194,7 @@ function initMapMedia() {
         
         
         
-        _reset: function() {
-            this._createHexClusters();
-        },
         
-        
-        
-        
-        _moveend: function() {
-            if (!this._map) { return; }
-       
-                    
-             /*
-            // DEBUG
-            var p = this._map.latLngToLayerPoint(new L.LatLng(media.WHtrack[0][0], media.WHtrack[0][1]));
-            this._el.append('div')
-            .style({
-                'position': 'absolute',
-                'left': p.x + 'px',
-                'top': p.y + 'px',
-                'background-color': 'blue',
-                
-                'width': '50px',
-                'height': '50px',
-                'id': 'test',
-            });
-             */       
-                    
-                    
-                    
-            // CREATE CLUSTER MARKERS
-            this._createHexClusters();
-                
-
-
-            // DRAW ICONS FOR VISIBLE CLUSTER MARKERS
-        },
         
         
         
@@ -304,8 +305,7 @@ function initMapMedia() {
             behavior: {},
         };
     
-        $.each(clusterMarkers, function(i, marker) {
-            observation = marker.data
+        $.each(clusterMarkers, function(i, observation) {
             
             switch(observation.type) {
             
@@ -435,10 +435,10 @@ function initMapMedia() {
     
     
     // Draw the cluster SVG inside the given D3 selection.
-    function bubbleSVG(cluster, containerSelection) {
+    function bubbleSVG(clusterdata, containerSelection) {
     
     
-        var bubbleData = sortBubbles(cluster);
+        var bubbleData = sortBubbles(clusterdata);
   
         
         var bubble = d3.layout.pack()
@@ -487,31 +487,6 @@ function initMapMedia() {
     
     
     
-    
-    
-    // create a cluster layer, but don't add it to the map yet
-    function ClusterLayer() {
-    
-        PruneCluster.Cluster.ENABLE_MARKERS_LIST = true;
-    
-        var clusterLayer = new PruneClusterForLeaflet(400);
-        
-        // disable spiderfy via monkey-patch
-        clusterLayer.spiderfier.Spiderfy = function(){return false;};
-        
-        
-        clusterLayer.BuildLeafletClusterIcon = buildLeafletClusterIcon;
-        clusterLayer.BuildLeafletCluster = buildClusterMarker;
-        //clusterLayer.PrepareLeafletMarker = prepareSingletonMarker;
-        
-        
-        return clusterLayer;
-    }
-    
-    
-    
-    
-
     
     
     function loadBubbleMedia(media, behavior) {
@@ -577,8 +552,6 @@ function initMapMedia() {
     
 
     
-
-
 
 
     return {
