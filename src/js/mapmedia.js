@@ -192,10 +192,7 @@ function initMapMedia() {
         },
         
         
-        
-        
-        
-        
+
         
         
     });   
@@ -205,36 +202,6 @@ function initMapMedia() {
     
     
     
-    
-    /*
-    function buildClusterMarker(cluster, position) {
-      var m = new L.Marker(position, {
-        icon: buildLeafletClusterIcon(cluster)
-      });
-      
-      
-      m.on('add', function(e) {
-        //bubbleSVG(d3.select('.' + m.options.icon.uniqueClass));
-        
-        //console.log(m.options.icon.uniqueClass);
-        //console.log(d3.select('.' + m.options.icon.uniqueClass));
-      });      
-      
-      m.on('click', function(e) { 
-        // TODO 
-      });
-      
-      // remove popup when icon is removed
-      m.on('remove', function(e) {
-        // TODO
-        if (e.target.behaviorPopup) {
-          map.closePopup(e.target.behaviorPopup);
-        }
-      });
-      
-      return m;
-    }
-    */
     
     
     
@@ -264,30 +231,6 @@ function initMapMedia() {
         }
     }
     
-    
-    
-    
-    // Called to create the Leaflet icon for the cluster, but doesn't actually
-    // draw the SVG bubbles yet.
-    function buildLeafletClusterIcon(cluster) {
-    
-      
-        var uniqueClass = uniqueIDGenerator();
-    
-        var icon = L.divIcon({
-            iconSize: [clusterDiameter, clusterDiameter],
-            iconAnchor: [clusterDiameter/2, clusterDiameter/2],
-            // popupAnchor: ???,
-            className: 'leaflet-cluster-icon ' + uniqueClass,
-            html: '',
-        });
-        
-        icon.uniqueClass = uniqueClass;
-        
-        setTimeout( function(){ updateClusterIcon(cluster, uniqueClass); }, 2);
-        
-        return icon;
-    }
     
     
     
