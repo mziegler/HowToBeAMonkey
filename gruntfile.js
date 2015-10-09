@@ -91,7 +91,7 @@ module.exports = function(grunt) {
                 files: {
                     'build/scripts.js.ugly': [
                             'src/js/map.js',
-                            'src/js/mapmedia.js',
+                            'src/js/mapbubbles.js',
                             'src/js/introscreens.js',
                             'src/js/headercontrols.js',
                             ],

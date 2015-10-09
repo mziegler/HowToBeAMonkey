@@ -3,7 +3,7 @@
 
 
 
-function initMapMedia() {
+function initMapBubbles() {
     
     
     var clusterDiameter = 300;
@@ -505,6 +505,6 @@ function initMapMedia() {
 
 
 
-var mapMedia = initMapMedia();
+var mapMedia = initMapBubbles();
 
 
