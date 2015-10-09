@@ -9,8 +9,16 @@ function initMapMedia() {
     var clusterDiameter = 300;
     var clusterMargin = 50;
     
-    var hexBinBounds = [new L.LatLng(10.516, -85.3745), new L.LatLng(10.5075, -85.3605)];
+    // Bounding box in which to compute the hex layout
+    var hexBinBounds = {
+            top: 10.516,
+            bottom: 10.5075,
+            left: -85.3745,
+            right: -85.3605,
+        };
+        
     
+
     
     
     
@@ -20,13 +28,21 @@ function initMapMedia() {
             
         
             this._layout = d3.hexbin()
-                .radius((clusterDiameter+clusterMargin)/2)
+                //.radius((clusterDiameter+clusterMargin)/2)
+                
+                // convert points to coordinate system with positive numbers and origin at 0,0
                 .x(function(d) { 
-                    return map.map.latLngToLayerPoint(new L.LatLng(d.loc[0], d.loc[1])).x 
+                    return d.loc[1] - hexBinBounds.left;
                 })
+                
                 .y(function(d) { 
-                    return map.map.latLngToLayerPoint(new L.LatLng(d.loc[0], d.loc[1])).y 
-                });
+                    return d.loc[0] - hexBinBounds.top;
+                })
+                
+                .size([hexBinBounds.right - hexBinBounds.left,
+                    hexBinBounds.top - hexBinBounds.bottom]);
+                
+                
             
             // Markers to be clustered
             this._markers = [];
@@ -43,9 +59,14 @@ function initMapMedia() {
         },
         
         
-        RegisterMarker: function(marker) {
+        
+        
+        registerMarker: function(marker) {
             this._markers.push(marker);
         },
+        
+        
+        
         
         
         
@@ -65,9 +86,10 @@ function initMapMedia() {
             
             
             
-            // add a viewreset event listener for updating layer's position, do the latter
+            // add a viewreset event listener for updating hex bins
             map.on('moveend', this._moveend, this);
-            this._moveend();
+            map.on('viewreset', this._reset, this);
+            this._reset();
         },
         
         
@@ -77,6 +99,7 @@ function initMapMedia() {
             // remove layer's DOM elements and listeners
             map.getPanes().overlayPane.removeChild(this._el);
             map.off('moveend', this._moveend, this);
+            map.off('viewreset', this._reset, this);
         },
         
         
@@ -85,23 +108,58 @@ function initMapMedia() {
         
         
         
-        _createHexBins: function(G, width, height) {
-            var hex_centers = G.selectAll('circle') //g.hex-enter')
-                .data((
-                    this._layout
-                    .size([width,height]))(this._markers))
-                .enter()/*
-                .append('g')
-                .attr('class', 'hex-center')
-                .attr('transform', function(d){ return 'translate(' + d.x + ',' + d.y + ')'; });
+        _createHexClusters: function() {
+        
+            // clear out old clusters
+            this._el.selectAll('div.hexcluster').remove();
+        
+        
+            // hack so we can access the map in D3 accessor functions
+            var map = this._map;
             
-            hex_centers*/
-            .append('circle')
-                .attr('cx', function(d) { return d.x })//0)
-                .attr('cy', function(d) { return d.y })//0)
-                .attr('r', 25)
-                .attr('fill', 'orange');    
+            
+            // set bin radius, convert width from layer points to latLng space
+            var r = (
+                map.layerPointToLatLng(L.point(clusterDiameter + clusterMargin, 0)).lng
+                - map.layerPointToLatLng(L.point(0, 0)).lng
+                ) / 2;
+            
+            this._layout.radius(r);
                 
+            
+        
+            var hex_centers = this._el.selectAll('div.hexcluster') //g.hex-enter')
+                .data(this._layout(this._markers))
+                .enter()
+                .append('div')
+                .attr('class', 'hexcluster')
+                .style({
+                
+                    position: 'absolute',
+                    
+                    // convert from hexcluster space to layer point space
+                    left: function(d) { 
+                        return map.latLngToLayerPoint([0, d.x + hexBinBounds.left]).x + 'px';
+                    },
+                    
+                    top: function(d) { 
+                        return map.latLngToLayerPoint([d.y + hexBinBounds.top, 0]).y + 'px';
+                    },
+                    
+                    width: '50px',
+                    height: '50px',
+                    'background-color': 'orange',
+                });
+            
+  
+                
+        },
+        
+        
+        
+        
+        _reset: function() {
+            this._createHexClusters();
         },
         
         
@@ -109,25 +167,9 @@ function initMapMedia() {
         
         _moveend: function() {
             if (!this._map) { return; }
-
-
-            /*
-            // Update SVG bounds
-            var topLeft = this._map.latLngToLayerPoint(hexBinBounds[0]);
-            var bottomRight = this._map.latLngToLayerPoint(hexBinBounds[1]);
-            this._SVG 
-                .attr("width", bottomRight.x - topLeft.x)
-                .attr("height", bottomRight.y - topLeft.y)
-                .style("left", topLeft.x + "px")
-                .style("top", topLeft.y + "px");
-                
-                
-                this._G.attr({
-                    'transform': 'translate(' + -topLeft.x + ',' + -topLeft.y + ')'
-                });    
-            */        
+       
                     
-                    
+             /*
             // DEBUG
             var p = this._map.latLngToLayerPoint(new L.LatLng(media.WHtrack[0][0], media.WHtrack[0][1]));
             this._el.append('div')
@@ -141,12 +183,12 @@ function initMapMedia() {
                 'height': '50px',
                 'id': 'test',
             });
-                    
+             */       
                     
                     
                     
             // CREATE CLUSTER MARKERS
-            // this._createHexBins(G, bottomRight.x - topLeft.x, bottomRight.y - topLeft.y);
+            this._createHexClusters();
                 
 
 
@@ -486,7 +528,7 @@ function initMapMedia() {
                 category: observation.cat,
                 text: observation.text,
             }
-            clusterLayer.RegisterMarker(marker);
+            clusterLayer.registerMarker(marker);
         });
         
         
@@ -499,7 +541,7 @@ function initMapMedia() {
                 uri: picture.uri,
                 caption: picture.cap,
             }
-            clusterLayer.RegisterMarker(marker);
+            clusterLayer.registerMarker(marker);
         });
         
         
@@ -512,7 +554,7 @@ function initMapMedia() {
                 title: textbubble.title,
                 text: textbubble.text,
             }
-            clusterLayer.RegisterMarker(marker);
+            clusterLayer.registerMarker(marker);
             
         
         });
