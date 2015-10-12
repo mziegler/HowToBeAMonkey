@@ -368,6 +368,14 @@ function initMapBubbles() {
                     .attr('preserveAspectRatio', 'xMidYMid slice');
                 break;
         }
+        
+        
+        G.on("click", function(d, i) {
+            var containerCoords = d3.mouse(document.getElementById('map'));
+            var loc = map.map.containerPointToLatLng(L.point(containerCoords[0], containerCoords[1]));
+            map.map.openPopup('howdy!', loc);
+            d3.event.stopPropagation(); 
+        });
     
         
     }
@@ -505,6 +513,6 @@ function initMapBubbles() {
 
 
 
-var mapMedia = initMapBubbles();
+var mapBubbles = initMapBubbles();
 
 

@@ -5,8 +5,8 @@ function initMapMedia() {
 
     
     // text box layer
-    function openTextPopup(bubbleData) {
-    
+    function openTextPopup(bubbleData, element, event) {
+        
         
     
     }
