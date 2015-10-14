@@ -343,6 +343,10 @@ function initMapBubbles() {
                     .attr('y', bubbleData.r)
                     .attr('fill', 'white')
                     .text(bubbleData.title);
+                G.on('click', function(d, i) {
+                    mapMedia.openTextPopup(d, this);
+                    d3.event.stopPropagation();
+                });
                 break;
                 
                 
@@ -370,20 +374,7 @@ function initMapBubbles() {
         }
         
         
-        G.on("click", function(d, i) {
-            //var containerCoords = d3.mouse(document.getElementById('map'));
-            //var loc = map.map.containerPointToLatLng(L.point(containerCoords[0], containerCoords[1]));
-            
-            var mapOffset = $('#map').offset();
-            var iconOffset = $(this).offset();
-            var containerPoint = L.point(iconOffset.left-mapOffset.left+d.r, iconOffset.top-mapOffset.top+5);
-            
-            var loc = map.map.containerPointToLatLng(containerPoint);
-            
-            
-            map.map.openPopup('howdy!', loc);
-            d3.event.stopPropagation(); 
-        });
+
     
         
     }

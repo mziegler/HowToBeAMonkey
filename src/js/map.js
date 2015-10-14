@@ -110,7 +110,7 @@ resetLineClipPadding(); // restore old clip padding
   
   
   // keep track of open popup 
-  /*
+  
   map.on('popupopen', function(event) {
     currentPopup = event.popup;
     
@@ -123,7 +123,7 @@ resetLineClipPadding(); // restore old clip padding
       }
     }
   });
-  */
+  
   
   // recompute popup size on map resize
   map.on('resize', function() {
