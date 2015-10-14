@@ -17,6 +17,8 @@ function initMapMedia() {
     
     
     
+    
+    
 
 
 
@@ -48,6 +50,7 @@ function initMapMedia() {
           }
         ).on('click', function(){ headerControls.closeSidePanel() });
     
+        headerControls.closeSidePanel();
     }
     
     
@@ -150,9 +153,34 @@ function initMapMedia() {
                 className: 'behavior-popup',
                 keepInView: false
             }
-        );
+        ).on('click', headerControls.closeSidePanel);
+        
+        headerControls.closeSidePanel();
         
     }
+
+
+
+
+
+
+
+
+    //////////////////////////////////////////////////////////////////////
+    // PICTURES
+    
+    function openPicture(bubbleData, element) {
+        $('a#lightbox-trigger')
+            .attr('href', 'pictures/' + bubbleData.uri)
+            .attr('data-lightbox', 'pictureLayer-' + bubbleData.uri)
+            .attr('data-title', bubbleData.caption)
+            .click();
+            
+            
+        headerControls.closeSidePanel();
+    }
+
+
 
 
 
@@ -162,6 +190,7 @@ function initMapMedia() {
     return {
         openTextPopup: openTextPopup,
         openBehaviorPopup: openBehaviorPopup,
+        openPicture: openPicture,
     }
 
 }

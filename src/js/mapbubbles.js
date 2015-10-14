@@ -358,6 +358,10 @@ function initMapBubbles() {
                     .attr('height', 2*bubbleData.r)
                     .attr('xlink:href', 'pictures/thumbnails/' + bubbleData.uri)
                     .attr('preserveAspectRatio', 'xMidYMid slice');
+                G.on('click', function(d, i) {
+                    mapMedia.openPicture(d, this);
+                    d3.event.stopPropagation();
+                });
                 break;
                 
             
