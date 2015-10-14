@@ -370,6 +370,10 @@ function initMapBubbles() {
                     .attr('height', 2*bubbleData.r)
                     .attr('xlink:href', 'icons/48/' + bubbleData.cat + '.png' )
                     .attr('preserveAspectRatio', 'xMidYMid slice');
+                G.on('click', function(d, i) {
+                    mapMedia.openBehaviorPopup(d, this);
+                    d3.event.stopPropagation();
+                });
                 break;
         }
         
