@@ -318,6 +318,45 @@ function initMapBubbles() {
     
     
     
+    // Split text into new lines at every occurrance of "\n", and scale the
+    // text to fit the specified width.
+    // "Container" is a D3 selection.
+    //
+    // Return a D3 selection with the text.
+    function renderText(text, width, container) {
+        var el = container.append('text');
+        
+        // loop over lines
+        $.each(text.split('\\n'), function(i, line) {
+            el.append('tspan')
+                .attr({
+                    x: width/2 + 10,  // the +10 is a weird hack because I give up trying to position this correctly
+                    dy: i==0 ? 0 : '1.2em',
+                    'text-anchor': 'middle',
+                })
+                .text(line);
+        });
+        
+        // scale to fit inside width
+        var bb = el[0][0].getBBox();
+        
+        // if the text is too big to fit in the box, scale it down
+        if (bb.width > width || bb.height > width) {
+            var widthTransform = width / bb.width;
+            var heightTransform = width / bb.height;
+            var scale = widthTransform < heightTransform ? widthTransform : heightTransform;
+            el.attr('transform', 'scale(' + scale + ')');
+        }
+
+
+        return el;
+    }
+    
+    
+    
+    
+    
+    
     // "this" is SVG "G" DOM element
     function renderBubbleIcon(bubbleData, G, clipPath) {
         
@@ -334,15 +373,17 @@ function initMapBubbles() {
                 G.append('rect')
                     .attr('x', 0)
                     .attr('y', 0)
-                    .attr('width', 2*bubbleData.r)
+                    .attr('width',  2*bubbleData.r)
                     .attr('height', 2*bubbleData.r)
-                    .attr('fill', 'rgba(0,0,0,0.7)');
-                G.append('text')
-                    .attr('text-anchor', 'middle')
+                    .attr('fill', 'rgba(0,0,0,0.5)');
+                    
+                renderText(bubbleData.title, bubbleData.r*2 - 20, G)
                     .attr('x', bubbleData.r)
                     .attr('y', bubbleData.r)
                     .attr('fill', 'white')
-                    .text(bubbleData.title);
+                    .attr('text-anchor', 'middle')
+                    .attr('width',  2*bubbleData.r)
+                    .attr('height', 2*bubbleData.r);
                 G.on('click', function(d, i) {
                     mapMedia.openTextPopup(d, this);
                     d3.event.stopPropagation();

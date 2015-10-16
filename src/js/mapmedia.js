@@ -33,7 +33,7 @@ function initMapMedia() {
         map.map.openPopup(  
           (
             '<div class="popup-title">' +
-            bubbleData.title +
+            bubbleData.title.replace('\\n', ' ') +
             '</div><div class="caption">' +
             bubbleData.text + 
             '</div>'
