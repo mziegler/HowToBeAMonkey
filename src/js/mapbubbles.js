@@ -286,24 +286,35 @@ function initMapBubbles() {
         
         
         
+        
+        
+        
+        
+        // randomly insert pictures
+        $.each(bubbleGroups.picture, function(i, item) {
+            item.value= Math.random() * 50 + 50;
+            insertRandom([item]);
+        });
+        
+        
+        
+        //
+        $.each(bubbleGroups.text, function(i, item) {
+            item.value= Math.random() * 30 + 80;
+            insertRandom([item]);
+        });
+        
+        
+        
         // randomly all bubbles into the list
         $.each(bubbleGroups.behavior, function(cat, observations) {
             insertRandom([{
-                value: 100,
+                value: 25,
                 type: 'behaviorGroup',
                 observations: observations,
                 cat: cat,
             }]);
         });
-        $.each(bubbleGroups.picture, function(i, item) {
-            item.value=250;
-            insertRandom([item]);
-        });
-        $.each(bubbleGroups.text, function(i, item) {
-            item.value=300;
-            insertRandom([item]);
-        });
-        
         
         
         
@@ -365,32 +376,32 @@ function initMapBubbles() {
     
     
     // "this" is SVG "G" DOM element
-    function renderBubbleIcon(bubbleData, G, clipPath) {
+    function renderBubbleIcon(bubbleData, r, G, clipPath) {
+        
+        
+        // r is computed by the layout algorithm, value is computed by us
+        var r = Math.min(bubbleData.r, bubbleData.value); 
         
         clipPath.append("circle")
-            .attr('cx', bubbleData.r)
-            .attr('cy', bubbleData.r)
-            .attr('r', bubbleData.r);
+            .attr('cx', r)
+            .attr('cy', r)
+            .attr('r', r);
             
-        G.attr('width', 2*bubbleData.r)
-            .attr('height', 2*bubbleData.r);
+        G.attr('width', 2*r)
+            .attr('height', 2*r);
             
         switch(bubbleData.type) {
             case 'text':
                 G.append('rect')
                     .attr('x', 0)
                     .attr('y', 0)
-                    .attr('width',  2*bubbleData.r)
-                    .attr('height', 2*bubbleData.r)
+                    .attr('width',  2*r)
+                    .attr('height', 2*r)
                     .attr('fill', 'rgba(0,0,0,0.5)');
                     
-                renderText(bubbleData.title, bubbleData.r, 10, G)
-                    //.attr('x', 0)//bubbleData.r)
-                    //.attr('y', 0)//bubbleData.r)
-                    .attr('fill', 'white')
-                    //.attr('text-anchor', 'middle')
-                    //.attr('width',  2*bubbleData.r)
-                    //.attr('height', 2*bubbleData.r);
+                renderText(bubbleData.title, r, 10, G)
+                    .attr('fill', 'white');
+
                 G.on('click', function(d, i) {
                     mapMedia.openTextPopup(d, this);
                     d3.event.stopPropagation();
@@ -402,8 +413,8 @@ function initMapBubbles() {
                 G.append('image')
                     .attr('x', '0')
                     .attr('y', '0')
-                    .attr('width', 2*bubbleData.r)
-                    .attr('height', 2*bubbleData.r)
+                    .attr('width', 2*r)
+                    .attr('height', 2*r)
                     .attr('xlink:href', 'pictures/thumbnails/' + bubbleData.uri)
                     .attr('preserveAspectRatio', 'xMidYMid slice');
                 G.on('click', function(d, i) {
@@ -418,8 +429,8 @@ function initMapBubbles() {
                 G.append('image')
                     .attr('x', 0)
                     .attr('y', 0)
-                    .attr('width', 2*bubbleData.r)
-                    .attr('height', 2*bubbleData.r)
+                    .attr('width', 2*r)
+                    .attr('height', 2*r)
                     .attr('xlink:href', 'icons/48/' + bubbleData.cat + '.png' )
                     .attr('preserveAspectRatio', 'xMidYMid slice');
                 G.on('click', function(d, i) {
@@ -477,13 +488,15 @@ function initMapBubbles() {
             var clipPath = thisNode.append('clipPath')
                 .attr('id', clipID);
             
+            
+            
             var G = thisNode.append("g")
-                .attr('width', 2*bubbleData)
-                .attr('height', 2*bubbleData)
+                .attr('width', 2*bubbleData.r)
+                .attr('height', 2*bubbleData.r)
                 .attr('transform', 'translate(-' + bubbleData.r + ',-' + bubbleData.r + ')')
                 .attr('clip-path', 'url(#' + clipID + ')');
                             
-            renderBubbleIcon(bubbleData, G, clipPath)
+            renderBubbleIcon(bubbleData, r, G, clipPath)
         });
         
         
