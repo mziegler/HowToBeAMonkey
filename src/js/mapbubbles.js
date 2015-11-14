@@ -7,7 +7,7 @@ function initMapBubbles() {
     
     
     var clusterDiameter = 300;
-    var clusterMargin = 50;
+    var clusterMargin = 10;
     
     
     // Range over which to show icons
@@ -53,9 +53,6 @@ function initMapBubbles() {
             // Markers to be clustered
             this._markers = [];
             
-            
-            // Zoom level currently rendered on the map
-            this._renderedZoom = -1;
             
             
             // DIV element with hex layer, needs to be resized + re-positioned with each zoom.
@@ -120,6 +117,8 @@ function initMapBubbles() {
        
             var map = this._map;
        
+            var bounds = map.getBounds().pad(0.25);
+       
             // loop over clusters
             this._el.selectAll('div.hexcluster').each(function(clusterdata, i) {
                 
@@ -130,7 +129,7 @@ function initMapBubbles() {
                         &&
                     
                     // is this cluster within the visible bounds of the map?
-                    map.getBounds().contains([clusterdata.y + hexBinBounds.top, clusterdata.x + hexBinBounds.left])
+                    bounds.contains([clusterdata.y + hexBinBounds.top, clusterdata.x + hexBinBounds.left])
                 ) {
                     
                     // render bubble icons for this cluster
@@ -276,9 +275,9 @@ function initMapBubbles() {
         
         // 2d list of bubble groups
         var sortedBubbles = [];
-        function insertRandom(list) {
+        function insertRandom(obj) {
             var randomIndex = Math.floor(Math.random() * sortedBubbles.length);
-            sortedBubbles.splice(randomIndex, 0, list);
+            sortedBubbles.splice(randomIndex, 0, obj);
         }
         
         
@@ -289,15 +288,21 @@ function initMapBubbles() {
         
         $.each(bubbleGroups.behavior, function(cat, observations) {          
             categoryGroups[media.categories[cat].group].push({
-                value: 25,
+                value: Math.max(Math.min(observations.length, 70), 20),
                 type: 'behaviorGroup',
                 observations: observations,
                 cat: cat
             });
+            
+            
         });
         
         
-        $.each(categoryGroups, function(i,g) { insertRandom(g) });
+        $.each(categoryGroups, function(i,g) { insertRandom({
+            value: 80, //FIXME
+            type: 'layoutGroup',
+            children: g
+        }) });
         
         
         
@@ -305,15 +310,15 @@ function initMapBubbles() {
         // randomly insert pictures
         $.each(bubbleGroups.picture, function(i, item) {
             item.value= Math.random() * 50 + 50;
-            insertRandom([item]);
+            insertRandom(item);
         });
         
         
         
         //
         $.each(bubbleGroups.text, function(i, item) {
-            item.value= Math.random() * 30 + 80;
-            insertRandom([item]);
+            item.value= Math.random() * 20 + 60;
+            insertRandom(item);
         });
         
         
@@ -323,7 +328,7 @@ function initMapBubbles() {
         
         
         // flatten sorted bubble array
-        return [].concat.apply([], sortedBubbles);
+        return sortedBubbles;
     
     
     }
@@ -425,7 +430,6 @@ function initMapBubbles() {
                 
             
             case 'behaviorGroup':
-                
                 G.append('image')
                     .attr('x', 0)
                     .attr('y', 0)

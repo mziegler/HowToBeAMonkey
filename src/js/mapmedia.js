@@ -9,6 +9,7 @@ function initMapMedia() {
     
             var mapOffset = $('#map').offset();
             var iconOffset = $(bubbleElem).offset();
+            var iconWidth = $(bubbleElem).width();
             var containerPoint = L.point(iconOffset.left-mapOffset.left+bubbleRadius, iconOffset.top-mapOffset.top+5);
             
             return map.map.containerPointToLatLng(containerPoint);
