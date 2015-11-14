@@ -277,7 +277,7 @@ function initMapBubbles() {
         // just randomly sort bubbles (for now)
         var sortedBubbles = [];
         function insertRandom(list) {
-            var randomIndex = Math.floor(Math.random() * list.length);
+            var randomIndex = Math.floor(Math.random() * sortedBubbles.length);
             
             $.each(list, function(i, item) {
                 sortedBubbles.splice(randomIndex, 0, item);
@@ -286,6 +286,15 @@ function initMapBubbles() {
         
         
         
+        // randomly all bubbles into the list
+        $.each(bubbleGroups.behavior, function(cat, observations) {
+            insertRandom([{
+                value: 25,
+                type: 'behaviorGroup',
+                observations: observations,
+                cat: cat,
+            }]);
+        });
         
         
         
@@ -306,15 +315,7 @@ function initMapBubbles() {
         
         
         
-        // randomly all bubbles into the list
-        $.each(bubbleGroups.behavior, function(cat, observations) {
-            insertRandom([{
-                value: 25,
-                type: 'behaviorGroup',
-                observations: observations,
-                cat: cat,
-            }]);
-        });
+
         
         
         
@@ -378,9 +379,6 @@ function initMapBubbles() {
     // "this" is SVG "G" DOM element
     function renderBubbleIcon(bubbleData, r, G, clipPath) {
         
-        
-        // r is computed by the layout algorithm, value is computed by us
-        var r = Math.min(bubbleData.r, bubbleData.value); 
         
         clipPath.append("circle")
             .attr('cx', r)
@@ -459,7 +457,7 @@ function initMapBubbles() {
   
         
         var bubble = d3.layout.pack()
-            //.sort(null)
+            .sort(null)
             .size([clusterDiameter, clusterDiameter])
             .padding(10);
             
@@ -488,12 +486,13 @@ function initMapBubbles() {
             var clipPath = thisNode.append('clipPath')
                 .attr('id', clipID);
             
-            
+            // bubbleData.r is computed by the layout algorithm, value is assigned by us
+            var r = Math.min(bubbleData.r, bubbleData.value); 
             
             var G = thisNode.append("g")
-                .attr('width', 2*bubbleData.r)
-                .attr('height', 2*bubbleData.r)
-                .attr('transform', 'translate(-' + bubbleData.r + ',-' + bubbleData.r + ')')
+                .attr('width', 2*r)
+                .attr('height', 2*r)
+                .attr('transform', 'translate(-' + r + ',-' + r + ')')
                 .attr('clip-path', 'url(#' + clipID + ')');
                             
             renderBubbleIcon(bubbleData, r, G, clipPath)
