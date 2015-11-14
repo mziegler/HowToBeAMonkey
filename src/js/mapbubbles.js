@@ -274,27 +274,30 @@ function initMapBubbles() {
         
         
         
-        // just randomly sort bubbles (for now)
+        // 2d list of bubble groups
         var sortedBubbles = [];
         function insertRandom(list) {
             var randomIndex = Math.floor(Math.random() * sortedBubbles.length);
-            
-            $.each(list, function(i, item) {
-                sortedBubbles.splice(randomIndex, 0, item);
-            });
+            sortedBubbles.splice(randomIndex, 0, list);
         }
         
         
         
         // randomly all bubbles into the list
-        $.each(bubbleGroups.behavior, function(cat, observations) {
-            insertRandom([{
+        var categoryGroups = {};
+        $.each(media.categoryGroups, function(i, g) {categoryGroups[g] = []});
+        
+        $.each(bubbleGroups.behavior, function(cat, observations) {          
+            categoryGroups[media.categories[cat].group].push({
                 value: 25,
                 type: 'behaviorGroup',
                 observations: observations,
-                cat: cat,
-            }]);
+                cat: cat
+            });
         });
+        
+        
+        $.each(categoryGroups, function(i,g) { insertRandom(g) });
         
         
         
@@ -319,9 +322,8 @@ function initMapBubbles() {
         
         
         
-        
-        
-        return sortedBubbles;
+        // flatten sorted bubble array
+        return [].concat.apply([], sortedBubbles);
     
     
     }

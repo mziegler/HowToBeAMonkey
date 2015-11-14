@@ -177,8 +177,10 @@
     "A": {"name": "Approaches and leaves", "default": false, "group": "Other", "clustersize": 800},  
     "L": {"name": "Where Winslow Homer is looking", "default": false, "group": "Other", "clustersize": 800},  
     "O": {"name": "Researchers' view of Winslow Homer", "default": false, "group": "Other", "clustersize": 800}
-}
+},
 
+
+"categoryGroups": ["Dominance", "Friendly", "Food", "Other"]
 
 
 }
