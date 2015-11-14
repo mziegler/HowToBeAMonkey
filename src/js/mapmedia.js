@@ -39,7 +39,7 @@ function initMapMedia() {
             '</div>'
           ),
           
-          popupLoc(element, bubbleData.r),
+          popupLoc(element, Math.min(bubbleData.r, bubbleData.value)),
           
           {
             className:'behavior-popup texbox-popup', 
