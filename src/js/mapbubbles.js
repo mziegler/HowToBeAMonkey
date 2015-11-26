@@ -7,7 +7,7 @@ function initMapBubbles() {
     
     
     var clusterDiameter = 300;
-    var clusterMargin = 10;
+    var clusterMargin = 2;
     
     
     // Range over which to show icons
@@ -284,25 +284,35 @@ function initMapBubbles() {
         
         // randomly all bubbles into the list
         var categoryGroups = {};
-        $.each(media.categoryGroups, function(i, g) {categoryGroups[g] = []});
+        $.each(media.categoryGroups, function(i, g) {
+            categoryGroups[g] = {
+                cats: [],
+                count: 0,
+            }
+        });
         
-        $.each(bubbleGroups.behavior, function(cat, observations) {          
-            categoryGroups[media.categories[cat].group].push({
-                value: Math.max(Math.min(observations.length, 70), 20),
+        
+        $.each(bubbleGroups.behavior, function(cat, observations) {
+            var group = categoryGroups[media.categories[cat].group];
+                      
+            group.cats.push({
+                value: Math.max(Math.min(observations.length*3,70), 5), //Math.max(Math.min(observations.length, 70), 20),
                 type: 'behaviorGroup',
                 observations: observations,
                 cat: cat
             });
             
-            
+            group.count = group.count + observations.length;
         });
         
         
-        $.each(categoryGroups, function(i,g) { insertRandom({
-            value: 80, //FIXME
-            type: 'layoutGroup',
-            children: g
-        }) });
+        $.each(categoryGroups, function(i,g) { 
+            insertRandom({
+                value: Math.max(Math.min(g.count*2, 20), 150),
+                type: 'layoutGroup',
+                children: g.cats
+            }) 
+        });
         
         
         
@@ -437,6 +447,11 @@ function initMapBubbles() {
                     .attr('height', 2*r)
                     .attr('xlink:href', 'icons/48/' + bubbleData.cat + '.png' )
                     .attr('preserveAspectRatio', 'xMidYMid slice');
+                    
+                renderText(bubbleData.observations.length.toString(), r, 10, G)
+                    .attr('fill', 'black')
+                    .style('font-weight', 'bold');
+                    
                 G.on('click', function(d, i) {
                     mapMedia.openBehaviorPopup(d, this);
                     d3.event.stopPropagation();
@@ -465,7 +480,7 @@ function initMapBubbles() {
         var bubble = d3.layout.pack()
             .sort(null)
             .size([clusterDiameter, clusterDiameter])
-            .padding(10);
+            .padding(5);
             
         var svg = containerSelection.append("svg")
             .attr('class', 'bubbles')
