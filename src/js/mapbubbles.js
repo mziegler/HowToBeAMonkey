@@ -288,30 +288,38 @@ function initMapBubbles() {
             categoryGroups[g] = {
                 cats: [],
                 count: 0,
+                score: 0,
             }
         });
         
         
         $.each(bubbleGroups.behavior, function(cat, observations) {
             var group = categoryGroups[media.categories[cat].group];
+            
+            var scoreSum = 0;
+            $.each(observations, function(i, ob) {
+                scoreSum = scoreSum + ob.score;
+            });
                       
             group.cats.push({
-                value: Math.max(Math.min(observations.length*3,70), 5), //Math.max(Math.min(observations.length, 70), 20),
+                score: scoreSum,
+                value: Math.max(Math.min(scoreSum,70), 5), //Math.max(Math.min(observations.length, 70), 20),
                 type: 'behaviorGroup',
                 observations: observations,
                 cat: cat
             });
             
             group.count = group.count + observations.length;
+            group.score = group.score + scoreSum;
         });
         
         
         $.each(categoryGroups, function(i,g) { 
             insertRandom({
-                value: Math.max(Math.min(g.count*2, 20), 150),
+                value: Math.max(Math.min(g.score, 20), 150),
                 type: 'layoutGroup',
                 children: g.cats
-            }) 
+            });
         });
         
         
@@ -448,7 +456,7 @@ function initMapBubbles() {
                     .attr('xlink:href', 'icons/48/' + bubbleData.cat + '.png' )
                     .attr('preserveAspectRatio', 'xMidYMid slice');
                     
-                renderText(bubbleData.observations.length.toString(), r, 10, G)
+                renderText(bubbleData.observations.length.toString() + '/' + bubbleData.score.toString(), r, 10, G)
                     .attr('fill', 'black')
                     .style('font-weight', 'bold');
                     
@@ -508,7 +516,8 @@ function initMapBubbles() {
                 .attr('id', clipID);
             
             // bubbleData.r is computed by the layout algorithm, value is assigned by us
-            var r = Math.min(bubbleData.r, bubbleData.value); 
+            //var r = Math.min(bubbleData.r, bubbleData.value); 
+            var r = bubbleData.r;
             
             var G = thisNode.append("g")
                 .attr('width', 2*r)
@@ -538,7 +547,7 @@ function initMapBubbles() {
                 loc: observation.loc,
                 type: 'behavior',
                 time: observation.time,
-                rank: observation.rank,
+                score: observation.score,
                 category: observation.cat,
                 text: observation.text,
             }

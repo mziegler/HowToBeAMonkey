@@ -214,7 +214,7 @@ def writeBehaviorJSON():
             'loc': o['loc'],
             'text': translations_dict[o['code']]['english'],
             'cat': translations_dict[o['code']]['category'],
-            'rank': translations_dict[o['code']]['interestingness']
+            'score': int(translations_dict[o['code']]['interestingness'])
         }
         for o in observations
     ]
