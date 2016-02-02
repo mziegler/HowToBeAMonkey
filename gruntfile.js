@@ -164,6 +164,7 @@ module.exports = function(grunt) {
                 root: 'build',
                 port: 8080,
                 runInBackground: true,
+                host: '0.0.0.0',
                 // logFn: function(req, res, error) { },
             }    
         },
@@ -177,10 +178,10 @@ module.exports = function(grunt) {
                 files: ['src/**'],
                 tasks: ['build-debug'],
             },
-            //data: {
-            //    files: ['data/**'],
-            //    tasks: ['build-data'],
-            //}
+            data: {
+                files: ['data/**'],
+                tasks: ['build-data', 'build-debug'],
+            }
         }
         
         
@@ -208,7 +209,7 @@ module.exports = function(grunt) {
     
     grunt.registerTask('build-debug', ['setup', 'processhtml:dev']);
     
-    grunt.registerTask('debug', ['build-debug', 'http-server', 'watch']);
+    grunt.registerTask('debug', ['build-data', 'build-debug', 'http-server', 'watch']);
     
     
     
