@@ -456,9 +456,11 @@ function initMapBubbles() {
                     .attr('xlink:href', 'icons/48/' + bubbleData.cat + '.png' )
                     .attr('preserveAspectRatio', 'xMidYMid slice');
                     
+                /*
                 renderText(bubbleData.observations.length.toString() + '/' + bubbleData.score.toString(), r, 10, G)
                     .attr('fill', 'black')
                     .style('font-weight', 'bold');
+                */
                     
                 G.on('click', function(d, i) {
                     mapMedia.openBehaviorPopup(d, this);
