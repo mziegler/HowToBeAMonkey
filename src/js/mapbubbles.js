@@ -266,12 +266,7 @@ function initMapBubbles() {
                     bubbleGroups.behavior[observation.category].push(observation);
                     break;
 
-                case 'start':
-                    bubbleGroups.start = observation;
-                    break;
                     
-                case 'end':
-                    bubbleGroups.end = observation;    
             }
         });
         
@@ -286,7 +281,8 @@ function initMapBubbles() {
         }
         
         
-        // create list of groups for behavior categories
+        
+        // randomly all bubbles into the list
         var categoryGroups = {};
         $.each(media.categoryGroups, function(i, g) {
             categoryGroups[g] = {
@@ -337,7 +333,7 @@ function initMapBubbles() {
         
         
         
-        // randomly insert text
+        //
         $.each(bubbleGroups.text, function(i, item) {
             item.value= Math.random() * 20 + 60;
             insertRandom(item);
@@ -345,16 +341,8 @@ function initMapBubbles() {
         
         
         
-        // insert start and end markers in the middle of the cluster (= front of array)
-        if (bubbleGroups.start) {
-            bubbleGroups.start.value = 200;
-            sortedBubbles.splice(0, 0, bubbleGroups.start);
-        }
+
         
-        if (bubbleGroups.end) {
-            bubbleGroups.end.value = 200;
-            sortedBubbles.splice(0, 0, bubbleGroups.end);
-        }
         
         
         // flatten sorted bubble array
@@ -479,28 +467,6 @@ function initMapBubbles() {
                     d3.event.stopPropagation();
                 });
                 break;
-                
-                
-            case 'start':
-                G.append('image')
-                    .attr('x', 0)
-                    .attr('y', 0)
-                    .attr('width', 2*r)
-                    .attr('height', 2*r)
-                    .attr('xlink:href', 'icons/awake.png')
-                    .attr('preserveAspectRatio', 'xMidYMid slice');
-                break;
-                
-            case 'end':
-                G.append('image')
-                    .attr('x', 0)
-                    .attr('y', 0)
-                    .attr('width', 2*r)
-                    .attr('height', 2*r)
-                    .attr('xlink:href', 'icons/bedtime.png')
-                    .attr('preserveAspectRatio', 'xMidYMid slice');
-                break;    
-            
         }
         
         
@@ -617,21 +583,6 @@ function initMapBubbles() {
             
         
         });
-        
-        
-        
-        // start marker
-        clusterLayer.registerMarker({
-            loc: media.WHtrack[0],
-            type: 'start',
-        });
-        
-        // end marker
-        clusterLayer.registerMarker({
-            loc: media.WHtrack[media.WHtrack.length - 1],
-            type: 'end',
-        });
-        
         
         
         map.map.addLayer(clusterLayer);
