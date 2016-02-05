@@ -91,6 +91,7 @@ module.exports = function(grunt) {
                 files: {
                     'build/scripts.js.ugly': [
                             'src/js/map.js',
+                            'src/js/mapmedia.js',
                             'src/js/mapbubbles.js',
                             'src/js/introscreens.js',
                             'src/js/headercontrols.js',
@@ -105,7 +106,7 @@ module.exports = function(grunt) {
                         'src/libraries/leaflet/leaflet.js',
                         'src/libraries/lightbox/lightbox.min.js',
                         'src/libraries/d3/d3.min.js',
-                        'libraries/d3/d3.hexbin.min.js',
+                        'src/libraries/d3/d3.hexbin.min.js',
                     ],
                 },
                 options: {
@@ -127,7 +128,8 @@ module.exports = function(grunt) {
                 // task-specific options
                 files: {
                     'build/index.html': ['src/index.html']
-                }
+                },
+                includeBase: 'build/'
             },
             
             dist: {
@@ -150,9 +152,11 @@ module.exports = function(grunt) {
         'gh-pages': {
             options: {
                 base: 'dist/gh-pages',
+                
             },
             
-            src: ['**']
+            src: ['**'],
+            
         },
         
         
@@ -166,6 +170,12 @@ module.exports = function(grunt) {
                 runInBackground: true,
                 host: '0.0.0.0',
                 // logFn: function(req, res, error) { },
+            },
+            
+            testbuild: {
+                root: 'build',
+                port: 8080,
+                host: '0.0.0.0',
             }    
         },
         
@@ -209,11 +219,14 @@ module.exports = function(grunt) {
     
     grunt.registerTask('build-debug', ['setup', 'processhtml:dev']);
     
-    grunt.registerTask('debug', ['build-data', 'build-debug', 'http-server', 'watch']);
+    grunt.registerTask('debug', ['build-data', 'build-debug', 'http-server:dev', 'watch']);
     
     
     
-    grunt.registerTask('build', ['setup', 'uglify', 'processhtml:dist', 'copy:postbuild']);
+    grunt.registerTask('build', ['build-data', 'setup', 'uglify', 'processhtml:dist', 'copy:postbuild']);
+    
+    grunt.registerTask('test-build', ['build', 'http-server:testbuild']);
+    
     
     grunt.registerTask('default', ['debug']);
 };
