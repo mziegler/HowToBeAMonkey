@@ -601,6 +601,46 @@ function initMapBubbles() {
     });
     
 
+
+
+    // start and end markers
+    var startMarker = L.marker(media.WHtrack[0], {icon: L.icon({
+        iconUrl: 'icons/awake.png',
+        iconSize: [80,80],
+        iconAnchor: [40,80],
+        popupAnchor: [0,-70],
+        shadowUrl: 'icons/awake-bedtime-shadow.png',
+        shadowSize: [121,80],
+        shadowAnchor: [40,80],
+        className: 'awake-bedtime-icon'
+    })})
+    .addTo(map.map)
+    .bindPopup(media.startPopup, {
+      minWidth: 500, 
+      maxWidth: 500,
+      fullWidth: 500,
+      className: 'behavior-popup'
+    })
+    .on('click', function(){ headerControls.closeSidePanel() });
+    
+    var endMarker = L.marker(media.WHtrack[media.WHtrack.length - 1], {icon: L.icon({
+        iconUrl: 'icons/bedtime.png',
+        iconSize: [80,80],
+        iconAnchor: [40,80],
+        popupAnchor: [0,-70],
+        shadowUrl: 'icons/awake-bedtime-shadow.png',
+        shadowSize: [121,80],
+        shadowAnchor: [40,80],
+        className: 'awake-bedtime-icon'
+    })})
+    .addTo(map.map)
+    .bindPopup(media.endPopup, {
+      minWidth: 500, 
+      maxWidth: 500,
+      fullWidth: 500,
+      className: 'behavior-popup'
+    })
+    .on('click', function(){ headerControls.closeSidePanel() });
     
 
 
