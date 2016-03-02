@@ -1,17 +1,17 @@
-timestamp,filename,english
-06:36:00,food-interest.jpg,Winslow Homer is interested in King Donkey's food.  Baby capuchin monkeys learn what foods they can eat and how to eat them by closely watching the adults.
-06:51:00,DT-grooming.jpg,"Winslow Homer getting groomed by Dante.  Winslow Homer the alpha female's baby, and he's one of only two infants in the group this year, (which is fewer than usual,) so he's been getting quite a lot of attention!."
-07:31:00,WH-FN.jpg,"Winslow Homer plays with <b>Frankenstein</b>, the only other infant in the group this year.  Play helps the monkeys form social bonds and learn motor skills."
-11:01:00,AA-siesta.jpg,"Abby's group siesta.  The capuchins spend most of their time on the move, but take a siesta every now and then.  The adults take time to rest, groom, and sleep, while the babies and juveniles play."
-13:11:00,bromeliad.jpg,Winslow Homer munching on a bromeliad fruit.  Most of the calories in the monkeys' diet comes from fruit.
-15:06:00,tongue-out.jpg,Friendly tongue-out!
-12:41:00,TJ-coalition.jpg,"White-headed capuchin monkeys are known for forming lots of coalitions, when they signal to the other monkeys that they're on a team together.  They use several different postures to show their coalitions - sometimes one monkey will climb on another monkey's back, sometimes one will put its arm around the other monkey's shoulders, and sometimes they'll stand with their cheeks pressed together.  In addition to scaring off predators and other monkies, the coalitions help the monkeys reinforce their social bonds."
-07:36:00,WH_DT_FN.jpg,"Frankenstein, Dante, and Winslow Homer (left to right)."
-06:56:00,SEP_KST_IGO.jpg,"Susan, Kat, and Irene, researchers on the Lomas Barbudal Monkey Project, follow Winslow Homer from the ground.  They collect coded data about the monkeys' social behavior for statistical analysis, and preserve stool samples for non-invasive genetic and hormone measurements, along with many other data."
-14:01:00,WH_KY.jpg,Winslow Homer munching on a katydid.  Capuchin monkeys get most of their protein from insects – they're expert insect hunters.
-08:26:00,WH_UB.jpg,Winslow Homer and Dubious
-15:46:00,WH_DT.jpg,Winslow Homer and Dante
-15:31:00,WH_AS.jpg,Scratching
-16:51:00,WH_WE.jpg,"Winslow Homer resting.  Capuchin monkeys don\'t tend to sleep much during the day, but they occasionally take naps."
-14:46:00,DU_DT.jpg,Dante and Duende are not happy to see you.
-09:16:00,DA_AS.jpg,"Dali, Winslow Homer's mom and the alpha female of the group."
+timestamp,filename,on_tour,english
+06:36:00,food-interest.jpg,x,Winslow Homer is interested in King Donkey's food.  Baby capuchin monkeys learn what foods they can eat and how to eat them by closely watching the adults.
+06:51:00,DT-grooming.jpg,x,"Winslow Homer getting groomed by Dante.  Winslow Homer the alpha female's baby, and he's one of only two infants in the group this year, (which is fewer than usual,) so he's been getting quite a lot of attention!."
+07:31:00,WH-FN.jpg,x,"Winslow Homer plays with <b>Frankenstein</b>, the only other infant in the group this year.  Play helps the monkeys form social bonds and learn motor skills."
+11:01:00,AA-siesta.jpg,x,"Abby's group siesta.  The capuchins spend most of their time on the move, but take a siesta every now and then.  The adults take time to rest, groom, and sleep, while the babies and juveniles play."
+13:11:00,bromeliad.jpg,x,Winslow Homer munching on a bromeliad fruit.  Most of the calories in the monkeys' diet comes from fruit.
+15:06:00,tongue-out.jpg,,Friendly tongue-out!
+12:41:00,TJ-coalition.jpg,x,"White-headed capuchin monkeys are known for forming lots of coalitions, when they signal to the other monkeys that they're on a team together.  They use several different postures to show their coalitions - sometimes one monkey will climb on another monkey's back, sometimes one will put its arm around the other monkey's shoulders, and sometimes they'll stand with their cheeks pressed together.  In addition to scaring off predators and other monkies, the coalitions help the monkeys reinforce their social bonds."
+07:36:00,WH_DT_FN.jpg,,"Frankenstein, Dante, and Winslow Homer (left to right)."
+06:56:00,SEP_KST_IGO.jpg,x,"Susan, Kat, and Irene, researchers on the Lomas Barbudal Monkey Project, follow Winslow Homer from the ground.  They collect coded data about the monkeys' social behavior for statistical analysis, and preserve stool samples for non-invasive genetic and hormone measurements, along with many other data."
+14:01:00,WH_KY.jpg,x,Winslow Homer munching on a katydid.  Capuchin monkeys get most of their protein from insects – they're expert insect hunters.
+08:26:00,WH_UB.jpg,,Winslow Homer and Dubious
+15:46:00,WH_DT.jpg,,Winslow Homer and Dante
+15:31:00,WH_AS.jpg,,Scratching
+16:51:00,WH_WE.jpg,x,"Winslow Homer resting.  Capuchin monkeys don\'t tend to sleep much during the day, but they occasionally take naps."
+14:46:00,DU_DT.jpg,x,Dante and Duende are not happy to see you.
+09:16:00,DA_AS.jpg,x,"Dali, Winslow Homer's mom and the alpha female of the group."

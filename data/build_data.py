@@ -64,8 +64,6 @@ with open(InFileNames.gpstrack) as f:
 
 
 
-################################################################################
-# BEHAVIOR FILES (observations + translations) -> (behavior samples.json + behavior samples.csv)
 
 def parsetime(timestr):
     """
@@ -200,22 +198,22 @@ def filterObservationsTranslations():
     
     
 
-def writeBehaviorJSON():
+def writeBehaviorJSON(observations, translations_dict, tourlist):
     """
     Write behavior JSON file, with observations and translations joined.
     """
 
-    observations, translations_dict = filterObservationsTranslations()
+    #observations, translations_dict = filterObservationsTranslations()
     
     # join together observations with translations
-    behavior_list = [
+    behavior_list = [ checkOnTour(tourlist, o,
         {
             'time': o['time'],
             'loc': o['loc'],
             'text': translations_dict[o['code']]['english'],
             'cat': translations_dict[o['code']]['category'],
             'score': int(translations_dict[o['code']]['interestingness'])
-        }
+        })
         for o in observations
     ]
     
@@ -227,8 +225,8 @@ def writeBehaviorJSON():
 
 
 
-def buildBehavior():
-    writeBehaviorJSON()
+def buildBehavior(observations, translations_dict, tourlist):
+    writeBehaviorJSON(observations, translations_dict, tourlist)
     
     
     
@@ -258,18 +256,18 @@ def loadPictureCSV():
 
 
 
-def pictureJSON():
+def pictureJSON(tourlist):
     """
     Format pictures into JSON
     """
     pictures = loadPictureCSV()
     
-    return [
+    return [ checkOnTour(tourlist, p,
         {
             'uri': p['filename'],
             'loc': p['loc'],
             'cap': p['english'],
-        }
+        })
     
         for p in pictures
     ]
@@ -294,15 +292,15 @@ def loadTextbubbleCSV():
 
 
 
-def textbubbleJSON():
+def textbubbleJSON(tourlist):
     bubbles = loadTextbubbleCSV()
 
-    return [
+    return [ checkOnTour(tourlist, b, 
         {
             'loc': b['loc'],
             'title': b['english_title'],
             'text': b['english_text'],
-        }
+        })
         
         for b in bubbles
     ]
@@ -321,16 +319,135 @@ def mediaFeaturesJSON():
 
 
 
+def buildTourList(observations):
+    """
+    Returns a list of each of the stops on the "guided tour" through the map.
     
-def buildMedia():
+    Each list item is a dict with the following keys: timestamp, loc, data, id.
+    
+    Id corresponds to the list position.  'data' contains the actual data  
+    for this icon, to be used to lookup the id when the JSON files are output.
+    """
+
+
+    tourlist = []
+
+    # for text bubbles, pictures, and observations,
+    # add each to the tour list if the "on_tour" field is true
+    
+    for bubble in loadTextbubbleCSV():
+        if bubble['on_tour']:
+            tourlist.append({
+                'timestamp': bubble['timestamp'],
+                'loc': bubble['loc'],
+                'data': bubble,
+            })
+
+    
+    for picture in loadPictureCSV():
+        if picture['on_tour']:
+            tourlist.append({
+                'timestamp': picture['timestamp'],
+                'loc': picture['loc'],
+                'data': picture,
+            })
+
+
+    for obs in observations:
+        if obs['on_tour']:
+            tourlist.append({
+                'timestamp': obs['time'],  # 'timestamp' includes the date, use 'time' instead here
+                'loc': obs['loc'],
+                'data': obs,
+            })
+
+
+
+    # sort tour list by timestamp
+    tourlist.sort(key=lambda o: o['timestamp'])
+
+    
+    # add start and end markers
+    tourlist.insert(0, {
+        'loc': [10.5142232962, -85.3693762701],
+        'note': 'start',
+        'data': [],
+    })
+    
+    tourlist.append({
+        'loc': [10.5148555432, -85.3643822484],
+        'note': 'end',
+        'data': [],
+    })
+    
+    
+    
+    # assign ID's to each item in the list
+    for i, o in enumerate(tourlist):
+        o['id'] = i
+    
+    
+    return tourlist
+    
+    
+    
+def exportTourList(tourlist):
+    """
+    Remove 'data' field from tour list.
+    """
+    
+    for i in tourlist:
+        del i['data']
+        
+    return tourlist
+    
+    
+
+
+def checkOnTour(tourlist, csv_datum, json_datum):
+    """
+    This method is for looking up tour ID's for each datum while generating JSON.
+    
+    For a particular behavior/picture/textbubble datum, check the CSV datum to 
+    see if the on_tour field is checked.  Then, if it is, look up the tour ID
+    for this datum and add it to the JSON datum.
+    """    
+
+    if csv_datum['on_tour']:
+        
+        # if this datum is on the tour, look up the key in the tour list
+        tour_id = -1
+        for i, item in enumerate(tourlist):
+            if csv_datum == item['data']:
+                tour_id = i
+                break
+                
+        assert tour_id != -1
+                
+        json_datum['tour_id'] = tour_id
+
+    return json_datum
+
+
+
+
+
+
+
+
+
+    
+def buildMedia(tourlist):
     with open(OutFileNames.media, 'w') as f:
         
         media = {
-            'pictures': pictureJSON(),
-            'textbubbles': textbubbleJSON(),
+            'pictures': pictureJSON(tourlist),
+            'textbubbles': textbubbleJSON(tourlist),
         }
         
         media.update(mediaFeaturesJSON())
+        
+        media['tourlist'] = exportTourList(tourlist)
         
         f.write('var media=')
         f.write(json.dumps(media))
@@ -342,14 +459,14 @@ def buildMedia():
     
     
     
-    
-    
-    
-    
-    
-    
 
 if __name__ == '__main__':
-    buildBehavior()
-    buildMedia()
 
+    observations, translations_dict = filterObservationsTranslations()
+
+    tourlist = buildTourList(observations)
+    
+    buildBehavior(observations, translations_dict, tourlist)
+    
+    buildMedia(tourlist)
+    
