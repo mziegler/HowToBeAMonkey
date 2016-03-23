@@ -95,6 +95,7 @@ module.exports = function(grunt) {
                             'src/js/mapbubbles.js',
                             'src/js/introscreens.js',
                             'src/js/headercontrols.js',
+                            'src/js/tour.js',
                             ],
                 }
             },
@@ -107,6 +108,7 @@ module.exports = function(grunt) {
                         'src/libraries/lightbox/lightbox.min.js',
                         'src/libraries/d3/d3.min.js',
                         'src/libraries/d3/d3.hexbin.min.js',
+                        'src/libraries/noUISlider/nouislider.min.js',
                     ],
                 },
                 options: {
