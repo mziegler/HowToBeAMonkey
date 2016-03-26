@@ -502,6 +502,8 @@ function initMapBubbles() {
                     .attr('preserveAspectRatio', 'xMidYMid slice');
                 break;
                 
+                //TODO bind start and end popups to click
+                
             case 'end':
                 G.append('image')
                     .attr('x', 0)
@@ -517,7 +519,7 @@ function initMapBubbles() {
         // register tour markers
         if (bubbleData.tour_ids && bubbleData.tour_ids.length > 0) {
             $.each(bubbleData.tour_ids, function(i, tour_id) {
-                tour.registerIcon(tour_id, G);
+                tour.registerIcon(tour_id, G[0][0]); // use the G DOM element, not the d3 selection
             });
         }
 
