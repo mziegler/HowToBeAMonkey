@@ -154,10 +154,10 @@ module.exports = function(grunt) {
         'gh-pages': {
             options: {
                 base: 'dist/gh-pages',
-                
+                src: ['**'],
             },
             
-            src: ['**'],
+           
             
         },
         
