@@ -153,6 +153,33 @@ div#mobile-buttons {
 
 
 
+
+/******************************************************************************
+ tour slider */
+ 
+div#tour-slider-container {
+    width: 500px;
+    padding: 10px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+
+@media (max-width: 599px), (max-height: 499px) {
+    div#tour-slider-container {
+        position: static;
+        display: block;
+        float: right;
+        width: 150px;
+        padding: 5px;
+        padding-top: 9px;
+    }
+}
+
+
+
+
 /******************************************************************************
  intro overlay */
 

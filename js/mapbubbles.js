@@ -1,4 +1,4 @@
-// include "map" from map.js
+// include map.js, tour.js
 
 
 
@@ -266,7 +266,12 @@ function initMapBubbles() {
                     bubbleGroups.behavior[observation.category].push(observation);
                     break;
 
+                case 'start':
+                    bubbleGroups.start = observation;
+                    break;
                     
+                case 'end':
+                    bubbleGroups.end = observation;    
             }
         });
         
@@ -281,8 +286,7 @@ function initMapBubbles() {
         }
         
         
-        
-        // randomly all bubbles into the list
+        // create list of groups for behavior categories
         var categoryGroups = {};
         $.each(media.categoryGroups, function(i, g) {
             categoryGroups[g] = {
@@ -296,9 +300,17 @@ function initMapBubbles() {
         $.each(bubbleGroups.behavior, function(cat, observations) {
             var group = categoryGroups[media.categories[cat].group];
             
+            
+            // tally up scores, and collect tour ID's
             var scoreSum = 0;
+            var tour_ids = [];
             $.each(observations, function(i, ob) {
                 scoreSum = scoreSum + ob.score;
+                
+                if (ob.tour_id) {
+                    tour_ids.push(ob.tour_id);
+                }
+                
             });
                       
             group.cats.push({
@@ -306,7 +318,8 @@ function initMapBubbles() {
                 value: Math.max(Math.min(scoreSum,70), 5), //Math.max(Math.min(observations.length, 70), 20),
                 type: 'behaviorGroup',
                 observations: observations,
-                cat: cat
+                cat: cat,
+                tour_ids: tour_ids,
             });
             
             group.count = group.count + observations.length;
@@ -333,7 +346,7 @@ function initMapBubbles() {
         
         
         
-        //
+        // randomly insert text
         $.each(bubbleGroups.text, function(i, item) {
             item.value= Math.random() * 20 + 60;
             insertRandom(item);
@@ -341,8 +354,16 @@ function initMapBubbles() {
         
         
         
-
+        // insert start and end markers in the middle of the cluster (= front of array)
+        if (bubbleGroups.start) {
+            bubbleGroups.start.value = 200;
+            sortedBubbles.splice(0, 0, bubbleGroups.start);
+        }
         
+        if (bubbleGroups.end) {
+            bubbleGroups.end.value = 200;
+            sortedBubbles.splice(0, 0, bubbleGroups.end);
+        }
         
         
         // flatten sorted bubble array
@@ -461,15 +482,46 @@ function initMapBubbles() {
                     .attr('fill', 'black')
                     .style('font-weight', 'bold');
                 */
+                
+                
                     
                 G.on('click', function(d, i) {
                     mapMedia.openBehaviorPopup(d, this);
                     d3.event.stopPropagation();
                 });
                 break;
+                
+                
+            case 'start':
+                G.append('image')
+                    .attr('x', 0)
+                    .attr('y', 0)
+                    .attr('width', 2*r)
+                    .attr('height', 2*r)
+                    .attr('xlink:href', 'icons/awake.png')
+                    .attr('preserveAspectRatio', 'xMidYMid slice');
+                break;
+                
+                //TODO bind start and end popups to click
+                
+            case 'end':
+                G.append('image')
+                    .attr('x', 0)
+                    .attr('y', 0)
+                    .attr('width', 2*r)
+                    .attr('height', 2*r)
+                    .attr('xlink:href', 'icons/bedtime.png')
+                    .attr('preserveAspectRatio', 'xMidYMid slice');
+                break;    
+            
         }
         
-        
+        // register tour markers
+        if (bubbleData.tour_ids && bubbleData.tour_ids.length > 0) {
+            $.each(bubbleData.tour_ids, function(i, tour_id) {
+                tour.registerIcon(tour_id, G[0][0]); // use the G DOM element, not the d3 selection
+            });
+        }
 
     
         
@@ -552,7 +604,12 @@ function initMapBubbles() {
                 score: observation.score,
                 category: observation.cat,
                 text: observation.text,
+            };
+            
+            if (observation.tour_id) {
+                marker.tour_id = observation.tour_id;
             }
+            
             clusterLayer.registerMarker(marker);
         });
         
@@ -565,7 +622,12 @@ function initMapBubbles() {
                 type: 'picture',
                 uri: picture.uri,
                 caption: picture.cap,
+            };
+            
+            if (picture.tour_id) {
+                media.tour_ids = [picture.tour_id];
             }
+            
             clusterLayer.registerMarker(marker);
         });
         
@@ -579,10 +641,32 @@ function initMapBubbles() {
                 title: textbubble.title,
                 text: textbubble.text,
             }
+            
+            if (textbubble.tour_id) {
+                marker.tour_ids = [textbubble.tour_id];
+            }
+            
             clusterLayer.registerMarker(marker);
             
         
         });
+        
+        
+        
+        // start marker
+        clusterLayer.registerMarker({
+            loc: media.WHtrack[0],
+            type: 'start',
+            tour_ids: [0],
+        });
+        
+        // end marker
+        clusterLayer.registerMarker({
+            loc: media.WHtrack[media.WHtrack.length - 1],
+            type: 'end',
+            tour_ids: [media.tourlist.length - 1],
+        });
+        
         
         
         map.map.addLayer(clusterLayer);
