@@ -500,10 +500,15 @@ function initMapBubbles() {
                     .attr('height', 2*r)
                     .attr('xlink:href', 'icons/awake.png')
                     .attr('preserveAspectRatio', 'xMidYMid slice');
+                
+                G.on('click', function(d, i) {
+                    mapMedia.openTextPopup(d, this);
+                    d3.event.stopPropagation();
+                });
+                
                 break;
                 
-                //TODO bind start and end popups to click
-                
+                                
             case 'end':
                 G.append('image')
                     .attr('x', 0)
@@ -512,6 +517,12 @@ function initMapBubbles() {
                     .attr('height', 2*r)
                     .attr('xlink:href', 'icons/bedtime.png')
                     .attr('preserveAspectRatio', 'xMidYMid slice');
+                    
+                G.on('click', function(d, i) {
+                    mapMedia.openTextPopup(d, this);
+                    d3.event.stopPropagation();
+                });
+                
                 break;    
             
         }
@@ -658,6 +669,8 @@ function initMapBubbles() {
             loc: media.WHtrack[0],
             type: 'start',
             tour_ids: [0],
+            title: media.startPopup.title,
+            text: media.startPopup.text,
         });
         
         // end marker
@@ -665,6 +678,8 @@ function initMapBubbles() {
             loc: media.WHtrack[media.WHtrack.length - 1],
             type: 'end',
             tour_ids: [media.tourlist.length - 1],
+            title: media.endPopup.title,
+            text: media.endPopup.text,
         });
         
         
