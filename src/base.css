@@ -327,6 +327,87 @@ p#intro-icon-row img {
 
 
 /******************************************************************************
+ media overlay */
+
+div#overlay-background {
+  display: none;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  z-index:999999;
+  padding-top: 60px; /* for header */
+  box-sizing: border-box;
+}
+
+/* place overlay under smaller header for small screen */
+@media (max-width: 599px), (max-height: 499px) {
+  div#overlay-background {
+    padding-top: 40px;
+  }
+}
+
+
+div#overlay-scrollable {
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+div#overlay-content {
+  display: block;
+  width: 90%;
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0;
+  border-radius: 3px;
+  background: white;
+  position: relative;
+}
+
+div#overlay-media img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+
+div#overlay-caption.filled {
+  padding: 20px;
+}
+
+div#overlay-title.filled {
+  padding: 20px;
+}
+
+div#overlay-close {
+  color: #DDD;
+  background: rgba(0,0,0,0.6);
+  padding: 0 8px;
+  border-radius: 15px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 30px;
+  line-height: 0.8;
+  cursor: pointer;
+}
+
+div#overlay-close:hover {
+  background: rgba(0,0,0,1);
+  transition: 0.2s;
+}
+
+
+
+/******************************************************************************
  side panel */
 
 #side-panel {

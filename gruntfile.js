@@ -96,6 +96,7 @@ module.exports = function(grunt) {
                             'src/js/introscreens.js',
                             'src/js/headercontrols.js',
                             'src/js/tour.js',
+                            'src/js/mediaoverlay.js',
                             ],
                 }
             },
