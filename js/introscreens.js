@@ -87,6 +87,8 @@ function initIntroScreens() {
 
   function resetIntro() {
     headerControls.closeSidePanel();
+    mediaOverlay.closeOverlay();
+    
     map.map.closePopup(); 
     $('div.overlay-intro-content').hide();
     $('div#overlay-intro1').show();

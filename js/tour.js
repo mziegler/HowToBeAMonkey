@@ -15,7 +15,6 @@ function initTour() {
     
     
     
-    
     // When a new icon is created, and it contains an item on the tour,
     // this method will get called so we can update the list of tour icons.
     // 'icon' should be a DOM element (not a jquery or d3 selection.)
@@ -35,6 +34,8 @@ function initTour() {
     
     
     slider.noUiSlider.on('update', function() {
+        mediaOverlay.closeOverlay();
+    
         var tourStop = media.tourlist[Number(this.get())];
         
         

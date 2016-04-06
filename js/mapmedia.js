@@ -171,14 +171,16 @@ function initMapMedia() {
     // PICTURES
     
     function openPicture(bubbleData, element) {
-        $('a#lightbox-trigger')
+        /*$('a#lightbox-trigger')
             .attr('href', 'pictures/' + bubbleData.uri)
             .attr('data-lightbox', 'pictureLayer-' + bubbleData.uri)
             .attr('data-title', bubbleData.caption)
             .click();
-            
+        */
             
         headerControls.closeSidePanel();
+        
+        mediaOverlay.openOverlay(null, bubbleData.caption, bubbleData.uri, null);
     }
 
 
