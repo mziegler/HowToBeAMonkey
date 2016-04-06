@@ -34,6 +34,7 @@ function initMediaOverlay() {
           .addClass('filled');
       }
       
+      map.map.closePopup();
       $('#overlay-background').fadeIn();
       
     }
@@ -41,6 +42,7 @@ function initMediaOverlay() {
     
     return {
       openOverlay: openOverlay,
+      closeOverlay: closeOverlay,
     }
 }
 

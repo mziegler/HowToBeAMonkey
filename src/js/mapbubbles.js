@@ -636,7 +636,7 @@ function initMapBubbles() {
             };
             
             if (picture.tour_id) {
-                media.tour_ids = [picture.tour_id];
+                marker.tour_ids = [picture.tour_id];
             }
             
             clusterLayer.registerMarker(marker);
