@@ -312,6 +312,8 @@ function initMapBubbles() {
                 }
                 
             });
+            
+            var medianTime = observations[Math.floor(observations.length / 2)].time;
                       
             group.cats.push({
                 score: scoreSum,
@@ -320,6 +322,7 @@ function initMapBubbles() {
                 observations: observations,
                 cat: cat,
                 tour_ids: tour_ids,
+                time: medianTime,
             });
             
             group.count = group.count + observations.length;
@@ -448,6 +451,7 @@ function initMapBubbles() {
 
                 G.on('click', function(d, i) {
                     mapMedia.openTextPopup(d, this);
+                    tour.updateSlider(G[0][0], d.time);
                     d3.event.stopPropagation();
                 });
                 break;
@@ -463,6 +467,7 @@ function initMapBubbles() {
                     .attr('preserveAspectRatio', 'xMidYMid slice');
                 G.on('click', function(d, i) {
                     mapMedia.openPicture(d, this);
+                    tour.updateSlider(G[0][0], d.time);
                     d3.event.stopPropagation();
                 });
                 break;
@@ -487,6 +492,7 @@ function initMapBubbles() {
                     
                 G.on('click', function(d, i) {
                     mapMedia.openBehaviorPopup(d, this);
+                    tour.updateSlider(G[0][0], d.time);
                     d3.event.stopPropagation();
                 });
                 break;
@@ -503,6 +509,7 @@ function initMapBubbles() {
                 
                 G.on('click', function(d, i) {
                     mapMedia.openTextPopup(d, this);
+                    tour.updateSlider(G[0][0], d.time);
                     d3.event.stopPropagation();
                 });
                 
@@ -520,6 +527,7 @@ function initMapBubbles() {
                     
                 G.on('click', function(d, i) {
                     mapMedia.openTextPopup(d, this);
+                    tour.updateSlider(G[0][0], d.time);
                     d3.event.stopPropagation();
                 });
                 
@@ -633,6 +641,7 @@ function initMapBubbles() {
                 type: 'picture',
                 uri: picture.uri,
                 caption: picture.cap,
+                time: picture.time,
             };
             
             if (picture.tour_id) {
@@ -651,6 +660,7 @@ function initMapBubbles() {
                 type: 'text',
                 title: textbubble.title,
                 text: textbubble.text,
+                time: textbubble.time,
             }
             
             if (textbubble.tour_id) {
@@ -671,6 +681,7 @@ function initMapBubbles() {
             tour_ids: [0],
             title: media.startPopup.title,
             text: media.startPopup.text,
+            time: media.startPopup.time,
         });
         
         // end marker
@@ -680,6 +691,7 @@ function initMapBubbles() {
             tour_ids: [media.tourlist.length - 1],
             title: media.endPopup.title,
             text: media.endPopup.text,
+            time: media.endPopup.time,
         });
         
         

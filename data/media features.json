@@ -2,11 +2,13 @@
 
 
 "startPopup": {
+    "time": "05:30:00",
     "title": "Winslow Homer wakes up",
     "text": "Winslow and his family woke up right here at about <i>5:44 AM</i>.  The scientists have to make sure to get to the monkeys before they wake up &mdash; they start moving right away, and they're hard to find once they're lost!<br /><br /><i>Follow along the map to see where Winslow went and what he did!</i>"
 },
 
 "endPopup": {
+    "time": "18:10:43",
     "title": "Winslow Homer's family goes to sleep",
     "text": " Winslow Homer's group went to sleep here around <i>6:10 PM</i>.  Capuchin monkeys tend to sleep in a different tree every night, though they often have favorite sleeping-trees that they return to frequently.<br /><br />The monkeys like to sleep in some of the tallest trees, to avoid predators.  They sleep in contact with each other, cuddled up in &ldquo;monkey balls.&rdquo;"
 },

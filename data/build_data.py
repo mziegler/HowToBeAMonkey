@@ -41,6 +41,20 @@ class OutFileNames:
 
 
 
+tourStart = {
+    'loc': [10.5142232962, -85.3693762701],
+    'note': 'start',
+    'data': [],
+    'time': '05:30:00',
+    }
+    
+tourEnd = {
+    'loc': [10.5148555432, -85.3643822484],
+    'note': 'end',
+    'data': [],
+    'time': '18:10:43',
+    }
+
 
 
 
@@ -267,6 +281,7 @@ def pictureJSON(tourlist):
             'uri': p['filename'],
             'loc': p['loc'],
             'cap': p['english'],
+            'time': p['timestamp'],
         })
     
         for p in pictures
@@ -300,6 +315,7 @@ def textbubbleJSON(tourlist):
             'loc': b['loc'],
             'title': b['english_title'],
             'text': b['english_text'],
+            'time': b['timestamp'],
         })
         
         for b in bubbles
@@ -338,7 +354,7 @@ def buildTourList(observations):
     for bubble in loadTextbubbleCSV():
         if bubble['on_tour']:
             tourlist.append({
-                'timestamp': bubble['timestamp'],
+                'time': bubble['timestamp'],
                 'loc': bubble['loc'],
                 'data': bubble,
             })
@@ -347,7 +363,7 @@ def buildTourList(observations):
     for picture in loadPictureCSV():
         if picture['on_tour']:
             tourlist.append({
-                'timestamp': picture['timestamp'],
+                'time': picture['timestamp'],
                 'loc': picture['loc'],
                 'data': picture,
             })
@@ -356,7 +372,7 @@ def buildTourList(observations):
     for obs in observations:
         if obs['on_tour']:
             tourlist.append({
-                'timestamp': obs['time'],  # 'timestamp' includes the date, use 'time' instead here
+                'time': obs['time'],  # obs['timestamp'] includes the date, use 'time' instead here
                 'loc': obs['loc'],
                 'data': obs,
             })
@@ -364,21 +380,12 @@ def buildTourList(observations):
 
 
     # sort tour list by timestamp
-    tourlist.sort(key=lambda o: o['timestamp'])
+    tourlist.sort(key=lambda o: o['time'])
 
     
     # add start and end markers
-    tourlist.insert(0, {
-        'loc': [10.5142232962, -85.3693762701],
-        'note': 'start',
-        'data': [],
-    })
-    
-    tourlist.append({
-        'loc': [10.5148555432, -85.3643822484],
-        'note': 'end',
-        'data': [],
-    })
+    tourlist.insert(0, tourStart)
+    tourlist.append(tourEnd)
     
     
     
