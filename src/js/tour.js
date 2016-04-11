@@ -12,7 +12,7 @@ function initTour() {
         start: 0,
         range: {
             'min': 0,
-            'max': media.tourlist.length,
+            'max': media.tourlist.length - 1,
         },
         connect: 'lower',
         step: 1,
@@ -83,7 +83,7 @@ function initTour() {
             // Price-is-right style -- the tour index with the closest time to the
             // selected icon, but not over.
             
-            var sliderIndex = -1;
+            var sliderIndex = media.tourlist.length - 1;
             $.each(media.tourlist, function(i, tourStop) {
                 if (tourStop.time > time) {
                     sliderIndex = Math.max(0, i-1);
