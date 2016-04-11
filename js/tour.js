@@ -1,13 +1,18 @@
 
 
 function initTour() {
+
+    // keep track of the last open icon, so we don't 
+    var lastOpenIcon = null;
+
+
+
     var slider = document.getElementById('tour-slider');
-    
     noUiSlider.create(slider, {
         start: 0,
         range: {
             'min': 0,
-            'max': media.tourlist.length,
+            'max': media.tourlist.length - 1,
         },
         connect: 'lower',
         step: 1,
@@ -33,25 +38,69 @@ function initTour() {
     
     
     
-    slider.noUiSlider.on('update', function() {
+    // open the corresponding icon/popup/media for this position on the slider
+    function openSelectedIcon() {
         mediaOverlay.closeOverlay();
-    
-        var tourStop = media.tourlist[Number(this.get())];
         
+        var tourStop = media.tourlist[Number(this.get())];
         
         if (tourStop.icon && isInDom(tourStop.icon)) {
             // dispatch click event on the icon
+            lastOpenIcon = tourStop.icon;
             tourStop.icon.dispatchEvent(new MouseEvent("click"));
         }
         
+        // TODO create the icon if we haven't created it yet?
+    }
+    
+    
+    
+    // when the slider position is updated, open the corresponding icon
+    slider.noUiSlider.on('change', openSelectedIcon );
+    
+    // when the slider is dragged, pan the map position
+    slider.noUiSlider.on('slide', function() {
+        mediaOverlay.closeOverlay();
         
+        var tourStop = media.tourlist[Number(this.get())];
         map.map.panTo(tourStop.loc, {duration:0.1});
     });
     
     
     
+    
+    // Update the position of the slider
+    // called when the user clicks an icon.
+    function updateSlider(icon, time) {
+    
+        // Make sure that this icon was clicked instead of selected via the slider,
+        // in which case lastOpenIcon will not already be set to this icon.
+        // (Otherwise, the time for a behavior popup might be computed differently,
+        // and the next button might get stuck in a loop.)
+        if (lastOpenIcon !== icon) {
+            
+            // find correct index on slider (TODO binary sort would be quicker.)
+            // Price-is-right style -- the tour index with the closest time to the
+            // selected icon, but not over.
+            
+            var sliderIndex = media.tourlist.length - 1;
+            $.each(media.tourlist, function(i, tourStop) {
+                if (tourStop.time > time) {
+                    sliderIndex = Math.max(0, i-1);
+                    return false; // break
+                }
+            });
+            
+            
+            slider.noUiSlider.set(sliderIndex);
+        }
+    }
+    
+    
+    
     return {
         registerIcon: registerIcon,
+        updateSlider: updateSlider,
     }
 }
 
