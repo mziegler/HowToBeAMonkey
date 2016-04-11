@@ -106,7 +106,6 @@ module.exports = function(grunt) {
                     'build/libraries.js.ugly': [
                         'src/libraries/jquery-1.11.0.min.js',
                         'src/libraries/leaflet/leaflet.js',
-                        'src/libraries/lightbox/lightbox.min.js',
                         'src/libraries/d3/d3.min.js',
                         'src/libraries/d3/d3.hexbin.min.js',
                         'src/libraries/noUISlider/nouislider.min.js',
