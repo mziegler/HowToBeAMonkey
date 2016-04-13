@@ -42,7 +42,7 @@ function initTour() {
     function openSelectedIcon() {
         mediaOverlay.closeOverlay();
         
-        var tourStop = media.tourlist[Number(this.get())];
+        var tourStop = media.tourlist[Number(slider.noUiSlider.get())];
         
         if (tourStop.icon && isInDom(tourStop.icon)) {
             // dispatch click event on the icon
@@ -62,9 +62,22 @@ function initTour() {
     slider.noUiSlider.on('slide', function() {
         mediaOverlay.closeOverlay();
         
-        var tourStop = media.tourlist[Number(this.get())];
+        var tourStop = media.tourlist[Number(slider.noUiSlider.get())];
         map.map.panTo(tourStop.loc, {duration:0.1});
     });
+    
+    
+    
+    
+    
+    $('#map-container').on('click', '.tour-next', function() {
+        
+        // move the slider to the next position
+        slider.noUiSlider.set(Number(slider.noUiSlider.get()) + 1);
+        
+        openSelectedIcon();
+    });
+    
     
     
     
