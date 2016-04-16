@@ -87,9 +87,10 @@ function initMapBubbles() {
             
             
             // add a viewreset event listener for updating hex bins
-            map.on('moveend', this._moveend, this);
-            map.on('viewreset', this._reset, this);
-            this._reset();
+            map.on('viewreset', this._viewreset, this);
+            
+            this._createHexClusters();
+            this._viewreset()
         },
         
         
@@ -98,22 +99,16 @@ function initMapBubbles() {
         onRemove: function (map) {
             // remove layer's DOM elements and listeners
             map.getPanes().overlayPane.removeChild(this._el);
-            map.off('moveend', this._moveend, this);
-            map.off('viewreset', this._reset, this);
-        },
-        
-        
-
-
-        
-        _reset: function() {
-            this._createHexClusters();
+            map.off('viewreset', this._viewreset, this);
         },
         
         
         
         
-        _moveend: function() {
+        // Draw bubble icons for all of the hex clusters.
+        // If the argument is true, only draw bubbles in the visible area.
+        // (So we can draw these bubbles first, and then fill in the others.
+        _drawBubbles: function(onlyVisible) {
        
             var map = this._map;
        
@@ -126,10 +121,14 @@ function initMapBubbles() {
                     // does this cluster not have bubble icons yet? 
                     d3.select(this).select('svg').empty()
                     
-                        &&
+                    &&
                     
                     // is this cluster within the visible bounds of the map?
-                    bounds.contains([clusterdata.y + hexBinBounds.top, clusterdata.x + hexBinBounds.left])
+                    (
+                        !onlyVisible
+                        ||
+                        bounds.contains([clusterdata.y + hexBinBounds.top, clusterdata.x + hexBinBounds.left])
+                    )
                 ) {
                     
                     // render bubble icons for this cluster
@@ -142,6 +141,13 @@ function initMapBubbles() {
         },
         
         
+        // When the view is reset, first draw the bubbles on the visible area,
+        // and then draw the rest.
+        _viewreset: function() {
+            this._createHexClusters();
+            this._drawBubbles(true);
+            this._drawBubbles(false);
+        },
         
         
         _createHexClusters: function() {
