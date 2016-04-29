@@ -90,7 +90,6 @@ function initMapBubbles() {
             map.on('moveend', this._moveend, this);
             map.on('viewreset', this._reset, this);
             this._reset();
-            this._moveend();
         },
         
         
@@ -109,30 +108,8 @@ function initMapBubbles() {
         
         _reset: function() {
             this._createHexClusters();
-            this._moveend();
-            this._registerClusters();
         },
         
-        
-        
-        _registerClusters() {
-            // loop over clusters
-            this._el.selectAll('div.hexcluster').each(function(clusterdata, i) {
-                
-                // Skip clusters that we've already rendered.
-                // These tour stops will already have an icon associated.
-                if (d3.select(this).select('svg').empty()) {
-                    
-                    var clusterDiv = this;
-                    
-                    $.each(clusterdata, function(j, observation) {
-                        if (observation.tour_id) {
-                            tour.registerCluster(observation.tour_id, clusterDiv);
-                        }
-                    });
-                }
-            });
-        },
         
         
         
@@ -221,7 +198,10 @@ function initMapBubbles() {
 
     
     
-
+    
+    
+    
+    
     
     
     // generate unique cluster-icon class names
@@ -230,7 +210,28 @@ function initMapBubbles() {
         uniqueIDCounter += 1;
         return 'WH-auto-' + uniqueIDCounter;
     }
+    
+    
+    
+    // hack to draw SVG in the icon after a pause, after which the icon should
+    // have been rendered onto the map so we can select its DOM element
+    function updateClusterIcon(cluster, uniqueClass, i) {
+    
+        // give up after 10 trys
+        if (i === undefined) { i = 0; }
+        if (i > 10) { return; }
         
+        var selection = d3.select('.'+uniqueClass);
+        if (selection.length) {
+            bubbleSVG(cluster, selection);
+        }
+        else {
+            setTimeout( function(){ updateClusterIcon(cluster, uniqueClass, i+1); }, 3);
+        }
+    }
+    
+    
+    
     
     
     

@@ -28,13 +28,6 @@ function initTour() {
     }
     
     
-    // Record the cluster where this tour stop came from, so we can render it if 
-    // it's not already rendered, before selecting an icon.  'cluster' should
-    // be a D3 selection.
-    function registerCluster(tourID, cluster) {
-        media.tourlist[tourID].cluster = cluster;
-    }
-    
     
     // Check to see if an element is still in the DOM (it might have been deleted.)
     // 'obj' should be a plain DOM element, not a d3 selection.
@@ -57,17 +50,7 @@ function initTour() {
             tourStop.icon.dispatchEvent(new MouseEvent("click"));
         }
         
-        
-        // If there's no recorded icon, then generate the icon from the cluster
-        // and try to open the icon.
-        else if (tourStop.cluster && isInDom(tourStop.cluster)) {
-            tourStop.cluster;
-        }
-        
-        else {
-            console.log('couldn\'t find an icon or a cluster!');
-            console.log(tourStop);
-        }
+        // TODO create the icon if we haven't created it yet?
     }
     
     
@@ -130,7 +113,6 @@ function initTour() {
     
     return {
         registerIcon: registerIcon,
-        registerCluster: registerCluster,
         updateSlider: updateSlider,
     }
 }
