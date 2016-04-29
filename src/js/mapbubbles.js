@@ -23,8 +23,8 @@ function initMapBubbles() {
         };
         
     
-
-    
+    // The HexBinLayer to be initialized on this map
+    var _hexBinLayer = null;
     
     
     // Hex layer used to arrange icon clusters on the map
@@ -53,6 +53,8 @@ function initMapBubbles() {
             // Markers to be clustered
             this._markers = [];
             
+            
+            this._hexCenters = []; // list of hex centers
             
             
             // DIV element with hex layer, needs to be resized + re-positioned with each zoom.
@@ -164,7 +166,7 @@ function initMapBubbles() {
                 
             
         
-            var hex_centers = this._el.selectAll('div.hexcluster') //g.hex-enter')
+            this._hexCenters = this._el.selectAll('div.hexcluster') //g.hex-enter')
                 .data(this._layout(this._markers))
                 .enter()
                 .append('div')
@@ -185,19 +187,32 @@ function initMapBubbles() {
                     width: clusterDiameter + 'px',
                     height: clusterDiameter + 'px',
                 });
+                
+             var i = 0;
             
   
                 
         },
         
         
-
         
+        
+        // Given a [lat,lon] location, return a D3 selection with the cluster containing
+        // this point.
+        locToCluster(loc) {
+        
+            // Use the d3 layout to cluster a single point, we will get 1 cluster
+            var clusterCoords = this._layout([{loc:loc}])[0];
+            
+            // Find the existing cluster with matching coords to the computed new cluster
+            return this._hexCenters.filter(function(d, i) {
+                return d.i == clusterCoords.i && d.j == clusterCoords.j;
+            });
+        },
+          
         
     });   
 
-    
-    
     
     
     
@@ -211,27 +226,7 @@ function initMapBubbles() {
         return 'WH-auto-' + uniqueIDCounter;
     }
     
-    
-    
-    // hack to draw SVG in the icon after a pause, after which the icon should
-    // have been rendered onto the map so we can select its DOM element
-    function updateClusterIcon(cluster, uniqueClass, i) {
-    
-        // give up after 10 trys
-        if (i === undefined) { i = 0; }
-        if (i > 10) { return; }
         
-        var selection = d3.select('.'+uniqueClass);
-        if (selection.length) {
-            bubbleSVG(cluster, selection);
-        }
-        else {
-            setTimeout( function(){ updateClusterIcon(cluster, uniqueClass, i+1); }, 3);
-        }
-    }
-    
-    
-    
     
     
     
@@ -708,15 +703,26 @@ function initMapBubbles() {
     // load behavior points
     $.getJSON('behavior.json')
     .done( function(behavior) {
-        loadBubbleMedia(media, behavior);
+        _hexBinLayer = loadBubbleMedia(media, behavior);
     });
     
+
+    
+    
+    // Given a [lat,lon] loc, render the containing cluster
+    function renderLoc(loc) {
+        if (_hexBinLayer) {
+            var cluster = _hexBinLayer.locToCluster(loc);
+       
+            bubbleSVG(cluster.datum(), cluster); 
+        }
+    }
 
     
 
 
     return {
-
+        renderLoc: renderLoc,
     }
 }
 

@@ -44,13 +44,17 @@ function initTour() {
         
         var tourStop = media.tourlist[Number(slider.noUiSlider.get())];
         
-        if (tourStop.icon && isInDom(tourStop.icon)) {
-            // dispatch click event on the icon
-            lastOpenIcon = tourStop.icon;
-            tourStop.icon.dispatchEvent(new MouseEvent("click"));
+        
+        // Render the icon if it isn't already rendered
+        // Potential bug: (this may possibly fail sometimes due to an 
+        // order-of-execution problem, but I haven't really thought it through.
+        if (! tourStop.icon || !isInDom(tourStop.icon)) {        
+            mapBubbles.renderLoc(tourStop.loc);
         }
         
-        // TODO create the icon if we haven't created it yet?
+        // dispatch click event on the icon 
+        lastOpenIcon = tourStop.icon;
+        tourStop.icon.dispatchEvent(new MouseEvent("click"));
     }
     
     
