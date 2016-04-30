@@ -92,6 +92,7 @@ function initMapBubbles() {
             map.on('moveend', this._moveend, this);
             map.on('viewreset', this._reset, this);
             this._reset();
+            this._moveend();
         },
         
         
