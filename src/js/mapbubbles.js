@@ -7,7 +7,7 @@ function initMapBubbles() {
     
     
     var clusterDiameter = 330;
-    var clusterMargin = 5;
+    var clusterMargin = 8;
     
     
     // Range over which to show icons
@@ -346,7 +346,7 @@ function initMapBubbles() {
         
         // randomly insert text
         $.each(bubbleGroups.text, function(i, item) {
-            item.value= Math.random() * 20 + 60;
+            item.value= Math.random() * 20 + 100;
             insertRandom(item);
         });
         
