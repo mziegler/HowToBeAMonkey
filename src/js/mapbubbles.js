@@ -6,8 +6,8 @@
 function initMapBubbles() {
     
     
-    var clusterDiameter = 300;
-    var clusterMargin = 2;
+    var clusterDiameter = 330;
+    var clusterMargin = 5;
     
     
     // Range over which to show icons
@@ -556,7 +556,7 @@ function initMapBubbles() {
         var bubble = d3.layout.pack()
             .sort(null)
             .size([clusterDiameter, clusterDiameter])
-            .padding(5);
+            .padding(10);
             
         var svg = containerSelection.append("svg")
             .attr('class', 'bubbles')
