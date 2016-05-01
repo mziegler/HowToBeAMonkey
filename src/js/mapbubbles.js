@@ -200,7 +200,7 @@ function initMapBubbles() {
         
         // Given a [lat,lon] location, return a D3 selection with the cluster containing
         // this point.
-        locToCluster(loc) {
+        locToCluster: function(loc) {
         
             // Use the d3 layout to cluster a single point, we will get 1 cluster
             var clusterCoords = this._layout([{loc:loc}])[0];
