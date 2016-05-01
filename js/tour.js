@@ -41,16 +41,26 @@ function initTour() {
     // open the corresponding icon/popup/media for this position on the slider
     function openSelectedIcon() {
         mediaOverlay.closeOverlay();
+        introScreens.closeIntro();
         
-        var tourStop = media.tourlist[Number(this.get())];
+        var tourStop = media.tourlist[Number(slider.noUiSlider.get())];
         
-        if (tourStop.icon && isInDom(tourStop.icon)) {
-            // dispatch click event on the icon
-            lastOpenIcon = tourStop.icon;
-            tourStop.icon.dispatchEvent(new MouseEvent("click"));
+        // open the intro screen
+        if (tourStop.note == 'intro') {
+            introScreens.resetIntro();
+            return;
         }
         
-        // TODO create the icon if we haven't created it yet?
+        // Render the icon if it isn't already rendered
+        // Potential bug: (this may possibly fail sometimes due to an 
+        // order-of-execution problem, but I haven't really thought it through.
+        if (! tourStop.icon || !isInDom(tourStop.icon)) {        
+            mapBubbles.renderLoc(tourStop.loc);
+        }
+        
+        // dispatch click event on the icon 
+        lastOpenIcon = tourStop.icon;
+        tourStop.icon.dispatchEvent(new MouseEvent("click"));
     }
     
     
@@ -62,9 +72,21 @@ function initTour() {
     slider.noUiSlider.on('slide', function() {
         mediaOverlay.closeOverlay();
         
-        var tourStop = media.tourlist[Number(this.get())];
+        var tourStop = media.tourlist[Number(slider.noUiSlider.get())];
         map.map.panTo(tourStop.loc, {duration:0.1});
     });
+    
+    
+    
+    // move the slider to the next position
+    function tourNext() {
+        slider.noUiSlider.set(Number(slider.noUiSlider.get()) + 1);
+        openSelectedIcon();
+    }
+    
+    
+    $('#map-container').on('click', '.tour-next', tourNext);
+    
     
     
     
@@ -101,6 +123,7 @@ function initTour() {
     return {
         registerIcon: registerIcon,
         updateSlider: updateSlider,
+        tourNext: tourNext
     }
 }
 

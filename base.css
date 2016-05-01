@@ -366,6 +366,7 @@ div#overlay-content {
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 0;
+  padding-bottom: 14px;
   border-radius: 3px;
   background: white;
   position: relative;
@@ -381,6 +382,11 @@ div#overlay-media img {
 
 div#overlay-caption.filled {
   padding: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div#overlay-title.filled {
@@ -618,7 +624,7 @@ a.side-linkout:hover {
 }
 
 /******************************************************************************
- next button */
+ intro screen "next" button */
 
 a.next-button {
   font-weight: bold;
@@ -664,6 +670,28 @@ a.next-button:hover {
   }
 }
 
+
+/******************************************************************************
+ tour "next" button */
+
+.tour-next {
+  display: block;
+  width: 120px;
+  font-weight: bold;
+  background: #FEDD5B;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 120%;
+  padding: 4px 10px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tour-next:hover {
+  background: #FED32A;
+  transition: 0.2s ease;
+}
 
 
 
@@ -909,14 +937,6 @@ img.awake-bedtime-icon.leaflet-marker-icon {
   transition: 0.2s ease;
 }
 
-/******************************************************************************
- hack for slower zoom animation for landing screen */
- 
-body .leaflet-zoom-anim-slow .leaflet-zoom-animated {
-  -webkit-transition: -webkit-transform 1.5s ease-in-out !important;
-     -moz-transition:    -moz-transform 1.5s ease-in-out !important;
-       -o-transition:      -o-transform 1.5s ease-in-out !important;
-          transition:         transform 1.5s ease-in-out !important;
-}
+
 	
 

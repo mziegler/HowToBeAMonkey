@@ -33,21 +33,6 @@ L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
 
 
 
-var initialLineClipPadding = L.Path.CLIP_PADDING; // save old clip padding
-
-// don't clip paths for zoom animations (avoid choppy line rendering)
-function animationLineClipPadding() {
-  L.Path.CLIP_PADDING = 3000;
-}
-
-// reset line clip padding back to normal for better zoom/pan performance
-function resetLineClipPadding() {
-  L.Path.CLIP_PADDING = initialLineClipPadding;
-}
-
-animationLineClipPadding();
-
-
 
 
 
@@ -78,8 +63,7 @@ var track = L.polyline(media.WHtrack, {
   }).addTo(map);
   
   
- 
-resetLineClipPadding(); // restore old clip padding
+
 
 
 
@@ -191,8 +175,6 @@ map.on('zoomend', zoomHandle);
 
 return {
   map: map,
-  animationLineClipPadding: animationLineClipPadding,
-  resetLineClipPadding: resetLineClipPadding,
   //startMarker: startMarker,
   initialView: initialView,
   }

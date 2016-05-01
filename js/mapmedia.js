@@ -37,7 +37,7 @@ function initMapMedia() {
             bubbleData.title.replace('\\n', ' ') +
             '</div><div class="caption">' +
             bubbleData.text + 
-            '</div>'
+            '</div><div class="tour-next">Next &gt;</div>'
           ),
           
           popupLoc(element, Math.min(bubbleData.r, bubbleData.value)),
@@ -118,9 +118,12 @@ function initMapMedia() {
       else {
         html += '</tbody></table></div>';
       }
+
+      html += '<div class="tour-next">Next &gt;</div>';
       
       return html;
     }  
+
 
     // toggle short and long behavior point views for open popup
     $('#map').delegate('a.show-all-points', 'click', function() {
@@ -171,12 +174,6 @@ function initMapMedia() {
     // PICTURES
     
     function openPicture(bubbleData, element) {
-        /*$('a#lightbox-trigger')
-            .attr('href', 'pictures/' + bubbleData.uri)
-            .attr('data-lightbox', 'pictureLayer-' + bubbleData.uri)
-            .attr('data-title', bubbleData.caption)
-            .click();
-        */
             
         headerControls.closeSidePanel();
         
