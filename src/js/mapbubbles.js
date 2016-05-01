@@ -674,7 +674,7 @@ function initMapBubbles() {
         clusterLayer.registerMarker({
             loc: media.WHtrack[0],
             type: 'start',
-            tour_ids: [0],
+            tour_ids: [1],
             title: media.startPopup.title,
             text: media.startPopup.text,
             time: media.startPopup.time,

@@ -41,6 +41,11 @@ class OutFileNames:
 
 
 
+tourIntro = {
+    'note': 'intro',
+    'data': [],
+    }
+
 tourStart = {
     'loc': [10.5142232962, -85.3693762701],
     'note': 'start',
@@ -383,8 +388,9 @@ def buildTourList(observations):
     tourlist.sort(key=lambda o: o['time'])
 
     
-    # add start and end markers
+    # add start and end markers, and intro placeholder
     tourlist.insert(0, tourStart)
+    tourlist.insert(0, tourIntro)
     tourlist.append(tourEnd)
     
     

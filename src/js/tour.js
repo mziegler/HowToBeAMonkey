@@ -41,9 +41,15 @@ function initTour() {
     // open the corresponding icon/popup/media for this position on the slider
     function openSelectedIcon() {
         mediaOverlay.closeOverlay();
+        introScreens.closeIntro();
         
         var tourStop = media.tourlist[Number(slider.noUiSlider.get())];
         
+        // open the intro screen
+        if (tourStop.note == 'intro') {
+            introScreens.resetIntro();
+            return;
+        }
         
         // Render the icon if it isn't already rendered
         // Potential bug: (this may possibly fail sometimes due to an 
@@ -72,15 +78,14 @@ function initTour() {
     
     
     
-    
-    
-    $('#map-container').on('click', '.tour-next', function() {
-        
-        // move the slider to the next position
+    // move the slider to the next position
+    function tourNext() {
         slider.noUiSlider.set(Number(slider.noUiSlider.get()) + 1);
-        
         openSelectedIcon();
-    });
+    }
+    
+    
+    $('#map-container').on('click', '.tour-next', tourNext);
     
     
     
@@ -118,6 +123,7 @@ function initTour() {
     return {
         registerIcon: registerIcon,
         updateSlider: updateSlider,
+        tourNext: tourNext
     }
 }
 

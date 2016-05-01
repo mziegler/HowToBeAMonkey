@@ -36,11 +36,8 @@ function initIntroScreens() {
 
   // when the 'next' button is clicked on the second intro screen
   $('#next-intro2').click(function() {
-
-    
     closeIntro();
-    
-    
+    tour.tourNext();
   });
 
 
@@ -50,7 +47,7 @@ function initIntroScreens() {
     $('div#overlay-intro').fadeOut('slow');
     headerControls.closeSidePanel();
     map.map.setView(map.initialView[0], map.initialView[1], {animate: true});
-    setTimeout(function() { map.startMarker.openPopup(); }, 300);
+    tour.tourNext();
   }
   $('div.skip-intro, #overlay-intro').click(skipIntro);
 
@@ -69,7 +66,8 @@ function initIntroScreens() {
   }
 
   return {
-    resetIntro: resetIntro
+    resetIntro: resetIntro,
+    closeIntro: closeIntro,
   }
 }
 var introScreens = initIntroScreens();
