@@ -159,24 +159,46 @@ div#mobile-buttons {
  
 div#tour-slider-container {
     width: 500px;
-    padding: 10px;
+    padding: 10px 60px;
     position: absolute;
-    right: 20px;
-    top: 10px;
+    right: 30px;
+    top: 12px;
+    background-image: url('/icons/awake-slider.png'), url('icons/bedtime-slider.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position: center left, center right;
+    background-size: auto 100%, auto 100%;
 }
 
-
+ 
 @media (max-width: 599px), (max-height: 499px) {
     div#tour-slider-container {
         position: static;
         display: block;
         float: right;
         width: 150px;
-        padding: 5px;
-        padding-top: 9px;
+        padding: 5px 45px;
+        margin-top: 7px;
+        margin-right: 10px;
     }
 }
 
+div#tour-slider {
+  height: 14px;
+  border-radius: 10px;
+}
+
+#tour-slider .noUi-handle {
+  top: -8px;
+  border-radius: 7px;
+}
+
+#tour-slider .noUi-background {
+  border-radius: 10px;
+}
+
+#tour-slider.noUi-connect {
+  background: #CBE094;
+}
 
 
 
@@ -938,5 +960,6 @@ img.awake-bedtime-icon.leaflet-marker-icon {
 }
 
 
-	
+
+
 
