@@ -38,7 +38,7 @@ div#map {
    margin: 0;
    background: #333;
 }
-
+c
 @media (max-width: 599px), (max-height: 499px) {
   #map-container {
     padding-top: 40px;
@@ -729,6 +729,10 @@ a.next-button:hover {
 
 div.leaflet-container a.leaflet-popup-close-button {
   color: #333;
+  font-size: 200%;
+  padding: 18px 20px 0 0;
+  font-weight: normal;
+  overflow: visible;
 }
 
 div.leaflet-container a.leaflet-popup-close-button:hover {
@@ -830,16 +834,6 @@ a.show-all-points:hover, a.show-fewer-points:hover {
   text-decoration: underline;
 }
 
-
-
-@media (max-width: 599px), (max-height: 499px) {
-  div.leaflet-container a.leaflet-popup-close-button {
-    font-size: 260%;
-    padding: 18px 24px 0 0;
-    font-weight: normal;
-    overflow: visible;
-  }
-}
 
 
 
