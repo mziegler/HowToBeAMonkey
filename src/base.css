@@ -176,20 +176,27 @@ div#tour-slider-container {
         display: block;
         float: right;
         width: 150px;
-        padding: 5px 45px;
+        padding: 5px 30px;
         margin-top: 7px;
         margin-right: 10px;
+        background-size: auto 100%;
     }
 }
 
 div#tour-slider {
   height: 14px;
   border-radius: 10px;
+  padding-right: 32px;
 }
 
 #tour-slider .noUi-handle {
   top: -8px;
+  left: -1px;
   border-radius: 7px;
+}
+
+#tour-slider .noUi-origin {
+  right: -32px;
 }
 
 #tour-slider .noUi-background {
