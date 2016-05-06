@@ -44,6 +44,7 @@ class OutFileNames:
 tourIntro = {
     'note': 'intro',
     'data': [],
+    'time': '05:30:00',
     }
 
 tourStart = {

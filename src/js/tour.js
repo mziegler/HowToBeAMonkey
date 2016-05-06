@@ -16,7 +16,24 @@ function initTour() {
         },
         connect: 'lower',
         step: 1,
+        tooltips: {to: function(val) {
+            return val !== undefined ? media.tourlist[Number(val)].time : '';   
+        }},
     });
+    
+    
+    // Only show tooltip when sliding
+    
+    
+    slider.noUiSlider.on('slide', function () {
+        $('#tour-slider .noUi-tooltip').show();
+    });
+    
+    slider.noUiSlider.on('change', function() {
+        $('#tour-slider .noUi-tooltip').hide();
+    });
+    
+    $('#tour-slider .noUi-tooltip').hide();
     
     
     
@@ -69,13 +86,14 @@ function initTour() {
     slider.noUiSlider.on('change', openSelectedIcon );
     
     // when the slider is dragged, pan the map position
+    /*
     slider.noUiSlider.on('slide', function() {
         mediaOverlay.closeOverlay();
         
         var tourStop = media.tourlist[Number(slider.noUiSlider.get())];
         map.map.panTo(tourStop.loc, {duration:0.1});
     });
-    
+    */
     
     
     // move the slider to the next position
