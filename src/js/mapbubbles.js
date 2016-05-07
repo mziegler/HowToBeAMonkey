@@ -594,7 +594,10 @@ function initMapBubbles() {
                 .attr('transform', 'translate(-' + r + ',-' + r + ')')
                 .attr('clip-path', 'url(#' + clipID + ')');
                             
-            renderBubbleIcon(bubbleData, r, G, clipPath)
+            renderBubbleIcon(bubbleData, r, G, clipPath);
+            
+            G.on('mouseover', selectBubbleAnimation);
+            G.on('mouseout', unselectBubbleAnimation);
         });
         
         
@@ -720,6 +723,41 @@ function initMapBubbles() {
     }
 
     
+
+    
+    function selectBubbleAnimation(d, i, el) {
+         var svg = d3.select((el ? el : this).parentNode.parentNode);
+         
+         var circle = svg.insert('circle', ':first-child')
+            .classed('bubble-selection', true)
+            .attr('fill', 'none')
+            .attr('r', d.r)
+            .attr('stroke', 'white')
+            .attr('cx', d.x)
+            .attr('cy', d.y)
+            .attr('stroke-width', 0)
+            .attr('stroke-opacity', 0)
+            .transition()
+            .duration(150)
+            .attr('r', d.r + 2)
+            .attr('stroke-width', 5)
+            .attr('stroke-opacity', 1);
+    }
+
+
+    function unselectBubbleAnimation(d, i) {
+        d3.selectAll('.bubble-selection')
+            .classed('bubble-selection', false)
+            .transition()
+            .duration(250)
+            .attr('stroke-opacity', 0)
+            .attr('stroke-width', 15)
+            .attr('r', function(d,i) { 
+                return d3.select(this).attr('r') + 20 
+            })
+            .transition()
+            .remove();
+    }
 
 
     return {
