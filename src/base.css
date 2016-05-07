@@ -935,41 +935,16 @@ body a.leaflet-control-zoom-out:last-child {
 
 
 /******************************************************************************
- icon mouseover animations */
+ map bubbles */
  
-img.behavior-icon.leaflet-marker-icon:hover{
-border: solid 3px white;
-transition: 0.1s ease;
-background: white;
+div.hexcluster {
+  pointer-events: none;
 }
 
-img.behavior-icon.leaflet-marker-icon{
-border-radius: 25px;
-border: solid 0px white;
-transition: 0.1s ease;
+g.node {
+  pointer-events: auto;
+  cursor: pointer;
 }
-
-img.picture-icon {
-  border-radius: 5px;
-  border: solid #DDD 2px;
-  transition: 0.1s ease;
-}
-
-img.picture-icon:hover {
-  border: solid #FFF 5px;
-  transition: 0.1s ease;
-}
-
-img.awake-bedtime-icon.leaflet-marker-icon:hover {
-  transition: 0.2s ease;
-  padding-top: 5px;
-}
-
-img.awake-bedtime-icon.leaflet-marker-icon {
-  transition: 0.2s ease;
-}
-
-
 
 
 
