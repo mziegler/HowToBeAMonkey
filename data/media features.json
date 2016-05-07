@@ -181,7 +181,7 @@
     "I": {"name": "Parenting", "default": true, "group": "Friendly", "clustersize": 350},
     "P": {"name": "Play", "default": true, "group": "Friendly", "clustersize": 350},
     "V": {"name": "Vocalizations", "default": true, "group": "Other", "clustersize": 300},
-    "W": {"name": "Miscellaneous (self-directed)", "default": true, "group": "Other", "clustersize": 800},
+    "W": {"name": "Miscellaneous", "default": true, "group": "Other", "clustersize": 800},
     "A": {"name": "Approaches and leaves", "default": false, "group": "Other", "clustersize": 800},  
     "L": {"name": "Where Winslow Homer is looking", "default": false, "group": "Other", "clustersize": 800},  
     "O": {"name": "Researchers' view of Winslow Homer", "default": false, "group": "Other", "clustersize": 800}
