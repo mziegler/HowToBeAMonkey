@@ -71,7 +71,7 @@ function initMapMedia() {
         
       var category = points[0].category;
         
-      var html = '<div class="popup-title popup-title-c' + category + '">' + media.categories[category].name + '</div><div class="behavior-list"><table><tbody class="behavior-points-initial">';
+      var html = '<div class="popup-title popup-title-c' + category + '">' + media.categories[category].name + ' data</div><div class="behavior-list"><table><tbody class="behavior-points-initial">';
       
       // highest-ranking points
       points.sort(function(a,b) {

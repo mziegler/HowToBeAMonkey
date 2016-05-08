@@ -35,7 +35,15 @@ function initMediaOverlay() {
       }
       
       map.map.closePopup();
-      $('#overlay-background').fadeIn();
+      
+
+      
+      $('#overlay-background').fadeIn(400, function() {
+        $("#overlay-scrollable").animate({ scrollTop: $('#overlay-scrollable').prop("scrollHeight")}, 2000);
+      });
+      $('#overlay-scrollable').scrollTop(0);  
+
+      //$("#overlay-scrollable").animate({ scrollTop: $('#overlay-scrollable').prop("scrollHeight")}, 2000);
       
     }
     

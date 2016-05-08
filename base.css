@@ -38,7 +38,7 @@ div#map {
    margin: 0;
    background: #333;
 }
-
+c
 @media (max-width: 599px), (max-height: 499px) {
   #map-container {
     padding-top: 40px;
@@ -159,25 +159,63 @@ div#mobile-buttons {
  
 div#tour-slider-container {
     width: 500px;
-    padding: 10px;
+    padding: 10px 60px;
     position: absolute;
-    right: 20px;
-    top: 10px;
+    right: 30px;
+    top: 12px;
+    background-image: url('/icons/awake-slider.png'), url('icons/bedtime-slider.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position: center left, center right;
+    background-size: auto 100%, auto 100%;
 }
 
-
+ 
 @media (max-width: 599px), (max-height: 499px) {
     div#tour-slider-container {
         position: static;
         display: block;
         float: right;
         width: 150px;
-        padding: 5px;
-        padding-top: 9px;
+        padding: 5px 30px;
+        margin-top: 7px;
+        margin-right: 10px;
+        background-size: auto 100%;
     }
 }
 
+div#tour-slider {
+  height: 14px;
+  border-radius: 10px;
+  padding-right: 32px;
+}
 
+#tour-slider .noUi-handle {
+  top: -8px;
+  left: -1px;
+  border-radius: 7px;
+}
+
+#tour-slider .noUi-origin {
+  right: -32px;
+}
+
+#tour-slider .noUi-background {
+  border-radius: 10px;
+}
+
+#tour-slider.noUi-connect {
+  background: #CBE094;
+}
+
+#tour-slider .noUi-tooltip {
+  top: 34px;
+  border-radius: 10px;
+  padding: 4px 12px;
+  transform: translateX(-50%);
+  left: 17px;
+  font-size: 120%;
+  border: 3px solid rgb(153, 153, 153);
+}
 
 
 /******************************************************************************
@@ -707,6 +745,10 @@ a.next-button:hover {
 
 div.leaflet-container a.leaflet-popup-close-button {
   color: #333;
+  font-size: 200%;
+  padding: 18px 20px 0 0;
+  font-weight: normal;
+  overflow: visible;
 }
 
 div.leaflet-container a.leaflet-popup-close-button:hover {
@@ -810,16 +852,6 @@ a.show-all-points:hover, a.show-fewer-points:hover {
 
 
 
-@media (max-width: 599px), (max-height: 499px) {
-  div.leaflet-container a.leaflet-popup-close-button {
-    font-size: 260%;
-    padding: 18px 24px 0 0;
-    font-weight: normal;
-    overflow: visible;
-  }
-}
-
-
 
 /******************************************************************************
  text box icons */
@@ -903,40 +935,16 @@ body a.leaflet-control-zoom-out:last-child {
 
 
 /******************************************************************************
- icon mouseover animations */
+ map bubbles */
  
-img.behavior-icon.leaflet-marker-icon:hover{
-border: solid 3px white;
-transition: 0.1s ease;
-background: white;
+div.hexcluster {
+  pointer-events: none;
 }
 
-img.behavior-icon.leaflet-marker-icon{
-border-radius: 25px;
-border: solid 0px white;
-transition: 0.1s ease;
-}
-
-img.picture-icon {
-  border-radius: 5px;
-  border: solid #DDD 2px;
-  transition: 0.1s ease;
-}
-
-img.picture-icon:hover {
-  border: solid #FFF 5px;
-  transition: 0.1s ease;
-}
-
-img.awake-bedtime-icon.leaflet-marker-icon:hover {
-  transition: 0.2s ease;
-  padding-top: 5px;
-}
-
-img.awake-bedtime-icon.leaflet-marker-icon {
-  transition: 0.2s ease;
+g.node {
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 
-	
 
