@@ -29,7 +29,7 @@ function initMapMedia() {
     
     
     // Open text-bubble pop up
-    function openTextPopup(bubbleData, element) {
+    function openTextPopup(bubbleData, element, hideNextButton) {
             
         map.map.openPopup(  
           (
@@ -37,7 +37,8 @@ function initMapMedia() {
             bubbleData.title.replace('\\n', ' ') +
             '</div><div class="caption">' +
             bubbleData.text + 
-            '</div><div class="tour-next">Next &gt;</div>'
+            '</div>' +
+            (hideNextButton ? '' : '<div class="tour-next">Next &gt;</div>')
           ),
           
           popupLoc(element, Math.min(bubbleData.r, bubbleData.value)),

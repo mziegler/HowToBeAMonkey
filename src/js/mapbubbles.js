@@ -522,7 +522,7 @@ function initMapBubbles() {
                     .attr('preserveAspectRatio', 'xMidYMid slice');
                     
                 G.on('click', function(d, i) {
-                    mapMedia.openTextPopup(d, this);
+                    mapMedia.openTextPopup(d, this, true);
                     tour.updateSlider(G[0][0], d.time);
                     d3.event.stopPropagation();
                 });
