@@ -42,6 +42,7 @@ class OutFileNames:
 
 
 tourIntro = {
+    'loc': [10.5142232962, -85.3693762701],
     'note': 'intro',
     'data': [],
     'time': '05:30:00',

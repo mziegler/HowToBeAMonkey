@@ -153,6 +153,12 @@ function initMapBubbles() {
             this._el.selectAll('div.hexcluster').remove();
         
         
+            // don't draw bubbles if zoom is too low
+            if (this._map.getZoom() <= 17) {
+                return;
+            }
+        
+        
             // hack so we can access the map in D3 accessor functions
             var map = this._map;
             

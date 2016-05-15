@@ -55,12 +55,22 @@ function initTour() {
     
     
     
+    function getTourStop() {
+        return media.tourlist[Number(slider.noUiSlider.get())];
+    }
+    
+    
+    
     // open the corresponding icon/popup/media for this position on the slider
     function openSelectedIcon() {
         mediaOverlay.closeOverlay();
         introScreens.closeIntro();
         
-        var tourStop = media.tourlist[Number(slider.noUiSlider.get())];
+        if (map.map.getZoom() < 17) {
+            map.map.setZoom(18);
+        }
+        
+        var tourStop = getTourStop();
         
         // open the intro screen
         if (tourStop.note == 'intro') {
@@ -141,7 +151,8 @@ function initTour() {
     return {
         registerIcon: registerIcon,
         updateSlider: updateSlider,
-        tourNext: tourNext
+        tourNext: tourNext,
+        getTourStop: getTourStop,
     }
 }
 
