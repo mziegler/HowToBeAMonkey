@@ -109,6 +109,7 @@ module.exports = function(grunt) {
                         'src/libraries/d3/d3.min.js',
                         'src/libraries/d3/d3.hexbin.min.js',
                         'src/libraries/noUISlider/nouislider.min.js',
+                        'src/libraries/fontfaceonload.js',
                     ],
                 },
                 options: {

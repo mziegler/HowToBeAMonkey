@@ -61,3 +61,13 @@ function initHeaderControls() {
 }
 headerControls = initHeaderControls();
 
+
+
+///////////////////////////////////////////////////////////////////////////////
+// LOAD FONTS
+FontFaceOnload("Fira Sans", {
+  success: function() {
+    document.documentElement.className += " fonts-loaded";
+  },
+});
+
