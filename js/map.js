@@ -59,7 +59,7 @@ var track = L.polyline(media.WHtrack, {
     weight:5, 
     lineJoin:'round', 
     lineCap:'round', 
-    dashArray:[10,10]
+    dashArray:[10,10],
   }).addTo(map);
   
   
@@ -137,32 +137,57 @@ L.control.scale().addTo(map); // scale control
 
 
 
+///////////////////////////////////////////////////////////////////////////////
+// MONKEYFACE MARKER (when map is zoomed out)
+var monkeyfaceMarker = L.marker([10.5147, -85.3698], {
+  icon: L.icon({
+    iconUrl: '/icons/monkeyface-marker.png',
+    iconSize: [134,160],
+    iconAnchor: [67, 160],
+  })
+}).on('click', function() {
+  map.setView(tour.getTourStop().loc, 18);
+});
+
+
+
 //////////////////////////////////////////////////////////////////////////////
 // ZOOM
 // add or remove layers to the map based on the zoom level
 // cluster layer zoom behavior handled in clusterIconFactory function
+var previousZoom = map.getZoom();
 function zoomHandle() {
-  if (map.getZoom() <= 17) {
-    //map.removeLayer(pictureLayer);
-    //map.removeLayer(textBoxLayer);
-    map.closePopup();
+
+  var lastZoom = previousZoom;
+  previousZoom = map.getZoom();
+
+  map.closePopup();  
+  
+  if (map.getZoom() < 18) {
+    map.removeLayer(track);
+    map.removeLayer(rioCabuyo);
+    map.removeLayer(rioPizote);
+    map.addLayer(monkeyfaceMarker);
   }
   else {
-    //map.addLayer(pictureLayer);
-    //map.addLayer(textBoxLayer);
+    map.addLayer(track);
+    map.addLayer(rioCabuyo);
+    map.addLayer(rioPizote);
+    map.removeLayer(monkeyfaceMarker);
   }
   
   
-  if (map.getZoom() <= 14) {
-    //map.removeLayer(endMarker);
-    //map.removeLayer(rioCabuyo);
-    //map.removeLayer(rioPizote);
+  
+  if (18 > map.getZoom() && map.getZoom() > 6)  {
+    if (map.getZoom() > lastZoom) {
+      map.setView(tour.getTourStop().loc, 18);
+    }
+    else {
+      map.setZoom(6);
+    }
   }
-  else {
-    //map.addLayer(endMarker);
-    //map.addLayer(rioCabuyo);
-    //map.addLayer(rioPizote);
-  }
+
+  
 }
 zoomHandle();
 map.on('zoomend', zoomHandle);

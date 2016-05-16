@@ -18,7 +18,7 @@ function initMediaOverlay() {
     
     
     
-    function openOverlay(title, caption, picture, video) {
+    function openOverlay(title, caption, picture, video, hideNextButton) {
       if (title) {
         $('#overlay-title').html(title)
           .addClass('filled');
@@ -32,6 +32,13 @@ function initMediaOverlay() {
       if (picture) {
         $('#overlay-media').html('<img src="pictures/' + picture + '">')
           .addClass('filled');
+      }
+      
+      if (hideNextButton) {
+        $('#overlay-tour-next').hide();
+      }
+      else {
+        $('#overlay-tour-next').show();
       }
       
       map.map.closePopup();

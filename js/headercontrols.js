@@ -20,7 +20,7 @@ function initHeaderControls() {
 
   // monkey face icon
   $('#welcome-icon').click(function() {
-    mediaOverlay.openOverlay(null, 'Winslow Homer, a wild baby capuchin monkey', 'corner-welcome.jpg', null);
+    mediaOverlay.openOverlay(null, 'Winslow Homer, a wild baby capuchin monkey', 'corner-welcome.jpg', null, true);
   });
 
 
