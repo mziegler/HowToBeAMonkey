@@ -14,11 +14,20 @@ function initMediaOverlay() {
     function clearOverlay() {
       $('#overlay-media, #overlay-title, #overlay-caption')
         .empty().removeClass('filled');
+      $('#overlay-tour-next').show();
     }
     
     
     
     function openOverlay(title, caption, picture, video, hideNextButton) {
+    
+      clearOverlay();
+    
+      // If we're loading an image, scroll down animation only if both 
+      // 1) the image is completely loaded, and 2) the overlay is visible.
+      var imageLoaded = false;
+      var doneOpening = false;
+    
       if (title) {
         $('#overlay-title').html(title)
           .addClass('filled');
@@ -30,15 +39,26 @@ function initMediaOverlay() {
       }
       
       if (picture) {
-        $('#overlay-media').html('<img src="pictures/' + picture + '">')
-          .addClass('filled');
+        var img = $('<img>');
+        
+        img.on('load', function() {
+          imageLoaded = true;
+          if(doneOpening) {
+            $("#overlay-scrollable").animate({ scrollTop: $('#overlay-scrollable').prop("scrollHeight")}, 2000);
+          }
+        });
+        
+        img.attr('src', 'pictures/' + picture);
+        
+        $('#overlay-media').append(img).addClass('filled');
+        
+        
+        //$('#overlay-media').html('<img src="pictures/' + picture + '">')
+        //  .addClass('filled');
       }
       
       if (hideNextButton) {
         $('#overlay-tour-next').hide();
-      }
-      else {
-        $('#overlay-tour-next').show();
       }
       
       map.map.closePopup();
@@ -46,7 +66,10 @@ function initMediaOverlay() {
 
       
       $('#overlay-background').fadeIn(400, function() {
-        $("#overlay-scrollable").animate({ scrollTop: $('#overlay-scrollable').prop("scrollHeight")}, 2000);
+        doneOpening = true;
+        if (imageLoaded) {
+          $("#overlay-scrollable").animate({ scrollTop: $('#overlay-scrollable').prop("scrollHeight")}, 2000);
+        }
       });
       $('#overlay-scrollable').scrollTop(0);  
 
