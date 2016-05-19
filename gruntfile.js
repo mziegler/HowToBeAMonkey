@@ -104,12 +104,13 @@ module.exports = function(grunt) {
             libraries: {
                 files: {
                     'build/libraries.js.ugly': [
+                        'src/libraries/fastclick.min.js',
                         'src/libraries/jquery-1.11.0.min.js',
                         'src/libraries/leaflet/leaflet.js',
                         'src/libraries/d3/d3.min.js',
                         'src/libraries/d3/d3.hexbin.min.js',
                         'src/libraries/noUISlider/nouislider.min.js',
-                        'src/libraries/fontfaceonload.js',
+                        'src/libraries/fontfaceonload.min.js',
                     ],
                 },
                 options: {

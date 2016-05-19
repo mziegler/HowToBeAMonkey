@@ -71,3 +71,10 @@ FontFaceOnload("Fira Sans", {
   },
 });
 
+
+
+///////////////////////////////////////////////////////////////////////////////
+// ELIMINATE 300ms TAP DELAY ON MOBILE DEVICES
+$(function() {
+  FastClick.attach(document.body);
+});
