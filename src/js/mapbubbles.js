@@ -6,8 +6,8 @@
 function initMapBubbles() {
     
     
-    var clusterDiameter = 330;
-    var clusterMargin = 8;
+    var clusterMargin = 150;
+    var clusterDiameter = 300;
     
     
     // Range over which to show icons
