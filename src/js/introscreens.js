@@ -32,7 +32,7 @@ function initIntroScreens() {
     setTimeout(function() {
       mediaOverlay.openOverlay({
         picture: 'hello.jpg',
-        title: 'Meet Winslow Homer',
+        title: 'Meet Winslow Homer!',
         caption: 'He\'s the star of our show.  Winslow is the alpha female\'s baby, so everybody wants to play with him and groom him to gain the alpha female\'s favor.  He loves the attention &mdash; a little prince charming!'
       });
     }, 300);
