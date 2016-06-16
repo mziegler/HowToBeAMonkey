@@ -20,7 +20,11 @@ function initHeaderControls() {
 
   // monkey face icon
   $('#welcome-icon').click(function() {
-    mediaOverlay.openOverlay(null, 'Winslow Homer, a wild baby capuchin monkey', 'corner-welcome.jpg', null, true);
+    mediaOverlay.openOverlay({
+      caption: 'Winslow Homer, a wild baby capuchin monkey', 
+      picture:'corner-welcome.jpg',
+      hideNextButton: true,
+      });
   });
 
 
@@ -71,3 +75,10 @@ FontFaceOnload("Fira Sans", {
   },
 });
 
+
+
+///////////////////////////////////////////////////////////////////////////////
+// ELIMINATE 300ms TAP DELAY ON MOBILE DEVICES
+$(function() {
+  FastClick.attach(document.body);
+});

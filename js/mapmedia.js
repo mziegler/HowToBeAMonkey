@@ -38,7 +38,7 @@ function initMapMedia() {
             '</div><div class="caption">' +
             bubbleData.text + 
             '</div>' +
-            (hideNextButton ? '' : '<div class="tour-next">Next &gt;</div>')
+            (hideNextButton ? '' : '<div class="tour-next button-next">Next &gt;</div>')
           ),
           
           popupLoc(element, Math.min(bubbleData.r, bubbleData.value)),
@@ -120,7 +120,7 @@ function initMapMedia() {
         html += '</tbody></table></div>';
       }
 
-      html += '<div class="tour-next">Next &gt;</div>';
+      html += '<div class="tour-next button-next">Next &gt;</div>';
       
       return html;
     }  
@@ -178,7 +178,10 @@ function initMapMedia() {
             
         headerControls.closeSidePanel();
         
-        mediaOverlay.openOverlay(null, bubbleData.caption, bubbleData.uri, null);
+        mediaOverlay.openOverlay({
+          caption: bubbleData.caption, 
+          picture: bubbleData.uri,
+        });
     }
 
 

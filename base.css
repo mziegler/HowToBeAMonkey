@@ -224,149 +224,6 @@ div#tour-slider {
 }
 
 
-/******************************************************************************
- intro overlay */
-
-div.overlay {
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.6);
-  z-index:999999;
-}
-
-div.overlay div.overlay-intro-content {
-  background: white;
-  width: 100%;
-  max-width: 800px;
-  max-height: 100%;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 50px;
-  border-radius: 3px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(0, 30px) translate(-50%, -50%);
-  -ms-transform: translate(0, 30px) translate(-50%, -50%);
-  -webkit-transform: translate(0, 30px) translate(-50%, -50%);
-}
-
-div.overlay div.overlay-intro-content#overlay-intro2 {
-  max-width: 500px;
-}
-
-div.skip-intro {
-  color: #999;
-  font-size: 80%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px;
-  cursor: pointer;
-}
-
-div.skip-intro:hover {
-  color: #666;
-}
-
-span#intro-title {
-  font-weight:bold;
-  font-size:220%;
-}
-
-div#intro-hello {
-  background-image: url('pictures/preview/hello-2.jpg');
-  background-size: 100% auto;
-  background-position: center;
-  width: 268px;
-  height: 320px;
-  float:left;
-  margin-right: 30px;
-}
-
-p#intro-icon-row img {
-  display: inline-block;
-  height: 36px;
-  width: 36px;
-  padding: 0 4px;
-}
-
-@media (max-width: 599px), (max-height: 499px) {
-  
-  div.overlay div.overlay-intro-content {
-    padding: 0;
-    padding-top: 40px;
-    transform: none;
-    -ms-transform: none;
-    -webkit-transform: none;
-    top: 0;
-    left: 0;
-    height: 100%;
-  }
-  
-  span#intro-title {
-    font-size: 140%;
-  }
-}
-
-
-@media (max-width: 599px) and (orientation: portrait), 
-  (max-height: 499px) and (orientation: portrait) {
-  
-  span.intro-mobile-scroll {
-    display: block;
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-    box-sizing: border-box;
-    padding-bottom: 50px;
-  }
-  
-  span.intro-mobile-text {
-    display: block;
-    padding: 20px;
-  }
-  
-  div#intro-hello {
-    width: 100%;
-    height: 50%;
-    float: none;
-    margin: 0;
-  }
-}
-
-
-@media (max-width: 599px) and (orientation: landscape), 
-  (max-height: 499px) and (orientation: landscape) {
-  div#intro-hello {
-    height: 100%;
-    width: 40%;
-    background-size: cover;
-    margin: 0;
-  }
-  
-  span.intro-mobile-text {
-    display: block;
-    height: 100%;
-    overflow: auto;
-    padding: 20px;
-    padding-bottom: 60px;
-    box-sizing: border-box;int
-  }
-  
-  div.overlay div.overlay-intro-content#overlay-intro2 {
-    max-width: none;
-    width: 100%;
-  }
-}
-
-
 
 
 
@@ -435,6 +292,11 @@ div#overlay-caption.filled {
 
 div#overlay-title.filled {
   padding: 20px;
+  padding-bottom: 0;
+  text-align: center;
+  font-size: 200%;
+  line-height: 1;
+  font-weight: bold;
 }
 
 div#overlay-close {
@@ -667,58 +529,13 @@ a.side-linkout:hover {
 
 }
 
-/******************************************************************************
- intro screen "next" button */
 
-a.next-button {
-  font-weight: bold;
-  background: #FEDD5B;
-  border-radius: 5px;
-  display: inline-block;
-  padding: 10px 25px;
-  font-size: 180%;
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-a.next-button:hover {
-  background: #FED32A;
-  transition: 0.2s ease;
-}
-
-@media (max-width: 599px), (max-height: 499px) {
-  a.next-button {
-    background: #FEF370;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    z-index: 99990001;
-    text-align: center;
-    padding: 5px;
-    height: 50px;
-    border-radius: 0;
-  }
-}
-
-
-@media (max-width: 599px) and (orientation: landscape), 
-  (max-height: 499px) and (orientation: landscape) {
-  a.next-button#next-intro1 {
-    width: 60%;
-  }
-}
 
 
 /******************************************************************************
  tour "next" button */
 
-.tour-next {
+.button-next {
   display: block;
   width: 120px;
   font-weight: bold;
@@ -732,7 +549,7 @@ a.next-button:hover {
   margin-right: auto;
 }
 
-.tour-next:hover {
+.button-next:hover {
   background: #FED32A;
   transition: 0.2s ease;
 }

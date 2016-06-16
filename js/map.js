@@ -12,12 +12,12 @@ function initMap() {
 
 
 // initial pan and zoom of the map
-var initialView = [[10.5147, -85.3698], 18];
+var initialView = [[10.51422, -85.36937], 20];
 
 
 
 var map = L.map('map', {
-  maxZoom:19, 
+  maxZoom:20, 
   zoomControl: false, 
   attributionControl: false,
   maxBounds: L.latLngBounds([10.525, -85.3605], [10.5065, -85.3745]),
@@ -26,7 +26,8 @@ var map = L.map('map', {
 
 // base map (satelite images)
 L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
-  maxZoom: 19,
+  maxZoom: 20,
+  maxNativeZoom: 19,
   opacity: 1,
 }).addTo(map);
 
