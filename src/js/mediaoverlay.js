@@ -14,12 +14,14 @@ function initMediaOverlay() {
     function clearOverlay() {
       $('#overlay-media, #overlay-title, #overlay-caption')
         .empty().removeClass('filled');
-      $('#overlay-tour-next').show();
+      $('#overlay-tour-next').addClass('tour-next').off('click').show();
     }
     
     
     
-    function openOverlay(title, caption, picture, video, hideNextButton) {
+    function openOverlay(options) {
+    // options : {title, caption, picture, video, hideNextButton, nextButtonCallback}
+    
     
       clearOverlay();
     
@@ -28,17 +30,17 @@ function initMediaOverlay() {
       var imageLoaded = false;
       var doneOpening = false;
     
-      if (title) {
-        $('#overlay-title').html(title)
+      if (options.title) {
+        $('#overlay-title').html(options.title)
           .addClass('filled');
       }
       
-      if (caption) {
-        $('#overlay-caption').html(caption)
+      if (options.caption) {
+        $('#overlay-caption').html(options.caption)
           .addClass('filled');
       }
       
-      if (picture) {
+      if (options.picture) {
         var img = $('<img>');
         
         img.on('load', function() {
@@ -48,7 +50,7 @@ function initMediaOverlay() {
           }
         });
         
-        img.attr('src', 'pictures/' + picture);
+        img.attr('src', 'pictures/' + options.picture);
         
         $('#overlay-media').append(img).addClass('filled');
         
@@ -57,9 +59,14 @@ function initMediaOverlay() {
         //  .addClass('filled');
       }
       
-      if (hideNextButton) {
+      if (options.hideNextButton) {
         $('#overlay-tour-next').hide();
       }
+      
+      if (options.nextButtonCallback) {
+        $('#overlay-tour-next').removeClass('tour-next').on('click', options.nextButtonCallback);
+      }
+      
       
       map.map.closePopup();
       
