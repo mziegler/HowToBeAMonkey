@@ -53,11 +53,13 @@ function initMediaOverlay() {
         img.attr('src', 'pictures/' + options.picture);
         
         $('#overlay-media').append(img).addClass('filled');
-        
-        
-        //$('#overlay-media').html('<img src="pictures/' + picture + '">')
-        //  .addClass('filled');
       }
+      
+      
+      if (options.video) {
+        var iframe = $('<iframe src="' + options.video + '" frameborder="0" width="640" height="360" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+      }
+      
       
       if (options.hideNextButton) {
         $('#overlay-tour-next').hide();

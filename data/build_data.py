@@ -31,6 +31,7 @@ class InFileNames:
     gpstrack = 'GPS track.csv'
     pictures = 'pictures.csv'
     textbubbles = 'text bubbles.csv'
+    videos = 'videos.csv'
 
 
 class OutFileNames:
@@ -298,6 +299,36 @@ def pictureJSON(tourlist):
 
 
 
+def loadVideoCSV():
+    with open(InFileNames.videos) as f:
+        reader = csv.DictReader(f, skipinitialspace=True)
+        
+        videos = list(reader)
+        
+        for v in videos:
+            v['loc'] = getGPSCoords(parsetime(v['timestamp']))
+            
+    return videos
+
+
+
+
+def videoJSON(tourlist):
+    videos = loadVideoCSV()
+
+    return [ checkOnTour(tourlist, v,
+        {
+            'uri': v['uri'],
+            'thumb': v['thumbnail'],
+            'loc': v['loc'],
+            'cap': v['english_caption'],
+            'smtitle': v['english_short_title'],
+            'title': v['english_title'],
+            'time': v['timestamp'],
+        })
+        for v in videos
+    ]
+
 
 def loadTextbubbleCSV():
     with open(InFileNames.textbubbles) as f:
@@ -373,6 +404,15 @@ def buildTourList(observations):
                 'time': picture['timestamp'],
                 'loc': picture['loc'],
                 'data': picture,
+            })
+
+
+    for video in loadVideoCSV():
+        if video['on_tour']:
+            tourlist.append({
+                'time': video['timestamp'],
+                'loc': video['loc'],
+                'data': video,
             })
 
 
@@ -457,6 +497,7 @@ def buildMedia(tourlist):
         
         media = {
             'pictures': pictureJSON(tourlist),
+            'videos': videoJSON(tourlist),
             'textbubbles': textbubbleJSON(tourlist),
         }
         
