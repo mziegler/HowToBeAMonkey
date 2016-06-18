@@ -188,6 +188,19 @@ function initMapMedia() {
 
 
 
+    ///////////////////////////////////////////////////////////////////////
+    // VIDEOS
+    
+    function openVideo(bubbleData, element) {
+        headerControls.closeSidePanel();
+        
+        mediaOverlay.openOverlay({
+          video: bubbleData.uri,
+          caption: bubbleData.caption,
+          title: bubbleData.title,
+        });
+    }
+
 
 
 
@@ -195,6 +208,7 @@ function initMapMedia() {
         openTextPopup: openTextPopup,
         openBehaviorPopup: openBehaviorPopup,
         openPicture: openPicture,
+        openVideo: openVideo,
     }
 
 }

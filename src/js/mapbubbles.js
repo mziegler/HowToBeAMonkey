@@ -499,7 +499,6 @@ function initMapBubbles() {
                     .attr('xlink:href', 'pictures/thumbnails/videos/' + bubbleData.thumbnail)
                     .attr('preserveAspectRatio', 'xMidYMid slice');
                 G.on('click', function(d, i) {
-                    alert('video');
                     mapMedia.openVideo(d, this);
                     tour.updateSlider(G[0][0], d.time);
                     d3.event.stopPropagation();
