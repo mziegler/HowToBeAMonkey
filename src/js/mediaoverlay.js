@@ -65,7 +65,7 @@ function initMediaOverlay() {
         img.on('load', function() {
           imageLoaded = true;
           if(doneOpening) {
-            $("#overlay-scrollable").animate({ scrollTop: $('#overlay-scrollable').prop("scrollHeight")}, 2000);
+            $("#overlay-scrollable").animate({ scrollTop: $('#overlay-scrollable').prop("scrollHeight")}, 3000);
           }
         });
         
@@ -76,9 +76,16 @@ function initMediaOverlay() {
       
       
       if (options.video) {
-        var iframe = $('<iframe id="overlay-video" src="' + options.video + '" frameborder="0" width="640" height="360" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+        var iframe = $('<iframe id="overlay-video" src="' + options.video + '?autoplay=1&api=1&player_id=overlay-video" frameborder="0" width="640" height="360" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
         
         $('#overlay-media').append(iframe).addClass('filled');
+        
+        player = $f(iframe[0]);
+        player.addEvent('ready', function() {
+          player.addEvent('finish', function() { 
+            $("#overlay-scrollable").animate({ scrollTop: $('#overlay-scrollable').prop("scrollHeight")}, 1000);
+          });
+        });
       }
       
       
@@ -98,7 +105,7 @@ function initMediaOverlay() {
       $('#overlay-background').fadeIn(400, function() {
         doneOpening = true;
         if (imageLoaded) {
-          $("#overlay-scrollable").animate({ scrollTop: $('#overlay-scrollable').prop("scrollHeight")}, 2000);
+          $("#overlay-scrollable").animate({ scrollTop: $('#overlay-scrollable').prop("scrollHeight")}, 3000);
         }
       });
       $('#overlay-scrollable').scrollTop(0);  
