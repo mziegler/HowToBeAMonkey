@@ -17,7 +17,7 @@ function initTour() {
         connect: 'lower',
         step: 1,
         tooltips: {to: function(val) {
-            return val !== undefined ? media.tourlist[Number(val)].time : '';   
+            return val !== undefined ? media.tourlist[Number(val)].time.substr(0,5) : '';   
         }},
     });
     

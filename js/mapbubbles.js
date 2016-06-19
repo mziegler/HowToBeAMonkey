@@ -244,7 +244,7 @@ function initMapBubbles() {
     
         var bubbleGroups = {
             picture: [],
-            video: [], // TO DO
+            video: [], 
             text: [],
             behavior: {},
         };
@@ -259,6 +259,10 @@ function initMapBubbles() {
                     
                 case 'text':
                     bubbleGroups.text.push(observation);
+                    break;
+                    
+                case 'video':
+                    bubbleGroups.video.push(observation);
                     break;
                     
                 case 'behavior':
@@ -299,6 +303,7 @@ function initMapBubbles() {
         });
         
         
+        // prepare behavior bubble groups
         $.each(bubbleGroups.behavior, function(cat, observations) {
             var group = categoryGroups[media.categories[cat].group];
             
@@ -332,6 +337,7 @@ function initMapBubbles() {
         });
         
         
+        // randomly insert behavior bubble groups
         $.each(categoryGroups, function(i,g) { 
             insertRandom({
                 value: Math.max(Math.min(g.score, 20), 150),
@@ -345,7 +351,7 @@ function initMapBubbles() {
         
         // randomly insert pictures
         $.each(bubbleGroups.picture, function(i, item) {
-            item.value= Math.random() * 50 + 50;
+            item.value= Math.random() * 50 + 80;
             insertRandom(item);
         });
         
@@ -354,6 +360,14 @@ function initMapBubbles() {
         // randomly insert text
         $.each(bubbleGroups.text, function(i, item) {
             item.value= Math.random() * 20 + 100;
+            insertRandom(item);
+        });
+        
+        
+        
+        // randomly insert videos
+        $.each(bubbleGroups.video, function(i, item) {
+            item.value= Math.random() * 50 + 80;
             insertRandom(item);
         });
         
@@ -473,6 +487,24 @@ function initMapBubbles() {
                     d3.event.stopPropagation();
                 });
                 break;
+                
+                
+            
+            case 'video':
+                G.append('image')
+                    .attr('x', '0')
+                    .attr('y', '0')
+                    .attr('width', 2*r)
+                    .attr('height', 2*r)
+                    .attr('xlink:href', 'pictures/thumbnails/videos/' + bubbleData.thumbnail)
+                    .attr('preserveAspectRatio', 'xMidYMid slice');
+                G.on('click', function(d, i) {
+                    mapMedia.openVideo(d, this);
+                    tour.updateSlider(G[0][0], d.time);
+                    d3.event.stopPropagation();
+                });
+                break;
+            
                 
             
             case 'behaviorGroup':
@@ -651,6 +683,28 @@ function initMapBubbles() {
             
             if (picture.tour_id) {
                 marker.tour_ids = [picture.tour_id];
+            }
+            
+            clusterLayer.registerMarker(marker);
+        });
+        
+        
+        
+        // load videos
+        $.each(media.videos, function(i, video) {
+            var marker = {
+                loc: video.loc,
+                type: 'video',
+                uri: video.uri,
+                thumbnail: video.thumb,
+                caption: video.cap,
+                short_title: video.smtitle,
+                title: video.title,
+                time: video.time,
+            };
+            
+            if (video.tour_id) {
+                marker.tour_ids = [video.tour_id];
             }
             
             clusterLayer.registerMarker(marker);

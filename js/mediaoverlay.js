@@ -12,15 +12,29 @@ function initMediaOverlay() {
     
     // empty out the content in the overlay DOM elements
     function clearOverlay() {
-      $('#overlay-media, #overlay-title, #overlay-caption')
+      $('#overlay-media, #overlay-title, #overlay-bigtitle, #overlay-caption')
         .empty().removeClass('filled');
       $('#overlay-tour-next').addClass('tour-next').off('click').show();
     }
     
     
     
+        
+    // keep 16/9 aspect ratio for videos   
+    function resizeVideo() {
+      if ($('#overlay-video')) {
+        var mediaWidth = $('#overlay-media').width();
+        $('#overlay-video').attr({
+          width: mediaWidth,
+          height: mediaWidth * 9/16,
+        });
+      }
+    }
+    $(window).on('resize', resizeVideo);
+    
+    
     function openOverlay(options) {
-    // options : {title, caption, picture, video, hideNextButton, nextButtonCallback}
+    // options : {title, bigtitle, caption, picture, video, hideNextButton, nextButtonCallback}
     
     
       clearOverlay();
@@ -32,6 +46,11 @@ function initMediaOverlay() {
     
       if (options.title) {
         $('#overlay-title').html(options.title)
+          .addClass('filled');
+      }
+      
+      if (options.bigtitle) {
+        $('#overlay-bigtitle').html(options.bigtitle)
           .addClass('filled');
       }
       
@@ -53,11 +72,15 @@ function initMediaOverlay() {
         img.attr('src', 'pictures/' + options.picture);
         
         $('#overlay-media').append(img).addClass('filled');
-        
-        
-        //$('#overlay-media').html('<img src="pictures/' + picture + '">')
-        //  .addClass('filled');
       }
+      
+      
+      if (options.video) {
+        var iframe = $('<iframe id="overlay-video" src="' + options.video + '" frameborder="0" width="640" height="360" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+        
+        $('#overlay-media').append(iframe).addClass('filled');
+      }
+      
       
       if (options.hideNextButton) {
         $('#overlay-tour-next').hide();
@@ -79,10 +102,14 @@ function initMediaOverlay() {
         }
       });
       $('#overlay-scrollable').scrollTop(0);  
+      resizeVideo();
+
 
       //$("#overlay-scrollable").animate({ scrollTop: $('#overlay-scrollable').prop("scrollHeight")}, 2000);
       
     }
+    
+    
     
     
     return {
