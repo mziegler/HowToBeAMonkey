@@ -191,7 +191,6 @@ function initMapMedia() {
 
 
 
-
     //////////////////////////////////////////////////////////////////////
     // PICTURES
     
@@ -221,6 +220,15 @@ function initMapMedia() {
           title: bubbleData.title,
         });
     }
+
+
+
+
+    // Pan the map to show the given bubble in the center
+    function panToBubble(element, callback) {
+    
+    }
+
 
 
 

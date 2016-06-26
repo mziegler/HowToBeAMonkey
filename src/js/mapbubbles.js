@@ -572,7 +572,10 @@ function initMapBubbles() {
         // register tour markers
         if (bubbleData.tour_ids && bubbleData.tour_ids.length > 0) {
             $.each(bubbleData.tour_ids, function(i, tour_id) {
-                tour.registerIcon(tour_id, G[0][0]); // use the G DOM element, not the d3 selection
+                tour.registerIcon(tour_id, G[0][0], // use the G DOM element, not the d3 selection
+                
+                    // Pan to the bubble for pictures or videos, for popup types Leaflet will autopan.
+                    bubbleData.type=='picture' || bubbleData.type=='video');  
             });
         }
 

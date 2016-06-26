@@ -40,8 +40,12 @@ function initTour() {
     // When a new icon is created, and it contains an item on the tour,
     // this method will get called so we can update the list of tour icons.
     // 'icon' should be a DOM element (not a jquery or d3 selection.)
-    function registerIcon(tourID, icon) {
+    
+    // 'panToBubble' is true if we should pan to this bubble when it's selected
+    // (as opposed to Leaflet autopan.)
+    function registerIcon(tourID, icon, panToBubble) {
         media.tourlist[tourID].icon = icon;
+        media.tourlist[tourID].panToBubble = panToBubble;
     }
     
     
@@ -87,7 +91,19 @@ function initTour() {
         
         // dispatch click event on the icon 
         lastOpenIcon = tourStop.icon;
-        tourStop.icon.dispatchEvent(new MouseEvent("click"));
+        
+        // Show an animation for this bubble
+        if (tourStop.panToBubble) {
+            map.map.panTo(tourStop.loc, {animate:true, duration:0.5});
+            setTimeout(function() {
+                tourStop.icon.dispatchEvent(new MouseEvent("click"));
+            }, 700);
+                            
+        }
+        
+        else {
+            tourStop.icon.dispatchEvent(new MouseEvent("click"));
+        }
     }
     
     
