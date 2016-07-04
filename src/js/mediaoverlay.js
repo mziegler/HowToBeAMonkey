@@ -6,7 +6,9 @@ function initMediaOverlay() {
     
     // hide the overlay
     function closeOverlay() {
-      $('#overlay-background').fadeOut('fast');
+      $('#overlay-background').fadeOut('fast', function() {
+        $('#overlay-media').empty(); // stop video playing
+      });
     }
     
     
