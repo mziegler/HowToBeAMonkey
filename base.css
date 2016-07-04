@@ -653,10 +653,10 @@ div.leaflet-popup-content {
 }
 
 
-a.open-lightbox {
-  color: black;
-  text-decoration: none;
+div.caption li {
+    padding-bottom: 10px;
 }
+
 
 div.leaflet-popup-content img {
   min-width: 300px;
@@ -698,56 +698,6 @@ a.show-all-points:hover, a.show-fewer-points:hover {
 }
 
 
-
-
-/******************************************************************************
- text box icons */
-
-.textbox-icon-inner {
-  display: inline-block;
-  background: #EEE;
-  border: solid 3px #777;
-  border-radius: 8px;
-  padding: 5px;
-  transform: translate(-50%, 0);
-  text-align: center;
-  font-weight: bold;
-  position: relative;
-  color: #222;
-  min-width: 100px;
-  transition: 0.2s ease;
-}
-
-.textbox-icon-inner:hover {
-  background: #FFF;
-  margin-top: 3px;
-  transition: 0.2s ease;
-}
-
-
-.textbox-icon-inner:after, .textbox-icon-inner:before { 
-  top: 100%; 
-  left: 50%; 
-  border: solid transparent; 
-  content: " "; 
-  height: 0; 
-  width: 0; 
-  position: absolute; 
-  pointer-events: none; 
-} 
-
-.textbox-icon-inner:after { 
-  border-color: rgba(136, 183, 213, 0); 
-  border-top-color: #EEE; 
-  border-width: 5px; margin-left: -5px; 
-} 
-
-.textbox-icon-inner:before { 
-  border-color: rgba(194, 225, 245, 0); 
-  border-top-color: #777; 
-  border-width: 9px; 
-  margin-left: -9px;
-}
 
 
 
