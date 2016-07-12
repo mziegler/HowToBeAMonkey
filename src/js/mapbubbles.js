@@ -233,9 +233,6 @@ function initMapBubbles() {
         return 'WH-auto-' + uniqueIDCounter;
     }
     
-        
-    
-    
     
     
     // Figure out which SVG bubbles to draw (and how big, in which order),
@@ -398,9 +395,12 @@ function initMapBubbles() {
     // Split text into new lines at every occurrance of "\n", and scale the
     // text to fit the specified width.
     // "Container" is a D3 selection.
+    // 
+    // If "bottom" is true, render the text near the bottom of the icon.
+    // Otherwise, render it in the middle.
     //
     // Return a D3 selection with the text.
-    function renderText(text, r, padding, container) {
+    function renderText(text, r, padding, container, bottom) {
         var el = container.append('text')
             .attr('text-anchor', 'middle');
         
@@ -431,7 +431,7 @@ function initMapBubbles() {
         }
         
         
-        el.attr('transform', 'translate(' + r + ',' + r + ') scale(' + scale + ')');
+        el.attr('transform', 'translate(' + r + ',' + r*(bottom?1.5:1) + ') scale(' + scale + ')');
 
         return el;
     }
@@ -455,15 +455,17 @@ function initMapBubbles() {
             
         switch(bubbleData.type) {
             case 'text':
-                G.append('rect')
-                    .attr('x', 0)
-                    .attr('y', 0)
-                    .attr('width',  2*r)
-                    .attr('height', 2*r)
+                G.append('circle')
+                    .attr('x', r)
+                    .attr('y', r)
+                    .attr('width',  r)
+                    .attr('height', r)
                     .attr('fill', 'rgba(0,0,0,0.5)');
                     
-                renderText(bubbleData.title, r, 10, G)
-                    .attr('fill', 'white');
+                if (bubbleData.ititle) {    
+                    renderText(bubbleData.ititle, r, 10, G)
+                        .attr('fill', 'white');
+                }
 
                 G.on('click', function(d, i) {
                     mapMedia.openTextPopup(d, this);
@@ -481,6 +483,12 @@ function initMapBubbles() {
                     .attr('height', 2*r)
                     .attr('xlink:href', 'pictures/thumbnails/' + bubbleData.uri)
                     .attr('preserveAspectRatio', 'xMidYMid slice');
+                
+                if (bubbleData.ititle) {    
+                    renderText(bubbleData.ititle, r, 10, G, true)
+                        .attr('fill', 'white');
+                }    
+                
                 G.on('click', function(d, i) {
                     mapMedia.openPicture(d, this);
                     tour.updateSlider(G[0][0], d.time);
@@ -498,6 +506,12 @@ function initMapBubbles() {
                     .attr('height', 2*r)
                     .attr('xlink:href', 'pictures/thumbnails/videos/' + bubbleData.thumbnail)
                     .attr('preserveAspectRatio', 'xMidYMid slice');
+                    
+                if (bubbleData.ititle) {    
+                    renderText('\u23F5 ' + bubbleData.ititle, r, 10, G, true)
+                        .attr('fill', 'white');
+                }    
+                    
                 G.on('click', function(d, i) {
                     mapMedia.openVideo(d, this);
                     tour.updateSlider(G[0][0], d.time);
@@ -680,6 +694,8 @@ function initMapBubbles() {
                 loc: picture.loc,
                 type: 'picture',
                 uri: picture.uri,
+                title: picture.title,
+                ititle: picture.ititle,
                 caption: picture.cap,
                 time: picture.time,
             };
@@ -701,7 +717,7 @@ function initMapBubbles() {
                 uri: video.uri,
                 thumbnail: video.thumb,
                 caption: video.cap,
-                short_title: video.smtitle,
+                ititle: video.ititle,
                 title: video.title,
                 time: video.time,
             };
@@ -721,6 +737,7 @@ function initMapBubbles() {
                 loc: textbubble.loc,
                 type: 'text',
                 title: textbubble.title,
+                ititle: textbubble.ititle,
                 text: textbubble.text,
                 time: textbubble.time,
             }

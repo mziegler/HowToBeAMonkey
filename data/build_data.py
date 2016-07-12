@@ -288,8 +288,10 @@ def pictureJSON(tourlist):
         {
             'uri': p['filename'],
             'loc': p['loc'],
-            'cap': p['english'],
+            'cap': p['english_caption'],
             'time': p['timestamp'],
+            'title': p['english_title'],
+            'ititle': p['english_icon_title'],
         })
     
         for p in pictures
@@ -322,7 +324,7 @@ def videoJSON(tourlist):
             'thumb': v['thumbnail'],
             'loc': v['loc'],
             'cap': v['english_caption'],
-            'smtitle': v['english_short_title'],
+            'ititle': v['english_icon_title'],
             'title': v['english_title'],
             'time': v['timestamp'],
         })
@@ -352,6 +354,7 @@ def textbubbleJSON(tourlist):
         {
             'loc': b['loc'],
             'title': b['english_title'],
+            'ititle': b['english_icon_title'],
             'text': b['english_text'],
             'time': b['timestamp'],
         })
