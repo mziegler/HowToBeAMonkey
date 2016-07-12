@@ -233,6 +233,25 @@ function initMapBubbles() {
         return 'WH-auto-' + uniqueIDCounter;
     }
     
+    // Create a circle clip path inside the given parent element, with radius r.
+    // Return the ID of the clip path element.
+    // This is for trimming pictures and video icons into circular bubbles.
+    function generateClipCircle(parent, r) {
+    
+        var clipID = uniqueIDGenerator();
+    
+        var clipPath = parent.append('clipPath')
+            .attr('id', clipID);
+        clipPath.append("circle")
+            .attr('cx', r)
+            .attr('cy', r)
+            .attr('r', r);
+            
+        return clipID;
+    }
+    
+    
+    
     
     
     // Figure out which SVG bubbles to draw (and how big, in which order),
@@ -442,13 +461,8 @@ function initMapBubbles() {
     
     
     // "this" is SVG "G" DOM element
-    function renderBubbleIcon(bubbleData, r, G, clipPath) {
+    function renderBubbleIcon(bubbleData, r, G) {
         
-        
-        clipPath.append("circle")
-            .attr('cx', r)
-            .attr('cy', r)
-            .attr('r', r);
             
         G.attr('width', 2*r)
             .attr('height', 2*r);
@@ -456,10 +470,9 @@ function initMapBubbles() {
         switch(bubbleData.type) {
             case 'text':
                 G.append('circle')
-                    .attr('x', r)
-                    .attr('y', r)
-                    .attr('width',  r)
-                    .attr('height', r)
+                    .attr('cx', r)
+                    .attr('cy', r)
+                    .attr('r', r)
                     .attr('fill', 'rgba(0,0,0,0.5)');
                     
                 if (bubbleData.ititle) {    
@@ -476,13 +489,17 @@ function initMapBubbles() {
                 
                 
             case 'picture':
+            
+                var clipID = generateClipCircle(G, r);
                 G.append('image')
                     .attr('x', '0')
                     .attr('y', '0')
                     .attr('width', 2*r)
                     .attr('height', 2*r)
                     .attr('xlink:href', 'pictures/thumbnails/' + bubbleData.uri)
-                    .attr('preserveAspectRatio', 'xMidYMid slice');
+                    .attr('preserveAspectRatio', 'xMidYMid slice')
+                    .attr('clip-path', 'url(#' + clipID + ')');
+                
                 
                 if (bubbleData.ititle) {    
                     renderText(bubbleData.ititle, r, 10, G, true)
@@ -499,16 +516,19 @@ function initMapBubbles() {
                 
             
             case 'video':
+            
+                var clipID = generateClipCircle(G, r);
                 G.append('image')
                     .attr('x', '0')
                     .attr('y', '0')
                     .attr('width', 2*r)
                     .attr('height', 2*r)
                     .attr('xlink:href', 'pictures/thumbnails/videos/' + bubbleData.thumbnail)
-                    .attr('preserveAspectRatio', 'xMidYMid slice');
+                    .attr('preserveAspectRatio', 'xMidYMid slice')
+                    .attr('clip-path', 'url(#' + clipID + ')');
                     
                 if (bubbleData.ititle) {    
-                    renderText('\u23F5 ' + bubbleData.ititle, r, 10, G, true)
+                    renderText(/*'\u23F5 '+*/ bubbleData.ititle, r, 10, G, true)
                         .attr('fill', 'white');
                 }    
                     
@@ -633,11 +653,7 @@ function initMapBubbles() {
        
         node.each(function(bubbleData, i) {
             var thisNode = d3.select(this);
-            
-            var clipID = uniqueIDGenerator();
-            
-            var clipPath = thisNode.append('clipPath')
-                .attr('id', clipID);
+ 
             
             // bubbleData.r is computed by the layout algorithm, value is assigned by us
             //var r = Math.min(bubbleData.r, bubbleData.value); 
@@ -646,10 +662,9 @@ function initMapBubbles() {
             var G = thisNode.append("g")
                 .attr('width', 2*r)
                 .attr('height', 2*r)
-                .attr('transform', 'translate(-' + r + ',-' + r + ')')
-                .attr('clip-path', 'url(#' + clipID + ')');
+                .attr('transform', 'translate(-' + r + ',-' + r + ')');
                             
-            renderBubbleIcon(bubbleData, r, G, clipPath);
+            renderBubbleIcon(bubbleData, r, G);
             
             G.on('mouseover', selectBubbleAnimation);
             G.on('mouseout', unselectBubbleAnimation);
