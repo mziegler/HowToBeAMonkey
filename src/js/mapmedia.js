@@ -201,6 +201,7 @@ function initMapMedia() {
         mediaOverlay.openOverlay({
           caption: bubbleData.caption, 
           picture: bubbleData.uri,
+          title: bubbleData.title,
         });
     }
 

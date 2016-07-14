@@ -277,9 +277,9 @@ div#overlay-content {
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 0;
-  padding-bottom: 14px;
+  padding-bottom: 30px;
   border-radius: 3px;
-  background: white;
+  background: #fafafa;
   position: relative;
 }
 
@@ -292,10 +292,10 @@ div#overlay-media img {
 
 
 div#overlay-caption.filled {
+  font-size: 115%;
   padding: 20px;
-  padding-bottom: 20px;
-  text-align: center;
-  max-width: 800px;
+  padding-bottom: 40px;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -304,23 +304,27 @@ div#overlay-caption p:first-child {
   margin-top: 0;
 }
 
+div#overlay-caption p:last-child {
+  margin-bottom: 0;
+}
 
 div#overlay-bigtitle.filled {
-  padding: 20px;
-  padding-bottom: 0;
+  padding: 40px 30px 10px 30px;
   text-align: center;
-  font-size: 200%;
-  line-height: 1;
-  font-weight: bold;
+  font-size: 240%;
+  line-height: 1.2;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div#overlay-title.filled {
-  padding: 16px;
-  padding-bottom: 0;
-  text-align: center;
-  font-size: 160%;
-  line-height: 1;
-  font-weight: bold;
+  padding: 30px 20px 0 20px;
+  font-size: 200%;
+  line-height: 1.2;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div#overlay-close {
@@ -639,18 +643,20 @@ div.leaflet-container a.leaflet-popup-close-button:hover {
 div.popup-title {
   margin: -10px;
   margin-bottom: 5px;
-  padding: 15px;
-  padding-left: 19px;
+  padding: 20px;
+  padding-left: 25px;
   padding-bottom: 10px;
   width: 100%;
-  font-size: 140%;
-  font-weight: bold;
+  font-size: 160%;
 }
 
 .behavior-list {
   max-height: 200px;
   overflow: auto;
-  padding-right: 10px;
+  padding: 10px;
+  padding-bottom: 0;
+  margin-bottom: 10px;
+  padding-left: 0;
 }
 
 td.behavior-timestamp {
@@ -668,9 +674,9 @@ td.behavior-point {
   overflow: auto;
   margin: 5px;
   margin-right: 5px;
-  padding: 5px;
+  padding: 10px;
   padding-right: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-top: 0;
 }
 
@@ -692,6 +698,11 @@ div.leaflet-popup-content img {
   min-width: 300px;
   width: 100%;
   margin: 5px;
+}
+
+.behavior-popup .button-next {
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 
@@ -720,7 +731,7 @@ a.show-all-points, a.show-fewer-points {
   font-size: 80%;
   display: block;
   text-align: center;
-  margin-top: 5px;
+  margin-top: -6px;
 }
 
 a.show-all-points:hover, a.show-fewer-points:hover {

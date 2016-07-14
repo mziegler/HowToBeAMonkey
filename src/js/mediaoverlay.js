@@ -13,6 +13,7 @@ function initMediaOverlay() {
       map.showFloatingNext();
     }
     
+    $('#overlay-close').click(closeOverlay);
     
     // empty out the content in the overlay DOM elements
     function clearOverlay() {
