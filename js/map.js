@@ -152,6 +152,34 @@ var monkeyfaceMarker = L.marker([10.5147, -85.3698], {
 
 
 
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// SHOW/HIDE 'NEXT' BUTTON SUPERPOSITIONED ON MAP
+
+
+// Keep of flag of whether we're transitioning between tour stops, 
+// so we don't flash the next button.
+var onTourTransition = false;
+function startTourTransition() {  onTourTransition = true;   }
+function endTourTransition()   {  onTourTransition = false;  }
+
+function showFloatingNext() {
+  if (!onTourTransition) {
+    $('#map-next').fadeIn('fast');
+  }
+}
+
+function hideFloatingNext() {
+  $('#map-next').fadeOut('fast');
+}
+
+map.on('popupopen', hideFloatingNext);
+map.on('popupclose', showFloatingNext);
+
+
+
 //////////////////////////////////////////////////////////////////////////////
 // ZOOM
 // add or remove layers to the map based on the zoom level
@@ -203,6 +231,11 @@ return {
   map: map,
   //startMarker: startMarker,
   initialView: initialView,
+  
+  showFloatingNext: showFloatingNext,
+  hideFloatingNext: hideFloatingNext,
+  startTourTransition: startTourTransition,
+  endTourTransition: endTourTransition,
   }
 }
 

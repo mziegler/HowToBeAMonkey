@@ -233,7 +233,23 @@ function initMapBubbles() {
         return 'WH-auto-' + uniqueIDCounter;
     }
     
-        
+    // Create a circle clip path inside the given parent element, with radius r.
+    // Return the ID of the clip path element.
+    // This is for trimming pictures and video icons into circular bubbles.
+    function generateClipCircle(parent, r) {
+    
+        var clipID = uniqueIDGenerator();
+    
+        var clipPath = parent.append('clipPath')
+            .attr('id', clipID);
+        clipPath.append("circle")
+            .attr('cx', r)
+            .attr('cy', r)
+            .attr('r', r);
+            
+        return clipID;
+    }
+    
     
     
     
@@ -398,9 +414,12 @@ function initMapBubbles() {
     // Split text into new lines at every occurrance of "\n", and scale the
     // text to fit the specified width.
     // "Container" is a D3 selection.
+    // 
+    // If "bottom" is true, render the text near the bottom of the icon.
+    // Otherwise, render it in the middle.
     //
     // Return a D3 selection with the text.
-    function renderText(text, r, padding, container) {
+    function renderText(text, r, padding, container, bottom) {
         var el = container.append('text')
             .attr('text-anchor', 'middle');
         
@@ -431,7 +450,7 @@ function initMapBubbles() {
         }
         
         
-        el.attr('transform', 'translate(' + r + ',' + r + ') scale(' + scale + ')');
+        el.attr('transform', 'translate(' + r + ',' + r*(bottom?1.5:1) + ') scale(' + scale + ')');
 
         return el;
     }
@@ -442,28 +461,24 @@ function initMapBubbles() {
     
     
     // "this" is SVG "G" DOM element
-    function renderBubbleIcon(bubbleData, r, G, clipPath) {
+    function renderBubbleIcon(bubbleData, r, G) {
         
-        
-        clipPath.append("circle")
-            .attr('cx', r)
-            .attr('cy', r)
-            .attr('r', r);
             
         G.attr('width', 2*r)
             .attr('height', 2*r);
             
         switch(bubbleData.type) {
             case 'text':
-                G.append('rect')
-                    .attr('x', 0)
-                    .attr('y', 0)
-                    .attr('width',  2*r)
-                    .attr('height', 2*r)
+                G.append('circle')
+                    .attr('cx', r)
+                    .attr('cy', r)
+                    .attr('r', r)
                     .attr('fill', 'rgba(0,0,0,0.5)');
                     
-                renderText(bubbleData.title, r, 10, G)
-                    .attr('fill', 'white');
+                if (bubbleData.ititle) {    
+                    renderText(bubbleData.ititle, r, 10, G)
+                        .attr('fill', 'white');
+                }
 
                 G.on('click', function(d, i) {
                     mapMedia.openTextPopup(d, this);
@@ -474,13 +489,23 @@ function initMapBubbles() {
                 
                 
             case 'picture':
+            
+                var clipID = generateClipCircle(G, r);
                 G.append('image')
                     .attr('x', '0')
                     .attr('y', '0')
                     .attr('width', 2*r)
                     .attr('height', 2*r)
                     .attr('xlink:href', 'pictures/thumbnails/' + bubbleData.uri)
-                    .attr('preserveAspectRatio', 'xMidYMid slice');
+                    .attr('preserveAspectRatio', 'xMidYMid slice')
+                    .attr('clip-path', 'url(#' + clipID + ')');
+                
+                
+                if (bubbleData.ititle) {    
+                    renderText(bubbleData.ititle, r, 10, G, true)
+                        .attr('fill', 'white');
+                }    
+                
                 G.on('click', function(d, i) {
                     mapMedia.openPicture(d, this);
                     tour.updateSlider(G[0][0], d.time);
@@ -491,13 +516,22 @@ function initMapBubbles() {
                 
             
             case 'video':
+            
+                var clipID = generateClipCircle(G, r);
                 G.append('image')
                     .attr('x', '0')
                     .attr('y', '0')
                     .attr('width', 2*r)
                     .attr('height', 2*r)
                     .attr('xlink:href', 'pictures/thumbnails/videos/' + bubbleData.thumbnail)
-                    .attr('preserveAspectRatio', 'xMidYMid slice');
+                    .attr('preserveAspectRatio', 'xMidYMid slice')
+                    .attr('clip-path', 'url(#' + clipID + ')');
+                    
+                if (bubbleData.ititle) {    
+                    renderText(/*'\u23F5 '+*/ bubbleData.ititle, r, 10, G, true)
+                        .attr('fill', 'white');
+                }    
+                    
                 G.on('click', function(d, i) {
                     mapMedia.openVideo(d, this);
                     tour.updateSlider(G[0][0], d.time);
@@ -619,11 +653,7 @@ function initMapBubbles() {
        
         node.each(function(bubbleData, i) {
             var thisNode = d3.select(this);
-            
-            var clipID = uniqueIDGenerator();
-            
-            var clipPath = thisNode.append('clipPath')
-                .attr('id', clipID);
+ 
             
             // bubbleData.r is computed by the layout algorithm, value is assigned by us
             //var r = Math.min(bubbleData.r, bubbleData.value); 
@@ -632,10 +662,9 @@ function initMapBubbles() {
             var G = thisNode.append("g")
                 .attr('width', 2*r)
                 .attr('height', 2*r)
-                .attr('transform', 'translate(-' + r + ',-' + r + ')')
-                .attr('clip-path', 'url(#' + clipID + ')');
+                .attr('transform', 'translate(-' + r + ',-' + r + ')');
                             
-            renderBubbleIcon(bubbleData, r, G, clipPath);
+            renderBubbleIcon(bubbleData, r, G);
             
             G.on('mouseover', selectBubbleAnimation);
             G.on('mouseout', unselectBubbleAnimation);
@@ -680,6 +709,8 @@ function initMapBubbles() {
                 loc: picture.loc,
                 type: 'picture',
                 uri: picture.uri,
+                title: picture.title,
+                ititle: picture.ititle,
                 caption: picture.cap,
                 time: picture.time,
             };
@@ -701,7 +732,7 @@ function initMapBubbles() {
                 uri: video.uri,
                 thumbnail: video.thumb,
                 caption: video.cap,
-                short_title: video.smtitle,
+                ititle: video.ititle,
                 title: video.title,
                 time: video.time,
             };
@@ -721,6 +752,7 @@ function initMapBubbles() {
                 loc: textbubble.loc,
                 type: 'text',
                 title: textbubble.title,
+                ititle: textbubble.ititle,
                 text: textbubble.text,
                 time: textbubble.time,
             }

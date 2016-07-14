@@ -67,8 +67,10 @@ function initTour() {
     
     // open the corresponding icon/popup/media for this position on the slider
     function openSelectedIcon() {
+        map.startTourTransition();
         mediaOverlay.closeOverlay();
         introScreens.closeIntro();
+        map.map.closePopup();
         
         if (map.map.getZoom() < 17) {
             map.map.setZoom(18);
@@ -104,6 +106,8 @@ function initTour() {
         else {
             tourStop.icon.dispatchEvent(new MouseEvent("click"));
         }
+        
+        map.endTourTransition();
     }
     
     
