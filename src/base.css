@@ -571,6 +571,12 @@ a.side-linkout:hover {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  
+  /*
+  -webkit-user-select: none;  
+  -moz-user-select: none;     
+  -ms-user-select: none;  
+  user-select: none; */
 }
 
 .button-next:hover {
@@ -578,6 +584,30 @@ a.side-linkout:hover {
   transition: 0.2s ease;
 }
 
+
+#map-next.button-next {
+  position: absolute;
+  z-index: 88888;
+  transform: translate(-50%,0);
+  left: 50%;
+  bottom: 50px;
+  border: solid 2px rgba(255,255,255,0.4); 
+}
+
+.button-next-sup {
+  font-size: 70%;
+  font-weight: normal;
+  display: block;
+  margin-top: -2px;
+  margin-bottom: -2px;
+  opacity: 0.8;
+}
+
+@media (max-width: 599px), (max-height: 499px) {
+  #map-next.button-next {
+    bottom: 6px;
+  }
+}
 
 
 /******************************************************************************
