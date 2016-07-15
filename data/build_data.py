@@ -15,7 +15,7 @@ from datetime import datetime
 
 
 # behavior categories to include in the JSON file
-categories = set(('G', 'M', 'W', 'C', 'E', 'F', 'H', 'I', 'P', 'S', 'V',)) #'A', 'L', 'O'
+categories = set(('G', 'M', 'W', 'C', 'F', 'H', 'I', 'P', 'V',)) #'A', 'L', 'O', 'E', 'S'
 
 # time of first GPS point
 firstGPStime = datetime(2014,1,24,5,36,14)

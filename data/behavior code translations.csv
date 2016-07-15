@@ -1,1592 +1,1592 @@
-code,interestingness,category,english
-,,,
- VTFN,,,
-_AAFN,,,
-_AAUB,,,
-_LAQM WT,,,
-_LBDP,,,
-_LBFN,,,
-_LBKJ,,,
-_SEUB,,,
-_SEUB WT,,,
-!#audience min=[10] max=[10],,,
-!audience=[TJ BI WH VR UB VE DA],,,
-!audiofile speaker=[SEP] filename=[2014.01.24.AA.SEP.3FIGHTS_VN811178],,,
-!audiofile speaker=[sep] filename=[2014.01.24.AA.SEP.3FIGHTS_VN811178],,,
-!audiofile speaker=[sep] filename=[2014.01.24.AA.SEP.FIGHT_UB-VRVN811179],,,
-!END,,,
-!initiator=[TJ] victim=[BI],,,
-!initiator=[TJ] victim=[VR],,,
-!initiator=[VR] victim=[UB],,,
-!Loser=[TJ] evidence=[LostResource] comment=[DID NOT SUCCEED IN OBTAINING BP FROM BI],,,
-!Loser=[UB] evidence=[LostResource] comment=[],,,
-!protocolUsed=[FightProtocol],,,
-!qualityHelperPossiblyMissed=[no],,,
-!qualityHelperPossiblyMissed=[yes],,,
-!qualityMaxAggressionPossiblyMissed=[no],,,
-!qualityMaxAggressionPossiblyMissed=[no/yes],,,
-!qualityMaxAggressionPossiblyMissed=[yes],,,
-!qualityRedirectVictimPossiblyMissed=[no],,,
-!qualityRedirectVictimPossiblyMissed=[yes],,,
-!qualityRestPossiblyMissed=[no],,,
-!qualityRestPossiblyMissed=[yes],,,
-!qualityStartPossiblyMissed=[no],,,
-!qualityStartPossiblyMissed=[yes],,,
-!Resource type=[food] detail=[BP] comment=[],,,
-!START,,,
-!Winner=[BI] evidence=[ObtainedResource] comment=[BI KEPT THE BP BUT HE ALSO HAD IT ORIGINALLY],,,
-!Winner=[VR] evidence=[ObtainedResource] comment=[],,,
-0,,,
-*,,,
-**,,,
-** IGO DICT,,,
-** IGO TYPING HERE,,,
-****QM,,,
-***LO,,,
-***PCKJ,,,
-**/SF,,,
-**DEL,,,
-**FFO,,,
-**HFLC,,,
-**IGO,,,
-**IGO DICT,,,
-**IGO PSION TO FINISH,,,
-**ON,,,
-**QM NOT DG,,,
-**RIGHT AFTER Y,,,
-*B4 PWQM,,,
-*DA WT,,,
-*DA=PC LAST ONLY,,,
-*DEL,,,
-*DEL ANDDEL I IVP,,,
-*N*,,,
-*N* AES=AESDP,,,
-*N* APOPCVRKJ,,,
-*N* ASDPCKJ,,,
-*N* BACK,,,
-*N* CF XF=MONKEY COMB GREEN,,,
-*N* DICT KST,,,
-*N* F:WH PART ii,,,
-*N* FAAVD,,,
-*N* FABDP FABDU FABDA,,,
-*N* FABFN ASO,,,
-*N* FABLO B4 Y,,,
-*N* FIGHT,,,
-*N* FLAVR,,,
-*N* KST DICT,,,
-*N* MISSED YS WHILE SEP AWAY,,,
-*N* PICKEDUP FOLLOW,,,
-*N* PNC YSH 0DU PDU YSH 0NC,,,
-*N* RAALO WAS AT Y,,,
-*N* RABFN,,,
-*N* RABTJ B4,,,
-*N* RABXJ FABPV FLAPV ,,,
-*N* RBDT WT B4 Y,,,
-*N* RLADA B4 Y,,,
-*N* RLBDU,,,
-*N* RLBMR B4 Y,,,
-*N* STEHR XT,,,
-*N* STELC WT,,,
-*N* XBBPC NOT DA,,,
-*N* XHHQM NOT XHHPV,,,
-*N* YFFLC,,,
-*N* YFFLF,,,
-*N* YNA XNA,,,
-*N* YTT,,,
-*N*KST DICT,,,
-*QM,,,
-*S=XF POD,,,
-*SEP HAS NOW,,,
-*X1=UB,,,
-*X2=ON,,,
-*X3=LO,,,
-*X3=UB NOT QM,,,
-*XJ=DP,,,
-*XJ=FN,,,
-*XJ=NC,,,
-*XJ=VE DP,,,
-*XM=KJ,,,
-*XX=DP,,,
-/*!initial opponents=[],,,
-/*!Loser=[] evidence=[DisplacedMore/LostResource/other] comment=[],,,
-/*!Resource type=[food/monkey/other] detail=[id of food or monkey] comment=[],,,
-/*!Winner=[] evidence=[DisplacedLess/ObtainedResource/other] comment=[],,,
-/*!wound actor=[id] victim=[id] type=[] location=[] comment=[],,,
-AA,,,
-AADU FAV,5,G,"Duende drags a branch with his tail to show dominance, and Winslow Homer looks"
-AAETJ,4,G,Tom Jerry's fur is erect
-AALO,,,
-AAMDU FAV,4,M,"Duende grooms himself, Winslow Homer looks"
-AARDGOO FAV,5,G,"Danger aggressively shakes a branch at Susan (a researcher), and Winslow Homer looks"
-AARKJ,4,G,King James aggressively shakes a branch
-AAUDU,5,W,Duende rubs his urine on his fur
-AAXDU FAV,5,G,"Duende aggressively shakes a branch, and Winslow Homer looks"
-AAXKJ,4,G,King James aggressively shakes a branch
-AAXX,4,G,A monkey aggressively shakes a branch
-ABMR,,,
-ACIUBBI LC,5,C,Dubious is interested in Bilbo's Luchea fruit
-ACIVRBI LC,5,C,Viceroy is interested in Bilbo's Luchea friut
-AEAVVDT,4,E,Vandal avoids Dante
-AEAVVDU,4,E,Vandal avoids Duende
-AECKHDT,4,E,Krishna cowers to Dante
-AECLOKH,4,E,Kahlo cowers to Krishna
-AEGBIDG,4,E,"Bilbo grins to Danger, signaling submission"
-AELDTPJ,8,E,"Dante smacks her lips at Pope John, to signal submisson"
-AEM,3,E,"A monkey ""machine-gun"" screams"
-AEM D,3,E,"A monkey ""machine-gun"" screams, and Winslow Homer ignores it"
-AEMNC D,5,E,"Nickel ""machine-gun"" screams, and Winslow Homer ignores it"
-AEMX D,3,E,"A monkey machine-gun screams, and Winslow Homer ignores it"
-AEMX3 FAV,4,E,"A monkey ""machine-gun"" screams, and Winslow Homer looks"
-AES,4,E,A monkey screams
-AES D,2,E,"A monkey screams, and Winslow Homer ignores it"
-AES FAV,2,E,"A monkey screams, and Winslow Homer looks"
-AES ROARY,2,E,A monkey makes a roary scream
-AESDP FAV,12,E,"Duplo screams, and Winslow Homer looks"
-AESDPMR FAV,4,E,"Duplo screams at Monster, and Winslow Homer looks"
-AESOP D,3,E,"Opie screams, and Winslow Homer ignores it"
-AESOPTJ FAV,4,E,"Opie screams at Tom Jerry, and Winslow Homer looks"
-AESPVVV,4,E,Peeves screams at Vandal
-AESQHDQ D,4,E,"Quiddich screams at King Donkey, and Winslow Homer ignores it"
-AESUBPC,4,E,Dubious screams at Picasso
-AESVRTJ,4,E,Viceroy screams at Tom Jerry
-AEU,2,E,A monkey makes an undulating scream
-AEU FAV,5,E,"A monkey makes an undulating scream, and Winslow Homer looks"
-AEULOKH,4,E,Kahlo makes an undulating scream to Krishna
-AEUQH FAV,5,E,"Quiddich makes an undulating scream, and Winslow Homer looks"
-AEUVE FAV,5,E,"Vermeer makes and undulating scream, and Winslow Homer looks"
-AFCFNUB D,4,E,"Frankenstein climbs onto Dubious's back, and Winslow Homer ignores"
-AFINCDT,4,F,Nickel closely inspects Dante
-AFIQMUB,4,F,Quasimono closely inspects Dubious
-AFODP D,4,F,"Duplo sticks his tongue out, Winslow Homer ignores"
-AFPFNPV,4,F,Frankenstein palpates Peeves's nipple
-AFSDGBR,2,F,Danger sniffs a branch
-AFSDQBR,2,F,King Donkey sniffs a branch
-AFSPVVV BR,4,F,Peeves sniffs a branch where Vandal had been sitting
-AFSVRBR,2,F,Vermeer sniffs a branch
-AGJTJBI,4,G,Tom Jerry aggressively bounces at Bilbo
-AGQPCUB,4,G,Picasso aggressively lunges at Dubious
-AGQVRBI,4,G,Viceroy aggressively lunges at Bilbo
-AGQVRTJ,4,G,Viceroy aggressively lunges at Tom Jerry
-AGT,1,G,A monkey makes an aggressive open-mouth threat
-AGTDAOH D,4,G,"Dali makes an open-mouth threat to a researcher, Winslow Homer ignores"
-AGTDAVR,4,G,Dali makes an open-mouth threat to Viceroy
-AGTDGBI,4,G,Danger makes an open-mouth threat to Bilbo
-AGTDGOH KST D,4,G,"Danger makes an open-mouth threat to Kat (a researcher,) Winslow Homer ignores"
-AGTDGOH KST FAV,5,G,"Danger makes an open-mouth threat to Kat (a researcher,) and Winslow Homer looks"
-AGTDGOO,4,G,Danger makes an open-mouth threat to Susan (a researcher)
-AGTDGOO FAV,5,G,"Danger makes an open-mouth threat to Susan (a researcher,) and Winslow Homer looks"
-AGTDPXX,2,G,Duplo makes an open-mouth threat to a monkey
-AGTDTOH,3,G,Dante makes an open-mouth threat to a researcher
-AGTDTQH/DQ,4,G,Dante makes an open-mouth threat to Quiddich and King Donkey
-AGTDUOH,4,G,Duende makes an open-mouth threat to a researcher
-AGTKJOH KST,8,G,King James makes an open-mouth threat to Kat (a researcher)
-AGTNCOO D,4,G,"Nickel makes an open-mouth threat to Irene (a researcher,) Winslow Homer ignores"
-AGTONDU,4,G,Seiton makes an open-mouth threat to Duende
-AGTONOH KST D,4,G,"Seiton makes an open-mouth threat to Kat (a researcher,) Winslow Homer ignores"
-AGTQMOO,4,G,Quasimono makes an open-mouth threat to Irene
-AGTTJBI,4,G,Tom Jerry makes an open-mouth threat to Bilbo
-AGTTJVR,4,G,Tom Jerry makes an open-mouth threat to Viceroy
-AGTVDOH KST,8,G,Vladimir makes an open-mouth threat to Kat (a researcher)
-AGTVEOH JFE D,4,G,"Vermeer makes an open-mouth threat to Jim (a researcher,) Winslow Homer ignores it"
-AGTVOH MZI,,,
-AGTVROH KST FVA,5,G,"Viceroy makes an open-mouth threat to Kat (a researcher,) and Winslow Homer looks"
-AGTVROO D,4,G,"Vermeer makes an open-mouth threat to Irene, Winslow Homer ignores"
-AGTVROO FAV,4,G,"Viceroy makes an open-mouth threat to Susan (a researcher,) and Winslow Homer looks"
-AGTXXBI,1,G,A monkey makes an aggressive threat to Bilbo
-AGUTJBI,4,G,Tom Jerry aggressively pounces on Bilbo
-AHFLOKHDU,12,H,"Kahlo jerks his head towards Duende, to recruit him into a coalition against Krishna"
-AHKDAOHDU D,12,H,Dali and Duende stand with their cheeks together in a coalition against a researcher.  Winslow Homer ignores.
-AHKDUOONC,9,H,Duende and Nickel stand with their cheeks together to form a coalition against a researcher
-AHODAOHDU D,10,H,"Dali climbs onto Duende's back, in a coalition against a researcher.  Winslow Homer ignores."
-AHODAVRON,12,H,"Dali climbs onto Seiton's back, in a coalition against Viceroy."
-AHODUOHDA FAV,10,H,"Duende climbs onto Dali's back, in a coalition against a researcher.  Winslow Homer looks."
-AHODUOHDT JFE D,10,H,"Duende climbs onto Dante's back, in a coalition against Jim (a researcher.)  Winslow Homer ignores"
-AHOVROPVD,8,H,"Viceroy climbs onto Vladimir's back, in a coalition against Opie"
-AIMAJFU,6,I,"Arjuna climbs on top of Fishy, to ride on her back"
-AINAJFY,6,I,Arjuna nurses from Fishy
-AINFNMR,6,I,Frankenstein nurses from Monster
-AINUBFY,6,I,Dubious nurses from Fishy
-AITPVVV,10,I,"Peeves throws a tantrum to Vandal, and flails his limbs"
-AMIBIVR,4,M,Bilbo invites Viceroy to groom him
-AMIDADT,5,M,Dali invites Dante to groom her
-AMIDGDP,4,M,Danger invites Duplo to groom him
-AMIDPDG,4,M,Duplo invites Danger to groom him
-AMIDTDA,4,M,Dante invites Dali to groom her
-AMIDUDT D,4,M,"Duende invites Dante to groom him, Winslow Homer ignores"
-AMIONDA,4,M,Seiton invites Dali to groom her
-AMIPVVV,4,M,Peeves invites Vandal to groom her
-AMMDADT,5,M,Dali grooms Dante
-AMMDADT D,5,M,"Dante grooms Dali, Winslow Homer ignores"
-AMMDADU D,5,M,"Dali grooms Duende, Winslow Homer ignores"
-AMMDALO,4,M,Dali grooms Kahlo
-AMMDTDA FAV,5,M,"Dante grooms Dali, Winslow Homer looks"
-AMMDTDP,4,M,Dante grooms Duplo
-AMMDTDU,4,M,Dante grooms Duende
-AMMDTFN,4,M,Dante grooms Frankenstein
-AMMDTLO D,4,M,Dante grooms Kahlo
-AMMONDA,4,M,Seiton grooms Dali
-AMMONFN D,4,M,"Seiton grooms Frankenstein, Winslow Homer ignores"
-AMMPCDG,4,M,Picasso grooms Danger
-AMMVRBI,4,M,Viceroy grooms Bilbo
-APBAJFN,4,P,Arjuna play-bites Frankenstein
-APBQMFN,4,P,Quasimono play-bites Frankenstein
-APBUBPV,4,P,Dubious play-bites Peeves
-APHKJDT,4,P,King James play-hits Dante
-APKFNUB,4,P,Frankenstein and Dubious play chicken fight
-APQUBPV,4,P,Dubious play-lunges at Peeves
-APTPCVR,4,P,Picasso play-threatens Viceroy
-APWDTKJ,4,P,Dante and King James play wrestle
-APWFNUB,4,P,Frankenstein and Dubious play-wrestle
-APWKHLO,4,P,Krishna and Kahlo play-wrestle
-APWLOKH,4,P,Kahlo and Krishna play-wrestle
-APWPVQM,4,P,Peeves and Quasimono pla-wrestle
-APWQMFN D,4,P,"Quasimono and Frankenstein play-wrestle, Winslow Homer ignores"
-APWQMFN FAV,4,P,"Quasimono and Frankenstein play-wrestle, Winslow Homer looks"
-APX,,,
-ASDDTPJ,4,S,Dante makes a duck face to Pope John
-ASDKJDA,4,S,King James makes a duck face to Dali
-ASDKJXX,4,S,King Donkey makes a duck face
-ASMKHLO,4,S,Krishna mounts Kahlo
-ASMKJDT,4,S,King James mounts Dante
-ASPKJDA,5,S,"King James sex-paces, running back and forth, looking at Dali"
-ASTKJDA,5,S,"King James twirls his body around, with his gaze fixed on Dali"
-AVB,7,V,A monkey makes a bird alarm call
-AVB D,7,V,"A monkey makes a bird alarm call, Winslow Homer ignores"
-AVB FAQ,8,V,"A monkey makes a bird alarm call, and Winslow Homer runs toward the sound"
-AVBDA FAV,7,V,"Dali makes a bird alarm call, and Winslow Homer looks"
-AVDG G SERIES D,,,
-AVEFNDU,4,V,Frankenstein makes a twargle sound to Duende
-AVEVEDU,4,V,Vermeer makes a twargle sound to Duende
-AVFDA FAV,5,V,"Dali food-peeps, Winslow Homer looks"
-AVG,4,S,A monkey sex-grunts
-AVHDU,6,V,Duende makes a “let's go!” vocalization
-AVI CH FAZ,8,G,"Many monkeys make intense vocal threats in chorus, Winslow Homer looks"
-AVI SERIES,6,G,A monkey makes a series of intense vocal threats
-AVI SERIES D,6,G,"A monkey makes a series of intense vocal threats, Winslow Homer ignores"
-AVIDA FAV,8,G,"Dali makes an intense vocal threat, Winslow Homer looks"
-AVIDTXX FAV,8,G,"Dante makes an intense vocal threat, Winslow Homer looks"
-AVL,4,V,A monkey makes a lost call
-AVL1,4,V,A monkey makes a 1-syllable lost call
-AVL1 D,4,V,"A monkey makes a 1-syllable lost call, Winslow Homer ignores"
-AVL1 R,4,V,A monkey makes a 1-syllable lost call in response
-AVL1NC D,4,V,"Nickel makes a 1-syllable lost call, Winslow Homer ignores"
-AVL2,4,V,A monkey makes a 2-syllable lost call
-AVL2 D,4,V,"A monkey makes a 2-syllable lost call, and Winslow Homer ignores"
-AVNFNDU,4,V,Frankenstein gargles to Duende
-AVO,3,G,A monkey makes a squeak threat
-AVO D,3,G,"A monkey makes a squeak threat, Winslow Homer ignores"
-AVO FAV,5,G,"A monkey makes a squeak threat, and Winslow Homer looks"
-AVO SERIES,3,G,A monkey makes a series of squeak threats
-AVODA,4,G,Dali makes a squeak threat
-AVODAOH,5,G,Dali makes a squeak threat to a researcher
-AVODT SERIES,3,G,Dante makes a series of squeak threats
-AVODTKH,4,G,Dante squeak-threatens Krishna
-AVODTOH MZI,4,G,Dante makes a squeak threat to Matt (a researcher)
-AVODU,3,G,Duende makes a squeak threat
-AVOLOKH,4,G,Kahlo squeak-threatens Krishna
-AVOVV,3,G,Vandal makes a squeak-threat
-AVOVVBI,4,G,Vandal squeak-threatens Bilbo
-AVOVVDT,4,G,Vandal squeak-threatens Dante
-AVOVVVR,4,G,Vandal squeak-threatens Viceroy
-AVPFN,7,V,Frankenstein makes a social peep
-AVQNC,6,V,Nickel coos
-AVQNC D,5,V,"Nickel coos, Winslow Homer ignores"
-AVR,3,V,A monkey makes an intense gargle
-AVRDU,4,V,Duende makes an intense gargle
-AVS,6,V,A monkey makes a snake alarm
-AVS D,6,V,"A monkey makes a snake alarm, Winslow Homer ignores"
-AVS FAV,8,V,"A monkey makes a snake alarm, and Winslow Homer looks"
-AVS FRU,9,V,"A monkey makes a snake alarm, Winslow Home runs up"
-AVS SERIES,4,V,A monkey makes a series of snake alarms
-AVSMR,7,V,Monster makes a snake alarm
-AVSPV D,7,V,Peeves makes a snake alarm
-AVSVV,7,V,Vandal makes a snake alarm
-AVTAJFY H,4,F,Arjuna hard-twitters to Fishy
-AVTFN,5,F,Frankenstein twitters
-AVTXX SC,2,F,A monkey screamy-twitters
-AVVTJVV,4,S,Tom Jerry sex-squeaks to Vandal
-AVW,2,V,A monkey makes a wheeze vocalization
-AVY,3,V,A monkey yelps
-AVY D,3,V,"A monkey yelps, Winslow Homer ignores"
-AVY FAV,5,V,"A monkey yelps, Winslow Homer looks"
-AVYDADU,5,V,Dali yelps to Duende
-AVYPVPC D,4,V,"Peeves yelps to Picasso, Winslow Homer ignores"
-AVYQMXX FAV,5,V,"Quasimono yelps, and Winslow Homer looks"
-AVYUBVR,4,V,Dubious yelps to Viceroy
-AVYVEDG,4,V,Vermeer yelps to Danger
-AVZ,3,V,A monkey makes an alarm call
-AVZ D,3,V,"A monkey makes an alarm call, and Winslow Homer ignores"
-AVZ FAV,5,V,"A monkey makes an alarm call, and Winslow Homer looks"
-C BI KEEPS THE BP,,,
-C CENSUS COMPLETE,,,
-C CROSSES RIO,,,
-C DT HELPER,,,
-C DT HELPER TO LO,,,
-C ESTRUS?,,,
-C I AM NOT PAYING FULL ATTENTION TO FIGHT. POOP STALKING VV.,,,
-C KST DICT,,,
-C LEAVING MONOS,,,
-C LONG PENIS GROOMING,,,
-C MESSY PROXES NOW,,,
-C MIMSSING PROXXES HERE,,,
-C MONOS LEAVING SLEEPSITE,,,
-C MONOS MOVING AROUND,,,
-C MONOS SLEEPING HERE,,,
-C MONOS WAKING,,,
-C MZI NOT WITH WH,,,
-C NO IDEA,,,
-C NURSING TANTRUM,,,
-C ON HOLDS HAND OF WH,,,
-C PENIS,,,
-C PHOTOS,,,
-C POOP,,,
-"C POOP FY 2 S,I BP,RS,XF DB",,,
-C POOP ON KST,,,
-C PV WANTS TO NURSE,5,I,Peeves wants to nurse
-C QM MASTURBATES,,,
-"C RESOURCE BP, BI ORIGINALLY HAD THE BP",,,
-C SQUABBLE IN THE BP PATCH,,,
-C STARTLED,,,
-C STUNG BY AC AHTS,,,
-C TO IGO PSION,,,
-C VR AAVV,,,
-C VR VS. UB,,,
-"C VR WINS DISPUTE OVER BP, GETS RESOURCE",,,
-C WH LICKS FN,,,
-C WINSLOW HOMER DAY!,,,
-C XAAUB,,,
-C XBBDADTON AT SOME POINT,,,
-C XBBFN,,,
-C XBBNC,,,
-C XX=TJ?,,,
-"CA 10 MONKEYS IN AUDIENCE, INCLUDING WH,VE,TJ, UB, VR",,,
-"CA VV,DU",,,
-CCDP,,,
-CCDT,,,
-CF ALL ALREADY CHEWED OPEN,,,
-CF DROPS ZI AND RETRIEVES IT,,,
-CF FNWH HANDLE ST FLOWERS,,,
-CF FORAGING  PANAMA,,,
-CF LONG FLAT GREN POD VINE,,,
-CF POD?,,,
-CF PODS ON VINE NOT NORMALLY EATEN,,,
-CF RED AND GREEN THINGSTOREN FROM MR FOOT,,,
-CF SPECIMEN COLLECTED OF HE. WH HANDLES THE 3-PART POD BUT DOESN'T ACTUALLY EAT IT.,,,
-CI DU HAS 2 FINGERS DA MOUTH,,,
-CI WH STICKS WH FINGER IN DA NOSE,,,
-CL ANNIGO CLIFF,,,
-CL CABUYA,,,
-CL CAFETERIA,,,
-CL COL,,,
-CL COL-ANNIGO,,,
-CL COL-IDA,,,
-CL COL-Q.PIZ,,,
-CL COW FIG,,,
-CL DSH,,,
-CL DSH WATEHOLE,,,
-CL FAT,,,
-CL FAT CLIFF,,,
-CL FAT FENCE,,,
-CL SUPERSLOANEA,,,
-CL TWIRLY,,,
-CL TWIRLY FLAG,,,
-CL WATERFALL STREAM,,,
-CP ALREADY OPEN,,,
-CQ COMPLETE,,,
-CQ MISSING SOME ACTION (OTHERS ALSO GT BILBO) AND MISS MOST OF THE HUGE AUDIENCE,,,
-CV WH MAKES ODD VT-ISH NOISES WHENEVER NURSING,,,
-CZ VULTURE,,,
-DABPV,,,
-DLBPV,,,
-DONE,,,
-END,,,
-END CHASERS,,,
-END ESTRUS 27.5MINS,,,
-END LOSING FOCAL IN MASSIVE BP PATCH,,,
-END LOTS OF MONOS IN BAD LIGHT,,,
-F:VV,,,
-F:WH,,,
-F:WH PART III,,,
-FAAAJ,,,
-FAABI,1,A,Winslow Homer approaches to one body length of Bilbo
-FAADA,1,A,Winslow Homer approaches to one body length of Dali
-FAADG,1,A,Winslow Homer approaches to one body length of Danger
-FAADGFAATJ,,,
-FAADP,1,A,Winslow Homer approaches to one body length of Duplo
-FAADQ,,,
-FAADT,1,A,Winslow Homer approaches to one body length of Dante
-FAADU,1,A,Winslow Homer approaches to one body length of Duend
-FAAFN,1,A,Winslow Homer approaches to one body length of Frankenstein
-FAAJP,1,A,Winslow Homer approaches to one body length of Jigglypuf
-FAAKH,1,A,Winslow Homer approaches to one body length of Krishna
-FAAKJ,1,A,Winslow Homer approaches to one body length of King James
-FAALO,1,A,Winslow Homer approaches to one body length of Kahlo
-FAAMR,1,A,Winslow Homer approaches to one body length of Monster
-FAANC,1,A,Winslow Homer approaches to one body length of Nickel
-FAANE,1,A,Winslow Homer approaches to one body length of Champagne
-FAAON,1,A,Winslow Homer approaches to one body length of Seiton
-FAAOP,1,A,Winslow Homer approaches to one body length of Opie
-FAAPC,1,A,Winslow Homer approaches to one body length of Picasso
-FAAPJ,1,A,Winslow Homer approaches to one body length of Pope John
-FAAPV,1,A,Winslow Homer approaches to one body length of Peeves
-FAAQH,1,A,Winslow Homer approaches to one body length of Quidditch
-FAAQM,1,A,Winslow Homer approaches to one body length of Quasimono
-FAATJ,1,A,Winslow Homer approaches to one body length of Tom Jerry
-FAAUB,1,A,Winslow Homer approaches to one body length of Dubious
-FAAVE,1,A,Winslow Homer approaches to one body length of Vermeer
-FAAVR,1,A,Winslow Homer approaches to one body length of Viceroy
-FAAVV,1,A,Winslow Homer approaches to one body length of Vandal
-FAAX1,,,
-FAAX9,,,
-FAAXJ,,,
-FAAXX,,,
-FAAXX C1,,,
-FAB,,,
-FABAJ,,,
-FABBI,1,A,Winslow Homer approaches to five body lengths of Bilbo
-FABDA,1,A,Winslow Homer approaches to five body lengths of Dali
-FABDG,1,A,Winslow Homer approaches to five body lengths of Danger
-FABDP,1,A,Winslow Homer approaches to five body lengths of Duplo
-FABDP?,1,A,Winslow Homer approaches to five body lengths of Duplo
-FABDQ,1,A,Winslow Homer approaches to five body lengths of King Donkey
-FABDT,1,A,Winslow Homer approaches to five body lengths of Dante
-FABDU,1,A,Winslow Homer approaches to five body lengths of Duende
-FABFN,1,A,Winslow Homer approaches to five body lengths of Frankenstein
-FABJP,1,A,Winslow Homer approaches to five body lengths of Jigglypuff
-FABKH,1,A,Winslow Homer approaches to five body lengths of Krishna
-FABKJ,1,A,Winslow Homer approaches to five body lengths of King James
-FABLO,1,A,Winslow Homer approaches to five body lengths of Kahlo
-FABLU,,,
-FABMR,1,A,Winslow Homer approaches to five body lengths of Monster
-FABNC,1,A,Winslow Homer approaches to five body lengths of Nickel
-FABNE,1,A,Winslow Homer approaches to five body lengths of Champagne
-FABON,1,A,Winslow Homer approaches to five body lengths of Seiton
-FABOP,1,A,Winslow Homer approaches to five body lengths of Opie
-FABPC,1,A,Winslow Homer approaches to five body lengths of Picasso
-FABPD,,,
-FABPJ,1,A,Winslow Homer approaches to five body lengths of Pope John
-FABPV,1,A,Winslow Homer approaches to five body lengths of Peeves
-FABQH,1,A,Winslow Homer approaches to five body lengths of Quidditch
-FABQM,1,A,Winslow Homer approaches to five body lengths of Quasimono
-FABTJ,1,A,Winslow Homer approaches to five body lengths of Tom Jerry
-FABUB,1,A,Winslow Homer approaches to five body lengths of Dubious
-FABVD,1,A,Winslow Homer approaches to five body lengths of Vladimir
-FABVE,1,A,Winslow Homer approaches to five body lengths of Vermeer
-FABVR,1,A,Winslow Homer approaches to five body lengths of Viceroy
-FABVV,1,A,Winslow Homer approaches to five body lengths of Vandal
-FABX1,,,
-FABX2,,,
-FABX9,,,
-FABXJ,,,
-FABXX,,,
-FABXX C1,,,
-FACBVE,,,
-FADA,,,
-FAFBDU,,,
-FALDA,8,F,Winslow Homer follows Dali
-FALDP,7,F,Winslow Homer follows Duplo
-FALDU,8,F,Winslow Homer follows Duende
-FALFN,8,F,Winslow Homer follows Frankenstein
-FALPJ,7,F,Winslow Homer follows Pope John
-FALPV,8,F,Winslow Homer follows Peeves
-FALQM,7,F,Winslow Homer follows Quasimono
-FALX1,5,F,Winslow Homer follows another monkey
-FAUB,,,
-FAV,,,
-FAVBI,5,L,Winslow Homer looks at Bilbo
-FAVDA,8,L,Winslow Homer looks at Dali
-FAVDP,7,L,Winslow Homer looks at Duplo
-FAVDQ,5,L,Winslow Homer looks at King Donkey
-FAVDQ/QH,7,L,Winslow Homer looks at King Donkey and Quidditch
-FAVDT,6,L,Winslow Homer looks at Dante
-FAVDU,8,L,Winslow Homer looks at Duende
-FAVFN,8,L,Winslow Homer looks at Frankenstein
-FAVKJ,5,L,Winslow Homer looks at King James
-FAVOH,5,L,Winslow Homer looks at a researcher
-FAVOH JFE,7,L,Winslow Homer looks at Jim (a researcher)
-FAVOH MZI,7,L,Winslow Homer looks at Matt (a researcher)
-FAVOO,7,L,Winslow Homer looks at Susan (a researcher)
-FAVPC,5,L,Winslow Homer looks at Picasso
-FAVPV,7,L,Winslow Homer looks at Peeves
-FAVQM,5,L,Winslow Homer looks at Quasimono
-FAVTJ,5,L,Winslow Homer looks at Tom Jerry
-FAVUB,8,L,Winslow Homer looks at Dubious
-FAVVE,5,L,Winslow Homer looks at Vermeer
-FAVVR,7,L,Winslow Homer looks at Viceroy
-FAVVV,6,L,Winslow Homer looks at Vandal
-FAVXX NV,,,
-FAVZH,7,L,Winslow Homer looks at a howler monkey
-FBDA,,,
-FCAPV HR,8,C,Winslow Homer tries to steal Peeves's Hirtella racemosa fruit
-FCHDP SCORPION,7,C,Winslow Homer handles Duplo's scorpion
-FCHFN STFLOWER,7,C,Winslow Homer is interested in Frankenstein's Terciopelo flower
-FCHMR SK,,,
-FCHVE RA,8,C,Winslow Homer touches Vermeer's Raspa fruit
-FCIDA LC,8,C,Winslow Homer is interested in Dali's Luchea fruit
-FCIDA RS,8,C,Winslow Homer is interested in Dali's Rubiaceae fruit
-FCIDA ZI,8,C,Winslow Homer is interested in Dali's insect
-FCIDP SCORPION,9,C,Winslow Homer is interested in Duplo's scorpion
-FCIDP SK,,,
-FCIFN POD,7,C,Winslow Homer is interested in Frankenstein's pod
-FCIFN SK,,,
-FCIFN WST,,,
-FCIFY LC,8,C,Winslow Homer is interested in Fishy's Luchea fruit
-FCIMR SK,,,
-FCINC LC WT,8,C,Winslow Homer is interested in Nickel's Luchea fruit
-FCIPV X,7,C,Winslow Homer is interested in Peeve's food
-FCIQM HR,8,C,Winslow Homer is interested in Quasimono's Rubiaceae fruit
-FCIUB,7,C,Winslow Homer is interested in Dubious's food
-FCIUB BK,7,C,Winslow Homer is interested in Dubious's food
-FCIVE RA,8,C,Winslow Homer is interested in Vermeer's Raspa fruit
-FCIVE SK,,,
-FCIVR BK,,,
-FCTDA LC,9,C,"Winslow Homer takes some of Dali's Luchea fruit, and Dali tolerates it"
-FCTMR XX,8,C,"Winslow Homer takes some of Monster's food, and Monster tolerates it"
-FCTPV X,8,C,"Winslow Homer takes some of Peeves's food, and Peeves tolerates it"
-FCTVE RA,8,C,"Winslow Homer takes some of Vermeer's Raspa fruit, and Vermeer tolerates it"
-FEABI,20,E,Winslow Homer avoids Bilbo
-FEADG,25,E,Winslow Homer avoids Danger
-FFAFN,,,
-FFCAJ,8,F,Winslow Homer climbs on Arjuna
-FFCBI,7,F,Winslow Homer climbs on Bilbo
-FFCDG,7,F,Winslow Homer climbs on Danger
-FFCDP,8,F,Winslow Homer climbs on Duplo
-FFCDT,7,F,Winslow Homer climbs on Dante
-FFCFN,8,F,Winslow Homer climbs on Frankenstein
-FFCLO,7,F,Winslow Homer climbs on Kahlo
-FFCNE,7,F,Winslow Homer climbs on Champagne
-FFCPV,8,F,Winslow Homer climbs on Peeves
-FFCQM,8,F,Winslow Homer climbs on Quasimono
-FFCTJ,7,F,Winslow Homer climbs on Tom Jerry
-FFCVE,7,F,Winslow Homer climbs on Vermeer
-FFCVR,8,F,Winslow Homer climbs on Viceroy
-FFIBI,8,F,Winslow Homer closely inspects Bilbo
-FFIDA,8,F,Winslow Homer closely inspects Dali
-FFINC,8,F,Winslow Homer closely inspects Nickel
-FFIPJ,7,F,Winslow Homer closely inspects Pope John
-FFIVE,8,F,Winslow Homer closely inspects Vermeer
-FFO,8,F,Winslow Homer sticks his tongue out
-FFODU,8,F,Winslow Homer sticks his tongue out at Duende
-FFPDA,9,F,Winslow Homer palpates Dali's nipple
-FFSBR,6,F,Winslow Homer sniffs a branch
-FFSDA,7,F,Winslow Homer sniffs Dali
-FFSDU,8,F,Winslow Homer sniffs Duende
-FFSDU CROTCH,7,F,Winslow Homer sniffs Duende's crotch
-FFSFN,7,F,Winslow Homer sniffs Frankenstein
-FFSJP,7,F,Winslow Homer sniffs Jigglypuff
-FFSKJ,6,F,Winslow Homer sniffs King James
-FFSVE,7,F,Winslow Homer sniffs Vermeer
-FFTDA,8,F,Winslow Homer gently touches Dali
-FFTDG,8,F,Winslow Homer gently touches Danger
-FFTDT,8,F,Winslow Homer gently touches Dante
-FFTDU,8,F,Winslow Homer gently touches Duende
-FFTFN,8,F,Winslow Homer gently touches Frankenstein
-FFTKH,8,F,Winslow Homer gently touches Krishna
-FFTLO,8,F,Winslow Homer gently touches Kahlo
-FFTPJ,8,F,Winslow Homer gently touches Pope John
-FFTQM,8,F,Winslow Homer gently touches Quasimono
-FFTTJ,8,F,Winslow Homer gently touches Tom Jerry
-FFTUB,8,F,Winslow Homer gently touches Dubious
-FFTVE,8,F,Winslow Homer gently touches Vermeer
-FFUPV,,,
-FGJOH MZI,8,G,Winslow Homer aggressively bounces at Matt (a researcher)
-FGRDP,7,G,Winslow Homer aggressively glares at Duplo
-FGTBI,8,G,Winslow Homer open-mouth threatens Bilbo
-FGTOH MATT,8,G,Winslow Homer aggressively bounces at Matt (a researcher)
-FGTZL,14,G,Winslow Homer open-mouth threatens a lizard
-FIDDA,7,I,Winslow Homer climbs off of Dali's back
-FIDPV,7,I,Winslow Homer climbs off of Peeves's back 
-FIDVD WT,7,I,Winslow Homer climbs off of Vladimir's back
-FIMDA,9,I,Winslow Homer climbs onto Dali and rides on her back
-FIMPV,8,I,Winslow Homer climbs onto Peeves and rides on his back
-FIMVD,8,I,Winslow Homer climbs onto Vladimir and rides on her back
-FINDA,9,I,Winslow Homer nurses from Dali
-FINWH WT,,,
-FIRPJ,8,I,Winslow Homer attempts to nurse from Peeves
-FISDA,7,I,Winslow Homer stops nursing from Dali
-FITDT,9,I,"Winslow Homer throws a tantrum to Dante, and flails his limbs"
-FLAAJ,1,A,Winslow Homer leaves one body length of Arjuna
-FLABI,1,A,Winslow Homer leaves one body length of Bilbo
-FLADA,1,A,Winslow Homer leaves one body length of Dal
-FLADG,1,A,Winslow Homer leaves one body length of Danger
-FLADP,1,A,Winslow Homer leaves one body length of Duplo
-FLADQ,1,A,Winslow Homer leaves five body lengths of King Donkey
-FLADT,1,A,Winslow Homer leaves one body length of Dante
-FLADU,1,A,Winslow Homer leaves one body length of Duende
-FLADU WT,1,A,Winslow Homer leaves one body length of Duende
-FLAFN,1,A,Winslow Homer leaves one body length of Frankenstein
-FLAJP,1,A,Winslow Homer leaves one body length of Jigglypuff
-FLAKH,1,A,Winslow Homer leaves one body length of Krishna
-FLAKJ,1,A,Winslow Homer leaves one body length of King James
-FLALO,1,A,Winslow Homer leaves one body length of Kahlo
-FLAMR,1,A,Winslow Homer leaves one body length of Monster
-FLANC,1,A,Winslow Homer leaves one body length of Nickel
-FLANE,1,A,Winslow Homer leaves one body length of Champagne
-FLAON,1,A,Winslow Homer leaves one body length of Seiton
-FLAON WT,1,A,Winslow Homer leaves one body length of Seiton
-FLAPC,1,A,Winslow Homer leaves one body length of Picasso
-FLAPJ,1,A,Winslow Homer leaves one body length of Pope John
-FLAPV,1,A,Winslow Homer leaves one body length of Peeves
-FLAQA,,,
-FLAQM,1,A,Winslow Homer leaves one body length of Quasimono
-FLATJ,1,A,Winslow Homer leaves one body length of Tom Jerry
-FLAUB,1,A,Winslow Homer leaves one body length of Dubious
-FLAVE,1,A,Winslow Homer leaves one body length of Vermeer
-FLAVR,1,A,Winslow Homer leaves one body length of Viceroy
-FLAVV,1,A,Winslow Homer leaves one body length of Vandal
-FLAX2,,,
-FLAX9,,,
-FLAXJ,,,
-FLAXX,,,
-FLAXX C1,,,
-FLBAJ,1,A,Winslow Homer leaves five body lengths of Arjuna
-FLBBI,1,A,Winslow Homer leaves five body lengths of Bilbo
-FLBDA,1,A,Winslow Homer leaves five body lengths of Dali
-FLBDG,1,A,Winslow Homer leaves five body lengths of Danger
-FLBDP,1,A,Winslow Homer leaves five body lengths of Duplo
-FLBDQ,1,A,Winslow Homer leaves five body lengths of King Donkey
-FLBDT,1,A,Winslow Homer leaves five body lengths of Dante
-FLBDU,1,A,Winslow Homer leaves five body lengths of Duende
-FLBFN,1,A,Winslow Homer leaves five body lengths of Frankenstein
-FLBJP,1,A,Winslow Homer leaves five body lengths of Jigglypuff
-FLBKH,1,A,Winslow Homer leaves five body lengths of Krishna
-FLBKJ,1,A,Winslow Homer leaves five body lengths of King James
-FLBLO,1,A,Winslow Homer leaves five body lengths of Kahlo
-FLBMR,1,A,Winslow Homer leaves five body lengths of Monster
-FLBNC,1,A,Winslow Homer leaves five body lengths of Nickel
-FLBNE,1,A,Winslow Homer leaves five body lengths of Champagne
-FLBON,1,A,Winslow Homer leaves five body lengths of Seiton
-FLBPC,1,A,Winslow Homer leaves five body lengths of Picasso
-FLBPJ,1,A,Winslow Homer leaves five body lengths of Pope John
-FLBPV,1,A,Winslow Homer leaves five body lengths of Peeves
-FLBQH,1,A,Winslow Homer leaves five body lengths of Quidditch
-FLBQM,1,A,Winslow Homer leaves five body lengths of Quasimono
-FLBTJ,1,A,Winslow Homer leaves five body lengths of Tom Jerry
-FLBUB,1,A,Winslow Homer leaves five body lengths of Dubious
-FLBVD,1,A,Winslow Homer leaves five body lengths of Vladimir
-FLBVE,1,A,Winslow Homer leaves five body lengths of Vermeer
-FLBVR,1,A,Winslow Homer leaves five body lengths of Viceroy
-FLBVV,1,A,Winslow Homer leaves five body lengths of Vandal
-FLBX2,,,
-FLBX3,,,
-FLBX9,,,
-FLBXF,,,
-FLBXX C1,,,
-FMIDA,9,M,Winslow Homer invites Dali to groom him
-FMIDP,9,M,Winslow Homer invites Duplo to groom him
-FMIDT,8,M,Winslow Homer invites Dante to groom him
-FMION,8,M,Winslow Homer invites Seiton to groom him
-FMIVR,8,M,Winslow Homer invites Vermeer to groom him
-FMIX1,,,
-FMMJP,9,M,Winslow Homer grooms Jigglypuff
-FMOJP,7,M,Winslow Homer stops grooming Jigglypuff
-FPBDA,8,P,Winslow Homer play-bites Dali
-FPBFN,8,P,Winslow Homer play-bites Frankenstein
-FPBQM,7,P,Winslow Homer play-bites Quasimono
-FPBUB,8,P,Winslow Homer play-bites Dubious
-FPBVR,7,P,Winslow Homer play-bites Vermeer
-FPCNC,8,P,Winslow Homer play-chases Nickel
-FPCQM,8,P,Winslow Homer play-chases Quasimono
-FPCUB,8,P,Winslow Homer play-chases Dubious
-FPFFN,8,P,Winslow Homer play-flees from Frankenstein
-FPHQH,7,P,Winslow Homer play-hits Quidditch
-FPHUB,8,P,Winslow Homer play-hits Dubious
-FPHVR,8,P,Winslow Homer play-hits Vermeer
-FPIFN,9,P,"Winslow Homer makes a 'play-face' to Frankenstein, inviting him to play.  His mouth is open but his teeth don't show, except for the tips of the canines."
-FPIJP,8,P,"Winslow Homer makes a “play face” to Jigglypuff, inviting him to play.  His mouth is open, and his teeth aren't showing except for the tips of his canines."
-FPILO,8,P,"Winslow Homer makes a “play face” to Kahlo, him to play."
-FPINC,8,P,"Winslow Homer makes a “play face” to Nickel, inviting her to play"
-FPKQM,8,P,"Winslow Homer and Quasimono hang by their tales, and playfully  swat and grapple with one another"
-FPKVR,8,P,"Winslow Homer and Vermeer hang by their tales, and playfully  swat and grapple with one another"
-FPLFN,8,P,Winslow Homer play-pulls Frankenstein
-FPLKH TAIL,8,P,Winslow Homer play-pulls Krishna's tail
-FPQNC,8,P,Winslow Homer play-lunges at Nickel
-FPUFN,8,P,Winslow Homer play-pounces on Frankenstein
-FPUQH,7,P,Winslow Homer play-pounces on Quidditch
-FPUUB,8,P,Winslow Homer play-pounces on Dubious
-FPUVR,7,P,Winslow Homer play-pounces on Viceroy
-FPWBI,8,P,Winslow Homer play-wrestles with Bilbo
-FPWFN,8,P,Winslow Homer play-wrestles with Frankenstein
-FPWNC,9,P,Winslow Homer play-wrestles with Nickel
-FPWQM,8,P,Winslow Homer play-wrestles with Quasimono
-FPWUB,8,P,Winslow Homer play-wrestles with Dubious
-FSELO,6,S,Winslow Homer unmounts Kahlo
-FSEUB,6,S,Winslow Homer unmounts Dubious
-FSMUB,7,S,Winslow Homer mounts Dubious
-FSXUB,7,S,Winslow Homer mounts Dubious
-FVEDU,8,V,Winslow Homer makes a twargle sound to Duende
-FVF,7,C,Winslow Homer food-peeps
-FVOBI,8,G,Winslow Homer squeak-threatens Bilbo
-FVP,7,V,Winslow Homer social-peeps
-FVQ,7,V,Winslow Homer coos
-FVT,6,F,Winslow Homer twitters
-FVTBI,6,F,Winslow Homer twitters to Bilbo
-FVTDA,8,F,Winslow Homer twitters to Dali
-FVTDP,7,F,Winslow Homer twitters to Duplo
-FVTDT,7,F,Winslow Homer twitters to Dante
-FVTDU,9,F,Winslow Homer twitters to Duende
-FVTFVT,7,F,Winslow Homer twitters
-FVTMR,7,F,Winslow Homer twitters to Monster
-FVTNC,7,F,Winslow Homer twitters to Nickel
-FVTPJ,6,F,Winslow Homer twitters to Pope John
-FVTPV,7,F,Winslow Homer twitters to Peeves
-FVTU,,,
-FVTUB,7,F,Winslow Homer twitters to Dubious
-FVTVR,7,F,Winslow Homer twitters to Viceroy
-FVTVT,,,
-FVYDT,7,V,Winslow Homer yelps to Dante
-GHFDTOHDU,8,H,"Dante jerks her head towards Duende, to recruit him into a coalition against a researcher"
-GHKDAOHDU,8,H,"Dali and Duende stand in contact with their cheeks together, in a coalition against a researcher"
-GHOWHZLQM,15,H,"Winslow Homer climbs onto Quasimono's back, in a coalition against a lizard"
-H KK,,,
-HA ,,,
-HB,6,C,Winslow Homer forages for insects in bark
-HB ,6,C,Winslow Homer forages for insects in bark
-HB B,9,C,Winslow Homer forages for insects in bark
-HB BB,7,C,Winslow Homer forages for insects in bark
-HB BBKF,8,C,Winslow Homer forages for insects in bark
-HB F,6,C,Winslow Homer forages for insects in bark
-HB I,6,C,Winslow Homer forages for insects in bark
-HB K,7,C,Winslow Homer forages for insects in bark
-HB KB,8,C,Winslow Homer forages for insects in bark
-HB KK,6,C,Winslow Homer forages for insects in bark
-HC,,,
-HC ,,,
-HC B,,,
-HC BB,,,
-HC BBBB,,,
-HC BBBBB,,,
-HC BBD,,,
-HC BBI,,,
-HC BBID,,,
-HC BD,,,
-HC BI,,,
-HC BIBBBD,,,
-HC BIBIBBII,,,
-HC BII,,,
-HC BIII,,,
-HC BIIIIII,,,
-HC BKII,,,
-HC D,,,
-HC F,,,
-HC FD,,,
-HC FFFI,,,
-HC I,,,
-HC IBD,,,
-HC ID,,,
-HC IFI,,,
-HC IHL,,,
-HC II,,,
-HC IIBI,,,
-HC IID,,,
-HC III,,,
-HC IIID,,,
-HC IIIFFIFD,,,
-HC IIII,,,
-HC IIIII,,,
-HC IIIIII,,,
-HC IIIIIIBIIIIBIIIIBIIIIIIIIIII,,,
-HC IIIIIIIII,,,
-HC IIIIIIIIIB,,,
-HC IIIIIIIIII,,,
-HC ILI,,,
-HC K,,,
-HC KB,,,
-HC KK,,,
-HC L,,,
-HC LFD,,,
-HC LI,,,
-HC SBSD,,,
-HCD,,,
-HCI,,,
-HFAI? BBD,6,C,Winslow Homer handles a <i>Liana</i> fruit
-HFBP,6,C,Winslow Homer handles a bromeliad fruit
-HFBP B,7,C,Winslow Homer bites a bromeliad fruit
-HFBP BIBI,8,C,Winslow Homer bites and ingests a bromeliad fruit
-HFBP BIII,9,C,Winslow Homer bites and ingests a bromeliad fruit
-HFBP BIIID,8,C,"Winslow Homer bites, ingests, and drops a bromeliad fruit"
-HFBP FBIID,8,C,"Winslow Homer sniffs, bites, ingests, and drops a bromeliad fruit"
-HFBP FD,7,C,Winslow Homer sniffs and drops a bromeliad fruit
-HFBP FIIII,7,C,Winslow Homer sniffs and ingests a bromeliad fruit
-HFBP I,6,C,Winslow Homer ingests a bromeliad fruit
-HFGU,6,C,Winslow Homer handles a <i>Guacimo</i> fruit
-HFGU BB,7,C,Winslow Homer bites a <i>Guacimo</i> fruit
-HFHE,6,C,Winslow Homer handles a <i>Hippocrateaceae</i> fruit
-HFHR,6,C,Winslow Homer handles a <i>Hirtella racemosa</i> fruit
-HFHR B,7,C,Winslow Homer bites a <i>Hirtella racemosa</i> fruit
-HFHR BB,7,C,Winslow Homer bites a <i>Hirtella racemosa</i> fruit
-HFHRSUR,,,
-HFLC,6,C,Winslow Homer handles a Luchea fruit
-HFLC B,7,C,Winslow Homer handles and bites a Luchea fruit
-HFLC BB,7,C,Winslow Homer handles and bites a Luchea fruit
-HFLC BBBB,7,C,Winslow Homer handles and bites a Luchea fruit
-HFLC BBD,9,C,"Winslow Homer handles, bites and drops a Luchea fruit"
-HFLC BD,8,C,"Winslow Homer handles, bites and drops a Luchea fruit"
-HFLC BK,8,C,"Winslow Homer handles, bites and breaks a Luchea fruit"
-HFLC D,8,C,Winslow Homer handles and drops a Luchea fruit
-HFLC F,7,C,Winslow Homer handles and sniffs a Luchea fruit
-HFLC FD,8,C,"Winslow Homer handles, sniffs, and drops a Luchea fruit"
-HFOL,6,C,Winslow Homer handles a <i>Ouratea lucens</i>fruit
-HFRA IIII,7,C,Winslow Homer ingests some <i>Raspa</i> fruits
-HFRH B,7,C,Winslow Homer handles and bites a Liana fruit
-HFRH BB,7,C,Winslow Homer handles and bites a Liana fruit
-HFRH BBB,7,C,Winslow Homer handles and bites a Liana fruit
-HFRH BBII,8,C,"Winslow Homer handles, bites, and ingests a Liana fruit"
-HFRH K,8,C,Winslow Homer handles and breaks a Liana fruit
-HFRS I,7,C,Winslow Homer handles and ingests a Rubiaceae fruit
-HFXF,6,C,Winslow Homer handles an unknown fruit
-HFXF B,6,C,Winslow Homer handles and bites an unknown fruit
-HFXF BB,6,C,Winslow Homer handles and bites an unknown fruit
-HFXF BBBB,6,C,Winslow Homer handles and bites an unknown fruit
-HFXF BBBBB,6,C,Winslow Homer handles and bites an unknown fruit
-HFXF II,6,C,Winslow Homer handles and ingests an unknown fruit
-HFXF POD,,,
-HH,7,C,"Winslow Homer inspects a hole in a tree, checking for food"
-HI,6,C,Winslow Homer grabs an insect
-HI I,6,C,Winslow Homer ingests an insect
-HI IIII,6,C,Winslow Homer ingests an insect
-HI IIIIII,7,C,Winslow Homer ingests an insect
-HIAB III,7,C,Winslow Homer ingests an acid bug
-HIKY I,7,C,Winslow Homer ingests a katydid
-HIWN D,8,C,"Winslow Homer handles a wasp nest, and drops it"
-HIWN IIIIIII,9,C,Winslow Homer eats larva and honey from a wasp nest
-HL,6,C,Winslow Homer looks under a leaf for insects
-HL ,6,C,Winslow Homer looks under a leaf for insects
-HL B,6,C,Winslow Homer bites a leaf
-HL BBB,6,C,Winslow Homer bites a leaf
-HL F,6,C,Winslow Homer sniffs a leaf
-HL I,7,C,Winslow Homer ingests an insect from a leaf
-HL IIIIIII,7,C,Winslow Homer ingests an insect from a leaf
-HL L,7,C,Winslow Homer licks a leaf
-HLKY IIIIIII,6,C,"Winslow Homer finds a katydid under a leaf, and ingests it"
-HLRABFN,,,
-HOCACTUS,6,C,Winslow Homer handles a cactus
-HS,7,C,"Winslow Homer handles a stick, looking for insects"
-HS ,7,C,"Winslow Homer handles a stick, looking for insects"
-HS B,7,C,Winslow Homer bites a stick
-HS BAEM D,,,
-HS BB,7,C,Winslow Homer bites a stick
-HS BBB,7,C,Winslow Homer bites a stick
-HS BBBBBIIBIIBIBBIIID,7,C,"Winslow Homer bites and ingests insects from a stick, and drops the stick"
-HS BBBBD,7,C,Winslow Homer bites and drops a stick
-HS BBD,7,C,Winslow Homer bites and drops a stick
-HS BD,7,C,Winslow Homer bites and drops a stick
-HS BDFFO,,,
-HS BKBB,7,C,Winslow Homer breaks and bites a stick
-HS BKBBD,8,C,"Winslow Homer bites, breaks, and drops a stick"
-HS BKBK,8,C,Winslow Homer bites and breaks a stick
-HS BKKD,8,C,"Winslow Homer bites, breaks, and drops a stick"
-HS D,6,C,Winslow Homer drops a stick
-HS I,6,C,Winslow Homer ingests insects from a stick
-HS K,6,C,Winslow Homer breaks a stick
-HS KB,7,C,Winslow Homer breaks and bites a stick
-HS KBBBB,7,C,Winslow Homer breaks and bites a stick
-HS KBBKB,7,C,Winslow Homer breaks and bites a stick
-HS KBD,8,C,"Winslow Homer breaks, bites, and drops a stick"
-HS KBIBIIII,9,C,"Winslow Homer breaks, bites, and ingests insects from a stick"
-HS KD,7,C,Winslow Homer breaks and drops a stick
-HS L,7,C,Winslow Homer licks a stick
-HS TTD,7,C,Winslow Homer taps and drops a stick
-HS TTTKB,8,C,"Winslow Homer taps, breaks, and bites a stick"
-HSAC,7,C,Winslow Homer handles a stick from an <i>Acacia</i> tree
-HSAC B,6,C,Winslow Homer bites an acacia stick
-HSAC BD,7,C,Winslow Homer bites and drops a acacia stick
-HSAC BI,8,C,Winslow Homer bites and ingests ants from an acacia stick
-HSB,,,
-HX,,,
-HX B,,,
-HX F,,,
-HX I,,,
-I,7,O,The researchers can see Winslow Homer again
-IGO,,,
-IV,,,
-IVP,,,
-IVP WT,,,
-LADA,,,
-LAFN,,,
-LAKH,,,
-LBPV,,,
-LH,,,
-MAADA,1,A,Mutual approach to one body length with Dali
-MAAFN,1,A,Mutual approach to one body length with Frankenstein
-MAAJP,1,A,Mutual approach to one body length with Jigglypuff
-MAAQM,1,A,Mutual approach to one body length with Quasimono
-MAAUB,1,A,Mutual approach to one body length with Dubious
-MAAVR,1,A,Mutual approach to one body length with Viceroy
-MABDA,1,A,Mutual approach to five body lengths with Dali
-MABFN,1,A,Mutual approach to one body length with Frankenstein 
-MABON,1,A,Mutual approach to five body lengths with Seiton
-MABPJ,1,A,Mutual approach to five body lengths with Pope John
-MABPV,1,A,Mutual approach to five body lengths with Peeves
-MABQM,1,A,Mutual approach to five body lengths with Quasimono
-MABVE,1,A,Mutual approach to five body lengths with Vermeer
-MABVR,1,A,Mutual approach to five body lengths with Viceroy
-MABXF,,,
-MABXJ,,,
-MABXM,,,
-MABXX,,,
-MABXX C1,,,
-MFHFN,9,F,Friendly hug with Frankenstein
-MFTFN,8,F,Winslow Homer and Frankenstein gently touch one another
-MLA1,,,
-MLABI,1,A,Mutually leaves one body length of Bilbo
-MLADA,1,A,Mutually leaves one body length of Dali
-MLADT,1,A,Mutually leaves one body length of Dante
-MLAFN,1,A,Mutually leaves one body length of Frankenstein
-MLAMR,1,A,Mutually leaves one body length of Monster
-MLANC,1,A,Mutually leaves one body length of Nickel
-MLAPV,1,A,Mutually leaves one body length of Peeves
-MLAQM,1,A,Mutually leaves one body length of Quasimono
-MLAVE,1,A,Mutually leaves one body length of Vermeer
-MLBDA,1,A,Mutually leaves five body lengths of Dali
-MLBDP,1,A,Mutually leaves five body lengths of Duplo
-MLBDT,1,A,Mutually leaves five body lengths of Dante
-MLBDU,1,A,Mutually leaves five body lengths of Duende
-MLBFN,1,A,Mutually leaves five body lengths of Frankenstein
-MLBJP,1,A,Mutually leaves five body lengths of Jigglypuff
-MLBMR,1,A,Mutually leaves five body lengths of Monster
-MLBNC,1,A,Mutually leaves five body lengths of Nickel
-MLBON,1,A,Mutually leaves five body lengths of Seiton
-MLBPV,1,A,Mutually leaves five body lengths of Peeves
-MLBQH,1,A,Mutually leaves five body lengths of Quidditch
-MLBQM,1,A,Mutually leaves five body lengths of Quasimono
-MLBUB,1,A,Mutually leaves five body lengths of Dubious
-MLBVE,1,A,Mutually leaves five body lengths of Vermeer
-MLBVR,1,A,Mutually leaves five body lengths of Viceroy
-MLBVV,1,A,Mutually leaves five body lengths of Vandal
-MLBXJ,,,
-MLBXX C1,,,
-MPBFN,8,P,Frankenstein and Winslow Homer play-bite each other
-MPBNC,9,P,Nickel and Winslow Homer play-bite each other
-MPBQM,8,P,Quasimono and Winslow Homer play-bite each other
-MPBUB,8,P,Dubious and Winslow Homer play-bite each other
-MPHUB,8,P,Dubious and Winslow Homer play-hit each other
-MPKFN,9,P,"Frankenstein and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
-MPKJP,8,P,"Jigglypuff and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
-MPKNC,8,P,"Nickel and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
-MPKQM,8,P,"Quasimono and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
-MPKUB,8,P,"Dubious and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
-MPPFN,8,P,Frankenstein and Winslow Homer play-hit each other
-MPWAJ,8,P,Winslow Homer play-wrestles with Arjuna
-MPWDP,7,P,Winslow Homer play-wrestles with Duplo
-MPWDQ,6,P,Winslow Homer play-wrestles with King Donkey
-MPWFN,8,P,Winslow Homer play-wrestles with Frankenstein
-MPWJP,7,P,Winslow Homer play-wrestles with Jigglypuff
-MPWLO,6,P,Winslow Homer play-wrestles with Kahlo
-MPWMR,6,P,Winslow Homer play-wrestles with Monster
-MPWNC,6,P,Winslow Homer play-wrestles with Nickel
-MPWQM,7,P,Winslow Homer play-wrestles with Quasimono
-MPWUB,8,P,Winslow Homer play-wrestles with Dubious
-MPWVR,6,P,Winslow Homer play-wrestles with Viceroy
-MPWXX,6,P,Winslow Homer play-wrestles
-MVTUB,8,F,Winslow Homer and Dubious twitter at each other
-NFDA,,,
-NFLAFN,,,
-O,8,O,The researchers can't see Winslow Homer
-OVP,7,O,Winslow Homer is partially out of view of the researchers
-PAJ YSI NFFY,,,
-PAJ YWE 3NC,,,
-PBI YFIKY 2LO,,,
-PBI YVF 2VV,,,
-PBI YWE 2DGQMUB,,,
-PD YWS 3DUVE,,,
-PDA YSH 0ON 2DUVE 3FNWHUBVRLODGDQ,,,
-PDA YVF 3KJ,,,
-PDG YFD 2VE,,,
-PDG YFFBP 1JPUB,,,
-PDG YFFBP 2ONWH,,,
-PDG YFIBK,,,
-PDG YWE/SF 0UBQM 2BI 3WHLO,,,
-PDG YWS 3VVDT,,,
-PDP YFI 2DU,,,
-PDP YWE/SF 0KH 1KJPC 2JP 3DUWHDALO,,,
-PDP YWS,,,
-PDP YWS 3DU,,,
-PDQ YFD 3AJ,,,
-PDQ YFFBP,,,
-PDQ YSF,,,
-PDQ YVF 3WH,,,
-PDQ YWW/SF 0DG 3VRVEONDADUFNWHUBLO,,,
-PDT YFFSV,,,
-PDT YSF 0NC,,,
-PDT YVF 3VVDG,,,
-PDT YWW,,,
-PDU YFI,,,
-PDU YFILF 2DP,,,
-PDU YFT/FFRS 3DP,,,
-PDU YVF 3LOKH,,,
-PDU YWE 1VE 2ONDA 3FNWHUBLODTVRDG,,,
-PDU YWS 3VRPV,,,
-PFN YFFLC 3LO,,,
-PFN YSI NFMR 3QH,,,
-PFY YSI NRAJ,,,
-PFY YWW,,,
-PJP YTT,,,
-PJP YVF 2VR 3DG,,,
-PJP YWE 2KJPCDPKH 3DUDAWHLO,,,
-PJP YWS 3KJ,,,
-PKH YFI 3DG,,,
-PKH YSG 2LO 3DU,,,
-PKH YWE/SF 0DP 1PCKJ 2JP 3DUWHDALO,,,
-PKJ YSG 3DA,,,
-PKJ YTT 2DTVE,,,
-PKJ YWE 1KHDPPC 2JP 3DUWHDALO,,,
-PKJ YWE 3JP,,,
-PLO WYW/SF 0FN 1DADU 2WHVE 3DTDQDG,,,
-PLO YFFLC 3FN,,,
-PLO YSE 2KH 3DU,,,
-PLO YVF 2BI,,,
-PMR YFISK 3VV,,,
-PMR YSI NFFN 3QH,,,
-PMR YVV 3VRDTJPPVFN,,,
-PNC YSF 0DT,,,
-PNC YWE 3AJ,,,
-PNE YTT,,,
-PON YFFBP 2DGWH,,,
-PON YFOTO,,,
-PON YSH 0DA 2DUVE 3FNWHUBVRLODGDQ,,,
-PON YVF,,,
-POP YSE,,,
-POP YTT,,,
-PPC YWE 1KJJPDP 3DUWHDALO,,,
-PPV YFFLC,,,
-PPV YSF 0FN,,,
-PPV YTT 3VRDU,,,
-PPV YVF 3VV,,,
-PQH YFISK,,,
-PQH YTT 3DG,,,
-PQH YTT 3MRFN,,,
-PQH YWS 2AJ 3FYDP,,,
-PQM YSF 0DGQM 2BI 3WHLO,,,
-PQM YSG 3DU,,,
-PTJ YSS,,,
-PTJ YTT 3DT,,,
-PTJ YTT 3JPWH,,,
-PTJ YVV,,,
-PTJ YWS 3FY,,,
-PUB YFI 2QM 3DU,,,
-PUB YWE/SF 0DGQM 2BI 3WHLO,,,
-PUB YWW 1DG 2JP,,,
-PVD YTT,,,
-PVD YVF,,,
-PVE YTT 2DA 3FN,,,
-PVE YTT 3FN,,,
-PVE YWE 1DU 2ONDA 3FNWHUBLODTVRDG,,,
-PVR YVF,,,
-PVR YVF 2DTLOKH 3KJUBWHDAON,,,
-PVV YTT,,,
-PVV YVF,,,
-PVV YVF 3PV,,,
-PVV YWS,,,
-PVV YWS 3DTDG,,,
-PVV YWW 3VEDTLO,,,
-PWFN,,,
-PWH YFFBP 2ONDG,,,
-PWH YTT 3DA,,,
-RAA,,,
-RAAAJ,,,
-RAABI,1,A,Bilbo approaches within one body length
-RAADA,1,A,Dali approaches within one body length
-RAADG,1,A,Danger approaches within one body length
-RAADP,1,A,Duplo approaches within one body length
-RAADT,1,A,Dante approaches within one body length
-RAADU,1,A,Duende approaches within one body length
-RAAFN,1,A,Frankenstein approaches within one body length
-RAAJP,1,A,Jigglypuff approaches within one body length
-RAAKJ,1,A,King James approaches within one body length
-RAALO,1,A,Kahlo approaches within one body length
-RAANC,1,A,Nickel approaches within one body length
-RAAON,1,A,Seiton approaches within one body length
-RAAPC,1,A,Picasso approaches within one body length
-RAAPV,1,A,Peeves approaches within one body length
-RAAQM,1,A,Quasimono approaches within one body length
-RAAQMRPUQM,,,
-RAATJ,1,A,Tom Jerry approaches within one body length
-RAAUB,1,A,Dubious approaches within one body length
-RAAUB WT,,,
-RAAVE,1,A,Vermeer approaches within one body length
-RAAVR,1,A,Viceroy approaches within one body length
-RAAVV,1,A,Vandal approaches within one body length
-RAAX4,,,
-RAAX7,,,
-RABAJ,,,
-RABBI,1,A,Bilbo approaches within five body lengths
-RABDA,1,A,Dali approaches within five body lengths
-RABDP,1,A,Duplo approaches within five body lengths
-RABDQ,1,A,King Donkey approaches within five body lengths
-RABDT,1,A,Dante approaches within five body lengths
-RABDU,1,A,Duende approaches within five body lengths
-RABFN,1,A,Frankenstein approaches within five body lengths
-RABJP,1,A,Jigglypuff approaches within five body lengths
-RABKH,1,A,Krishna approaches within five body lengths
-RABKJ,1,A,King James approaches within five body lengths
-RABLO,1,A,Kahlo approaches within five body lengths
-RABMR,1,A,Monster approaches within five body lengths
-RABNC,1,A,Nickel approaches within five body lengths
-RABON,1,A,Seiton approaches within five body lengths
-RABOP,1,A,Opie approaches within five body lengths
-RABPC,1,A,Picasso approaches within five body lengths
-RABPV,1,A,Peeves approaches within five body lengths
-RABQH,1,A,Quidditch approaches within five body lengths
-RABQM,1,A,Quasimono approaches within five body lengths
-RABTJ,1,A,Tom Jerry approaches within five body lengths
-RABUB,1,A,Dubious approaches within five body lengths
-RABVD,1,A,Vladimir approaches within five body lengths
-RABVE,1,A,Vermeer approaches within five body lengths
-RABVE WT,,,
-RABVR,1,A,Viceroy approaches within five body lengths
-RABVV,1,A,Vandal approaches within five body lengths
-RABX3,,,
-RABX6,,,
-RABX7,,,
-RABXJ,,,
-RABXM,,,
-RABXX,,,
-RADT,,,
-RALFN,8,F,Frankenstein follows Winslow Homer
-RALNC,8,F,Nickel follows Winslow Homer
-RALVE,7,F,Vermeer follows Winslow Homer
-RAVDG,,,
-RAVDT,,,
-RAVVE,,,
-RAVVV,,,
-RAVXM,,,
-RCIFN LF,,,
-RCIFN RA,8,C,Frankenstein is interested in Winslow Homer's <i>Raspa</i> fruit
-RCION SK,7,C,Seiton shows interest in Winslow Homer's food
-RCIUB BK,7,C,Dubious is interested in Winslow Homer's food
-RCIVE RA,8,C,Vermeer is interested in Winslow Homer's <i>Raspa</i> fruit
-RCIVR BK,7,C,Viceroy is interested in Winslow Homer's food
-RCIVR XF,7,C,Viceroy is interested in Winslow Homer's fruit
-RCPDA ZI,9,C,Dali pushes Winslow Homer away from the insect she's eating
-RCTVR XF,8,C,Viceroy takes Winslow Homer's fruit
-RFCFN,9,F,Frankenstein climbs onto Winslow Homer's back
-RFHFN,8,F,Frankenstein hugs Winslow Homer
-RFHON,8,F,Seiton hugs Winslow Homer
-RFIFN,9,F,Frankenstein closely inspects Winslow Homer
-RFIJP,8,F,Jigglypuff closely inspects Winslow Homer
-RFION,7,F,Seiton closely inspects Winslow Homer
-RFIPV,8,F,Peeves closely inspects Winslow Homer
-RFIUB,8,F,Dubious closely inspects Winslow Homer
-RFSDP,8,F,Duplo sniffs Winslow Homer
-RFSFN,8,F,Frankenstein sniffs Winslow Homer
-RFSJP,7,F,Jigglypuff sniffs Winslow Homer
-RFSQM,7,F,Quasimono sniffs Winslow Homer
-RFSTJ URINE,8,F,Tom Jerry sniff's Winslow Homer's urine
-RFSUB,8,F,Dubious sniffs Winslow Homer
-RFTDA,9,F,Dali gently touches Winslow Homer
-RFTDP,7,F,Duplo gently touches Winslow Homer
-RFTDT,7,F,Dante gently touches Winslow Homer
-RFTDU,8,F,Duende gently touches Winslow Homer
-RFTFN,8,F,Frankenstein gently touches Winslow Homer
-RFTKH,7,F,Krishna gently touches Winslow Homer
-RFTLO,7,F,Kahlo gently touches Winslow Homer
-RFTNC,8,F,Nickel gently touches Winslow Homer
-RFTPC,7,F,Picasso gently touches Winslow Homer
-RFTPV,8,F,Peeves gently touches Winslow Homer
-RFTQM,7,F,Quasimono gently touches Winslow Homer
-RFTUB,8,F,Dubious gently touches Winslow Homer
-RFTVE,8,F,Vermeer gently touches Winslow Homer
-RGNDA,9,G,Dali aggressively nips at Winslow Homer
-RGNVE,8,G,Vermeer aggressively nips at Winslow Homer
-RGPDA,8,G,Dali pushes Winslow Homer
-RGSVR BK,8,G,"Vermeer supplants Winslow Homer from the insects he's eating, and eats the insects herself"
-RIIDA,8,I,Dali invites Winslow Homer to ride on her back
-RINDA,9,I,Winslow Homer nurses from Dali
-RISDA,8,I,Winslow Homer stops nursing from Dali
-RISDA WT,8,I,Winslow Homer nurses from Dali
-RITDA,9,I,"Winslow Homer throws a tantrum to Dali, flailing his limbs"
-RIUUB,8,I,Dubious restrains Winslow Homer
-RLAAJ,1,I,Arjuna leaves one body length of Winslow Homer
-RLAAXJ,,,
-RLABIRALFN,,,
-RLADA,1,A,Dali leaves one body length of Winslow Homer
-RLADG,1,A,Danger leaves one body length of Winslow Homer
-RLADP,1,A,Duplo leaves one body length of Winslow Homer
-RLADT,1,A,Dante leaves one body length of Winslow Homer
-RLADU,1,A,Dubious leaves one body length of Winslow Homer
-RLADU WT,1,A,Duende leaves one body length of Winslow Homer
-RLAFN,1,A,Frankenstein leaves one body length of Winslow Homer
-RLAJP,1,A,Jigglypuff leaves one body length of Winslow Homer
-RLAKH,1,A,Krishna leaves one body length of Winslow Homer
-RLAKJ,1,A,King James leaves one body length of Winslow Homer
-RLALO,1,A,Kahlo leaves one body length of Winslow Homer
-RLAMR,1,A,Monster leaves one body length of Winslow Homer
-RLANC,1,A,Nickel leaves one body length of Winslow Homer
-RLAON,1,A,Seiton leaves one body length of Winslow Homer
-RLAPC,1,A,Picasso leaves one body length of Winslow Homer
-RLAPJ,1,A,Pope John leaves one body length of Winslow Homer
-RLAPV,1,A,Peeves leaves one body length of Winslow Homer
-RLAQH,1,A,Quidditch leaves one body length of Winslow Homer
-RLAQM,1,A,Quasimono leaves one body length of Winslow Homer
-RLATJ,1,A,Tom Jerry leaves one body length of Winslow Homer
-RLAUB,1,A,Dubious leaves one body length of Winslow Homer
-RLAVE,1,A,Vermeer leaves one body length of Winslow Homer
-RLAVE WT,1,A,Vermeer leaves one body length of Winslow Homer
-RLAVR,1,A,Viceroy leaves one body length of Winslow Homer
-RLAVV,1,A,Vandal leaves one body length of Winslow Homer
-RLAX4,,,
-RLAX7,,,
-RLAXJ,,,
-RLAXJ NOT FN,,,
-RLAXX,,,
-RLB,,,
-RLB ALL,,,
-RLB1,,,
-RLBAJ,,,
-RLBBI,1,A,Bilbo leaves five body lengths of Winslow Homer
-RLBBI WT,1,A,Bilbo leaves five body lengths of Winslow Homer
-RLBDA,1,A,Dali leaves five body lengths of Winslow Homer
-RLBDA WT,1,A,Dali leaves five body lengths of Winslow Homer
-RLBDG,1,A,Danger leaves five body lengths of Winslow Homer
-RLBDG WT,1,A,Danger leaves five body lengths of Winslow Homer
-RLBDP,1,A,Duplo leaves five body lengths of Winslow Homer
-RLBDP WT,1,A,Duplo leaves five body lengths of Winslow Homer
-RLBDQ,1,A,King Donkey leaves five body lengths of Winslow Homer
-RLBDT,1,A,Dante leaves five body lengths of Winslow Homer
-RLBDU,1,A,Duende leaves five body lengths of Winslow Homer
-RLBDU WT,1,A,Duende leaves five body lengths of Winslow Homer
-RLBFN,1,A,Frankenstein leaves five body lengths of Winslow Homer
-RLBJP,1,A,Jigglypuff leaves five body lengths of Winslow Homer
-RLBKJ,1,A,King James leaves five body lengths of Winslow Homer
-RLBLN,,,
-RLBLO,1,A,Kahlo leaves five body lengths of Winslow Homer
-RLBMR,1,A,Monster leaves five body lengths of Winslow Homer
-RLBNC,1,A,Nickel leaves five body lengths of Winslow Homer
-RLBNE,1,A,Champagne leaves five body lengths of Winslow Homer
-RLBON,1,A,Seiton leaves five body lengths of Winslow Homer
-RLBOP,1,A,Opie leaves five body lengths of Winslow Homer
-RLBPC,1,A,Picasso leaves five body lengths of Winslow Homer
-RLBPC WT,1,A,Picasso leaves five body lengths of Winslow Homer
-RLBPJ,1,A,Pope John leaves five body lengths of Winslow Homer
-RLBPV,1,A,Peeves leaves five body lengths of Winslow Homer
-RLBQM,1,A,Quasimono leaves five body lengths of Winslow Homer
-RLBTJ,1,A,Tom Jerry leaves five body lengths of Winslow Homer
-RLBUB,1,A,Dubious leaves five body lengths of Winslow Homer
-RLBVD,1,A,Vladimir leaves five body lengths of Winslow Homer
-RLBVE,1,A,Vermeer leaves five body lengths of Winslow Homer
-RLBVE WT,1,A,Vermeer leaves five body lengths of Winslow Homer
-RLBVR,1,A,Viceroy leaves five body lengths of Winslow Homer
-RLBVV,1,A,Vandal leaves five body lengths of Winslow Homer
-RLBX1,,,
-RLBXJ,,,
-RLBXM,,,
-RLBXX,,,
-RLDP,,,
-RMION,8,M,Seiton invites Winslow Homer to groom her
-RMMDA,9,M,Dali grooms Winslow Homer
-RMMDT,8,M,Dante grooms Winslow Homer
-RMMFN,8,M,Frankenstein grooms Winslow Homer
-RMMON,7,M,Seiton grooms Winslow Homer
-RMMPC,7,M,Picasso grooms Winslow Homer
-RMMVR,8,M,Viceroy grooms Winslow Homer
-RMMX1,,,
-RMODA,6,M,Dali stops grooming Winslow Homer
-RMODA WT,,,
-RMODT,6,M,Dante stops grooming Winslow Homer
-RMOON,6,M,Seiton stops grooming Winslow Homer
-RMOPC,6,M,Picasso stops grooming Winslow Homer
-RMOVR,6,M,Viceroy stops grooming Winslow Homer
-RMOX1,,,
-RPBFN,8,P,Frankenstein play-bites Winslow Homer
-RPBKJ,7,P,King James play-bites Winslow Homer
-RPBUB,8,P,Dubious play-bites Winslow Homer
-RPCFN,8,P,Frankenstein play-chases Winslow Homer
-RPFQM,8,P,Quasimono play-flees from Winslow Homer
-RPFUB,8,P,Dubious play-flees from Winslow Homer
-RPHFN,8,P,Frankenstein play-hits Winslow Homer
-RPHUB,9,P,Dubious play-hits Winslow Homer
-RPHVR,8,P,Viceroy play-hits Winslow Homer
-RPIFN,9,P,"Frankenstein makes a play face, to invite Winslow Homer to play"
-RPKFN,8,P,"Frankenstein and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
-RPKQM,8,P,"Quasimono and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
-RPLFN,8,P,Frankenstein play-pulls Winslow Homer
-RPLKH TAIL,7,P,Krishna play-pulls Winslow Homer
-RPLNC,7,P,Nickel play-pulls Winslow Homer
-RPLNC BUM,8,P,Nickel play-pulls Winslow Homer's bum
-RPLQM BACK,7,P,Quasimono play-pulls Winslow Homer's back
-RPLUB,8,P,Dubious play-pulls Winslow Homer
-RPLUB TAIL,9,P,Dubious play-pulls Winslow Homer's tail
-RPPBI,7,P,Bilbo play-pushes Winslow Homer
-RPQUB,8,P,Dubious play-lunges at Winslow Homer
-RPUFN,7,P,Frankenstein leaps on top of Winslow Homer
-RRLBFN,1,A,Frankenstein leaves five body lengths of Winslow Homer
-RSDTJ,7,S,Tom Jerry makes a duck face to Winslow Homer
-RSMLO,7,S,Kahlo mounts Winslow Homer
-RSMQM,7,S,Quasimono mounts Winslow Homer
-RSMUB,7,S,Dubious mounts Winslow Homer
-RSPTJ,8,S,"Tom Jerry sex-paces, running back and forth and looking at Winslow Homer"
-RSTTJ,8,S,Tom Jerry twirls his body with his gaze fixed on Winslow Homer
-RSXLO,6,S,Winslow Homer receives sex-thrust from Kahlo
-RVKUB,7,V,Dubious makes a gecker vocalization to Winslow Homer
-RVTFN,8,F,Frankenstein twitters to Winslow Homer
-RVTNC,8,F,Nickel twitters to Winslow Homer
-RVTNC SC,8,F,Nickel screamy-twitters to Winslow Homer
-RVTQM,7,F,Quasimono twitters to Winslow Homer
-RVTQM SC,7,F,Quasimono screamy-twitters to Winslow Homer
-RVTUB,8,F,Dubious twitters to Winslow Homer
-RVVQM,8,S,Quasimono sex-squeaks to Winslow Homer
-SAM,6,M,Winslow Homer self-grooms
-SAN,7,W,Winslow Homer rubs his nose on a branch
-SAO,6,W,Winslow Homer is aroused
-SAS,1,W,Winslow Homer scratches
-SAU,8,W,Winslow Homer rubs urine on his fur
-SAY,4,W,Winslow Homer yawns
-SAZ,8,W,Winslow Homer stands bipedally and visually scans
-SDR,8,W,Winslow Homer drinks from the river
-SDT,8,W,Winslow Homer drinks from a hole in a tree
-SEP,,,
-SLBXX,,,
-SLEAC,6,C,Winslow Homer leaves an the <i>Acacia</i> patch
-SLEBP,6,C,Winslow Homer leaves the <i>Bromeliad</i> patch
-SLEBS,6,C,Winslow Homer leaves the <i>Bursera</i> tree
-SLEGU,6,C,Winslow Homer leaves the <i>Guacimo</i> patch
-SLEHR,6,C,Winslow Homer leaves the <i>Hirtella racemosa</i> patch
-SLELC,6,C,Winslow Homer leaves the <i>Luchea</i> tree
-SLEOL,6,C,Winslow Homer leaves the Micky-mouse fruit tree
-SLERA,6,C,Winslow Homer leaves the <i>Raspa</i> tree
-SLERH,6,C,Winslow Homer leaves the <i>Liana</i> tree
-SLERS,6,C,Winslow Homer leaves the <i>Rubiaceae</i> tree
-SPK,6,P,Winslow Homer hangs from his tail
-SPS,6,P,Winslow Homer stops solo play
-SPS LF,6,P,Winslow Homer stops solo play
-SPX,8,P,Winslow Homer starts solo play
-SPX LF,8,P,Winslow Homer plays alone with a leaf
-SPX STICK,8,P,Winslow Homer plays alone with a stick
-STEAC,7,C,Winslow Homer enters an <i>Acacia</i> patch
-STEBP,7,C,Winslow Homer enters a <i>Bromeliad</i> patch
-STEBS,7,C,Winslow Homer enters a <i>Bursera</i> tree
-STEGU,7,C,Winslow Homer enters a <i>Guacimo</i> patch
-STEHR WT,7,C,Winslow Homer enters a <i>Hirtella racemosa</i> patch
-STELC,7,C,Winslow Homer enters a <i>Luchea</i> tree
-StELC,7,C,Winslow Homer enters a <i>Luchea</i> tree
-STELC WT,7,C,Winslow Homer enters a <i>Luchea</i> tree
-STEMZ,7,C,Winslow Homer enters a <i>Chicle</i> tree
-STEOL WT,,,
-STERA,7,C,Winslow Homer enters a Raspa tree
-STERH,7,C,Winslow Homer enters a Rubiaceae tree
-SUR,8,W,Winslow Homer urinates
-THR LY WY FY,,,
-VDG YWE/SF 0DQ 3DTVEDAONDULOFNWH,,,
-W/IGO KST JFE,,,
-W/KST JFE SEP,,,
-X,,,
-X8?=PV,,,
-XAADA,,,
-XAADGDP,,,
-XAADP,,,
-XAADPDGFN,,,
-XAADU,,,
-XAADUDA,,,
-XAADUFNLO,,,
-XAADUVE,,,
-XAAFN,,,
-XAAFNVR,,,
-XAALO,,,
-XAALODA,,,
-XAANC,,,
-XAAON,,,
-XAAPV,,,
-XAAPVVR,,,
-XAAQM,,,
-XAAUB,,,
-XAAUBDA,,,
-XAAVE,,,
-XAAVELO,,,
-XBBAJ,,,
-XBBBI,,,
-XBBBIDUUB,,,
-XBBDA,,,
-XBBDADTLO,,,
-XBBDADUFNON,,,
-XBBDALOQMVRDP,,,
-XBBDALOVEFNON,,,
-XBBDAON,,,
-XBBDAONDTLOVR,,,
-XBBDAONFN,,,
-XBBDAVE,,,
-XBBDG,,,
-XBBDP,,,
-XBBDT,,,
-XBBDTDG,,,
-XBBDTLOVEONFN,,,
-XBBDU,,,
-XBBDUDTVE,,,
-XBBDULO,,,
-XBBDUONFNVEDT,,,
-XBBDUUBON,,,
-XBBFN,,,
-XBBFNUB,,,
-XBBFNVE,,,
-XBBFNXM,,,
-XBBJP,,,
-XBBKHUBPC,,,
-XBBKJUB,,,
-XBBLO,,,
-XBBLOBI,,,
-XBBLODT,,,
-XBBLODUONDTDA,,,
-XBBLOQM,,,
-XBBLOVEDAONFNDT,,,
-XBBMR,,,
-XBBNC,,,
-XBBNCDG,,,
-XBBNCTJLOVEDP,,,
-XBBNE,,,
-XBBON,,,
-XBBONDUFN,,,
-XBBONLODTVE,,,
-XBBPCKJ,,,
-XBBPV,,,
-XBBPVDTDUVELO,,,
-XBBQM,,,
-XBBQMDU,,,
-XBBQMUB,,,
-XBBTJVE,,,
-XBBUB,,,
-XBBUBNC,,,
-XBBUBPV,,,
-XBBUBXB,,,
-XBBVDFN,,,
-XBBVDVV,,,
-XBBVE,,,
-XBBVEDADUONFN,,,
-XBBVEDTVVLO,,,
-XBBVEDU,,,
-XBBVEFNLO,,,
-XBBVELODT,,,
-XBBVELODUFNON,,,
-XBBVELOFN,,,
-XBBVEVVLOFN,,,
-XBBVRUBFN,,,
-XBBX1,,,
-XBBXJ,,,
-XBBXX,,,
-XBDADTDU,,,
-XCCAJPVFN,,,
-XCCBI,,,
-XCCDA,,,
-XCCDAKH,,,
-XCCDAONFN,,,
-XCCDAONFNDGUB,,,
-XCCDG,,,
-XCCDGUBQM,,,
-XCCDP,,,
-XCCDPAJ,,,
-XCCDQNE,,,
-XCCDT,,,
-XCCDTFN,,,
-XCCDTFNLO,,,
-XCCDTKHDPKJPC,,,
-XCCDTKHKJPCDPPVV,,,
-XCCDTPC,,,
-XCCDU,,,
-XCCDUDA,,,
-XCCDUDAON,,,
-XCCDUKHKJ,,,
-XCCDUKJPCPVVR,,,
-XCCDUON,,,
-XCCDUONDAUBDG,,,
-XCCDUVEKJPC,,,
-XCCFN,,,
-XCCFNPV,,,
-XCCFNUBQH,,,
-XCCKHKJPCDTDP,,,
-XCCKJ,,,
-XCCKJPCDP,,,
-XCCKJUBNC,,,
-XCCLO,,,
-XCCLOFNNC,,,
-XCCMR,,,
-XCCNC,,,
-XCCNCAJONKJKHLO,,,
-XCCON,,,
-XCCONVE,,,
-XCCOP,,,
-XCCOPFN,,,
-XCCOPNCLO,,,
-XCCOPUB,,,
-XCCOPXJ,,,
-XCCPC,,,
-XCCPCDG,,,
-XCCPCKJVEDU,,,
-XCCPV,,,
-XCCPVDUBI,,,
-XCCQH,,,
-XCCTJ,,,
-XCCTJONQM,,,
-XCCUB,,,
-XCCUBKJ,,,
-XCCUBQM,,,
-XCCVE,,,
-XCCVE?,,,
-XCCVEDA,,,
-XCCVRDUFN,,,
-XCCVV,,,
-XCCVVDTKJPCKHDP,,,
-XCCX1,,,
-XCCX3,,,
-XCCXJ,,,
-XCCXX,,,
-XCNC,,,
-XDRDA,,,
-XHHAJ,,,
-XHHBIVR,,,
-XHHDA,,,
-XHHDADT,,,
-XHHDQ,,,
-XHHDT,,,
-XHHDTFN,,,
-XHHFN,,,
-XHHFNXX,,,
-XHHLO,,,
-XHHMR,,,
-XHHON,,,
-XHHPC,,,
-XHHPV,,,
-XHHQM,,,
-XHHUB,,,
-XHHVE,,,
-XHHVR,,,
-XHVDA,,,
-XNA,,,
-XNFDA,,,
-XWXF L,,,
-Y,,,
-YFD,,,
-YFFBP,,,
-YFFGU,,,
-YFFHR,,,
-YFFLC,,,
-YFFRH,,,
-YFFRS,,,
-YFFXF,,,
-YFI,,,
-YFIBK,,,
-YFIKY,,,
-YFILF,,,
-YFIRH,,,
-YFISK,,,
-YFW,,,
-YNA,,,
-YSC/FFRA,,,
-YSF,,,
-YSI,,,
-YSM,,,
-YSM/FFLC,,,
-YSM/SF,,,
-YSP,,,
-YTD,,,
-YTT,,,
-YTT/VF,,,
-YVF,,,
-YVV,,,
-YWE,,,
-YWE/SF,,,
-YWM,,,
-YWM/SF,,,
-YWP,,,
-YWS,,,
-YWS/SF,,,
-YWW,,,
-YWW/SF,,,
+code,interestingness,category,original category,english
+,,,,
+ VTFN,,,,
+_AAFN,,,,
+_AAUB,,,,
+_LAQM WT,,,,
+_LBDP,,,,
+_LBFN,,,,
+_LBKJ,,,,
+_SEUB,,,,
+_SEUB WT,,,,
+!#audience min=[10] max=[10],,,,
+!audience=[TJ BI WH VR UB VE DA],,,,
+!audiofile speaker=[SEP] filename=[2014.01.24.AA.SEP.3FIGHTS_VN811178],,,,
+!audiofile speaker=[sep] filename=[2014.01.24.AA.SEP.3FIGHTS_VN811178],,,,
+!audiofile speaker=[sep] filename=[2014.01.24.AA.SEP.FIGHT_UB-VRVN811179],,,,
+!END,,,,
+!initiator=[TJ] victim=[BI],,,,
+!initiator=[TJ] victim=[VR],,,,
+!initiator=[VR] victim=[UB],,,,
+!Loser=[TJ] evidence=[LostResource] comment=[DID NOT SUCCEED IN OBTAINING BP FROM BI],,,,
+!Loser=[UB] evidence=[LostResource] comment=[],,,,
+!protocolUsed=[FightProtocol],,,,
+!qualityHelperPossiblyMissed=[no],,,,
+!qualityHelperPossiblyMissed=[yes],,,,
+!qualityMaxAggressionPossiblyMissed=[no],,,,
+!qualityMaxAggressionPossiblyMissed=[no/yes],,,,
+!qualityMaxAggressionPossiblyMissed=[yes],,,,
+!qualityRedirectVictimPossiblyMissed=[no],,,,
+!qualityRedirectVictimPossiblyMissed=[yes],,,,
+!qualityRestPossiblyMissed=[no],,,,
+!qualityRestPossiblyMissed=[yes],,,,
+!qualityStartPossiblyMissed=[no],,,,
+!qualityStartPossiblyMissed=[yes],,,,
+!Resource type=[food] detail=[BP] comment=[],,,,
+!START,,,,
+!Winner=[BI] evidence=[ObtainedResource] comment=[BI KEPT THE BP BUT HE ALSO HAD IT ORIGINALLY],,,,
+!Winner=[VR] evidence=[ObtainedResource] comment=[],,,,
+0,,,,
+*,,,,
+**,,,,
+** IGO DICT,,,,
+** IGO TYPING HERE,,,,
+****QM,,,,
+***LO,,,,
+***PCKJ,,,,
+**/SF,,,,
+**DEL,,,,
+**FFO,,,,
+**HFLC,,,,
+**IGO,,,,
+**IGO DICT,,,,
+**IGO PSION TO FINISH,,,,
+**ON,,,,
+**QM NOT DG,,,,
+**RIGHT AFTER Y,,,,
+*B4 PWQM,,,,
+*DA WT,,,,
+*DA=PC LAST ONLY,,,,
+*DEL,,,,
+*DEL ANDDEL I IVP,,,,
+*N*,,,,
+*N* AES=AESDP,,,,
+*N* APOPCVRKJ,,,,
+*N* ASDPCKJ,,,,
+*N* BACK,,,,
+*N* CF XF=MONKEY COMB GREEN,,,,
+*N* DICT KST,,,,
+*N* F:WH PART ii,,,,
+*N* FAAVD,,,,
+*N* FABDP FABDU FABDA,,,,
+*N* FABFN ASO,,,,
+*N* FABLO B4 Y,,,,
+*N* FIGHT,,,,
+*N* FLAVR,,,,
+*N* KST DICT,,,,
+*N* MISSED YS WHILE SEP AWAY,,,,
+*N* PICKEDUP FOLLOW,,,,
+*N* PNC YSH 0DU PDU YSH 0NC,,,,
+*N* RAALO WAS AT Y,,,,
+*N* RABFN,,,,
+*N* RABTJ B4,,,,
+*N* RABXJ FABPV FLAPV ,,,,
+*N* RBDT WT B4 Y,,,,
+*N* RLADA B4 Y,,,,
+*N* RLBDU,,,,
+*N* RLBMR B4 Y,,,,
+*N* STEHR XT,,,,
+*N* STELC WT,,,,
+*N* XBBPC NOT DA,,,,
+*N* XHHQM NOT XHHPV,,,,
+*N* YFFLC,,,,
+*N* YFFLF,,,,
+*N* YNA XNA,,,,
+*N* YTT,,,,
+*N*KST DICT,,,,
+*QM,,,,
+*S=XF POD,,,,
+*SEP HAS NOW,,,,
+*X1=UB,,,,
+*X2=ON,,,,
+*X3=LO,,,,
+*X3=UB NOT QM,,,,
+*XJ=DP,,,,
+*XJ=FN,,,,
+*XJ=NC,,,,
+*XJ=VE DP,,,,
+*XM=KJ,,,,
+*XX=DP,,,,
+/*!initial opponents=[],,,,
+/*!Loser=[] evidence=[DisplacedMore/LostResource/other] comment=[],,,,
+/*!Resource type=[food/monkey/other] detail=[id of food or monkey] comment=[],,,,
+/*!Winner=[] evidence=[DisplacedLess/ObtainedResource/other] comment=[],,,,
+/*!wound actor=[id] victim=[id] type=[] location=[] comment=[],,,,
+AA,,,,
+AADU FAV,5,G,G,"Duende drags a branch with his tail to show dominance, and Winslow Homer looks"
+AAETJ,4,G,G,Tom Jerry's fur is erect
+AALO,,,,
+AAMDU FAV,4,M,M,"Duende grooms himself, Winslow Homer looks"
+AARDGOO FAV,5,G,G,"Danger aggressively shakes a branch at Susan (a researcher), and Winslow Homer looks"
+AARKJ,4,G,G,King James aggressively shakes a branch
+AAUDU,5,W,W,Duende rubs his urine on his fur
+AAXDU FAV,5,G,G,"Duende aggressively shakes a branch, and Winslow Homer looks"
+AAXKJ,4,G,G,King James aggressively shakes a branch
+AAXX,4,G,G,A monkey aggressively shakes a branch
+ABMR,,,,
+ACIUBBI LC,5,C,C,Dubious is interested in Bilbo's Luchea fruit
+ACIVRBI LC,5,C,C,Viceroy is interested in Bilbo's Luchea friut
+AEAVVDT,4,G,E,Vandal avoids Dante
+AEAVVDU,4,G,E,Vandal avoids Duende
+AECKHDT,4,G,E,Krishna cowers to Dante
+AECLOKH,4,G,E,Kahlo cowers to Krishna
+AEGBIDG,4,G,E,"Bilbo grins to Danger, signaling submission"
+AELDTPJ,8,G,E,"Dante smacks her lips at Pope John, to signal submisson"
+AEM,3,G,E,"A monkey ""machine-gun"" screams"
+AEM D,3,G,E,"A monkey ""machine-gun"" screams, and Winslow Homer ignores it"
+AEMNC D,5,G,E,"Nickel ""machine-gun"" screams, and Winslow Homer ignores it"
+AEMX D,3,G,E,"A monkey machine-gun screams, and Winslow Homer ignores it"
+AEMX3 FAV,4,G,E,"A monkey ""machine-gun"" screams, and Winslow Homer looks"
+AES,4,G,E,A monkey screams
+AES D,2,G,E,"A monkey screams, and Winslow Homer ignores it"
+AES FAV,2,G,E,"A monkey screams, and Winslow Homer looks"
+AES ROARY,2,G,E,A monkey makes a roary scream
+AESDP FAV,12,G,E,"Duplo screams, and Winslow Homer looks"
+AESDPMR FAV,4,G,E,"Duplo screams at Monster, and Winslow Homer looks"
+AESOP D,3,G,E,"Opie screams, and Winslow Homer ignores it"
+AESOPTJ FAV,4,G,E,"Opie screams at Tom Jerry, and Winslow Homer looks"
+AESPVVV,4,G,E,Peeves screams at Vandal
+AESQHDQ D,4,G,E,"Quiddich screams at King Donkey, and Winslow Homer ignores it"
+AESUBPC,4,G,E,Dubious screams at Picasso
+AESVRTJ,4,G,E,Viceroy screams at Tom Jerry
+AEU,2,G,E,A monkey makes an undulating scream
+AEU FAV,5,G,E,"A monkey makes an undulating scream, and Winslow Homer looks"
+AEULOKH,4,G,E,Kahlo makes an undulating scream to Krishna
+AEUQH FAV,5,G,E,"Quiddich makes an undulating scream, and Winslow Homer looks"
+AEUVE FAV,5,G,E,"Vermeer makes and undulating scream, and Winslow Homer looks"
+AFCFNUB D,4,G,E,"Frankenstein climbs onto Dubious's back, and Winslow Homer ignores"
+AFINCDT,4,F,F,Nickel closely inspects Dante
+AFIQMUB,4,F,F,Quasimono closely inspects Dubious
+AFODP D,4,F,F,"Duplo sticks his tongue out, Winslow Homer ignores"
+AFPFNPV,4,F,F,Frankenstein palpates Peeves's nipple
+AFSDGBR,2,F,F,Danger sniffs a branch
+AFSDQBR,2,F,F,King Donkey sniffs a branch
+AFSPVVV BR,4,F,F,Peeves sniffs a branch where Vandal had been sitting
+AFSVRBR,2,F,F,Vermeer sniffs a branch
+AGJTJBI,4,G,G,Tom Jerry aggressively bounces at Bilbo
+AGQPCUB,4,G,G,Picasso aggressively lunges at Dubious
+AGQVRBI,4,G,G,Viceroy aggressively lunges at Bilbo
+AGQVRTJ,4,G,G,Viceroy aggressively lunges at Tom Jerry
+AGT,1,G,G,A monkey makes an aggressive open-mouth threat
+AGTDAOH D,4,G,G,"Dali makes an open-mouth threat to a researcher, Winslow Homer ignores"
+AGTDAVR,4,G,G,Dali makes an open-mouth threat to Viceroy
+AGTDGBI,4,G,G,Danger makes an open-mouth threat to Bilbo
+AGTDGOH KST D,4,G,G,"Danger makes an open-mouth threat to Kat (a researcher,) Winslow Homer ignores"
+AGTDGOH KST FAV,5,G,G,"Danger makes an open-mouth threat to Kat (a researcher,) and Winslow Homer looks"
+AGTDGOO,4,G,G,Danger makes an open-mouth threat to Susan (a researcher)
+AGTDGOO FAV,5,G,G,"Danger makes an open-mouth threat to Susan (a researcher,) and Winslow Homer looks"
+AGTDPXX,2,G,G,Duplo makes an open-mouth threat to a monkey
+AGTDTOH,3,G,G,Dante makes an open-mouth threat to a researcher
+AGTDTQH/DQ,4,G,G,Dante makes an open-mouth threat to Quiddich and King Donkey
+AGTDUOH,4,G,G,Duende makes an open-mouth threat to a researcher
+AGTKJOH KST,8,G,G,King James makes an open-mouth threat to Kat (a researcher)
+AGTNCOO D,4,G,G,"Nickel makes an open-mouth threat to Irene (a researcher,) Winslow Homer ignores"
+AGTONDU,4,G,G,Seiton makes an open-mouth threat to Duende
+AGTONOH KST D,4,G,G,"Seiton makes an open-mouth threat to Kat (a researcher,) Winslow Homer ignores"
+AGTQMOO,4,G,G,Quasimono makes an open-mouth threat to Irene
+AGTTJBI,4,G,G,Tom Jerry makes an open-mouth threat to Bilbo
+AGTTJVR,4,G,G,Tom Jerry makes an open-mouth threat to Viceroy
+AGTVDOH KST,8,G,G,Vladimir makes an open-mouth threat to Kat (a researcher)
+AGTVEOH JFE D,4,G,G,"Vermeer makes an open-mouth threat to Jim (a researcher,) Winslow Homer ignores it"
+AGTVOH MZI,,,,
+AGTVROH KST FVA,5,G,G,"Viceroy makes an open-mouth threat to Kat (a researcher,) and Winslow Homer looks"
+AGTVROO D,4,G,G,"Vermeer makes an open-mouth threat to Irene, Winslow Homer ignores"
+AGTVROO FAV,4,G,G,"Viceroy makes an open-mouth threat to Susan (a researcher,) and Winslow Homer looks"
+AGTXXBI,1,G,G,A monkey makes an aggressive threat to Bilbo
+AGUTJBI,4,G,G,Tom Jerry aggressively pounces on Bilbo
+AHFLOKHDU,12,H,H,"Kahlo jerks his head towards Duende, to recruit him into a coalition against Krishna"
+AHKDAOHDU D,12,H,H,Dali and Duende stand with their cheeks together in a coalition against a researcher.  Winslow Homer ignores.
+AHKDUOONC,9,H,H,Duende and Nickel stand with their cheeks together to form a coalition against a researcher
+AHODAOHDU D,10,H,H,"Dali climbs onto Duende's back, in a coalition against a researcher.  Winslow Homer ignores."
+AHODAVRON,12,H,H,"Dali climbs onto Seiton's back, in a coalition against Viceroy."
+AHODUOHDA FAV,10,H,H,"Duende climbs onto Dali's back, in a coalition against a researcher.  Winslow Homer looks."
+AHODUOHDT JFE D,10,H,H,"Duende climbs onto Dante's back, in a coalition against Jim (a researcher.)  Winslow Homer ignores"
+AHOVROPVD,8,H,H,"Viceroy climbs onto Vladimir's back, in a coalition against Opie"
+AIMAJFU,6,I,I,"Arjuna climbs on top of Fishy, to ride on her back"
+AINAJFY,6,I,I,Arjuna nurses from Fishy
+AINFNMR,6,I,I,Frankenstein nurses from Monster
+AINUBFY,6,I,I,Dubious nurses from Fishy
+AITPVVV,10,I,I,"Peeves throws a tantrum to Vandal, and flails his limbs"
+AMIBIVR,4,M,M,Bilbo invites Viceroy to groom him
+AMIDADT,5,M,M,Dali invites Dante to groom her
+AMIDGDP,4,M,M,Danger invites Duplo to groom him
+AMIDPDG,4,M,M,Duplo invites Danger to groom him
+AMIDTDA,4,M,M,Dante invites Dali to groom her
+AMIDUDT D,4,M,M,"Duende invites Dante to groom him, Winslow Homer ignores"
+AMIONDA,4,M,M,Seiton invites Dali to groom her
+AMIPVVV,4,M,M,Peeves invites Vandal to groom her
+AMMDADT,5,M,M,Dali grooms Dante
+AMMDADT D,5,M,M,"Dante grooms Dali, Winslow Homer ignores"
+AMMDADU D,5,M,M,"Dali grooms Duende, Winslow Homer ignores"
+AMMDALO,4,M,M,Dali grooms Kahlo
+AMMDTDA FAV,5,M,M,"Dante grooms Dali, Winslow Homer looks"
+AMMDTDP,4,M,M,Dante grooms Duplo
+AMMDTDU,4,M,M,Dante grooms Duende
+AMMDTFN,4,M,M,Dante grooms Frankenstein
+AMMDTLO D,4,M,M,Dante grooms Kahlo
+AMMONDA,4,M,M,Seiton grooms Dali
+AMMONFN D,4,M,M,"Seiton grooms Frankenstein, Winslow Homer ignores"
+AMMPCDG,4,M,M,Picasso grooms Danger
+AMMVRBI,4,M,M,Viceroy grooms Bilbo
+APBAJFN,4,P,P,Arjuna play-bites Frankenstein
+APBQMFN,4,P,P,Quasimono play-bites Frankenstein
+APBUBPV,4,P,P,Dubious play-bites Peeves
+APHKJDT,4,P,P,King James play-hits Dante
+APKFNUB,4,P,P,Frankenstein and Dubious play chicken fight
+APQUBPV,4,P,P,Dubious play-lunges at Peeves
+APTPCVR,4,P,P,Picasso play-threatens Viceroy
+APWDTKJ,4,P,P,Dante and King James play wrestle
+APWFNUB,4,P,P,Frankenstein and Dubious play-wrestle
+APWKHLO,4,P,P,Krishna and Kahlo play-wrestle
+APWLOKH,4,P,P,Kahlo and Krishna play-wrestle
+APWPVQM,4,P,P,Peeves and Quasimono pla-wrestle
+APWQMFN D,4,P,P,"Quasimono and Frankenstein play-wrestle, Winslow Homer ignores"
+APWQMFN FAV,4,P,P,"Quasimono and Frankenstein play-wrestle, Winslow Homer looks"
+APX,,,,
+ASDDTPJ,4,F,S,Dante makes a duck face to Pope John
+ASDKJDA,4,F,S,King James makes a duck face to Dali
+ASDKJXX,4,F,S,King Donkey makes a duck face
+ASMKHLO,4,F,S,Krishna mounts Kahlo
+ASMKJDT,4,F,S,King James mounts Dante
+ASPKJDA,5,F,S,"King James sex-paces, running back and forth, looking at Dali"
+ASTKJDA,5,F,S,"King James twirls his body around, with his gaze fixed on Dali"
+AVB,7,V,V,A monkey makes a bird alarm call
+AVB D,7,V,V,"A monkey makes a bird alarm call, Winslow Homer ignores"
+AVB FAQ,8,V,V,"A monkey makes a bird alarm call, and Winslow Homer runs toward the sound"
+AVBDA FAV,7,V,V,"Dali makes a bird alarm call, and Winslow Homer looks"
+AVDG G SERIES D,,,,
+AVEFNDU,4,V,V,Frankenstein makes a twargle sound to Duende
+AVEVEDU,4,V,V,Vermeer makes a twargle sound to Duende
+AVFDA FAV,5,V,V,"Dali food-peeps, Winslow Homer looks"
+AVG,4,V,S,A monkey sex-grunts
+AVHDU,6,V,V,Duende makes a “let's go!” vocalization
+AVI CH FAZ,8,G,G,"Many monkeys make intense vocal threats in chorus, Winslow Homer looks"
+AVI SERIES,6,G,G,A monkey makes a series of intense vocal threats
+AVI SERIES D,6,G,G,"A monkey makes a series of intense vocal threats, Winslow Homer ignores"
+AVIDA FAV,8,G,G,"Dali makes an intense vocal threat, Winslow Homer looks"
+AVIDTXX FAV,8,G,G,"Dante makes an intense vocal threat, Winslow Homer looks"
+AVL,4,V,V,A monkey makes a lost call
+AVL1,4,V,V,A monkey makes a 1-syllable lost call
+AVL1 D,4,V,V,"A monkey makes a 1-syllable lost call, Winslow Homer ignores"
+AVL1 R,4,V,V,A monkey makes a 1-syllable lost call in response
+AVL1NC D,4,V,V,"Nickel makes a 1-syllable lost call, Winslow Homer ignores"
+AVL2,4,V,V,A monkey makes a 2-syllable lost call
+AVL2 D,4,V,V,"A monkey makes a 2-syllable lost call, and Winslow Homer ignores"
+AVNFNDU,4,V,V,Frankenstein gargles to Duende
+AVO,3,G,G,A monkey makes a squeak threat
+AVO D,3,G,G,"A monkey makes a squeak threat, Winslow Homer ignores"
+AVO FAV,5,G,G,"A monkey makes a squeak threat, and Winslow Homer looks"
+AVO SERIES,3,G,G,A monkey makes a series of squeak threats
+AVODA,4,G,G,Dali makes a squeak threat
+AVODAOH,5,G,G,Dali makes a squeak threat to a researcher
+AVODT SERIES,3,G,G,Dante makes a series of squeak threats
+AVODTKH,4,G,G,Dante squeak-threatens Krishna
+AVODTOH MZI,4,G,G,Dante makes a squeak threat to Matt (a researcher)
+AVODU,3,G,G,Duende makes a squeak threat
+AVOLOKH,4,G,G,Kahlo squeak-threatens Krishna
+AVOVV,3,G,G,Vandal makes a squeak-threat
+AVOVVBI,4,G,G,Vandal squeak-threatens Bilbo
+AVOVVDT,4,G,G,Vandal squeak-threatens Dante
+AVOVVVR,4,G,G,Vandal squeak-threatens Viceroy
+AVPFN,7,V,V,Frankenstein makes a social peep
+AVQNC,6,V,V,Nickel coos
+AVQNC D,5,V,V,"Nickel coos, Winslow Homer ignores"
+AVR,3,V,V,A monkey makes an intense gargle
+AVRDU,4,V,V,Duende makes an intense gargle
+AVS,6,V,V,A monkey makes a snake alarm
+AVS D,6,V,V,"A monkey makes a snake alarm, Winslow Homer ignores"
+AVS FAV,8,V,V,"A monkey makes a snake alarm, and Winslow Homer looks"
+AVS FRU,9,V,V,"A monkey makes a snake alarm, Winslow Home runs up"
+AVS SERIES,4,V,V,A monkey makes a series of snake alarms
+AVSMR,7,V,V,Monster makes a snake alarm
+AVSPV D,7,V,V,Peeves makes a snake alarm
+AVSVV,7,V,V,Vandal makes a snake alarm
+AVTAJFY H,4,F,F,Arjuna hard-twitters to Fishy
+AVTFN,5,F,F,Frankenstein twitters
+AVTXX SC,2,F,F,A monkey screamy-twitters
+AVVTJVV,4,V,S,Tom Jerry sex-squeaks to Vandal
+AVW,2,V,V,A monkey makes a wheeze vocalization
+AVY,3,V,V,A monkey yelps
+AVY D,3,V,V,"A monkey yelps, Winslow Homer ignores"
+AVY FAV,5,V,V,"A monkey yelps, Winslow Homer looks"
+AVYDADU,5,V,V,Dali yelps to Duende
+AVYPVPC D,4,V,V,"Peeves yelps to Picasso, Winslow Homer ignores"
+AVYQMXX FAV,5,V,V,"Quasimono yelps, and Winslow Homer looks"
+AVYUBVR,4,V,V,Dubious yelps to Viceroy
+AVYVEDG,4,V,V,Vermeer yelps to Danger
+AVZ,3,V,V,A monkey makes an alarm call
+AVZ D,3,V,V,"A monkey makes an alarm call, and Winslow Homer ignores"
+AVZ FAV,5,V,V,"A monkey makes an alarm call, and Winslow Homer looks"
+C BI KEEPS THE BP,,,,
+C CENSUS COMPLETE,,,,
+C CROSSES RIO,,,,
+C DT HELPER,,,,
+C DT HELPER TO LO,,,,
+C ESTRUS?,,,,
+C I AM NOT PAYING FULL ATTENTION TO FIGHT. POOP STALKING VV.,,,,
+C KST DICT,,,,
+C LEAVING MONOS,,,,
+C LONG PENIS GROOMING,,,,
+C MESSY PROXES NOW,,,,
+C MIMSSING PROXXES HERE,,,,
+C MONOS LEAVING SLEEPSITE,,,,
+C MONOS MOVING AROUND,,,,
+C MONOS SLEEPING HERE,,,,
+C MONOS WAKING,,,,
+C MZI NOT WITH WH,,,,
+C NO IDEA,,,,
+C NURSING TANTRUM,,,,
+C ON HOLDS HAND OF WH,,,,
+C PENIS,,,,
+C PHOTOS,,,,
+C POOP,,,,
+"C POOP FY 2 S,I BP,RS,XF DB",,,,
+C POOP ON KST,,,,
+C PV WANTS TO NURSE,5,I,I,Peeves wants to nurse
+C QM MASTURBATES,,,,
+"C RESOURCE BP, BI ORIGINALLY HAD THE BP",,,,
+C SQUABBLE IN THE BP PATCH,,,,
+C STARTLED,,,,
+C STUNG BY AC AHTS,,,,
+C TO IGO PSION,,,,
+C VR AAVV,,,,
+C VR VS. UB,,,,
+"C VR WINS DISPUTE OVER BP, GETS RESOURCE",,,,
+C WH LICKS FN,,,,
+C WINSLOW HOMER DAY!,,,,
+C XAAUB,,,,
+C XBBDADTON AT SOME POINT,,,,
+C XBBFN,,,,
+C XBBNC,,,,
+C XX=TJ?,,,,
+"CA 10 MONKEYS IN AUDIENCE, INCLUDING WH,VE,TJ, UB, VR",,,,
+"CA VV,DU",,,,
+CCDP,,,,
+CCDT,,,,
+CF ALL ALREADY CHEWED OPEN,,,,
+CF DROPS ZI AND RETRIEVES IT,,,,
+CF FNWH HANDLE ST FLOWERS,,,,
+CF FORAGING  PANAMA,,,,
+CF LONG FLAT GREN POD VINE,,,,
+CF POD?,,,,
+CF PODS ON VINE NOT NORMALLY EATEN,,,,
+CF RED AND GREEN THINGSTOREN FROM MR FOOT,,,,
+CF SPECIMEN COLLECTED OF HE. WH HANDLES THE 3-PART POD BUT DOESN'T ACTUALLY EAT IT.,,,,
+CI DU HAS 2 FINGERS DA MOUTH,,,,
+CI WH STICKS WH FINGER IN DA NOSE,,,,
+CL ANNIGO CLIFF,,,,
+CL CABUYA,,,,
+CL CAFETERIA,,,,
+CL COL,,,,
+CL COL-ANNIGO,,,,
+CL COL-IDA,,,,
+CL COL-Q.PIZ,,,,
+CL COW FIG,,,,
+CL DSH,,,,
+CL DSH WATEHOLE,,,,
+CL FAT,,,,
+CL FAT CLIFF,,,,
+CL FAT FENCE,,,,
+CL SUPERSLOANEA,,,,
+CL TWIRLY,,,,
+CL TWIRLY FLAG,,,,
+CL WATERFALL STREAM,,,,
+CP ALREADY OPEN,,,,
+CQ COMPLETE,,,,
+CQ MISSING SOME ACTION (OTHERS ALSO GT BILBO) AND MISS MOST OF THE HUGE AUDIENCE,,,,
+CV WH MAKES ODD VT-ISH NOISES WHENEVER NURSING,,,,
+CZ VULTURE,,,,
+DABPV,,,,
+DLBPV,,,,
+DONE,,,,
+END,,,,
+END CHASERS,,,,
+END ESTRUS 27.5MINS,,,,
+END LOSING FOCAL IN MASSIVE BP PATCH,,,,
+END LOTS OF MONOS IN BAD LIGHT,,,,
+F:VV,,,,
+F:WH,,,,
+F:WH PART III,,,,
+FAAAJ,,,,
+FAABI,1,A,A,Winslow Homer approaches to one body length of Bilbo
+FAADA,1,A,A,Winslow Homer approaches to one body length of Dali
+FAADG,1,A,A,Winslow Homer approaches to one body length of Danger
+FAADGFAATJ,,,,
+FAADP,1,A,A,Winslow Homer approaches to one body length of Duplo
+FAADQ,,,,
+FAADT,1,A,A,Winslow Homer approaches to one body length of Dante
+FAADU,1,A,A,Winslow Homer approaches to one body length of Duend
+FAAFN,1,A,A,Winslow Homer approaches to one body length of Frankenstein
+FAAJP,1,A,A,Winslow Homer approaches to one body length of Jigglypuf
+FAAKH,1,A,A,Winslow Homer approaches to one body length of Krishna
+FAAKJ,1,A,A,Winslow Homer approaches to one body length of King James
+FAALO,1,A,A,Winslow Homer approaches to one body length of Kahlo
+FAAMR,1,A,A,Winslow Homer approaches to one body length of Monster
+FAANC,1,A,A,Winslow Homer approaches to one body length of Nickel
+FAANE,1,A,A,Winslow Homer approaches to one body length of Champagne
+FAAON,1,A,A,Winslow Homer approaches to one body length of Seiton
+FAAOP,1,A,A,Winslow Homer approaches to one body length of Opie
+FAAPC,1,A,A,Winslow Homer approaches to one body length of Picasso
+FAAPJ,1,A,A,Winslow Homer approaches to one body length of Pope John
+FAAPV,1,A,A,Winslow Homer approaches to one body length of Peeves
+FAAQH,1,A,A,Winslow Homer approaches to one body length of Quidditch
+FAAQM,1,A,A,Winslow Homer approaches to one body length of Quasimono
+FAATJ,1,A,A,Winslow Homer approaches to one body length of Tom Jerry
+FAAUB,1,A,A,Winslow Homer approaches to one body length of Dubious
+FAAVE,1,A,A,Winslow Homer approaches to one body length of Vermeer
+FAAVR,1,A,A,Winslow Homer approaches to one body length of Viceroy
+FAAVV,1,A,A,Winslow Homer approaches to one body length of Vandal
+FAAX1,,,,
+FAAX9,,,,
+FAAXJ,,,,
+FAAXX,,,,
+FAAXX C1,,,,
+FAB,,,,
+FABAJ,,,,
+FABBI,1,A,A,Winslow Homer approaches to five body lengths of Bilbo
+FABDA,1,A,A,Winslow Homer approaches to five body lengths of Dali
+FABDG,1,A,A,Winslow Homer approaches to five body lengths of Danger
+FABDP,1,A,A,Winslow Homer approaches to five body lengths of Duplo
+FABDP?,1,A,A,Winslow Homer approaches to five body lengths of Duplo
+FABDQ,1,A,A,Winslow Homer approaches to five body lengths of King Donkey
+FABDT,1,A,A,Winslow Homer approaches to five body lengths of Dante
+FABDU,1,A,A,Winslow Homer approaches to five body lengths of Duende
+FABFN,1,A,A,Winslow Homer approaches to five body lengths of Frankenstein
+FABJP,1,A,A,Winslow Homer approaches to five body lengths of Jigglypuff
+FABKH,1,A,A,Winslow Homer approaches to five body lengths of Krishna
+FABKJ,1,A,A,Winslow Homer approaches to five body lengths of King James
+FABLO,1,A,A,Winslow Homer approaches to five body lengths of Kahlo
+FABLU,,,,
+FABMR,1,A,A,Winslow Homer approaches to five body lengths of Monster
+FABNC,1,A,A,Winslow Homer approaches to five body lengths of Nickel
+FABNE,1,A,A,Winslow Homer approaches to five body lengths of Champagne
+FABON,1,A,A,Winslow Homer approaches to five body lengths of Seiton
+FABOP,1,A,A,Winslow Homer approaches to five body lengths of Opie
+FABPC,1,A,A,Winslow Homer approaches to five body lengths of Picasso
+FABPD,,,,
+FABPJ,1,A,A,Winslow Homer approaches to five body lengths of Pope John
+FABPV,1,A,A,Winslow Homer approaches to five body lengths of Peeves
+FABQH,1,A,A,Winslow Homer approaches to five body lengths of Quidditch
+FABQM,1,A,A,Winslow Homer approaches to five body lengths of Quasimono
+FABTJ,1,A,A,Winslow Homer approaches to five body lengths of Tom Jerry
+FABUB,1,A,A,Winslow Homer approaches to five body lengths of Dubious
+FABVD,1,A,A,Winslow Homer approaches to five body lengths of Vladimir
+FABVE,1,A,A,Winslow Homer approaches to five body lengths of Vermeer
+FABVR,1,A,A,Winslow Homer approaches to five body lengths of Viceroy
+FABVV,1,A,A,Winslow Homer approaches to five body lengths of Vandal
+FABX1,,,,
+FABX2,,,,
+FABX9,,,,
+FABXJ,,,,
+FABXX,,,,
+FABXX C1,,,,
+FACBVE,,,,
+FADA,,,,
+FAFBDU,,,,
+FALDA,8,F,F,Winslow Homer follows Dali
+FALDP,7,F,F,Winslow Homer follows Duplo
+FALDU,8,F,F,Winslow Homer follows Duende
+FALFN,8,F,F,Winslow Homer follows Frankenstein
+FALPJ,7,F,F,Winslow Homer follows Pope John
+FALPV,8,F,F,Winslow Homer follows Peeves
+FALQM,7,F,F,Winslow Homer follows Quasimono
+FALX1,5,F,F,Winslow Homer follows another monkey
+FAUB,,,,
+FAV,,,,
+FAVBI,5,L,L,Winslow Homer looks at Bilbo
+FAVDA,8,L,L,Winslow Homer looks at Dali
+FAVDP,7,L,L,Winslow Homer looks at Duplo
+FAVDQ,5,L,L,Winslow Homer looks at King Donkey
+FAVDQ/QH,7,L,L,Winslow Homer looks at King Donkey and Quidditch
+FAVDT,6,L,L,Winslow Homer looks at Dante
+FAVDU,8,L,L,Winslow Homer looks at Duende
+FAVFN,8,L,L,Winslow Homer looks at Frankenstein
+FAVKJ,5,L,L,Winslow Homer looks at King James
+FAVOH,5,L,L,Winslow Homer looks at a researcher
+FAVOH JFE,7,L,L,Winslow Homer looks at Jim (a researcher)
+FAVOH MZI,7,L,L,Winslow Homer looks at Matt (a researcher)
+FAVOO,7,L,L,Winslow Homer looks at Susan (a researcher)
+FAVPC,5,L,L,Winslow Homer looks at Picasso
+FAVPV,7,L,L,Winslow Homer looks at Peeves
+FAVQM,5,L,L,Winslow Homer looks at Quasimono
+FAVTJ,5,L,L,Winslow Homer looks at Tom Jerry
+FAVUB,8,L,L,Winslow Homer looks at Dubious
+FAVVE,5,L,L,Winslow Homer looks at Vermeer
+FAVVR,7,L,L,Winslow Homer looks at Viceroy
+FAVVV,6,L,L,Winslow Homer looks at Vandal
+FAVXX NV,,,,
+FAVZH,7,L,L,Winslow Homer looks at a howler monkey
+FBDA,,,,
+FCAPV HR,8,C,C,Winslow Homer tries to steal Peeves's Hirtella racemosa fruit
+FCHDP SCORPION,7,C,C,Winslow Homer handles Duplo's scorpion
+FCHFN STFLOWER,7,C,C,Winslow Homer is interested in Frankenstein's Terciopelo flower
+FCHMR SK,,,,
+FCHVE RA,8,C,C,Winslow Homer touches Vermeer's Raspa fruit
+FCIDA LC,8,C,C,Winslow Homer is interested in Dali's Luchea fruit
+FCIDA RS,8,C,C,Winslow Homer is interested in Dali's Rubiaceae fruit
+FCIDA ZI,8,C,C,Winslow Homer is interested in Dali's insect
+FCIDP SCORPION,9,C,C,Winslow Homer is interested in Duplo's scorpion
+FCIDP SK,,,,
+FCIFN POD,7,C,C,Winslow Homer is interested in Frankenstein's pod
+FCIFN SK,,,,
+FCIFN WST,,,,
+FCIFY LC,8,C,C,Winslow Homer is interested in Fishy's Luchea fruit
+FCIMR SK,,,,
+FCINC LC WT,8,C,C,Winslow Homer is interested in Nickel's Luchea fruit
+FCIPV X,7,C,C,Winslow Homer is interested in Peeve's food
+FCIQM HR,8,C,C,Winslow Homer is interested in Quasimono's Rubiaceae fruit
+FCIUB,7,C,C,Winslow Homer is interested in Dubious's food
+FCIUB BK,7,C,C,Winslow Homer is interested in Dubious's food
+FCIVE RA,8,C,C,Winslow Homer is interested in Vermeer's Raspa fruit
+FCIVE SK,,,,
+FCIVR BK,,,,
+FCTDA LC,9,C,C,"Winslow Homer takes some of Dali's Luchea fruit, and Dali tolerates it"
+FCTMR XX,8,C,C,"Winslow Homer takes some of Monster's food, and Monster tolerates it"
+FCTPV X,8,C,C,"Winslow Homer takes some of Peeves's food, and Peeves tolerates it"
+FCTVE RA,8,C,C,"Winslow Homer takes some of Vermeer's Raspa fruit, and Vermeer tolerates it"
+FEABI,20,G,E,Winslow Homer avoids Bilbo
+FEADG,25,G,E,Winslow Homer avoids Danger
+FFAFN,,,,
+FFCAJ,8,F,F,Winslow Homer climbs on Arjuna
+FFCBI,7,F,F,Winslow Homer climbs on Bilbo
+FFCDG,7,F,F,Winslow Homer climbs on Danger
+FFCDP,8,F,F,Winslow Homer climbs on Duplo
+FFCDT,7,F,F,Winslow Homer climbs on Dante
+FFCFN,8,F,F,Winslow Homer climbs on Frankenstein
+FFCLO,7,F,F,Winslow Homer climbs on Kahlo
+FFCNE,7,F,F,Winslow Homer climbs on Champagne
+FFCPV,8,F,F,Winslow Homer climbs on Peeves
+FFCQM,8,F,F,Winslow Homer climbs on Quasimono
+FFCTJ,7,F,F,Winslow Homer climbs on Tom Jerry
+FFCVE,7,F,F,Winslow Homer climbs on Vermeer
+FFCVR,8,F,F,Winslow Homer climbs on Viceroy
+FFIBI,8,F,F,Winslow Homer closely inspects Bilbo
+FFIDA,8,F,F,Winslow Homer closely inspects Dali
+FFINC,8,F,F,Winslow Homer closely inspects Nickel
+FFIPJ,7,F,F,Winslow Homer closely inspects Pope John
+FFIVE,8,F,F,Winslow Homer closely inspects Vermeer
+FFO,8,F,F,Winslow Homer sticks his tongue out
+FFODU,8,F,F,Winslow Homer sticks his tongue out at Duende
+FFPDA,9,F,F,Winslow Homer palpates Dali's nipple
+FFSBR,6,F,F,Winslow Homer sniffs a branch
+FFSDA,7,F,F,Winslow Homer sniffs Dali
+FFSDU,8,F,F,Winslow Homer sniffs Duende
+FFSDU CROTCH,7,F,F,Winslow Homer sniffs Duende's crotch
+FFSFN,7,F,F,Winslow Homer sniffs Frankenstein
+FFSJP,7,F,F,Winslow Homer sniffs Jigglypuff
+FFSKJ,6,F,F,Winslow Homer sniffs King James
+FFSVE,7,F,F,Winslow Homer sniffs Vermeer
+FFTDA,8,F,F,Winslow Homer gently touches Dali
+FFTDG,8,F,F,Winslow Homer gently touches Danger
+FFTDT,8,F,F,Winslow Homer gently touches Dante
+FFTDU,8,F,F,Winslow Homer gently touches Duende
+FFTFN,8,F,F,Winslow Homer gently touches Frankenstein
+FFTKH,8,F,F,Winslow Homer gently touches Krishna
+FFTLO,8,F,F,Winslow Homer gently touches Kahlo
+FFTPJ,8,F,F,Winslow Homer gently touches Pope John
+FFTQM,8,F,F,Winslow Homer gently touches Quasimono
+FFTTJ,8,F,F,Winslow Homer gently touches Tom Jerry
+FFTUB,8,F,F,Winslow Homer gently touches Dubious
+FFTVE,8,F,F,Winslow Homer gently touches Vermeer
+FFUPV,,,,
+FGJOH MZI,8,G,G,Winslow Homer aggressively bounces at Matt (a researcher)
+FGRDP,7,G,G,Winslow Homer aggressively glares at Duplo
+FGTBI,8,G,G,Winslow Homer open-mouth threatens Bilbo
+FGTOH MATT,8,G,G,Winslow Homer aggressively bounces at Matt (a researcher)
+FGTZL,14,G,G,Winslow Homer open-mouth threatens a lizard
+FIDDA,7,I,I,Winslow Homer climbs off of Dali's back
+FIDPV,7,I,I,Winslow Homer climbs off of Peeves's back 
+FIDVD WT,7,I,I,Winslow Homer climbs off of Vladimir's back
+FIMDA,9,I,I,Winslow Homer climbs onto Dali and rides on her back
+FIMPV,8,I,I,Winslow Homer climbs onto Peeves and rides on his back
+FIMVD,8,I,I,Winslow Homer climbs onto Vladimir and rides on her back
+FINDA,9,I,I,Winslow Homer nurses from Dali
+FINWH WT,,,,
+FIRPJ,8,I,I,Winslow Homer attempts to nurse from Peeves
+FISDA,7,I,I,Winslow Homer stops nursing from Dali
+FITDT,9,I,I,"Winslow Homer throws a tantrum to Dante, and flails his limbs"
+FLAAJ,1,A,A,Winslow Homer leaves one body length of Arjuna
+FLABI,1,A,A,Winslow Homer leaves one body length of Bilbo
+FLADA,1,A,A,Winslow Homer leaves one body length of Dal
+FLADG,1,A,A,Winslow Homer leaves one body length of Danger
+FLADP,1,A,A,Winslow Homer leaves one body length of Duplo
+FLADQ,1,A,A,Winslow Homer leaves five body lengths of King Donkey
+FLADT,1,A,A,Winslow Homer leaves one body length of Dante
+FLADU,1,A,A,Winslow Homer leaves one body length of Duende
+FLADU WT,1,A,A,Winslow Homer leaves one body length of Duende
+FLAFN,1,A,A,Winslow Homer leaves one body length of Frankenstein
+FLAJP,1,A,A,Winslow Homer leaves one body length of Jigglypuff
+FLAKH,1,A,A,Winslow Homer leaves one body length of Krishna
+FLAKJ,1,A,A,Winslow Homer leaves one body length of King James
+FLALO,1,A,A,Winslow Homer leaves one body length of Kahlo
+FLAMR,1,A,A,Winslow Homer leaves one body length of Monster
+FLANC,1,A,A,Winslow Homer leaves one body length of Nickel
+FLANE,1,A,A,Winslow Homer leaves one body length of Champagne
+FLAON,1,A,A,Winslow Homer leaves one body length of Seiton
+FLAON WT,1,A,A,Winslow Homer leaves one body length of Seiton
+FLAPC,1,A,A,Winslow Homer leaves one body length of Picasso
+FLAPJ,1,A,A,Winslow Homer leaves one body length of Pope John
+FLAPV,1,A,A,Winslow Homer leaves one body length of Peeves
+FLAQA,,,,
+FLAQM,1,A,A,Winslow Homer leaves one body length of Quasimono
+FLATJ,1,A,A,Winslow Homer leaves one body length of Tom Jerry
+FLAUB,1,A,A,Winslow Homer leaves one body length of Dubious
+FLAVE,1,A,A,Winslow Homer leaves one body length of Vermeer
+FLAVR,1,A,A,Winslow Homer leaves one body length of Viceroy
+FLAVV,1,A,A,Winslow Homer leaves one body length of Vandal
+FLAX2,,,,
+FLAX9,,,,
+FLAXJ,,,,
+FLAXX,,,,
+FLAXX C1,,,,
+FLBAJ,1,A,A,Winslow Homer leaves five body lengths of Arjuna
+FLBBI,1,A,A,Winslow Homer leaves five body lengths of Bilbo
+FLBDA,1,A,A,Winslow Homer leaves five body lengths of Dali
+FLBDG,1,A,A,Winslow Homer leaves five body lengths of Danger
+FLBDP,1,A,A,Winslow Homer leaves five body lengths of Duplo
+FLBDQ,1,A,A,Winslow Homer leaves five body lengths of King Donkey
+FLBDT,1,A,A,Winslow Homer leaves five body lengths of Dante
+FLBDU,1,A,A,Winslow Homer leaves five body lengths of Duende
+FLBFN,1,A,A,Winslow Homer leaves five body lengths of Frankenstein
+FLBJP,1,A,A,Winslow Homer leaves five body lengths of Jigglypuff
+FLBKH,1,A,A,Winslow Homer leaves five body lengths of Krishna
+FLBKJ,1,A,A,Winslow Homer leaves five body lengths of King James
+FLBLO,1,A,A,Winslow Homer leaves five body lengths of Kahlo
+FLBMR,1,A,A,Winslow Homer leaves five body lengths of Monster
+FLBNC,1,A,A,Winslow Homer leaves five body lengths of Nickel
+FLBNE,1,A,A,Winslow Homer leaves five body lengths of Champagne
+FLBON,1,A,A,Winslow Homer leaves five body lengths of Seiton
+FLBPC,1,A,A,Winslow Homer leaves five body lengths of Picasso
+FLBPJ,1,A,A,Winslow Homer leaves five body lengths of Pope John
+FLBPV,1,A,A,Winslow Homer leaves five body lengths of Peeves
+FLBQH,1,A,A,Winslow Homer leaves five body lengths of Quidditch
+FLBQM,1,A,A,Winslow Homer leaves five body lengths of Quasimono
+FLBTJ,1,A,A,Winslow Homer leaves five body lengths of Tom Jerry
+FLBUB,1,A,A,Winslow Homer leaves five body lengths of Dubious
+FLBVD,1,A,A,Winslow Homer leaves five body lengths of Vladimir
+FLBVE,1,A,A,Winslow Homer leaves five body lengths of Vermeer
+FLBVR,1,A,A,Winslow Homer leaves five body lengths of Viceroy
+FLBVV,1,A,A,Winslow Homer leaves five body lengths of Vandal
+FLBX2,,,,
+FLBX3,,,,
+FLBX9,,,,
+FLBXF,,,,
+FLBXX C1,,,,
+FMIDA,9,M,M,Winslow Homer invites Dali to groom him
+FMIDP,9,M,M,Winslow Homer invites Duplo to groom him
+FMIDT,8,M,M,Winslow Homer invites Dante to groom him
+FMION,8,M,M,Winslow Homer invites Seiton to groom him
+FMIVR,8,M,M,Winslow Homer invites Vermeer to groom him
+FMIX1,,,,
+FMMJP,9,M,M,Winslow Homer grooms Jigglypuff
+FMOJP,7,M,M,Winslow Homer stops grooming Jigglypuff
+FPBDA,8,P,P,Winslow Homer play-bites Dali
+FPBFN,8,P,P,Winslow Homer play-bites Frankenstein
+FPBQM,7,P,P,Winslow Homer play-bites Quasimono
+FPBUB,8,P,P,Winslow Homer play-bites Dubious
+FPBVR,7,P,P,Winslow Homer play-bites Vermeer
+FPCNC,8,P,P,Winslow Homer play-chases Nickel
+FPCQM,8,P,P,Winslow Homer play-chases Quasimono
+FPCUB,8,P,P,Winslow Homer play-chases Dubious
+FPFFN,8,P,P,Winslow Homer play-flees from Frankenstein
+FPHQH,7,P,P,Winslow Homer play-hits Quidditch
+FPHUB,8,P,P,Winslow Homer play-hits Dubious
+FPHVR,8,P,P,Winslow Homer play-hits Vermeer
+FPIFN,9,P,P,"Winslow Homer makes a 'play-face' to Frankenstein, inviting him to play.  His mouth is open but his teeth don't show, except for the tips of the canines."
+FPIJP,8,P,P,"Winslow Homer makes a “play face” to Jigglypuff, inviting him to play.  His mouth is open, and his teeth aren't showing except for the tips of his canines."
+FPILO,8,P,P,"Winslow Homer makes a “play face” to Kahlo, him to play."
+FPINC,8,P,P,"Winslow Homer makes a “play face” to Nickel, inviting her to play"
+FPKQM,8,P,P,"Winslow Homer and Quasimono hang by their tales, and playfully  swat and grapple with one another"
+FPKVR,8,P,P,"Winslow Homer and Vermeer hang by their tales, and playfully  swat and grapple with one another"
+FPLFN,8,P,P,Winslow Homer play-pulls Frankenstein
+FPLKH TAIL,8,P,P,Winslow Homer play-pulls Krishna's tail
+FPQNC,8,P,P,Winslow Homer play-lunges at Nickel
+FPUFN,8,P,P,Winslow Homer play-pounces on Frankenstein
+FPUQH,7,P,P,Winslow Homer play-pounces on Quidditch
+FPUUB,8,P,P,Winslow Homer play-pounces on Dubious
+FPUVR,7,P,P,Winslow Homer play-pounces on Viceroy
+FPWBI,8,P,P,Winslow Homer play-wrestles with Bilbo
+FPWFN,8,P,P,Winslow Homer play-wrestles with Frankenstein
+FPWNC,9,P,P,Winslow Homer play-wrestles with Nickel
+FPWQM,8,P,P,Winslow Homer play-wrestles with Quasimono
+FPWUB,8,P,P,Winslow Homer play-wrestles with Dubious
+FSELO,5,F,S,Winslow Homer unmounts Kahlo
+FSEUB,5,F,S,Winslow Homer unmounts Dubious
+FSMUB,7,F,S,Winslow Homer mounts Dubious
+FSXUB,7,F,S,Winslow Homer mounts Dubious
+FVEDU,8,V,V,Winslow Homer makes a twargle sound to Duende
+FVF,7,C,C,Winslow Homer food-peeps
+FVOBI,8,G,G,Winslow Homer squeak-threatens Bilbo
+FVP,7,V,V,Winslow Homer social-peeps
+FVQ,7,V,V,Winslow Homer coos
+FVT,6,F,F,Winslow Homer twitters
+FVTBI,6,F,F,Winslow Homer twitters to Bilbo
+FVTDA,8,F,F,Winslow Homer twitters to Dali
+FVTDP,7,F,F,Winslow Homer twitters to Duplo
+FVTDT,7,F,F,Winslow Homer twitters to Dante
+FVTDU,9,F,F,Winslow Homer twitters to Duende
+FVTFVT,7,F,F,Winslow Homer twitters
+FVTMR,7,F,F,Winslow Homer twitters to Monster
+FVTNC,7,F,F,Winslow Homer twitters to Nickel
+FVTPJ,6,F,F,Winslow Homer twitters to Pope John
+FVTPV,7,F,F,Winslow Homer twitters to Peeves
+FVTU,,,,
+FVTUB,7,F,F,Winslow Homer twitters to Dubious
+FVTVR,7,F,F,Winslow Homer twitters to Viceroy
+FVTVT,,,,
+FVYDT,7,V,V,Winslow Homer yelps to Dante
+GHFDTOHDU,8,H,H,"Dante jerks her head towards Duende, to recruit him into a coalition against a researcher"
+GHKDAOHDU,8,H,H,"Dali and Duende stand in contact with their cheeks together, in a coalition against a researcher"
+GHOWHZLQM,15,H,H,"Winslow Homer climbs onto Quasimono's back, in a coalition against a lizard"
+H KK,,,,
+HA ,,,,
+HB,6,C,C,Winslow Homer forages for insects in bark
+HB ,6,C,C,Winslow Homer forages for insects in bark
+HB B,9,C,C,Winslow Homer forages for insects in bark
+HB BB,7,C,C,Winslow Homer forages for insects in bark
+HB BBKF,8,C,C,Winslow Homer forages for insects in bark
+HB F,6,C,C,Winslow Homer forages for insects in bark
+HB I,6,C,C,Winslow Homer forages for insects in bark
+HB K,7,C,C,Winslow Homer forages for insects in bark
+HB KB,8,C,C,Winslow Homer forages for insects in bark
+HB KK,6,C,C,Winslow Homer forages for insects in bark
+HC,,,,
+HC ,,,,
+HC B,,,,
+HC BB,,,,
+HC BBBB,,,,
+HC BBBBB,,,,
+HC BBD,,,,
+HC BBI,,,,
+HC BBID,,,,
+HC BD,,,,
+HC BI,,,,
+HC BIBBBD,,,,
+HC BIBIBBII,,,,
+HC BII,,,,
+HC BIII,,,,
+HC BIIIIII,,,,
+HC BKII,,,,
+HC D,,,,
+HC F,,,,
+HC FD,,,,
+HC FFFI,,,,
+HC I,,,,
+HC IBD,,,,
+HC ID,,,,
+HC IFI,,,,
+HC IHL,,,,
+HC II,,,,
+HC IIBI,,,,
+HC IID,,,,
+HC III,,,,
+HC IIID,,,,
+HC IIIFFIFD,,,,
+HC IIII,,,,
+HC IIIII,,,,
+HC IIIIII,,,,
+HC IIIIIIBIIIIBIIIIBIIIIIIIIIII,,,,
+HC IIIIIIIII,,,,
+HC IIIIIIIIIB,,,,
+HC IIIIIIIIII,,,,
+HC ILI,,,,
+HC K,,,,
+HC KB,,,,
+HC KK,,,,
+HC L,,,,
+HC LFD,,,,
+HC LI,,,,
+HC SBSD,,,,
+HCD,,,,
+HCI,,,,
+HFAI? BBD,6,C,C,Winslow Homer handles a <i>Liana</i> fruit
+HFBP,6,C,C,Winslow Homer handles a bromeliad fruit
+HFBP B,7,C,C,Winslow Homer bites a bromeliad fruit
+HFBP BIBI,8,C,C,Winslow Homer bites and ingests a bromeliad fruit
+HFBP BIII,9,C,C,Winslow Homer bites and ingests a bromeliad fruit
+HFBP BIIID,8,C,C,"Winslow Homer bites, ingests, and drops a bromeliad fruit"
+HFBP FBIID,8,C,C,"Winslow Homer sniffs, bites, ingests, and drops a bromeliad fruit"
+HFBP FD,7,C,C,Winslow Homer sniffs and drops a bromeliad fruit
+HFBP FIIII,7,C,C,Winslow Homer sniffs and ingests a bromeliad fruit
+HFBP I,6,C,C,Winslow Homer ingests a bromeliad fruit
+HFGU,6,C,C,Winslow Homer handles a <i>Guacimo</i> fruit
+HFGU BB,7,C,C,Winslow Homer bites a <i>Guacimo</i> fruit
+HFHE,6,C,C,Winslow Homer handles a <i>Hippocrateaceae</i> fruit
+HFHR,6,C,C,Winslow Homer handles a <i>Hirtella racemosa</i> fruit
+HFHR B,7,C,C,Winslow Homer bites a <i>Hirtella racemosa</i> fruit
+HFHR BB,7,C,C,Winslow Homer bites a <i>Hirtella racemosa</i> fruit
+HFHRSUR,,,,
+HFLC,6,C,C,Winslow Homer handles a Luchea fruit
+HFLC B,7,C,C,Winslow Homer handles and bites a Luchea fruit
+HFLC BB,7,C,C,Winslow Homer handles and bites a Luchea fruit
+HFLC BBBB,7,C,C,Winslow Homer handles and bites a Luchea fruit
+HFLC BBD,9,C,C,"Winslow Homer handles, bites and drops a Luchea fruit"
+HFLC BD,8,C,C,"Winslow Homer handles, bites and drops a Luchea fruit"
+HFLC BK,8,C,C,"Winslow Homer handles, bites and breaks a Luchea fruit"
+HFLC D,8,C,C,Winslow Homer handles and drops a Luchea fruit
+HFLC F,7,C,C,Winslow Homer handles and sniffs a Luchea fruit
+HFLC FD,8,C,C,"Winslow Homer handles, sniffs, and drops a Luchea fruit"
+HFOL,6,C,C,Winslow Homer handles a <i>Ouratea lucens</i>fruit
+HFRA IIII,7,C,C,Winslow Homer ingests some <i>Raspa</i> fruits
+HFRH B,7,C,C,Winslow Homer handles and bites a Liana fruit
+HFRH BB,7,C,C,Winslow Homer handles and bites a Liana fruit
+HFRH BBB,7,C,C,Winslow Homer handles and bites a Liana fruit
+HFRH BBII,8,C,C,"Winslow Homer handles, bites, and ingests a Liana fruit"
+HFRH K,8,C,C,Winslow Homer handles and breaks a Liana fruit
+HFRS I,7,C,C,Winslow Homer handles and ingests a Rubiaceae fruit
+HFXF,6,C,C,Winslow Homer handles an unknown fruit
+HFXF B,6,C,C,Winslow Homer handles and bites an unknown fruit
+HFXF BB,6,C,C,Winslow Homer handles and bites an unknown fruit
+HFXF BBBB,6,C,C,Winslow Homer handles and bites an unknown fruit
+HFXF BBBBB,6,C,C,Winslow Homer handles and bites an unknown fruit
+HFXF II,6,C,C,Winslow Homer handles and ingests an unknown fruit
+HFXF POD,,,,
+HH,7,C,C,"Winslow Homer inspects a hole in a tree, checking for food"
+HI,6,C,C,Winslow Homer grabs an insect
+HI I,6,C,C,Winslow Homer ingests an insect
+HI IIII,6,C,C,Winslow Homer ingests an insect
+HI IIIIII,7,C,C,Winslow Homer ingests an insect
+HIAB III,7,C,C,Winslow Homer ingests an acid bug
+HIKY I,7,C,C,Winslow Homer ingests a katydid
+HIWN D,8,C,C,"Winslow Homer handles a wasp nest, and drops it"
+HIWN IIIIIII,9,C,C,Winslow Homer eats larva and honey from a wasp nest
+HL,6,C,C,Winslow Homer looks under a leaf for insects
+HL ,6,C,C,Winslow Homer looks under a leaf for insects
+HL B,6,C,C,Winslow Homer bites a leaf
+HL BBB,6,C,C,Winslow Homer bites a leaf
+HL F,6,C,C,Winslow Homer sniffs a leaf
+HL I,7,C,C,Winslow Homer ingests an insect from a leaf
+HL IIIIIII,7,C,C,Winslow Homer ingests an insect from a leaf
+HL L,7,C,C,Winslow Homer licks a leaf
+HLKY IIIIIII,6,C,C,"Winslow Homer finds a katydid under a leaf, and ingests it"
+HLRABFN,,,,
+HOCACTUS,6,C,C,Winslow Homer handles a cactus
+HS,7,C,C,"Winslow Homer handles a stick, looking for insects"
+HS ,7,C,C,"Winslow Homer handles a stick, looking for insects"
+HS B,7,C,C,Winslow Homer bites a stick
+HS BAEM D,,,,
+HS BB,7,C,C,Winslow Homer bites a stick
+HS BBB,7,C,C,Winslow Homer bites a stick
+HS BBBBBIIBIIBIBBIIID,7,C,C,"Winslow Homer bites and ingests insects from a stick, and drops the stick"
+HS BBBBD,7,C,C,Winslow Homer bites and drops a stick
+HS BBD,7,C,C,Winslow Homer bites and drops a stick
+HS BD,7,C,C,Winslow Homer bites and drops a stick
+HS BDFFO,,,,
+HS BKBB,7,C,C,Winslow Homer breaks and bites a stick
+HS BKBBD,8,C,C,"Winslow Homer bites, breaks, and drops a stick"
+HS BKBK,8,C,C,Winslow Homer bites and breaks a stick
+HS BKKD,8,C,C,"Winslow Homer bites, breaks, and drops a stick"
+HS D,6,C,C,Winslow Homer drops a stick
+HS I,6,C,C,Winslow Homer ingests insects from a stick
+HS K,6,C,C,Winslow Homer breaks a stick
+HS KB,7,C,C,Winslow Homer breaks and bites a stick
+HS KBBBB,7,C,C,Winslow Homer breaks and bites a stick
+HS KBBKB,7,C,C,Winslow Homer breaks and bites a stick
+HS KBD,8,C,C,"Winslow Homer breaks, bites, and drops a stick"
+HS KBIBIIII,9,C,C,"Winslow Homer breaks, bites, and ingests insects from a stick"
+HS KD,7,C,C,Winslow Homer breaks and drops a stick
+HS L,7,C,C,Winslow Homer licks a stick
+HS TTD,7,C,C,Winslow Homer taps and drops a stick
+HS TTTKB,8,C,C,"Winslow Homer taps, breaks, and bites a stick"
+HSAC,7,C,C,Winslow Homer handles a stick from an <i>Acacia</i> tree
+HSAC B,6,C,C,Winslow Homer bites an acacia stick
+HSAC BD,7,C,C,Winslow Homer bites and drops a acacia stick
+HSAC BI,8,C,C,Winslow Homer bites and ingests ants from an acacia stick
+HSB,,,,
+HX,,,,
+HX B,,,,
+HX F,,,,
+HX I,,,,
+I,7,O,O,The researchers can see Winslow Homer again
+IGO,,,,
+IV,,,,
+IVP,,,,
+IVP WT,,,,
+LADA,,,,
+LAFN,,,,
+LAKH,,,,
+LBPV,,,,
+LH,,,,
+MAADA,1,A,A,Mutual approach to one body length with Dali
+MAAFN,1,A,A,Mutual approach to one body length with Frankenstein
+MAAJP,1,A,A,Mutual approach to one body length with Jigglypuff
+MAAQM,1,A,A,Mutual approach to one body length with Quasimono
+MAAUB,1,A,A,Mutual approach to one body length with Dubious
+MAAVR,1,A,A,Mutual approach to one body length with Viceroy
+MABDA,1,A,A,Mutual approach to five body lengths with Dali
+MABFN,1,A,A,Mutual approach to one body length with Frankenstein 
+MABON,1,A,A,Mutual approach to five body lengths with Seiton
+MABPJ,1,A,A,Mutual approach to five body lengths with Pope John
+MABPV,1,A,A,Mutual approach to five body lengths with Peeves
+MABQM,1,A,A,Mutual approach to five body lengths with Quasimono
+MABVE,1,A,A,Mutual approach to five body lengths with Vermeer
+MABVR,1,A,A,Mutual approach to five body lengths with Viceroy
+MABXF,,,,
+MABXJ,,,,
+MABXM,,,,
+MABXX,,,,
+MABXX C1,,,,
+MFHFN,9,F,F,Friendly hug with Frankenstein
+MFTFN,8,F,F,Winslow Homer and Frankenstein gently touch one another
+MLA1,,,,
+MLABI,1,A,A,Mutually leaves one body length of Bilbo
+MLADA,1,A,A,Mutually leaves one body length of Dali
+MLADT,1,A,A,Mutually leaves one body length of Dante
+MLAFN,1,A,A,Mutually leaves one body length of Frankenstein
+MLAMR,1,A,A,Mutually leaves one body length of Monster
+MLANC,1,A,A,Mutually leaves one body length of Nickel
+MLAPV,1,A,A,Mutually leaves one body length of Peeves
+MLAQM,1,A,A,Mutually leaves one body length of Quasimono
+MLAVE,1,A,A,Mutually leaves one body length of Vermeer
+MLBDA,1,A,A,Mutually leaves five body lengths of Dali
+MLBDP,1,A,A,Mutually leaves five body lengths of Duplo
+MLBDT,1,A,A,Mutually leaves five body lengths of Dante
+MLBDU,1,A,A,Mutually leaves five body lengths of Duende
+MLBFN,1,A,A,Mutually leaves five body lengths of Frankenstein
+MLBJP,1,A,A,Mutually leaves five body lengths of Jigglypuff
+MLBMR,1,A,A,Mutually leaves five body lengths of Monster
+MLBNC,1,A,A,Mutually leaves five body lengths of Nickel
+MLBON,1,A,A,Mutually leaves five body lengths of Seiton
+MLBPV,1,A,A,Mutually leaves five body lengths of Peeves
+MLBQH,1,A,A,Mutually leaves five body lengths of Quidditch
+MLBQM,1,A,A,Mutually leaves five body lengths of Quasimono
+MLBUB,1,A,A,Mutually leaves five body lengths of Dubious
+MLBVE,1,A,A,Mutually leaves five body lengths of Vermeer
+MLBVR,1,A,A,Mutually leaves five body lengths of Viceroy
+MLBVV,1,A,A,Mutually leaves five body lengths of Vandal
+MLBXJ,,,,
+MLBXX C1,,,,
+MPBFN,8,P,P,Frankenstein and Winslow Homer play-bite each other
+MPBNC,9,P,P,Nickel and Winslow Homer play-bite each other
+MPBQM,8,P,P,Quasimono and Winslow Homer play-bite each other
+MPBUB,8,P,P,Dubious and Winslow Homer play-bite each other
+MPHUB,8,P,P,Dubious and Winslow Homer play-hit each other
+MPKFN,9,P,P,"Frankenstein and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
+MPKJP,8,P,P,"Jigglypuff and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
+MPKNC,8,P,P,"Nickel and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
+MPKQM,8,P,P,"Quasimono and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
+MPKUB,8,P,P,"Dubious and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
+MPPFN,8,P,P,Frankenstein and Winslow Homer play-hit each other
+MPWAJ,8,P,P,Winslow Homer play-wrestles with Arjuna
+MPWDP,7,P,P,Winslow Homer play-wrestles with Duplo
+MPWDQ,6,P,P,Winslow Homer play-wrestles with King Donkey
+MPWFN,8,P,P,Winslow Homer play-wrestles with Frankenstein
+MPWJP,7,P,P,Winslow Homer play-wrestles with Jigglypuff
+MPWLO,6,P,P,Winslow Homer play-wrestles with Kahlo
+MPWMR,6,P,P,Winslow Homer play-wrestles with Monster
+MPWNC,6,P,P,Winslow Homer play-wrestles with Nickel
+MPWQM,7,P,P,Winslow Homer play-wrestles with Quasimono
+MPWUB,8,P,P,Winslow Homer play-wrestles with Dubious
+MPWVR,6,P,P,Winslow Homer play-wrestles with Viceroy
+MPWXX,6,P,P,Winslow Homer play-wrestles
+MVTUB,8,F,F,Winslow Homer and Dubious twitter at each other
+NFDA,,,,
+NFLAFN,,,,
+O,8,O,O,The researchers can't see Winslow Homer
+OVP,7,O,O,Winslow Homer is partially out of view of the researchers
+PAJ YSI NFFY,,,,
+PAJ YWE 3NC,,,,
+PBI YFIKY 2LO,,,,
+PBI YVF 2VV,,,,
+PBI YWE 2DGQMUB,,,,
+PD YWS 3DUVE,,,,
+PDA YSH 0ON 2DUVE 3FNWHUBVRLODGDQ,,,,
+PDA YVF 3KJ,,,,
+PDG YFD 2VE,,,,
+PDG YFFBP 1JPUB,,,,
+PDG YFFBP 2ONWH,,,,
+PDG YFIBK,,,,
+PDG YWE/SF 0UBQM 2BI 3WHLO,,,,
+PDG YWS 3VVDT,,,,
+PDP YFI 2DU,,,,
+PDP YWE/SF 0KH 1KJPC 2JP 3DUWHDALO,,,,
+PDP YWS,,,,
+PDP YWS 3DU,,,,
+PDQ YFD 3AJ,,,,
+PDQ YFFBP,,,,
+PDQ YSF,,,,
+PDQ YVF 3WH,,,,
+PDQ YWW/SF 0DG 3VRVEONDADUFNWHUBLO,,,,
+PDT YFFSV,,,,
+PDT YSF 0NC,,,,
+PDT YVF 3VVDG,,,,
+PDT YWW,,,,
+PDU YFI,,,,
+PDU YFILF 2DP,,,,
+PDU YFT/FFRS 3DP,,,,
+PDU YVF 3LOKH,,,,
+PDU YWE 1VE 2ONDA 3FNWHUBLODTVRDG,,,,
+PDU YWS 3VRPV,,,,
+PFN YFFLC 3LO,,,,
+PFN YSI NFMR 3QH,,,,
+PFY YSI NRAJ,,,,
+PFY YWW,,,,
+PJP YTT,,,,
+PJP YVF 2VR 3DG,,,,
+PJP YWE 2KJPCDPKH 3DUDAWHLO,,,,
+PJP YWS 3KJ,,,,
+PKH YFI 3DG,,,,
+PKH YSG 2LO 3DU,,,,
+PKH YWE/SF 0DP 1PCKJ 2JP 3DUWHDALO,,,,
+PKJ YSG 3DA,,,,
+PKJ YTT 2DTVE,,,,
+PKJ YWE 1KHDPPC 2JP 3DUWHDALO,,,,
+PKJ YWE 3JP,,,,
+PLO WYW/SF 0FN 1DADU 2WHVE 3DTDQDG,,,,
+PLO YFFLC 3FN,,,,
+PLO YSE 2KH 3DU,,,,
+PLO YVF 2BI,,,,
+PMR YFISK 3VV,,,,
+PMR YSI NFFN 3QH,,,,
+PMR YVV 3VRDTJPPVFN,,,,
+PNC YSF 0DT,,,,
+PNC YWE 3AJ,,,,
+PNE YTT,,,,
+PON YFFBP 2DGWH,,,,
+PON YFOTO,,,,
+PON YSH 0DA 2DUVE 3FNWHUBVRLODGDQ,,,,
+PON YVF,,,,
+POP YSE,,,,
+POP YTT,,,,
+PPC YWE 1KJJPDP 3DUWHDALO,,,,
+PPV YFFLC,,,,
+PPV YSF 0FN,,,,
+PPV YTT 3VRDU,,,,
+PPV YVF 3VV,,,,
+PQH YFISK,,,,
+PQH YTT 3DG,,,,
+PQH YTT 3MRFN,,,,
+PQH YWS 2AJ 3FYDP,,,,
+PQM YSF 0DGQM 2BI 3WHLO,,,,
+PQM YSG 3DU,,,,
+PTJ YSS,,,,
+PTJ YTT 3DT,,,,
+PTJ YTT 3JPWH,,,,
+PTJ YVV,,,,
+PTJ YWS 3FY,,,,
+PUB YFI 2QM 3DU,,,,
+PUB YWE/SF 0DGQM 2BI 3WHLO,,,,
+PUB YWW 1DG 2JP,,,,
+PVD YTT,,,,
+PVD YVF,,,,
+PVE YTT 2DA 3FN,,,,
+PVE YTT 3FN,,,,
+PVE YWE 1DU 2ONDA 3FNWHUBLODTVRDG,,,,
+PVR YVF,,,,
+PVR YVF 2DTLOKH 3KJUBWHDAON,,,,
+PVV YTT,,,,
+PVV YVF,,,,
+PVV YVF 3PV,,,,
+PVV YWS,,,,
+PVV YWS 3DTDG,,,,
+PVV YWW 3VEDTLO,,,,
+PWFN,,,,
+PWH YFFBP 2ONDG,,,,
+PWH YTT 3DA,,,,
+RAA,,,,
+RAAAJ,,,,
+RAABI,1,A,A,Bilbo approaches within one body length
+RAADA,1,A,A,Dali approaches within one body length
+RAADG,1,A,A,Danger approaches within one body length
+RAADP,1,A,A,Duplo approaches within one body length
+RAADT,1,A,A,Dante approaches within one body length
+RAADU,1,A,A,Duende approaches within one body length
+RAAFN,1,A,A,Frankenstein approaches within one body length
+RAAJP,1,A,A,Jigglypuff approaches within one body length
+RAAKJ,1,A,A,King James approaches within one body length
+RAALO,1,A,A,Kahlo approaches within one body length
+RAANC,1,A,A,Nickel approaches within one body length
+RAAON,1,A,A,Seiton approaches within one body length
+RAAPC,1,A,A,Picasso approaches within one body length
+RAAPV,1,A,A,Peeves approaches within one body length
+RAAQM,1,A,A,Quasimono approaches within one body length
+RAAQMRPUQM,,,,
+RAATJ,1,A,A,Tom Jerry approaches within one body length
+RAAUB,1,A,A,Dubious approaches within one body length
+RAAUB WT,,,,
+RAAVE,1,A,A,Vermeer approaches within one body length
+RAAVR,1,A,A,Viceroy approaches within one body length
+RAAVV,1,A,A,Vandal approaches within one body length
+RAAX4,,,,
+RAAX7,,,,
+RABAJ,,,,
+RABBI,1,A,A,Bilbo approaches within five body lengths
+RABDA,1,A,A,Dali approaches within five body lengths
+RABDP,1,A,A,Duplo approaches within five body lengths
+RABDQ,1,A,A,King Donkey approaches within five body lengths
+RABDT,1,A,A,Dante approaches within five body lengths
+RABDU,1,A,A,Duende approaches within five body lengths
+RABFN,1,A,A,Frankenstein approaches within five body lengths
+RABJP,1,A,A,Jigglypuff approaches within five body lengths
+RABKH,1,A,A,Krishna approaches within five body lengths
+RABKJ,1,A,A,King James approaches within five body lengths
+RABLO,1,A,A,Kahlo approaches within five body lengths
+RABMR,1,A,A,Monster approaches within five body lengths
+RABNC,1,A,A,Nickel approaches within five body lengths
+RABON,1,A,A,Seiton approaches within five body lengths
+RABOP,1,A,A,Opie approaches within five body lengths
+RABPC,1,A,A,Picasso approaches within five body lengths
+RABPV,1,A,A,Peeves approaches within five body lengths
+RABQH,1,A,A,Quidditch approaches within five body lengths
+RABQM,1,A,A,Quasimono approaches within five body lengths
+RABTJ,1,A,A,Tom Jerry approaches within five body lengths
+RABUB,1,A,A,Dubious approaches within five body lengths
+RABVD,1,A,A,Vladimir approaches within five body lengths
+RABVE,1,A,A,Vermeer approaches within five body lengths
+RABVE WT,,,,
+RABVR,1,A,A,Viceroy approaches within five body lengths
+RABVV,1,A,A,Vandal approaches within five body lengths
+RABX3,,,,
+RABX6,,,,
+RABX7,,,,
+RABXJ,,,,
+RABXM,,,,
+RABXX,,,,
+RADT,,,,
+RALFN,8,F,F,Frankenstein follows Winslow Homer
+RALNC,8,F,F,Nickel follows Winslow Homer
+RALVE,7,F,F,Vermeer follows Winslow Homer
+RAVDG,,,,
+RAVDT,,,,
+RAVVE,,,,
+RAVVV,,,,
+RAVXM,,,,
+RCIFN LF,,,,
+RCIFN RA,8,C,C,Frankenstein is interested in Winslow Homer's <i>Raspa</i> fruit
+RCION SK,7,C,C,Seiton shows interest in Winslow Homer's food
+RCIUB BK,7,C,C,Dubious is interested in Winslow Homer's food
+RCIVE RA,8,C,C,Vermeer is interested in Winslow Homer's <i>Raspa</i> fruit
+RCIVR BK,7,C,C,Viceroy is interested in Winslow Homer's food
+RCIVR XF,7,C,C,Viceroy is interested in Winslow Homer's fruit
+RCPDA ZI,9,C,C,Dali pushes Winslow Homer away from the insect she's eating
+RCTVR XF,8,C,C,Viceroy takes Winslow Homer's fruit
+RFCFN,9,F,F,Frankenstein climbs onto Winslow Homer's back
+RFHFN,8,F,F,Frankenstein hugs Winslow Homer
+RFHON,8,F,F,Seiton hugs Winslow Homer
+RFIFN,9,F,F,Frankenstein closely inspects Winslow Homer
+RFIJP,8,F,F,Jigglypuff closely inspects Winslow Homer
+RFION,7,F,F,Seiton closely inspects Winslow Homer
+RFIPV,8,F,F,Peeves closely inspects Winslow Homer
+RFIUB,8,F,F,Dubious closely inspects Winslow Homer
+RFSDP,8,F,F,Duplo sniffs Winslow Homer
+RFSFN,8,F,F,Frankenstein sniffs Winslow Homer
+RFSJP,7,F,F,Jigglypuff sniffs Winslow Homer
+RFSQM,7,F,F,Quasimono sniffs Winslow Homer
+RFSTJ URINE,8,F,F,Tom Jerry sniff's Winslow Homer's urine
+RFSUB,8,F,F,Dubious sniffs Winslow Homer
+RFTDA,9,F,F,Dali gently touches Winslow Homer
+RFTDP,7,F,F,Duplo gently touches Winslow Homer
+RFTDT,7,F,F,Dante gently touches Winslow Homer
+RFTDU,8,F,F,Duende gently touches Winslow Homer
+RFTFN,8,F,F,Frankenstein gently touches Winslow Homer
+RFTKH,7,F,F,Krishna gently touches Winslow Homer
+RFTLO,7,F,F,Kahlo gently touches Winslow Homer
+RFTNC,8,F,F,Nickel gently touches Winslow Homer
+RFTPC,7,F,F,Picasso gently touches Winslow Homer
+RFTPV,8,F,F,Peeves gently touches Winslow Homer
+RFTQM,7,F,F,Quasimono gently touches Winslow Homer
+RFTUB,8,F,F,Dubious gently touches Winslow Homer
+RFTVE,8,F,F,Vermeer gently touches Winslow Homer
+RGNDA,9,G,G,Dali aggressively nips at Winslow Homer
+RGNVE,8,G,G,Vermeer aggressively nips at Winslow Homer
+RGPDA,8,G,G,Dali pushes Winslow Homer
+RGSVR BK,8,G,G,"Vermeer supplants Winslow Homer from the insects he's eating, and eats the insects herself"
+RIIDA,8,I,I,Dali invites Winslow Homer to ride on her back
+RINDA,9,I,I,Winslow Homer nurses from Dali
+RISDA,8,I,I,Winslow Homer stops nursing from Dali
+RISDA WT,8,I,I,Winslow Homer nurses from Dali
+RITDA,9,I,I,"Winslow Homer throws a tantrum to Dali, flailing his limbs"
+RIUUB,8,I,I,Dubious restrains Winslow Homer
+RLAAJ,1,I,I,Arjuna leaves one body length of Winslow Homer
+RLAAXJ,,,,
+RLABIRALFN,,,,
+RLADA,1,A,A,Dali leaves one body length of Winslow Homer
+RLADG,1,A,A,Danger leaves one body length of Winslow Homer
+RLADP,1,A,A,Duplo leaves one body length of Winslow Homer
+RLADT,1,A,A,Dante leaves one body length of Winslow Homer
+RLADU,1,A,A,Dubious leaves one body length of Winslow Homer
+RLADU WT,1,A,A,Duende leaves one body length of Winslow Homer
+RLAFN,1,A,A,Frankenstein leaves one body length of Winslow Homer
+RLAJP,1,A,A,Jigglypuff leaves one body length of Winslow Homer
+RLAKH,1,A,A,Krishna leaves one body length of Winslow Homer
+RLAKJ,1,A,A,King James leaves one body length of Winslow Homer
+RLALO,1,A,A,Kahlo leaves one body length of Winslow Homer
+RLAMR,1,A,A,Monster leaves one body length of Winslow Homer
+RLANC,1,A,A,Nickel leaves one body length of Winslow Homer
+RLAON,1,A,A,Seiton leaves one body length of Winslow Homer
+RLAPC,1,A,A,Picasso leaves one body length of Winslow Homer
+RLAPJ,1,A,A,Pope John leaves one body length of Winslow Homer
+RLAPV,1,A,A,Peeves leaves one body length of Winslow Homer
+RLAQH,1,A,A,Quidditch leaves one body length of Winslow Homer
+RLAQM,1,A,A,Quasimono leaves one body length of Winslow Homer
+RLATJ,1,A,A,Tom Jerry leaves one body length of Winslow Homer
+RLAUB,1,A,A,Dubious leaves one body length of Winslow Homer
+RLAVE,1,A,A,Vermeer leaves one body length of Winslow Homer
+RLAVE WT,1,A,A,Vermeer leaves one body length of Winslow Homer
+RLAVR,1,A,A,Viceroy leaves one body length of Winslow Homer
+RLAVV,1,A,A,Vandal leaves one body length of Winslow Homer
+RLAX4,,,,
+RLAX7,,,,
+RLAXJ,,,,
+RLAXJ NOT FN,,,,
+RLAXX,,,,
+RLB,,,,
+RLB ALL,,,,
+RLB1,,,,
+RLBAJ,,,,
+RLBBI,1,A,A,Bilbo leaves five body lengths of Winslow Homer
+RLBBI WT,1,A,A,Bilbo leaves five body lengths of Winslow Homer
+RLBDA,1,A,A,Dali leaves five body lengths of Winslow Homer
+RLBDA WT,1,A,A,Dali leaves five body lengths of Winslow Homer
+RLBDG,1,A,A,Danger leaves five body lengths of Winslow Homer
+RLBDG WT,1,A,A,Danger leaves five body lengths of Winslow Homer
+RLBDP,1,A,A,Duplo leaves five body lengths of Winslow Homer
+RLBDP WT,1,A,A,Duplo leaves five body lengths of Winslow Homer
+RLBDQ,1,A,A,King Donkey leaves five body lengths of Winslow Homer
+RLBDT,1,A,A,Dante leaves five body lengths of Winslow Homer
+RLBDU,1,A,A,Duende leaves five body lengths of Winslow Homer
+RLBDU WT,1,A,A,Duende leaves five body lengths of Winslow Homer
+RLBFN,1,A,A,Frankenstein leaves five body lengths of Winslow Homer
+RLBJP,1,A,A,Jigglypuff leaves five body lengths of Winslow Homer
+RLBKJ,1,A,A,King James leaves five body lengths of Winslow Homer
+RLBLN,,,,
+RLBLO,1,A,A,Kahlo leaves five body lengths of Winslow Homer
+RLBMR,1,A,A,Monster leaves five body lengths of Winslow Homer
+RLBNC,1,A,A,Nickel leaves five body lengths of Winslow Homer
+RLBNE,1,A,A,Champagne leaves five body lengths of Winslow Homer
+RLBON,1,A,A,Seiton leaves five body lengths of Winslow Homer
+RLBOP,1,A,A,Opie leaves five body lengths of Winslow Homer
+RLBPC,1,A,A,Picasso leaves five body lengths of Winslow Homer
+RLBPC WT,1,A,A,Picasso leaves five body lengths of Winslow Homer
+RLBPJ,1,A,A,Pope John leaves five body lengths of Winslow Homer
+RLBPV,1,A,A,Peeves leaves five body lengths of Winslow Homer
+RLBQM,1,A,A,Quasimono leaves five body lengths of Winslow Homer
+RLBTJ,1,A,A,Tom Jerry leaves five body lengths of Winslow Homer
+RLBUB,1,A,A,Dubious leaves five body lengths of Winslow Homer
+RLBVD,1,A,A,Vladimir leaves five body lengths of Winslow Homer
+RLBVE,1,A,A,Vermeer leaves five body lengths of Winslow Homer
+RLBVE WT,1,A,A,Vermeer leaves five body lengths of Winslow Homer
+RLBVR,1,A,A,Viceroy leaves five body lengths of Winslow Homer
+RLBVV,1,A,A,Vandal leaves five body lengths of Winslow Homer
+RLBX1,,,,
+RLBXJ,,,,
+RLBXM,,,,
+RLBXX,,,,
+RLDP,,,,
+RMION,8,M,M,Seiton invites Winslow Homer to groom her
+RMMDA,9,M,M,Dali grooms Winslow Homer
+RMMDT,8,M,M,Dante grooms Winslow Homer
+RMMFN,8,M,M,Frankenstein grooms Winslow Homer
+RMMON,7,M,M,Seiton grooms Winslow Homer
+RMMPC,7,M,M,Picasso grooms Winslow Homer
+RMMVR,8,M,M,Viceroy grooms Winslow Homer
+RMMX1,,,,
+RMODA,6,M,M,Dali stops grooming Winslow Homer
+RMODA WT,,,,
+RMODT,6,M,M,Dante stops grooming Winslow Homer
+RMOON,6,M,M,Seiton stops grooming Winslow Homer
+RMOPC,6,M,M,Picasso stops grooming Winslow Homer
+RMOVR,6,M,M,Viceroy stops grooming Winslow Homer
+RMOX1,,,,
+RPBFN,8,P,P,Frankenstein play-bites Winslow Homer
+RPBKJ,7,P,P,King James play-bites Winslow Homer
+RPBUB,8,P,P,Dubious play-bites Winslow Homer
+RPCFN,8,P,P,Frankenstein play-chases Winslow Homer
+RPFQM,8,P,P,Quasimono play-flees from Winslow Homer
+RPFUB,8,P,P,Dubious play-flees from Winslow Homer
+RPHFN,8,P,P,Frankenstein play-hits Winslow Homer
+RPHUB,9,P,P,Dubious play-hits Winslow Homer
+RPHVR,8,P,P,Viceroy play-hits Winslow Homer
+RPIFN,9,P,P,"Frankenstein makes a play face, to invite Winslow Homer to play"
+RPKFN,8,P,P,"Frankenstein and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
+RPKQM,8,P,P,"Quasimono and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
+RPLFN,8,P,P,Frankenstein play-pulls Winslow Homer
+RPLKH TAIL,7,P,P,Krishna play-pulls Winslow Homer
+RPLNC,7,P,P,Nickel play-pulls Winslow Homer
+RPLNC BUM,8,P,P,Nickel play-pulls Winslow Homer's bum
+RPLQM BACK,7,P,P,Quasimono play-pulls Winslow Homer's back
+RPLUB,8,P,P,Dubious play-pulls Winslow Homer
+RPLUB TAIL,9,P,P,Dubious play-pulls Winslow Homer's tail
+RPPBI,7,P,P,Bilbo play-pushes Winslow Homer
+RPQUB,8,P,P,Dubious play-lunges at Winslow Homer
+RPUFN,7,P,P,Frankenstein leaps on top of Winslow Homer
+RRLBFN,1,A,A,Frankenstein leaves five body lengths of Winslow Homer
+RSDTJ,7,G,S,Tom Jerry makes a duck face to Winslow Homer
+RSMLO,7,F,S,Kahlo mounts Winslow Homer
+RSMQM,7,F,S,Quasimono mounts Winslow Homer
+RSMUB,7,F,S,Dubious mounts Winslow Homer
+RSPTJ,8,G,S,"Tom Jerry sex-paces, running back and forth and looking at Winslow Homer"
+RSTTJ,8,G,S,Tom Jerry twirls his body with his gaze fixed on Winslow Homer
+RSXLO,,,,
+RVKUB,7,V,V,Dubious makes a gecker vocalization to Winslow Homer
+RVTFN,8,F,F,Frankenstein twitters to Winslow Homer
+RVTNC,8,F,F,Nickel twitters to Winslow Homer
+RVTNC SC,8,F,F,Nickel screamy-twitters to Winslow Homer
+RVTQM,7,F,F,Quasimono twitters to Winslow Homer
+RVTQM SC,7,F,F,Quasimono screamy-twitters to Winslow Homer
+RVTUB,8,F,F,Dubious twitters to Winslow Homer
+RVVQM,5,V,S,Quasimono sex-squeaks to Winslow Homer
+SAM,6,M,M,Winslow Homer self-grooms
+SAN,7,W,W,Winslow Homer rubs his nose on a branch
+SAO,6,W,W,Winslow Homer is aroused
+SAS,1,W,W,Winslow Homer scratches
+SAU,8,W,W,Winslow Homer rubs urine on his fur
+SAY,4,W,W,Winslow Homer yawns
+SAZ,8,W,W,Winslow Homer stands bipedally and visually scans
+SDR,8,W,W,Winslow Homer drinks from the river
+SDT,8,W,W,Winslow Homer drinks from a hole in a tree
+SEP,,,,
+SLBXX,,,,
+SLEAC,6,C,C,Winslow Homer leaves an the <i>Acacia</i> patch
+SLEBP,6,C,C,Winslow Homer leaves the <i>Bromeliad</i> patch
+SLEBS,6,C,C,Winslow Homer leaves the <i>Bursera</i> tree
+SLEGU,6,C,C,Winslow Homer leaves the <i>Guacimo</i> patch
+SLEHR,6,C,C,Winslow Homer leaves the <i>Hirtella racemosa</i> patch
+SLELC,6,C,C,Winslow Homer leaves the <i>Luchea</i> tree
+SLEOL,6,C,C,Winslow Homer leaves the Micky-mouse fruit tree
+SLERA,6,C,C,Winslow Homer leaves the <i>Raspa</i> tree
+SLERH,6,C,C,Winslow Homer leaves the <i>Liana</i> tree
+SLERS,6,C,C,Winslow Homer leaves the <i>Rubiaceae</i> tree
+SPK,6,P,P,Winslow Homer hangs from his tail
+SPS,6,P,P,Winslow Homer stops solo play
+SPS LF,6,P,P,Winslow Homer stops solo play
+SPX,8,P,P,Winslow Homer starts solo play
+SPX LF,8,P,P,Winslow Homer plays alone with a leaf
+SPX STICK,8,P,P,Winslow Homer plays alone with a stick
+STEAC,7,C,C,Winslow Homer enters an <i>Acacia</i> patch
+STEBP,7,C,C,Winslow Homer enters a <i>Bromeliad</i> patch
+STEBS,7,C,C,Winslow Homer enters a <i>Bursera</i> tree
+STEGU,7,C,C,Winslow Homer enters a <i>Guacimo</i> patch
+STEHR WT,7,C,C,Winslow Homer enters a <i>Hirtella racemosa</i> patch
+STELC,7,C,C,Winslow Homer enters a <i>Luchea</i> tree
+StELC,7,C,C,Winslow Homer enters a <i>Luchea</i> tree
+STELC WT,7,C,C,Winslow Homer enters a <i>Luchea</i> tree
+STEMZ,7,C,C,Winslow Homer enters a <i>Chicle</i> tree
+STEOL WT,,,,
+STERA,7,C,C,Winslow Homer enters a Raspa tree
+STERH,7,C,C,Winslow Homer enters a Rubiaceae tree
+SUR,8,W,W,Winslow Homer urinates
+THR LY WY FY,,,,
+VDG YWE/SF 0DQ 3DTVEDAONDULOFNWH,,,,
+W/IGO KST JFE,,,,
+W/KST JFE SEP,,,,
+X,,,,
+X8?=PV,,,,
+XAADA,,,,
+XAADGDP,,,,
+XAADP,,,,
+XAADPDGFN,,,,
+XAADU,,,,
+XAADUDA,,,,
+XAADUFNLO,,,,
+XAADUVE,,,,
+XAAFN,,,,
+XAAFNVR,,,,
+XAALO,,,,
+XAALODA,,,,
+XAANC,,,,
+XAAON,,,,
+XAAPV,,,,
+XAAPVVR,,,,
+XAAQM,,,,
+XAAUB,,,,
+XAAUBDA,,,,
+XAAVE,,,,
+XAAVELO,,,,
+XBBAJ,,,,
+XBBBI,,,,
+XBBBIDUUB,,,,
+XBBDA,,,,
+XBBDADTLO,,,,
+XBBDADUFNON,,,,
+XBBDALOQMVRDP,,,,
+XBBDALOVEFNON,,,,
+XBBDAON,,,,
+XBBDAONDTLOVR,,,,
+XBBDAONFN,,,,
+XBBDAVE,,,,
+XBBDG,,,,
+XBBDP,,,,
+XBBDT,,,,
+XBBDTDG,,,,
+XBBDTLOVEONFN,,,,
+XBBDU,,,,
+XBBDUDTVE,,,,
+XBBDULO,,,,
+XBBDUONFNVEDT,,,,
+XBBDUUBON,,,,
+XBBFN,,,,
+XBBFNUB,,,,
+XBBFNVE,,,,
+XBBFNXM,,,,
+XBBJP,,,,
+XBBKHUBPC,,,,
+XBBKJUB,,,,
+XBBLO,,,,
+XBBLOBI,,,,
+XBBLODT,,,,
+XBBLODUONDTDA,,,,
+XBBLOQM,,,,
+XBBLOVEDAONFNDT,,,,
+XBBMR,,,,
+XBBNC,,,,
+XBBNCDG,,,,
+XBBNCTJLOVEDP,,,,
+XBBNE,,,,
+XBBON,,,,
+XBBONDUFN,,,,
+XBBONLODTVE,,,,
+XBBPCKJ,,,,
+XBBPV,,,,
+XBBPVDTDUVELO,,,,
+XBBQM,,,,
+XBBQMDU,,,,
+XBBQMUB,,,,
+XBBTJVE,,,,
+XBBUB,,,,
+XBBUBNC,,,,
+XBBUBPV,,,,
+XBBUBXB,,,,
+XBBVDFN,,,,
+XBBVDVV,,,,
+XBBVE,,,,
+XBBVEDADUONFN,,,,
+XBBVEDTVVLO,,,,
+XBBVEDU,,,,
+XBBVEFNLO,,,,
+XBBVELODT,,,,
+XBBVELODUFNON,,,,
+XBBVELOFN,,,,
+XBBVEVVLOFN,,,,
+XBBVRUBFN,,,,
+XBBX1,,,,
+XBBXJ,,,,
+XBBXX,,,,
+XBDADTDU,,,,
+XCCAJPVFN,,,,
+XCCBI,,,,
+XCCDA,,,,
+XCCDAKH,,,,
+XCCDAONFN,,,,
+XCCDAONFNDGUB,,,,
+XCCDG,,,,
+XCCDGUBQM,,,,
+XCCDP,,,,
+XCCDPAJ,,,,
+XCCDQNE,,,,
+XCCDT,,,,
+XCCDTFN,,,,
+XCCDTFNLO,,,,
+XCCDTKHDPKJPC,,,,
+XCCDTKHKJPCDPPVV,,,,
+XCCDTPC,,,,
+XCCDU,,,,
+XCCDUDA,,,,
+XCCDUDAON,,,,
+XCCDUKHKJ,,,,
+XCCDUKJPCPVVR,,,,
+XCCDUON,,,,
+XCCDUONDAUBDG,,,,
+XCCDUVEKJPC,,,,
+XCCFN,,,,
+XCCFNPV,,,,
+XCCFNUBQH,,,,
+XCCKHKJPCDTDP,,,,
+XCCKJ,,,,
+XCCKJPCDP,,,,
+XCCKJUBNC,,,,
+XCCLO,,,,
+XCCLOFNNC,,,,
+XCCMR,,,,
+XCCNC,,,,
+XCCNCAJONKJKHLO,,,,
+XCCON,,,,
+XCCONVE,,,,
+XCCOP,,,,
+XCCOPFN,,,,
+XCCOPNCLO,,,,
+XCCOPUB,,,,
+XCCOPXJ,,,,
+XCCPC,,,,
+XCCPCDG,,,,
+XCCPCKJVEDU,,,,
+XCCPV,,,,
+XCCPVDUBI,,,,
+XCCQH,,,,
+XCCTJ,,,,
+XCCTJONQM,,,,
+XCCUB,,,,
+XCCUBKJ,,,,
+XCCUBQM,,,,
+XCCVE,,,,
+XCCVE?,,,,
+XCCVEDA,,,,
+XCCVRDUFN,,,,
+XCCVV,,,,
+XCCVVDTKJPCKHDP,,,,
+XCCX1,,,,
+XCCX3,,,,
+XCCXJ,,,,
+XCCXX,,,,
+XCNC,,,,
+XDRDA,,,,
+XHHAJ,,,,
+XHHBIVR,,,,
+XHHDA,,,,
+XHHDADT,,,,
+XHHDQ,,,,
+XHHDT,,,,
+XHHDTFN,,,,
+XHHFN,,,,
+XHHFNXX,,,,
+XHHLO,,,,
+XHHMR,,,,
+XHHON,,,,
+XHHPC,,,,
+XHHPV,,,,
+XHHQM,,,,
+XHHUB,,,,
+XHHVE,,,,
+XHHVR,,,,
+XHVDA,,,,
+XNA,,,,
+XNFDA,,,,
+XWXF L,,,,
+Y,,,,
+YFD,,,,
+YFFBP,,,,
+YFFGU,,,,
+YFFHR,,,,
+YFFLC,,,,
+YFFRH,,,,
+YFFRS,,,,
+YFFXF,,,,
+YFI,,,,
+YFIBK,,,,
+YFIKY,,,,
+YFILF,,,,
+YFIRH,,,,
+YFISK,,,,
+YFW,,,,
+YNA,,,,
+YSC/FFRA,,,,
+YSF,,,,
+YSI,,,,
+YSM,,,,
+YSM/FFLC,,,,
+YSM/SF,,,,
+YSP,,,,
+YTD,,,,
+YTT,,,,
+YTT/VF,,,,
+YVF,,,,
+YVV,,,,
+YWE,,,,
+YWE/SF,,,,
+YWM,,,,
+YWM/SF,,,,
+YWP,,,,
+YWS,,,,
+YWS/SF,,,,
+YWW,,,,
+YWW/SF,,,,
