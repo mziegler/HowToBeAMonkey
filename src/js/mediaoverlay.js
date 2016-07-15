@@ -45,11 +45,7 @@ function initMediaOverlay() {
     
       clearOverlay();
       map.hideFloatingNext();
-    
-      // If we're loading an image, scroll down animation only if both 
-      // 1) the image is completely loaded, and 2) the overlay is visible.
-      var imageLoaded = false;
-      var doneOpening = false;
+
     
       if (options.title) {
         $('#overlay-title').html(options.title)
@@ -69,13 +65,6 @@ function initMediaOverlay() {
       if (options.picture) {
         var img = $('<img>');
         
-        img.on('load', function() {
-          imageLoaded = true;
-          if(doneOpening) {
-            $("#overlay-scrollable").animate({ scrollTop: Math.max($('#overlay-media').height() - $('#overlay-background').height(), 0) + 160}, 1000);
-          }
-        });
-        
         img.attr('src', 'pictures/' + options.picture);
         
         $('#overlay-media').append(img).addClass('filled');
@@ -90,7 +79,7 @@ function initMediaOverlay() {
         player = $f(iframe[0]);
         player.addEvent('ready', function() {
           player.addEvent('finish', function() { 
-            $("#overlay-scrollable").animate({ scrollTop: $('#overlay-scrollable').prop("scrollHeight")}, 1000);
+            $("#overlay-scrollable").animate({ scrollTop: 0}, 1500);
           });
         });
       }
@@ -110,12 +99,20 @@ function initMediaOverlay() {
 
       
       $('#overlay-background').fadeIn(400, function() {
-        doneOpening = true;
-        if (imageLoaded) {
-          $("#overlay-scrollable").animate({ scrollTop: Math.max($('#overlay-media').height() - $('#overlay-background').height(), 0) + 160}, 1000);
+        if (options.picture) {
+          $("#overlay-scrollable").animate({ scrollTop: 0}, 1000);
         }
       });
-      $('#overlay-scrollable').scrollTop(0);  
+      
+      
+      // For pictures, start at the bottom and then pan up.  For others, start at the top.
+      if (options.picture) {
+        $('#overlay-scrollable').scrollTop($('#overlay-scrollable').prop("scrollHeight"));  
+      }
+      else {
+        $('#overlay-scrollable').scrollTop(0);  
+      }
+      
       resizeVideo();
 
 
