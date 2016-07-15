@@ -567,7 +567,7 @@ a.side-linkout:hover {
   display: block;
   width: 120px;
   font-weight: bold;
-  background: #FEDD5B;
+  background: #FF9D5C;
   border-radius: 5px;
   cursor: pointer;
   font-size: 120%;
@@ -595,7 +595,6 @@ a.side-linkout:hover {
   transform: translate(-50%,0);
   left: 50%;
   bottom: 50px;
-  border: solid 2px rgba(255,255,255,0.4); 
 }
 
 .button-next-sup {
