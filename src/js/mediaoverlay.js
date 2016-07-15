@@ -72,7 +72,7 @@ function initMediaOverlay() {
         img.on('load', function() {
           imageLoaded = true;
           if(doneOpening) {
-            $("#overlay-scrollable").animate({ scrollTop: $('#overlay-scrollable').prop("scrollHeight")}, 3000);
+            $("#overlay-scrollable").animate({ scrollTop: Math.max($('#overlay-media').height() - $('#overlay-background').height(), 0) + 160}, 1000);
           }
         });
         
@@ -112,7 +112,7 @@ function initMediaOverlay() {
       $('#overlay-background').fadeIn(400, function() {
         doneOpening = true;
         if (imageLoaded) {
-          $("#overlay-scrollable").animate({ scrollTop: $('#overlay-scrollable').prop("scrollHeight")}, 3000);
+          $("#overlay-scrollable").animate({ scrollTop: Math.max($('#overlay-media').height() - $('#overlay-background').height(), 0) + 160}, 1000);
         }
       });
       $('#overlay-scrollable').scrollTop(0);  
