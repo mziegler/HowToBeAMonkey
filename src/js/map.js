@@ -56,14 +56,21 @@ var rioPizote =  L.polyline(media.pizotePoints, {
 // add GPS track to map     
 var track = L.polyline(media.WHtrack, { 
     color: 'white', 
-    opacity:1,
-    weight:5, 
+    opacity:0.2,
+    weight:20, 
     lineJoin:'round', 
     lineCap:'round', 
-    dashArray:[10,10],
   }).addTo(map);
   
-  
+track.setText('\u2192 ', {
+              repeat: true,
+              offset: 22,
+              attributes: {
+                fill: 'white',
+                'font-size': '70',
+                'font-weight': 'bold',
+              }
+});
 
 
 

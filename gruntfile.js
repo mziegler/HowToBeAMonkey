@@ -112,6 +112,7 @@ module.exports = function(grunt) {
                         'src/libraries/noUISlider/nouislider.min.js',
                         'src/libraries/fontfaceonload.min.js',
                         'src/libraries/froogaloop2.min.js',
+                        'src/libraries/leaflet.textpath.js',
                     ],
                 },
                 options: {
