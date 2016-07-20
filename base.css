@@ -42,7 +42,7 @@ div#map {
    margin: 0;
    background: #333;
 }
-c
+
 @media (max-width: 599px), (max-height: 499px) {
   #map-container {
     padding-top: 40px;
