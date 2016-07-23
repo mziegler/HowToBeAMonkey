@@ -83,7 +83,7 @@ function initMediaOverlay() {
       
       
       if (options.video) {
-        var iframe = $('<iframe id="overlay-video" src="' + options.video + '?autoplay=1&api=1&player_id=overlay-video" frameborder="0" width="640" height="360" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+        var iframe = $('<iframe id="overlay-video" src="' + options.video + '?autoplay=1&api=1&player_id=overlay-video&title=0&byline=0&portrait=0" frameborder="0" width="640" height="360" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
         
         $('#overlay-media').append(iframe).addClass('filled');
         
