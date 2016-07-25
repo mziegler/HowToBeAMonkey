@@ -20,7 +20,7 @@ function initIntroScreens() {
     mediaOverlay.openOverlay({
       picture: 'baby.gif',
       bigtitle: 'Ever wonder what it\'s like to be a baby monkey?',
-      caption: 'This map will give you a peek into their lives, with real scientific data collected by monkey researchers.<br /><br />We can learn a lot about humans by studying monkeys &mdash; how did monkeys evolve to be so smart?  <span style="color:#555">(We should be careful not to go too far though.  Humans and monkeys are different!)</span>',
+      caption: '<p>This map will give you a peek into their lives, with real scientific data collected by monkey researchers.</p><p>We can learn a lot about humans by studying monkeys &mdash; how did monkeys evolve to be so smart?  <span style="color:#555">(We should be careful not to go too far though.  Humans and monkeys are different!)</span></p>',
       nextButtonCallback: secondIntroScreen,
     });
   }
@@ -33,7 +33,7 @@ function initIntroScreens() {
       mediaOverlay.openOverlay({
         picture: 'hello.jpg',
         title: 'Meet Winslow Homer!',
-        caption: 'He\'s the star of our show.  Winslow is the alpha female\'s baby, so everybody wants to play with him and groom him to score points with the alpha female.  He loves the attention &mdash; a little prince charming!'
+        caption: '<p>He\'s the star of our show.  Winslow is the alpha female\'s baby, so everybody wants to play with him and groom him to score points with the alpha female.  He loves the attention &mdash; a little prince charming!</p>'
       });
     }, 300);
   }

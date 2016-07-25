@@ -298,6 +298,11 @@ div#overlay-caption.filled {
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+}
+
+div#overlay-caption p {
+  text-align: left;
 }
 
 div#overlay-caption p:first-child {
