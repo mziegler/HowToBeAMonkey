@@ -81,6 +81,7 @@ function initTour() {
         // open the intro screen
         if (tourStop.note == 'intro') {
             introScreens.resetIntro();
+            map.endTourTransition();
             return;
         }
         
