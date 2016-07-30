@@ -21,6 +21,7 @@ var map = L.map('map', {
   zoomControl: false, 
   attributionControl: false,
   maxBounds: L.latLngBounds([10.525, -85.3605], [10.5065, -85.3745]),
+  zoomAnimation: false,
 }).setView(initialView[0], initialView[1]);
 
 
@@ -191,29 +192,97 @@ map.on('popupclose', showFloatingNext);
 // ZOOM
 // add or remove layers to the map based on the zoom level
 // cluster layer zoom behavior handled in clusterIconFactory function
-var previousZoom = map.getZoom();
+var savedLastZoom = map.getZoom();
+
+var zoomLevels = {
+  detailed: 20,   // With data points
+  20: 'detailed',
+  
+  overview: 17,   // Pictures, videos, and text only.  Clicks will zoom to detailed level
+  17: 'overview',
+  
+  world: 6,       // View of Costa Rica, with a single marker
+  6: 'world',
+}
+
+function getZoomMode() {
+  return zoomLevels[savedLastZoom];
+}
+map.getZoomMode = getZoomMode;
+
 function zoomHandle() {
 
-  var lastZoom = previousZoom;
-  previousZoom = map.getZoom();
+  var lastZoom = savedLastZoom;
+  //savedLastZoom = map.getZoom();
 
   map.closePopup();  
   
-  if (map.getZoom() < 18) {
+  /*
+  if (map.getZoom() < 15) {
+
+  }
+  else {
+    
+  }
+  */
+  
+  
+  if (map.getZoom() <= zoomLevels.world) {
+    savedLastZoom = map.getZoom();
     map.removeLayer(track);
     map.removeLayer(rioCabuyo);
     map.removeLayer(rioPizote);
     map.addLayer(monkeyfaceMarker);
   }
-  else {
+  else if (map.getZoom() == zoomLevels.detailed || map.getZoom() == zoomLevels.overview) {
+    savedLastZoom = map.getZoom();
     map.addLayer(track);
     map.addLayer(rioCabuyo);
     map.addLayer(rioPizote);
     map.removeLayer(monkeyfaceMarker);
   }
   
+  // In-between allowed zoom levels, so figure out the appropriate zoom
+  else {
   
+    if (lastZoom == zoomLevels.detailed) {
+      if (lastZoom > map.getZoom()) {
+        map.setZoom(zoomLevels.overview);
+      }
+      
+      // this should never happen
+      else {
+        map.setZoom(zoomLevels.detailed);
+      }
+    }
+    
+    
+    else if (lastZoom == zoomLevels.overview) {
+      if (lastZoom > map.getZoom()) {
+        map.setZoom(zoomLevels.world);
+      }
+      else {
+        map.setZoom(zoomLevels.detailed);
+      }
+    }
+    
+    
+    else if (lastZoom <= zoomLevels.world) {
+      if (map.getZoom() > zoomLevels.world) {
+        map.setView(tour.getTourStop().loc, zoomLevels.overview);
+      }
+    }
+    
+    
+    else {
+      console.log('something happened in the zoom handle code that should never happen.');
+    }
+    
+    
+  }
+
   
+  /*
   if (18 > map.getZoom() && map.getZoom() > 6)  {
     if (map.getZoom() > lastZoom) {
       map.setView(tour.getTourStop().loc, 18);
@@ -222,7 +291,7 @@ function zoomHandle() {
       map.setZoom(6);
     }
   }
-
+*/
   
 }
 zoomHandle();
@@ -243,6 +312,8 @@ return {
   hideFloatingNext: hideFloatingNext,
   startTourTransition: startTourTransition,
   endTourTransition: endTourTransition,
+  
+  getZoomMode:getZoomMode,
   }
 }
 

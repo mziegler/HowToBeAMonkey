@@ -154,7 +154,7 @@ function initMapBubbles() {
         
         
             // don't draw bubbles if zoom is too low
-            if (this._map.getZoom() <= 17) {
+            if (this._map.getZoom() <= 16) {
                 return;
             }
         
@@ -281,7 +281,7 @@ function initMapBubbles() {
                     bubbleGroups.video.push(observation);
                     break;
                     
-                case 'behavior':
+                case 'behavior':             
                     if (!(observation.category in bubbleGroups.behavior)) {
                         bubbleGroups.behavior[observation.category] = [];    
                     }
@@ -297,6 +297,12 @@ function initMapBubbles() {
             }
         });
         
+        
+        
+        // drop behavior bubbles if we're in the overview modr
+        if (map.map.getZoom() < 18) {
+            bubbleGroups.behavior = {};
+        }
         
         
         
