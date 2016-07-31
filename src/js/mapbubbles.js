@@ -360,12 +360,14 @@ function initMapBubbles() {
         
         
         // randomly insert behavior bubble groups
-        $.each(categoryGroups, function(i,g) { 
-            insertRandom({
-                value: Math.max(Math.min(g.score, 20), 150),
-                type: 'layoutGroup',
-                children: g.cats
-            });
+        $.each(categoryGroups, function(i,g) {
+            if (g.cats.length) { 
+                insertRandom({
+                    value: Math.max(Math.min(g.score, 20), 150),
+                    type: 'layoutGroup',
+                    children: g.cats
+                });
+            }
         });
         
         
