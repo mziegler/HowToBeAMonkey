@@ -20,10 +20,11 @@ function initMapBubbles() {
             return 300;
         }
         else {
-            return 250;
+            return 240;
         }   
     }
     
+    var SVGpadding = 10; // so mouseover animations don't get clipped out of SVG
     
     
     // Range over which to show icons
@@ -384,7 +385,7 @@ function initMapBubbles() {
         $.each(categoryGroups, function(i,g) {
             if (g.cats.length) { 
                 insertRandom({
-                    value: Math.max(Math.min(g.score, 20), 150),
+                    value: Math.min(Math.max(g.score, 20), 150),
                     type: 'layoutGroup',
                     children: g.cats
                 });
@@ -396,7 +397,7 @@ function initMapBubbles() {
         
         // randomly insert pictures
         $.each(bubbleGroups.picture, function(i, item) {
-            item.value= Math.random() * 50 + 80;
+            item.value= 120; //Math.random() * 50 + 80;
             insertRandom(item);
         });
         
@@ -405,7 +406,7 @@ function initMapBubbles() {
         // randomly insert text
         if (!overviewMode) {
             $.each(bubbleGroups.text, function(i, item) {
-                item.value= Math.random() * 20 + 100;
+                item.value= 120; //Math.random() * 20 + 100;
                 insertRandom(item);
             });
         }
@@ -413,7 +414,7 @@ function initMapBubbles() {
         
         // randomly insert videos
         $.each(bubbleGroups.video, function(i, item) {
-            item.value= Math.random() * 50 + 80;
+            item.value= 120; //Math.random() * 50 + 80;
             insertRandom(item);
         });
         

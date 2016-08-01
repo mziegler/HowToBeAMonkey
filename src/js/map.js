@@ -21,7 +21,7 @@ var map = L.map('map', {
   zoomControl: false, 
   attributionControl: false,
   maxBounds: L.latLngBounds([10.525, -85.3605], [10.5065, -85.3745]),
-  zoomAnimation: false,
+  //zoomAnimation: false,
 }).setView(initialView[0], initialView[1]);
 
 
@@ -211,12 +211,30 @@ var zoomLevels = {
   0: 'world',
 }
 
+
 function getZoomMode() {
   return zoomLevels[map.getZoom()];
 }
 map.getZoomMode = getZoomMode;
 
+
+// Temporarily disable zooming, so the user doesn't jump from the detailed view 
+// to the world view with a single scroll wheel movement
+function pauseZoom() {
+  map.touchZoom.disable();
+  map.scrollWheelZoom.disable();
+  setTimeout(function() {
+    map.touchZoom.enable();
+    map.scrollWheelZoom.enable();
+  },
+    1000
+  );
+}
+
+
+
 function zoomHandle() {
+
 
   var lastZoom = savedLastZoom;
   //savedLastZoom = map.getZoom();
@@ -241,6 +259,7 @@ function zoomHandle() {
     map.addLayer(monkeyfaceMarker);
   }
   else if (map.getZoom() == zoomLevels.detailed || map.getZoom() == zoomLevels.overview) {
+    pauseZoom();
     savedLastZoom = map.getZoom();
     map.addLayer(track);
     map.addLayer(rioCabuyo);
@@ -248,6 +267,7 @@ function zoomHandle() {
     map.removeLayer(monkeyfaceMarker);
   }
   
+  /*
   // In-between allowed zoom levels, so figure out the appropriate zoom
   else {
   
@@ -287,17 +307,8 @@ function zoomHandle() {
     
   }
 
-  
-  /*
-  if (18 > map.getZoom() && map.getZoom() > 6)  {
-    if (map.getZoom() > lastZoom) {
-      map.setView(tour.getTourStop().loc, 18);
-    }
-    else {
-      map.setZoom(6);
-    }
-  }
-*/
+  */
+
   
 }
 zoomHandle();
