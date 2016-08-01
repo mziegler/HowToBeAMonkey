@@ -6,8 +6,24 @@
 function initMapBubbles() {
     
     
-    var clusterMargin = 150;
-    var clusterDiameter = 300;
+    function getClusterMargin() {
+        if (map.map.getZoomMode() == 'detailed') {
+            return 150;
+        }
+        else {
+            return 30;
+        }
+    }
+    
+    function getClusterDiameter() {
+        if (map.map.getZoomMode() == 'detailed') {
+            return 300;
+        }
+        else {
+            return 250;
+        }   
+    }
+    
     
     
     // Range over which to show icons
@@ -154,7 +170,7 @@ function initMapBubbles() {
         
         
             // don't draw bubbles if zoom is too low
-            if (this._map.getZoom() <= 16) {
+            if (this._map.getZoomMode() == 'world') {
                 return;
             }
         
@@ -162,6 +178,9 @@ function initMapBubbles() {
             // hack so we can access the map in D3 accessor functions
             var map = this._map;
             
+            
+            var clusterMargin = getClusterMargin();
+            var clusterDiameter = getClusterDiameter();
             
             // set bin radius, convert width from layer points to latLng space
             var r = (
@@ -267,6 +286,7 @@ function initMapBubbles() {
     
         $.each(clusterMarkers, function(i, observation) {
             
+            
             switch(observation.type) {
             
                 case 'picture':
@@ -298,9 +318,10 @@ function initMapBubbles() {
         });
         
         
+        var overviewMode = (map.getZoomMode() == 'overview');
         
         // drop behavior bubbles if we're in the overview modr
-        if (map.map.getZoom() < 18) {
+        if (overviewMode) {
             bubbleGroups.behavior = {};
         }
         
@@ -382,11 +403,12 @@ function initMapBubbles() {
         
         
         // randomly insert text
-        $.each(bubbleGroups.text, function(i, item) {
-            item.value= Math.random() * 20 + 100;
-            insertRandom(item);
-        });
-        
+        if (!overviewMode) {
+            $.each(bubbleGroups.text, function(i, item) {
+                item.value= Math.random() * 20 + 100;
+                insertRandom(item);
+            });
+        }
         
         
         // randomly insert videos
@@ -632,9 +654,23 @@ function initMapBubbles() {
     
     // Draw the cluster SVG inside the given D3 selection.
     function bubbleSVG(clusterdata, containerSelection) {
+  
+        var clusterDiameter = getClusterDiameter();
     
     
         var bubbleData = sortBubbles(clusterdata);
+        
+        switch (bubbleData.length) {
+            case 1:
+                clusterDiameter = clusterDiameter / 3;
+                break;
+            case 2:
+                clusterDiameter = clusterDiameter / 2;
+                break;
+            case 3: 
+                 clusterDiameter = clusterDiameter / 1.5;
+                 break;
+        }
   
         
         var bubble = d3.layout.pack()

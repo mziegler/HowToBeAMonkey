@@ -203,10 +203,16 @@ var zoomLevels = {
   
   world: 6,       // View of Costa Rica, with a single marker
   6: 'world',
+  5: 'world',
+  4: 'world',
+  3: 'world',
+  2: 'world',
+  1: 'world',
+  0: 'world',
 }
 
 function getZoomMode() {
-  return zoomLevels[savedLastZoom];
+  return zoomLevels[map.getZoom()];
 }
 map.getZoomMode = getZoomMode;
 
