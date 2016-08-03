@@ -12,28 +12,62 @@ function initMap() {
 
 
 // initial pan and zoom of the map
-var initialView = [[10.51422, -85.36937], 20];
+var initialView = [[10.51422, -85.36937], 8];
+
+
+
+// WONKY ZOOM STUFF
+
+customScale2DefaultZoom = [0,1,2,3,4,5,6,17,20],
+// custom CRS for skipping zoom levels
+L.CRS.CustomZoom = L.extend({}, L.CRS.EPSG3857, {
+    
+  scale: function(zoom) {
+    return L.CRS.EPSG3857.scale(customScale2DefaultZoom[zoom]);
+  },
+});
+
+
+// URL for fetching tile
+var tileZoomLevels = [0,1,2,3,4,5,6,17,19]; // last zoom level is scaled up on client side
+function tileURL(view) {
+
+  return 'http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}'
+    .replace('{z}', tileZoomLevels[view.zoom])
+    .replace('{x}', view.tile.column)
+    .replace('{y}', view.tile.row);
+}
+
+
+
+
 
 
 
 var map = L.map('map', {
-  maxZoom:20, 
+  maxZoom:8,
   zoomControl: false, 
   attributionControl: false,
   maxBounds: L.latLngBounds([10.525, -85.3605], [10.5065, -85.3745]),
+  crs: L.CRS.CustomZoom,
   //zoomAnimation: false,
 }).setView(initialView[0], initialView[1]);
 
 
 // base map (satelite images)
-L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
-  maxZoom: 20,
-  maxNativeZoom: 19,
+new L.TileLayer.Functional(tileURL, {
+  maxZoom: 7, //8
+  //maxNativeZoom: 7,
   opacity: 1,
 }).addTo(map);
 
 
-
+new L.TileLayer.Functional(tileURL, {
+  maxZoom: 8,
+  minZoom: 8,
+  opacity: 1,
+  tileSize: 512,
+}).addTo(map);
 
 
 
@@ -195,11 +229,11 @@ map.on('popupclose', showFloatingNext);
 var savedLastZoom = map.getZoom();
 
 var zoomLevels = {
-  detailed: 20,   // With data points
-  20: 'detailed',
+  detailed: 8,   // With data points
+  8: 'detailed',
   
-  overview: 17,   // Pictures, videos, and text only.  Clicks will zoom to detailed level
-  17: 'overview',
+  overview: 7,   // Pictures, videos, and text only.  Clicks will zoom to detailed level
+  7: 'overview',
   
   world: 6,       // View of Costa Rica, with a single marker
   6: 'world',
