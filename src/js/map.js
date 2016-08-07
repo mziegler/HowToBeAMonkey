@@ -11,69 +11,47 @@
 function initMap() {
 
 
-// initial pan and zoom of the map
-var initialView = [[10.51422, -85.36937], 8];
 
-
-
-// WONKY ZOOM STUFF
-
-
-// Custom CRS for skipping zoom levels
-// Set scale function for correspondance between custom CRS and default
-customScale2DefaultZoom = [0,1,2,3,4,5,6,17,20],
-L.CRS.CustomZoom = L.extend({}, L.CRS.EPSG3857, {
-
-  scale: function(zoom) {
-    return L.CRS.EPSG3857.scale(customScale2DefaultZoom[zoom]);
-  },
-});
-
-
-// URL for fetching tiles.
-// Use a function to map correspondance between custom CRS zoom levels and default.
-var tileZoomLevels = [0,1,2,3,4,5,6,17,19]; // last zoom level is scaled up on client side
-function tileURL(view) {
-  return 'http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}'
-    .replace('{z}', tileZoomLevels[view.zoom])
-    .replace('{x}', view.tile.column)
-    .replace('{y}', view.tile.row);
+var zoomLevels = {
+  detailed: 20,   // With data points
+  20: 'detailed',
+  19: 'detailed',
+  
+  overview: 17,   // Pictures, videos, and text only.  Clicks will zoom to detailed level
+  17: 'overview',
+  18: 'overview',
+  
+  world: 6,       // View of Costa Rica, with a single marker
+  6: 'world',
+  5: 'world',
+  4: 'world',
+  3: 'world',
+  2: 'world',
+  1: 'world',
+  0: 'world',
 }
 
 
-
-
-
+// initial pan and zoom of the map
+var initialView = [[10.51422, -85.36937], zoomLevels.detailed];
 
 
 var map = L.map('map', {
-  maxZoom:8,
+  maxZoom:20, 
   zoomControl: false, 
   attributionControl: false,
-  maxBounds: L.latLngBounds([10.517, -85.3605], [10.5065, -85.3745]),
-  crs: L.CRS.CustomZoom,
-  markerZoomAnimation: false,
-  //zoomAnimation: false,
+  maxBounds: L.latLngBounds([10.525, -85.3605], [10.5065, -85.3745]),
 }).setView(initialView[0], initialView[1]);
 
 
 // base map (satelite images)
-new L.TileLayer.Functional(tileURL, {
-  maxZoom: 7,
+L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+  maxZoom: 20,
+  maxNativeZoom: 19,
   opacity: 1,
 }).addTo(map);
 
-// Use a separate tile layer for highest zoom level, to scale up tiles because
-// Google doesn't have tiles for this zoom level.  Can't just use maxNativeZoom
-// because of the custom CRS.
 
-
-new L.TileLayer.Functional(tileURL, {
-  maxZoom: 8,
-  minZoom: 8,
-  opacity: 1,
-  tileSize: 512,
-}).addTo(map);
 
 
 
@@ -236,23 +214,6 @@ map.on('popupclose', showFloatingNext);
 // cluster layer zoom behavior handled in clusterIconFactory function
 
 
-var zoomLevels = {
-  detailed: 8,   // With data points
-  8: 'detailed',
-  
-  overview: 7,   // Pictures, videos, and text only.  Clicks will zoom to detailed level
-  7: 'overview',
-  
-  world: 6,       // View of Costa Rica, with a single marker
-  6: 'world',
-  5: 'world',
-  4: 'world',
-  3: 'world',
-  2: 'world',
-  1: 'world',
-  0: 'world',
-}
-
 
 function getZoomMode() {
   return zoomLevels[map.getZoom()];
@@ -262,44 +223,42 @@ map.getZoomMode = getZoomMode;
 
 
 
-
+var savedLastZoom = map.getZoom();
 function zoomHandle() {
 
   map.closePopup();  
+    
+  var lastZoom = savedLastZoom;
+  savedLastZoom = map.getZoom();  
     
   
   if (map.getZoom() <= zoomLevels.world) {
     map.removeLayer(track);
     map.removeLayer(rioCabuyo);
     map.removeLayer(rioPizote);
-    map.addLayer(monkeyfaceMarker);
-    
-    map.options.scrollWheelZoom = 'center';
-    map.options.doubleClickZoom = 'center';
-    
+    map.addLayer(monkeyfaceMarker);  
   }
   else {
     map.addLayer(track);
     map.addLayer(rioCabuyo);
     map.addLayer(rioPizote);
     map.removeLayer(monkeyfaceMarker);
-    
-    map.options.scrollWheelZoom = true;
-    map.options.doubleClickZoom = true;
-    
   }
   
+  
+  if (zoomLevels.overview > map.getZoom() && map.getZoom() > zoomLevels.world)  {
+    if (map.getZoom() > lastZoom) {
+      map.setView(tour.getTourStop().loc, zoomLevels.overview);
+    }
+    else {
+      map.setZoom(zoomLevels.world);
+    }
+  }
   
 }
 zoomHandle();
 map.on('zoomend', zoomHandle);
 
-
-map.on('zoomstart', function() {
-  if (map.getZoomMode() == 'world') {
-    map.panTo(tour.getTourStop().loc, {animate:false});
-  }
-});
 
 
 
