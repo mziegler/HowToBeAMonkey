@@ -18,20 +18,22 @@ var initialView = [[10.51422, -85.36937], 8];
 
 // WONKY ZOOM STUFF
 
+
+// Custom CRS for skipping zoom levels
+// Set scale function for correspondance between custom CRS and default
 customScale2DefaultZoom = [0,1,2,3,4,5,6,17,20],
-// custom CRS for skipping zoom levels
 L.CRS.CustomZoom = L.extend({}, L.CRS.EPSG3857, {
-    
+
   scale: function(zoom) {
     return L.CRS.EPSG3857.scale(customScale2DefaultZoom[zoom]);
   },
 });
 
 
-// URL for fetching tile
+// URL for fetching tiles.
+// Use a function to map correspondance between custom CRS zoom levels and default.
 var tileZoomLevels = [0,1,2,3,4,5,6,17,19]; // last zoom level is scaled up on client side
 function tileURL(view) {
-
   return 'http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}'
     .replace('{z}', tileZoomLevels[view.zoom])
     .replace('{x}', view.tile.column)
@@ -48,18 +50,22 @@ var map = L.map('map', {
   maxZoom:8,
   zoomControl: false, 
   attributionControl: false,
-  maxBounds: L.latLngBounds([10.525, -85.3605], [10.5065, -85.3745]),
+  maxBounds: L.latLngBounds([10.517, -85.3605], [10.5065, -85.3745]),
   crs: L.CRS.CustomZoom,
+  markerZoomAnimation: false,
   //zoomAnimation: false,
 }).setView(initialView[0], initialView[1]);
 
 
 // base map (satelite images)
 new L.TileLayer.Functional(tileURL, {
-  maxZoom: 7, //8
-  //maxNativeZoom: 7,
+  maxZoom: 7,
   opacity: 1,
 }).addTo(map);
+
+// Use a separate tile layer for highest zoom level, to scale up tiles because
+// Google doesn't have tiles for this zoom level.  Can't just use maxNativeZoom
+// because of the custom CRS.
 
 
 new L.TileLayer.Functional(tileURL, {
@@ -68,7 +74,6 @@ new L.TileLayer.Functional(tileURL, {
   opacity: 1,
   tileSize: 512,
 }).addTo(map);
-
 
 
 
@@ -96,7 +101,9 @@ var track = L.polyline(media.WHtrack, {
     lineJoin:'round', 
     lineCap:'round', 
   }).addTo(map);
-  
+
+
+// arrow markers  
 track.setText('\u2192 ', {
               repeat: true,
               offset: 22,
@@ -187,9 +194,10 @@ var monkeyfaceMarker = L.marker([10.5147, -85.3698], {
     iconUrl: '/icons/monkeyface-marker.png',
     iconSize: [134,160],
     iconAnchor: [67, 160],
+    className: 'leaflet-zoom-hide',
   })
 }).on('click', function() {
-  map.setView(tour.getTourStop().loc, 18);
+  map.setView(tour.getTourStop().loc, zoomLevels.world);
 });
 
 
@@ -226,7 +234,7 @@ map.on('popupclose', showFloatingNext);
 // ZOOM
 // add or remove layers to the map based on the zoom level
 // cluster layer zoom behavior handled in clusterIconFactory function
-var savedLastZoom = map.getZoom();
+
 
 var zoomLevels = {
   detailed: 8,   // With data points
@@ -252,104 +260,46 @@ function getZoomMode() {
 map.getZoomMode = getZoomMode;
 
 
-// Temporarily disable zooming, so the user doesn't jump from the detailed view 
-// to the world view with a single scroll wheel movement
-function pauseZoom() {
-  map.touchZoom.disable();
-  map.scrollWheelZoom.disable();
-  setTimeout(function() {
-    map.touchZoom.enable();
-    map.scrollWheelZoom.enable();
-  },
-    1000
-  );
-}
 
 
 
 function zoomHandle() {
 
-
-  var lastZoom = savedLastZoom;
-  //savedLastZoom = map.getZoom();
-
   map.closePopup();  
-  
-  /*
-  if (map.getZoom() < 15) {
-
-  }
-  else {
     
-  }
-  */
-  
   
   if (map.getZoom() <= zoomLevels.world) {
-    savedLastZoom = map.getZoom();
     map.removeLayer(track);
     map.removeLayer(rioCabuyo);
     map.removeLayer(rioPizote);
     map.addLayer(monkeyfaceMarker);
+    
+    map.options.scrollWheelZoom = 'center';
+    map.options.doubleClickZoom = 'center';
+    
   }
-  else if (map.getZoom() == zoomLevels.detailed || map.getZoom() == zoomLevels.overview) {
-    pauseZoom();
-    savedLastZoom = map.getZoom();
+  else {
     map.addLayer(track);
     map.addLayer(rioCabuyo);
     map.addLayer(rioPizote);
     map.removeLayer(monkeyfaceMarker);
-  }
-  
-  /*
-  // In-between allowed zoom levels, so figure out the appropriate zoom
-  else {
-  
-    if (lastZoom == zoomLevels.detailed) {
-      if (lastZoom > map.getZoom()) {
-        map.setZoom(zoomLevels.overview);
-      }
-      
-      // this should never happen
-      else {
-        map.setZoom(zoomLevels.detailed);
-      }
-    }
     
-    
-    else if (lastZoom == zoomLevels.overview) {
-      if (lastZoom > map.getZoom()) {
-        map.setZoom(zoomLevels.world);
-      }
-      else {
-        map.setZoom(zoomLevels.detailed);
-      }
-    }
-    
-    
-    else if (lastZoom <= zoomLevels.world) {
-      if (map.getZoom() > zoomLevels.world) {
-        map.setView(tour.getTourStop().loc, zoomLevels.overview);
-      }
-    }
-    
-    
-    else {
-      console.log('something happened in the zoom handle code that should never happen.');
-    }
-    
+    map.options.scrollWheelZoom = true;
+    map.options.doubleClickZoom = true;
     
   }
-
-  */
-
+  
   
 }
 zoomHandle();
 map.on('zoomend', zoomHandle);
 
 
-
+map.on('zoomstart', function() {
+  if (map.getZoomMode() == 'world') {
+    map.panTo(tour.getTourStop().loc, {animate:false});
+  }
+});
 
 
 
