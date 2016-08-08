@@ -592,7 +592,8 @@ a.side-linkout:hover {
 }
 
 .button-next:hover {
-  background: #FED32A;
+  /*background: #FED32A;*/
+  
   transition: 0.2s ease;
 }
 
@@ -777,6 +778,41 @@ body a.leaflet-control-zoom-out:last-child {
   }
 }
 
+
+
+
+
+/******************************************************************************
+ overview button */
+
+div#overview-button {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -20px;
+  left: -80px;
+  background: #FEDD5B;
+  background-image: url('/icons/overview.png');
+  background-size: 40px auto;
+  background-repeat: no-repeat;
+  background-position: 90px 110px;
+  padding: 80px;
+  border-radius: 999px;
+  border: 0px #FEDD5B;
+  z-index: 9999;
+}
+
+div#overview-button:hover {
+  border: solid 10px #FEDD5B;
+  transition: 0.3s;
+}
+
+div#overview-button-inner {
+  position: absolute;
+  top: 90px;
+  left: 90px;
+  font-size: 90%;
+}
 
 
 /******************************************************************************

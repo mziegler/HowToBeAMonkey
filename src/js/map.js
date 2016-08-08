@@ -157,7 +157,7 @@ track.setText('\u2192 ', {
 // MAP CONTROLS
 
 // zoom control (underneath layer control)
-L.control.zoom({ position: 'topleft' }).addTo(map);
+// L.control.zoom({ position: 'topleft' }).addTo(map);
 
 L.control.scale().addTo(map); // scale control
 
