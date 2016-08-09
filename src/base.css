@@ -274,7 +274,7 @@ div#overlay-content {
   max-width: 1000px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
   padding: 0;
   padding-bottom: 30px;
@@ -791,20 +791,24 @@ div#overview-button {
   height: 0;
   top: -20px;
   left: -80px;
-  background: #FEDD5B;
+  background: #CBE094; /*#FEDD5B;*/
   background-image: url('/icons/overview.png');
   background-size: 40px auto;
   background-repeat: no-repeat;
   background-position: 90px 110px;
   padding: 80px;
   border-radius: 999px;
-  border: 0px #FEDD5B;
-  z-index: 9999;
+  border: 0px #CBE094;
+  z-index: 9999999;
   cursor: pointer;
+  
+  -webkit-box-shadow: 2px 2px 7px 0px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow:    2px 2px 7px 0px rgba(50, 50, 50, 0.5);
+  box-shadow:         2px 2px 7px 0px rgba(50, 50, 50, 0.5);
 }
 
 div#overview-button:hover {
-  border: solid 10px #FEDD5B;
+  border: solid 6px #CBE094;
   transition: 0.3s;
 }
 
@@ -815,6 +819,20 @@ div#overview-button-inner {
   font-size: 90%;
 }
 
+@media (max-width: 599px), (max-height: 499px) {
+  div#overview-button {
+    top: -20px;
+    left: -60px;
+    padding: 60px;
+    background-size: 30px auto;
+    background-position: 70px 85px;
+  }
+  
+  div#overview-button-inner {
+    top:65px;
+    left: 65px;
+  }
+}
 
 /******************************************************************************
  map bubbles */

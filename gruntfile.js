@@ -113,7 +113,6 @@ module.exports = function(grunt) {
                         'src/libraries/fontfaceonload.min.js',
                         'src/libraries/froogaloop2.min.js',
                         'src/libraries/leaflet.textpath.js',
-                        'src/libraries/leaflet.functionaltilelayer.js',
                     ],
                 },
                 options: {

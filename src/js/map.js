@@ -268,7 +268,10 @@ function zoomHandle() {
 }
 zoomHandle();
 map.on('zoomend', zoomHandle);
-map.on('zoomstart', map.closePopup);
+map.on('zoomstart', function() {
+  map.closePopup();
+  mediaOverlay.closeOverlay();
+});
 
 
 
