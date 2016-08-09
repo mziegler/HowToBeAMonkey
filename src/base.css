@@ -800,6 +800,7 @@ div#overview-button {
   border-radius: 999px;
   border: 0px #FEDD5B;
   z-index: 9999;
+  cursor: pointer;
 }
 
 div#overview-button:hover {

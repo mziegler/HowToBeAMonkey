@@ -488,6 +488,21 @@ function initMapBubbles() {
     
     
     
+    function bubbleClickHandle(callback, data, element) {
+    
+        tour.updateSlider(element, data.time);
+        d3.event.stopPropagation();
+        
+        var delay = 0;
+        if (map.getZoomMode() == 'overview') {
+            map.map.setView(data.loc, map.zoomLevels.detailed);
+            delay = 1500;
+        }
+        setTimeout(function() {
+            callback(data, element);
+        }, delay);
+    }
+    
     
     
     
@@ -512,9 +527,7 @@ function initMapBubbles() {
                 }
 
                 G.on('click', function(d, i) {
-                    mapMedia.openTextPopup(d, this);
-                    tour.updateSlider(G[0][0], d.time);
-                    d3.event.stopPropagation();
+                    bubbleClickHandle(mapMedia.openTextPopup, d, this);
                 });
                 break;
                 
@@ -538,10 +551,8 @@ function initMapBubbles() {
                 }    
                 
                 G.on('click', function(d, i) {
-                    mapMedia.openPicture(d, this);
-                    tour.updateSlider(G[0][0], d.time);
-                    d3.event.stopPropagation();
-                });
+                    bubbleClickHandle(mapMedia.openPicture, d, this);
+                })
                 break;
                 
                 
@@ -564,10 +575,8 @@ function initMapBubbles() {
                 }    
                     
                 G.on('click', function(d, i) {
-                    mapMedia.openVideo(d, this);
-                    tour.updateSlider(G[0][0], d.time);
-                    d3.event.stopPropagation();
-                });
+                    bubbleClickHandle(mapMedia.openVideo, d, this);
+                })
                 break;
             
                 

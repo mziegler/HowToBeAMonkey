@@ -182,6 +182,16 @@ var monkeyfaceMarker = L.marker([10.5147, -85.3698], {
 
 
 
+///////////////////////////////////////////////////////////////////////////////
+// OVERVIEW BUTTON
+
+$('#overview-button').click( function() {
+  map.setZoom(zoomLevels.overview);
+});
+
+
+
+
 
 ///////////////////////////////////////////////////////////////////////////////
 // SHOW/HIDE 'NEXT' BUTTON SUPERPOSITIONED ON MAP
@@ -226,7 +236,7 @@ map.getZoomMode = getZoomMode;
 var savedLastZoom = map.getZoom();
 function zoomHandle() {
 
-  map.closePopup();  
+  map.closePopup();
     
   var lastZoom = savedLastZoom;
   savedLastZoom = map.getZoom();  
@@ -258,8 +268,7 @@ function zoomHandle() {
 }
 zoomHandle();
 map.on('zoomend', zoomHandle);
-
-
+map.on('zoomstart', map.closePopup);
 
 
 
@@ -273,7 +282,8 @@ return {
   startTourTransition: startTourTransition,
   endTourTransition: endTourTransition,
   
-  getZoomMode:getZoomMode,
+  getZoomMode: getZoomMode,
+  zoomLevels: zoomLevels,
   }
 }
 
