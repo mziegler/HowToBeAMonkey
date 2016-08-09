@@ -461,7 +461,7 @@ function initMapBubbles() {
             el.append('tspan')
                 .attr({
                     x: 0, 
-                    dy: i==0 ? 0 : '1.2em',
+                    dy: i==0 ? 0 : '1.15em',
                     'text-anchor': 'middle',
                 })
                 .text(line);
@@ -522,7 +522,7 @@ function initMapBubbles() {
                     .attr('fill', 'rgba(0,0,0,0.5)');
                     
                 if (bubbleData.ititle) {    
-                    renderText(bubbleData.ititle, r, 10, G)
+                    renderText(bubbleData.ititle, r, 5, G)
                         .attr('fill', 'white');
                 }
 
@@ -546,7 +546,7 @@ function initMapBubbles() {
                 
                 
                 if (bubbleData.ititle) {    
-                    renderText(bubbleData.ititle, r, 10, G, true)
+                    renderText(bubbleData.ititle, r, 0, G, true)
                         .attr('fill', 'white');
                 }    
                 
@@ -570,7 +570,7 @@ function initMapBubbles() {
                     .attr('clip-path', 'url(#' + clipID + ')');
                     
                 if (bubbleData.ititle) {    
-                    renderText(/*'\u23F5 '+*/ bubbleData.ititle, r, 10, G, true)
+                    renderText(/*'\u23F5 '+*/ bubbleData.ititle, r, 0, G, true)
                         .attr('fill', 'white');
                 }    
                     
