@@ -24,7 +24,7 @@ function initMapBubbles() {
         }   
     }
     
-    var SVGpadding = 10; // so mouseover animations don't get clipped out of SVG
+    var SVGpadding = 20; // so mouseover animations don't get clipped out of SVG
     
     
     // Range over which to show icons
@@ -211,8 +211,8 @@ function initMapBubbles() {
                         return (map.latLngToLayerPoint([d.y + hexBinBounds.top, 0]).y - clusterDiameter/2) + 'px';
                     },
                     
-                    width: clusterDiameter + 'px',
-                    height: clusterDiameter + 'px',
+                    width: (clusterDiameter + 2*SVGpadding) + 'px',
+                    height: (clusterDiameter + 2*SVGpadding) + 'px',
                 });
                 
              var i = 0;
@@ -675,7 +675,7 @@ function initMapBubbles() {
                 clusterDiameter = clusterDiameter / 3;
                 break;
             case 2:
-                clusterDiameter = clusterDiameter / 2;
+                clusterDiameter = clusterDiameter / 1.8;
                 break;
             case 3: 
                  clusterDiameter = clusterDiameter / 1.5;
@@ -687,11 +687,14 @@ function initMapBubbles() {
             .sort(null)
             .size([clusterDiameter, clusterDiameter])
             .padding(10);
+        
+        var paddedWidth = clusterDiameter + 2*SVGpadding;
             
         var svg = containerSelection.append("svg")
             .attr('class', 'bubbles')
-            .attr("width", clusterDiameter+"px")
-            .attr("height", clusterDiameter+"px");
+            .attr('width', paddedWidth +"px")
+            .attr('height', paddedWidth +"px")
+            .attr('viewBox', '-' + SVGpadding + ' -' + SVGpadding + ' ' + paddedWidth + ' ' + paddedWidth);
             
             
         var node = svg.selectAll(".node")
