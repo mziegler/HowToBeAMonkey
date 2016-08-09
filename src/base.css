@@ -314,13 +314,15 @@ div#overlay-caption p:last-child {
 }
 
 div#overlay-bigtitle.filled {
-  padding: 40px 30px 10px 30px;
+  padding: 25px 30px 10px 30px;
   text-align: center;
   font-size: 240%;
   line-height: 1.2;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  border-top: solid #FFB733 8px;
+  margin-top: -7px;
 }
 
 div#overlay-title.filled {
