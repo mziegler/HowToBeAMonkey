@@ -14,6 +14,7 @@ function initHeaderControls() {
       $(contentSelector).fadeIn('fast');
       $('#side-panel').fadeIn('fast');
       menuButtonOpen();
+      $('body').addClass('side-panel-open');
     }
   }
   
@@ -31,6 +32,7 @@ function initHeaderControls() {
   function closeSidePanel() {
     $('#side-panel').fadeOut(150);
     menuButtonClosed();
+    $('body').removeClass('side-panel-open');
   }
   
   
@@ -42,7 +44,7 @@ function initHeaderControls() {
   
   function menuButtonClosed() {
     $('#mobile-menu-button').removeClass("menu-button-open");
-    $('#back-to-map').fadeOut('fast');
+    $('#back-to-map').hide();
   }
   
 

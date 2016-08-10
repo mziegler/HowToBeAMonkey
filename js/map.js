@@ -11,9 +11,29 @@
 function initMap() {
 
 
-// initial pan and zoom of the map
-var initialView = [[10.51422, -85.36937], 20];
 
+var zoomLevels = {
+  detailed: 20,   // With data points
+  20: 'detailed',
+  19: 'detailed',
+  
+  overview: 17,   // Pictures, videos, and text only.  Clicks will zoom to detailed level
+  17: 'overview',
+  18: 'overview',
+  
+  world: 6,       // View of Costa Rica, with a single marker
+  6: 'world',
+  5: 'world',
+  4: 'world',
+  3: 'world',
+  2: 'world',
+  1: 'world',
+  0: 'world',
+}
+
+
+// initial pan and zoom of the map
+var initialView = [[10.51422, -85.36937], zoomLevels.detailed];
 
 
 var map = L.map('map', {
@@ -30,8 +50,6 @@ L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
   maxNativeZoom: 19,
   opacity: 1,
 }).addTo(map);
-
-
 
 
 
@@ -61,7 +79,9 @@ var track = L.polyline(media.WHtrack, {
     lineJoin:'round', 
     lineCap:'round', 
   }).addTo(map);
-  
+
+
+// arrow markers  
 track.setText('\u2192 ', {
               repeat: true,
               offset: 22,
@@ -137,7 +157,7 @@ track.setText('\u2192 ', {
 // MAP CONTROLS
 
 // zoom control (underneath layer control)
-L.control.zoom({ position: 'topleft' }).addTo(map);
+// L.control.zoom({ position: 'topleft' }).addTo(map);
 
 L.control.scale().addTo(map); // scale control
 
@@ -152,11 +172,22 @@ var monkeyfaceMarker = L.marker([10.5147, -85.3698], {
     iconUrl: '/icons/monkeyface-marker.png',
     iconSize: [134,160],
     iconAnchor: [67, 160],
+    className: 'leaflet-zoom-hide',
   })
 }).on('click', function() {
-  map.setView(tour.getTourStop().loc, 18);
+  map.setView(tour.getTourStop().loc, zoomLevels.world);
 });
 
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+// OVERVIEW BUTTON
+
+$('#overview-button').click( function() {
+  map.setZoom(zoomLevels.overview);
+});
 
 
 
@@ -191,19 +222,31 @@ map.on('popupclose', showFloatingNext);
 // ZOOM
 // add or remove layers to the map based on the zoom level
 // cluster layer zoom behavior handled in clusterIconFactory function
-var previousZoom = map.getZoom();
+
+
+
+function getZoomMode() {
+  return zoomLevels[map.getZoom()];
+}
+map.getZoomMode = getZoomMode;
+
+
+
+
+var savedLastZoom = map.getZoom();
 function zoomHandle() {
 
-  var lastZoom = previousZoom;
-  previousZoom = map.getZoom();
-
-  map.closePopup();  
+  map.closePopup();
+    
+  var lastZoom = savedLastZoom;
+  savedLastZoom = map.getZoom();  
+    
   
-  if (map.getZoom() < 18) {
+  if (map.getZoom() <= zoomLevels.world) {
     map.removeLayer(track);
     map.removeLayer(rioCabuyo);
     map.removeLayer(rioPizote);
-    map.addLayer(monkeyfaceMarker);
+    map.addLayer(monkeyfaceMarker);  
   }
   else {
     map.addLayer(track);
@@ -213,24 +256,22 @@ function zoomHandle() {
   }
   
   
-  
-  if (18 > map.getZoom() && map.getZoom() > 6)  {
+  if (zoomLevels.overview > map.getZoom() && map.getZoom() > zoomLevels.world)  {
     if (map.getZoom() > lastZoom) {
-      map.setView(tour.getTourStop().loc, 18);
+      map.setView(tour.getTourStop().loc, zoomLevels.overview);
     }
     else {
-      map.setZoom(6);
+      map.setZoom(zoomLevels.world);
     }
   }
-
   
 }
 zoomHandle();
 map.on('zoomend', zoomHandle);
-
-
-
-
+map.on('zoomstart', function() {
+  map.closePopup();
+  mediaOverlay.closeOverlay();
+});
 
 
 
@@ -243,6 +284,9 @@ return {
   hideFloatingNext: hideFloatingNext,
   startTourTransition: startTourTransition,
   endTourTransition: endTourTransition,
+  
+  getZoomMode: getZoomMode,
+  zoomLevels: zoomLevels,
   }
 }
 

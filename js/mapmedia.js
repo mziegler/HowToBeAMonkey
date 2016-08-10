@@ -21,15 +21,21 @@ function initMapMedia() {
     
     // If the zoom control is visible, set the autopan padding to position the
     // popup underneath the zoom control.
-    function popupPaddingTopLeft() {
+    function popupPaddingTopLeft(width) {
     
+      if (width + 60 > map.map.getSize().x) {
+        return [0, 40];
+      }
+      else {
+        return [60,60];
+      }
       // Is the zoom control visible?
-      if ($('div.leaflet-control-zoom:visible').length) {
+      /*if ($('div.leaflet-control-zoom:visible').length) {
         return [80,80];
       }
       else {
         return [0,0];
-      }
+      }*/
     }
     
     // Set popuup autopan padding to show icon underneath popup
@@ -66,7 +72,7 @@ function initMapMedia() {
             minWidth:500,
             fullWidth: 500,
             keepInView: false,
-            autoPanPaddingTopLeft: popupPaddingTopLeft(),
+            autoPanPaddingTopLeft: popupPaddingTopLeft(500),
             autoPanPaddingBottomRight: popupPaddingBottomRight(),
           }
         ).on('click', function(){ headerControls.closeSidePanel() });
@@ -176,7 +182,7 @@ function initMapMedia() {
                 fullWidth: 400,
                 className: 'behavior-popup',
                 keepInView: false,
-                autoPanPaddingTopLeft: popupPaddingTopLeft(),
+                autoPanPaddingTopLeft: popupPaddingTopLeft(500),
                 autoPanPaddingBottomRight: popupPaddingBottomRight(),
             }
         ).on('click', headerControls.closeSidePanel);

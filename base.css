@@ -164,22 +164,20 @@ div#mobile-buttons {
  tour slider */
  
 div#tour-slider-container {
-    width: 500px;
-    padding: 10px 60px;
+    width: 600px;
+    padding: 10px 10px;
     position: absolute;
-    right: 30px;
+    right: 20px;
     top: 12px;
-    background-image: url('/icons/awake-slider.png'), url('icons/bedtime-slider.png');
-    background-repeat: no-repeat, no-repeat;
-    background-position: center left, center right;
-    background-size: auto 100%, auto 100%;
 }
 
 
+@media (max-width: 1050px) { div#tour-slider-container { width: 400px;      }}
+@media (max-width: 820px ) { div#tour-slider-container { width: 250px;      }}
+@media (max-width: 730px ) { div#tour-slider-container { width: 180px;      }}
 
-@media (max-width: 1050px) { div#tour-slider-container { width: 300px;      }}
-@media (max-width: 820px ) { div#tour-slider-container { width: 150px;      }}
-@media (max-width: 670px ) { div#tour-slider-container { padding: 5px 30px; }}
+/* what is this for?
+@media (max-width: 670px ) { div#tour-slider-container { padding: 5px 30px; }}*/
  
 
 @media (max-width: 599px), (max-height: 499px) {
@@ -187,32 +185,40 @@ div#tour-slider-container {
         position: static;
         display: block;
         float: right;
-        width: 150px;
-        padding: 5px 30px;
+        width: 200px;
+        padding: 5px 5px;
         margin-top: 7px;
         margin-right: 10px;
-        background-size: auto 100%;
     }
     
-    @media (max-width: 370px) { div#tour-slider-container { width: 130px;  }}
-    @media (max-width: 340px) { div#tour-slider-container { width: 90px;   }}
+    @media (max-width: 370px) { div#tour-slider-container { width: 170px;  }}
+    @media (max-width: 340px) { div#tour-slider-container { width: 130px;   }}
     @media (max-width: 315px) { div#tour-slider-container { display: none; }}
 }
 
 div#tour-slider {
   height: 14px;
   border-radius: 10px;
-  padding-right: 32px;
+  padding-right: 55px;
 }
 
 #tour-slider .noUi-handle {
   top: -8px;
   left: -1px;
   border-radius: 7px;
+  color: #888;
+  font-size: 12px;
+  padding-left: 18px;
+  width: 55px;
+  background-image: url('/icons/time.png');
+  background-size: 10px auto;
+  background-repeat: no-repeat;
+  background-position: 6px center;
+  padding-top: 6px;
 }
 
 #tour-slider .noUi-origin {
-  right: -32px;
+  right: -55px;
 }
 
 #tour-slider .noUi-background {
@@ -223,16 +229,10 @@ div#tour-slider {
   background: #CBE094;
 }
 
-#tour-slider .noUi-tooltip {
-  top: 34px;
-  border-radius: 10px;
-  padding: 4px 12px;
-  transform: translateX(-50%);
-  left: 17px;
-  font-size: 120%;
-  border: 3px solid rgb(153, 153, 153);
+#tour-slider .noUi-handle:before,
+#tour-slider .noUi-handle:after {
+  display: none;
 }
-
 
 
 
@@ -274,7 +274,7 @@ div#overlay-content {
   max-width: 1000px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
   padding: 0;
   padding-bottom: 30px;
@@ -314,13 +314,15 @@ div#overlay-caption p:last-child {
 }
 
 div#overlay-bigtitle.filled {
-  padding: 40px 30px 10px 30px;
+  padding: 25px 30px 10px 30px;
   text-align: center;
   font-size: 240%;
   line-height: 1.2;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  border-top: solid #FFB733 8px;
+  margin-top: -7px;
 }
 
 div#overlay-title.filled {
@@ -559,6 +561,10 @@ a.side-linkout:hover {
   #donate-image {
     display: none;
   }
+  
+  body.side-panel-open div#tour-slider-container {
+    display: none;
+  }
 
 }
 
@@ -592,7 +598,8 @@ a.side-linkout:hover {
 }
 
 .button-next:hover {
-  background: #FED32A;
+  /*background: #FED32A;*/
+  
   transition: 0.2s ease;
 }
 
@@ -749,35 +756,58 @@ a.show-all-points:hover, a.show-fewer-points:hover {
 
 
 
+
 /******************************************************************************
- zoom control */
+ overview button */
 
-
-body div.leaflet-control-zoom {
-  border-radius: 3px;
-  background: #f7f7f7;
+div#overview-button {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -20px;
+  left: -80px;
+  background: #CBE094; /*#FEDD5B;*/
+  background-image: url('/icons/overview.png');
+  background-size: 40px auto;
+  background-repeat: no-repeat;
+  background-position: 90px 110px;
+  padding: 80px;
+  border-radius: 999px;
+  border: 0px #CBE094;
+  z-index: 9999999;
+  cursor: pointer;
+  
+  -webkit-box-shadow: 2px 2px 7px 0px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow:    2px 2px 7px 0px rgba(50, 50, 50, 0.5);
+  box-shadow:         2px 2px 7px 0px rgba(50, 50, 50, 0.5);
 }
 
-body a.leaflet-control-zoom-in:first-child {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  background: #f3f3f3;
+div#overview-button:hover {
+  border: solid 6px #CBE094;
+  transition: 0.3s;
 }
 
-body a.leaflet-control-zoom-out:last-child {
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  background: #f3f3f3;
+div#overview-button-inner {
+  position: absolute;
+  top: 90px;
+  left: 90px;
+  font-size: 90%;
 }
-
 
 @media (max-width: 599px), (max-height: 499px) {
-  div.leaflet-control-zoom {
-    display: none;
+  div#overview-button {
+    top: -20px;
+    left: -60px;
+    padding: 60px;
+    background-size: 30px auto;
+    background-position: 70px 85px;
+  }
+  
+  div#overview-button-inner {
+    top:65px;
+    left: 65px;
   }
 }
-
-
 
 /******************************************************************************
  map bubbles */
@@ -792,7 +822,12 @@ g.node {
 }
 
 g.node tspan {
-  text-shadow: 1px 1px 2px rgba(0,0,0,1);
+  text-shadow: 1px 0 3px black, -1px 0 3px black, 0 1px 3px black, 0 -1px 3px black;
 }
 
-
+svg.bubbles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
