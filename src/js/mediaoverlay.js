@@ -57,7 +57,7 @@ function initMediaOverlay() {
       }
       
       if (options.bigtitle) {
-        $('#overlay-bigtitle').html(options.bigtitle)
+        $('#overlay-bigtitle').html('<div id="overlay-bigtitle-inner">' + options.bigtitle + '</div>')
           .addClass('filled');
       }
       
