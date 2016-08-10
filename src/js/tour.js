@@ -16,25 +16,15 @@ function initTour() {
         },
         connect: 'lower',
         step: 1,
-        tooltips: {to: function(val) {
-            return val !== undefined ? media.tourlist[Number(val)].time.substr(0,5) : '';   
-        }},
     });
     
     
-    // Only show tooltip when sliding
     
-    
-    slider.noUiSlider.on('slide', function () {
-        $('#tour-slider .noUi-tooltip').show();
+    // Show time in tour handle
+    slider.noUiSlider.on('update', function() {
+        var time = media.tourlist[Number(slider.noUiSlider.get())].time.substr(0,5);
+        $('.noUi-handle', slider).text(time);
     });
-    
-    slider.noUiSlider.on('change', function() {
-        $('#tour-slider .noUi-tooltip').hide();
-    });
-    
-    $('#tour-slider .noUi-tooltip').hide();
-    
     
     
     // When a new icon is created, and it contains an item on the tour,
@@ -125,6 +115,9 @@ function initTour() {
         map.map.panTo(tourStop.loc, {duration:0.1});
     });
     */
+    
+    
+    
     
     
     // move the slider to the next position
