@@ -49,6 +49,11 @@ div#map {
   }
 }
 
+/* fix mobile safari bug */
+.leaflet-overlay-pane svg.leaflet-zoom-animated {
+  z-index: -1;
+}
+
 
 /******************************************************************************
  header */
