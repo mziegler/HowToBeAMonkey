@@ -90,7 +90,7 @@ function initMediaOverlay() {
         player = $f(iframe[0]);
         player.addEvent('ready', function() {
           player.addEvent('finish', function() { 
-            $("#overlay-scrollable").animate({ scrollTop: $('#overlay-scrollable').prop("scrollHeight")}, 1000);
+            $("#overlay-scrollable").animate({ scrollTop: $('#overlay-media').height() - 80}, 1000);
           });
         });
       }

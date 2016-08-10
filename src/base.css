@@ -172,7 +172,6 @@ div#tour-slider-container {
 }
 
 
-
 @media (max-width: 1050px) { div#tour-slider-container { width: 400px;      }}
 @media (max-width: 820px ) { div#tour-slider-container { width: 250px;      }}
 @media (max-width: 730px ) { div#tour-slider-container { width: 180px;      }}
@@ -560,6 +559,10 @@ a.side-linkout:hover {
   }
 
   #donate-image {
+    display: none;
+  }
+  
+  body.side-panel-open div#tour-slider-container {
     display: none;
   }
 
