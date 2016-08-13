@@ -53,6 +53,7 @@ function initIntroScreens() {
     headerControls.closeSidePanel();
     mediaOverlay.closeOverlay();
     map.map.closePopup(); 
+    tour.resetSlider();
     
     openIntro();
     
