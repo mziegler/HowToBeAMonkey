@@ -97,12 +97,12 @@ track.setText('\u2192 ', {
 });
 
 
-var trackLabelPath = L.polyline(media.WHtrack_textpath, {
+var trackLabel = L.polyline(media.WHtrack_textpath, {
     stroke: false,
     fill: false,
     clickable: false,
   }).addTo(map);
-trackLabelPath.setText('Winslow\'s GPS track     ', {
+trackLabel.setText('Winslow\'s GPS track     ', {
     orientation: 'flip',
     offset: 38,
     attributes: {
@@ -193,7 +193,7 @@ var monkeyfaceMarker = L.marker([10.5147, -85.3698], {
     className: 'leaflet-zoom-hide',
   })
 }).on('click', function() {
-  map.setView(tour.getTourStop().loc, zoomLevels.world);
+  map.setView(tour.getTourStop().loc, zoomLevels.detailed);
 });
 
 
@@ -264,6 +264,7 @@ function zoomHandle() {
     map.removeLayer(track);
     map.removeLayer(rioCabuyo);
     map.removeLayer(rioPizote);
+    map.removeLayer(trackLabel);
     map.addLayer(monkeyfaceMarker);  
   }
   else {
@@ -271,6 +272,13 @@ function zoomHandle() {
     map.addLayer(rioCabuyo);
     map.addLayer(rioPizote);
     map.removeLayer(monkeyfaceMarker);
+    
+    if (map.getZoom() == zoomLevels.detailed) {
+      map.addLayer(trackLabel);
+    }
+    else {
+      map.removeLayer(trackLabel);
+    }
   }
   
   

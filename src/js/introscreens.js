@@ -33,9 +33,18 @@ function initIntroScreens() {
       mediaOverlay.openOverlay({
         picture: 'hello.jpg',
         title: 'Meet Winslow Homer!',
-        caption: '<p>He\'s the star of our show.  Winslow is the alpha female\'s baby, so everybody wants to play with him and groom him to score points with the alpha female.  He loves the attention &mdash; a little prince charming!</p>'
+        caption: '<p>He\'s the star of our show.  Winslow is the alpha female\'s baby, so everybody wants to play with him and groom him to score points with the alpha female.  He loves the attention &mdash; a little prince charming!</p>',
+        nextButtonCallback: showStartPoint,
       });
     }, 300);
+  }
+
+
+  // Close the intro screen, and delay the popup for the start point so the user
+  // can see the GPS track label.
+  function showStartPoint() {
+    mediaOverlay.closeOverlay();
+    setTimeout(tour.tourNext, 700);
   }
 
 
