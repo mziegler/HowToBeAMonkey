@@ -452,6 +452,15 @@ a.side-linkout:hover {
   background: #E5E5E5;
 }
 
+
+
+#side-panel a.about-title {
+  font-weight: bold;
+  color: black;
+}
+
+
+
 #side-panel ul li {
   padding-bottom: 10px;
 }
