@@ -57,19 +57,23 @@ L.tileLayer('http://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
 
 var rioCabuyo = L.polyline(media.cabuyoPoints, {
   color: 'lightblue',
-  opacity: 0.7,
-  weight: 8,
+  opacity: 0.6,
+  weight: 30,
   lineJoin:'round', 
   lineCap:'round',
 }).addTo(map);
 
+
+
 var rioPizote =  L.polyline(media.pizotePoints, {
   color: 'lightblue',
-  opacity: 0.7,
-  weight: 5,
+  opacity: 0.6,
+  weight: 20,
   lineJoin:'round', 
   lineCap:'round',
 }).addTo(map);
+
+
 
 // add GPS track to map     
 var track = L.polyline(media.WHtrack, { 
@@ -83,15 +87,29 @@ var track = L.polyline(media.WHtrack, {
 
 // arrow markers  
 track.setText('\u2192 ', {
-              repeat: true,
-              offset: 22,
-              attributes: {
-                fill: 'white',
-                'font-size': '70',
-                'font-weight': 'bold',
-              }
+    repeat: true,
+    offset: 22,
+    attributes: {
+      fill: 'white',
+      'font-size': '70',
+      'font-weight': 'bold',
+    }
 });
 
+
+var trackLabelPath = L.polyline(media.WHtrack_textpath, {
+    stroke: false,
+    fill: false,
+    clickable: false,
+  }).addTo(map);
+trackLabelPath.setText('Winslow\'s GPS track     ', {
+    orientation: 'flip',
+    offset: 38,
+    attributes: {
+      fill: 'white',
+      'font-size': '20',
+    }
+});
 
 
 
