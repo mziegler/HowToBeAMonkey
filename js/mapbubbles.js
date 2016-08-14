@@ -397,25 +397,23 @@ function initMapBubbles() {
         
         // randomly insert pictures
         $.each(bubbleGroups.picture, function(i, item) {
-            item.value= 120; //Math.random() * 50 + 80;
-            insertRandom(item);
+                item.value= 120; //Math.random() * 50 + 80;
+                insertRandom(item);
         });
         
         
         
         // randomly insert text
-        if (!overviewMode) {
-            $.each(bubbleGroups.text, function(i, item) {
+        $.each(bubbleGroups.text, function(i, item) {
                 item.value= 120; //Math.random() * 20 + 100;
                 insertRandom(item);
-            });
-        }
+        });
         
         
         // randomly insert videos
         $.each(bubbleGroups.video, function(i, item) {
-            item.value= 120; //Math.random() * 50 + 80;
-            insertRandom(item);
+                item.value= 120; //Math.random() * 50 + 80;
+                insertRandom(item);
         });
         
         
@@ -488,19 +486,24 @@ function initMapBubbles() {
     
     
     
+    
     function bubbleClickHandle(callback, data, element) {
     
         tour.updateSlider(element, data.time);
         d3.event.stopPropagation();
         
-        var delay = 0;
+        
+        // If we're in overview mode, zoom in and then set the icon to triggered
+        // as soon as it's rendered.
         if (map.getZoomMode() == 'overview') {
+            data.triggerOnRender = true;
             map.map.setView(data.loc, map.zoomLevels.detailed);
-            delay = 1500;
         }
-        setTimeout(function() {
+        
+        // We're not in overview mode, so just trigger the icon.
+        else {
             callback(data, element);
-        }, delay);
+        }
     }
     
     
@@ -616,9 +619,7 @@ function initMapBubbles() {
                     .attr('preserveAspectRatio', 'xMidYMid slice');
                 
                 G.on('click', function(d, i) {
-                    mapMedia.openTextPopup(d, this);
-                    tour.updateSlider(G[0][0], d.time);
-                    d3.event.stopPropagation();
+                    bubbleClickHandle(mapMedia.openTextPopup, d, this);
                 });
                 
                 break;
@@ -634,9 +635,7 @@ function initMapBubbles() {
                     .attr('preserveAspectRatio', 'xMidYMid slice');
                     
                 G.on('click', function(d, i) {
-                    mapMedia.openTextPopup(d, this, true);
-                    tour.updateSlider(G[0][0], d.time);
-                    d3.event.stopPropagation();
+                    bubbleClickHandle(function(d, el) { mapMedia.openTextPopup(d, el, true);}, d, this);
                 });
                 
                 break;    
@@ -651,6 +650,18 @@ function initMapBubbles() {
                     // Pan to the bubble for pictures or videos, for popup types Leaflet will autopan.
                     bubbleData.type=='picture' || bubbleData.type=='video');  
             });
+        }
+        
+        
+        // If if the bubble was set to trigger when it is rendered, then trigger
+        // a click event after a short delay.
+        // (This is for the the overview mode, when the user clicks on an icon and
+        // we want to zoom in before triggering it.)
+        if (bubbleData.triggerOnRender) {
+            setTimeout(function() {
+                G[0][0].dispatchEvent(new MouseEvent("click"));
+            }, 800);
+            bubbleData.triggerOnRender = false;
         }
 
     

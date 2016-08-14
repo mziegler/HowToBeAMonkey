@@ -161,12 +161,17 @@ function initTour() {
     }
     
     
+    function resetSlider() {
+        slider.noUiSlider.set(0);
+    }
+    
     
     return {
         registerIcon: registerIcon,
         updateSlider: updateSlider,
         tourNext: tourNext,
         getTourStop: getTourStop,
+        resetSlider: resetSlider,
     }
 }
 

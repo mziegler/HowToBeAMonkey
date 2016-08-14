@@ -345,13 +345,13 @@ div#overlay-title.filled {
 div#overlay-close {
   color: #DDD;
   background: rgba(0,0,0,0.6);
-  padding: 0 8px;
-  border-radius: 15px;
+  padding: 3px;
+  border-radius: 50px;
   position: absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 30px;
-  line-height: 0.8;
+  top: 1px;
+  right: 1px;
+  font-size: 45px;
+  line-height: 0.5;
   cursor: pointer;
 }
 
