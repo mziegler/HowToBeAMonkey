@@ -62,11 +62,13 @@ function initTour() {
         introScreens.closeIntro();
         map.map.closePopup();
         
-        if (map.map.getZoom() < 17) {
-            map.map.setZoom(18);
-        }
-        
         var tourStop = getTourStop();
+        
+        if (map.getZoomMode() != 'detailed') {
+            map.map.addOneTimeEventListener('zoomend', openSelectedIcon);
+            map.map.setView(tourStop.loc, map.zoomLevels.detailed);
+            return;
+        }
         
         // open the intro screen
         if (tourStop.note == 'intro') {
