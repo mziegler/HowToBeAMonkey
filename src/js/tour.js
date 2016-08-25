@@ -89,7 +89,7 @@ function initTour() {
         
         // Show an animation for this bubble
         if (tourStop.panToBubble) {
-            map.map.panTo(tourStop.loc, {animate:true, duration:0.6});
+            map.map.panTo(mapMedia.bubbleLoc(tourStop.icon), {animate:true, duration:0.6});
             setTimeout(function() {
                 tourStop.icon.dispatchEvent(new MouseEvent("click"));
             }, 1200);
