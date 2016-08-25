@@ -5,17 +5,23 @@ function initMapMedia() {
 
 
     // Return the Lat/Lng coordinates of the location to open a popup over a bubble icon
-    function popupLoc(bubbleElem, bubbleRadius) {
+    function popupLoc(bubbleElem, bubbleRadius, verticalCenter) {
     
             var mapOffset = $('#map').offset();
             var iconOffset = $(bubbleElem).offset();
             var iconWidth = $(bubbleElem).width();
-            var containerPoint = L.point(iconOffset.left-mapOffset.left+bubbleRadius, iconOffset.top-mapOffset.top+5);
+            var containerPoint = L.point(iconOffset.left-mapOffset.left+bubbleRadius, iconOffset.top-mapOffset.top+(verticalCenter?bubbleRadius:5));
             
             return map.map.containerPointToLatLng(containerPoint);
             
     }
     
+    
+    // Return the Lat/Lng coordinates of the given bubble, for zoom animation
+    // (in the center of the bubble.)
+    function bubbleLoc(bubbleElem) {
+      return popupLoc(bubbleElem, d3.select(bubbleElem).datum().r, true);
+    }
     
     
     
@@ -245,6 +251,7 @@ function initMapMedia() {
         openBehaviorPopup: openBehaviorPopup,
         openPicture: openPicture,
         openVideo: openVideo,
+        bubbleLoc: bubbleLoc,
     }
 
 }
