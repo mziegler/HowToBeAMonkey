@@ -3,10 +3,11 @@ function initMediaOverlay() {
     
     // hide overlay when background is clicked
     $('#overlay-background').click(closeOverlay);
-    $('#overlay-content').click(function(event) { event.stopPropagation(); });
+    $('#overlay-content').click(function(event) { event.stopPropagation(); headerControls.closeSidePanel(); });
     
     // hide the overlay
     function closeOverlay() {
+      headerControls.closeSidePanel();
       $('#overlay-background').fadeOut('fast', function() {
         $('#overlay-media').empty(); // stop video playing
       });
