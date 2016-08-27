@@ -696,8 +696,8 @@ FPIFN,9,P,P,"Winslow Homer makes a 'play-face' to Frankenstein, inviting him to 
 FPIJP,8,P,P,"Winslow Homer makes a “play face” to Jigglypuff, inviting him to play.  His mouth is open, and his teeth aren't showing except for the tips of his canines."
 FPILO,8,P,P,"Winslow Homer makes a “play face” to Kahlo, him to play."
 FPINC,8,P,P,"Winslow Homer makes a “play face” to Nickel, inviting her to play"
-FPKQM,8,P,P,"Winslow Homer and Quasimono hang by their tales, and playfully  swat and grapple with one another"
-FPKVR,8,P,P,"Winslow Homer and Vermeer hang by their tales, and playfully  swat and grapple with one another"
+FPKQM,8,P,P,"Winslow Homer and Quasimono hang by their tails, and playfully  swat and grapple with one another"
+FPKVR,8,P,P,"Winslow Homer and Vermeer hang by their tails, and playfully  swat and grapple with one another"
 FPLFN,8,P,P,Winslow Homer play-pulls Frankenstein
 FPLKH TAIL,8,P,P,Winslow Homer play-pulls Krishna's tail
 FPQNC,8,P,P,Winslow Homer play-lunges at Nickel
@@ -961,11 +961,11 @@ MPBNC,9,P,P,Nickel and Winslow Homer play-bite each other
 MPBQM,8,P,P,Quasimono and Winslow Homer play-bite each other
 MPBUB,8,P,P,Dubious and Winslow Homer play-bite each other
 MPHUB,8,P,P,Dubious and Winslow Homer play-hit each other
-MPKFN,9,P,P,"Frankenstein and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
-MPKJP,8,P,P,"Jigglypuff and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
-MPKNC,8,P,P,"Nickel and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
-MPKQM,8,P,P,"Quasimono and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
-MPKUB,8,P,P,"Dubious and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
+MPKFN,9,P,P,"Frankenstein and Winslow Homer hang by their tails, and playfully  swat and grapple with one another"
+MPKJP,8,P,P,"Jigglypuff and Winslow Homer hang by their tails, and playfully  swat and grapple with one another"
+MPKNC,8,P,P,"Nickel and Winslow Homer hang by their tails, and playfully  swat and grapple with one another"
+MPKQM,8,P,P,"Quasimono and Winslow Homer hang by their tails, and playfully  swat and grapple with one another"
+MPKUB,8,P,P,"Dubious and Winslow Homer hang by their tails, and playfully  swat and grapple with one another"
 MPPFN,8,P,P,Frankenstein and Winslow Homer play-hit each other
 MPWAJ,8,P,P,Winslow Homer play-wrestles with Arjuna
 MPWDP,7,P,P,Winslow Homer play-wrestles with Duplo
@@ -1298,8 +1298,8 @@ RPHFN,8,P,P,Frankenstein play-hits Winslow Homer
 RPHUB,9,P,P,Dubious play-hits Winslow Homer
 RPHVR,8,P,P,Viceroy play-hits Winslow Homer
 RPIFN,9,P,P,"Frankenstein makes a play face, to invite Winslow Homer to play"
-RPKFN,8,P,P,"Frankenstein and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
-RPKQM,8,P,P,"Quasimono and Winslow Homer hang by their tales, and playfully  swat and grapple with one another"
+RPKFN,8,P,P,"Frankenstein and Winslow Homer hang by their tails, and playfully  swat and grapple with one another"
+RPKQM,8,P,P,"Quasimono and Winslow Homer hang by their tails, and playfully  swat and grapple with one another"
 RPLFN,8,P,P,Frankenstein play-pulls Winslow Homer
 RPLKH TAIL,7,P,P,Krishna play-pulls Winslow Homer
 RPLNC,7,P,P,Nickel play-pulls Winslow Homer
