@@ -124,8 +124,8 @@ AAXDU FAV,5,G,G,"Duende aggressively shakes a branch, and Winslow Homer looks"
 AAXKJ,4,G,G,King James aggressively shakes a branch
 AAXX,4,G,G,A monkey aggressively shakes a branch
 ABMR,,,,
-ACIUBBI LC,5,C,C,Dubious is interested in Bilbo's Luchea fruit
-ACIVRBI LC,5,C,C,Viceroy is interested in Bilbo's Luchea friut
+ACIUBBI LC,5,C,C,Dubious is interested in Bilbo's Luehea fruit
+ACIVRBI LC,5,C,C,Viceroy is interested in Bilbo's Luehea friut
 AEAVVDT,4,G,E,Vandal avoids Dante
 AEAVVDU,4,G,E,Vandal avoids Duende
 AECKHDT,4,G,E,Krishna cowers to Dante
@@ -522,7 +522,7 @@ FCHDP SCORPION,7,C,C,Winslow Homer handles Duplo's scorpion
 FCHFN STFLOWER,7,C,C,Winslow Homer is interested in Frankenstein's Terciopelo flower
 FCHMR SK,,,,
 FCHVE RA,8,C,C,Winslow Homer touches Vermeer's Raspa fruit
-FCIDA LC,8,C,C,Winslow Homer is interested in Dali's Luchea fruit
+FCIDA LC,8,C,C,Winslow Homer is interested in Dali's Luehea fruit
 FCIDA RS,8,C,C,Winslow Homer is interested in Dali's Rubiaceae fruit
 FCIDA ZI,8,C,C,Winslow Homer is interested in Dali's insect
 FCIDP SCORPION,9,C,C,Winslow Homer is interested in Duplo's scorpion
@@ -530,9 +530,9 @@ FCIDP SK,,,,
 FCIFN POD,7,C,C,Winslow Homer is interested in Frankenstein's pod
 FCIFN SK,,,,
 FCIFN WST,,,,
-FCIFY LC,8,C,C,Winslow Homer is interested in Fishy's Luchea fruit
+FCIFY LC,8,C,C,Winslow Homer is interested in Fishy's Luehea fruit
 FCIMR SK,,,,
-FCINC LC WT,8,C,C,Winslow Homer is interested in Nickel's Luchea fruit
+FCINC LC WT,8,C,C,Winslow Homer is interested in Nickel's Luehea fruit
 FCIPV X,7,C,C,Winslow Homer is interested in Peeve's food
 FCIQM HR,8,C,C,Winslow Homer is interested in Quasimono's Rubiaceae fruit
 FCIUB,7,C,C,Winslow Homer is interested in Dubious's food
@@ -540,7 +540,7 @@ FCIUB BK,7,C,C,Winslow Homer is interested in Dubious's food
 FCIVE RA,8,C,C,Winslow Homer is interested in Vermeer's Raspa fruit
 FCIVE SK,,,,
 FCIVR BK,,,,
-FCTDA LC,9,C,C,"Winslow Homer takes some of Dali's Luchea fruit, and Dali tolerates it"
+FCTDA LC,9,C,C,"Winslow Homer takes some of Dali's Luehea fruit, and Dali tolerates it"
 FCTMR XX,8,C,C,"Winslow Homer takes some of Monster's food, and Monster tolerates it"
 FCTPV X,8,C,C,"Winslow Homer takes some of Peeves's food, and Peeves tolerates it"
 FCTVE RA,8,C,C,"Winslow Homer takes some of Vermeer's Raspa fruit, and Vermeer tolerates it"
@@ -816,16 +816,16 @@ HFHR,6,C,C,Winslow Homer handles a <i>Hirtella racemosa</i> fruit
 HFHR B,7,C,C,Winslow Homer bites a <i>Hirtella racemosa</i> fruit
 HFHR BB,7,C,C,Winslow Homer bites a <i>Hirtella racemosa</i> fruit
 HFHRSUR,,,,
-HFLC,6,C,C,Winslow Homer handles a Luchea fruit
-HFLC B,7,C,C,Winslow Homer handles and bites a Luchea fruit
-HFLC BB,7,C,C,Winslow Homer handles and bites a Luchea fruit
-HFLC BBBB,7,C,C,Winslow Homer handles and bites a Luchea fruit
-HFLC BBD,9,C,C,"Winslow Homer handles, bites and drops a Luchea fruit"
-HFLC BD,8,C,C,"Winslow Homer handles, bites and drops a Luchea fruit"
-HFLC BK,8,C,C,"Winslow Homer handles, bites and breaks a Luchea fruit"
-HFLC D,8,C,C,Winslow Homer handles and drops a Luchea fruit
-HFLC F,7,C,C,Winslow Homer handles and sniffs a Luchea fruit
-HFLC FD,8,C,C,"Winslow Homer handles, sniffs, and drops a Luchea fruit"
+HFLC,6,C,C,Winslow Homer handles a Luehea fruit
+HFLC B,7,C,C,Winslow Homer handles and bites a Luehea fruit
+HFLC BB,7,C,C,Winslow Homer handles and bites a Luehea fruit
+HFLC BBBB,7,C,C,Winslow Homer handles and bites a Luehea fruit
+HFLC BBD,9,C,C,"Winslow Homer handles, bites and drops a Luehea fruit"
+HFLC BD,8,C,C,"Winslow Homer handles, bites and drops a Luehea fruit"
+HFLC BK,8,C,C,"Winslow Homer handles, bites and breaks a Luehea fruit"
+HFLC D,8,C,C,Winslow Homer handles and drops a Luehea fruit
+HFLC F,7,C,C,Winslow Homer handles and sniffs a Luehea fruit
+HFLC FD,8,C,C,"Winslow Homer handles, sniffs, and drops a Luehea fruit"
 HFOL,6,C,C,Winslow Homer handles a <i>Ouratea lucens</i>fruit
 HFRA IIII,7,C,C,Winslow Homer ingests some <i>Raspa</i> fruits
 HFRH B,7,C,C,Winslow Homer handles and bites a Liana fruit
@@ -1342,7 +1342,7 @@ SLEBP,6,C,C,Winslow Homer leaves the <i>Bromeliad</i> patch
 SLEBS,6,C,C,Winslow Homer leaves the <i>Bursera</i> tree
 SLEGU,6,C,C,Winslow Homer leaves the <i>Guacimo</i> patch
 SLEHR,6,C,C,Winslow Homer leaves the <i>Hirtella racemosa</i> patch
-SLELC,6,C,C,Winslow Homer leaves the <i>Luchea</i> tree
+SLELC,6,C,C,Winslow Homer leaves the <i>Luehea</i> tree
 SLEOL,6,C,C,Winslow Homer leaves the Micky-mouse fruit tree
 SLERA,6,C,C,Winslow Homer leaves the <i>Raspa</i> tree
 SLERH,6,C,C,Winslow Homer leaves the <i>Liana</i> tree
@@ -1358,9 +1358,9 @@ STEBP,7,C,C,Winslow Homer enters a <i>Bromeliad</i> patch
 STEBS,7,C,C,Winslow Homer enters a <i>Bursera</i> tree
 STEGU,7,C,C,Winslow Homer enters a <i>Guacimo</i> patch
 STEHR WT,7,C,C,Winslow Homer enters a <i>Hirtella racemosa</i> patch
-STELC,7,C,C,Winslow Homer enters a <i>Luchea</i> tree
-StELC,7,C,C,Winslow Homer enters a <i>Luchea</i> tree
-STELC WT,7,C,C,Winslow Homer enters a <i>Luchea</i> tree
+STELC,7,C,C,Winslow Homer enters a <i>Luehea</i> tree
+StELC,7,C,C,Winslow Homer enters a <i>Luehea</i> tree
+STELC WT,7,C,C,Winslow Homer enters a <i>Luehea</i> tree
 STEMZ,7,C,C,Winslow Homer enters a <i>Chicle</i> tree
 STEOL WT,,,,
 STERA,7,C,C,Winslow Homer enters a Raspa tree
