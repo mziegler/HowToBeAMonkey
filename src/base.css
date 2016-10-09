@@ -783,14 +783,14 @@ div#overview-button {
   height: 0;
   top: -20px;
   left: -80px;
-  background: #CBE094; /*#FEDD5B;*/
+  background:  #FEC25B; /*#F5A364; /*#FEDD5B;*/
   background-image: url('/icons/overview.png');
   background-size: 40px auto;
   background-repeat: no-repeat;
   background-position: 90px 110px;
   padding: 80px;
   border-radius: 999px;
-  border: 0px #CBE094;
+  border: solid 1px #FFE0AB;
   z-index: 9999999;
   cursor: pointer;
   
@@ -800,7 +800,7 @@ div#overview-button {
 }
 
 div#overview-button:hover {
-  border: solid 6px #CBE094;
+  border: solid 6px #FEC25B;
   transition: 0.3s;
 }
 
