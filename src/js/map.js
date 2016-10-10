@@ -203,10 +203,10 @@ var monkeyfaceMarker = L.marker([10.5147, -85.3698], {
 ///////////////////////////////////////////////////////////////////////////////
 // OVERVIEW BUTTON
 
-$('#overview-button').click( function() {
+function showOverview() {
   map.setZoom(zoomLevels.overview);
-});
-
+}
+$('#map-container').on('click', '.button-overview', showOverview);
 
 
 
@@ -223,12 +223,12 @@ function endTourTransition()   {  onTourTransition = false;  }
 
 function showFloatingNext() {
   if (!onTourTransition) {
-    $('#map-next').fadeIn('fast');
+    $('#floating-buttons').fadeIn('fast');
   }
 }
 
 function hideFloatingNext() {
-  $('#map-next').fadeOut('fast');
+  $('#floating-buttons').fadeOut('fast');
 }
 
 map.on('popupopen', hideFloatingNext);
@@ -305,6 +305,8 @@ return {
   map: map,
   //startMarker: startMarker,
   initialView: initialView,
+  
+  showOverview: showOverview,
   
   showFloatingNext: showFloatingNext,
   hideFloatingNext: hideFloatingNext,
