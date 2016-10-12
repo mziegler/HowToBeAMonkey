@@ -45,7 +45,7 @@ function initMediaOverlay() {
     
     
       clearOverlay();
-      map.hideFloatingNext();
+      map.hideFloatingNext(true);
     
       // If we're loading an image, scroll down animation only if both 
       // 1) the image is completely loaded, and 2) the overlay is visible.

@@ -489,9 +489,10 @@ function initMapBubbles() {
     
     function bubbleClickHandle(callback, data, element) {
     
+        map.hideFloatingNext(true);
+        
         tour.updateSlider(element, data.time);
         d3.event.stopPropagation();
-        
         
         // If we're in overview mode, zoom in and then set the icon to triggered
         // as soon as it's rendered.

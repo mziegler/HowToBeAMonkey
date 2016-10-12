@@ -28,13 +28,15 @@ function initMapMedia() {
     // If the zoom control is visible, set the autopan padding to position the
     // popup underneath the zoom control.
     function popupPaddingTopLeft(width) {
+      // Removed controls in the upper-left corner!
+      return [0,0];
     
-      if (width + 60 > map.map.getSize().x) {
+      /*if (width + 60 > map.map.getSize().x) {
         return [0, 40];
       }
       else {
         return [60,60];
-      }
+      }*/
       // Is the zoom control visible?
       /*if ($('div.leaflet-control-zoom:visible').length) {
         return [80,80];

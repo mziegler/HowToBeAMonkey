@@ -227,8 +227,13 @@ function showFloatingNext() {
   }
 }
 
-function hideFloatingNext() {
-  $('#floating-buttons').fadeOut('fast');
+function hideFloatingNext(skipAnimation) {
+  if (skipAnimation) {
+    $('#floating-buttons').hide();
+  }
+  else {
+    $('#floating-buttons').fadeOut('fast');
+  }
 }
 
 map.on('popupopen', hideFloatingNext);
