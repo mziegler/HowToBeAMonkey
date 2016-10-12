@@ -342,7 +342,7 @@ div#overlay-title.filled {
   margin-right: auto;
 }
 
-div#overlay-close {
+div#overlay-x {
   color: #DDD;
   background: rgba(0,0,0,0.6);
   padding: 3px;
@@ -353,6 +353,20 @@ div#overlay-close {
   font-size: 45px;
   line-height: 0.5;
   cursor: pointer;
+}
+
+a#overlay-back-to-map {
+  color: #999;
+  display: block;
+  text-align: center;
+  font-size: 90%;
+  margin-top: 10px;
+  margin-bottom: -10px;
+  cursor: pointer;
+}
+
+a#overlay-back-to-map:hover {
+  text-decoration: underline;
 }
 
 div#overlay-close:hover {
@@ -646,6 +660,10 @@ a.side-linkout:hover {
   margin-left: auto;
   margin-right: auto;
   position: relative;
+}
+
+.tour-buttons.popup-tour-buttons {
+  margin-top: 10px;
 }
 
 #floating-buttons {

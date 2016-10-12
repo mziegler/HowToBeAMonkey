@@ -68,7 +68,7 @@ function initMapMedia() {
             bubbleData.title +
             '</div><div class="caption">' +
             bubbleData.text + 
-            '</div><div class="tour-buttons"><div class="button-overview">Topics</div>' +
+            '</div><div class="tour-buttons popup-tour-buttons"><div class="button-overview">Topics</div>' +
             (hideNextButton ? '' : ' <div class="tour-next button-next">Next &gt;</div>')
             + '</div>'
           ),
@@ -154,7 +154,7 @@ function initMapMedia() {
         html += '</tbody></table></div>';
       }
 
-      html += '<div class="tour-buttons"><div class="button-overview">Topics</div> <div class="tour-next button-next">Next &gt;</div></div>';
+      html += '<div class="tour-buttons popup-tour-buttons"><div class="button-overview">Topics</div> <div class="tour-next button-next">Next &gt;</div></div>';
       
       return html;
     }  

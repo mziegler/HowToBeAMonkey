@@ -122,15 +122,16 @@
       <div id="overlay-background">
         <div id="overlay-scrollable">
           <div id="overlay-content">
-            <div id="overlay-close">&times;</div>
+            <div id="overlay-x" class="overlay-close">&times;</div>
             <div id="overlay-media"></div>
             <div id="overlay-bigtitle"></div>
             <div id="overlay-title"></div>
             <div id="overlay-caption"></div>
             <div class="tour-buttons">
-              <div class="button-overview" onClick="map.showOverview()">Topics</div>
+              <div class="button-overview" ic="overlay-button-overview" onClick="map.showOverview()">Topics</div>
               <div class="button-next" id="overlay-tour-next">Next &gt;</div>
             </div>
+            <a id="overlay-back-to-map" class="overlay-close"><span style="font-weight:bold;font-size:200%;vertical-align:-10%;text-decoration:none">&times;</span> Back to map</a>
           </div>
         </div>
       </div>
