@@ -88,17 +88,17 @@ function initTour() {
         lastOpenIcon = tourStop.icon;
         
         // Show an animation for this bubble
-        if (tourStop.panToBubble) {
-            map.map.panTo(mapMedia.bubbleLoc(tourStop.icon), {animate:true, duration:0.6});
+        //if (tourStop.panToBubble) {
+            map.map.panTo(mapMedia.bubbleLoc(tourStop.icon), {animate:true, duration:1});
             setTimeout(function() {
                 tourStop.icon.dispatchEvent(new MouseEvent("click"));
-            }, 1200);
+            }, 1700);
                             
-        }
+        //}
         
-        else {
+        /*else {
             tourStop.icon.dispatchEvent(new MouseEvent("click"));
-        }
+        }*/
         
         map.endTourTransition();
     }

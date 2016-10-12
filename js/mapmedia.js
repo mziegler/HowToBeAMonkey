@@ -28,13 +28,15 @@ function initMapMedia() {
     // If the zoom control is visible, set the autopan padding to position the
     // popup underneath the zoom control.
     function popupPaddingTopLeft(width) {
+      // Removed controls in the upper-left corner!
+      return [0,0];
     
-      if (width + 60 > map.map.getSize().x) {
+      /*if (width + 60 > map.map.getSize().x) {
         return [0, 40];
       }
       else {
         return [60,60];
-      }
+      }*/
       // Is the zoom control visible?
       /*if ($('div.leaflet-control-zoom:visible').length) {
         return [80,80];
@@ -66,8 +68,9 @@ function initMapMedia() {
             bubbleData.title +
             '</div><div class="caption">' +
             bubbleData.text + 
-            '</div>' +
-            (hideNextButton ? '' : '<div class="tour-next button-next">Next &gt;</div>')
+            '</div><div class="tour-buttons popup-tour-buttons"><div class="button-overview">Topics</div>' +
+            (hideNextButton ? '' : ' <div class="tour-next button-next">Next &gt;</div>')
+            + '</div>'
           ),
           
           popupLoc(element, Math.min(bubbleData.r, bubbleData.value)),
@@ -151,7 +154,7 @@ function initMapMedia() {
         html += '</tbody></table></div>';
       }
 
-      html += '<div class="tour-next button-next">Next &gt;</div>';
+      html += '<div class="tour-buttons popup-tour-buttons"><div class="button-overview">Topics</div> <div class="tour-next button-next">Next &gt;</div></div>';
       
       return html;
     }  

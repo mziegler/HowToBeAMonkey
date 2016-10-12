@@ -14,14 +14,14 @@ function initMediaOverlay() {
       map.showFloatingNext();
     }
     
-    $('#overlay-close').click(closeOverlay);
+    $('.overlay-close').click(closeOverlay);
     
     // empty out the content in the overlay DOM elements
     function clearOverlay() {
       $('#overlay-media, #overlay-title, #overlay-bigtitle, #overlay-caption')
         .empty().removeClass('filled');
       $('#overlay-tour-next').off('click').on('click', function() {tour.tourNext()}).show();
-      $('#overlay-tour-next')
+      $('#overlay-button-overview, #overlay-back-to-map').show();
     }
     
     
@@ -41,11 +41,12 @@ function initMediaOverlay() {
     
     
     function openOverlay(options) {
-    // options : {title, bigtitle, caption, picture, video, hideNextButton, nextButtonCallback}
+    // options : {title, bigtitle, caption, picture, video, 
+    //             hideNextButton, nextButtonCallback, hideOverviewButton, hideBackToMap,}
     
     
       clearOverlay();
-      map.hideFloatingNext();
+      map.hideFloatingNext(true);
     
       // If we're loading an image, scroll down animation only if both 
       // 1) the image is completely loaded, and 2) the overlay is visible.
@@ -103,6 +104,14 @@ function initMediaOverlay() {
       
       if (options.nextButtonCallback) {
         $('#overlay-tour-next').off('click').on('click', options.nextButtonCallback);
+      }
+      
+      if (options.hideOverviewButton) {
+        $('#overlay-button-overview').hide();
+      }
+      
+      if (options.hideBackToMap) {
+        $('#overlay-back-to-map').hide();
       }
       
       

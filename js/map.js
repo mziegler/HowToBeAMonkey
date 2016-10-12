@@ -88,11 +88,11 @@ var track = L.polyline(media.WHtrack, {
 // arrow markers  
 track.setText('\u2192 ', {
     repeat: true,
-    offset: 22,
+    offset: 16,
     attributes: {
       fill: 'white',
-      'font-size': '70',
-      'font-weight': 'bold',
+      'font-size': '50',
+      //'font-weight': 'bold',
     }
 });
 
@@ -203,10 +203,10 @@ var monkeyfaceMarker = L.marker([10.5147, -85.3698], {
 ///////////////////////////////////////////////////////////////////////////////
 // OVERVIEW BUTTON
 
-$('#overview-button').click( function() {
+function showOverview() {
   map.setZoom(zoomLevels.overview);
-});
-
+}
+$('#map-container').on('click', '.button-overview', showOverview);
 
 
 
@@ -223,12 +223,17 @@ function endTourTransition()   {  onTourTransition = false;  }
 
 function showFloatingNext() {
   if (!onTourTransition) {
-    $('#map-next').fadeIn('fast');
+    $('#floating-buttons').fadeIn('fast');
   }
 }
 
-function hideFloatingNext() {
-  $('#map-next').fadeOut('fast');
+function hideFloatingNext(skipAnimation) {
+  if (skipAnimation) {
+    $('#floating-buttons').hide();
+  }
+  else {
+    $('#floating-buttons').fadeOut('fast');
+  }
 }
 
 map.on('popupopen', hideFloatingNext);
@@ -305,6 +310,8 @@ return {
   map: map,
   //startMarker: startMarker,
   initialView: initialView,
+  
+  showOverview: showOverview,
   
   showFloatingNext: showFloatingNext,
   hideFloatingNext: hideFloatingNext,
