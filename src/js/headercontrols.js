@@ -25,6 +25,7 @@ function initHeaderControls() {
       caption: 'Winslow Homer, a wild baby capuchin monkey', 
       picture:'corner-welcome.jpg',
       hideNextButton: true,
+      hideOverviewButton: true,
       });
   });
 
