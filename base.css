@@ -355,6 +355,11 @@ div#overlay-x {
   cursor: pointer;
 }
 
+div#overlay-x:hover {
+  background: rgba(0,0,0,1);
+  transition: 0.2s;
+}
+
 a#overlay-back-to-map {
   color: #999;
   display: block;
@@ -369,10 +374,27 @@ a#overlay-back-to-map:hover {
   text-decoration: underline;
 }
 
-div#overlay-close:hover {
-  background: rgba(0,0,0,1);
-  transition: 0.2s;
+div.data-note {
+  background-color: #EEE;
+  padding: 10px;
+  padding-left:100px;
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  background-size: auto 70%;
+  background-position: 20px center;
 }
+
+div.data-note-c { background-image: url('/icons/48/C.png'); }
+div.data-note-g { background-image: url('/icons/48/G.png'); }
+div.data-note-h { background-image: url('/icons/48/H.png'); }
+div.data-note-i { background-image: url('/icons/48/I.png'); }
+div.data-note-v { background-image: url('/icons/48/V.png'); }
+div.data-note-w { background-image: url('/icons/48/W.png'); }
+div.data-note-p { background-image: url('/icons/48/P.png'); }
+div.data-note-m { background-image: url('/icons/48/M.png'); }
+div.data-note-w { background-image: url('/icons/48/W.png'); }
+div.data-note-w { background-image: url('/icons/48/W.png'); }
+
 
 
 
