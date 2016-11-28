@@ -17,7 +17,7 @@
 
 "legendScreen": {
     "title": "Legend",
-    "caption": "Testing testing 123"
+    "caption": "<br><span style='color:#888;font-weight:bold;font-size:200%'>&rarr; &rarr; &rarr; &rarr; &rarr; &rarr;</span><br>The arrows show Winslow Homer's <b>GPS track</b>, as he travels through the forest with his family.<br><br><br><div id='legend-data-icons'><div><img src='icons/48/C.png'>Food<br>data</div><div><img src='icons/48/F.png'>Friendly<br>data</div><div><img src='icons/48/M.png'>Grooming<br>data</div><div><img src='icons/48/I.png'>Parenting<br>data</div><div><img src='icons/48/P.png'>Play<br>data</div><div><img src='icons/48/G.png'>Conflict<br>data</div><div><img src='icons/48/H.png'>Coalition<br>data</div><div><img src='icons/48/V.png'>Vocalization<br>data</div><div><img src='icons/48/W.png'>Miscellaneous<br>data</div></div>Click on colored monkey icons to see real <b>behavioral observation data</b> collected by researchers.<br><br><br><br>          <div id='legend-media-icons'><svg height='106' width='106'><clipPath id='WH-auto-5'><circle cx='53.22142439226859' cy='53.22142439226859' r='53.22142439226859'></circle></clipPath><image x='0' y='0' width='106.44284878453718' height='106.44284878453718' xlink:href='/pictures/thumbnails/MR-DA.jpg' preserveAspectRatio='xMidYMid slice' clip-path='url(#WH-auto-5)'></image></svg><svg width='120' height='120' viewBox='0 0 145 145'><g class='node' style='cursor:default'><clipPath id='WH-auto-14'><circle cx='72.58064516129032' cy='72.58064516129032' r='72.58064516129032'></circle></clipPath><image x='0' y='0' width='145.16129032258064' height='145.16129032258064' xlink:href='/pictures/thumbnails/videos/eyeball-poking.png' preserveAspectRatio='xMidYMid slice' clip-path='url(#WH-auto-14)'></image><text text-anchor='middle' transform='translate(72.58064516129032,108.87096774193549) scale(1)' fill='white'><tspan x='0' dy='0' text-anchor='middle'>Eyeball</tspan><tspan x='0' dy='1.15em' text-anchor='middle'>Poking</tspan></text></g></svg><svg width='80.55993339714826' height='80.55993339714826'><circle cx='40.27996669857413' cy='40.27996669857413' r='40.27996669857413' fill='rgba(0,0,0,0.8)'></circle><text text-anchor='middle' transform='translate(40.27996669857413,40.27996669857413) scale(1)' fill='white'><tspan x='0' dy='0' text-anchor='middle'>Social</tspan><tspan x='0' dy='1.15em' text-anchor='middle'>Rank</tspan></text></svg></div>        Click these other icons to see <b>stories, videos, pictures, and cool monkey facts</b>.<br><br><br><br>Click the <span style='background-color:#FEDD5B;border-radius:4px;padding:4px'>Next</span> buttons for a guided tour of the map, or you can click around and explore on your own."
 },
 
 
@@ -212,6 +212,7 @@
     "L": {"name": "Where Winslow Homer is looking", "default": false, "group": "Other", "clustersize": 800},  
     "O": {"name": "Researchers' view of Winslow Homer", "default": false, "group": "Other", "clustersize": 800}
 },
+
 
 
 "categoryGroups": ["Dominance", "Friendly", "Food", "Other"]
