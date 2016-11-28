@@ -625,9 +625,9 @@ a.side-linkout:hover {
 
 
 /******************************************************************************
- tour "next" button */
+ next, topics, and legend buttons  */
 
-.button-next, .button-overview {
+.button-next, .button-overview, #button-legend {
   display: inline-block;
   height: 44px;
   background: #FEDD5B;
@@ -665,6 +665,16 @@ a.side-linkout:hover {
   background-color: coral;
 } 
 
+@media (max-width:340px) {
+  .button-next {
+    padding: 4px 8px;
+  }
+  
+  .button-overview {
+    width: 44px;
+  }
+}
+
 
 .button-next:hover {
   background-color: #F0C932;
@@ -700,17 +710,64 @@ a.side-linkout:hover {
 
 }
 
+#button-legend {
+  position: absolute;
+  z-index: 88880;
+  bottom: 15px;
+  right: 15px;
+  width: 80px;
+  background: #EEE;
+  font-weight: bold;
+  font-size: 90%;
+  color: #444;
+  padding: 8px 0;
+  text-align: center;
+  height: 52px;
+}
+
+#button-legend:hover {
+  background: #DDD;
+  transition: 0.2s ease;
+}
+
 @media (max-width: 599px), (max-height: 499px) {
   #floating-buttons {
     bottom: 6px;
+  }
+  
+  #button-legend {
+    bottom: 6px;
+    right: 6px;
+    width: 60px;
   }
 }
 
 
 
+/******************************************************************************
+  legend */
 
- 
+#legend-data-icons div img{
+  width: 60px;
+  height: auto;
+  display: block;
+  padding-bottom: 6px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+#legend-data-icons div {
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 80%;
+  padding: 10px;
+  min-width: 80px;
+}
+
+#legend-media-icons svg {
+  margin: 0 5px;
+}
 
 
 
