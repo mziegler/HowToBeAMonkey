@@ -665,6 +665,16 @@ a.side-linkout:hover {
   background-color: coral;
 } 
 
+@media (max-width:340px) {
+  .button-next {
+    padding: 8px 4px;
+  }
+  
+  .button-overview {
+    width: 44px;
+  }
+}
+
 
 .button-next:hover {
   background-color: #F0C932;
