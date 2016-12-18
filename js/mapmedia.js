@@ -60,7 +60,7 @@ function initMapMedia() {
     
     
     // Open text-bubble pop up
-    function openTextPopup(bubbleData, element, hideNextButton) {
+    function openTextPopup(bubbleData, element, hideNextButton, legendNextButton) {
             
         map.map.openPopup(  
           (
@@ -69,7 +69,9 @@ function initMapMedia() {
             '</div><div class="caption">' +
             bubbleData.text + 
             '</div><div class="tour-buttons popup-tour-buttons"><div class="button-overview">Topics</div>' +
-            (hideNextButton ? '' : ' <div class="tour-next button-next">Next &gt;</div>')
+            (hideNextButton ? '' : ' <div class="button-next" onclick="' +
+              (legendNextButton ? 'introScreens.openLegend()' : 'tour.tourNext()')
+              + '">Next &gt;</div>')
             + '</div>'
           ),
           

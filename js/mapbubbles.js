@@ -620,7 +620,7 @@ function initMapBubbles() {
                     .attr('preserveAspectRatio', 'xMidYMid slice');
                 
                 G.on('click', function(d, i) {
-                    bubbleClickHandle(mapMedia.openTextPopup, d, this);
+                    bubbleClickHandle(function(d, el) { mapMedia.openTextPopup(d, el, false, true); }, d, this);
                 });
                 
                 break;
