@@ -22,6 +22,7 @@ function initMediaOverlay() {
         .empty().removeClass('filled');
       $('#overlay-tour-next').off('click').on('click', function() {tour.tourNext()}).show();
       $('#overlay-button-overview, #overlay-back-to-map').show();
+      $('#overlay-teacher-link').hide();
     }
     
     
@@ -42,7 +43,8 @@ function initMediaOverlay() {
     
     function openOverlay(options) {
     // options : {title, bigtitle, caption, picture, video, 
-    //             hideNextButton, nextButtonCallback, hideOverviewButton, hideBackToMap,}
+    //             hideNextButton, nextButtonCallback, hideOverviewButton, 
+    //             hideBackToMap, showTeacherLink}
     
     
       clearOverlay();
@@ -114,6 +116,9 @@ function initMediaOverlay() {
         $('#overlay-back-to-map').hide();
       }
       
+      if (options.showTeacherLink) {
+        $('#overlay-teacher-link').show();
+      }
       
       map.map.closePopup();
       

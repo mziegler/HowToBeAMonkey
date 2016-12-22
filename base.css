@@ -374,6 +374,21 @@ a#overlay-back-to-map:hover {
   text-decoration: underline;
 }
 
+a#overlay-teacher-link {
+  margin-bottom: -20px;
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+  font-size: 80%;
+  color: blue;
+  cursor: pointer;
+}
+
+a#overlay-teacher-link:hover {
+  text-decoration: underline;
+}
+
+
 div.data-note {
   background-color: #EEE;
   padding: 10px;
@@ -458,6 +473,7 @@ a#close-side-panel:hover {
   max-width: 800px;
   margin-right: auto;
   margin-left: auto;
+  position: relative;
 }
 
 span.side-title {

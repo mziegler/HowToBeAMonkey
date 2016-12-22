@@ -24,6 +24,7 @@ function initIntroScreens() {
       nextButtonCallback: secondIntroScreen,
       hideBackToMap: true,
       hideOverviewButton: true,
+      showTeacherLink: true,
     });
   }
   openIntro();
@@ -33,9 +34,9 @@ function initIntroScreens() {
   function secondIntroScreen() {
     setTimeout(function() {
       mediaOverlay.openOverlay({
-        picture: 'hello.jpg',
-        title: 'Meet Winslow Homer!',
-        caption: '<p>He\'s the star of our show.  Winslow is the alpha female\'s baby, so everybody wants to play with him and groom him to score points with the alpha female.  He loves the attention &mdash; a little prince charming!</p>',
+        picture: media.secondIntroScreen.picture,
+        title: media.secondIntroScreen.title,
+        caption: media.secondIntroScreen.caption,
         nextButtonCallback: showStartPoint,
         hideBackToMap: true,
         hideOverviewButton: true,

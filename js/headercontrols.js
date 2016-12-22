@@ -49,7 +49,7 @@ function initHeaderControls() {
   }
   
 
-
+  // Delay video loading for quicker initial load
   function loadFamilyTrees() {
     if (!$('iframe#family-trees').attr('src')) {
       $('iframe#family-trees').attr('src', 'https://player.vimeo.com/video/13794237');
@@ -67,11 +67,28 @@ function initHeaderControls() {
   $('#tab-reset, #menu-reset').click(function(){ introScreens.resetIntro(); return false; });
   
   
+  $('.teacher-link').click(function() {
+    closeSidePanel();
+    toggleSidePanel('#panel-about');
+    scrollToPanelLink('#about-teachers');
+    loadFamilyTrees(); 
+    return false;
+  });
+  
+  
+  // Smooth scroll side panel to element
+  function scrollToPanelLink(selector) {
+    var pos = $(selector).position().top + $('.side-panel-content:visible').scrollTop();
+    $('.side-panel-content:visible').animate({'scrollTop': pos}, 500);
+  }
+  
+  
   $('#close-side-panel').click(closeSidePanel);
   $('#map *, #map, #overlay *, #overlay').click(closeSidePanel);
   
   return {
-    closeSidePanel: closeSidePanel
+    closeSidePanel: closeSidePanel,
+    scrollToPanelLink: scrollToPanelLink
   }
 }
 headerControls = initHeaderControls();
